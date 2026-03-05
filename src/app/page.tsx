@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { createBrowserClient } from "@/lib/supabase";
 
 const features = [
   {
@@ -26,6 +30,15 @@ const features = [
 ];
 
 export default function Home() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const supabase = createBrowserClient();
+    supabase.auth.getUser().then(({ data }) => {
+      if (data.user) setLoggedIn(true);
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -43,18 +56,29 @@ export default function Home() {
             we take them. The Iron Tide rises, and everything in its wake bends or breaks.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/signup"
-              className="px-8 py-3 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors"
-            >
-              Join The Crew
-            </Link>
-            <Link
-              href="/login"
-              className="px-8 py-3 text-lg font-semibold text-accent border-2 border-accent rounded-lg hover:bg-accent hover:text-background transition-colors"
-            >
-              Member Login
-            </Link>
+            {loggedIn ? (
+              <Link
+                href="/dashboard"
+                className="px-8 py-3 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="px-8 py-3 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors"
+                >
+                  Member Login
+                </Link>
+                <Link
+                  href="/signup"
+                  className="px-8 py-3 text-lg font-semibold text-accent border-2 border-accent rounded-lg hover:bg-accent hover:text-background transition-colors"
+                >
+                  Join The Crew
+                </Link>
+              </>
+            )}
           </div>
         </section>
 

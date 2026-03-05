@@ -71,8 +71,8 @@ export default function SignUpPage() {
                 <input name="confirmPassword" type="password" required className="w-full px-3 py-2 bg-[#1C1C1C] text-foreground border border-surface-border rounded-lg focus:border-accent focus:outline-none" />
               </div>
               <div>
-                <label className="block text-accent text-sm font-medium mb-1">In-Game Name <span className="text-foreground-muted">(optional)</span></label>
-                <input name="inGameName" type="text" className="w-full px-3 py-2 bg-[#1C1C1C] text-foreground border border-surface-border rounded-lg focus:border-accent focus:outline-none" />
+                <label className="block text-accent text-sm font-medium mb-1">In-Game Name</label>
+                <input name="inGameName" type="text" required className="w-full px-3 py-2 bg-[#1C1C1C] text-foreground border border-surface-border rounded-lg focus:border-accent focus:outline-none" />
               </div>
 
               <button type="submit" disabled={loading} className="w-full py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary-hover transition-colors disabled:opacity-50">

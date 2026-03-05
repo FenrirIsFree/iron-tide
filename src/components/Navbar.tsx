@@ -4,16 +4,31 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { createBrowserClient } from '@/lib/supabase'
 import { signOut } from '@/app/actions/auth'
-import type { User } from '@supabase/supabase-js'
 
 export default function Navbar() {
-  const [user, setUser] = useState<User | null>(null)
+  const [authUser, setAuthUser] = useState<boolean>(false)
+  const [username, setUsername] = useState<string>('')
 
   useEffect(() => {
     const supabase = createBrowserClient()
-    supabase.auth.getUser().then(({ data }) => setUser(data.user))
+    supabase.auth.getUser().then(({ data }) => {
+      if (data.user) {
+        setAuthUser(true)
+        fetch('/api/me').then(r => r.json()).then(d => {
+          if (d.user) setUsername(d.user.username)
+        })
+      }
+    })
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
+      if (session?.user) {
+        setAuthUser(true)
+        fetch('/api/me').then(r => r.json()).then(d => {
+          if (d.user) setUsername(d.user.username)
+        })
+      } else {
+        setAuthUser(false)
+        setUsername('')
+      }
     })
     return () => subscription.unsubscribe()
   }, [])
@@ -25,10 +40,10 @@ export default function Navbar() {
           ⚓ The Iron Tide
         </Link>
         <div className="flex items-center gap-3">
-          {user ? (
+          {authUser ? (
             <>
               <Link href="/dashboard" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
-                {user.email?.split('@')[0]}
+                {username || '...'}
               </Link>
               <form action={signOut}>
                 <button type="submit" className="px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors">

@@ -35,7 +35,7 @@ export default async function DashboardPage() {
       <main className="flex-1 pt-24 pb-12 px-4 max-w-5xl mx-auto w-full">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">
-            Welcome, <span className="text-accent">{dbUser?.username ?? user.email?.split('@')[0]}</span>!
+            Welcome, <span className="text-accent">{dbUser?.inGameName ?? dbUser?.username ?? user.email?.split('@')[0]}</span>!
           </h1>
           {dbUser && (
             <p className="text-foreground-secondary mt-1">{rankLabels[dbUser.rank] ?? dbUser.rank}</p>
