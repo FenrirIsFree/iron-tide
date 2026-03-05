@@ -45,8 +45,20 @@ export default function Navbar() {
           {authState === 'loading' ? null : authState === 'in' ? (
             <>
               <Link href="/dashboard" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
-                {username || '...'}
+                Dashboard
               </Link>
+              <Link href="/fleet" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
+                Fleet
+              </Link>
+              <Link href="/inventory" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
+                Inventory
+              </Link>
+              <Link href="/roster" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
+                Roster
+              </Link>
+              <span className="text-accent text-sm font-medium">
+                {username || '...'}
+              </span>
               <form action={signOut}>
                 <button type="submit" className="px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors">
                   Logout
