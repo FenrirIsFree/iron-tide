@@ -30,12 +30,12 @@ const features = [
 ];
 
 export default function Home() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading');
 
   useEffect(() => {
     const supabase = createBrowserClient();
     supabase.auth.getUser().then(({ data }) => {
-      if (data.user) setLoggedIn(true);
+      setAuthState(data.user ? 'in' : 'out');
     });
   }, []);
 
@@ -55,8 +55,8 @@ export default function Home() {
             Born from cannon fire and forged in salt water. We don&apos;t ask for the seas —
             we take them. The Iron Tide rises, and everything in its wake bends or breaks.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {loggedIn ? (
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 min-h-[48px]">
+            {authState === 'loading' ? null : authState === 'in' ? (
               <Link
                 href="/dashboard"
                 className="px-8 py-3 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors"

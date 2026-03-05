@@ -6,27 +6,29 @@ import { createBrowserClient } from '@/lib/supabase'
 import { signOut } from '@/app/actions/auth'
 
 export default function Navbar() {
-  const [authUser, setAuthUser] = useState<boolean>(false)
+  const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading')
   const [username, setUsername] = useState<string>('')
 
   useEffect(() => {
     const supabase = createBrowserClient()
     supabase.auth.getUser().then(({ data }) => {
       if (data.user) {
-        setAuthUser(true)
-        fetch('/api/me').then(r => r.json()).then(d => {
-          if (d.user) setUsername(d.user.username)
-        })
-      }
-    })
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        setAuthUser(true)
+        setAuthState('in')
         fetch('/api/me').then(r => r.json()).then(d => {
           if (d.user) setUsername(d.user.username)
         })
       } else {
-        setAuthUser(false)
+        setAuthState('out')
+      }
+    })
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        setAuthState('in')
+        fetch('/api/me').then(r => r.json()).then(d => {
+          if (d.user) setUsername(d.user.username)
+        })
+      } else {
+        setAuthState('out')
         setUsername('')
       }
     })
@@ -40,7 +42,7 @@ export default function Navbar() {
           ⚓ The Iron Tide
         </Link>
         <div className="flex items-center gap-3">
-          {authUser ? (
+          {authState === 'loading' ? null : authState === 'in' ? (
             <>
               <Link href="/dashboard" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
                 {username || '...'}
