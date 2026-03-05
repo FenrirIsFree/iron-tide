@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const rankLabels: Record<string, string> = {
+  ADMIN: '🛡️ Admin',
   FOUNDER: '👑 Founder',
   ADMIRAL: '⚓ Admiral',
   COMMODORE: '🎖️ Commodore',

@@ -20,6 +20,7 @@ type MemberShip = {
 }
 
 const rankConfig: Record<string, { label: string; emoji: string; color: string }> = {
+  ADMIN: { label: 'Admin', emoji: '🛡️', color: 'text-accent border-accent' },
   FOUNDER: { label: 'Founder', emoji: '👑', color: 'text-accent border-accent' },
   ADMIRAL: { label: 'Admiral', emoji: '⚓', color: 'text-accent border-accent' },
   COMMODORE: { label: 'Commodore', emoji: '🎖️', color: 'text-primary border-primary' },
