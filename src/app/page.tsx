@@ -2,23 +2,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const stats = [
-  { number: "62", label: "Ships Cataloged", icon: "🚢" },
-  { number: "42", label: "Weapons", icon: "💣" },
-  { number: "6", label: "Factions", icon: "⚔️" },
-  { number: "7", label: "Guild Ranks", icon: "🎖️" },
-];
-
-const ranks = [
-  { title: "Founder", desc: "The one who lit the forge" },
-  { title: "Admiral", desc: "Commands the entire fleet" },
-  { title: "Commodore", desc: "Leads squadrons into battle" },
-  { title: "Officer", desc: "Trusted strategist and veteran" },
-  { title: "Midshipman", desc: "Proven sailor, rising fast" },
-  { title: "Sailor", desc: "Full member of the crew" },
-  { title: "Cabin Boy", desc: "Fresh recruit, eager to prove" },
-];
-
 const features = [
   {
     icon: "🗺️",
@@ -86,7 +69,7 @@ export default function Home() {
                 {
                   icon: "⚔️",
                   title: "Domination",
-                  text: "We control trade routes, crush rivals, and hold the most feared fleet on every server.",
+                  text: "We control trade routes, crush rivals, and hold the most feared fleet on the server.",
                 },
                 {
                   icon: "💰",
@@ -109,49 +92,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Fleet Stats */}
-        <section className="py-20 px-4 bg-surface">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12">
-              Fleet Intelligence
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((s) => (
-                <div key={s.label} className="p-6">
-                  <div className="text-3xl mb-2">{s.icon}</div>
-                  <div className="text-4xl sm:text-5xl font-bold text-accent">{s.number}</div>
-                  <div className="mt-2 text-foreground-secondary text-sm">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Ranks */}
-        <section className="py-20 px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12">
-              Guild Ranks
-            </h2>
-            <ol className="space-y-3">
-              {ranks.map((rank, i) => (
-                <li
-                  key={rank.title}
-                  className="flex items-center gap-4 bg-surface border border-surface-border rounded-lg px-5 py-4"
-                >
-                  <span className="text-accent font-bold text-lg w-8 shrink-0">
-                    {i + 1}.
-                  </span>
-                  <div className="text-left">
-                    <span className="font-semibold text-foreground">{rank.title}</span>
-                    <span className="text-foreground-secondary text-sm ml-2">— {rank.desc}</span>
-                  </div>
-                </li>
-              ))}
-            </ol>
           </div>
         </section>
 
