@@ -38,6 +38,8 @@ interface Props {
   crewCatalog: Crew[]
 }
 
+const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
+
 export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [showAddModal, setShowAddModal] = useState(false)
@@ -116,11 +118,12 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
               {expandedId === us.id && (
                 <div className="border-t border-surface-border p-5 space-y-4">
                   {/* Loadout summary */}
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
                     <LoadoutSection title="⚔️ Weapons" items={us.weapons.map(w => `${w.weapon.name} x${w.quantity}`)} />
                     <LoadoutSection title="🛡️ Upgrades" items={us.upgrades.map(u => u.upgrade.name)} />
                     <LoadoutSection title="💣 Ammo" items={us.ammo.map(a => `${a.ammoType.name} x${a.quantity}`)} />
-                    <LoadoutSection title="👥 Crew" items={us.crew.map(c => `${c.crewType.name} x${c.quantity}`)} />
+                    <LoadoutSection title="👥 Crew" items={us.crew.filter(c => BASIC_CREW.includes(c.crewType.name)).map(c => `${c.crewType.name} x${c.quantity}`)} />
+                    <LoadoutSection title="⭐ Special Crew" items={us.crew.filter(c => !BASIC_CREW.includes(c.crewType.name)).map(c => `${c.crewType.name} x${c.quantity}`)} />
                   </div>
 
                   <div className="flex gap-2 pt-2">
@@ -232,11 +235,15 @@ function LoadoutEditor({
   crew: Crew[]
   startTransition: (fn: () => void) => void
 }) {
-  const [tab, setTab] = useState<'weapons' | 'upgrades' | 'ammo' | 'crew'>('weapons')
+  const [tab, setTab] = useState<'weapons' | 'upgrades' | 'ammo' | 'crew' | 'special'>('weapons')
   const [selectedId, setSelectedId] = useState('')
   const [qty, setQty] = useState(1)
 
-  const tabs = ['weapons', 'upgrades', 'ammo', 'crew'] as const
+  const tabs = ['weapons', 'upgrades', 'ammo', 'crew', 'special'] as const
+  const tabLabels: Record<string, string> = { weapons: 'Weapons', upgrades: 'Upgrades', ammo: 'Ammo', crew: 'Crew', special: 'Special Crew' }
+
+  const basicCrew = crew.filter(c => BASIC_CREW.includes(c.name))
+  const specialCrew = crew.filter(c => !BASIC_CREW.includes(c.name))
 
   function handleAddItem() {
     if (!selectedId) return
@@ -250,7 +257,7 @@ function LoadoutEditor({
     })
   }
 
-  const catalog = tab === 'weapons' ? weapons : tab === 'upgrades' ? upgrades : tab === 'ammo' ? ammo : crew
+  const catalog = tab === 'weapons' ? weapons : tab === 'upgrades' ? upgrades : tab === 'ammo' ? ammo : tab === 'crew' ? basicCrew : specialCrew
   const showQty = tab !== 'upgrades'
 
   return (
@@ -260,20 +267,20 @@ function LoadoutEditor({
           <button
             key={t}
             onClick={() => { setTab(t); setSelectedId('') }}
-            className={`px-3 py-1 text-sm rounded-lg capitalize ${tab === t ? 'bg-primary text-primary-foreground' : 'border border-surface-border text-foreground-secondary hover:text-foreground'}`}
+            className={`px-3 py-1 text-sm rounded-lg ${tab === t ? 'bg-primary text-primary-foreground' : 'border border-surface-border text-foreground-secondary hover:text-foreground'}`}
           >
-            {t}
+            {tabLabels[t]}
           </button>
         ))}
       </div>
-      <div className="flex gap-2 items-end">
-        <div className="flex-1">
+      <div className="flex flex-wrap gap-2 items-end">
+        <div className="flex-1 min-w-[250px]">
           <select
             value={selectedId}
             onChange={(e) => setSelectedId(e.target.value)}
             className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground text-sm focus:border-accent focus:outline-none"
           >
-            <option value="">Select {tab.slice(0, -1)}…</option>
+            <option value="">Select {tabLabels[tab].toLowerCase()}…</option>
             {catalog.map((item) => (
               <option key={item.id} value={item.id}>{item.name}</option>
             ))}
