@@ -1,32 +1,58 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useState, useTransition, useMemo } from 'react'
 import {
   addShip, removeShip, updateShipNickname, toggleShipVisibility,
-  addWeaponToShip, removeWeaponFromShip,
-  addUpgradeToShip, removeUpgradeFromShip,
-  addAmmoToShip, removeAmmoFromShip,
-  addCrewToShip, removeCrewFromShip,
+  addLoadout, removeLoadout, setActiveLoadout, renameLoadout,
+  addWeaponToLoadout, removeWeaponFromLoadout,
+  addUpgradeToLoadout, removeUpgradeFromLoadout,
+  addAmmoToLoadout, removeAmmoFromLoadout,
+  addCrewToLoadout, removeCrewFromLoadout, updateCrewQuantity,
 } from '@/app/actions/fleet'
 
-type Ship = { id: string; name: string; rate: number; shipClass: string; hp: number | null; speed: number | null; crewCapacity: number | null; cannonSlots: number | null }
-type Weapon = { id: string; name: string; type: string; tier: string | null; damage: number | null }
+// ============================================================
+// TYPES
+// ============================================================
+
+type Ship = {
+  id: string; name: string; rate: number; shipClass: string; role: string | null
+  faction: string | null; hp: number | null; speed: number | null
+  maneuverability: number | null; broadsideArmor: number | null
+  cargoHold: number | null; crewCapacity: number | null
+  displacement: string | null; integrity: number | null
+  weaponClass: string | null
+  sternSlots: number; broadsideSlots: number; bowSlots: number
+  swivelGuns: number; mortarSlots: number; mortarMaxCaliber: number | null
+  specialWeaponSlots: number
+}
+type Weapon = {
+  id: string; name: string; weightClass: string; type: string
+  penetration: number | null; penetrationMulti: string | null
+  loading: number | null; range: number | null; rangeMin: number | null
+  maxAngle: number | null; accuracySpread: number | null
+  damage: number | null; splashRadius: number | null; reduction: number | null
+  preparation: number | null; firingTime: number | null; damageUnit: string | null
+  caliber: number | null; placementRestriction: string | null
+  isPremium: boolean; description: string | null
+}
 type Upgrade = { id: string; name: string; slot: string | null; effect: string | null }
 type Ammo = { id: string; name: string; effect: string | null }
-type Crew = { id: string; name: string }
+type Crew = { id: string; name: string; description: string | null }
 
-type UserShipWeapon = { id: string; weapon: Weapon; quantity: number }
-type UserShipUpgrade = { id: string; upgrade: Upgrade }
-type UserShipAmmo = { id: string; ammoType: Ammo; quantity: number }
-type UserShipCrew = { id: string; crewType: Crew; quantity: number }
+type LoadoutWeapon = { id: string; weapon: Weapon; position: string; quantity: number }
+type LoadoutUpgrade = { id: string; upgrade: Upgrade }
+type LoadoutAmmo = { id: string; ammoType: Ammo; quantity: number }
+type LoadoutCrew = { id: string; crewType: Crew; quantity: number }
+
+type Loadout = {
+  id: string; name: string; isActive: boolean
+  weapons: LoadoutWeapon[]; upgrades: LoadoutUpgrade[]
+  ammo: LoadoutAmmo[]; crew: LoadoutCrew[]
+}
 
 type UserShip = {
   id: string; shipId: string; nickname: string | null; isPublic: boolean; createdAt: string
-  ship: Ship
-  weapons: UserShipWeapon[]
-  upgrades: UserShipUpgrade[]
-  ammo: UserShipAmmo[]
-  crew: UserShipCrew[]
+  ship: Ship; loadouts: Loadout[]
 }
 
 interface Props {
@@ -40,14 +66,46 @@ interface Props {
 
 const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
 
+type SortKey = 'name' | 'rate' | 'class' | 'date'
+
+// ============================================================
+// MAIN COMPONENT
+// ============================================================
+
 export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [showAddModal, setShowAddModal] = useState(false)
-  const [loadoutShipId, setLoadoutShipId] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
 
+  // Sorting & filtering
+  const [sortBy, setSortBy] = useState<SortKey>('date')
+  const [filterRate, setFilterRate] = useState<number | null>(null)
+  const [filterWeaponClass, setFilterWeaponClass] = useState<string | null>(null)
+  const [filterRole, setFilterRole] = useState<string | null>(null)
+
+  // Add ship form
   const [selectedShipId, setSelectedShipId] = useState('')
   const [nickname, setNickname] = useState('')
+
+  const filtered = useMemo(() => {
+    let list = [...initialFleet]
+    if (filterRate !== null) list = list.filter(us => us.ship.rate === filterRate)
+    if (filterWeaponClass) list = list.filter(us => us.ship.weaponClass === filterWeaponClass)
+    if (filterRole) list = list.filter(us => us.ship.role === filterRole)
+
+    list.sort((a, b) => {
+      switch (sortBy) {
+        case 'name': return a.ship.name.localeCompare(b.ship.name)
+        case 'rate': return a.ship.rate - b.ship.rate
+        case 'class': return a.ship.shipClass.localeCompare(b.ship.shipClass)
+        case 'date': return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        default: return 0
+      }
+    })
+    return list
+  }, [initialFleet, sortBy, filterRate, filterWeaponClass, filterRole])
+
+  const roles = useMemo(() => [...new Set(initialFleet.map(us => us.ship.role).filter(Boolean))], [initialFleet])
 
   function handleAdd() {
     if (!selectedShipId) return
@@ -64,134 +122,137 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
     startTransition(() => removeShip(id))
   }
 
-  function handleToggleVisibility(id: string) {
-    startTransition(() => toggleShipVisibility(id))
-  }
-
   return (
     <div>
-      <div className="flex items-center justify-between mb-8">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold text-foreground">🚢 Fleet Tracker</h1>
         <button onClick={() => setShowAddModal(true)} className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors font-medium">
           + Add Ship
         </button>
       </div>
 
-      {initialFleet.length === 0 ? (
+      {/* Filters & Sort */}
+      <div className="flex flex-wrap gap-3 mb-6 items-center text-sm">
+        <label className="text-foreground-secondary">Sort:</label>
+        <select value={sortBy} onChange={e => setSortBy(e.target.value as SortKey)} className="bg-surface border border-surface-border rounded px-2 py-1 text-foreground text-sm">
+          <option value="date">Date Added</option>
+          <option value="name">Name</option>
+          <option value="rate">Rate</option>
+          <option value="class">Class</option>
+        </select>
+
+        <span className="text-surface-border">|</span>
+
+        <label className="text-foreground-secondary">Rate:</label>
+        <select value={filterRate ?? ''} onChange={e => setFilterRate(e.target.value ? Number(e.target.value) : null)} className="bg-surface border border-surface-border rounded px-2 py-1 text-foreground text-sm">
+          <option value="">All</option>
+          {[1,2,3,4,5,6,7].map(r => <option key={r} value={r}>{r}</option>)}
+        </select>
+
+        <label className="text-foreground-secondary">Weapon:</label>
+        <select value={filterWeaponClass ?? ''} onChange={e => setFilterWeaponClass(e.target.value || null)} className="bg-surface border border-surface-border rounded px-2 py-1 text-foreground text-sm">
+          <option value="">All</option>
+          <option value="Light">Light</option>
+          <option value="Medium">Medium</option>
+          <option value="Heavy">Heavy</option>
+        </select>
+
+        {roles.length > 0 && (
+          <>
+            <label className="text-foreground-secondary">Role:</label>
+            <select value={filterRole ?? ''} onChange={e => setFilterRole(e.target.value || null)} className="bg-surface border border-surface-border rounded px-2 py-1 text-foreground text-sm">
+              <option value="">All</option>
+              {roles.map(r => <option key={r} value={r!}>{r}</option>)}
+            </select>
+          </>
+        )}
+      </div>
+
+      {/* Fleet Table */}
+      {filtered.length === 0 ? (
         <div className="text-center py-20">
-          <p className="text-foreground-secondary text-lg">No ships in your fleet yet. Add your first ship!</p>
+          <p className="text-foreground-secondary text-lg">{initialFleet.length === 0 ? 'No ships in your fleet yet. Add your first ship!' : 'No ships match your filters.'}</p>
         </div>
       ) : (
-        <div className="grid gap-4">
-          {initialFleet.map((us) => (
-            <div key={us.id} className="bg-surface border border-surface-border rounded-xl overflow-hidden">
-              <div
-                className="p-5 cursor-pointer hover:bg-background/50 transition-colors"
-                onClick={() => setExpandedId(expandedId === us.id ? null : us.id)}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {us.ship.name}
-                      {us.nickname && <span className="text-accent ml-2">&ldquo;{us.nickname}&rdquo;</span>}
-                    </h3>
-                    <div className="flex flex-wrap gap-3 mt-1 text-sm text-foreground-secondary">
-                      <span>Class: {us.ship.shipClass}</span>
-                      <span>Rate: {us.ship.rate}</span>
-                      {us.ship.hp && <span>HP: {us.ship.hp}</span>}
-                      {us.ship.speed && <span>Speed: {us.ship.speed}</span>}
-                      {us.ship.crewCapacity && <span>Crew: {us.ship.crewCapacity}</span>}
-                    </div>
-                  </div>
+        <div className="border border-surface-border rounded-xl overflow-hidden">
+          {/* Table header */}
+          <div className="hidden md:grid grid-cols-[2fr_0.5fr_1fr_0.8fr_0.8fr_0.8fr_1.5fr] gap-2 px-5 py-3 bg-surface/50 text-xs font-medium text-foreground-secondary uppercase tracking-wider border-b border-surface-border">
+            <span>Ship</span>
+            <span>Rate</span>
+            <span>Class</span>
+            <span>Weapons</span>
+            <span>Broad/side</span>
+            <span>Crew</span>
+            <span>Active Loadout</span>
+          </div>
+
+          {filtered.map((us) => {
+            const active = us.loadouts.find(l => l.isActive) || us.loadouts[0]
+            const weaponSummary = active ? active.weapons.filter(w => w.position === 'port').map(w => `${w.weapon.name} x${w.quantity}`).join(', ') || '—' : '—'
+
+            return (
+              <div key={us.id} className="bg-surface border-b border-surface-border last:border-b-0">
+                {/* Row */}
+                <div
+                  className="grid md:grid-cols-[2fr_0.5fr_1fr_0.8fr_0.8fr_0.8fr_1.5fr] gap-2 px-5 py-4 cursor-pointer hover:bg-background/50 transition-colors items-center"
+                  onClick={() => setExpandedId(expandedId === us.id ? null : us.id)}
+                >
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); handleToggleVisibility(us.id) }}
-                      className={`px-3 py-1 text-xs rounded border ${us.isPublic ? 'border-accent text-accent' : 'border-surface-border text-foreground-secondary'}`}
-                    >
-                      {us.isPublic ? '👁 Public' : '🔒 Private'}
-                    </button>
-                    <span className="text-foreground-secondary text-sm">{expandedId === us.id ? '▲' : '▼'}</span>
+                    <span className="font-semibold text-foreground">
+                      {us.ship.name}
+                      {us.nickname && <span className="text-accent ml-1 font-normal">&ldquo;{us.nickname}&rdquo;</span>}
+                    </span>
+                    {!us.isPublic && <span className="text-xs text-foreground-secondary">🔒</span>}
                   </div>
+                  <span className="text-foreground-secondary">{us.ship.rate}</span>
+                  <span className="text-foreground-secondary text-sm">{us.ship.shipClass}</span>
+                  <span className="text-foreground-secondary text-sm">{us.ship.weaponClass || '—'}</span>
+                  <span className="text-foreground-secondary text-sm">{us.ship.broadsideSlots}</span>
+                  <span className="text-foreground-secondary text-sm">{us.ship.crewCapacity || '—'}</span>
+                  <span className="text-foreground-secondary text-xs truncate">{weaponSummary}</span>
                 </div>
+
+                {/* Expanded view */}
+                {expandedId === us.id && (
+                  <ExpandedShipView
+                    userShip={us}
+                    weaponCatalog={weaponCatalog}
+                    upgradeCatalog={upgradeCatalog}
+                    ammoCatalog={ammoCatalog}
+                    crewCatalog={crewCatalog}
+                    isPending={isPending}
+                    startTransition={startTransition}
+                    onRemove={() => handleRemove(us.id)}
+                  />
+                )}
               </div>
-
-              {expandedId === us.id && (
-                <div className="border-t border-surface-border p-5 space-y-4">
-                  {/* Loadout summary */}
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-                    <LoadoutSection title="⚔️ Weapons" items={us.weapons.map(w => `${w.weapon.name} x${w.quantity}`)} />
-                    <LoadoutSection title="🛡️ Upgrades" items={us.upgrades.map(u => u.upgrade.name)} />
-                    <LoadoutSection title="💣 Ammo" items={us.ammo.map(a => `${a.ammoType.name} x${a.quantity}`)} />
-                    <LoadoutSection title="👥 Crew" items={us.crew.filter(c => BASIC_CREW.includes(c.crewType.name)).map(c => `${c.crewType.name} x${c.quantity}`)} />
-                    <LoadoutSection title="⭐ Special Crew" items={us.crew.filter(c => !BASIC_CREW.includes(c.crewType.name)).map(c => `${c.crewType.name} x${c.quantity}`)} />
-                  </div>
-
-                  <div className="flex gap-2 pt-2">
-                    <button
-                      onClick={() => setLoadoutShipId(loadoutShipId === us.id ? null : us.id)}
-                      className="px-4 py-2 text-sm border border-accent text-accent rounded-lg hover:bg-accent hover:text-background transition-colors"
-                    >
-                      ✏️ Edit Loadout
-                    </button>
-                    <button
-                      onClick={() => handleRemove(us.id)}
-                      className="px-4 py-2 text-sm border border-surface-border text-foreground-secondary rounded-lg hover:border-primary hover:text-primary transition-colors"
-                    >
-                      🗑 Remove Ship
-                    </button>
-                  </div>
-
-                  {loadoutShipId === us.id && (
-                    <LoadoutEditor
-                      userShipId={us.id}
-                      weapons={weaponCatalog}
-                      upgrades={upgradeCatalog}
-                      ammo={ammoCatalog}
-                      crew={crewCatalog}
-                      startTransition={startTransition}
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
+            )
+          })}
         </div>
       )}
 
       {/* Add Ship Modal */}
       {showAddModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm" onClick={() => setShowAddModal(false)}>
-          <div className="bg-surface border border-surface-border rounded-xl p-6 w-full max-w-md mx-4" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-surface border border-surface-border rounded-xl p-6 w-full max-w-md mx-4" onClick={e => e.stopPropagation()}>
             <h2 className="text-xl font-bold text-foreground mb-4">Add Ship to Fleet</h2>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm text-foreground-secondary mb-1">Ship</label>
-                <select
-                  value={selectedShipId}
-                  onChange={(e) => setSelectedShipId(e.target.value)}
-                  className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground focus:border-accent focus:outline-none"
-                >
+                <select value={selectedShipId} onChange={e => setSelectedShipId(e.target.value)} className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground focus:border-accent focus:outline-none">
                   <option value="">Select a ship…</option>
-                  {shipCatalog.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.name} (Rate {s.rate}, {s.shipClass})
-                    </option>
+                  {shipCatalog.map(s => (
+                    <option key={s.id} value={s.id}>{s.name} (Rate {s.rate}, {s.shipClass}, {s.weaponClass || '?'})</option>
                   ))}
                 </select>
               </div>
               <div>
                 <label className="block text-sm text-foreground-secondary mb-1">Nickname (optional)</label>
-                <input
-                  value={nickname}
-                  onChange={(e) => setNickname(e.target.value)}
-                  placeholder="e.g. The Crimson Fury"
-                  className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground focus:border-accent focus:outline-none"
-                />
+                <input value={nickname} onChange={e => setNickname(e.target.value)} placeholder="e.g. The Crimson Fury" className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground focus:border-accent focus:outline-none" />
               </div>
               <div className="flex gap-2 justify-end">
-                <button onClick={() => setShowAddModal(false)} className="px-4 py-2 text-sm border border-surface-border text-foreground-secondary rounded-lg hover:text-foreground transition-colors">
-                  Cancel
-                </button>
+                <button onClick={() => setShowAddModal(false)} className="px-4 py-2 text-sm border border-surface-border text-foreground-secondary rounded-lg hover:text-foreground transition-colors">Cancel</button>
                 <button onClick={handleAdd} disabled={!selectedShipId || isPending} className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors disabled:opacity-50">
                   {isPending ? 'Adding…' : 'Add Ship'}
                 </button>
@@ -202,102 +263,523 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
       )}
 
       {isPending && (
-        <div className="fixed bottom-4 right-4 bg-surface border border-surface-border rounded-lg px-4 py-2 text-sm text-foreground-secondary">
-          Updating…
+        <div className="fixed bottom-4 right-4 bg-surface border border-surface-border rounded-lg px-4 py-2 text-sm text-foreground-secondary">Updating…</div>
+      )}
+    </div>
+  )
+}
+
+// ============================================================
+// EXPANDED SHIP VIEW
+// ============================================================
+
+function ExpandedShipView({
+  userShip, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog, isPending, startTransition, onRemove,
+}: {
+  userShip: UserShip
+  weaponCatalog: Weapon[]
+  upgradeCatalog: Upgrade[]
+  ammoCatalog: Ammo[]
+  crewCatalog: Crew[]
+  isPending: boolean
+  startTransition: (fn: () => void) => void
+  onRemove: () => void
+}) {
+  const { ship, loadouts } = userShip
+  const [activeTab, setActiveTab] = useState(loadouts.find(l => l.isActive)?.id || loadouts[0]?.id)
+  const currentLoadout = loadouts.find(l => l.id === activeTab) || loadouts[0]
+
+  return (
+    <div className="border-t border-surface-border p-5 space-y-5">
+      {/* Ship Stats */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+        <StatBadge label="HP" value={ship.hp} />
+        <StatBadge label="Speed" value={ship.speed} />
+        <StatBadge label="Maneuver" value={ship.maneuverability} />
+        <StatBadge label="Broadside Armor" value={ship.broadsideArmor} />
+        <StatBadge label="Crew Cap" value={ship.crewCapacity} />
+        <StatBadge label="Cargo" value={ship.cargoHold} />
+      </div>
+
+      {/* Weapon Slots Summary */}
+      <div className="flex flex-wrap gap-2 text-xs">
+        <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Stern: {ship.sternSlots}</span>
+        <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Broadside/side: {ship.broadsideSlots}</span>
+        <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Bow: {ship.bowSlots}</span>
+        <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Swivel: {ship.swivelGuns}</span>
+        {ship.mortarSlots > 0 && <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Mortar: {ship.mortarSlots} (max {ship.mortarMaxCaliber}&quot;)</span>}
+        {ship.specialWeaponSlots > 0 && <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Special: {ship.specialWeaponSlots}</span>}
+      </div>
+
+      {/* Loadout Tabs */}
+      <div className="flex items-center gap-2 border-b border-surface-border pb-2">
+        {loadouts.map(l => (
+          <button
+            key={l.id}
+            onClick={() => setActiveTab(l.id)}
+            className={`px-3 py-1.5 text-sm rounded-t-lg transition-colors flex items-center gap-1 ${
+              activeTab === l.id ? 'bg-primary text-primary-foreground' : 'text-foreground-secondary hover:text-foreground'
+            }`}
+          >
+            {l.isActive && <span>⭐</span>}
+            {l.name}
+          </button>
+        ))}
+        {loadouts.length < 3 && (
+          <button
+            onClick={() => startTransition(() => addLoadout(userShip.id))}
+            className="px-2 py-1 text-xs text-foreground-secondary hover:text-accent border border-dashed border-surface-border rounded"
+          >
+            +
+          </button>
+        )}
+      </div>
+
+      {/* Loadout Controls */}
+      {currentLoadout && (
+        <div className="flex items-center gap-2 text-xs">
+          {!currentLoadout.isActive && (
+            <button onClick={() => startTransition(() => setActiveLoadout(currentLoadout.id))} className="px-2 py-1 border border-accent text-accent rounded hover:bg-accent hover:text-background transition-colors">
+              ⭐ Set Active
+            </button>
+          )}
+          <button
+            onClick={() => {
+              const name = prompt('Rename loadout:', currentLoadout.name)
+              if (name) startTransition(() => renameLoadout(currentLoadout.id, name))
+            }}
+            className="px-2 py-1 border border-surface-border text-foreground-secondary rounded hover:text-foreground transition-colors"
+          >
+            ✏️ Rename
+          </button>
+          {loadouts.length > 1 && !currentLoadout.isActive && (
+            <button
+              onClick={() => { if (confirm('Delete this loadout?')) startTransition(() => removeLoadout(currentLoadout.id)) }}
+              className="px-2 py-1 border border-surface-border text-foreground-secondary rounded hover:text-primary hover:border-primary transition-colors"
+            >
+              🗑 Delete
+            </button>
+          )}
         </div>
       )}
-    </div>
-  )
-}
 
-function LoadoutSection({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div className="bg-background/50 rounded-lg p-3">
-      <h4 className="text-sm font-medium text-accent mb-1">{title}</h4>
-      {items.length === 0 ? (
-        <p className="text-xs text-foreground-secondary">None</p>
-      ) : (
-        <ul className="text-xs text-foreground-secondary space-y-0.5">
-          {items.map((item, i) => <li key={i}>{item}</li>)}
-        </ul>
+      {/* Loadout Content */}
+      {currentLoadout && (
+        <div className="space-y-4">
+          <WeaponPositionsPanel
+            ship={ship}
+            loadout={currentLoadout}
+            weaponCatalog={weaponCatalog}
+            startTransition={startTransition}
+          />
+          <CrewPanel
+            ship={ship}
+            loadout={currentLoadout}
+            crewCatalog={crewCatalog}
+            startTransition={startTransition}
+          />
+          <UpgradesPanel
+            loadout={currentLoadout}
+            upgradeCatalog={upgradeCatalog}
+            startTransition={startTransition}
+          />
+          <AmmoPanel
+            loadout={currentLoadout}
+            ammoCatalog={ammoCatalog}
+            startTransition={startTransition}
+          />
+        </div>
       )}
+
+      {/* Actions */}
+      <div className="flex gap-2 pt-2">
+        <button onClick={() => startTransition(() => toggleShipVisibility(userShip.id))} className="px-3 py-1.5 text-xs border border-surface-border text-foreground-secondary rounded-lg hover:text-foreground transition-colors">
+          {userShip.isPublic ? '🔒 Make Private' : '👁 Make Public'}
+        </button>
+        <button onClick={onRemove} className="px-3 py-1.5 text-xs border border-surface-border text-foreground-secondary rounded-lg hover:border-primary hover:text-primary transition-colors">
+          🗑 Remove Ship
+        </button>
+      </div>
     </div>
   )
 }
 
-function LoadoutEditor({
-  userShipId, weapons, upgrades, ammo, crew, startTransition,
-}: {
-  userShipId: string
-  weapons: Weapon[]
-  upgrades: Upgrade[]
-  ammo: Ammo[]
-  crew: Crew[]
+function StatBadge({ label, value }: { label: string; value: number | string | null | undefined }) {
+  return (
+    <div className="bg-background/50 rounded-lg p-2 text-center">
+      <div className="text-xs text-foreground-secondary">{label}</div>
+      <div className="text-sm font-medium text-foreground">{value ?? '—'}</div>
+    </div>
+  )
+}
+
+// ============================================================
+// WEAPON POSITIONS PANEL
+// ============================================================
+
+function getCompatibleWeapons(weaponCatalog: Weapon[], ship: Ship, position: string): Weapon[] {
+  const classHierarchy: Record<string, string[]> = {
+    'Heavy': ['Light', 'Medium', 'Heavy'],
+    'Medium': ['Light', 'Medium'],
+    'Light': ['Light'],
+  }
+  const allowed = classHierarchy[ship.weaponClass || 'Light'] || ['Light']
+
+  return weaponCatalog.filter(w => {
+    if (position === 'mortar') {
+      if (w.type !== 'Mortar') return false
+      if (ship.mortarMaxCaliber && w.caliber && w.caliber > ship.mortarMaxCaliber) return false
+      return true
+    }
+    if (position === 'special') {
+      return w.type === 'Special'
+    }
+    // Regular positions: stern, port, bow
+    if (w.type === 'Mortar' || w.type === 'Special') return false
+    if (!allowed.includes(w.weightClass)) return false
+    if (w.placementRestriction === 'Only for the bow or stern') {
+      return position === 'stern' || position === 'bow'
+    }
+    if (w.placementRestriction === 'For special ships') return false
+    return true
+  })
+}
+
+function WeaponPositionsPanel({ ship, loadout, weaponCatalog, startTransition }: {
+  ship: Ship; loadout: Loadout; weaponCatalog: Weapon[]
   startTransition: (fn: () => void) => void
 }) {
-  const [tab, setTab] = useState<'weapons' | 'upgrades' | 'ammo' | 'crew' | 'special'>('weapons')
-  const [selectedId, setSelectedId] = useState('')
+  const positions: { key: string; label: string; slots: number; note?: string }[] = [
+    { key: 'stern', label: 'Stern', slots: ship.sternSlots },
+    { key: 'port', label: 'Port (mirrors → Starboard)', slots: ship.broadsideSlots },
+    { key: 'bow', label: 'Bow', slots: ship.bowSlots },
+  ]
+  if (ship.mortarSlots > 0) positions.push({ key: 'mortar', label: 'Mortar', slots: ship.mortarSlots, note: `max ${ship.mortarMaxCaliber}"` })
+  if (ship.specialWeaponSlots > 0) positions.push({ key: 'special', label: 'Special', slots: ship.specialWeaponSlots })
+
+  // Starboard display (read-only mirror of port)
+  const starboardWeapons = loadout.weapons.filter(w => w.position === 'starboard')
+
+  return (
+    <div className="bg-background/50 rounded-lg p-4">
+      <h4 className="text-sm font-medium text-accent mb-3">⚔️ Weapon Positions</h4>
+      <div className="space-y-3">
+        {positions.map(pos => {
+          const posWeapons = loadout.weapons.filter(w => w.position === pos.key)
+          const totalEquipped = posWeapons.reduce((sum, w) => sum + w.quantity, 0)
+          const compatible = getCompatibleWeapons(weaponCatalog, ship, pos.key)
+
+          return (
+            <WeaponPositionRow
+              key={pos.key}
+              position={pos.key}
+              label={pos.label}
+              slots={pos.slots}
+              note={pos.note}
+              equipped={posWeapons}
+              totalEquipped={totalEquipped}
+              compatible={compatible}
+              loadoutId={loadout.id}
+              startTransition={startTransition}
+            />
+          )
+        })}
+
+        {/* Starboard (read-only) */}
+        {ship.broadsideSlots > 0 && (
+          <div className="pl-4 border-l-2 border-surface-border">
+            <div className="flex items-center gap-2 text-xs text-foreground-secondary mb-1">
+              <span className="font-medium">Starboard</span>
+              <span className="text-foreground-secondary/60">(mirrors Port)</span>
+              <span>{starboardWeapons.reduce((s, w) => s + w.quantity, 0)} / {ship.broadsideSlots}</span>
+            </div>
+            {starboardWeapons.length === 0 ? (
+              <p className="text-xs text-foreground-secondary/50">—</p>
+            ) : (
+              <div className="flex flex-wrap gap-1">
+                {starboardWeapons.map(w => (
+                  <span key={w.id} className="text-xs bg-surface rounded px-2 py-0.5 text-foreground-secondary">
+                    {w.weapon.name} x{w.quantity}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Swivel guns (fixed) */}
+        {ship.swivelGuns > 0 && (
+          <div className="text-xs text-foreground-secondary">
+            <span className="font-medium">Swivel Guns:</span> {ship.swivelGuns} (fixed, not changeable)
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function WeaponPositionRow({ position, label, slots, note, equipped, totalEquipped, compatible, loadoutId, startTransition }: {
+  position: string; label: string; slots: number; note?: string
+  equipped: LoadoutWeapon[]; totalEquipped: number
+  compatible: Weapon[]; loadoutId: string
+  startTransition: (fn: () => void) => void
+}) {
+  const [selectedWeaponId, setSelectedWeaponId] = useState('')
   const [qty, setQty] = useState(1)
+  const remaining = slots - totalEquipped
 
-  const tabs = ['weapons', 'upgrades', 'ammo', 'crew', 'special'] as const
-  const tabLabels: Record<string, string> = { weapons: 'Weapons', upgrades: 'Upgrades', ammo: 'Ammo', crew: 'Crew', special: 'Special Crew' }
-
-  const basicCrew = crew.filter(c => BASIC_CREW.includes(c.name))
-  const specialCrew = crew.filter(c => !BASIC_CREW.includes(c.name))
-
-  function handleAddItem() {
-    if (!selectedId) return
+  function handleAdd() {
+    if (!selectedWeaponId || remaining <= 0) return
+    const addQty = Math.min(qty, remaining)
     startTransition(async () => {
-      if (tab === 'weapons') await addWeaponToShip(userShipId, selectedId, qty)
-      else if (tab === 'upgrades') await addUpgradeToShip(userShipId, selectedId)
-      else if (tab === 'ammo') await addAmmoToShip(userShipId, selectedId, qty)
-      else await addCrewToShip(userShipId, selectedId, qty)
-      setSelectedId('')
+      await addWeaponToLoadout(loadoutId, selectedWeaponId, position, addQty)
+      setSelectedWeaponId('')
       setQty(1)
     })
   }
 
-  const catalog = tab === 'weapons' ? weapons : tab === 'upgrades' ? upgrades : tab === 'ammo' ? ammo : tab === 'crew' ? basicCrew : specialCrew
-  const showQty = tab !== 'upgrades'
+  if (slots === 0) return null
 
   return (
-    <div className="border border-surface-border rounded-lg p-4 mt-2">
-      <div className="flex gap-2 mb-4">
-        {tabs.map((t) => (
-          <button
-            key={t}
-            onClick={() => { setTab(t); setSelectedId('') }}
-            className={`px-3 py-1 text-sm rounded-lg ${tab === t ? 'bg-primary text-primary-foreground' : 'border border-surface-border text-foreground-secondary hover:text-foreground'}`}
-          >
-            {tabLabels[t]}
-          </button>
-        ))}
+    <div className="space-y-1">
+      <div className="flex items-center gap-2 text-xs">
+        <span className="font-medium text-foreground">{label}</span>
+        {note && <span className="text-foreground-secondary/60">({note})</span>}
+        <span className={`${remaining === 0 ? 'text-primary' : 'text-foreground-secondary'}`}>{totalEquipped} / {slots}</span>
       </div>
-      <div className="flex flex-wrap gap-2 items-end">
-        <div className="flex-1 min-w-[250px]">
-          <select
-            value={selectedId}
-            onChange={(e) => setSelectedId(e.target.value)}
-            className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground text-sm focus:border-accent focus:outline-none"
-          >
-            <option value="">Select {tabLabels[tab].toLowerCase()}…</option>
-            {catalog.map((item) => (
-              <option key={item.id} value={item.id}>{item.name}</option>
+
+      {/* Equipped weapons */}
+      {equipped.length > 0 && (
+        <div className="flex flex-wrap gap-1">
+          {equipped.map(w => (
+            <span key={w.id} className="inline-flex items-center gap-1 text-xs bg-surface rounded px-2 py-0.5 text-foreground">
+              {w.weapon.name} x{w.quantity}
+              {w.weapon.isPremium && <span className="text-accent">★</span>}
+              <button
+                onClick={() => startTransition(() => removeWeaponFromLoadout(w.id))}
+                className="text-foreground-secondary hover:text-primary ml-1"
+              >×</button>
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Add weapon */}
+      {remaining > 0 && (
+        <div className="flex gap-1 items-center">
+          <select value={selectedWeaponId} onChange={e => setSelectedWeaponId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none min-w-0">
+            <option value="">Add weapon…</option>
+            {compatible.map(w => (
+              <option key={w.id} value={w.id}>
+                {w.name} ({w.type}{w.penetration ? `, pen ${w.penetration}${w.penetrationMulti || ''}` : ''}{w.range ? `, ${w.range}m` : ''}{w.loading ? `, ${w.loading}s` : ''})
+              </option>
             ))}
           </select>
+          <input type="number" min={1} max={remaining} value={qty} onChange={e => setQty(Math.max(1, Math.min(remaining, parseInt(e.target.value) || 1)))} className="w-14 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none" />
+          <button onClick={handleAdd} disabled={!selectedWeaponId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
         </div>
-        {showQty && (
-          <input
-            type="number"
-            min={1}
-            value={qty}
-            onChange={(e) => setQty(Math.max(1, parseInt(e.target.value) || 1))}
-            className="w-20 bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground text-sm focus:border-accent focus:outline-none"
-          />
+      )}
+    </div>
+  )
+}
+
+// ============================================================
+// CREW PANEL
+// ============================================================
+
+const PIRATE_CREW = ['Pirate Captain', 'Pirate Navigator', 'Pirate Gunner', 'Pirate Quartermaster', 'Pirate Bosun']
+const MILITARY_CREW = ['Military Captain', 'Military Navigator', 'Military Gunner', 'Military Quartermaster', 'Military Bosun']
+
+function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
+  ship: Ship; loadout: Loadout; crewCatalog: Crew[]
+  startTransition: (fn: () => void) => void
+}) {
+  const [selectedCrewId, setSelectedCrewId] = useState('')
+  const basicCrewTypes = crewCatalog.filter(c => BASIC_CREW.includes(c.name))
+  const specialCrewTypes = crewCatalog.filter(c => !BASIC_CREW.includes(c.name))
+
+  const crewCapacity = ship.crewCapacity || 0
+  const minSailors = Math.ceil(crewCapacity / 2)
+
+  const basicCrew = loadout.crew.filter(c => BASIC_CREW.includes(c.crewType.name))
+  const specialCrew = loadout.crew.filter(c => !BASIC_CREW.includes(c.crewType.name))
+  const totalBasic = basicCrew.reduce((sum, c) => sum + c.quantity, 0)
+
+  // Faction conflict detection
+  const hasPirate = specialCrew.some(c => PIRATE_CREW.includes(c.crewType.name))
+  const hasMilitary = specialCrew.some(c => MILITARY_CREW.includes(c.crewType.name))
+  const factionConflict = hasPirate && hasMilitary
+
+  // Available special crew (no duplicates, max 3)
+  const equippedSpecialIds = new Set(specialCrew.map(c => c.crewType.id))
+  const availableSpecial = specialCrewTypes.filter(c => !equippedSpecialIds.has(c.id))
+
+  function handleAddBasicCrew(crewTypeId: string, qty: number) {
+    if (totalBasic + qty > crewCapacity) return
+    startTransition(() => addCrewToLoadout(loadout.id, crewTypeId, qty))
+  }
+
+  function handleAddSpecialCrew() {
+    if (!selectedCrewId || specialCrew.length >= 3) return
+    startTransition(async () => {
+      await addCrewToLoadout(loadout.id, selectedCrewId, 1)
+      setSelectedCrewId('')
+    })
+  }
+
+  return (
+    <div className="bg-background/50 rounded-lg p-4">
+      <h4 className="text-sm font-medium text-accent mb-3">👥 Crew</h4>
+
+      {/* Basic Crew */}
+      <div className="space-y-2 mb-4">
+        <div className="flex items-center justify-between text-xs">
+          <span className="text-foreground-secondary">Basic Crew</span>
+          <span className={totalBasic > crewCapacity ? 'text-primary font-medium' : 'text-foreground-secondary'}>{totalBasic} / {crewCapacity}</span>
+        </div>
+
+        {basicCrewTypes.map(ct => {
+          const existing = basicCrew.find(c => c.crewType.id === ct.id)
+          const isSailor = ct.name === 'Sailor'
+
+          return (
+            <div key={ct.id} className="flex items-center gap-2 text-xs">
+              <span className="w-24 text-foreground">{ct.name}</span>
+              {isSailor && <span className="text-foreground-secondary/60">MIN: {minSailors}</span>}
+              {existing ? (
+                <div className="flex items-center gap-1">
+                  <input
+                    type="number"
+                    min={isSailor ? minSailors : 0}
+                    max={crewCapacity - totalBasic + existing.quantity}
+                    value={existing.quantity}
+                    onChange={e => {
+                      const val = Math.max(isSailor ? minSailors : 0, parseInt(e.target.value) || 0)
+                      startTransition(() => updateCrewQuantity(existing.id, val))
+                    }}
+                    className="w-16 bg-surface border border-surface-border rounded px-2 py-1 text-foreground focus:border-accent focus:outline-none"
+                  />
+                  <button onClick={() => startTransition(() => removeCrewFromLoadout(existing.id))} className="text-foreground-secondary hover:text-primary">×</button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => handleAddBasicCrew(ct.id, isSailor ? minSailors : 1)}
+                  disabled={totalBasic >= crewCapacity}
+                  className="px-2 py-0.5 border border-dashed border-surface-border text-foreground-secondary rounded hover:text-foreground disabled:opacity-30"
+                >
+                  + Add
+                </button>
+              )}
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Special Crew */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between text-xs">
+          <span className="text-foreground-secondary">Special Crew</span>
+          <span className="text-foreground-secondary">{specialCrew.length} / 3</span>
+        </div>
+
+        {factionConflict && (
+          <div className="text-xs text-primary bg-primary/10 rounded px-2 py-1">
+            ⚠️ Faction conflict: Pirates and Military crew don&apos;t mix well!
+          </div>
         )}
-        <button onClick={handleAddItem} disabled={!selectedId} className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors disabled:opacity-50">
-          Add
-        </button>
+
+        {specialCrew.map(c => (
+          <div key={c.id} className="flex items-center justify-between text-xs">
+            <span className="text-foreground">{c.crewType.name}</span>
+            <button onClick={() => startTransition(() => removeCrewFromLoadout(c.id))} className="text-foreground-secondary hover:text-primary">×</button>
+          </div>
+        ))}
+
+        {specialCrew.length < 3 && (
+          <div className="flex gap-1 items-center">
+            <select value={selectedCrewId} onChange={e => setSelectedCrewId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
+              <option value="">Add special crew…</option>
+              {availableSpecial.map(c => (
+                <option key={c.id} value={c.id}>{c.name}</option>
+              ))}
+            </select>
+            <button onClick={handleAddSpecialCrew} disabled={!selectedCrewId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
+// UPGRADES PANEL
+// ============================================================
+
+function UpgradesPanel({ loadout, upgradeCatalog, startTransition }: {
+  loadout: Loadout; upgradeCatalog: Upgrade[]
+  startTransition: (fn: () => void) => void
+}) {
+  const [selectedId, setSelectedId] = useState('')
+
+  return (
+    <div className="bg-background/50 rounded-lg p-4">
+      <h4 className="text-sm font-medium text-accent mb-3">🛡️ Upgrades</h4>
+      {loadout.upgrades.length > 0 && (
+        <div className="flex flex-wrap gap-1 mb-2">
+          {loadout.upgrades.map(u => (
+            <span key={u.id} className="inline-flex items-center gap-1 text-xs bg-surface rounded px-2 py-0.5 text-foreground">
+              {u.upgrade.name}
+              <button onClick={() => startTransition(() => removeUpgradeFromLoadout(u.id))} className="text-foreground-secondary hover:text-primary ml-1">×</button>
+            </span>
+          ))}
+        </div>
+      )}
+      <div className="flex gap-1 items-center">
+        <select value={selectedId} onChange={e => setSelectedId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
+          <option value="">Add upgrade…</option>
+          {upgradeCatalog.map(u => (
+            <option key={u.id} value={u.id}>{u.name}{u.slot ? ` (${u.slot})` : ''}</option>
+          ))}
+        </select>
+        <button onClick={() => { if (selectedId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedId)); setSelectedId('') } }} disabled={!selectedId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
+// AMMO PANEL
+// ============================================================
+
+function AmmoPanel({ loadout, ammoCatalog, startTransition }: {
+  loadout: Loadout; ammoCatalog: Ammo[]
+  startTransition: (fn: () => void) => void
+}) {
+  const [selectedId, setSelectedId] = useState('')
+  const [qty, setQty] = useState(1)
+
+  return (
+    <div className="bg-background/50 rounded-lg p-4">
+      <h4 className="text-sm font-medium text-accent mb-3">💣 Ammo</h4>
+      {loadout.ammo.length > 0 && (
+        <div className="flex flex-wrap gap-1 mb-2">
+          {loadout.ammo.map(a => (
+            <span key={a.id} className="inline-flex items-center gap-1 text-xs bg-surface rounded px-2 py-0.5 text-foreground">
+              {a.ammoType.name} x{a.quantity}
+              <button onClick={() => startTransition(() => removeAmmoFromLoadout(a.id))} className="text-foreground-secondary hover:text-primary ml-1">×</button>
+            </span>
+          ))}
+        </div>
+      )}
+      <div className="flex gap-1 items-center">
+        <select value={selectedId} onChange={e => setSelectedId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
+          <option value="">Add ammo…</option>
+          {ammoCatalog.map(a => (
+            <option key={a.id} value={a.id}>{a.name}</option>
+          ))}
+        </select>
+        <input type="number" min={1} value={qty} onChange={e => setQty(Math.max(1, parseInt(e.target.value) || 1))} className="w-14 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none" />
+        <button onClick={() => { if (selectedId) { startTransition(() => addAmmoToLoadout(loadout.id, selectedId, qty)); setSelectedId(''); setQty(1) } }} disabled={!selectedId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
       </div>
     </div>
   )

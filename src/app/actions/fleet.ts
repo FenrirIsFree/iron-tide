@@ -13,16 +13,23 @@ async function getCurrentUser() {
   return dbUser
 }
 
+const loadoutInclude = {
+  weapons: { include: { weapon: true } },
+  upgrades: { include: { upgrade: true } },
+  ammo: { include: { ammoType: true } },
+  crew: { include: { crewType: true } },
+}
+
 export async function getUserFleet() {
   const user = await getCurrentUser()
   return prisma.userShip.findMany({
     where: { userId: user.id },
     include: {
       ship: true,
-      weapons: { include: { weapon: true } },
-      upgrades: { include: { upgrade: true } },
-      ammo: { include: { ammoType: true } },
-      crew: { include: { crewType: true } },
+      loadouts: {
+        include: loadoutInclude,
+        orderBy: { createdAt: 'asc' },
+      },
     },
     orderBy: { createdAt: 'desc' },
   })
@@ -48,10 +55,21 @@ export async function getCrewCatalog() {
   return prisma.crewType.findMany({ orderBy: { name: 'asc' } })
 }
 
+// ============================================================
+// SHIP MANAGEMENT
+// ============================================================
+
 export async function addShip(shipId: string, nickname?: string) {
   const user = await getCurrentUser()
   await prisma.userShip.create({
-    data: { userId: user.id, shipId, nickname: nickname || null },
+    data: {
+      userId: user.id,
+      shipId,
+      nickname: nickname || null,
+      loadouts: {
+        create: { name: 'Loadout 1', isActive: true },
+      },
+    },
   })
   revalidatePath('/fleet')
 }
@@ -82,66 +100,165 @@ export async function toggleShipVisibility(userShipId: string) {
   revalidatePath('/fleet')
 }
 
-export async function addWeaponToShip(userShipId: string, weaponId: string, quantity: number) {
+// ============================================================
+// LOADOUT MANAGEMENT
+// ============================================================
+
+export async function addLoadout(userShipId: string, name?: string) {
   const user = await getCurrentUser()
-  const ship = await prisma.userShip.findFirst({ where: { id: userShipId, userId: user.id } })
+  const ship = await prisma.userShip.findFirst({
+    where: { id: userShipId, userId: user.id },
+    include: { loadouts: true },
+  })
   if (!ship) throw new Error('Ship not found')
-  await prisma.userShipWeapon.create({
-    data: { userShipId, weaponId, quantity },
+  if (ship.loadouts.length >= 3) throw new Error('Maximum 3 loadouts per ship')
+  await prisma.loadout.create({
+    data: { userShipId, name: name || `Loadout ${ship.loadouts.length + 1}` },
   })
   revalidatePath('/fleet')
 }
 
-export async function removeWeaponFromShip(userShipWeaponId: string) {
-  await getCurrentUser()
-  await prisma.userShipWeapon.delete({ where: { id: userShipWeaponId } })
-  revalidatePath('/fleet')
-}
-
-export async function addUpgradeToShip(userShipId: string, upgradeId: string) {
+export async function removeLoadout(loadoutId: string) {
   const user = await getCurrentUser()
-  const ship = await prisma.userShip.findFirst({ where: { id: userShipId, userId: user.id } })
-  if (!ship) throw new Error('Ship not found')
-  await prisma.userShipUpgrade.create({
-    data: { userShipId, upgradeId },
+  const loadout = await prisma.loadout.findUnique({
+    where: { id: loadoutId },
+    include: { userShip: { include: { loadouts: true } } },
   })
+  if (!loadout) throw new Error('Loadout not found')
+  if (loadout.userShip.loadouts.length <= 1) throw new Error('Cannot remove last loadout')
+  if (loadout.isActive) throw new Error('Cannot remove active loadout')
+  // Verify ownership
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  await prisma.loadout.delete({ where: { id: loadoutId } })
   revalidatePath('/fleet')
 }
 
-export async function removeUpgradeFromShip(userShipUpgradeId: string) {
-  await getCurrentUser()
-  await prisma.userShipUpgrade.delete({ where: { id: userShipUpgradeId } })
-  revalidatePath('/fleet')
-}
-
-export async function addAmmoToShip(userShipId: string, ammoTypeId: string, quantity: number) {
+export async function setActiveLoadout(loadoutId: string) {
   const user = await getCurrentUser()
-  const ship = await prisma.userShip.findFirst({ where: { id: userShipId, userId: user.id } })
-  if (!ship) throw new Error('Ship not found')
-  await prisma.userShipAmmo.create({
-    data: { userShipId, ammoTypeId, quantity },
-  })
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  // Deactivate all, activate this one
+  await prisma.loadout.updateMany({ where: { userShipId: loadout.userShipId }, data: { isActive: false } })
+  await prisma.loadout.update({ where: { id: loadoutId }, data: { isActive: true } })
   revalidatePath('/fleet')
 }
 
-export async function removeAmmoFromShip(userShipAmmoId: string) {
-  await getCurrentUser()
-  await prisma.userShipAmmo.delete({ where: { id: userShipAmmoId } })
-  revalidatePath('/fleet')
-}
-
-export async function addCrewToShip(userShipId: string, crewTypeId: string, quantity: number) {
+export async function renameLoadout(loadoutId: string, name: string) {
   const user = await getCurrentUser()
-  const ship = await prisma.userShip.findFirst({ where: { id: userShipId, userId: user.id } })
-  if (!ship) throw new Error('Ship not found')
-  await prisma.userShipCrew.create({
-    data: { userShipId, crewTypeId, quantity },
-  })
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  await prisma.loadout.update({ where: { id: loadoutId }, data: { name } })
   revalidatePath('/fleet')
 }
 
-export async function removeCrewFromShip(userShipCrewId: string) {
+// ============================================================
+// LOADOUT WEAPONS
+// ============================================================
+
+export async function addWeaponToLoadout(loadoutId: string, weaponId: string, position: string, quantity: number = 1) {
+  const user = await getCurrentUser()
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+
+  // If adding to port, also mirror to starboard
+  if (position === 'port') {
+    await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position: 'port', quantity } })
+    await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position: 'starboard', quantity } })
+  } else if (position === 'starboard') {
+    // Don't allow direct starboard edits — always mirror from port
+    throw new Error('Edit port side to mirror to starboard')
+  } else {
+    await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position, quantity } })
+  }
+  revalidatePath('/fleet')
+}
+
+export async function removeWeaponFromLoadout(loadoutWeaponId: string) {
   await getCurrentUser()
-  await prisma.userShipCrew.delete({ where: { id: userShipCrewId } })
+  const weapon = await prisma.loadoutWeapon.findUnique({ where: { id: loadoutWeaponId } })
+  if (!weapon) throw new Error('Weapon not found')
+
+  // If removing from port, also remove matching starboard entry
+  if (weapon.position === 'port') {
+    // Find matching starboard weapon
+    const starboard = await prisma.loadoutWeapon.findFirst({
+      where: { loadoutId: weapon.loadoutId, weaponId: weapon.weaponId, position: 'starboard', quantity: weapon.quantity },
+    })
+    if (starboard) await prisma.loadoutWeapon.delete({ where: { id: starboard.id } })
+  }
+  await prisma.loadoutWeapon.delete({ where: { id: loadoutWeaponId } })
+  revalidatePath('/fleet')
+}
+
+// ============================================================
+// LOADOUT UPGRADES
+// ============================================================
+
+export async function addUpgradeToLoadout(loadoutId: string, upgradeId: string) {
+  const user = await getCurrentUser()
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  await prisma.loadoutUpgrade.create({ data: { loadoutId, upgradeId } })
+  revalidatePath('/fleet')
+}
+
+export async function removeUpgradeFromLoadout(loadoutUpgradeId: string) {
+  await getCurrentUser()
+  await prisma.loadoutUpgrade.delete({ where: { id: loadoutUpgradeId } })
+  revalidatePath('/fleet')
+}
+
+// ============================================================
+// LOADOUT AMMO
+// ============================================================
+
+export async function addAmmoToLoadout(loadoutId: string, ammoTypeId: string, quantity: number) {
+  const user = await getCurrentUser()
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  await prisma.loadoutAmmo.create({ data: { loadoutId, ammoTypeId, quantity } })
+  revalidatePath('/fleet')
+}
+
+export async function removeAmmoFromLoadout(loadoutAmmoId: string) {
+  await getCurrentUser()
+  await prisma.loadoutAmmo.delete({ where: { id: loadoutAmmoId } })
+  revalidatePath('/fleet')
+}
+
+// ============================================================
+// LOADOUT CREW
+// ============================================================
+
+export async function addCrewToLoadout(loadoutId: string, crewTypeId: string, quantity: number) {
+  const user = await getCurrentUser()
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  await prisma.loadoutCrew.create({ data: { loadoutId, crewTypeId, quantity } })
+  revalidatePath('/fleet')
+}
+
+export async function removeCrewFromLoadout(loadoutCrewId: string) {
+  await getCurrentUser()
+  await prisma.loadoutCrew.delete({ where: { id: loadoutCrewId } })
+  revalidatePath('/fleet')
+}
+
+export async function updateCrewQuantity(loadoutCrewId: string, quantity: number) {
+  await getCurrentUser()
+  await prisma.loadoutCrew.update({ where: { id: loadoutCrewId }, data: { quantity } })
   revalidatePath('/fleet')
 }

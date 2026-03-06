@@ -22,7 +22,7 @@ export default async function FleetPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
-      <main className="flex-1 pt-24 pb-12 px-4 max-w-6xl mx-auto w-full">
+      <main className="flex-1 pt-24 pb-12 px-4 max-w-7xl mx-auto w-full">
         <FleetClient
           initialFleet={JSON.parse(JSON.stringify(fleet))}
           shipCatalog={JSON.parse(JSON.stringify(ships))}

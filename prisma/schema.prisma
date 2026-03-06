@@ -17,14 +17,13 @@ model User {
   username      String   @unique
   inGameName    String?
   rank          GuildRank @default(CABIN_BOY)
-  isPublic      Boolean  @default(true)  // opt-in roster visibility
+  isPublic      Boolean  @default(true)
   joinedAt      DateTime @default(now())
   updatedAt     DateTime @updatedAt
-  supabaseId    String   @unique         // links to Supabase Auth user
+  supabaseId    String   @unique
 
-  // Relations
-  userShips     UserShip[]
-  userResources UserResource[]
+  userShips       UserShip[]
+  userResources   UserResource[]
   userConsumables UserConsumable[]
   userCurrencies  UserCurrency[]
 
@@ -47,20 +46,33 @@ enum GuildRank {
 // ============================================================
 
 model Ship {
-  id          String    @id @default(uuid())
-  name        String    @unique
-  rate        Int       // 1-7
-  shipClass   String    // Fast, Combat, Transport, Heavy, Siege, Imperial
-  faction     String?
-  hp          Int?
-  speed       Float?
-  cargoHold   Int?
-  cannonSlots Int?
-  crewCapacity Int?
-  description String?
+  id               String   @id @default(uuid())
+  name             String   @unique
+  rate             Int      // 1-7
+  shipClass        String   // e.g. "Ship of the Line", "Frigate", "Cutter"
+  role             String?  // Battle, Transport, Fast-moving, Siege
+  faction          String?
+  hp               Int?
+  speed            Float?
+  maneuverability  Int?
+  broadsideArmor   Float?
+  cargoHold        Int?
+  crewCapacity     Int?
+  displacement     String?
+  integrity        Int?
+  description      String?
 
-  // Relations
-  userShips   UserShip[]
+  // Weapon system
+  weaponClass        String?  // "Light", "Medium", "Heavy"
+  sternSlots         Int      @default(0)
+  broadsideSlots     Int      @default(0)  // per side (port = starboard = this number)
+  bowSlots           Int      @default(0)
+  swivelGuns         Int      @default(0)
+  mortarSlots        Int      @default(0)
+  mortarMaxCaliber   Int?
+  specialWeaponSlots Int      @default(0)
+
+  userShips UserShip[]
 
   @@map("ships")
 }
@@ -70,17 +82,29 @@ model Ship {
 // ============================================================
 
 model Weapon {
-  id          String   @id @default(uuid())
-  name        String   @unique
-  type        String   // Cannon, Long Cannon, Carronade, Mortar, Special
-  tier        String?  // Basic, Advanced, Pirate
-  damage      Int?
-  range       Float?
-  reloadTime  Float?
-  description String?
+  id                   String   @id @default(uuid())
+  name                 String   @unique
+  weightClass          String   // "Light", "Medium", "Heavy", "Mortar", "Special"
+  type                 String   // "Cannon", "Long Cannon", "Carronade", "Bombard", "Mortar", "Special"
+  penetration          Float?
+  penetrationMulti     String?  // e.g. "x2", "x3", "x8" for multi-shot weapons
+  loading              Float?   // seconds
+  range                Int?
+  rangeMin             Int?     // mortars have min range
+  maxAngle             Int?
+  accuracySpread       Float?
+  damage               Int?     // mortars use this instead of penetration
+  splashRadius         Int?     // mortars only
+  reduction            Float?   // mortars only
+  preparation          Float?   // some mortars only
+  firingTime           Int?     // special weapons (Alchemical Fire)
+  damageUnit           String?  // "per sec" for Alchemical Fire
+  caliber              Int?     // mortar caliber in inches
+  placementRestriction String?  // "Only for the bow or stern", "For special ships"
+  isPremium            Boolean  @default(false)
+  description          String?
 
-  // Relations
-  userShipWeapons UserShipWeapon[]
+  loadoutWeapons LoadoutWeapon[]
 
   @@map("weapons")
 }
@@ -92,12 +116,11 @@ model Weapon {
 model Upgrade {
   id          String   @id @default(uuid())
   name        String   @unique
-  slot        String?  // e.g., Sails, Hull, Deck, etc.
+  slot        String?
   description String?
   effect      String?
 
-  // Relations
-  userShipUpgrades UserShipUpgrade[]
+  loadoutUpgrades LoadoutUpgrade[]
 
   @@map("upgrades")
 }
@@ -112,8 +135,7 @@ model AmmoType {
   description String?
   effect      String?
 
-  // Relations
-  userShipAmmo UserShipAmmo[]
+  loadoutAmmo LoadoutAmmo[]
 
   @@map("ammo_types")
 }
@@ -125,11 +147,10 @@ model AmmoType {
 model Consumable {
   id          String   @id @default(uuid())
   name        String   @unique
-  category    String?  // Repair, Buff, Tactical
+  category    String?
   description String?
   effect      String?
 
-  // Relations
   userConsumables UserConsumable[]
 
   @@map("consumables")
@@ -142,10 +163,9 @@ model Consumable {
 model Resource {
   id          String   @id @default(uuid())
   name        String   @unique
-  type        String   // Raw, Processed
+  type        String
   description String?
 
-  // Relations
   userResources UserResource[]
 
   @@map("resources")
@@ -160,7 +180,6 @@ model Currency {
   name        String   @unique
   description String?
 
-  // Relations
   userCurrencies UserCurrency[]
 
   @@map("currencies")
@@ -175,86 +194,94 @@ model CrewType {
   name        String   @unique
   description String?
 
-  // Relations
-  userShipCrew UserShipCrew[]
+  loadoutCrew LoadoutCrew[]
 
   @@map("crew_types")
 }
 
 // ============================================================
-// USER INVENTORY: SHIPS (a user's owned ships)
+// USER INVENTORY: SHIPS + LOADOUTS
 // ============================================================
 
 model UserShip {
-  id          String   @id @default(uuid())
-  userId      String
-  shipId      String
-  nickname    String?  // player's custom name for their ship
-  isPublic    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(uuid())
+  userId    String
+  shipId    String
+  nickname  String?
+  isPublic  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  ship        Ship     @relation(fields: [shipId], references: [id])
-
-  // Ship loadout
-  weapons     UserShipWeapon[]
-  upgrades    UserShipUpgrade[]
-  ammo        UserShipAmmo[]
-  crew        UserShipCrew[]
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ship     Ship      @relation(fields: [shipId], references: [id])
+  loadouts Loadout[]
 
   @@map("user_ships")
 }
 
-// Weapons equipped on a user's ship
-model UserShipWeapon {
-  id          String   @id @default(uuid())
-  userShipId  String
-  weaponId    String
-  quantity    Int      @default(1)
+model Loadout {
+  id         String   @id @default(uuid())
+  userShipId String
+  name       String   @default("Loadout 1")
+  isActive   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
-  userShip    UserShip @relation(fields: [userShipId], references: [id], onDelete: Cascade)
-  weapon      Weapon   @relation(fields: [weaponId], references: [id])
+  userShip UserShip        @relation(fields: [userShipId], references: [id], onDelete: Cascade)
+  weapons  LoadoutWeapon[]
+  upgrades LoadoutUpgrade[]
+  ammo     LoadoutAmmo[]
+  crew     LoadoutCrew[]
 
-  @@map("user_ship_weapons")
+  @@map("loadouts")
 }
 
-// Upgrades installed on a user's ship
-model UserShipUpgrade {
-  id          String   @id @default(uuid())
-  userShipId  String
-  upgradeId   String
+model LoadoutWeapon {
+  id        String @id @default(uuid())
+  loadoutId String
+  weaponId  String
+  position  String // "stern", "port", "starboard", "bow", "mortar", "special"
+  quantity  Int    @default(1)
 
-  userShip    UserShip @relation(fields: [userShipId], references: [id], onDelete: Cascade)
-  upgrade     Upgrade  @relation(fields: [upgradeId], references: [id])
+  loadout Loadout @relation(fields: [loadoutId], references: [id], onDelete: Cascade)
+  weapon  Weapon  @relation(fields: [weaponId], references: [id])
 
-  @@map("user_ship_upgrades")
+  @@map("loadout_weapons")
 }
 
-// Ammo loaded on a user's ship
-model UserShipAmmo {
-  id          String   @id @default(uuid())
-  userShipId  String
-  ammoTypeId  String
-  quantity    Int      @default(0)
+model LoadoutUpgrade {
+  id        String @id @default(uuid())
+  loadoutId String
+  upgradeId String
 
-  userShip    UserShip @relation(fields: [userShipId], references: [id], onDelete: Cascade)
-  ammoType    AmmoType @relation(fields: [ammoTypeId], references: [id])
+  loadout Loadout @relation(fields: [loadoutId], references: [id], onDelete: Cascade)
+  upgrade Upgrade @relation(fields: [upgradeId], references: [id])
 
-  @@map("user_ship_ammo")
+  @@map("loadout_upgrades")
 }
 
-// Crew assigned to a user's ship
-model UserShipCrew {
-  id          String   @id @default(uuid())
-  userShipId  String
-  crewTypeId  String
-  quantity    Int      @default(0)
+model LoadoutAmmo {
+  id         String @id @default(uuid())
+  loadoutId  String
+  ammoTypeId String
+  quantity   Int    @default(0)
 
-  userShip    UserShip @relation(fields: [userShipId], references: [id], onDelete: Cascade)
-  crewType    CrewType @relation(fields: [crewTypeId], references: [id])
+  loadout  Loadout  @relation(fields: [loadoutId], references: [id], onDelete: Cascade)
+  ammoType AmmoType @relation(fields: [ammoTypeId], references: [id])
 
-  @@map("user_ship_crew")
+  @@map("loadout_ammo")
+}
+
+model LoadoutCrew {
+  id         String @id @default(uuid())
+  loadoutId  String
+  crewTypeId String
+  quantity   Int    @default(0)
+
+  loadout  Loadout  @relation(fields: [loadoutId], references: [id], onDelete: Cascade)
+  crewType CrewType @relation(fields: [crewTypeId], references: [id])
+
+  @@map("loadout_crew")
 }
 
 // ============================================================
@@ -262,15 +289,15 @@ model UserShipCrew {
 // ============================================================
 
 model UserResource {
-  id          String   @id @default(uuid())
-  userId      String
-  resourceId  String
-  quantity    Int      @default(0)
-  isPublic    Boolean  @default(true)
-  updatedAt   DateTime @updatedAt
+  id         String   @id @default(uuid())
+  userId     String
+  resourceId String
+  quantity   Int      @default(0)
+  isPublic   Boolean  @default(true)
+  updatedAt  DateTime @updatedAt
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  resource    Resource @relation(fields: [resourceId], references: [id])
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  resource Resource @relation(fields: [resourceId], references: [id])
 
   @@unique([userId, resourceId])
   @@map("user_resources")
@@ -281,15 +308,15 @@ model UserResource {
 // ============================================================
 
 model UserConsumable {
-  id            String     @id @default(uuid())
-  userId        String
-  consumableId  String
-  quantity      Int        @default(0)
-  isPublic      Boolean    @default(true)
-  updatedAt     DateTime   @updatedAt
+  id           String     @id @default(uuid())
+  userId       String
+  consumableId String
+  quantity     Int        @default(0)
+  isPublic     Boolean    @default(true)
+  updatedAt    DateTime   @updatedAt
 
-  user          User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  consumable    Consumable @relation(fields: [consumableId], references: [id])
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  consumable Consumable @relation(fields: [consumableId], references: [id])
 
   @@unique([userId, consumableId])
   @@map("user_consumables")
@@ -300,15 +327,15 @@ model UserConsumable {
 // ============================================================
 
 model UserCurrency {
-  id          String   @id @default(uuid())
-  userId      String
-  currencyId  String
-  amount      Float    @default(0)
-  isPublic    Boolean  @default(true)
-  updatedAt   DateTime @updatedAt
+  id         String   @id @default(uuid())
+  userId     String
+  currencyId String
+  amount     Float    @default(0)
+  isPublic   Boolean  @default(true)
+  updatedAt  DateTime @updatedAt
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  currency    Currency @relation(fields: [currencyId], references: [id])
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  currency Currency @relation(fields: [currencyId], references: [id])
 
   @@unique([userId, currencyId])
   @@map("user_currencies")

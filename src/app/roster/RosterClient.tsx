@@ -11,13 +11,27 @@ type Member = {
   joinedAt: string
 }
 
+type LoadoutWeapon = { id: string; weapon: { name: string; type: string }; position: string; quantity: number }
+type LoadoutUpgrade = { id: string; upgrade: { name: string } }
+type LoadoutAmmo = { id: string; ammoType: { name: string }; quantity: number }
+type LoadoutCrew = { id: string; crewType: { name: string }; quantity: number }
+
+type ActiveLoadout = {
+  id: string; name: string
+  weapons: LoadoutWeapon[]
+  upgrades: LoadoutUpgrade[]
+  ammo: LoadoutAmmo[]
+  crew: LoadoutCrew[]
+}
+
 type MemberShip = {
   id: string
   nickname: string | null
-  ship: { name: string; shipClass: string; rate: number }
-  weapons: { weapon: { name: string }; quantity: number }[]
-  upgrades: { upgrade: { name: string } }[]
+  ship: { name: string; shipClass: string; rate: number; weaponClass: string | null; broadsideSlots: number; crewCapacity: number | null }
+  loadouts: ActiveLoadout[]
 }
+
+const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
 
 const rankConfig: Record<string, { label: string; emoji: string; color: string }> = {
   ADMIN: { label: 'Admin', emoji: '🛡️', color: 'text-accent border-accent' },
@@ -99,25 +113,58 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                       <p className="text-sm text-foreground-secondary">No public ships.</p>
                     ) : (
                       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                        {fleet.map((s) => (
-                          <div key={s.id} className="bg-background/50 rounded-lg p-3">
-                            <h4 className="font-medium text-foreground text-sm">
-                              {s.ship.name}
-                              {s.nickname && <span className="text-accent ml-1">&ldquo;{s.nickname}&rdquo;</span>}
-                            </h4>
-                            <p className="text-xs text-foreground-secondary">{s.ship.shipClass} · Rate {s.ship.rate}</p>
-                            {s.weapons.length > 0 && (
-                              <p className="text-xs text-foreground-secondary mt-1">
-                                ⚔️ {s.weapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}
-                              </p>
-                            )}
-                            {s.upgrades.length > 0 && (
-                              <p className="text-xs text-foreground-secondary mt-0.5">
-                                🛡️ {s.upgrades.map(u => u.upgrade.name).join(', ')}
-                              </p>
-                            )}
-                          </div>
-                        ))}
+                        {fleet.map((s) => {
+                          const loadout = s.loadouts[0]
+                          const portWeapons = loadout?.weapons.filter(w => w.position === 'port') || []
+                          const sternWeapons = loadout?.weapons.filter(w => w.position === 'stern') || []
+                          const bowWeapons = loadout?.weapons.filter(w => w.position === 'bow') || []
+                          const mortarWeapons = loadout?.weapons.filter(w => w.position === 'mortar') || []
+                          const basicCrew = loadout?.crew.filter(c => BASIC_CREW.includes(c.crewType.name)) || []
+                          const specialCrew = loadout?.crew.filter(c => !BASIC_CREW.includes(c.crewType.name)) || []
+
+                          return (
+                            <div key={s.id} className="bg-background/50 rounded-lg p-3 space-y-2">
+                              <div>
+                                <h4 className="font-medium text-foreground text-sm">
+                                  {s.ship.name}
+                                  {s.nickname && <span className="text-accent ml-1">&ldquo;{s.nickname}&rdquo;</span>}
+                                </h4>
+                                <p className="text-xs text-foreground-secondary">
+                                  {s.ship.shipClass} · Rate {s.ship.rate} · {s.ship.weaponClass || '?'}
+                                </p>
+                              </div>
+
+                              {loadout && (
+                                <div className="space-y-1 text-xs text-foreground-secondary">
+                                  {portWeapons.length > 0 && (
+                                    <p>⚔️ Broadside: {portWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
+                                  )}
+                                  {sternWeapons.length > 0 && (
+                                    <p>🔙 Stern: {sternWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
+                                  )}
+                                  {bowWeapons.length > 0 && (
+                                    <p>🔜 Bow: {bowWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
+                                  )}
+                                  {mortarWeapons.length > 0 && (
+                                    <p>💣 Mortar: {mortarWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
+                                  )}
+                                  {loadout.upgrades.length > 0 && (
+                                    <p>🛡️ {loadout.upgrades.map(u => u.upgrade.name).join(', ')}</p>
+                                  )}
+                                  {basicCrew.length > 0 && (
+                                    <p>👥 {basicCrew.map(c => `${c.crewType.name} x${c.quantity}`).join(', ')}</p>
+                                  )}
+                                  {specialCrew.length > 0 && (
+                                    <p>⭐ {specialCrew.map(c => c.crewType.name).join(', ')}</p>
+                                  )}
+                                  {!portWeapons.length && !sternWeapons.length && !bowWeapons.length && !loadout.upgrades.length && !basicCrew.length && (
+                                    <p className="text-foreground-secondary/50">No loadout configured</p>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                          )
+                        })}
                       </div>
                     )}
                   </div>

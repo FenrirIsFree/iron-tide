@@ -35,8 +35,16 @@ export async function getMemberFleet(userId: string) {
     where: { userId, isPublic: true },
     include: {
       ship: true,
-      weapons: { include: { weapon: true } },
-      upgrades: { include: { upgrade: true } },
+      loadouts: {
+        where: { isActive: true },
+        take: 1,
+        include: {
+          weapons: { include: { weapon: true } },
+          upgrades: { include: { upgrade: true } },
+          ammo: { include: { ammoType: true } },
+          crew: { include: { crewType: true } },
+        },
+      },
     },
     orderBy: { createdAt: 'desc' },
   })

@@ -13,50 +13,36 @@ function loadJson(file) {
   return JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf8'));
 }
 
-function parseRate(rate) {
-  if (typeof rate === 'number') return rate;
-  const romanMap = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7 };
-  return romanMap[String(rate).trim()] || parseInt(rate) || 0;
-}
-
-function mapShipClass(category) {
-  if (!category) return 'Combat';
-  const c = category.toLowerCase();
-  if (c.includes('fast')) return 'Fast';
-  if (c.includes('combat')) return 'Combat';
-  if (c.includes('transport')) return 'Transport';
-  if (c.includes('heavy')) return 'Heavy';
-  if (c.includes('siege')) return 'Siege';
-  if (c.includes('imperial')) return 'Imperial';
-  if (c.includes('legend')) return 'Heavy'; // Legend of the Age of Sail
-  return 'Combat';
-}
-
 async function seedShips() {
-  const data = loadJson('ship-stats.json');
+  const ships = loadJson('ship-stats-v2.json');
   let count = 0;
-  for (const s of data.ships) {
+  for (const s of ships) {
+    const data = {
+      rate: s.rate,
+      shipClass: s.class || 'Unknown',
+      role: s.role || null,
+      faction: s.faction || null,
+      hp: s.hp || null,
+      speed: s.speed || null,
+      maneuverability: s.maneuverability || null,
+      broadsideArmor: s.broadsideArmor || null,
+      cargoHold: s.hold || null,
+      crewCapacity: s.crew || null,
+      displacement: s.displacement || null,
+      integrity: s.integrity || null,
+      weaponClass: s.weaponClass || null,
+      sternSlots: s.weaponSlots?.stern || 0,
+      broadsideSlots: s.weaponSlots?.broadside || 0,
+      bowSlots: s.weaponSlots?.bow || 0,
+      swivelGuns: s.swivelGuns || 0,
+      mortarSlots: s.mortarSlots || 0,
+      mortarMaxCaliber: s.mortarMaxCaliber || null,
+      specialWeaponSlots: s.specialWeaponSlots || 0,
+    };
     await prisma.ship.upsert({
       where: { name: s.name },
-      update: {
-        rate: parseRate(s.rate),
-        shipClass: mapShipClass(s.category),
-        faction: s.nation || null,
-        hp: s.stats?.durability || null,
-        speed: s.stats?.speed || null,
-        cargoHold: s.stats?.hold || null,
-        crewCapacity: s.stats?.crew || null,
-      },
-      create: {
-        name: s.name,
-        rate: parseRate(s.rate),
-        shipClass: mapShipClass(s.category),
-        faction: s.nation || null,
-        hp: s.stats?.durability || null,
-        speed: s.stats?.speed || null,
-        cargoHold: s.stats?.hold || null,
-        crewCapacity: s.stats?.crew || null,
-      },
+      update: data,
+      create: { name: s.name, ...data },
     });
     count++;
   }
@@ -64,28 +50,47 @@ async function seedShips() {
 }
 
 async function seedWeapons() {
-  const data = loadJson('weapon-stats.json');
+  const weapons = loadJson('weapon-stats-v2.json');
   let count = 0;
-  for (const w of data.weapons) {
-    // Extract tier from category (e.g. "Light Cannon" -> "Light")
-    const tier = w.category ? w.category.split(' ')[0] : null;
+  for (const w of weapons) {
+    // Parse penetration — can be number or string like "16 x2"
+    let penetration = null;
+    let penetrationMulti = null;
+    if (w.penetration != null) {
+      if (typeof w.penetration === 'string' && w.penetration.includes('x')) {
+        const parts = w.penetration.split(/\s+/);
+        penetration = parseFloat(parts[0]);
+        penetrationMulti = parts[1] || null;
+      } else {
+        penetration = typeof w.penetration === 'number' ? w.penetration : parseFloat(w.penetration);
+      }
+    }
+
+    const data = {
+      weightClass: w.weightClass,
+      type: w.type,
+      penetration,
+      penetrationMulti,
+      loading: w.loading || null,
+      range: w.range || w.rangeMax || null,
+      rangeMin: w.rangeMin || null,
+      maxAngle: w.maxAngle || null,
+      accuracySpread: w.accuracySpread || null,
+      damage: w.damage || null,
+      splashRadius: w.splashRadius || null,
+      reduction: w.reduction || null,
+      preparation: w.preparation || null,
+      firingTime: w.firingTime || null,
+      damageUnit: w.damageUnit || null,
+      caliber: w.caliber || null,
+      placementRestriction: w.placementRestriction || null,
+      isPremium: w.isPremium || false,
+      description: w.notes || null,
+    };
     await prisma.weapon.upsert({
       where: { name: w.name },
-      update: {
-        type: w.type,
-        tier,
-        damage: null,
-        range: w.stats?.range || null,
-        reloadTime: w.stats?.loadTime || null,
-      },
-      create: {
-        name: w.name,
-        type: w.type,
-        tier,
-        damage: null,
-        range: w.stats?.range || null,
-        reloadTime: w.stats?.loadTime || null,
-      },
+      update: data,
+      create: { name: w.name, ...data },
     });
     count++;
   }
@@ -99,11 +104,10 @@ async function seedUpgrades() {
     const description = u.effects
       ? u.effects.map(e => `${e.stat}: ${e.value}`).join('; ')
       : u.description || null;
-    const effect = description;
     await prisma.upgrade.upsert({
       where: { name: u.name },
-      update: { slot: u.category || null, description, effect },
-      create: { name: u.name, slot: u.category || null, description, effect },
+      update: { slot: u.category || null, description, effect: description },
+      create: { name: u.name, slot: u.category || null, description, effect: description },
     });
     count++;
   }
@@ -136,19 +140,11 @@ async function seedResources() {
   const processed = ['Iron', 'Copper', 'Bronze', 'Canvas', 'Fabric', 'Beam', 'Bulkhead', 'Plate', 'Tackle', 'Rum', 'Provision'];
   let count = 0;
   for (const name of raw) {
-    await prisma.resource.upsert({
-      where: { name },
-      update: { type: 'Raw' },
-      create: { name, type: 'Raw' },
-    });
+    await prisma.resource.upsert({ where: { name }, update: { type: 'Raw' }, create: { name, type: 'Raw' } });
     count++;
   }
   for (const name of processed) {
-    await prisma.resource.upsert({
-      where: { name },
-      update: { type: 'Processed' },
-      create: { name, type: 'Processed' },
-    });
+    await prisma.resource.upsert({ where: { name }, update: { type: 'Processed' }, create: { name, type: 'Processed' } });
     count++;
   }
   return count;
@@ -158,11 +154,7 @@ async function seedCurrencies() {
   const names = ['Gold', 'Battle Marks', 'Voodoo Skulls', 'Escudos', 'Pirate Tokens', 'Imperial Blueprints', 'Blueprint Fragments', 'Coins', 'Chest', 'Chest Key', 'Scrolls', 'Construction License', 'Insurance'];
   let count = 0;
   for (const name of names) {
-    await prisma.currency.upsert({
-      where: { name },
-      update: {},
-      create: { name },
-    });
+    await prisma.currency.upsert({ where: { name }, update: {}, create: { name } });
     count++;
   }
   return count;
@@ -194,11 +186,7 @@ async function seedAmmoTypes() {
   const names = ['Round Shots', 'Heated Shots', 'Grapeshot', 'Bar Shots', 'Strike Rounds', 'Phosphorous Shots', 'Shrapnel Rounds', 'Burning Arrows', 'Snowballs'];
   let count = 0;
   for (const name of names) {
-    await prisma.ammoType.upsert({
-      where: { name },
-      update: {},
-      create: { name },
-    });
+    await prisma.ammoType.upsert({ where: { name }, update: {}, create: { name } });
     count++;
   }
   return count;
