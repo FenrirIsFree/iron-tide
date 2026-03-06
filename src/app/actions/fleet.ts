@@ -167,32 +167,12 @@ export async function addWeaponToLoadout(loadoutId: string, weaponId: string, po
   const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
   if (!ship) throw new Error('Not authorized')
 
-  // If adding to port, also mirror to starboard
-  if (position === 'port') {
-    await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position: 'port', quantity } })
-    await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position: 'starboard', quantity } })
-  } else if (position === 'starboard') {
-    // Don't allow direct starboard edits — always mirror from port
-    throw new Error('Edit port side to mirror to starboard')
-  } else {
-    await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position, quantity } })
-  }
+  await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position, quantity } })
   revalidatePath('/fleet')
 }
 
 export async function removeWeaponFromLoadout(loadoutWeaponId: string) {
   await getCurrentUser()
-  const weapon = await prisma.loadoutWeapon.findUnique({ where: { id: loadoutWeaponId } })
-  if (!weapon) throw new Error('Weapon not found')
-
-  // If removing from port, also remove matching starboard entry
-  if (weapon.position === 'port') {
-    // Find matching starboard weapon
-    const starboard = await prisma.loadoutWeapon.findFirst({
-      where: { loadoutId: weapon.loadoutId, weaponId: weapon.weaponId, position: 'starboard', quantity: weapon.quantity },
-    })
-    if (starboard) await prisma.loadoutWeapon.delete({ where: { id: starboard.id } })
-  }
   await prisma.loadoutWeapon.delete({ where: { id: loadoutWeaponId } })
   revalidatePath('/fleet')
 }

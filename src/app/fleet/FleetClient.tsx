@@ -189,7 +189,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
 
           {filtered.map((us) => {
             const active = us.loadouts.find(l => l.isActive) || us.loadouts[0]
-            const weaponSummary = active ? active.weapons.filter(w => w.position === 'port').map(w => `${w.weapon.name} x${w.quantity}`).join(', ') || '—' : '—'
+            const weaponSummary = active ? active.weapons.filter(w => w.position !== 'starboard').map(w => `${w.weapon.name} x${w.quantity}`).join(', ') || '—' : '—'
 
             return (
               <div key={us.id} className="bg-surface border-b border-surface-border last:border-b-0">
@@ -434,7 +434,7 @@ function getCompatibleWeapons(weaponCatalog: Weapon[], ship: Ship, position: str
     if (position === 'special') {
       return w.type === 'Special'
     }
-    // Regular positions: stern, port, bow
+    // Regular positions: stern, port, starboard, bow
     if (w.type === 'Mortar' || w.type === 'Special') return false
     if (!allowed.includes(w.weightClass)) return false
     if (w.placementRestriction === 'Only for the bow or stern') {
@@ -451,14 +451,12 @@ function WeaponPositionsPanel({ ship, loadout, weaponCatalog, startTransition }:
 }) {
   const positions: { key: string; label: string; slots: number; note?: string }[] = [
     { key: 'stern', label: 'Stern', slots: ship.sternSlots },
-    { key: 'port', label: 'Port (mirrors → Starboard)', slots: ship.broadsideSlots },
+    { key: 'port', label: 'Port', slots: ship.broadsideSlots },
+    { key: 'starboard', label: 'Starboard', slots: ship.broadsideSlots },
     { key: 'bow', label: 'Bow', slots: ship.bowSlots },
   ]
   if (ship.mortarSlots > 0) positions.push({ key: 'mortar', label: 'Mortar', slots: ship.mortarSlots, note: `max ${ship.mortarMaxCaliber}"` })
   if (ship.specialWeaponSlots > 0) positions.push({ key: 'special', label: 'Special', slots: ship.specialWeaponSlots })
-
-  // Starboard display (read-only mirror of port)
-  const starboardWeapons = loadout.weapons.filter(w => w.position === 'starboard')
 
   return (
     <div className="bg-background/50 rounded-lg p-4">
@@ -484,28 +482,6 @@ function WeaponPositionsPanel({ ship, loadout, weaponCatalog, startTransition }:
             />
           )
         })}
-
-        {/* Starboard (read-only) */}
-        {ship.broadsideSlots > 0 && (
-          <div className="pl-4 border-l-2 border-surface-border">
-            <div className="flex items-center gap-2 text-xs text-foreground-secondary mb-1">
-              <span className="font-medium">Starboard</span>
-              <span className="text-foreground-secondary/60">(mirrors Port)</span>
-              <span>{starboardWeapons.reduce((s, w) => s + w.quantity, 0)} / {ship.broadsideSlots}</span>
-            </div>
-            {starboardWeapons.length === 0 ? (
-              <p className="text-xs text-foreground-secondary/50">—</p>
-            ) : (
-              <div className="flex flex-wrap gap-1">
-                {starboardWeapons.map(w => (
-                  <span key={w.id} className="text-xs bg-surface rounded px-2 py-0.5 text-foreground-secondary">
-                    {w.weapon.name} x{w.quantity}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
 
         {/* Swivel guns (fixed) */}
         {ship.swivelGuns > 0 && (
