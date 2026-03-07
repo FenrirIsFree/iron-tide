@@ -35,7 +35,7 @@ type Weapon = {
   caliber: number | null; placementRestriction: string | null
   isPremium: boolean; description: string | null
 }
-type UpgradeEffect = { stat: string; value: string }
+type UpgradeEffect = { stat: string; value: string; gameKey?: string; rankedValues?: string[] }
 type Upgrade = { id: string; name: string; slot: string | null; effect: string | null; effects: UpgradeEffect[] | null }
 type Ammo = { id: string; name: string; effect: string | null }
 type Crew = { id: string; name: string; description: string | null; faction: string | null }
@@ -83,9 +83,22 @@ function displayClass(role: string | null): string {
   return CLASS_DISPLAY[role] || role
 }
 
-function formatEffects(u: Upgrade): string {
+function formatEffects(u: Upgrade, shipRate?: number): string {
   if (!u.effects || u.effects.length === 0) return u.effect || ''
-  return u.effects.map(e => `${e.stat} ${e.value}`).join(', ')
+  return u.effects.map(e => {
+    if (e.rankedValues && shipRate != null) {
+      const val = getRankedValue(e, shipRate)
+      return `${e.stat} ${val}`
+    }
+    return `${e.stat} ${e.value}`
+  }).join(', ')
+}
+
+function getRankedValue(e: UpgradeEffect, shipRate: number): string {
+  if (!e.rankedValues || e.rankedValues.length !== 7) return e.value
+  const idx = Math.min(6, Math.max(0, 7 - shipRate))
+  const val = e.rankedValues[idx]
+  return val.startsWith('-') ? val : `+${val}`
 }
 
 // ============================================================
@@ -115,7 +128,7 @@ function applyMod(base: number | null, value: string): number | null {
   if (base == null) return base
   const { amount, isPercent } = parseModValue(value)
   if (isPercent) return Math.round(base * (1 + amount / 100))
-  return Math.round(base + amount)
+  return base + amount
 }
 
 function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): ModifiedStats {
@@ -135,25 +148,56 @@ function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): M
     const effects = (lu.upgrade as Upgrade).effects
     if (!effects) continue
     for (const e of effects) {
+      // Resolve ranked values based on ship rate
+      const val = e.rankedValues ? getRankedValue(e, ship.rate) : e.value
+
+      const gk = (e.gameKey || '').toLowerCase()
       const s = e.stat.toLowerCase()
-      if (s.includes('speed') && !s.includes('reload') && !s.includes('aiming') && !s.includes('cruise') && !s.includes('switch') && !s.includes('collection') && !s.includes('fishing') && !s.includes('turning') && !s.includes('projectile')) {
-        stats.speed = applyMod(stats.speed, e.value) as number | null
-      } else if (s === 'maneuverability') {
-        stats.maneuverability = applyMod(stats.maneuverability, e.value) as number | null
-      } else if (s === 'armor' || s === 'broadside armor') {
-        stats.broadsideArmor = applyMod(stats.broadsideArmor, e.value) as number | null
-      } else if (s === 'hold') {
-        stats.cargoHold = applyMod(stats.cargoHold, e.value) as number | null
-      } else if (s === 'crew') {
-        stats.crewCapacity = applyMod(stats.crewCapacity, e.value) as number | null
-      } else if (s.includes('durability')) {
-        stats.integrity = applyMod(stats.integrity, e.value) as number | null
-      } else if (s === 'mortar slots') {
-        const { amount } = parseModValue(e.value)
+
+      // Use gameKey for precise matching when available, fall back to stat name
+      if (gk === 'mspeed' || gk === 'pspeed' || gk === 'pchangeshipspeedbonus') {
+        stats.speed = applyMod(stats.speed, val) as number | null
+      } else if (gk === 'mmobilitybonus' || gk === 'pmobilitybonus') {
+        stats.maneuverability = applyMod(stats.maneuverability, val) as number | null
+      } else if (gk === 'marmor' || gk === 'parmor') {
+        stats.broadsideArmor = applyMod(stats.broadsideArmor, val) as number | null
+      } else if (gk === 'mcapacity' || gk === 'pcapacity') {
+        stats.cargoHold = applyMod(stats.cargoHold, val) as number | null
+      } else if (gk === 'mextraplaces') {
+        stats.crewCapacity = applyMod(stats.crewCapacity, val) as number | null
+      } else if (gk === 'mhealth' || gk === 'phealth') {
+        if (val.includes('%')) {
+          stats.hp = applyMod(stats.hp, val) as number | null
+        } else {
+          stats.integrity = applyMod(stats.integrity, val) as number | null
+        }
+      } else if (gk === 'bextramortars') {
+        const { amount } = parseModValue(val)
         stats.mortarSlots += amount
-      } else if (s === 'weapons on each side') {
-        const { amount } = parseModValue(e.value)
+      } else if (gk === 'mpreducecannonsquantity') {
+        const { amount } = parseModValue(val)
         stats.broadsideSlots = Math.max(0, stats.broadsideSlots + amount)
+      } else if (!gk) {
+        // Legacy fallback for effects without gameKey (e.g. Mortar Fitted per-ship)
+        if (s.includes('speed') && !s.includes('reload') && !s.includes('aim') && !s.includes('cruise') && !s.includes('switch') && !s.includes('collection') && !s.includes('fish') && !s.includes('turn') && !s.includes('projectile')) {
+          stats.speed = applyMod(stats.speed, val) as number | null
+        } else if (s === 'maneuverability') {
+          stats.maneuverability = applyMod(stats.maneuverability, val) as number | null
+        } else if (s === 'armor' || s === 'broadside armor') {
+          stats.broadsideArmor = applyMod(stats.broadsideArmor, val) as number | null
+        } else if (s === 'hold') {
+          stats.cargoHold = applyMod(stats.cargoHold, val) as number | null
+        } else if (s === 'crew') {
+          stats.crewCapacity = applyMod(stats.crewCapacity, val) as number | null
+        } else if (s.includes('durability')) {
+          stats.integrity = applyMod(stats.integrity, val) as number | null
+        } else if (s === 'mortar slots') {
+          const { amount } = parseModValue(val)
+          stats.mortarSlots += amount
+        } else if (s === 'weapons on each side') {
+          const { amount } = parseModValue(val)
+          stats.broadsideSlots = Math.max(0, stats.broadsideSlots + amount)
+        }
       }
     }
   }
@@ -956,7 +1000,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
             <select value={selectedSailId} onChange={e => setSelectedSailId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
               <option value="">Select sail…</option>
               {sailCatalog.map(u => (
-                <option key={u.id} value={u.id}>{u.name} — {formatEffects(u)}</option>
+                <option key={u.id} value={u.id}>{u.name} — {formatEffects(u, ship.rate)}</option>
               ))}
             </select>
             <button onClick={() => { if (selectedSailId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedSailId)); setSelectedSailId('') } }} disabled={!selectedSailId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
@@ -985,20 +1029,20 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
         <div className="flex gap-1 items-center">
           <select value={selectedUpgradeId} onChange={e => setSelectedUpgradeId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
             <option value="">Add upgrade…</option>
-            {['Combat', 'Protection', 'Speed', 'Expeditionary', 'Mortar', 'Unusual', 'Modification'].map(cat => {
+            {['Combat', 'Protection', 'Speed', 'Support', 'Expeditionary', 'Mortars', 'Mortar', 'Unique', 'Unusual', 'Modification'].map(cat => {
               const group = regularCatalog.filter(u => u.slot === cat)
               if (group.length === 0) return null
               return (
                 <optgroup key={cat} label={`── ${cat} ──`}>
                   {group.map(u => (
-                    <option key={u.id} value={u.id}>{u.name} — {formatEffects(u)}</option>
+                    <option key={u.id} value={u.id}>{u.name} — {formatEffects(u, ship.rate)}</option>
                   ))}
                 </optgroup>
               )
             })}
             {/* Any uncategorized */}
-            {regularCatalog.filter(u => !['Combat', 'Protection', 'Speed', 'Expeditionary', 'Mortar', 'Unusual', 'Modification'].includes(u.slot || '')).map(u => (
-              <option key={u.id} value={u.id}>{u.name} — {formatEffects(u)}</option>
+            {regularCatalog.filter(u => !['Combat', 'Protection', 'Speed', 'Support', 'Expeditionary', 'Mortars', 'Mortar', 'Unique', 'Unusual', 'Modification'].includes(u.slot || '')).map(u => (
+              <option key={u.id} value={u.id}>{u.name} — {formatEffects(u, ship.rate)}</option>
             ))}
           </select>
           <button onClick={() => { if (selectedUpgradeId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedUpgradeId)); setSelectedUpgradeId('') } }} disabled={!selectedUpgradeId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
