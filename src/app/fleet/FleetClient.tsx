@@ -665,11 +665,19 @@ function WeaponPositionRow({ position, label, slots, note, equipped, totalEquipp
         <div className="flex gap-1 items-center">
           <select value={selectedWeaponId} onChange={e => setSelectedWeaponId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none min-w-0">
             <option value="">Add weapon…</option>
-            {compatible.map(w => (
-              <option key={w.id} value={w.id}>
-                {w.name} ({w.type}{w.penetration ? `, pen ${w.penetration}${w.penetrationMulti || ''}` : ''}{w.range ? `, ${w.range}m` : ''}{w.loading ? `, ${w.loading}s` : ''})
-              </option>
-            ))}
+            {['Light', 'Medium', 'Heavy', 'Mortar', 'Special'].map(wc => {
+              const group = compatible.filter(w => w.weightClass === wc)
+              if (group.length === 0) return null
+              return (
+                <optgroup key={wc} label={`── ${wc} ──`}>
+                  {group.map(w => (
+                    <option key={w.id} value={w.id}>
+                      {w.name} ({w.type}{w.penetration ? `, pen ${w.penetration}${w.penetrationMulti || ''}` : ''}{w.range ? `, ${w.range}m` : ''}{w.loading ? `, ${w.loading}s` : ''})
+                    </option>
+                  ))}
+                </optgroup>
+              )
+            })}
           </select>
           <input type="number" min={1} max={remaining} value={qty} onChange={e => setQty(Math.max(1, Math.min(remaining, parseInt(e.target.value) || 1)))} className="w-14 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none" />
           <button onClick={handleAdd} disabled={!selectedWeaponId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
