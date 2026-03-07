@@ -83,6 +83,11 @@ function displayClass(role: string | null): string {
   return CLASS_DISPLAY[role] || role
 }
 
+function formatEffects(u: Upgrade): string {
+  if (!u.effects || u.effects.length === 0) return u.effect || ''
+  return u.effects.map(e => `${e.stat} ${e.value}`).join(', ')
+}
+
 // ============================================================
 // STAT MODIFIER ENGINE
 // ============================================================
@@ -933,7 +938,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
             <select value={selectedSailId} onChange={e => setSelectedSailId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
               <option value="">Select sail…</option>
               {sailCatalog.map(u => (
-                <option key={u.id} value={u.id}>{u.name}</option>
+                <option key={u.id} value={u.id}>{u.name} — {formatEffects(u)}</option>
               ))}
             </select>
             <button onClick={() => { if (selectedSailId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedSailId)); setSelectedSailId('') } }} disabled={!selectedSailId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
@@ -962,8 +967,20 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
         <div className="flex gap-1 items-center">
           <select value={selectedUpgradeId} onChange={e => setSelectedUpgradeId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
             <option value="">Add upgrade…</option>
-            {regularCatalog.map(u => (
-              <option key={u.id} value={u.id}>{u.name}{u.slot ? ` (${u.slot})` : ''}</option>
+            {['Combat', 'Protection', 'Speed', 'Expeditionary', 'Mortar', 'Unusual', 'Modification'].map(cat => {
+              const group = regularCatalog.filter(u => u.slot === cat)
+              if (group.length === 0) return null
+              return (
+                <optgroup key={cat} label={`── ${cat} ──`}>
+                  {group.map(u => (
+                    <option key={u.id} value={u.id}>{u.name} — {formatEffects(u)}</option>
+                  ))}
+                </optgroup>
+              )
+            })}
+            {/* Any uncategorized */}
+            {regularCatalog.filter(u => !['Combat', 'Protection', 'Speed', 'Expeditionary', 'Mortar', 'Unusual', 'Modification'].includes(u.slot || '')).map(u => (
+              <option key={u.id} value={u.id}>{u.name} — {formatEffects(u)}</option>
             ))}
           </select>
           <button onClick={() => { if (selectedUpgradeId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedUpgradeId)); setSelectedUpgradeId('') } }} disabled={!selectedUpgradeId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
