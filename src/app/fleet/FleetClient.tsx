@@ -67,7 +67,21 @@ interface Props {
 
 const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
 
-type SortKey = 'name' | 'rate' | 'class' | 'date'
+type SortKey = 'name' | 'rate' | 'class' | 'type' | 'date'
+
+// Map DB role values to display class names
+const CLASS_DISPLAY: Record<string, string> = {
+  'Fast-moving': 'Fast',
+  'Battle': 'Combat',
+  'Transport': 'Transport',
+  'Heavy': 'Heavy',
+  'Siege': 'Siege',
+  'Imperial': 'Imperial',
+}
+function displayClass(role: string | null): string {
+  if (!role) return '—'
+  return CLASS_DISPLAY[role] || role
+}
 
 // ============================================================
 // STAT MODIFIER ENGINE
@@ -171,7 +185,8 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
       switch (sortBy) {
         case 'name': return a.ship.name.localeCompare(b.ship.name)
         case 'rate': return a.ship.rate - b.ship.rate
-        case 'class': return a.ship.shipClass.localeCompare(b.ship.shipClass)
+        case 'class': return displayClass(a.ship.role).localeCompare(displayClass(b.ship.role))
+        case 'type': return a.ship.shipClass.localeCompare(b.ship.shipClass)
         case 'date': return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
         default: return 0
       }
@@ -214,6 +229,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
           <option value="name">Name</option>
           <option value="rate">Rate</option>
           <option value="class">Class</option>
+          <option value="type">Type</option>
         </select>
 
         <span className="text-surface-border">|</span>
@@ -234,10 +250,10 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
 
         {roles.length > 0 && (
           <>
-            <label className="text-foreground-secondary">Role:</label>
+            <label className="text-foreground-secondary">Class:</label>
             <select value={filterRole ?? ''} onChange={e => setFilterRole(e.target.value || null)} className="bg-surface border border-surface-border rounded px-2 py-1 text-foreground text-sm">
               <option value="">All</option>
-              {roles.map(r => <option key={r} value={r!}>{r}</option>)}
+              {roles.map(r => <option key={r} value={r!}>{displayClass(r)}</option>)}
             </select>
           </>
         )}
@@ -251,10 +267,11 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
       ) : (
         <div className="border border-surface-border rounded-xl overflow-hidden">
           {/* Table header */}
-          <div className="hidden md:grid grid-cols-[2fr_0.5fr_1fr_0.8fr_0.8fr_0.8fr_1.5fr] gap-2 px-5 py-3 bg-surface/50 text-xs font-medium text-foreground-secondary uppercase tracking-wider border-b border-surface-border">
+          <div className="hidden md:grid grid-cols-[2fr_0.5fr_0.8fr_0.8fr_0.8fr_0.8fr_0.8fr_1.5fr] gap-2 px-5 py-3 bg-surface/50 text-xs font-medium text-foreground-secondary uppercase tracking-wider border-b border-surface-border">
             <span>Ship</span>
             <span>Rate</span>
             <span>Class</span>
+            <span>Type</span>
             <span>Weapons</span>
             <span>Broad/side</span>
             <span>Crew</span>
@@ -269,7 +286,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
               <div key={us.id} className="bg-surface border-b border-surface-border last:border-b-0">
                 {/* Row */}
                 <div
-                  className="grid md:grid-cols-[2fr_0.5fr_1fr_0.8fr_0.8fr_0.8fr_1.5fr] gap-2 px-5 py-4 cursor-pointer hover:bg-background/50 transition-colors items-center"
+                  className="grid md:grid-cols-[2fr_0.5fr_0.8fr_0.8fr_0.8fr_0.8fr_0.8fr_1.5fr] gap-2 px-5 py-4 cursor-pointer hover:bg-background/50 transition-colors items-center"
                   onClick={() => setExpandedId(expandedId === us.id ? null : us.id)}
                 >
                   <div className="flex items-center gap-2">
@@ -280,6 +297,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
                     {!us.isPublic && <span className="text-xs text-foreground-secondary">🔒</span>}
                   </div>
                   <span className="text-foreground-secondary">{us.ship.rate}</span>
+                  <span className="text-foreground-secondary text-sm">{displayClass(us.ship.role)}</span>
                   <span className="text-foreground-secondary text-sm">{us.ship.shipClass}</span>
                   <span className="text-foreground-secondary text-sm">{us.ship.weaponClass || '—'}</span>
                   <span className="text-foreground-secondary text-sm">{us.ship.broadsideSlots}</span>
@@ -317,7 +335,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
                 <select value={selectedShipId} onChange={e => setSelectedShipId(e.target.value)} className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground focus:border-accent focus:outline-none">
                   <option value="">Select a ship…</option>
                   {shipCatalog.map(s => (
-                    <option key={s.id} value={s.id}>{s.name} (Rate {s.rate}, {s.shipClass}, {s.weaponClass || '?'})</option>
+                    <option key={s.id} value={s.id}>{s.name} (Rate {s.rate}, {displayClass(s.role)}, {s.shipClass})</option>
                   ))}
                 </select>
               </div>
