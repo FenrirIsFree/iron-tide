@@ -88,7 +88,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Fire extinguishing speed ++40%"
+      "ability": "Fire extinguishing speed +40%"
     },
     {
       "name": "Junior provost",
@@ -104,7 +104,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Reduce big fire damage ++50%"
+      "ability": "Reduce big fire damage +50%"
     },
     {
       "name": "Provost",
@@ -120,7 +120,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Microfire fighting speed ++25%"
+      "ability": "Microfire fighting speed +25%"
     },
     {
       "name": "Surgeon",
@@ -152,7 +152,7 @@
           "scalingType": "perSailor"
         }
       ],
-      "ability": "Bonus per sailor: Items reload ++0.1%",
+      "ability": "Bonus per sailor: Items reload +0.1%",
       "scalingType": "perSailor"
     },
     {
@@ -218,7 +218,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Cannon reload speed ++4%"
+      "ability": "Cannon reload speed +4%"
     },
     {
       "name": "Armorer",
@@ -234,7 +234,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Reload bonus after single shot ++20%"
+      "ability": "Reload bonus after single shot +20%"
     },
     {
       "name": "Master Gunner",
@@ -332,7 +332,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Speed ++4%"
+      "ability": "Speed +4%"
     },
     {
       "name": "Helmsman",
@@ -493,7 +493,7 @@
           "scalingType": "perBoarder"
         }
       ],
-      "ability": "Bonus per boarder: Fishing profit ++0.5%",
+      "ability": "Bonus per boarder: Fishing profit +0.5%",
       "scalingType": "perBoarder"
     },
     {
@@ -510,7 +510,7 @@
           "scalingType": "perSailor"
         }
       ],
-      "ability": "Bonus per sailor: Fishing speed ++1%",
+      "ability": "Bonus per sailor: Fishing speed +1%",
       "scalingType": "perSailor"
     },
     {
@@ -720,7 +720,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Falconet reload speed ++20%"
+      "ability": "Falconet reload speed +20%"
     },
     {
       "name": "Lifeguard",
@@ -864,7 +864,7 @@
           "scalingType": null
         }
       ],
-      "ability": "Reduces faction conflicts between crew"
+      "ability": "Eliminates faction conflicts between crew"
     },
     {
       "name": "Sailing Master",
