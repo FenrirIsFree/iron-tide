@@ -683,6 +683,51 @@ function WeaponPositionRow({ position, label, slots, note, equipped, totalEquipp
 // CREW PANEL
 // ============================================================
 
+// ============================================================
+// CREW QUANTITY INPUT (local state, saves on blur/Enter)
+// ============================================================
+
+function CrewQuantityInput({ crewId, value, min, max, onSave }: {
+  crewId: string; value: number; min: number; max: number
+  onSave: (val: number) => void
+}) {
+  const [localVal, setLocalVal] = useState(String(value))
+  const [lastSaved, setLastSaved] = useState(value)
+
+  // Sync from server when value changes externally
+  if (value !== lastSaved) {
+    setLocalVal(String(value))
+    setLastSaved(value)
+  }
+
+  function commit() {
+    const parsed = parseInt(localVal)
+    if (isNaN(parsed)) {
+      setLocalVal(String(value))
+      return
+    }
+    const clamped = Math.max(min, Math.min(max, parsed))
+    setLocalVal(String(clamped))
+    if (clamped !== value) {
+      setLastSaved(clamped)
+      onSave(clamped)
+    }
+  }
+
+  return (
+    <input
+      type="number"
+      min={min}
+      max={max}
+      value={localVal}
+      onChange={e => setLocalVal(e.target.value)}
+      onBlur={commit}
+      onKeyDown={e => { if (e.key === 'Enter') { e.currentTarget.blur() } }}
+      className="w-16 bg-surface border border-surface-border rounded px-2 py-1 text-foreground focus:border-accent focus:outline-none"
+    />
+  )
+}
+
 const PIRATE_CREW = ['Pirate Captain', 'Pirate Navigator', 'Pirate Gunner', 'Pirate Quartermaster', 'Pirate Bosun']
 const MILITARY_CREW = ['Military Captain', 'Military Navigator', 'Military Gunner', 'Military Quartermaster', 'Military Bosun']
 
@@ -745,16 +790,12 @@ function CrewPanel({ ship, loadout, crewCatalog, modStats, startTransition }: {
               {isSailor && <span className="text-foreground-secondary/60">MIN: {minSailors}</span>}
               {existing ? (
                 <div className="flex items-center gap-1">
-                  <input
-                    type="number"
+                  <CrewQuantityInput
+                    crewId={existing.id}
+                    value={existing.quantity}
                     min={isSailor ? minSailors : 0}
                     max={crewCapacity - totalBasic + existing.quantity}
-                    value={existing.quantity}
-                    onChange={e => {
-                      const val = Math.max(isSailor ? minSailors : 0, parseInt(e.target.value) || 0)
-                      startTransition(() => updateCrewQuantity(existing.id, val))
-                    }}
-                    className="w-16 bg-surface border border-surface-border rounded px-2 py-1 text-foreground focus:border-accent focus:outline-none"
+                    onSave={(val) => startTransition(() => updateCrewQuantity(existing.id, val))}
                   />
                   <button onClick={() => startTransition(() => removeCrewFromLoadout(existing.id))} className="text-foreground-secondary hover:text-primary">×</button>
                 </div>
