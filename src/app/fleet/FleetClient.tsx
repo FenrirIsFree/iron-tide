@@ -586,10 +586,17 @@ function getCompatibleWeapons(weaponCatalog: Weapon[], ship: Ship, position: str
 }
 
 // Ships that can get mortar slots via the "Mortar Fitted" upgrade
+// value = max mortar caliber (inches)
 const MORTAR_MOD_SHIPS: Record<string, number> = {
   'Falmouth': 7,
   'Black Wind': 7,
   'Friede': 6,
+}
+// Map ship name to its specific Mortar Fitted upgrade name
+const MORTAR_MOD_UPGRADE: Record<string, string> = {
+  'Falmouth': 'Mortar Fitted (Falmouth)',
+  'Black Wind': 'Mortar Fitted (Black Wind)',
+  'Friede': 'Mortar Fitted (Friede)',
 }
 
 function WeaponPositionsPanel({ ship, loadout, weaponCatalog, modStats, startTransition }: {
@@ -918,9 +925,9 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
   const sailCatalog = upgradeCatalog.filter(isSail)
   const regularCatalog = upgradeCatalog.filter(u => {
     if (isSail(u)) return false
-    // Only show Mortar Modification for compatible ships
-    if (u.name === 'Mortar Fitted') {
-      return ship.name in MORTAR_MOD_SHIPS
+    // Only show the correct per-ship Mortar Fitted upgrade
+    if (u.name.startsWith('Mortar Fitted')) {
+      return u.name === MORTAR_MOD_UPGRADE[ship.name]
     }
     return true
   })
@@ -964,7 +971,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
         {equippedRegular.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-2">
             {equippedRegular.map(u => {
-              const isMortarMod = u.upgrade.name === 'Mortar Fitted'
+              const isMortarMod = u.upgrade.name.startsWith('Mortar Fitted')
               return (
                 <span key={u.id} className={`inline-flex items-center gap-1 text-xs rounded px-2 py-0.5 ${isMortarMod ? 'bg-accent/20 text-accent' : 'bg-surface text-foreground'}`}>
                   {u.upgrade.name}
