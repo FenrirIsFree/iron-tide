@@ -35,7 +35,8 @@ type Weapon = {
   caliber: number | null; placementRestriction: string | null
   isPremium: boolean; description: string | null
 }
-type Upgrade = { id: string; name: string; slot: string | null; effect: string | null; category?: string | null; slotType?: string | null }
+type UpgradeEffect = { stat: string; value: string }
+type Upgrade = { id: string; name: string; slot: string | null; effect: string | null; effects: UpgradeEffect[] | null }
 type Ammo = { id: string; name: string; effect: string | null }
 type Crew = { id: string; name: string; description: string | null }
 
@@ -67,6 +68,79 @@ interface Props {
 const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
 
 type SortKey = 'name' | 'rate' | 'class' | 'date'
+
+// ============================================================
+// STAT MODIFIER ENGINE
+// ============================================================
+
+type ModifiedStats = {
+  hp: number | null
+  speed: number | null
+  maneuverability: number | null
+  broadsideArmor: number | null
+  cargoHold: number | null
+  crewCapacity: number | null
+  integrity: number | null
+  broadsideSlots: number
+  mortarSlots: number
+}
+
+function parseModValue(value: string): { amount: number; isPercent: boolean; isAbsolute: boolean } {
+  const isPercent = value.includes('%')
+  const cleaned = value.replace(/[%+]/g, '').trim()
+  const amount = parseFloat(cleaned)
+  return { amount: isNaN(amount) ? 0 : amount, isPercent, isAbsolute: !isPercent }
+}
+
+function applyMod(base: number | null, value: string): number | null {
+  if (base == null) return base
+  const { amount, isPercent } = parseModValue(value)
+  if (isPercent) return Math.round(base * (1 + amount / 100))
+  return Math.round(base + amount)
+}
+
+function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): ModifiedStats {
+  const stats: ModifiedStats = {
+    hp: ship.hp,
+    speed: ship.speed,
+    maneuverability: ship.maneuverability,
+    broadsideArmor: ship.broadsideArmor,
+    cargoHold: ship.cargoHold,
+    crewCapacity: ship.crewCapacity,
+    integrity: ship.integrity,
+    broadsideSlots: ship.broadsideSlots,
+    mortarSlots: ship.mortarSlots,
+  }
+
+  for (const lu of equippedUpgrades) {
+    const effects = (lu.upgrade as Upgrade).effects
+    if (!effects) continue
+    for (const e of effects) {
+      const s = e.stat.toLowerCase()
+      if (s.includes('speed') && !s.includes('reload') && !s.includes('aiming') && !s.includes('cruise') && !s.includes('switch') && !s.includes('collection') && !s.includes('fishing') && !s.includes('turning') && !s.includes('projectile')) {
+        stats.speed = applyMod(stats.speed, e.value) as number | null
+      } else if (s === 'maneuverability') {
+        stats.maneuverability = applyMod(stats.maneuverability, e.value) as number | null
+      } else if (s === 'armor' || s === 'broadside armor') {
+        stats.broadsideArmor = applyMod(stats.broadsideArmor, e.value) as number | null
+      } else if (s === 'hold') {
+        stats.cargoHold = applyMod(stats.cargoHold, e.value) as number | null
+      } else if (s === 'crew') {
+        stats.crewCapacity = applyMod(stats.crewCapacity, e.value) as number | null
+      } else if (s.includes('durability')) {
+        stats.integrity = applyMod(stats.integrity, e.value) as number | null
+      } else if (s === 'mortar slots') {
+        const { amount } = parseModValue(e.value)
+        stats.mortarSlots += amount
+      } else if (s === 'weapons on each side') {
+        const { amount } = parseModValue(e.value)
+        stats.broadsideSlots = Math.max(0, stats.broadsideSlots + amount)
+      }
+    }
+  }
+
+  return stats
+}
 
 // ============================================================
 // MAIN COMPONENT
@@ -289,25 +363,33 @@ function ExpandedShipView({
   const [activeTab, setActiveTab] = useState(loadouts.find(l => l.isActive)?.id || loadouts[0]?.id)
   const currentLoadout = loadouts.find(l => l.id === activeTab) || loadouts[0]
 
+  // Compute modified stats based on current loadout's upgrades
+  const modStats = currentLoadout ? computeModifiedStats(ship, currentLoadout.upgrades) : null
+
   return (
     <div className="border-t border-surface-border p-5 space-y-5">
-      {/* Ship Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-        <StatBadge label="HP" value={ship.hp} />
-        <StatBadge label="Speed" value={ship.speed} />
-        <StatBadge label="Maneuver" value={ship.maneuverability} />
-        <StatBadge label="Broadside Armor" value={ship.broadsideArmor} />
-        <StatBadge label="Crew Cap" value={ship.crewCapacity} />
-        <StatBadge label="Cargo" value={ship.cargoHold} />
+      {/* Ship Stats — Base + Modified */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+        <StatBadge label="HP" base={ship.hp} modified={modStats?.hp} />
+        <StatBadge label="Speed" base={ship.speed} modified={modStats?.speed} />
+        <StatBadge label="Maneuver" base={ship.maneuverability} modified={modStats?.maneuverability} />
+        <StatBadge label="Armor" base={ship.broadsideArmor} modified={modStats?.broadsideArmor} />
+        <StatBadge label="Crew Cap" base={ship.crewCapacity} modified={modStats?.crewCapacity} />
+        <StatBadge label="Cargo" base={ship.cargoHold} modified={modStats?.cargoHold} />
+        <StatBadge label="Durability" base={ship.integrity} modified={modStats?.integrity} />
       </div>
 
-      {/* Weapon Slots Summary */}
+      {/* Weapon Slots Summary — uses modified values */}
       <div className="flex flex-wrap gap-2 text-xs">
         <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Stern: {ship.sternSlots}</span>
-        <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Broadside/side: {ship.broadsideSlots}</span>
+        <SlotBadge label="Broadside/side" base={ship.broadsideSlots} modified={modStats?.broadsideSlots} />
         <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Bow: {ship.bowSlots}</span>
         <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Swivel: {ship.swivelGuns}</span>
-        {ship.mortarSlots > 0 && <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Mortar: {ship.mortarSlots} (max {ship.mortarMaxCaliber}&quot;)</span>}
+        {(modStats?.mortarSlots ?? ship.mortarSlots) > 0 && (
+          <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">
+            Mortar: {modStats?.mortarSlots ?? ship.mortarSlots} (max {ship.mortarMaxCaliber || MORTAR_MOD_SHIPS[ship.name]}&quot;)
+          </span>
+        )}
         {ship.specialWeaponSlots > 0 && <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">Special: {ship.specialWeaponSlots}</span>}
       </div>
 
@@ -370,12 +452,14 @@ function ExpandedShipView({
             ship={ship}
             loadout={currentLoadout}
             weaponCatalog={weaponCatalog}
+            modStats={modStats}
             startTransition={startTransition}
           />
           <CrewPanel
             ship={ship}
             loadout={currentLoadout}
             crewCatalog={crewCatalog}
+            modStats={modStats}
             startTransition={startTransition}
           />
           <UpgradesPanel
@@ -405,12 +489,36 @@ function ExpandedShipView({
   )
 }
 
-function StatBadge({ label, value }: { label: string; value: number | string | null | undefined }) {
+function StatBadge({ label, base, modified }: { label: string; base: number | string | null | undefined; modified?: number | string | null | undefined }) {
+  const hasChange = modified != null && base != null && modified !== base
+  const isPositive = hasChange && Number(modified) > Number(base)
+  const isNegative = hasChange && Number(modified) < Number(base)
+
   return (
     <div className="bg-background/50 rounded-lg p-2 text-center">
       <div className="text-xs text-foreground-secondary">{label}</div>
-      <div className="text-sm font-medium text-foreground">{value ?? '—'}</div>
+      {hasChange ? (
+        <div className="flex flex-col items-center">
+          <span className="text-xs text-foreground-secondary line-through">{base}</span>
+          <span className={`text-sm font-medium ${isPositive ? 'text-green-400' : isNegative ? 'text-red-400' : 'text-foreground'}`}>
+            {modified}
+          </span>
+        </div>
+      ) : (
+        <div className="text-sm font-medium text-foreground">{base ?? '—'}</div>
+      )}
     </div>
+  )
+}
+
+function SlotBadge({ label, base, modified }: { label: string; base: number; modified?: number }) {
+  const hasChange = modified != null && modified !== base
+  return (
+    <span className="bg-background/50 rounded px-2 py-1 text-foreground-secondary">
+      {label}: {hasChange ? (
+        <><span className="line-through">{base}</span> <span className={modified! < base ? 'text-red-400' : 'text-green-400'}>{modified}</span></>
+      ) : base}
+    </span>
   )
 }
 
@@ -446,29 +554,25 @@ function getCompatibleWeapons(weaponCatalog: Weapon[], ship: Ship, position: str
   })
 }
 
-// Ships that can get mortar slots via the "Mortar Modification Available" upgrade
+// Ships that can get mortar slots via the "Mortar Fitted" upgrade
 const MORTAR_MOD_SHIPS: Record<string, number> = {
   'Falmouth': 7,
   'Black Wind': 7,
   'Friede': 6,
 }
 
-function WeaponPositionsPanel({ ship, loadout, weaponCatalog, startTransition }: {
-  ship: Ship; loadout: Loadout; weaponCatalog: Weapon[]
+function WeaponPositionsPanel({ ship, loadout, weaponCatalog, modStats, startTransition }: {
+  ship: Ship; loadout: Loadout; weaponCatalog: Weapon[]; modStats: ModifiedStats | null
   startTransition: (fn: () => void) => void
 }) {
-  // Check if Mortar Modification Available upgrade is equipped
-  const hasMortarMod = loadout.upgrades.some(u => u.upgrade.name === 'Mortar Modification Available')
-  const mortarModCaliber = MORTAR_MOD_SHIPS[ship.name]
-
-  // Effective mortar slots: built-in + from upgrade
-  const effectiveMortarSlots = ship.mortarSlots + (hasMortarMod && mortarModCaliber ? 1 : 0)
-  const effectiveMortarCaliber = ship.mortarMaxCaliber || (hasMortarMod ? mortarModCaliber : null)
+  const effectiveBroadside = modStats?.broadsideSlots ?? ship.broadsideSlots
+  const effectiveMortarSlots = modStats?.mortarSlots ?? ship.mortarSlots
+  const effectiveMortarCaliber = ship.mortarMaxCaliber || MORTAR_MOD_SHIPS[ship.name] || null
 
   const positions: { key: string; label: string; slots: number; note?: string }[] = [
     { key: 'stern', label: 'Stern', slots: ship.sternSlots },
-    { key: 'port', label: 'Port', slots: ship.broadsideSlots },
-    { key: 'starboard', label: 'Starboard', slots: ship.broadsideSlots },
+    { key: 'port', label: 'Port', slots: effectiveBroadside },
+    { key: 'starboard', label: 'Starboard', slots: effectiveBroadside },
     { key: 'bow', label: 'Bow', slots: ship.bowSlots },
   ]
   if (effectiveMortarSlots > 0) positions.push({ key: 'mortar', label: 'Mortar', slots: effectiveMortarSlots, note: `max ${effectiveMortarCaliber}"` })
@@ -582,15 +686,15 @@ function WeaponPositionRow({ position, label, slots, note, equipped, totalEquipp
 const PIRATE_CREW = ['Pirate Captain', 'Pirate Navigator', 'Pirate Gunner', 'Pirate Quartermaster', 'Pirate Bosun']
 const MILITARY_CREW = ['Military Captain', 'Military Navigator', 'Military Gunner', 'Military Quartermaster', 'Military Bosun']
 
-function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
-  ship: Ship; loadout: Loadout; crewCatalog: Crew[]
+function CrewPanel({ ship, loadout, crewCatalog, modStats, startTransition }: {
+  ship: Ship; loadout: Loadout; crewCatalog: Crew[]; modStats: ModifiedStats | null
   startTransition: (fn: () => void) => void
 }) {
   const [selectedCrewId, setSelectedCrewId] = useState('')
   const basicCrewTypes = BASIC_CREW.map(name => crewCatalog.find(c => c.name === name)).filter((c): c is Crew => c != null)
   const specialCrewTypes = crewCatalog.filter(c => !BASIC_CREW.includes(c.name))
 
-  const crewCapacity = ship.crewCapacity || 0
+  const crewCapacity = modStats?.crewCapacity ?? ship.crewCapacity ?? 0
   const minSailors = Math.ceil(crewCapacity / 2)
 
   const basicCrew = loadout.crew.filter(c => BASIC_CREW.includes(c.crewType.name))
@@ -721,7 +825,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
   const regularCatalog = upgradeCatalog.filter(u => {
     if (isSail(u)) return false
     // Only show Mortar Modification for compatible ships
-    if (u.name === 'Mortar Modification Available') {
+    if (u.name === 'Mortar Fitted') {
       return ship.name in MORTAR_MOD_SHIPS
     }
     return true
@@ -766,7 +870,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
         {equippedRegular.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-2">
             {equippedRegular.map(u => {
-              const isMortarMod = u.upgrade.name === 'Mortar Modification Available'
+              const isMortarMod = u.upgrade.name === 'Mortar Fitted'
               return (
                 <span key={u.id} className={`inline-flex items-center gap-1 text-xs rounded px-2 py-0.5 ${isMortarMod ? 'bg-accent/20 text-accent' : 'bg-surface text-foreground'}`}>
                   {u.upgrade.name}

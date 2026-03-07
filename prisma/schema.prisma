@@ -119,6 +119,7 @@ model Upgrade {
   slot        String?
   description String?
   effect      String?
+  effects     Json?    // Array of {stat, value} objects for stat modifications
 
   loadoutUpgrades LoadoutUpgrade[]
 

@@ -104,10 +104,11 @@ async function seedUpgrades() {
     const description = u.effects
       ? u.effects.map(e => `${e.stat}: ${e.value}`).join('; ')
       : u.description || null;
+    const effects = u.effects || null;
     await prisma.upgrade.upsert({
       where: { name: u.name },
-      update: { slot: u.category || null, description, effect: description },
-      create: { name: u.name, slot: u.category || null, description, effect: description },
+      update: { slot: u.category || null, description, effect: description, effects },
+      create: { name: u.name, slot: u.category || null, description, effect: description, effects },
     });
     count++;
   }
