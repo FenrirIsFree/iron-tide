@@ -195,6 +195,7 @@ model CrewType {
   name        String   @unique
   description String?
   faction     String?  // "Adventurers", "Pirates", "Sailors", "Military", or null for basic crew
+  gameId      String?  // e.g. "unit_sailor_1"
 
   loadoutCrew LoadoutCrew[]
 
