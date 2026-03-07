@@ -86,11 +86,17 @@ function displayClass(role: string | null): string {
 function formatEffects(u: Upgrade, shipRate?: number): string {
   if (!u.effects || u.effects.length === 0) return u.effect || ''
   return u.effects.map(e => {
+    let val = e.value
     if (e.rankedValues && shipRate != null) {
-      const val = getRankedValue(e, shipRate)
-      return `${e.stat} ${val}`
+      val = getRankedValue(e, shipRate)
     }
-    return `${e.stat} ${e.value}`
+    // MSpeed internal values are 2x display knt
+    if (e.gameKey === 'MSpeed') {
+      const num = parseFloat(val.replace('+', ''))
+      const display = num / 2
+      val = (display >= 0 ? '+' : '') + display + ' knt'
+    }
+    return `${e.stat} ${val}`
   }).join(', ')
 }
 
@@ -155,7 +161,11 @@ function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): M
       const s = e.stat.toLowerCase()
 
       // Use gameKey for precise matching when available, fall back to stat name
-      if (gk === 'mspeed' || gk === 'pspeed' || gk === 'pchangeshipspeedbonus') {
+      if (gk === 'mspeed') {
+        // MSpeed internal values are 2x display knt — divide by 2
+        const { amount } = parseModValue(val)
+        if (stats.speed != null) stats.speed = stats.speed + (amount / 2)
+      } else if (gk === 'pspeed' || gk === 'pchangeshipspeedbonus') {
         stats.speed = applyMod(stats.speed, val) as number | null
       } else if (gk === 'mmobilitybonus' || gk === 'pmobilitybonus') {
         stats.maneuverability = applyMod(stats.maneuverability, val) as number | null
