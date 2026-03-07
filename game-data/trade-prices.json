@@ -1,0 +1,372 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "source": "WOSB Trade spreadsheet - Calculations tab (verified accurate by player)",
+    "date": "2026-03-05",
+    "note": "Prices tab and Map tab are outdated - only Calculations data is reliable"
+  },
+  "goods": [
+    {
+      "name": "Pineapples",
+      "weight": 4,
+      "minPrice": 11,
+      "maxPrice": 19,
+      "margin": 8,
+      "profitPerWeight": 2.0,
+      "rank": 6
+    },
+    {
+      "name": "Vanilla",
+      "weight": 7,
+      "minPrice": 22,
+      "maxPrice": 38,
+      "margin": 16,
+      "profitPerWeight": 2.29,
+      "rank": 7
+    },
+    {
+      "name": "Wine",
+      "weight": 3,
+      "minPrice": 9,
+      "maxPrice": 16,
+      "margin": 7,
+      "profitPerWeight": 2.33,
+      "rank": 7
+    },
+    {
+      "name": "Grog",
+      "weight": 5,
+      "minPrice": 9,
+      "maxPrice": 16,
+      "margin": 7,
+      "profitPerWeight": 1.4,
+      "rank": 4
+    },
+    {
+      "name": "Rugs",
+      "weight": 6,
+      "minPrice": 24,
+      "maxPrice": 41,
+      "margin": 17,
+      "profitPerWeight": 2.83,
+      "rank": 9
+    },
+    {
+      "name": "Leather",
+      "weight": 5,
+      "minPrice": 20,
+      "maxPrice": 34,
+      "margin": 14,
+      "profitPerWeight": 2.8,
+      "rank": 9
+    },
+    {
+      "name": "Cinnamon",
+      "weight": 7,
+      "minPrice": 23,
+      "maxPrice": 39,
+      "margin": 16,
+      "profitPerWeight": 2.29,
+      "rank": 7
+    },
+    {
+      "name": "Coffee",
+      "weight": 12,
+      "minPrice": 25,
+      "maxPrice": 43,
+      "margin": 18,
+      "profitPerWeight": 1.5,
+      "rank": 4
+    },
+    {
+      "name": "Mango",
+      "weight": 4,
+      "minPrice": 11,
+      "maxPrice": 19,
+      "margin": 8,
+      "profitPerWeight": 2.0,
+      "rank": 6
+    },
+    {
+      "name": "Oil",
+      "weight": 3,
+      "minPrice": 13,
+      "maxPrice": 22,
+      "margin": 9,
+      "profitPerWeight": 3.0,
+      "rank": 10
+    },
+    {
+      "name": "Nuts",
+      "weight": 5,
+      "minPrice": 9,
+      "maxPrice": 16,
+      "margin": 7,
+      "profitPerWeight": 1.4,
+      "rank": 4
+    },
+    {
+      "name": "Paprika",
+      "weight": 9,
+      "minPrice": 15,
+      "maxPrice": 26,
+      "margin": 11,
+      "profitPerWeight": 1.22,
+      "rank": 3
+    },
+    {
+      "name": "Pepper",
+      "weight": 6,
+      "minPrice": 21,
+      "maxPrice": 36,
+      "margin": 15,
+      "profitPerWeight": 2.5,
+      "rank": 8
+    },
+    {
+      "name": "Beer",
+      "weight": 6,
+      "minPrice": 5,
+      "maxPrice": 9,
+      "margin": 4,
+      "profitPerWeight": 0.67,
+      "rank": 1
+    },
+    {
+      "name": "Sugar",
+      "weight": 20,
+      "minPrice": 30,
+      "maxPrice": 51,
+      "margin": 21,
+      "profitPerWeight": 1.05,
+      "rank": 2
+    },
+    {
+      "name": "Salt",
+      "weight": 5,
+      "minPrice": 18,
+      "maxPrice": 31,
+      "margin": 13,
+      "profitPerWeight": 2.6,
+      "rank": 8
+    },
+    {
+      "name": "Tobacco",
+      "weight": 14,
+      "minPrice": 32,
+      "maxPrice": 55,
+      "margin": 23,
+      "profitPerWeight": 1.64,
+      "rank": 5
+    },
+    {
+      "name": "Dates",
+      "weight": 6,
+      "minPrice": 8,
+      "maxPrice": 14,
+      "margin": 6,
+      "profitPerWeight": 1.0,
+      "rank": 2
+    },
+    {
+      "name": "Saffron",
+      "weight": 15,
+      "minPrice": 37,
+      "maxPrice": 63,
+      "margin": 26,
+      "profitPerWeight": 1.73,
+      "rank": 5
+    },
+    {
+      "name": "Silk",
+      "weight": 20,
+      "minPrice": 52,
+      "maxPrice": 88,
+      "margin": 36,
+      "profitPerWeight": 1.8,
+      "rank": 5
+    }
+  ],
+  "rankings": [
+    {
+      "name": "Oil",
+      "weight": 3,
+      "minPrice": 13,
+      "maxPrice": 22,
+      "margin": 9,
+      "profitPerWeight": 3.0,
+      "rank": 10
+    },
+    {
+      "name": "Rugs",
+      "weight": 6,
+      "minPrice": 24,
+      "maxPrice": 41,
+      "margin": 17,
+      "profitPerWeight": 2.83,
+      "rank": 9
+    },
+    {
+      "name": "Leather",
+      "weight": 5,
+      "minPrice": 20,
+      "maxPrice": 34,
+      "margin": 14,
+      "profitPerWeight": 2.8,
+      "rank": 9
+    },
+    {
+      "name": "Salt",
+      "weight": 5,
+      "minPrice": 18,
+      "maxPrice": 31,
+      "margin": 13,
+      "profitPerWeight": 2.6,
+      "rank": 8
+    },
+    {
+      "name": "Pepper",
+      "weight": 6,
+      "minPrice": 21,
+      "maxPrice": 36,
+      "margin": 15,
+      "profitPerWeight": 2.5,
+      "rank": 8
+    },
+    {
+      "name": "Wine",
+      "weight": 3,
+      "minPrice": 9,
+      "maxPrice": 16,
+      "margin": 7,
+      "profitPerWeight": 2.33,
+      "rank": 7
+    },
+    {
+      "name": "Vanilla",
+      "weight": 7,
+      "minPrice": 22,
+      "maxPrice": 38,
+      "margin": 16,
+      "profitPerWeight": 2.29,
+      "rank": 7
+    },
+    {
+      "name": "Cinnamon",
+      "weight": 7,
+      "minPrice": 23,
+      "maxPrice": 39,
+      "margin": 16,
+      "profitPerWeight": 2.29,
+      "rank": 7
+    },
+    {
+      "name": "Pineapples",
+      "weight": 4,
+      "minPrice": 11,
+      "maxPrice": 19,
+      "margin": 8,
+      "profitPerWeight": 2.0,
+      "rank": 6
+    },
+    {
+      "name": "Mango",
+      "weight": 4,
+      "minPrice": 11,
+      "maxPrice": 19,
+      "margin": 8,
+      "profitPerWeight": 2.0,
+      "rank": 6
+    },
+    {
+      "name": "Silk",
+      "weight": 20,
+      "minPrice": 52,
+      "maxPrice": 88,
+      "margin": 36,
+      "profitPerWeight": 1.8,
+      "rank": 5
+    },
+    {
+      "name": "Saffron",
+      "weight": 15,
+      "minPrice": 37,
+      "maxPrice": 63,
+      "margin": 26,
+      "profitPerWeight": 1.73,
+      "rank": 5
+    },
+    {
+      "name": "Tobacco",
+      "weight": 14,
+      "minPrice": 32,
+      "maxPrice": 55,
+      "margin": 23,
+      "profitPerWeight": 1.64,
+      "rank": 5
+    },
+    {
+      "name": "Coffee",
+      "weight": 12,
+      "minPrice": 25,
+      "maxPrice": 43,
+      "margin": 18,
+      "profitPerWeight": 1.5,
+      "rank": 4
+    },
+    {
+      "name": "Grog",
+      "weight": 5,
+      "minPrice": 9,
+      "maxPrice": 16,
+      "margin": 7,
+      "profitPerWeight": 1.4,
+      "rank": 4
+    },
+    {
+      "name": "Nuts",
+      "weight": 5,
+      "minPrice": 9,
+      "maxPrice": 16,
+      "margin": 7,
+      "profitPerWeight": 1.4,
+      "rank": 4
+    },
+    {
+      "name": "Paprika",
+      "weight": 9,
+      "minPrice": 15,
+      "maxPrice": 26,
+      "margin": 11,
+      "profitPerWeight": 1.22,
+      "rank": 3
+    },
+    {
+      "name": "Sugar",
+      "weight": 20,
+      "minPrice": 30,
+      "maxPrice": 51,
+      "margin": 21,
+      "profitPerWeight": 1.05,
+      "rank": 2
+    },
+    {
+      "name": "Dates",
+      "weight": 6,
+      "minPrice": 8,
+      "maxPrice": 14,
+      "margin": 6,
+      "profitPerWeight": 1.0,
+      "rank": 2
+    },
+    {
+      "name": "Beer",
+      "weight": 6,
+      "minPrice": 5,
+      "maxPrice": 9,
+      "margin": 4,
+      "profitPerWeight": 0.67,
+      "rank": 1
+    }
+  ]
+}

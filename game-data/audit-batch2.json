@@ -1,0 +1,380 @@
+{
+  "meta": {
+    "batch": 2,
+    "auditDate": "2026-03-06",
+    "shipsAudited": 10,
+    "summary": "All 10 ships verified against screenshots. All core stats match existing JSON. Minor additions noted for descriptions and some missing fields."
+  },
+  "results": [
+    {
+      "name": "Balloon",
+      "driveFileId": "181RZ_7hUAlaC3af5pMLcllhaPklH56d8",
+      "screenshotExtracted": {
+        "name": "Balloon",
+        "class": "Montgolfiere",
+        "rate": 6,
+        "category": "Imperial",
+        "nation": "Imperial",
+        "durability": 200,
+        "speed": 21,
+        "maneuverability": 50,
+        "broadsideArmor": 1,
+        "hold": 1000,
+        "crew": 8,
+        "hullDimensions": null,
+        "displacement": null,
+        "lightWeapons": null,
+        "mediumWeapons": null,
+        "heavyWeapons": null,
+        "swivelGuns": null,
+        "mortars": null,
+        "specialWeapon": null,
+        "imperialBombard": null,
+        "integrity": null,
+        "spacesForUpgrades": null,
+        "specialProperties": {
+          "imperialNPSDoNotAttack": true
+        },
+        "cost": {
+          "type": "escudo",
+          "amount": 1000
+        },
+        "unlockRequirement": "Faction Decree (rep 34/100), Horn of Plenty (10M gold deals), Armada (12 legends collected)",
+        "description": "A marvelous invention of 1783. You can control altitude, speed, and direction, but cannot move against the wind. The balloon can be attacked and risks crashing into mountain terrain."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "No weapon slots, hull dimensions, displacement, or integrity shown in screenshot — consistent with JSON having none of these fields. All existing stats match perfectly."
+    },
+    {
+      "name": "La Royale",
+      "driveFileId": "1z0SDtRyCkrJ83zRWPcMcizShdf09YeYO",
+      "screenshotExtracted": {
+        "name": "La Royale",
+        "class": "Galley",
+        "rate": 1,
+        "category": "Siege",
+        "nation": "France",
+        "durability": 2900,
+        "speed": 7.4,
+        "maneuverability": 83,
+        "broadsideArmor": 6.5,
+        "hold": 24000,
+        "crew": 156,
+        "hullDimensions": "60x9",
+        "displacement": "3870t",
+        "heavyWeapons": "0-18-6",
+        "swivelGuns": 12,
+        "mortars": "caliber up to 11 in., 3",
+        "integrity": 6,
+        "specialProperties": {
+          "uniqueWindRose": true,
+          "equippedWithOars": true
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        },
+        "description": "A French galleass from the late 17th century. Based on the traditional Mediterranean galley, but built on a larger scale."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON perfectly."
+    },
+    {
+      "name": "Adventure",
+      "driveFileId": "1CGXcTsF2gPiRkIQHokI6GE7sBvYC6Ecg",
+      "screenshotExtracted": {
+        "name": "Adventure",
+        "class": "Galley",
+        "rate": 2,
+        "category": "Siege",
+        "legendOfTheAgeOfSail": true,
+        "durability": 2660,
+        "speed": 8.2,
+        "maneuverability": 92,
+        "broadsideArmor": 5.2,
+        "hold": 21000,
+        "crew": 140,
+        "hullDimensions": "47x6",
+        "displacement": "2925t",
+        "heavyWeapons": "4-19-0",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 10 in., 2",
+        "integrity": 6,
+        "specialProperties": {
+          "equippedWithOars": true
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        },
+        "description": "The oared frigate of William Kidd, the pirate hunter who became a pirate himself. First launched in 1695, it sailed thousands of miles across the Atlantic and Indian Oceans."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON",
+        "nation not in JSON (not clearly visible in screenshot either)"
+      ],
+      "notes": "All stats match existing JSON. Legend status confirmed."
+    },
+    {
+      "name": "Kobukson",
+      "driveFileId": "1LarCp-Qj4oXajgW4NIx6BiIqdLesQD51",
+      "screenshotExtracted": {
+        "name": "Kobukson",
+        "class": "Phanokson",
+        "rate": 3,
+        "category": "Siege",
+        "nation": "Korea",
+        "durability": 2000,
+        "speed": 8,
+        "maneuverability": 85,
+        "broadsideArmor": 4.6,
+        "hold": 18000,
+        "crew": 124,
+        "hullDimensions": "37x6",
+        "displacement": "2250t",
+        "mediumWeapons": "0-15-0",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 9 in., 4",
+        "integrity": 6,
+        "cost": {
+          "type": "resources",
+          "note": "Multiple resources required (partially visible: 330 gold, 150 wood, 154 planks, plus more)"
+        },
+        "description": "The \"turtle ship\" served as the core of the Korean fleet during the 16th and 17th centuries. In addition to her unique covered design, she wields combined armament, including mortars."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON",
+        "partial construction costs visible but not fully captured"
+      ],
+      "notes": "All stats match existing JSON perfectly. Construction costs partially visible with -20% discount."
+    },
+    {
+      "name": "Le Requin",
+      "driveFileId": "1kNrspKk6eXs-Bk-mav9SkBSt0s8wc9Rz",
+      "screenshotExtracted": {
+        "name": "Le Requin",
+        "class": "Xebec",
+        "rate": 5,
+        "category": "Siege",
+        "nation": "France",
+        "durability": 1520,
+        "speed": 9.6,
+        "maneuverability": 105,
+        "broadsideArmor": 3.2,
+        "hold": 12500,
+        "crew": 88,
+        "hullDimensions": "37x4",
+        "displacement": "2025t",
+        "lightWeapons": "2-12-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 7 in., 1",
+        "integrity": 6,
+        "specialProperties": {
+          "uniqueWindRose": true
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Multiple resources required (fully researched: 4500/4500)"
+        },
+        "description": "French frigates and combat sloops were ineffective against the Berber pirates, who used the agile xebecs. Logically speaking, if they are able to make such good use of them, then why not try those xebecs ourselves? The original name, meaning \"Shark\" when translated from French, was launched in the year 1751 in Toulon, where it soon made the lives of those pirates more difficult."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON perfectly. Ship is fully researched in screenshot."
+    },
+    {
+      "name": "Polacca",
+      "driveFileId": "110pu6LS5i2nGIrFgmKWiYa6q6ZucjpED",
+      "screenshotExtracted": {
+        "name": "Polacca",
+        "class": "Polacca",
+        "rate": 6,
+        "category": "Siege",
+        "nation": "Venice",
+        "durability": 980,
+        "speed": 9,
+        "maneuverability": 102,
+        "broadsideArmor": 2.9,
+        "hold": 9000,
+        "crew": 74,
+        "hullDimensions": "23x5",
+        "displacement": "1575t",
+        "lightWeapons": "0-7-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 6 in., 1",
+        "integrity": 5,
+        "specialProperties": {
+          "uniqueWindRose": true
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Partially visible: 620 wood, 21 lumber"
+        },
+        "description": "The Venetian fleet kept armed polaccas in service to protect trade routes in the Adriatic Sea from Dalmatian, Greek, and Turkish pirates."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON perfectly."
+    },
+    {
+      "name": "12 Apostolov",
+      "driveFileId": "1f0h3ze_Ruumijkj3KSeGss9Zw0p9wFUG",
+      "screenshotExtracted": {
+        "name": "12 Apostolov",
+        "class": "Ship of the Line",
+        "rate": 1,
+        "category": "Heavy",
+        "nation": "Russia",
+        "legendOfTheAgeOfSail": true,
+        "durability": 4400,
+        "speed": 6.2,
+        "maneuverability": 49,
+        "broadsideArmor": 10,
+        "hold": 36000,
+        "crew": 220,
+        "hullDimensions": "66x11",
+        "displacement": "4500t",
+        "heavyWeapons": "0-59-0",
+        "swivelGuns": 10,
+        "integrity": 7,
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        },
+        "description": "A ship of the line of the Black Sea Fleet, it participated in the defense of Sevastopol during the Crimean War. It was scuttled along with other ships on February 13, 1855, to block Anglo-French ships from entering the harbor. Fortunately, the Archipelago's shipwrights managed to recover its blueprints."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON. Nation (Russia) confirmed from description context."
+    },
+    {
+      "name": "Redoutable",
+      "driveFileId": "1lyqTPYRkuBwtAAcrZoouikmlWxlaJvwx",
+      "screenshotExtracted": {
+        "name": "Redoutable",
+        "class": "Ship of the Line",
+        "rate": 2,
+        "category": "Heavy",
+        "nation": "France",
+        "legendOfTheAgeOfSail": true,
+        "durability": 3540,
+        "speed": 7,
+        "maneuverability": 57,
+        "broadsideArmor": 8,
+        "hold": 30500,
+        "crew": 198,
+        "hullDimensions": "53x7",
+        "displacement": "3600t",
+        "heavyWeapons": "0-43-0",
+        "swivelGuns": 10,
+        "integrity": 7,
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        },
+        "description": "A famed French ship of the line that duelled with HMS Victory during the Battle of Trafalgar. The fatal shot killing Vice-Admiral Horatio Nelson was fired from this very ship."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON. Nation (France) confirmed from description."
+    },
+    {
+      "name": "Bellona",
+      "driveFileId": "1LHV69oPPTss_h973B23PlF6iOa266QoX",
+      "screenshotExtracted": {
+        "name": "Bellona",
+        "class": "Ship of the Line",
+        "rate": 3,
+        "category": "Heavy",
+        "nation": "Britain",
+        "legendOfTheAgeOfSail": true,
+        "durability": 3180,
+        "speed": 7.5,
+        "maneuverability": 62,
+        "broadsideArmor": 7,
+        "hold": 26000,
+        "crew": 174,
+        "hullDimensions": "49x9",
+        "displacement": "3915t",
+        "mediumWeapons": "0-35-0",
+        "swivelGuns": 10,
+        "integrity": 7,
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        },
+        "description": "The first ship of the line approved after Lord Anson became First Lord of the Admiralty. She took part in the Seven Years' War, the American War of Independence, and the Napoleonic Wars."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON perfectly."
+    },
+    {
+      "name": "Constitution",
+      "driveFileId": "1J050B5VTY5v7YXjuYgoQ3tYThrROsjTK",
+      "screenshotExtracted": {
+        "name": "Constitution",
+        "class": "Frigate",
+        "rate": 4,
+        "category": "Heavy",
+        "nation": "United States",
+        "legendOfTheAgeOfSail": true,
+        "durability": 2560,
+        "speed": 8,
+        "maneuverability": 68,
+        "broadsideArmor": 6,
+        "hold": 21500,
+        "crew": 148,
+        "hullDimensions": "53x6",
+        "displacement": "2565t",
+        "mediumWeapons": "0-26-0",
+        "swivelGuns": 8,
+        "integrity": 7,
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        },
+        "description": "One of the original six frigates of the United States Navy, the \"Constitution\" was larger and more heavily armed than its contemporaries. She gained fame during the War of 1812 against Great Britain, earning the nickname \"Old Ironsides\" and the adoration of many."
+      },
+      "existingJsonMatch": true,
+      "discrepancies": [],
+      "missingInJson": [
+        "description text not captured in JSON"
+      ],
+      "notes": "All stats match existing JSON perfectly."
+    }
+  ],
+  "overallSummary": {
+    "totalDiscrepancies": 0,
+    "commonMissingField": "description - Ship description text is not captured in ship-stats.json for any ship",
+    "allStatsVerified": true,
+    "statsAccuracy": "100% - All numeric stats, weapon slots, special properties, and categories match between screenshots and existing JSON"
+  }
+}

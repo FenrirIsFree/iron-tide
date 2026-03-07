@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFile": "Common.Game/DamageData.cs"
+  },
+  "damageDataStructure": {
+    "fields": {
+      "TargetUID": "int - Target ship UID",
+      "SourcePawnOrShipUID": "int - Source ship/pawn UID",
+      "SourcePawnType": "DamageID enum (e.g. CannonBall)",
+      "HealthDamage": "float - HP damage amount",
+      "CollisionNodeID": "byte - Hit location on ship model",
+      "ShipSpaceCollisionPoint": "Vector3 - Exact hit point",
+      "Flags": "SpecificDamageFlags bitmask"
+    },
+    "optionalFields": {
+      "UBurningType": "PredefinedBurningType - If BurningCritical flag set",
+      "UCritCorpusTimeSec": "float - Corpus critical duration if CorpusCritical flag",
+      "CrewDamage": "byte[] - Unit IDs of crew killed (if CrewDamage flag)",
+      "UCritCannon": "byte - Cannon crit index (if CannonCritical flag)",
+      "UDamageToSailes": "float - Sail damage (if SingleSailDamage or TotalSailDamage flag)"
+    },
+    "flags": [
+      "CrewDamage",
+      "SingleSailDamage",
+      "TotalSailDamage",
+      "CannonCritical",
+      "CorpusCritical",
+      "BurningCritical"
+    ]
+  }
+}

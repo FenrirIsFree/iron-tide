@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "source": "WosbAchievements.cs",
+    "description": "Achievement rewards and ship unlock requirements",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "achievementRewards": [
+    { "achievement": "FirstPlayerKill", "reward": { "Marks": 20 } },
+    { "achievement": "GladiatorMass", "reward": { "Marks": 20 } },
+    { "achievement": "GladiatorRating", "reward": { "Marks": 20 } },
+    { "achievement": "AllSinglePassed", "reward": { "Escudo": 20 } },
+    { "achievement": "RangFive", "reward": { "Voodoo Skulls": 3 } },
+    { "achievement": "ContrabandaWithoutCannons", "reward": { "Map Parts": 2 } },
+    { "achievement": "BeforeRang30", "reward": { "Marks": 200, "Voodoo Skulls": 15 } },
+    { "achievement": "ManyFriendsReferal", "reward": "1000 Monets" }
+  ],
+  "shipUnlockAchievements": {
+    "description": "Ships requiring specific achievement completions before they can be built/used",
+    "ship50": {
+      "requirements": [
+        { "achievement": "FullReputation", "count": 1 },
+        { "achievement": "AuctionTrade10000k", "count": 1 },
+        { "achievement": "CollectAllSailageLegends", "count": 1 }
+      ]
+    },
+    "ship57": {
+      "requirements": [
+        { "achievement": "LuckyOne", "count": 1 }
+      ]
+    },
+    "ship63": {
+      "requirements": [
+        { "achievement": "ArmedBusinessman", "count": 30 }
+      ]
+    }
+  }
+}

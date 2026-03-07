@@ -1,0 +1,2592 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "version": "B18+",
+    "lastUpdated": "2026-03-05",
+    "sources": [
+      "world-of-sea-battle.fandom.com (wiki API)",
+      "steamcommunity.com/sharedfiles/filedetails/?id=3591614790",
+      "warshipsgames.com/world-sea-battle-beginner-guide",
+      "treyexgaming.com/world-of-sea-battle-guide",
+      "reddit.com/r/WoSB",
+      "worldofseabattle.com (official site + patch notes)"
+    ],
+    "notes": "Stats shown where available from wiki. Many Transport/Heavy/Siege ships have incomplete stats on the wiki (marked with null). Ships from B18 update (Southampton, Iberia, Three Hierarchs, Montanes) are early access and may not yet be on the wiki."
+  },
+  "shipClasses": [
+    {
+      "name": "Fast",
+      "description": "Ships best suited for ranged and mobile combat. Require maximum focus and do not forgive mistakes. In skilled hands, they can win almost any battle.",
+      "difficulty": "very high",
+      "battlePower": "low",
+      "role": "scouting and support"
+    },
+    {
+      "name": "Combat",
+      "description": "The backbone of battle formations. Versatile and reliable in any situation. Have no strong advantages or drawbacks.",
+      "difficulty": "medium",
+      "battlePower": "high",
+      "role": "line battles, agile attacks"
+    },
+    {
+      "name": "Transport",
+      "description": "Best cargo capacity among all classes. Combat usage is secondary.",
+      "difficulty": "high",
+      "battlePower": "medium",
+      "role": "transport, supply"
+    },
+    {
+      "name": "Heavy",
+      "description": "A class of ships capable of withstanding heavy enemy fire. High firepower and durability come at the cost of tardiness.",
+      "difficulty": "medium",
+      "battlePower": "very high",
+      "role": "line battle, defense, positional combat"
+    },
+    {
+      "name": "Siege",
+      "description": "Sail ships with powerful mortar weapons. Siege ships are nimble but fragile. A serious threat to forts, coastal defenses, and stationary ships.",
+      "difficulty": "low",
+      "battlePower": "high",
+      "role": "area damage, damage to fortifications"
+    },
+    {
+      "name": "Imperial",
+      "description": "Various ships captured from the Inhagger Empire. More a classification by origin than by function.",
+      "difficulty": null,
+      "battlePower": null,
+      "role": "varies"
+    }
+  ],
+  "shipbuildingSchools": [
+    {
+      "name": "Antilia",
+      "description": "British-style shipbuilding tradition",
+      "discountAtFactionPorts": true
+    },
+    {
+      "name": "Espaniol",
+      "description": "Spanish-style shipbuilding tradition",
+      "discountAtFactionPorts": true
+    },
+    {
+      "name": "Kai & Severia",
+      "description": "Russian/Nordic-style shipbuilding tradition",
+      "discountAtFactionPorts": true
+    },
+    {
+      "name": "Imperial",
+      "description": "Inhagger Empire origin — no faction discount",
+      "discountAtFactionPorts": false
+    }
+  ],
+  "ships": [
+    {
+      "name": "Pickle",
+      "rate": "VII",
+      "class": "Fast",
+      "shipType": "Schooner",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": true,
+      "durability": 700,
+      "speed": 9.2,
+      "agility": 94,
+      "armor": 1.6,
+      "hold": 6000,
+      "crew": 66,
+      "hull": "24x4",
+      "displacement": "900t",
+      "confirmed": true
+    },
+    {
+      "name": "Le Cerf",
+      "rate": "VI",
+      "class": "Fast",
+      "shipType": "Cutter",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 900,
+      "speed": 10,
+      "agility": 97,
+      "armor": 1.8,
+      "hold": 8000,
+      "crew": 78,
+      "hull": "22x3",
+      "displacement": "990t",
+      "confirmed": true
+    },
+    {
+      "name": "Savannah",
+      "rate": "VI",
+      "class": "Fast",
+      "shipType": "Frigate",
+      "school": null,
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1000,
+      "speed": 10.8,
+      "agility": 92,
+      "armor": 3,
+      "hold": 10000,
+      "crew": 94,
+      "hull": "39x4",
+      "displacement": "1575t",
+      "confirmed": true
+    },
+    {
+      "name": "Axel Thorsen",
+      "rate": "V",
+      "class": "Fast",
+      "shipType": "Schooner",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 880,
+      "speed": 9.8,
+      "agility": 110,
+      "armor": 5,
+      "hold": 7500,
+      "crew": 66,
+      "hull": "22x3",
+      "displacement": "900t",
+      "notes": "Speed buffed from 9.5 to 9.8 in B18",
+      "confirmed": true
+    },
+    {
+      "name": "La Creole",
+      "rate": "V",
+      "class": "Fast",
+      "shipType": "Corvette",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1400,
+      "speed": 11,
+      "agility": 100,
+      "armor": 2,
+      "hold": 11000,
+      "crew": 96,
+      "hull": "39x5",
+      "displacement": "1620t",
+      "confirmed": true
+    },
+    {
+      "name": "Surprise",
+      "rate": "IV",
+      "class": "Fast",
+      "shipType": "Corvette",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1680,
+      "speed": 10.5,
+      "agility": 105,
+      "armor": 2.4,
+      "hold": 13000,
+      "crew": 112,
+      "hull": "45x5",
+      "displacement": "2025t",
+      "confirmed": true
+    },
+    {
+      "name": "Poltava",
+      "rate": "III",
+      "class": "Fast",
+      "shipType": "Ship of the Line",
+      "school": "Kai & Severia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 2100,
+      "speed": 9.6,
+      "agility": 95,
+      "armor": 2.8,
+      "hold": 15500,
+      "crew": 132,
+      "hull": "41x6",
+      "displacement": "2475t",
+      "confirmed": true
+    },
+    {
+      "name": "Iberia",
+      "rate": "III",
+      "class": "Fast",
+      "shipType": "Ship",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Added in B18, one of the pioneers of the Espaniol shipbuilding school. Used for patrols and raiding.",
+      "confirmed": true
+    },
+    {
+      "name": "Firestorm",
+      "rate": "II",
+      "class": "Fast",
+      "shipType": "Frigate",
+      "school": "Imperial",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 2600,
+      "speed": 8.7,
+      "agility": 85,
+      "armor": 4.2,
+      "hold": 20000,
+      "crew": 170,
+      "hull": "46x8",
+      "displacement": "3150t",
+      "notes": "Premium PvP beast",
+      "confirmed": true
+    },
+    {
+      "name": "Ingermanland",
+      "rate": "II",
+      "class": "Fast",
+      "shipType": "Ship of the Line",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 2340,
+      "speed": 9,
+      "agility": 87,
+      "armor": 3.2,
+      "hold": 17500,
+      "crew": 152,
+      "hull": "48x8",
+      "displacement": "3060t",
+      "confirmed": true
+    },
+    {
+      "name": "Horizont",
+      "rate": "VII",
+      "class": "Combat",
+      "shipType": "Brigantine",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 850,
+      "speed": 8.4,
+      "agility": 80,
+      "armor": 3.2,
+      "hold": 7000,
+      "crew": 78,
+      "hull": "26x5",
+      "displacement": "1125t",
+      "confirmed": true
+    },
+    {
+      "name": "La Salamandre",
+      "rate": "VI",
+      "class": "Combat",
+      "shipType": "Ketch",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1160,
+      "speed": 8.8,
+      "agility": 82,
+      "armor": 3.6,
+      "hold": 9500,
+      "crew": 96,
+      "hull": "25x5",
+      "displacement": "1350t",
+      "confirmed": true
+    },
+    {
+      "name": "Shunsen",
+      "rate": "VI",
+      "class": "Combat",
+      "shipType": "Junk",
+      "school": null,
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1000,
+      "speed": 8.5,
+      "agility": 90,
+      "armor": 3,
+      "hold": 11000,
+      "crew": 92,
+      "hull": "28x6",
+      "displacement": "1485t",
+      "confirmed": true
+    },
+    {
+      "name": "Black Wind",
+      "rate": "V",
+      "class": "Combat",
+      "shipType": "Frigate",
+      "school": "Antilia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1820,
+      "speed": 9.4,
+      "agility": 84,
+      "armor": 4,
+      "hold": 13000,
+      "crew": 113,
+      "hull": "45x8",
+      "displacement": "2250t",
+      "confirmed": true
+    },
+    {
+      "name": "Kwee Song",
+      "rate": "V",
+      "class": "Combat",
+      "shipType": "Phanokson",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1360,
+      "speed": 7.9,
+      "agility": 105,
+      "armor": 4.5,
+      "hold": 12500,
+      "crew": 108,
+      "hull": "22x7",
+      "displacement": "1800t",
+      "confirmed": true
+    },
+    {
+      "name": "Essex",
+      "rate": "IV",
+      "class": "Combat",
+      "shipType": "Frigate",
+      "school": "Antilia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 2160,
+      "speed": 8.9,
+      "agility": 88,
+      "armor": 4.8,
+      "hold": 15500,
+      "crew": 136,
+      "hull": "38x6",
+      "displacement": "2115t",
+      "confirmed": true
+    },
+    {
+      "name": "Red Arrow",
+      "rate": "IV",
+      "class": "Combat",
+      "shipType": "Galleon",
+      "school": "Imperial",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 1940,
+      "speed": 8.6,
+      "agility": 95,
+      "armor": 5.5,
+      "hold": 18000,
+      "crew": 140,
+      "hull": "38x6",
+      "displacement": "2700t",
+      "notes": "Speed nerfed from 9.1 to 8.6 in B18",
+      "confirmed": true
+    },
+    {
+      "name": "Anson",
+      "rate": "III",
+      "class": "Combat",
+      "shipType": "Ship of the Line",
+      "school": "Antilia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 2700,
+      "speed": 8.2,
+      "agility": 80,
+      "armor": 5.6,
+      "hold": 18500,
+      "crew": 160,
+      "hull": "52x9",
+      "displacement": "3150t",
+      "confirmed": true
+    },
+    {
+      "name": "Le Saint Louis",
+      "rate": "III",
+      "class": "Combat",
+      "shipType": "Ship of the Line",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": 2700,
+      "speed": 7.9,
+      "agility": 78,
+      "armor": 5.6,
+      "hold": 20000,
+      "crew": 170,
+      "hull": "52x13",
+      "displacement": "2925t",
+      "notes": "Was early access, becoming craftable in B18",
+      "confirmed": true
+    },
+    {
+      "name": "Montanes",
+      "rate": "II",
+      "class": "Combat",
+      "shipType": "Ship of the Line",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Added in B18, 74-gun Spanish ship of the line. Battle class, rank II.",
+      "confirmed": true
+    },
+    {
+      "name": "Sans Pareil",
+      "rate": "II",
+      "class": "Combat",
+      "shipType": "Ship of the Line",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 3000,
+      "speed": 7.7,
+      "agility": 74,
+      "armor": 6.4,
+      "hold": 21500,
+      "crew": 184,
+      "hull": "55x6",
+      "displacement": "3330t",
+      "confirmed": true
+    },
+    {
+      "name": "Neptuno",
+      "rate": "II",
+      "class": "Combat",
+      "shipType": "Galleon",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 2900,
+      "speed": 8.2,
+      "agility": 80,
+      "armor": 5.8,
+      "hold": 28000,
+      "crew": 194,
+      "hull": "46x9",
+      "displacement": "4050t",
+      "notes": "Premium PvE farming ship, large crew ideal for boarding",
+      "confirmed": true
+    },
+    {
+      "name": "De Zeven Provincien",
+      "rate": "I",
+      "class": "Combat",
+      "shipType": "Ship of the Line",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 3320,
+      "speed": 7.7,
+      "agility": 75,
+      "armor": 8.6,
+      "hold": 26000,
+      "crew": 188,
+      "hull": "51x8",
+      "displacement": "4440t",
+      "notes": "Also referred to as 'Zev' by community",
+      "confirmed": true
+    },
+    {
+      "name": "Sovereign",
+      "rate": "I",
+      "class": "Combat",
+      "shipType": "Galleon",
+      "school": "Antilia",
+      "legend": true,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 3600,
+      "speed": 7.4,
+      "agility": 70,
+      "armor": 7,
+      "hold": 26500,
+      "crew": 192,
+      "hull": "48x11",
+      "displacement": "4275t",
+      "notes": "British ship of the line, most powerful 17th century warship inspiration",
+      "confirmed": true
+    },
+    {
+      "name": "Victory",
+      "rate": "I",
+      "class": "Combat",
+      "shipType": "Ship of the Line",
+      "school": "Antilia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": 3740,
+      "speed": 7.1,
+      "agility": 66,
+      "armor": 8,
+      "hold": 25000,
+      "crew": 204,
+      "hull": "61x12",
+      "displacement": "4050t",
+      "notes": "HMS Victory, craftable Rate I legend",
+      "confirmed": true
+    },
+    {
+      "name": "Friede",
+      "rate": "VII",
+      "class": "Transport",
+      "shipType": "Flute",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": true,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Mercury",
+      "rate": "VI",
+      "class": "Transport",
+      "shipType": "Galleon",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Russia",
+      "rate": "V",
+      "class": "Transport",
+      "shipType": "Frigate",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Southampton",
+      "rate": "V",
+      "class": "Transport",
+      "shipType": "Frigate",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Added in B18, British 32-gun frigate. Transport, rate V.",
+      "confirmed": true
+    },
+    {
+      "name": "Falmouth",
+      "rate": "IV",
+      "class": "Transport",
+      "shipType": "Ship",
+      "school": "Antilia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Flying Cloud",
+      "rate": "IV",
+      "class": "Transport",
+      "shipType": "Clipper",
+      "school": "Antilia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Friedrich Wilhelm",
+      "rate": "IV",
+      "class": "Transport",
+      "shipType": "Frigate",
+      "school": "Antilia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Was early access, becoming craftable in B18",
+      "confirmed": true
+    },
+    {
+      "name": "Mordaunt",
+      "rate": "III",
+      "class": "Transport",
+      "shipType": "Ship of the Line",
+      "school": "Antilia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Prins Willem",
+      "rate": "III",
+      "class": "Transport",
+      "shipType": "Galleon",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "La Sirene",
+      "rate": "II",
+      "class": "Transport",
+      "shipType": "Ship",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "La Couronne",
+      "rate": "I",
+      "class": "Transport",
+      "shipType": "Galleon",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Phoenix",
+      "rate": "VI",
+      "class": "Heavy",
+      "shipType": "Brig",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "San Martin",
+      "rate": "V",
+      "class": "Heavy",
+      "shipType": "Galleon",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Constitution",
+      "rate": "IV",
+      "class": "Heavy",
+      "shipType": "Frigate",
+      "school": "Antilia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "USS Constitution, popular heavy line milestone",
+      "confirmed": true
+    },
+    {
+      "name": "Three Hierarchs",
+      "rate": "IV",
+      "class": "Heavy",
+      "shipType": "Battleship",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Added in B18, Russian fleet battleship, excellent maneuverability. Heavy, rate IV.",
+      "confirmed": true
+    },
+    {
+      "name": "Azov",
+      "rate": "III",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": true,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Was early access, becoming craftable in B18",
+      "confirmed": true
+    },
+    {
+      "name": "Bellona",
+      "rate": "III",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Antilia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Monster in arenas per community",
+      "confirmed": true
+    },
+    {
+      "name": "Redoutable",
+      "rate": "II",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "St. Pavel",
+      "rate": "II",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Vasa",
+      "rate": "II",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Maneuverability nerfed from 68 to 64 in B18",
+      "confirmed": true
+    },
+    {
+      "name": "12 Apostolov",
+      "rate": "I",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Kai & Severia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Considered the best first rate ship per community",
+      "confirmed": true
+    },
+    {
+      "name": "Santisima Trinidad",
+      "rate": "I",
+      "class": "Heavy",
+      "shipType": "Ship of the Line",
+      "school": "Espaniol",
+      "legend": true,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Largest sailing ship by gun count. Premium fleet dominator. Deletes PvE in 2-3 salvos.",
+      "confirmed": true
+    },
+    {
+      "name": "Polacca",
+      "rate": "VI",
+      "class": "Siege",
+      "shipType": "Polacca",
+      "school": null,
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Golden Apostle",
+      "rate": "VI",
+      "class": "Siege",
+      "shipType": "Cutter",
+      "school": null,
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Eagle",
+      "rate": "V",
+      "class": "Siege",
+      "shipType": "Flute",
+      "school": "Antilia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Le Requin",
+      "rate": "V",
+      "class": "Siege",
+      "shipType": "Xebec",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Sparrow",
+      "rate": "IV",
+      "class": "Siege",
+      "shipType": "Tartane",
+      "school": "Antilia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Kobukson",
+      "rate": "III",
+      "class": "Siege",
+      "shipType": "Phanokson",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Shen",
+      "rate": "III",
+      "class": "Siege",
+      "shipType": "Galiot",
+      "school": "Kai & Severia",
+      "legend": false,
+      "premium": true,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Adventure",
+      "rate": "II",
+      "class": "Siege",
+      "shipType": "Galley",
+      "school": "Antilia",
+      "legend": true,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "La Royale",
+      "rate": "I",
+      "class": "Siege",
+      "shipType": "Galley",
+      "school": "Espaniol",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Balloon",
+      "rate": "VI",
+      "class": "Imperial",
+      "shipType": "Montgolfiere",
+      "school": "Imperial",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Black Prince",
+      "rate": "V",
+      "class": "Imperial",
+      "shipType": "Galleon",
+      "school": "Imperial",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Devourer",
+      "rate": "IV",
+      "class": "Imperial",
+      "shipType": "Barque",
+      "school": "Imperial",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Deadfish",
+      "rate": "III",
+      "class": "Imperial",
+      "shipType": "Ship",
+      "school": "Imperial",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": 6.6,
+      "agility": null,
+      "armor": 8,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "notes": "Speed nerfed 6.8→6.6, armor 8.2→8.0 in B18. Special ability 'Rage': gains defense/damage/accuracy after taking damage.",
+      "confirmed": true
+    },
+    {
+      "name": "Octopus",
+      "rate": "II",
+      "class": "Imperial",
+      "shipType": "Ship",
+      "school": "Imperial",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    },
+    {
+      "name": "Huracan",
+      "rate": "I",
+      "class": "Imperial",
+      "shipType": "Ship of the Line",
+      "school": "Imperial",
+      "legend": false,
+      "premium": false,
+      "earlyAccess": false,
+      "starter": false,
+      "durability": null,
+      "speed": null,
+      "agility": null,
+      "armor": null,
+      "hold": null,
+      "crew": null,
+      "hull": null,
+      "displacement": null,
+      "confirmed": true
+    }
+  ],
+  "weapons": {
+    "types": [
+      {
+        "type": "Cannon",
+        "aka": "Standard Cannons",
+        "description": "Standard short- to mid-range artillery with balanced performance. Reliable in most situations.",
+        "bestFor": [
+          "general combat",
+          "sustained DPS with heated shots",
+          "heavy ships"
+        ],
+        "confirmed": true
+      },
+      {
+        "type": "Long Cannon",
+        "aka": "Culverin",
+        "description": "High-range cannons with improved precision. Ideal for long-range engagements.",
+        "bestFor": [
+          "fast ships",
+          "siege ships",
+          "kiting",
+          "sniping"
+        ],
+        "confirmed": true
+      },
+      {
+        "type": "Carronade",
+        "description": "Short-range, high-damage weapons that excel in close combat. Higher max damage but slower reload and shorter range.",
+        "bestFor": [
+          "boarding builds",
+          "close combat",
+          "combat ships"
+        ],
+        "confirmed": true
+      },
+      {
+        "type": "Bombard",
+        "description": "Specialized weapons for bow and stern positions.",
+        "bestFor": [
+          "bow/stern combat"
+        ],
+        "confirmed": true
+      },
+      {
+        "type": "Mortar",
+        "description": "Devastating arc-fire damage against ships, perfect against forts and coastal defenses. Has minimum range.",
+        "bestFor": [
+          "siege ships",
+          "fort attacks",
+          "area damage"
+        ],
+        "confirmed": true
+      },
+      {
+        "type": "Special Weapon",
+        "description": "Exotic or unique weapons with special firing behavior or effects.",
+        "bestFor": [
+          "varies"
+        ],
+        "confirmed": true
+      }
+    ],
+    "tiers": [
+      {
+        "tier": "Basic",
+        "description": "Entry-level weapons purchased for Gold. No crafting required. Ideal for early-game.",
+        "acquisition": "Purchase with Gold",
+        "confirmed": true
+      },
+      {
+        "tier": "Advanced",
+        "description": "Upgraded and specialized equipment. Must be crafted using materials. Better stats than Basic.",
+        "acquisition": "Crafted from materials",
+        "confirmed": true
+      },
+      {
+        "tier": "Pirate",
+        "description": "Most powerful weapons. Generally outperform Basic and Advanced tiers.",
+        "acquisition": "Purchase with Pirate Tokens, weapon convoys, game modes",
+        "confirmed": true
+      }
+    ],
+    "stats": [
+      "Penetration/Damage",
+      "Loading Time",
+      "Range",
+      "Max Angle",
+      "Accuracy Spread"
+    ],
+    "items": [
+      {
+        "name": "6-pdr Rusty Cannon",
+        "type": "Cannon",
+        "tier": "Basic",
+        "caliber": "6-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "8-pdr Cannon",
+        "type": "Cannon",
+        "tier": "Basic",
+        "caliber": "8-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "16-pdr Cannon",
+        "type": "Cannon",
+        "tier": "Basic",
+        "caliber": "16-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "18-pdr Cannon",
+        "type": "Cannon",
+        "tier": "Basic",
+        "caliber": "18-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "20-pdr Admiral",
+        "type": "Cannon",
+        "tier": "Advanced",
+        "caliber": "20-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "32-pdr Cannon",
+        "type": "Cannon",
+        "tier": "Advanced",
+        "caliber": "32-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "36-pdr Inrog",
+        "type": "Cannon",
+        "tier": "Advanced",
+        "caliber": "36-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "6-pdr Culverin",
+        "type": "Long Cannon",
+        "tier": "Basic",
+        "caliber": "6-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "8-pdr Culverin",
+        "type": "Long Cannon",
+        "tier": "Basic",
+        "caliber": "8-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "16-pdr Culverin",
+        "type": "Long Cannon",
+        "tier": "Basic",
+        "caliber": "16-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "18-pdr Long Cannon",
+        "type": "Long Cannon",
+        "tier": "Basic",
+        "caliber": "18-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "22-pdr Scorcher",
+        "type": "Long Cannon",
+        "tier": "Advanced",
+        "caliber": "22-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "32-pdr Long Cannon",
+        "type": "Long Cannon",
+        "tier": "Advanced",
+        "caliber": "32-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "38-pdr Jericho",
+        "type": "Long Cannon",
+        "tier": "Advanced",
+        "caliber": "38-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "12-pdr Carronade",
+        "type": "Carronade",
+        "tier": "Basic",
+        "caliber": "12-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "16-pdr Carronade",
+        "type": "Carronade",
+        "tier": "Basic",
+        "caliber": "16-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "24-pdr Carronade",
+        "type": "Carronade",
+        "tier": "Basic",
+        "caliber": "24-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "28-pdr Carronade",
+        "type": "Carronade",
+        "tier": "Advanced",
+        "caliber": "28-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "32-pdr Stormbringer",
+        "type": "Carronade",
+        "tier": "Advanced",
+        "caliber": "32-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "42-pdr Carronade",
+        "type": "Carronade",
+        "tier": "Advanced",
+        "caliber": "42-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "48-pdr Colossus",
+        "type": "Carronade",
+        "tier": "Pirate",
+        "caliber": "48-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "Poseidon",
+        "type": "Mortar/Bombard",
+        "tier": "Pirate",
+        "caliber": null,
+        "notes": "Legendary siege weapon",
+        "confirmed": true
+      },
+      {
+        "name": "Gilgamesh",
+        "type": "Mortar/Bombard",
+        "tier": "Pirate",
+        "caliber": null,
+        "confirmed": true
+      },
+      {
+        "name": "Zeus",
+        "type": "Mortar/Bombard",
+        "tier": "Pirate",
+        "caliber": null,
+        "confirmed": true
+      },
+      {
+        "name": "Basilisk",
+        "type": "Mortar/Bombard",
+        "tier": "Pirate",
+        "caliber": null,
+        "confirmed": true
+      },
+      {
+        "name": "Mjolnir",
+        "type": "Mortar/Bombard",
+        "tier": "Pirate",
+        "caliber": null,
+        "confirmed": true
+      },
+      {
+        "name": "Onager",
+        "type": "Mortar/Bombard",
+        "tier": "Pirate",
+        "caliber": null,
+        "confirmed": true
+      },
+      {
+        "name": "Twin 6-pdr",
+        "type": "Special Weapon",
+        "tier": "Advanced",
+        "caliber": "6-pdr",
+        "notes": "Multi-barrel weapon",
+        "confirmed": true
+      },
+      {
+        "name": "Twin 14-pdr",
+        "type": "Special Weapon",
+        "tier": "Advanced",
+        "caliber": "14-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "Twin 20-pdr",
+        "type": "Special Weapon",
+        "tier": "Advanced",
+        "caliber": "20-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "Triple 10-pdr",
+        "type": "Special Weapon",
+        "tier": "Advanced",
+        "caliber": "10-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "Triple 16-pdr",
+        "type": "Special Weapon",
+        "tier": "Advanced",
+        "caliber": "16-pdr",
+        "confirmed": true
+      },
+      {
+        "name": "Alchemical Fire",
+        "type": "Special Weapon",
+        "tier": "Special",
+        "caliber": null,
+        "notes": "Arc-firing special weapon",
+        "confirmed": true
+      },
+      {
+        "name": "Imperial Bombard",
+        "type": "Bombard",
+        "tier": "Special",
+        "caliber": null,
+        "notes": "Imperial origin bombard",
+        "confirmed": true
+      }
+    ]
+  },
+  "ammunition": [
+    {
+      "name": "Round Shots",
+      "type": "Standard",
+      "description": "Default cannonball. Higher max damage and longer range. Best all-around ammo.",
+      "effects": [
+        "hull damage"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Heated Shots",
+      "type": "Standard",
+      "description": "Burning cannonball that applies damage over time (fire). Good against unarmored targets and port structures.",
+      "effects": [
+        "hull damage",
+        "fire DoT"
+      ],
+      "notes": "Ideal for sustained DPS with regular cannons",
+      "confirmed": true
+    },
+    {
+      "name": "Grapeshot",
+      "type": "Standard",
+      "description": "Anti-crew shot for close range. Reduces enemy crew numbers before boarding. Faster reload but lower range.",
+      "effects": [
+        "crew damage"
+      ],
+      "notes": "Sweet spot aiming required — hit crew on deck without hitting hull",
+      "confirmed": true
+    },
+    {
+      "name": "Bar Shots",
+      "type": "Standard",
+      "description": "Chain & balls that slow ships by hitting sails. Useful for chasing or preventing escape.",
+      "effects": [
+        "sail damage",
+        "speed reduction"
+      ],
+      "notes": "Less effective if opponents pull sails",
+      "confirmed": true
+    },
+    {
+      "name": "Strike Rounds",
+      "type": "Experimental",
+      "description": "Enhanced penetration rounds.",
+      "effects": [
+        "high penetration"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Phosphorous Shots",
+      "type": "Experimental",
+      "description": "Incendiary experimental ammunition.",
+      "effects": [
+        "fire",
+        "area damage"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Shrapnel Rounds",
+      "type": "Experimental",
+      "description": "Fragmentation ammunition for area effect.",
+      "effects": [
+        "area damage",
+        "crew damage"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Burning Arrows",
+      "type": "Special",
+      "description": "Fire arrows used as ammunition.",
+      "effects": [
+        "fire damage"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Snowballs",
+      "type": "Event",
+      "description": "Christmas event ammunition. Only damages Sea Elves NPS. Covers opponent's screen with snow when used on other targets. Melts in southern regions.",
+      "effects": [
+        "event damage",
+        "screen obstruction"
+      ],
+      "notes": "Only available during Christmas event",
+      "confirmed": true
+    }
+  ],
+  "tacticalPayloads": [
+    {
+      "name": "Small Gunpowder Barrels",
+      "description": "Explosive barrels deployed from stern. Area denial against pursuers.",
+      "confirmed": true
+    },
+    {
+      "name": "Small Flaming Barrels",
+      "description": "Flaming barrels deployed from stern.",
+      "confirmed": true
+    },
+    {
+      "name": "Small Phosphorous Barrels",
+      "description": "Phosphorous barrels for area denial.",
+      "confirmed": true
+    },
+    {
+      "name": "Large Phosphorous Mine",
+      "description": "Large phosphorous mine for area denial.",
+      "confirmed": true
+    },
+    {
+      "name": "Large Shrapnel Mines",
+      "description": "Large shrapnel mine for area damage.",
+      "confirmed": true
+    },
+    {
+      "name": "Fire Ship",
+      "description": "An entire ship set ablaze and sent toward enemies.",
+      "confirmed": true
+    }
+  ],
+  "upgrades": {
+    "slots": [
+      {
+        "slot": 1,
+        "type": "Sail",
+        "unlockMethod": "Default (unlocked)",
+        "description": "Required to be a type of sail. Affects ship speed.",
+        "confirmed": true
+      },
+      {
+        "slot": 2,
+        "type": "Vision/Combat",
+        "unlockMethod": "Default (unlocked)",
+        "description": "Typically used for Combat Crow's Nest or similar.",
+        "confirmed": true
+      },
+      {
+        "slot": 3,
+        "type": "Utility",
+        "unlockMethod": "Default (unlocked)",
+        "description": "Typically used for Cellars or similar utility upgrade.",
+        "confirmed": true
+      },
+      {
+        "slot": 4,
+        "type": "Utility/Combat",
+        "unlockMethod": "Ship experience + Battle Marks",
+        "description": "Unlocked by accumulating experience while commanding the ship.",
+        "confirmed": true
+      },
+      {
+        "slot": 5,
+        "type": "Weapon Enhancement",
+        "unlockMethod": "Ship experience + Battle Marks (after slot 4)",
+        "description": "Experience starts counting only after slot 4 is unlocked.",
+        "confirmed": true
+      },
+      {
+        "slot": 6,
+        "type": "Special",
+        "unlockMethod": "All five ship class branches (Fast, Combat, Heavy, Transport, Siege) must be fully researched",
+        "description": "Extremely grindy to unlock. Vision/detection upgrades recommended.",
+        "confirmed": true
+      }
+    ],
+    "items": [
+      {
+        "name": "Stitched Sails",
+        "slot": 1,
+        "effect": "+45% sail speed",
+        "cost": "Gold",
+        "confirmed": true
+      },
+      {
+        "name": "Tarpulin Sails",
+        "slot": 1,
+        "effect": "+70% sail speed",
+        "cost": "Gold + Voodoo Skulls (high-rate ships exempt per B18)",
+        "notes": "Best sails. Low-rate ships no longer require Voodoo Skulls per B18",
+        "confirmed": true
+      },
+      {
+        "name": "Combat Crow's Nest",
+        "slot": 2,
+        "effect": "Increased visibility range, aim speed increase",
+        "notes": "Excellent for spotting aggressive spyglass ships",
+        "confirmed": true
+      },
+      {
+        "name": "Cellars",
+        "slot": 3,
+        "effect": "Additional cargo hold space, prevents goods from perishing",
+        "notes": "Great for early game sailing in southern waters where perishing is an issue",
+        "confirmed": true
+      },
+      {
+        "name": "Small Hooks",
+        "slot": 4,
+        "effect": "Increased boarding range, item collection speed, fishing speed",
+        "confirmed": true
+      },
+      {
+        "name": "Advanced Gun Carriages",
+        "slot": 5,
+        "effect": "Increased weapon angle and aiming speed",
+        "confirmed": true
+      },
+      {
+        "name": "Copper Plating",
+        "slot": null,
+        "effect": "Early armor improvement for survivability",
+        "confirmed": true
+      },
+      {
+        "name": "Extra Sails",
+        "slot": null,
+        "effect": "Mobility and escape potential",
+        "notes": "Also referred to as Small/Large Additional Sails",
+        "confirmed": true
+      },
+      {
+        "name": "Small Additional Sails",
+        "slot": null,
+        "effect": "Movement speed boost consumable/upgrade",
+        "confirmed": true
+      },
+      {
+        "name": "Large Additional Sails",
+        "slot": null,
+        "effect": "Larger movement speed boost",
+        "confirmed": true
+      },
+      {
+        "name": "Small Plates",
+        "slot": null,
+        "effect": "Hull reinforcement",
+        "confirmed": true
+      },
+      {
+        "name": "Large Plates",
+        "slot": null,
+        "effect": "Stronger hull reinforcement",
+        "confirmed": true
+      }
+    ],
+    "notes": {
+      "durability": "Upgrades have effective durability that must be periodically repaired (small gold cost). If it breaks, repair cost is significantly higher.",
+      "costScaling": "Upgrade costs drastically increase with ship rate. Rate VII: 300-600 gold. Rate IV: same gold + Voodoo Skulls (3) + Battle Marks (20-30) + Rum (150-250).",
+      "gradeSystem": "Upgrades are most valuable at grade 2 or higher. Grade 1 may not justify cost.",
+      "b18Changes": "B18 removed Battle Mark requirements from most upgrades. Best sails on low-ranking ships no longer require Voodoo Skulls."
+    }
+  },
+  "consumables": [
+    {
+      "name": "Wooden Patches",
+      "category": "Repair",
+      "description": "Basic hull repair patches.",
+      "confirmed": true
+    },
+    {
+      "name": "Iron Patches",
+      "category": "Repair",
+      "description": "Iron hull repair patches.",
+      "confirmed": true
+    },
+    {
+      "name": "Bronze Patches",
+      "category": "Repair",
+      "description": "Bronze hull repair patches.",
+      "confirmed": true
+    },
+    {
+      "name": "Wreckage Patches",
+      "category": "Repair",
+      "description": "Patches made from wreckage materials.",
+      "confirmed": true
+    },
+    {
+      "name": "Wooden Repair Kit",
+      "category": "Repair",
+      "description": "Repair kit made from wood.",
+      "confirmed": true
+    },
+    {
+      "name": "Iron Repair Kit",
+      "category": "Repair",
+      "description": "Iron-based repair kit.",
+      "confirmed": true
+    },
+    {
+      "name": "Bronze Repair Kit",
+      "category": "Repair",
+      "description": "Bronze-based repair kit.",
+      "confirmed": true
+    },
+    {
+      "name": "Field Kit",
+      "category": "Repair",
+      "description": "Field repair kit for at-sea repairs.",
+      "confirmed": true
+    },
+    {
+      "name": "Rum Ration",
+      "category": "Buff",
+      "description": "Crew buff consumable.",
+      "confirmed": true
+    },
+    {
+      "name": "Filling Ration",
+      "category": "Buff",
+      "description": "Crew sustenance/satiety buff.",
+      "confirmed": true
+    },
+    {
+      "name": "Black Double Powder",
+      "category": "Buff",
+      "description": "Weapon damage buff (black variant).",
+      "confirmed": true
+    },
+    {
+      "name": "Red Double Powder",
+      "category": "Buff",
+      "description": "Weapon damage buff (red variant).",
+      "confirmed": true
+    },
+    {
+      "name": "White Double Powder",
+      "category": "Buff",
+      "description": "Weapon damage buff (white variant).",
+      "confirmed": true
+    },
+    {
+      "name": "Powder Charge",
+      "category": "Buff",
+      "description": "Powder charge for weapon enhancement.",
+      "confirmed": true
+    },
+    {
+      "name": "Phosphorous",
+      "category": "Buff/Material",
+      "description": "Phosphorous material used for special ammunition and consumables.",
+      "confirmed": true
+    },
+    {
+      "name": "Smoke Bomb",
+      "category": "Tactical",
+      "description": "Creates smoke screen for concealment.",
+      "confirmed": true
+    },
+    {
+      "name": "Smoke Screen",
+      "category": "Tactical",
+      "description": "Larger smoke screen for area concealment.",
+      "confirmed": true
+    },
+    {
+      "name": "Blue Signal Flare",
+      "category": "Tactical",
+      "description": "Signal flare (blue).",
+      "confirmed": true
+    },
+    {
+      "name": "Red Signal Flare",
+      "category": "Tactical",
+      "description": "Signal flare (red).",
+      "confirmed": true
+    },
+    {
+      "name": "Yellow Signal Flare",
+      "category": "Tactical",
+      "description": "Signal flare (yellow).",
+      "confirmed": true
+    },
+    {
+      "name": "Poseidon's Hook",
+      "category": "Tactical",
+      "description": "Tactical tool for ship interaction.",
+      "confirmed": true
+    },
+    {
+      "name": "Horn",
+      "category": "Tactical",
+      "description": "Sound signal horn.",
+      "confirmed": true
+    },
+    {
+      "name": "Bribery",
+      "category": "Tactical",
+      "description": "Used to influence NPC interactions.",
+      "confirmed": true
+    },
+    {
+      "name": "Tackles",
+      "category": "Utility",
+      "description": "Ship handling utility item.",
+      "confirmed": true
+    }
+  ],
+  "resources": {
+    "rawMaterials": [
+      {
+        "name": "Wood",
+        "description": "Primary construction material. Gathered from Wood Mines on personal island.",
+        "obtainedFrom": [
+          "Wood Mine",
+          "dismantling ships",
+          "fishing village trade",
+          "merchant at sea"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Iron Ore",
+        "description": "Raw iron ore. Must be refined into Iron.",
+        "obtainedFrom": [
+          "Iron Mine"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Copper Ore",
+        "description": "Raw copper ore. Refined into Copper/Bronze.",
+        "obtainedFrom": [
+          "Copper Mine"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Coal",
+        "description": "Fuel for smelting. Essential for endgame.",
+        "obtainedFrom": [
+          "Coal Mine"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Fish",
+        "description": "Gathered from fishing nodes at sea. Can be traded to Ferryman merchants for resources. Spoils quickly.",
+        "obtainedFrom": [
+          "fishing nodes"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Resin",
+        "description": "Raw material gathered from gathering points.",
+        "obtainedFrom": [
+          "island gathering points"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Wreckage",
+        "description": "Salvaged from shipwrecks and destroyed ships.",
+        "obtainedFrom": [
+          "shipwrecks",
+          "destroyed ships"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Whale Oil",
+        "description": "Harvested from whales at sea.",
+        "obtainedFrom": [
+          "whaling"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Fresh Meat",
+        "description": "Perishable food resource.",
+        "obtainedFrom": [
+          "hunting",
+          "gathering"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Grain",
+        "description": "Agricultural resource.",
+        "obtainedFrom": [
+          "ports",
+          "trading"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Water",
+        "description": "Basic crew sustenance resource.",
+        "obtainedFrom": [
+          "ports"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Provision",
+        "description": "Food supplies for crew satiety.",
+        "obtainedFrom": [
+          "ports",
+          "crafting"
+        ],
+        "notes": "Running out in northern waters kills crew; in southern waters just reduces effectiveness.",
+        "confirmed": true
+      }
+    ],
+    "processedMaterials": [
+      {
+        "name": "Iron",
+        "description": "Refined iron. Core material for hulls, guns, upgrades, and builds.",
+        "craftedFrom": [
+          "Iron Ore",
+          "Coal"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Copper",
+        "description": "Refined copper metal.",
+        "craftedFrom": [
+          "Copper Ore"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Bronze",
+        "description": "Alloy of copper and tin. Used for advanced repairs and equipment.",
+        "craftedFrom": [
+          "Copper",
+          "other materials"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Canvas",
+        "description": "Sail and ship material.",
+        "craftedFrom": [
+          "Fabric"
+        ],
+        "notes": "Can be crafted at any port workshop",
+        "confirmed": true
+      },
+      {
+        "name": "Fabric",
+        "description": "Processed textile material.",
+        "obtainedFrom": [
+          "dismantling ships",
+          "crafting"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Beam",
+        "description": "Structural ship component.",
+        "obtainedFrom": [
+          "dismantling ships",
+          "Ferryman merchants",
+          "crafting"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Bulkhead",
+        "description": "Ship structural component. Best crafted on personal island for 20% discount.",
+        "craftedFrom": [
+          "Iron",
+          "Wood"
+        ],
+        "confirmed": true
+      },
+      {
+        "name": "Leather",
+        "description": "Processed material for various items.",
+        "confirmed": true
+      },
+      {
+        "name": "Rum",
+        "description": "Processed consumable and upgrade material. Required for high-rate ship upgrades.",
+        "confirmed": true
+      }
+    ],
+    "craftingNotes": {
+      "personalIslandDiscount": "20% discount on crafting at personal island (bulkheads, planks, plates, heavy items)",
+      "factionPortDiscount": "25% discount on ship crafting materials at matching faction ports",
+      "productionLimit": "Port crafting has production/manpower limits (300 → 600 → 1000 with skill upgrades)"
+    }
+  },
+  "currencies": [
+    {
+      "name": "Gold",
+      "description": "Primary currency. Used for purchases, upgrades, repairs.",
+      "obtainedFrom": [
+        "trading",
+        "missions",
+        "combat loot"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Battle Marks",
+      "description": "Combat currency. Required for some upgrades and unlock slots. DO NOT SELL — irreplaceable.",
+      "obtainedFrom": [
+        "combat",
+        "arena rewards"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Voodoo Skulls",
+      "description": "Rare currency for top-tier upgrades and Imperial ships. DO NOT SELL — irreplaceable.",
+      "obtainedFrom": [
+        "special activities",
+        "rare drops"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Escudos",
+      "description": "Special currency for Imperial content. DO NOT SELL — irreplaceable.",
+      "obtainedFrom": [
+        "special activities"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Pirate Tokens",
+      "description": "Currency for purchasing Pirate-tier weapons.",
+      "obtainedFrom": [
+        "pirate activities",
+        "convoy raids"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Imperial Blueprints",
+      "description": "Required for crafting advanced/Imperial vessels.",
+      "obtainedFrom": [
+        "special drops"
+      ],
+      "confirmed": true
+    },
+    {
+      "name": "Seahorses",
+      "description": "Christmas event currency. Exchangeable at overseas traders. Removed after event ends.",
+      "obtainedFrom": [
+        "event quests",
+        "fishing",
+        "treasure maps",
+        "unique NPS loot",
+        "altar exchange"
+      ],
+      "notes": "Temporary event currency",
+      "confirmed": true
+    },
+    {
+      "name": "Chest",
+      "description": "Loot container. Imperial Chest has 3.6% chance for premium ships.",
+      "obtainedFrom": [
+        "store",
+        "keys (10 keys per chest)"
+      ],
+      "confirmed": true
+    }
+  ],
+  "tradeGoods": [
+    {
+      "name": "Pineapples",
+      "confirmed": true
+    },
+    {
+      "name": "Vanilla",
+      "confirmed": true
+    },
+    {
+      "name": "Wine",
+      "description": "Alcoholic beverage trade good.",
+      "confirmed": true
+    },
+    {
+      "name": "Grog",
+      "confirmed": true
+    },
+    {
+      "name": "Rugs",
+      "confirmed": true
+    },
+    {
+      "name": "Leather",
+      "confirmed": true
+    },
+    {
+      "name": "Cinnamon",
+      "description": "Exotic spice trade good.",
+      "confirmed": true
+    },
+    {
+      "name": "Coffee",
+      "description": "Beverage trade good.",
+      "confirmed": true
+    },
+    {
+      "name": "Mango",
+      "confirmed": true
+    },
+    {
+      "name": "Oil",
+      "description": "Liquid commodity trade good.",
+      "confirmed": true
+    },
+    {
+      "name": "Nuts",
+      "confirmed": true
+    },
+    {
+      "name": "Paprika",
+      "confirmed": true
+    },
+    {
+      "name": "Pepper",
+      "confirmed": true
+    },
+    {
+      "name": "Beer",
+      "confirmed": true
+    },
+    {
+      "name": "Sugar",
+      "description": "Trade commodity. Buy cheap in the north, sell at premium in the south.",
+      "tradingNotes": "Core north-south trading route staple",
+      "confirmed": true
+    },
+    {
+      "name": "Salt",
+      "description": "Trade commodity. Buy cheap in the north, sell at premium in the south.",
+      "tradingNotes": "Core north-south trading route staple",
+      "confirmed": true
+    },
+    {
+      "name": "Tobacco",
+      "confirmed": true
+    },
+    {
+      "name": "Dates",
+      "confirmed": true
+    },
+    {
+      "name": "Saffron",
+      "confirmed": true
+    },
+    {
+      "name": "Silk",
+      "description": "Luxury fabric trade good.",
+      "confirmed": true
+    }
+  ],
+  "crew": {
+    "overview": "Crew participate in boarding battles, load guns, and help perform various actions. Ships with large crews are harder to board or disable.",
+    "types": [
+      {
+        "name": "Sailors",
+        "role": "Ship operations — reload speed, maneuverability, work speed",
+        "notes": "Reducing sailor count penalizes work speed but frees slots for combat crew",
+        "confirmed": true
+      },
+      {
+        "name": "Musketeers",
+        "role": "Boarding combat — offensive power in boarding actions",
+        "notes": "More musketeers = more deadly boarding offense",
+        "confirmed": true
+      },
+      {
+        "name": "Special Crew",
+        "role": "Unique crew members with special bonuses",
+        "obtainedFrom": [
+          "tavern rumors",
+          "special events"
+        ],
+        "notes": "Can be obtained randomly when acquiring rumors at taverns",
+        "confirmed": true
+      }
+    ],
+    "mechanics": {
+      "satiety": "Crew must be fed. Running out in northern waters kills crew; southern waters only reduces effectiveness.",
+      "overloading": "Can overload boarding party with extra crew from rescues or port. Limited by ship capacity.",
+      "boarding": "Ship with more crew usually wins boarding. Grapeshot reduces enemy crew before boarding.",
+      "crewUpgrades": "Crew size can be increased with upgrades and special crew members."
+    }
+  },
+  "factions": [
+    {
+      "name": "Antilia",
+      "description": "British-influenced faction with shipbuilding school.",
+      "confirmed": true
+    },
+    {
+      "name": "Espaniol",
+      "description": "Spanish-influenced faction with shipbuilding school.",
+      "confirmed": true
+    },
+    {
+      "name": "Kai & Severia",
+      "description": "Russian/Nordic-influenced faction with shipbuilding school.",
+      "confirmed": true
+    },
+    {
+      "name": "Trade Union",
+      "description": "Trading-focused faction.",
+      "confirmed": true
+    },
+    {
+      "name": "Pirates",
+      "description": "Pirate faction.",
+      "confirmed": true
+    },
+    {
+      "name": "Imperial (Inhagger Empire)",
+      "description": "Enemy NPC faction. Imperial ships can be captured at Corsa-Nois Bay.",
+      "confirmed": true
+    }
+  ],
+  "skills": [
+    {
+      "name": "Fast Travel",
+      "description": "Port-to-port teleportation. Free once every 2 hours with skill upgrade.",
+      "priority": "Day 1 essential",
+      "confirmed": true
+    },
+    {
+      "name": "Escort",
+      "description": "Manage captured ship swarms without headaches.",
+      "priority": "Second priority",
+      "confirmed": true
+    },
+    {
+      "name": "Logistic",
+      "description": "Extra fast travel jumps.",
+      "confirmed": true
+    },
+    {
+      "name": "Critical",
+      "description": "Damage spike when cannons are maxed.",
+      "confirmed": true
+    },
+    {
+      "name": "Captured Ship Limit",
+      "description": "Up to 3 captured ships with you.",
+      "confirmed": true
+    },
+    {
+      "name": "Resource Gathering Buildings",
+      "description": "Doubles number of mines (2 → 4 → 6).",
+      "confirmed": true
+    },
+    {
+      "name": "Ship Dismantling Bonus",
+      "description": "Improves wood and fabric gains from dismantling.",
+      "confirmed": true
+    },
+    {
+      "name": "Crafting Production",
+      "description": "Increases port crafting limit (300 → 600 → 1000).",
+      "confirmed": true
+    },
+    {
+      "name": "Post-Boarding Repair",
+      "description": "Repairs your ship after successful boarding.",
+      "confirmed": true
+    },
+    {
+      "name": "Captured Ship Repair",
+      "description": "Repairs captured ship by 50% of max HP.",
+      "confirmed": true
+    }
+  ],
+  "captains": [
+    {
+      "name": "Bartholomew",
+      "location": "Tortuga",
+      "bonus": "Attack/damage bonuses",
+      "notes": "Match captain bonuses to ship playstyle",
+      "confirmed": true
+    }
+  ],
+  "islandBuildings": [
+    {
+      "name": "Plate Workshop",
+      "description": "Produces plates. First building priority — everything else needs plates.",
+      "cost": "Gold only",
+      "confirmed": true
+    },
+    {
+      "name": "Pier",
+      "description": "Dock fleets at island. Reduces port runs.",
+      "confirmed": true
+    },
+    {
+      "name": "Mission Hall (Outpost)",
+      "description": "Cash engine. Auto-pulls from mines within 7000m. 50 manpower capacity.",
+      "confirmed": true
+    },
+    {
+      "name": "Lighthouse",
+      "description": "Adds island to Fast Travel network.",
+      "confirmed": true
+    },
+    {
+      "name": "Warehouse",
+      "description": "Increases storage capacity.",
+      "confirmed": true
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "source": "NewYearChestRewards.cs",
+    "description": "New Year chest reward probability groups (14 groups)",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "rewards": [
+    {
+      "probability": 0.05,
+      "rarity": 3,
+      "reward": "Ship #62",
+      "unique": true,
+      "disallowOnLowRank": true,
+      "checkShipId": [62]
+    },
+    {
+      "probability": 0.15,
+      "rarity": 2,
+      "reward": "Imperial Legend currency x5",
+      "resourceId": 67,
+      "count": 5
+    },
+    {
+      "probability": 0.4,
+      "rarity": 3,
+      "reward": "Rare Ship Design (random from #451, #425)",
+      "designIds": [451, 425]
+    },
+    {
+      "probability": 0.2,
+      "rarity": 3,
+      "reward": "Ship #46",
+      "checkShipId": [46]
+    },
+    {
+      "probability": 0.2,
+      "rarity": 3,
+      "reward": "Ship #61",
+      "checkShipId": [61]
+    },
+    {
+      "probability": 2.0,
+      "rarity": 2,
+      "reward": "Voodoo Skulls x100",
+      "resourceId": 38,
+      "count": 100
+    },
+    {
+      "probability": 2.0,
+      "rarity": 2,
+      "reward": "Random Design #404"
+    },
+    {
+      "probability": 5.0,
+      "rarity": 2,
+      "reward": "Rare Ammo (ID 5) x10000",
+      "ammoId": 5,
+      "count": 10000,
+      "firstOpenChestCategory": true
+    },
+    {
+      "probability": 6.0,
+      "rarity": 2,
+      "reward": "Premium +10 days",
+      "premiumDays": 10,
+      "checkPremium": true,
+      "firstOpenChestCategory": true
+    },
+    {
+      "probability": 7.0,
+      "rarity": 2,
+      "reward": "Rare Ammo (ID 7) x10000",
+      "ammoId": 7,
+      "count": 10000,
+      "firstOpenChestCategory": true
+    },
+    {
+      "probability": 12.0,
+      "rarity": 2,
+      "reward": "Gold Fish x50",
+      "resourceId": 69,
+      "count": 50,
+      "firstOpenChestCategory": true
+    },
+    {
+      "probability": 15.0,
+      "rarity": 1,
+      "reward": "Gold 150,000",
+      "gold": 150000,
+      "firstOpenChestCategory": true
+    },
+    {
+      "probability": 20.0,
+      "rarity": 1,
+      "reward": "Gold 50,000",
+      "gold": 50000,
+      "firstOpenChestCategory": true
+    },
+    {
+      "probability": 30.0,
+      "rarity": 1,
+      "reward": "Falconet Fireworks Ammo (ID 18) x300",
+      "ammoId": 18,
+      "count": 300,
+      "firstOpenChestCategory": true
+    }
+  ]
+}

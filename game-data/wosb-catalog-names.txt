@@ -1,0 +1,467 @@
+⚓ THE IRON TIDE — WoSB ITEM CATALOG ⚓
+════════════════════════════════════════
+
+🚢 SHIPS (62)
+────────────────────────────────
+
+  FAST:
+    • Pickle (Rate VII)
+    • Le Cerf (Rate VI)
+    • Savannah (Rate VI)
+    • Axel Thorsen (Rate V)
+    • La Creole (Rate V)
+    • Surprise (Rate IV)
+    • Poltava (Rate III)
+    • Iberia (Rate III)
+    • Firestorm (Rate II)
+    • Ingermanland (Rate II)
+
+  COMBAT:
+    • Horizont (Rate VII)
+    • La Salamandre (Rate VI)
+    • Shunsen (Rate VI)
+    • Black Wind (Rate V)
+    • Kwee Song (Rate V)
+    • Essex (Rate IV)
+    • Red Arrow (Rate IV)
+    • Anson (Rate III)
+    • Le Saint Louis (Rate III)
+    • Montanes (Rate II)
+    • Sans Pareil (Rate II)
+    • Neptuno (Rate II)
+    • De Zeven Provincien (Rate I)
+    • Sovereign (Rate I)
+    • Victory (Rate I)
+
+  TRANSPORT:
+    • Friede (Rate VII)
+    • Mercury (Rate VI)
+    • Russia (Rate V)
+    • Southampton (Rate V)
+    • Falmouth (Rate IV)
+    • Flying Cloud (Rate IV)
+    • Friedrich Wilhelm (Rate IV)
+    • Mordaunt (Rate III)
+    • Prins Willem (Rate III)
+    • La Sirene (Rate II)
+    • La Couronne (Rate I)
+
+  HEAVY:
+    • Phoenix (Rate VI)
+    • San Martin (Rate V)
+    • Constitution (Rate IV)
+    • Three Hierarchs (Rate IV)
+    • Azov (Rate III)
+    • Bellona (Rate III)
+    • Redoutable (Rate II)
+    • St. Pavel (Rate II)
+    • Vasa (Rate II)
+    • 12 Apostolov (Rate I)
+    • Santisima Trinidad (Rate I)
+
+  SIEGE:
+    • Polacca (Rate VI)
+    • Golden Apostle (Rate VI)
+    • Eagle (Rate V)
+    • Le Requin (Rate V)
+    • Sparrow (Rate IV)
+    • Kobukson (Rate III)
+    • Shen (Rate III)
+    • Adventure (Rate II)
+    • La Royale (Rate I)
+
+  IMPERIAL:
+    • Balloon (Rate VI)
+    • Black Prince (Rate V)
+    • Devourer (Rate IV)
+    • Deadfish (Rate III)
+    • Octopus (Rate II)
+    • Huracan (Rate I)
+
+
+⚔️ WEAPONS (42)
+────────────────────────────────
+
+  CANNON:
+    • 6-pdr Rusty Cannon
+    • 8-pdr Cannon
+    • 16-pdr Cannon
+    • 18-pdr Cannon
+    • 20-pdr Admiral
+    • 32-pdr Cannon
+    • 36-pdr Inrog
+
+  LONG CANNON:
+    • 6-pdr Culverin
+    • 8-pdr Culverin
+    • 16-pdr Culverin
+    • 18-pdr Long Cannon
+    • 22-pdr Scorcher
+    • 32-pdr Long Cannon
+    • 38-pdr Jericho
+
+  CARRONADE:
+    • 12-pdr Carronade
+    • 16-pdr Carronade
+    • 24-pdr Carronade
+    • 28-pdr Carronade
+    • 32-pdr Stormbringer
+    • 42-pdr Carronade
+    • 48-pdr Colossus
+
+  MORTAR/BOMBARD:
+    • Poseidon
+    • Gilgamesh
+    • Zeus
+    • Basilisk
+    • Mjolnir
+    • Onager
+
+  SPECIAL WEAPON:
+    • Twin 6-pdr
+    • Twin 14-pdr
+    • Twin 20-pdr
+    • Triple 10-pdr
+    • Triple 16-pdr
+    • Alchemical Fire
+
+  BOMBARD:
+    • Imperial Bombard
+
+  MORTAR:
+    • 6 inch Mortar
+    • 7 inch Mortar
+    • 8 inch Mortar
+    • 9 inch Mortar
+    • 10 inch Mortar
+    • 11 inch Mortar
+    • Heavy Mortar
+    • Barrel Launcher
+
+
+💣 AMMUNITION (9)
+────────────────────────────────
+  • Round Shots
+  • Heated Shots
+  • Grapeshot
+  • Bar Shots
+  • Strike Rounds
+  • Phosphorous Shots
+  • Shrapnel Rounds
+  • Burning Arrows
+  • Snowballs
+
+
+🧨 TACTICAL PAYLOADS (6)
+────────────────────────────────
+  • Small Gunpowder Barrels
+  • Small Flaming Barrels
+  • Small Phosphorous Barrels
+  • Large Phosphorous Mine
+  • Large Shrapnel Mines
+  • Fire Ship
+
+
+🔧 UPGRADES (36)
+────────────────────────────────
+
+  SAILS:
+    • Cheap Sails
+    • Stitched Sails
+    • Elite Sails
+    • Tarpaulin Sails
+
+  COMBAT:
+    • Reinforced Cannons
+    • Advanced Gun Carriages
+    • Upper Deck
+    • Ammunition Cradles
+    • Incendiary Mixture
+    • Fortified Ports
+    • Combat Arsenal
+
+  MORTAR:
+    • Reinforced Centre-line
+    • Long-Range Mortars
+    • Swivel Mortars
+    • Lightweight Construction
+
+  PROTECTION:
+    • Teak Frames
+    • Iron Plating
+    • Fortified Gun Ports
+    • Iron Ram
+    • Copper Plating
+    • Repair Arsenal
+
+  SPEED:
+    • Lightweight Hull
+    • Maneuverable Helm
+    • Reinforced Masts
+
+  EXPEDITIONARY:
+    • Small Hooks
+    • Sturdy Frames
+    • Combat Crow's Nest
+    • Double Hold
+    • Extra Ballast
+    • Cellars
+    • Extra Bunks
+
+  UNUSUAL:
+    • Structural Expansion
+    • High Helm Port
+    • Portable Chest
+    • Emergency Powder Charge
+    • Strong Beams
+
+
+🧪 CONSUMABLES (27)
+────────────────────────────────
+
+  REPAIR (8):
+    • Wooden Patches
+    • Iron Patches
+    • Bronze Patches
+    • Wreckage Patches
+    • Wooden Repair Kit
+    • Iron Repair Kit
+    • Bronze Repair Kit
+    • Field Kit
+
+  GROUP (4):
+    • Blue Signal Flare
+    • Red Signal Flare
+    • Yellow Signal Flare
+    • Horn
+
+  GENERAL (15):
+    • Small Additional Sails
+    • Large Additional Sails
+    • Small Plates
+    • Large Plates
+    • Smoke Bomb
+    • Smoke Screen
+    • Bribery
+    • Black Double Powder
+    • Red Double Powder
+    • White Double Powder
+    • Rum Ration
+    • Filling Ration
+    • Phosphorus
+    • Powder Charge
+    • Poseidon's Hook
+
+
+📦 RESOURCES
+────────────────────────────────
+
+  RAW:
+    • Wood
+    • Iron Ore
+    • Copper Ore
+    • Coal
+    • Fish
+    • Resin
+    • Wreckage
+    • Whale Oil
+    • Fresh Meat
+    • Grain
+    • Water
+    • Volcanic Ore
+    • Animals
+    • Antiquities
+    • Captives
+    • Supplies
+
+  PROCESSED:
+    • Iron
+    • Copper
+    • Bronze
+    • Canvas
+    • Fabric
+    • Beam
+    • Bulkhead
+    • Plate
+    • Tackle
+    • Rum
+    • Provision
+
+
+🏪 TRADE GOODS (20)
+────────────────────────────────
+  • Pineapples
+  • Vanilla
+  • Wine
+  • Grog
+  • Rugs
+  • Leather
+  • Cinnamon
+  • Coffee
+  • Mango
+  • Oil
+  • Nuts
+  • Paprika
+  • Pepper
+  • Beer
+  • Sugar
+  • Salt
+  • Tobacco
+  • Dates
+  • Saffron
+  • Silk
+
+
+👥 CREW TYPES (3)
+────────────────────────────────
+  • Sailors
+  • Musketeers
+  • Special Crew
+
+
+💰 CURRENCIES (12)
+────────────────────────────────
+  • Gold
+  • Battle Marks
+  • Voodoo Skulls
+  • Escudos
+  • Pirate Tokens
+  • Imperial Blueprints
+  • Blueprint Fragments
+  • Coins
+  • Chest
+  • Chest Key
+  • Scrolls
+  • Construction License
+  • Insurance
+
+
+🏴 FACTIONS (6)
+────────────────────────────────
+  • Antilia
+  • Espaniol
+  • Kai & Severia
+  • Trade Union
+  • Pirates
+  • Imperial (Inhagger Empire)
+
+
+⭐ SKILLS (46)
+────────────────────────────────
+
+  BATTLES (14):
+    • Sixth Sense
+    • Squadron Captain
+    • Targeted Fire
+    • Slaveholding
+    • Salvo Fire
+    • Fire Extinguishing
+    • Donor
+    • Double Salvo
+    • Vulnerabilities
+    • Repair Gear
+    • Right Hand
+    • Gunnery Crack
+    • Mining
+    • Morale
+
+  CRAFT (16):
+    • Protection
+    • Combat Log
+    • Trade Affairs
+    • Helping Hand
+    • Quartermaster
+    • Trade License
+    • Apprentice
+    • Quick Delivery
+    • Even the Scraps
+    • Master
+    • Self-Supply
+    • Carpentry
+    • Blacksmithing
+    • Workforce Management
+    • Alloys
+    • Underground Hall
+
+  EXPLORATION (16):
+    • Seamanship
+    • Fast Travel
+    • Escort
+    • Decoy Flags
+    • Logistics
+    • Personal Islands
+    • Good Connections
+    • Storekeeper
+    • Third Island
+    • Illegal Mooring
+    • Patrician
+    • Workforce
+    • Trade Pact
+    • Arsenal
+    • Construction Expertise
+    • Magnate
+
+  LEGEND:
+    • (Locked until level 30)
+
+
+🔨 CRAFTING/PROCESS RECIPES (47)
+────────────────────────────────
+
+  PROCESSING:
+    • 10 Iron — 10 Iron Ore + 1 Coal (1 min)
+    • 1 Copper — 1 Copper Ore + 1 Coal (2 min)
+    • 1 Coal — 2 Wreckage (1 min)
+    • 3 Fresh Meat — 1 Animals (1 min)
+    • 50 Fabric + 1 Leather — 10 Animals (20 min)
+    • 1 Beam — 100 Wood + 5 Iron (5 min)
+    • 1 Bronze — 20 Iron + 10 Copper + 1 Coal (6 min)
+    • 1 Plate — 15 Coal + 4 Resin + 30 Iron (6 min)
+    • 1 Canvas — 10 Fabric + 1 Resin (3 min)
+    • 1 Bulkhead — 1 Resin + 70 Iron (5 min)
+    • 1 Provision — 1 Rum + 2 Supplies + 3 Fresh Meat (2 min)
+    • 1 Tackle — 5 Wood + 1 Iron (1 min)
+    • 1 Chest — 500 Gold (1 min)
+    • 1 Imperial Blueprint — 100 Blueprint Fragments + 100,000 Gold (200 min)
+
+  AMMUNITION:
+    • 100 Round Shots — 8 Iron (1 min)
+    • 100 Heated Shots — 5 Iron + 2 Whale Oil (1 min)
+    • 3 Shrapnel Rounds — 1 Copper + 5 Iron (1 min)
+    • 10 Small Flaming Barrels — 100 Wood + 10 Whale Oil (1 min)
+    • 10 Large Shrapnel Mines — 20 Resin + 200 Iron (1 min)
+
+  REPAIRS:
+    • 1 Wooden Patches — 10 Wood
+    • 1 Iron Patches — 30 Iron
+    • 1 Bronze Patches — 1 Bronze
+    • 1 Wreckage Patches — 25 Wreckage + 1 Battle Mark
+    • 1 Wooden Repair Kit — 8 Fabric + 10 Wood
+    • 1 Iron Repair Kit — 30 Fabric + 22 Iron
+    • 1 Bronze Repair Kit — 1 Canvas + 1 Bronze
+    • 1 Field Kit — 10 Rum + 100 Gold
+
+  CONSUMABLES:
+    • 1 Small Additional Sails — 40 Gold
+    • 1 Large Additional Sails — 2 Canvas
+    • 1 Small Plates — 30 Iron
+    • 1 Large Plates — 5 Battle Mark + 1 Plate
+    • 1 Smoke Bomb — 10 Battle Mark
+    • 1 Smoke Screen — 10 Battle Mark + 40 Iron
+    • 1 Bribery — 1 Voodoo Skull
+    • 1 Black Double Powder — 60 Gold
+    • 1 Red Double Powder — 60 Gold
+    • 1 White Double Powder — 60 Gold
+    • 1 Rum Ration — 20 Rum
+    • 1 Filling Ration — 20 Fish + 40 Fresh Meat
+    • 1 Phosphorus — 4 Battle Mark + 150 Gold
+    • 1 Powder Charge — 4 Battle Mark + 150 Gold
+    • 1 Poseidon's Hook — 1 Voodoo Skull + 5,000 Gold
+    • 1 Blue Signal Flare — 130 Gold
+    • 1 Red Signal Flare — 200 Gold
+    • 1 Yellow Signal Flare — 10 Battle Mark
+    • 1 Horn — 1 Voodoo Skull
+
+  VARIABLE OUTPUT:
+    • 9–16.9 Iron — 1 Volcanic Ore + 1 Coal
+    • 0.7–1.3 Copper — 1 Antiquities + 1 Coal

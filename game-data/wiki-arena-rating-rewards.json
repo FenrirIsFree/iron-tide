@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "source": "ArenaRatingGameplay.cs",
+    "description": "Arena season rating rewards for Gold, Silver, and Bronze tier placements",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "tierSizes": {
+    "description": "Number of top players in each reward tier, scaled by player count",
+    "formula": "ceiling(baseCount * min(1, playerCount / 1000))",
+    "gold": 40,
+    "silver": 80,
+    "bronze": 160,
+    "note": "E.g., with 500 players: gold=20, silver=40, bronze=80"
+  },
+  "rewards": {
+    "gold": {
+      "legendaryFlagDays": 90,
+      "treasureMaps": 100,
+      "marks": 10000,
+      "satelliteDesigns": 3,
+      "randomDesign": true,
+      "arenaCurrency": "rating / 2",
+      "achievement": "ArenaRatingGold"
+    },
+    "silver": {
+      "legendaryFlagDays": 60,
+      "treasureMaps": 70,
+      "marks": 7000,
+      "satelliteDesigns": 2,
+      "randomDesign": true,
+      "arenaCurrency": "rating / 2",
+      "achievement": "ArenaRatingSilver"
+    },
+    "bronze": {
+      "legendaryFlagDays": 30,
+      "treasureMaps": 30,
+      "marks": 3000,
+      "satelliteDesigns": 1,
+      "randomDesign": true,
+      "arenaCurrency": "rating / 2",
+      "achievement": "ArenaRatingBronze"
+    }
+  }
+}

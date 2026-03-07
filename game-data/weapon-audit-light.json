@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "audit": "Light Weapons",
+    "date": "2026-03-06",
+    "source": "Google Drive screenshots (in-game tooltips)",
+    "weaponsAudited": 9,
+    "summary": "All stats match weapon-stats.json. New fields discovered: accuracy_spread (all), placement restrictions (bombards), multi-projectile notation (Twin 6-pdr)."
+  },
+  "weapons": [
+    {
+      "name": "6-pdr Rusty Cannon",
+      "category": "Light Cannon",
+      "type": "Cannon",
+      "screenshot": {
+        "penetration": 13,
+        "loadTime": 10.5,
+        "range": 125,
+        "maxAngle": 34,
+        "accuracySpread": 8.5
+      },
+      "json": {
+        "penetration": 13,
+        "loadTime": 10.5,
+        "range": 125,
+        "maxAngle": 34
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 8.5 },
+      "placementRestriction": null,
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "8-pdr Cannon",
+      "category": "Light Cannon",
+      "type": "Cannon",
+      "screenshot": {
+        "penetration": 14,
+        "loadTime": 9,
+        "range": 130,
+        "maxAngle": 31,
+        "accuracySpread": 9.5
+      },
+      "json": {
+        "penetration": 14,
+        "loadTime": 9,
+        "range": 130,
+        "maxAngle": 31
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 9.5 },
+      "placementRestriction": null,
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "6-pdr Culverin",
+      "category": "Light Long Cannon",
+      "type": "Long Cannon",
+      "screenshot": {
+        "penetration": 14,
+        "loadTime": 15.5,
+        "range": 135,
+        "maxAngle": 17,
+        "accuracySpread": 5
+      },
+      "json": {
+        "penetration": 14,
+        "loadTime": 15.5,
+        "range": 135,
+        "maxAngle": 17
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 5 },
+      "placementRestriction": null,
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "8-pdr Culverin",
+      "category": "Light Long Cannon",
+      "type": "Long Cannon",
+      "screenshot": {
+        "penetration": 15,
+        "loadTime": 13,
+        "range": 140,
+        "maxAngle": 16,
+        "accuracySpread": 6
+      },
+      "json": {
+        "penetration": 15,
+        "loadTime": 13,
+        "range": 140,
+        "maxAngle": 16
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 6 },
+      "placementRestriction": null,
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "12-pdr Carronade",
+      "category": "Light Carronade",
+      "type": "Carronade",
+      "screenshot": {
+        "penetration": 20,
+        "loadTime": 22,
+        "range": 105,
+        "maxAngle": 26,
+        "accuracySpread": 9.5
+      },
+      "json": {
+        "penetration": 20,
+        "loadTime": 22,
+        "range": 105,
+        "maxAngle": 26
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 9.5 },
+      "placementRestriction": null,
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "16-pdr Carronade",
+      "category": "Light Carronade",
+      "type": "Carronade",
+      "screenshot": {
+        "penetration": 21.5,
+        "loadTime": 19.5,
+        "range": 110,
+        "maxAngle": 23,
+        "accuracySpread": 11.5
+      },
+      "json": {
+        "penetration": 21.5,
+        "loadTime": 19.5,
+        "range": 110,
+        "maxAngle": 23
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 11.5 },
+      "placementRestriction": null,
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "Basilisk",
+      "category": "Light Bombard",
+      "type": "Bombard",
+      "screenshot": {
+        "penetration": 17.5,
+        "loadTime": 18.5,
+        "range": 150,
+        "maxAngle": 25,
+        "accuracySpread": 4
+      },
+      "json": {
+        "penetration": 17.5,
+        "loadTime": 18.5,
+        "range": 150,
+        "maxAngle": 25
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 4 },
+      "placementRestriction": "Only for the bow or stern",
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "Poseidon",
+      "category": "Light Bombard",
+      "type": "Bombard",
+      "screenshot": {
+        "penetration": 26,
+        "loadTime": 18,
+        "range": 80,
+        "maxAngle": 30,
+        "accuracySpread": 11
+      },
+      "json": {
+        "penetration": 26,
+        "loadTime": 18,
+        "range": 80,
+        "maxAngle": 30
+      },
+      "discrepancies": [],
+      "newFields": { "accuracySpread": 11 },
+      "placementRestriction": "Only for the bow or stern",
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    },
+    {
+      "name": "Twin 6-pdr",
+      "category": "Light Bombard",
+      "type": "Bombard",
+      "screenshot": {
+        "penetration": "16 x2",
+        "loadTime": 20,
+        "range": 115,
+        "maxAngle": 12,
+        "accuracySpread": 9
+      },
+      "json": {
+        "penetration": 16,
+        "loadTime": 20,
+        "range": 115,
+        "maxAngle": 12
+      },
+      "discrepancies": [
+        {
+          "field": "penetration",
+          "json": 16,
+          "screenshot": "16 x2",
+          "note": "Screenshot shows 'x2' notation indicating 2 projectiles per shot. JSON stores only base value 16."
+        }
+      ],
+      "newFields": { "accuracySpread": 9, "projectileCount": 2 },
+      "placementRestriction": "Only for the bow or stern",
+      "costVisible": false,
+      "damageVisible": false,
+      "descriptionVisible": false
+    }
+  ],
+  "overallFindings": {
+    "statsMatch": true,
+    "totalDiscrepancies": 1,
+    "discrepancyDetails": "Twin 6-pdr shows 'penetration: 16 x2' in-game (2 projectiles). JSON has penetration: 16 without projectile count.",
+    "missingFromJson": {
+      "accuracySpread": "New stat found on all 9 weapons. Values: 8.5, 9.5, 5, 6, 9.5, 11.5, 4, 11, 9",
+      "placementRestriction": "All 3 bombards (Basilisk, Poseidon, Twin 6-pdr) show 'Only for the bow or stern'",
+      "projectileCount": "Twin 6-pdr fires 2 projectiles (x2 notation)"
+    },
+    "notVisibleInScreenshots": [
+      "cost/resources",
+      "damage",
+      "description",
+      "weight",
+      "special effects"
+    ],
+    "recommendations": [
+      "Add 'accuracySpread' stat to all weapons in weapon-stats.json",
+      "Add 'placementRestriction' field to bombard weapons",
+      "Add 'projectileCount' field to Twin/Triple weapons",
+      "Need separate screenshots of shop/crafting UI to verify cost data"
+    ]
+  }
+}

@@ -1,0 +1,752 @@
+[
+  {
+    "gameId": "res_1",
+    "name": "Wood",
+    "description": "A basic material for shipbuilding and rigging. Lets you patch the hull at sea. Found everywhere and one of the main resources in ports. Can also be obtained from #sawmills or by #dismantling captured ships. Could the whole Archipelago be deforested...?",
+    "status": "ok",
+    "mediumCost": 2,
+    "mass": 2,
+    "effects": "",
+    "icon": "Res1"
+  },
+  {
+    "gameId": "res_2",
+    "name": "Rum",
+    "description": "Rum can be used to dilute water and extend its storage - or simply to lift the mood... That's why sailors ain't too fond of strict discipline, get it? Often paid instead of wages, for example to craftsmen when building cannons.",
+    "status": "ok",
+    "mediumCost": 8,
+    "mass": 6,
+    "effects": "",
+    "icon": "Res2"
+  },
+  {
+    "gameId": "res_3",
+    "name": "Fabric",
+    "description": "Mostly made from hemp or flax. Best source is capturing and #breaking down ships for sailcloth, or spinning wool from #animals into fabric.",
+    "status": "ok",
+    "mediumCost": 3,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res4"
+  },
+  {
+    "gameId": "res_4",
+    "name": "Iron",
+    "description": "Foundation for construction and casting, especially weaponry. Obtained by processing iron ore from #mines or #smelting old cannons in the workshop. Merchant ships often carry iron.",
+    "status": "ok",
+    "mediumCost": 3,
+    "mass": 4,
+    "effects": "",
+    "icon": "Res3"
+  },
+  {
+    "gameId": "res_5",
+    "name": "Water",
+    "description": "Crystal-clear freshwater (for now) from local glaciers. Seawater, of course, isn\u2019t good for drinking or cooking... Cities rely on #water supply managed by the port-owning faction. Without it, cities face shortages. Water can be freely traded at the auction or smuggled to certain bays.",
+    "status": "ok",
+    "mediumCost": 3,
+    "mass": 2,
+    "effects": "Corruption 0.9",
+    "icon": "Res5"
+  },
+  {
+    "gameId": "res_6",
+    "name": "Sugar",
+    "description": "A food commodity with demand varying by region. Can be #sold in settlements and to sea traders. Sugar is also used for rum production.",
+    "status": "ok",
+    "mediumCost": 30,
+    "mass": 20,
+    "effects": "TradingItem South ShouldBeInNps",
+    "icon": "Res6"
+  },
+  {
+    "gameId": "res_7",
+    "name": "Beer",
+    "description": "A drink that's quickly gaining popularity, though not as favored as sailors' rum yet. Beer brine helps preserve things, making it valuable to settlements and sea merchants.",
+    "status": "ok",
+    "mediumCost": 5,
+    "mass": 6,
+    "effects": "FoodValue 5 TradingItem North ShouldBeInNps",
+    "icon": "Res7"
+  },
+  {
+    "gameId": "res_8",
+    "name": "Captives",
+    "description": "In the Archipelago, the slave trade is prohibited. Yet, it flourishes in pirate ports, where captives work in #mines and #factories, serving as servants on #personal islands.",
+    "status": "ok",
+    "mediumCost": 30,
+    "mass": 60,
+    "effects": "CannotBeStoredInPort",
+    "icon": "Res8"
+  },
+  {
+    "gameId": "res_9",
+    "name": "Supplies",
+    "description": "Fruits, tobacco, coffee, and spices are highly prized across the Archipelago and are vital ingredients in #provisions. They can be discovered while #exploring #islands",
+    "status": "ok",
+    "mediumCost": 15,
+    "mass": 5,
+    "effects": "FoodValue 5",
+    "icon": "Res9"
+  },
+  {
+    "gameId": "res_10",
+    "name": "Grain",
+    "description": "In demand on #farms and settlements due to its relative cheapness. Often available from sea merchants. Nine happy rats in the hold out of ten!",
+    "status": "ok",
+    "mediumCost": 8,
+    "mass": 20,
+    "effects": "Corruption 0.7",
+    "icon": "Res10"
+  },
+  {
+    "gameId": "res_11",
+    "name": "Copper",
+    "description": "Crucial for alloys and #weapon production. Only gained by processing copper ore from #mines or #melting down old weapons in the workshop.",
+    "status": "ok",
+    "mediumCost": 30,
+    "mass": 10,
+    "effects": "",
+    "icon": "Res11"
+  },
+  {
+    "gameId": "res_12",
+    "name": "Coal",
+    "description": "Irreplaceable for iron forging, cannon casting, and heating northern settlements. Found in #coal mines or made by #burning wrecks in the workshop. Very expensive in cold regions; in the south, kids use it instead of snowballs.",
+    "status": "ok",
+    "mediumCost": 10,
+    "mass": 5,
+    "effects": "",
+    "icon": "Res12"
+  },
+  {
+    "gameId": "res_13",
+    "name": "Resin",
+    "description": "Pitch coating protects parts from moisture and makes the workers sticky. Produced at special #productions.",
+    "status": "ok",
+    "mediumCost": 25,
+    "mass": 2,
+    "effects": "",
+    "icon": "Res13"
+  },
+  {
+    "gameId": "res_14",
+    "name": "Bronze",
+    "description": "Durable alloy made in the #workshop for high-quality #weapons and #upgrades. Bronze ingots are heavy enough to be parts or melee weapons.",
+    "status": "ok",
+    "mediumCost": 390,
+    "mass": 90,
+    "effects": "",
+    "icon": "Res14"
+  },
+  {
+    "gameId": "res_15",
+    "name": "Escudo",
+    "description": "This is what the imperial currency is called in the Archipelago. Only these gold coins are accepted when building Imperial ships. They can also be traded for valuables at #altars of the \u201csea gods,\u201d where local natives will gladly make a deal.",
+    "status": "ok",
+    "mediumCost": 2000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res15"
+  },
+  {
+    "gameId": "res_16",
+    "name": "Plate",
+    "description": "A large iron part. Produced in the #workshop. Required for building large #ships and #fortifications.",
+    "status": "ok",
+    "mediumCost": 380,
+    "mass": 100,
+    "effects": "",
+    "icon": "Res16"
+  },
+  {
+    "gameId": "res_17",
+    "name": "Canvas",
+    "description": "Thick, heavy fabric resistant to moisture, made in the #workshop. A strategic resource used, oddly enough, for sail making and repair.",
+    "status": "ok",
+    "mediumCost": 70,
+    "mass": 10,
+    "effects": "",
+    "icon": "Res17"
+  },
+  {
+    "gameId": "res_18",
+    "name": "Resin",
+    "description": "Coating parts with resin protects them from moisture and makes the ones who applied it sticky. Produced in specialized facilities at sea.",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 20,
+    "mass": 5,
+    "effects": "",
+    "icon": "Res18"
+  },
+  {
+    "gameId": "res_19",
+    "name": "Cargo Crate",
+    "description": "Quest item",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 2,
+    "mass": 500,
+    "effects": "",
+    "icon": "Res19"
+  },
+  {
+    "gameId": "res_20",
+    "name": "Wreckage",
+    "description": "What's left floating after a ship is destroyed. Can be burned into #coal in the workshop.",
+    "status": "ok",
+    "mediumCost": 5,
+    "mass": 5,
+    "effects": "",
+    "icon": "Res20"
+  },
+  {
+    "gameId": "res_21",
+    "name": "Fresh Meat",
+    "description": "Unlike rotten meat, this can be used for cooking. Part of #rations and hearty meals.",
+    "status": "ok",
+    "mediumCost": 4,
+    "mass": 5,
+    "effects": "Corruption 1 FoodValue 4",
+    "icon": "Res21"
+  },
+  {
+    "gameId": "res_22",
+    "name": "Animals",
+    "description": "Transporting animals is profitable but requires preparation. You'll also need to clean the hold and deck... The animals survive long voyages and provide #meat and #wool for clothing.",
+    "status": "ok",
+    "mediumCost": 12,
+    "mass": 22,
+    "effects": "DestroyWhenDamage 0.3 FoodValue 20",
+    "icon": "Res22"
+  },
+  {
+    "gameId": "res_23",
+    "name": "Volcanic Ore",
+    "description": "Scattered across the #islands like an echo of the primeval volcanic eruption. Can be refined into iron or used in #cannon casting. Barrels with volcanic ore in the alloy are unmatched in quality",
+    "status": "ok",
+    "mediumCost": 30,
+    "mass": 40,
+    "effects": "",
+    "icon": "Res23"
+  },
+  {
+    "gameId": "res_24",
+    "name": "Chest",
+    "description": "An excellent way to store your #savings safely. To get the gold out\u2026 just open the chest in port. Even a small gold chest makes a great piece of decor.",
+    "status": "ok",
+    "mediumCost": 500,
+    "mass": 2,
+    "effects": "",
+    "icon": "Res24"
+  },
+  {
+    "gameId": "res_25",
+    "name": "Amber",
+    "description": "A unique wax-like substance highly valued by perfumers and medics of the Khanfar Caliphate. The only commodity that can be traded at auction during the #Tender. Disappears from all warehouses after the Tender ends!",
+    "status": "ok",
+    "mediumCost": 100,
+    "mass": 5,
+    "effects": "TradingItem Arab",
+    "icon": "Res25"
+  },
+  {
+    "gameId": "res_26",
+    "name": "removed",
+    "description": "removed",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 800,
+    "mass": 260,
+    "effects": "",
+    "icon": "Res26"
+  },
+  {
+    "gameId": "res_27",
+    "name": "Beam",
+    "description": "Made in the #workshop through woodcrafting. Versatile and used in building #ships and creating their #upgrades.",
+    "status": "ok",
+    "mediumCost": 240,
+    "mass": 150,
+    "effects": "",
+    "icon": "Res27"
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 1,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res27"
+  },
+  {
+    "gameId": "res_29",
+    "name": "Bulkhead",
+    "description": "Large iron part made in the workshop for #ship construction. You better secure it properly during transport, especially in storms, to not send your crew flying to Davy Jones' locker...",
+    "status": "ok",
+    "mediumCost": 280,
+    "mass": 210,
+    "effects": "",
+    "icon": "Res29"
+  },
+  {
+    "gameId": "res_30",
+    "name": "Antiquities",
+    "description": "Captain's silverware and pretty accessories. May be a bit rusty, but still valuable to some collectors or for #selling to #traders. Can be #melted in port to get copper.",
+    "status": "ok",
+    "mediumCost": 20,
+    "mass": 4,
+    "effects": "",
+    "icon": "Res30"
+  },
+  {
+    "gameId": "res_31",
+    "name": "Iron Ore",
+    "description": "Mined from iron #mines. Smelted into #iron in the workshop.",
+    "status": "ok",
+    "mediumCost": 3,
+    "mass": 6,
+    "effects": "",
+    "icon": "Res31"
+  },
+  {
+    "gameId": "res_32",
+    "name": "Copper Ore",
+    "description": "Mined from copper #mines. Can be turned into #copper at the workshop.",
+    "status": "ok",
+    "mediumCost": 20,
+    "mass": 25,
+    "effects": "",
+    "icon": "Res32"
+  },
+  {
+    "gameId": "res_33",
+    "name": "Insurance",
+    "description": "This fancy-looking piece of paper lets you build any top-level mine or manufactory for free or upgrade the port warehouse to the fifth level.",
+    "status": "ok",
+    "mediumCost": 60000,
+    "mass": 1,
+    "effects": "DisallowDrop",
+    "icon": "Res33"
+  },
+  {
+    "gameId": "res_34",
+    "name": "Fish",
+    "description": "Freshly caught and cooked fish is a delicacy for sailors with a poor #diet. Often sold in ports, but best exchanged with special traders for rare goods.",
+    "status": "ok",
+    "mediumCost": 6,
+    "mass": 3,
+    "effects": "Corruption 1.8 FoodValue 6 SpeedBonus",
+    "icon": "Res34"
+  },
+  {
+    "gameId": "res_35",
+    "name": "Scrolls",
+    "description": "Needed for #mode access. Find scrolls at sea or earn them through #quests and arena battles.",
+    "status": "ok",
+    "mediumCost": 50,
+    "mass": 1,
+    "effects": "Map",
+    "icon": "Res35"
+  },
+  {
+    "gameId": "res_36",
+    "name": "Tackles",
+    "description": "Can be crafted in the #workshop or \u201cborrowed\u201d from fishermen. If tackle is in your hold, fishing spots will be marked on the map. Tackle significantly #boosts your #catch and allows harpooning whales near your ship. There's more fish and whales up north.",
+    "status": "ok",
+    "mediumCost": 12,
+    "mass": 5,
+    "effects": "",
+    "icon": "Res36"
+  },
+  {
+    "gameId": "res_37",
+    "name": "Battle Mark",
+    "description": "This currency lets you buy #rare #items from merchants and get approval from the admiralty for building certain ships or setting up new production. You can earn it through Arena and sea battles. Beware that trading it at an auction comes with extra taxes.",
+    "status": "ok",
+    "mediumCost": 200,
+    "mass": 1,
+    "effects": "DisallowDrop",
+    "icon": "Res37"
+  },
+  {
+    "gameId": "res_38",
+    "name": "Voodoo Skull",
+    "description": "An unusual find that merchants can exchange for #rare #items and upgrades. Whether it's a real skull or not, one can only guess.",
+    "status": "ok",
+    "mediumCost": 4000,
+    "mass": 7,
+    "effects": "",
+    "icon": "Res38"
+  },
+  {
+    "gameId": "res_39",
+    "name": "Provision",
+    "description": "Food supplies for sailors and workers on the land, serving far from cities.",
+    "status": "ok",
+    "mediumCost": 50,
+    "mass": 40,
+    "effects": "FoodValue 50",
+    "icon": "Res39"
+  },
+  {
+    "gameId": "res_40",
+    "name": "Construction License",
+    "description": "This document lets you #upgrade a #fort to the highest level, instantly repair all structures, or build a specific ship.",
+    "status": "ok",
+    "mediumCost": 400000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res40"
+  },
+  {
+    "gameId": "res_41",
+    "name": "Chest (Arena)",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 20000,
+    "mass": 100,
+    "effects": "",
+    "icon": "Res41"
+  },
+  {
+    "gameId": "res_42",
+    "name": "Modification Blueprint",
+    "description": "Use this blueprint to let the shipyard masters modify an existing upgrade or install a new one, including rare ones.",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 10000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res42"
+  },
+  {
+    "gameId": "res_43",
+    "name": "Chest Key",
+    "description": "Mysterious key. Collect them to open a chest and get rewards.",
+    "status": "ok",
+    "mediumCost": 25000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res43"
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 15000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res44"
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 15000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res44"
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 15000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res44"
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 20000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res44"
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "status": "REMOVEfromAccounts",
+    "mediumCost": 25000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res44"
+  },
+  {
+    "gameId": "res_49",
+    "name": "Saffron",
+    "description": "A spice valued as highly as gold. It's also used as a dye for the clothing of the Archipelago's aristocrats.",
+    "status": "ok",
+    "mediumCost": 37,
+    "mass": 15,
+    "effects": "TradingItem Arab",
+    "icon": "Res49"
+  },
+  {
+    "gameId": "res_50",
+    "name": "Paprika",
+    "description": "A sweet and mildly spicy seasoning made from special peppers. Used in many popular dishes. For example, the famous Laguno-Blanco omelet wouldn't be the same without paprika.",
+    "status": "ok",
+    "mediumCost": 15,
+    "mass": 9,
+    "effects": "TradingItem Arab",
+    "icon": "Res50"
+  },
+  {
+    "gameId": "res_51",
+    "name": "Cinnamon",
+    "description": "Used as a fragrant spice and flavor enhancer.",
+    "status": "ok",
+    "mediumCost": 23,
+    "mass": 7,
+    "effects": "TradingItem Arab ShouldBeOnIsle",
+    "icon": "Res51"
+  },
+  {
+    "gameId": "res_52",
+    "name": "Salt",
+    "description": "Essential everywhere, even though it's plentiful on the Archipelago. Salted meat can last at \"room\" temperature and is crucial for long voyages.",
+    "status": "ok",
+    "mediumCost": 18,
+    "mass": 5,
+    "effects": "TradingItem North ShouldBeOnIsle",
+    "icon": "Res52"
+  },
+  {
+    "gameId": "res_53",
+    "name": "Silk",
+    "description": "Valued for its exquisite qualities and beauty. Only the wealthiest of the Archipelago can afford it. Trading silk is a path to riches.",
+    "status": "ok",
+    "mediumCost": 52,
+    "mass": 20,
+    "effects": "TradingItem Arab ShouldBeInNps",
+    "icon": "Res53"
+  },
+  {
+    "gameId": "res_54",
+    "name": "Rugs",
+    "description": "It's a treasure you can't walk on!",
+    "status": "ok",
+    "mediumCost": 24,
+    "mass": 6,
+    "effects": "TradingItem Arab ShouldBeInNps",
+    "icon": "Res54"
+  },
+  {
+    "gameId": "res_55",
+    "name": "Dates",
+    "description": "Edible fruits from certain types of palm trees, usually eaten dried.",
+    "status": "ok",
+    "mediumCost": 8,
+    "mass": 6,
+    "effects": "TradingItem Arab Corruption 1 FoodValue 8",
+    "icon": "Res55"
+  },
+  {
+    "gameId": "res_56",
+    "name": "Mango",
+    "description": "Very sweet and nutritious.",
+    "status": "ok",
+    "mediumCost": 11,
+    "mass": 4,
+    "effects": "TradingItem Arab ShouldBeOnIsle Corruption 1 FoodValue 11",
+    "icon": "Res56"
+  },
+  {
+    "gameId": "res_57",
+    "name": "Tobacco",
+    "description": "Despite Bridgeport's medical warnings about the dangers of smoking pipes, tobacco's popularity and trade volume keep rising.",
+    "status": "ok",
+    "mediumCost": 32,
+    "mass": 14,
+    "effects": "TradingItem South ShouldBeInNps",
+    "icon": "Res57"
+  },
+  {
+    "gameId": "res_58",
+    "name": "Coffee",
+    "description": "Beans for brewing the most popular hot drink. Coffee's so essential, it keeps you from falling off the mast and breaking your neck in the middle of the night! It's not grown on the Archipelago, so we might run out one day...",
+    "status": "ok",
+    "mediumCost": 25,
+    "mass": 12,
+    "effects": "TradingItem South ShouldBeInNps",
+    "icon": "Res58"
+  },
+  {
+    "gameId": "res_59",
+    "name": "Leather",
+    "description": "Durable, flexible, and long-lasting material.",
+    "status": "ok",
+    "mediumCost": 20,
+    "mass": 5,
+    "effects": "TradingItem South ShouldBeInNps",
+    "icon": "Res59"
+  },
+  {
+    "gameId": "res_60",
+    "name": "Pepper",
+    "description": "Goes great with almost anything, be it meat, poultry, or vegetables. Even if the cook's skills are as rough as the high seas, a pinch of pepper can save the day.",
+    "status": "ok",
+    "mediumCost": 21,
+    "mass": 6,
+    "effects": "TradingItem South ShouldBeOnIsle",
+    "icon": "Res60"
+  },
+  {
+    "gameId": "res_61",
+    "name": "Vanilla",
+    "description": "A sweet spice, highly prized for the laborious process of cultivating vanilla pods.",
+    "status": "ok",
+    "mediumCost": 22,
+    "mass": 7,
+    "effects": "TradingItem South ShouldBeOnIsle",
+    "icon": "Res61"
+  },
+  {
+    "gameId": "res_62",
+    "name": "Nuts",
+    "description": "Nutritious and long-lasting",
+    "status": "ok",
+    "mediumCost": 9,
+    "mass": 5,
+    "effects": "TradingItem South FoodValue 9",
+    "icon": "Res62"
+  },
+  {
+    "gameId": "res_63",
+    "name": "Wine",
+    "description": "A sophisticated alcoholic drink. Winemaking and wine drinking are arts in themselves, much like the trade of fine wine.",
+    "status": "ok",
+    "mediumCost": 9,
+    "mass": 3,
+    "effects": "TradingItem North FoodValue 3",
+    "icon": "Res63"
+  },
+  {
+    "gameId": "res_64",
+    "name": "Pineapples",
+    "description": "Fresh fruit on board is a rarity on long voyages. Highly prized, they help prevent scurvy and other diseases from lack of vitamins.",
+    "status": "ok",
+    "mediumCost": 11,
+    "mass": 4,
+    "effects": "TradingItem South ShouldBeOnIsle Corruption 1 FoodValue 11",
+    "icon": "Res64"
+  },
+  {
+    "gameId": "res_65",
+    "name": "Oil",
+    "description": "Essential for cooking, making incense, and producing medicines.",
+    "status": "ok",
+    "mediumCost": 13,
+    "mass": 3,
+    "effects": "TradingItem South ShouldBeInNps",
+    "icon": "Res65"
+  },
+  {
+    "gameId": "res_66",
+    "name": "Grog",
+    "description": "Watered-down rum with lime and cinnamon. Lasts longer than plain water, prevents illness, and brightens a sailor's hard life.",
+    "status": "ok",
+    "mediumCost": 9,
+    "mass": 5,
+    "effects": "TradingItem North Corruption 1 FoodValue 3 ShouldBeInNps",
+    "icon": "Res66"
+  },
+  {
+    "gameId": "res_44",
+    "name": "Blueprint Fragment",
+    "description": "Some ships can only be built using unique Imperial blueprints. You can find blueprint fragments by sinking Imperial flagships, and once you\u2019ve studied enough, you can build a unique ship.",
+    "status": "ok",
+    "mediumCost": 10000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res44"
+  },
+  {
+    "gameId": "res_45",
+    "name": "Imperial Blueprint",
+    "description": "Collect #fragments and visit a ragpicker to assemble a complete blueprint. The ragpicker can be found in ports (Workshop section) and charge a hefty fee for their services!",
+    "status": "ok",
+    "mediumCost": 1000000,
+    "mass": 1,
+    "effects": "DisallowDropAndBoarding",
+    "icon": "Res45"
+  },
+  {
+    "gameId": "res_69",
+    "name": "Seahorse",
+    "description": "These remarkable little fish, shaped like a chess knight, are in high demand among overseas merchants. Some say it\u2019s due to a fashion among Khanfar nobles to keep them in aquariums... or perhaps it\u2019s tied to the coming Year of the Horse.",
+    "status": "ok",
+    "mediumCost": 1000,
+    "mass": 1,
+    "effects": "",
+    "icon": "Res69"
+  },
+  {
+    "gameId": "res_70",
+    "name": "Whale Oil",
+    "description": "The main fuel for lamps and #lanterns, lighting up the darkest corners of the Archipelago. Ships carrying it can easily be found by their smell.",
+    "status": "ok",
+    "mediumCost": 10,
+    "mass": 15,
+    "effects": "Corruption 1",
+    "icon": "Res70"
+  },
+  {
+    "gameId": "res_71",
+    "name": "Mysterious Map",
+    "description": "Collect all parts of the mysterious map to reveal a #marker (yellow cross) on the map where #treasure is hidden.",
+    "status": "ok",
+    "mediumCost": 1,
+    "mass": 1,
+    "effects": "Map",
+    "icon": "Res71"
+  },
+  {
+    "gameId": "res_72",
+    "name": "Pirate Token",
+    "description": "A special currency for \"insiders.\" Only it can be used to get certain services from pirates... Can be found by sinking pirates and Order ships. Pirate bays have a trader willing to exchange tokens for rare items",
+    "status": "ok",
+    "mediumCost": 150,
+    "mass": 1,
+    "effects": "Map",
+    "icon": "Res72"
+  },
+  {
+    "gameId": "res_73",
+    "name": "Merchant Supply Map",
+    "description": "Collect all map parts to reveal a #marker (yellow cross) showing where #supplies are hidden. Pieces are found by sinking trade ships.",
+    "status": "ok",
+    "mediumCost": 1,
+    "mass": 1,
+    "effects": "Map",
+    "icon": "ResMerchantMap"
+  },
+  {
+    "gameId": "res_74",
+    "name": "Pirate Treasure Map",
+    "description": "Collect all map pieces to reveal a #marker (yellow cross) showing where the #treasure is hidden. Map fragments are found by sinking elite ships with a star.",
+    "status": "ok",
+    "mediumCost": 1,
+    "mass": 1,
+    "effects": "Map",
+    "icon": "ResPirateMap"
+  },
+  {
+    "gameId": "res_75",
+    "name": "Fanatic Camp Map",
+    "description": "Collect all map parts to reveal a #marker (yellow cross) showing the location of a #camp. Pieces are found by sinking fanatic ships.",
+    "status": "ok",
+    "mediumCost": 1,
+    "mass": 1,
+    "effects": "Map",
+    "icon": "ResCultMap"
+  }
+]

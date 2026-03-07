@@ -1,0 +1,380 @@
+[
+  {
+    "gameId": "nport_0",
+    "name": "Freebooter Bay",
+    "type": "PirateBay",
+    "buildShipRanks": 6,
+    "flags": "",
+    "fixedLevel": 3,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_1",
+    "name": "Bay of Santa Marta",
+    "type": "NeutralBay",
+    "buildShipRanks": 7,
+    "flags": "StartPort UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_2",
+    "name": "Brandport Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 7,
+    "flags": "StartPort",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_3",
+    "name": "Devios Bay",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "UnitsSamurai",
+    "fixedLevel": 0,
+    "producedResource": "TWoodID"
+  },
+  {
+    "gameId": "nport_4",
+    "name": "Freedom Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 6,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_5",
+    "name": "Fiji Bay",
+    "type": "Bay",
+    "buildShipRanks": 6,
+    "flags": "StartPort UnitsFisher",
+    "fixedLevel": 0,
+    "producedResource": "TCopper"
+  },
+  {
+    "gameId": "nport_6",
+    "name": "North Bastion",
+    "type": "Bay",
+    "buildShipRanks": 5,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TRumID"
+  },
+  {
+    "gameId": "nport_7",
+    "name": "Oneg Bay",
+    "type": "Bay",
+    "buildShipRanks": 2,
+    "flags": "UnitsFisher NearIce",
+    "fixedLevel": 0,
+    "producedResource": "TWater"
+  },
+  {
+    "gameId": "nport_8",
+    "name": "Gray Island Bay",
+    "type": "Bay",
+    "buildShipRanks": 5,
+    "flags": "UnitsFisher",
+    "fixedLevel": 0,
+    "producedResource": "TRumID"
+  },
+  {
+    "gameId": "nport_9",
+    "name": "Port Gelbion",
+    "type": "City",
+    "buildShipRanks": 3,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TResinLaquer"
+  },
+  {
+    "gameId": "nport_10",
+    "name": "Surako Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 4,
+    "flags": "UnitsSamurai",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_11",
+    "name": "Northside Cove",
+    "type": "Bay",
+    "buildShipRanks": 5,
+    "flags": "UnitsFisher NearIce",
+    "fixedLevel": 0,
+    "producedResource": "TWater"
+  },
+  {
+    "gameId": "nport_12",
+    "name": "Port San Martinas",
+    "type": "City",
+    "buildShipRanks": 4,
+    "flags": "UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": "TWoodID"
+  },
+  {
+    "gameId": "nport_13",
+    "name": "Charleston Harbor",
+    "type": "Bay",
+    "buildShipRanks": 2,
+    "flags": "UnitsFisher",
+    "fixedLevel": 0,
+    "producedResource": "TCottonID"
+  },
+  {
+    "gameId": "nport_14",
+    "name": "Port Severoangelsk",
+    "type": "City",
+    "buildShipRanks": 4,
+    "flags": "NearIce",
+    "fixedLevel": 0,
+    "producedResource": "TWater"
+  },
+  {
+    "gameId": "nport_15",
+    "name": "La Navidad Bay",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "CaptureWithoutWindow UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": "TCottonID"
+  },
+  {
+    "gameId": "nport_16",
+    "name": "Port San Cristobel",
+    "type": "City",
+    "buildShipRanks": 4,
+    "flags": "UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": "TWoodID"
+  },
+  {
+    "gameId": "nport_17",
+    "name": "Port Thermopylae",
+    "type": "City",
+    "buildShipRanks": 1,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TCoal"
+  },
+  {
+    "gameId": "nport_18",
+    "name": "Port Bridgetown",
+    "type": "City",
+    "buildShipRanks": 1,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TCoal"
+  },
+  {
+    "gameId": "nport_19",
+    "name": "Port Nevis",
+    "type": "City",
+    "buildShipRanks": 1,
+    "flags": "UnitsSamurai",
+    "fixedLevel": 0,
+    "producedResource": "TCoal"
+  },
+  {
+    "gameId": "nport_20",
+    "name": "Port Laguna Blanco",
+    "type": "City",
+    "buildShipRanks": 1,
+    "flags": "UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": "TCoal"
+  },
+  {
+    "gameId": "nport_21",
+    "name": "Port Bord Radel",
+    "type": "City",
+    "buildShipRanks": 5,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TCopper"
+  },
+  {
+    "gameId": "nport_22",
+    "name": "Port Masadora",
+    "type": "City",
+    "buildShipRanks": 3,
+    "flags": "UnitsSamurai",
+    "fixedLevel": 0,
+    "producedResource": "TCottonID"
+  },
+  {
+    "gameId": "nport_23",
+    "name": "South Bastion",
+    "type": "Bay",
+    "buildShipRanks": 5,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TWoodID"
+  },
+  {
+    "gameId": "nport_24",
+    "name": "Corsa-Noir Bay",
+    "type": "PirateBay",
+    "buildShipRanks": 3,
+    "flags": "",
+    "fixedLevel": 5,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_25",
+    "name": "Pirate City",
+    "type": "PirateBay",
+    "buildShipRanks": 3,
+    "flags": "",
+    "fixedLevel": 7,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_26",
+    "name": "Port Aruba",
+    "type": "City",
+    "buildShipRanks": 2,
+    "flags": "UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": "TRumID"
+  },
+  {
+    "gameId": "nport_27",
+    "name": "Tortuga",
+    "type": "PirateBay",
+    "buildShipRanks": 1,
+    "flags": "OnlyPirateFlag",
+    "fixedLevel": 7,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_28",
+    "name": "Naabad Stronghold",
+    "type": "PirateBay",
+    "buildShipRanks": 3,
+    "flags": "Stronghold",
+    "fixedLevel": 6,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_29",
+    "name": "Puerto Salada Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 7,
+    "flags": "StartPort UnitsMusketeer",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_30",
+    "name": "Port Al-Khalif",
+    "type": "City",
+    "buildShipRanks": 2,
+    "flags": "Arab",
+    "fixedLevel": 7,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_31",
+    "name": "Port Assab",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "Arab",
+    "fixedLevel": 6,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_32",
+    "name": "Port Sharhat",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "Arab",
+    "fixedLevel": 5,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_33",
+    "name": "Nisogora Bay",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TResinLaquer"
+  },
+  {
+    "gameId": "nport_34",
+    "name": "El Tigre Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 3,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TWoodID"
+  },
+  {
+    "gameId": "nport_35",
+    "name": "Cursed City",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TResinLaquer"
+  },
+  {
+    "gameId": "nport_36",
+    "name": "West Bastion",
+    "type": "City",
+    "buildShipRanks": 2,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": "TResinLaquer"
+  },
+  {
+    "gameId": "nport_37",
+    "name": "Everston Bay",
+    "type": "Bay",
+    "buildShipRanks": 3,
+    "flags": "CaptureWithoutWindow",
+    "fixedLevel": 0,
+    "producedResource": "TRumID"
+  },
+  {
+    "gameId": "nport_38",
+    "name": "Aldansk Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 5,
+    "flags": "NearIce",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_39",
+    "name": "Los Catuano Bay",
+    "type": "Bay",
+    "buildShipRanks": 6,
+    "flags": "StartPort",
+    "fixedLevel": 0,
+    "producedResource": "TCopper"
+  },
+  {
+    "gameId": "nport_40",
+    "name": "Nordberg Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 4,
+    "flags": "NearIce",
+    "fixedLevel": 0,
+    "producedResource": ""
+  },
+  {
+    "gameId": "nport_41",
+    "name": "St. Jean Bay",
+    "type": "NeutralBay",
+    "buildShipRanks": 5,
+    "flags": "",
+    "fixedLevel": 0,
+    "producedResource": ""
+  }
+]

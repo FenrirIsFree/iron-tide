@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "source": "wosbcraft.com bribery tab screenshot",
+    "date": "2026-03-05",
+    "note": "Material prices are variable — website calculator needs user-adjustable prices",
+    "phase": "Phase 2 feature"
+  },
+  "mechanic": {
+    "description": "Bribe NPC ships by paying gold equal to their HP. Receive materials in return. Profit = total material value - bribe cost.",
+    "bribeCost": "Equal to ship HP in gold",
+    "materialsReceived": ["Wood", "Beam", "Wreckage", "Fabric", "Resin"],
+    "profitFormula": "SUM(material_qty * material_price) - bribe_cost"
+  },
+  "defaultMaterialPrices": {
+    "note": "Derived from screenshot (value / qty). These fluctuate in-game.",
+    "wood": 3.9,
+    "beam": 779,
+    "wreckage": 100,
+    "fabric": 3.5,
+    "resin": 54
+  },
+  "npcShips": [
+    { "name": "Nightshade", "hp": 5036, "materials": { "wood": 2197, "beam": 21, "wreckage": 390, "fabric": 976, "resin": 58 } },
+    { "name": "Holy Wrath", "hp": 4754, "materials": { "wood": 1527, "beam": 15, "wreckage": 271, "fabric": 678, "resin": 40 } },
+    { "name": "Lost Horizon", "hp": 3997, "materials": { "wood": 1255, "beam": 12, "wreckage": 223, "fabric": 558, "resin": 33 } },
+    { "name": "Iron Whale", "hp": 4228, "materials": { "wood": 1179, "beam": 11, "wreckage": 209, "fabric": 524, "resin": 31 } },
+    { "name": "The Rising Plunder", "hp": 3199, "materials": { "wood": 758, "beam": 8, "wreckage": 134, "fabric": 337, "resin": 20 } },
+    { "name": "Doom Ark", "hp": 3255, "materials": { "wood": 743, "beam": 7, "wreckage": 132, "fabric": 330, "resin": 19 } },
+    { "name": "Majestic Wave", "hp": 2912, "materials": { "wood": 674, "beam": 7, "wreckage": 119, "fabric": 299, "resin": 17 } },
+    { "name": "Herald of Ruin", "hp": 3463, "materials": { "wood": 686, "beam": 7, "wreckage": 122, "fabric": 305, "resin": 18 } },
+    { "name": "Exodus", "hp": 2752, "materials": { "wood": 603, "beam": 6, "wreckage": 107, "fabric": 268, "resin": 16 } },
+    { "name": "Ocean Bounty", "hp": 2701, "materials": { "wood": 591, "beam": 6, "wreckage": 105, "fabric": 262, "resin": 15 } },
+    { "name": "Saphire Route", "hp": 2947, "materials": { "wood": 553, "beam": 6, "wreckage": 98, "fabric": 246, "resin": 14 } },
+    { "name": "Trade Winds", "hp": 2170, "materials": { "wood": 518, "beam": 5, "wreckage": 92, "fabric": 230, "resin": 13 } },
+    { "name": "Velvet Horizon", "hp": 2176, "materials": { "wood": 509, "beam": 5, "wreckage": 90, "fabric": 226, "resin": 13 } },
+    { "name": "Fortunate Sail", "hp": 1925, "materials": { "wood": 442, "beam": 5, "wreckage": 78, "fabric": 196, "resin": 11 } },
+    { "name": "Sapphire Route", "hp": 2083, "materials": { "wood": 429, "beam": 4, "wreckage": 76, "fabric": 190, "resin": 11 } },
+    { "name": "Golden Harbor", "hp": 1988, "materials": { "wood": 414, "beam": 4, "wreckage": 73, "fabric": 184, "resin": 11 } },
+    { "name": "Redeemer", "hp": 1703, "materials": { "wood": 351, "beam": 4, "wreckage": 62, "fabric": 156, "resin": 9 } }
+  ],
+  "featurePlan": {
+    "description": "Interactive bribery profit calculator for the Iron Tide website",
+    "inputs": ["Current material prices (Wood, Beam, Wreckage, Fabric, Resin)"],
+    "outputs": ["Sortable table of all 17 NPC ships", "Profit per ship (color-coded)", "Best ships to bribe at current prices"]
+  }
+}

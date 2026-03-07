@@ -1,0 +1,173 @@
+{
+  "_meta": {
+    "source": "GuildQuests.cs",
+    "description": "Guild quest types, progression requirements, action rewards, and faction availability",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "questProgression": {
+    "description": "Repeatable guild quests with progress tracking. Each completion awards 1 guild quest point.",
+    "quests": [
+      {
+        "id": "FractionMakeEnemyDamage",
+        "requiredAmount": 150000,
+        "availableTo": ["Nation"],
+        "scope": "EnemyDamage"
+      },
+      {
+        "id": "TradersGoldTurnover",
+        "requiredAmount": 15000000,
+        "availableTo": ["TradeUnion"],
+        "scope": "GoldTurnover"
+      },
+      {
+        "id": "TradersBuildTopShips",
+        "requiredAmount": 5,
+        "availableTo": ["TradeUnion"],
+        "scope": "BuildTopShips"
+      },
+      {
+        "id": "TradersSellPearl",
+        "requiredAmount": 600,
+        "availableTo": ["TradeUnion"],
+        "scope": "SellPearlEvent"
+      },
+      {
+        "id": "TradersUseCraftTime",
+        "requiredAmount": 50000,
+        "availableTo": ["TradeUnion"],
+        "scope": "UseCraftTime"
+      },
+      {
+        "id": "PirateKills",
+        "requiredAmount": 75,
+        "availableTo": ["Pirate"],
+        "scope": "KillsInGuild"
+      },
+      {
+        "id": "PirateTraderBoardings",
+        "requiredAmount": 8,
+        "availableTo": ["Pirate"],
+        "scope": "BoardingTraders"
+      },
+      {
+        "id": "AnyGainExperience",
+        "requiredAmount": 300000,
+        "availableTo": ["All"],
+        "scope": "GainExperience"
+      },
+      {
+        "id": "AnyMakeQuests",
+        "requiredAmount": 50,
+        "availableTo": ["All"],
+        "scope": "MakeQuests"
+      },
+      {
+        "id": "AnyGrowRanks",
+        "requiredAmount": 5,
+        "availableTo": ["All"],
+        "scope": "GrowRanks"
+      },
+      {
+        "id": "AnyGiveAchievements",
+        "requiredAmount": 120,
+        "availableTo": ["All"],
+        "scope": "Achievements"
+      },
+      {
+        "id": "SupplyMission",
+        "availableTo": ["Pirate", "Nation"],
+        "scope": "SupplyMission",
+        "scalingRequirements": {
+          "completion0": 400000,
+          "completion1": 600000,
+          "completion2": 900000,
+          "completion3": 1300000,
+          "completion4": 1800000,
+          "completion5": 2400000,
+          "completion6plus": 3000000
+        }
+      }
+    ]
+  },
+  "questActions": {
+    "description": "One-time guild quest actions that award points immediately",
+    "actions": [
+      {
+        "id": "CaptureCity",
+        "rewards": {
+          "Pirate": 6,
+          "Nation": "portLevel * 4",
+          "TradeUnion": 0
+        }
+      },
+      {
+        "id": "ProtectCity",
+        "rewards": {
+          "Pirate": 4,
+          "Nation": "3 + portLevel * 2",
+          "TradeUnion": 0
+        }
+      },
+      {
+        "id": "HoldPort",
+        "rewards": {
+          "Nation": "0.5 * portLevel",
+          "Pirate": 0,
+          "TradeUnion": 0
+        }
+      },
+      {
+        "id": "HoldOpenedPort",
+        "rewards": {
+          "Nation": "portLevel * 2 - 1",
+          "Pirate": 0,
+          "TradeUnion": 0
+        }
+      },
+      {
+        "id": "FailedAttack",
+        "rewards": {
+          "Pirate": -5,
+          "Nation": -5,
+          "TradeUnion": 0
+        }
+      },
+      {
+        "id": "CooperatePb",
+        "rewards": {
+          "Nation": "2-4 based on participant count",
+          "Pirate": 0,
+          "TradeUnion": 0,
+          "note": ">4 participants = 4 pts, >2 = 3 pts, >0 = 2 pts"
+        }
+      },
+      {
+        "id": "ColonizeCity",
+        "rewards": {
+          "Pirate": 8,
+          "Nation": 0,
+          "TradeUnion": 0
+        }
+      }
+    ]
+  },
+  "scopeToFactionMapping": {
+    "description": "Which GuildQuestScoped types are available to which factions",
+    "GrowTensity": "None",
+    "BoardingEnemy": "None",
+    "GainExperience": "All",
+    "MakeQuests": "All",
+    "GrowRanks": "All",
+    "Achievements": "All",
+    "GoldTurnover": "TradeUnion only",
+    "BuildTopShips": "TradeUnion only",
+    "KillsAll": "None",
+    "KillsInGuild": "Pirate only",
+    "BoardingTraders": "Pirate only",
+    "EnemyDamage": "Nation only",
+    "SellPearlEvent": "TradeUnion only",
+    "UseCraftTime": "TradeUnion only",
+    "SupplyMission": "Pirate + Nation (not TradeUnion)"
+  }
+}

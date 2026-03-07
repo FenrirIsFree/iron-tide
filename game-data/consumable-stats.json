@@ -1,0 +1,361 @@
+{
+  "equipSlots": 3,
+  "categories": {
+    "repair": [
+      {
+        "name": "Wooden Patches",
+        "category": "Repair",
+        "description": "Add 150 points of temporary durability and absorb damage.",
+        "effects": {
+          "temporaryDurability": 150
+        },
+        "cooldown": "120 sec",
+        "activeTime": "12 sec",
+        "restriction": null
+      },
+      {
+        "name": "Iron Patches",
+        "category": "Repair",
+        "description": "Add 250 points of temporary durability and absorb damage.",
+        "effects": {
+          "temporaryDurability": 250
+        },
+        "cooldown": "120 sec",
+        "activeTime": "12 sec",
+        "restriction": null
+      },
+      {
+        "name": "Bronze Patches",
+        "category": "Repair",
+        "description": "Add 400 points of temporary durability and absorb damage.",
+        "effects": {
+          "temporaryDurability": 400
+        },
+        "cooldown": "120 sec",
+        "activeTime": "12 sec",
+        "restriction": "Available on ships of rate 3 and above"
+      },
+      {
+        "name": "Wreckage Patches",
+        "category": "Repair",
+        "description": "Instantly add 200 points of temporary durability and absorb damage.",
+        "effects": {
+          "temporaryDurability": 200,
+          "instant": true
+        },
+        "cooldown": "65 sec",
+        "activeTime": "1 sec",
+        "restriction": "Available on ships of rate 3 and above"
+      },
+      {
+        "name": "Wooden Repair Kit",
+        "category": "Repair",
+        "description": "Repairs 100 durability pts. and 8% of sail pts. During repairs, your ship takes increased damage!",
+        "effects": {
+          "durabilityRepair": 100,
+          "sailRepairPercent": 8,
+          "increasedDamageDuringUse": true
+        },
+        "cooldown": "120 sec",
+        "activeTime": "10 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Iron Repair Kit",
+        "category": "Repair",
+        "description": "Repairs 150 durability pts. and 12% of sail pts. During repairs, your ship takes more damage!",
+        "effects": {
+          "durabilityRepair": 150,
+          "sailRepairPercent": 12,
+          "increasedDamageDuringUse": true
+        },
+        "cooldown": "120 sec",
+        "activeTime": "10 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Bronze Repair Kit",
+        "category": "Repair",
+        "description": "Repairs 230 durability pts. and 15% of sail pts. During repairs, your ship takes more damage!",
+        "effects": {
+          "durabilityRepair": 230,
+          "sailRepairPercent": 15,
+          "increasedDamageDuringUse": true
+        },
+        "cooldown": "120 sec",
+        "activeTime": "10 sec",
+        "interruptedBy": "pressing again",
+        "restriction": "Available on ships of rate 3 and above"
+      },
+      {
+        "name": "Field Kit",
+        "category": "Repair",
+        "description": "Assists in repairing up to 3 disabled weapons, heals 5 injured crew members, repairs 2% of durability, and extinguishes all minor fires.",
+        "effects": {
+          "weaponsRepaired": 3,
+          "crewHealed": 5,
+          "durabilityRepairPercent": 2,
+          "extinguishMinorFires": true
+        },
+        "cooldown": "60 sec",
+        "activeTime": "1 sec",
+        "restriction": null
+      }
+    ],
+    "group": [
+      {
+        "name": "Blue Signal Flare",
+        "category": "Group",
+        "description": "+0.5 knot to the speed of all ships in the squadron.",
+        "effects": {
+          "squadronSpeedBonus": 0.5,
+          "buffDistance": 500
+        },
+        "cooldown": "40 sec",
+        "activeTime": "80 sec",
+        "restriction": null
+      },
+      {
+        "name": "Red Signal Flare",
+        "category": "Group",
+        "description": "+7% to damage of all weapons of all ships in the squadron.",
+        "effects": {
+          "squadronDamageBonus": "7%",
+          "buffDistance": 500
+        },
+        "cooldown": "40 sec",
+        "activeTime": "80 sec",
+        "restriction": null
+      },
+      {
+        "name": "Yellow Signal Flare",
+        "category": "Group",
+        "description": "+7% damage and +1 knot to the speed of all ships in the squadron.",
+        "effects": {
+          "squadronDamageBonus": "7%",
+          "squadronSpeedBonus": 1.0,
+          "buffDistance": 500
+        },
+        "cooldown": "40 sec",
+        "activeTime": "80 sec",
+        "restriction": null
+      },
+      {
+        "name": "Horn",
+        "category": "Group",
+        "description": "Adds 5% temporary durability, which absorbs damage, for all allies in the squadron.",
+        "effects": {
+          "squadronTemporaryDurabilityPercent": 5
+        },
+        "cooldown": "120 sec",
+        "activeTime": null,
+        "restriction": null
+      }
+    ],
+    "general": [
+      {
+        "name": "Small Additional Sails",
+        "category": "General",
+        "description": "Increase speed by 1 knot.",
+        "effects": {
+          "speedBonus": 1.0
+        },
+        "cooldown": "60 sec",
+        "activeTime": "30 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Large Additional Sails",
+        "category": "General",
+        "description": "Increase speed by 1.5 knots and grant a temporary dash upon activation. Sails are vulnerable while active and take twice as much damage.",
+        "effects": {
+          "speedBonus": 1.5,
+          "dash": true,
+          "sailDamageMultiplier": 2
+        },
+        "cooldown": "60 sec",
+        "activeTime": "30 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Small Plates",
+        "category": "General",
+        "description": "Increase ship defense by 2.5 but decrease maneuverability by 6%.",
+        "effects": {
+          "defenseBonus": 2.5,
+          "maneuverabilityPenalty": "-6%"
+        },
+        "cooldown": "40 sec",
+        "activeTime": "30 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Large Plates",
+        "category": "General",
+        "description": "Increase ship defense by 4 and speeds up extinguishing minor fires but decrease maneuverability by 10%.",
+        "effects": {
+          "defenseBonus": 4,
+          "fasterFireExtinguish": true,
+          "maneuverabilityPenalty": "-10%"
+        },
+        "cooldown": "50 sec",
+        "activeTime": "30 sec",
+        "interruptedBy": "pressing again",
+        "restriction": "Available on ships of rate 3 and above"
+      },
+      {
+        "name": "Smoke Bomb",
+        "category": "General",
+        "description": "Reduces all damage by 15%, including for sails and crew. Slowly dissipates.",
+        "effects": {
+          "damageReduction": "15%",
+          "affectsSailsAndCrew": true
+        },
+        "cooldown": "25 sec",
+        "activeTime": "45 sec",
+        "restriction": null
+      },
+      {
+        "name": "Smoke Screen",
+        "category": "General",
+        "description": "Reduces all damage by 25%, including for sails and crew. Disperses quickly.",
+        "effects": {
+          "damageReduction": "25%",
+          "affectsSailsAndCrew": true
+        },
+        "cooldown": "60 sec",
+        "activeTime": "30 sec",
+        "restriction": null
+      },
+      {
+        "name": "Bribery",
+        "category": "General",
+        "description": "A small fee in gold can force the nearest NPS ship to join the squadron! The payment in gold is equal to the durability of the captured ship. This item is highlighted green if bribery is possible.",
+        "effects": {
+          "captureNPSShip": true,
+          "goldCost": "equal to ship durability"
+        },
+        "cooldown": "240 sec",
+        "activeTime": null,
+        "restriction": null
+      },
+      {
+        "name": "Black Double Powder",
+        "category": "General",
+        "description": "+2.5 to ammo penetration and +15% damage for mortars. Reloading takes 9% longer.",
+        "effects": {
+          "penetrationBonus": 2.5,
+          "mortarDamageBonus": "15%",
+          "reloadPenalty": "9%"
+        },
+        "cooldown": "30 sec",
+        "activeTime": "50 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Red Double Powder",
+        "category": "General",
+        "description": "+25% damage for guns and mortars against structures, +30% to reload speed of swivel guns.",
+        "effects": {
+          "structureDamageBonus": "25%",
+          "swivelGunReloadBonus": "30%"
+        },
+        "cooldown": "30 sec",
+        "activeTime": "50 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "White Double Powder",
+        "category": "General",
+        "description": "+10 pts. for cannon and mortar range and +20% shot accuracy. Ship speed while active is reduced by 1 knot.",
+        "effects": {
+          "rangeBonus": 10,
+          "accuracyBonus": "20%",
+          "speedPenalty": -1
+        },
+        "cooldown": "30 sec",
+        "activeTime": "50 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Rum Ration",
+        "category": "General",
+        "description": "Crew will load guns 20% faster but work slower with the sails. Ship speed will be decreased by 8%.",
+        "effects": {
+          "reloadSpeedBonus": "20%",
+          "speedPenalty": "-8%"
+        },
+        "cooldown": "80 sec",
+        "activeTime": "60 sec",
+        "restriction": null
+      },
+      {
+        "name": "Filling Ration",
+        "category": "General",
+        "description": "The crew works more efficiently: Maneuverability +5%, reload speed of other items +30%, sail handling speed +10%, ammunition swap speed +30%, repair speed at sea +30%, item retrieval at sea +50%, ship speed in rowing mode increased by 1.5 knots.",
+        "effects": {
+          "maneuverabilityBonus": "5%",
+          "itemReloadBonus": "30%",
+          "sailHandlingBonus": "10%",
+          "ammoSwapBonus": "30%",
+          "repairSpeedBonus": "30%",
+          "itemRetrievalBonus": "50%",
+          "rowingSpeedBonus": 1.5
+        },
+        "cooldown": "60 sec",
+        "activeTime": "120 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Phosphorus",
+        "category": "General",
+        "description": "Enhance any ammo type with phosphorus. Increases penetration by +2 and slows enemy ships on impact. Does not stack with gunpowder and reduces the cannon's angle of fire. Cannot be canceled.",
+        "effects": {
+          "penetrationBonus": 2,
+          "slowOnHit": true,
+          "reducedFireAngle": true,
+          "cannotBeCanceled": true
+        },
+        "cooldown": "30 sec",
+        "activeTime": "60 sec",
+        "restriction": null
+      },
+      {
+        "name": "Powder Charge",
+        "category": "General",
+        "description": "Enhances any ammo type, causing it to explode and deal area damage. NPS are more vulnerable to explosions. Reduces attack range by 5% and halves penetration, but the damage is compensated by the explosion, which harms even protected ships.",
+        "effects": {
+          "explosiveAmmo": true,
+          "areaDamage": true,
+          "npsVulnerable": true,
+          "rangePenalty": "-5%",
+          "penetrationPenalty": "-50%"
+        },
+        "cooldown": "40 sec",
+        "activeTime": "50 sec",
+        "interruptedBy": "pressing again",
+        "restriction": null
+      },
+      {
+        "name": "Poseidon's Hook",
+        "category": "General",
+        "description": "Doubles the weapons received when sinking NPS.",
+        "effects": {
+          "doubleNPSWeaponLoot": true
+        },
+        "cooldown": "180 sec",
+        "activeTime": "90 sec",
+        "restriction": null
+      }
+    ]
+  }
+}

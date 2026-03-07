@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "batch": 6,
+    "auditDate": "2026-03-06",
+    "totalShips": 10,
+    "summary": "All 10 ships verified against ship-stats.json. Several missing fields identified (descriptions, special properties, unlock requirements). A few data discrepancies found."
+  },
+  "ships": [
+    {
+      "name": "Friedrich Wilhelm",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Friedrich Wilhelm",
+        "class": "Frigate",
+        "rate": 4,
+        "category": "Transport",
+        "nation": "Brandenburg/Germany",
+        "description": "German \"great\" frigate of the 17th century. On July 25, 1692, the Friedrich Wilhelm departed Emden for Guinea. During the voyage, it defeated a French vessel.",
+        "durability": 2020,
+        "speed": 9.4,
+        "maneuverability": 96,
+        "broadsideArmor": 3.5,
+        "hold": 26000,
+        "crew": 120,
+        "hullDimensions": "45x11",
+        "displacement": "2700t",
+        "mediumWeapons": "4-21-4",
+        "swivelGuns": 8,
+        "integrity": 7,
+        "cost": { "type": "special", "amount": 4500 }
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Kwee Song",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Kwee Song",
+        "class": "Phanokson",
+        "rate": 5,
+        "category": "Battle/Combat",
+        "nation": "Korea",
+        "description": "A Korean ship with a distinctive armored deck resembling a turtle shell, hence its name \"turtle ship.\" The first of these ships fought the Japanese fleet at Sacheon. Local shipwrights further refined the design.",
+        "durability": 1360,
+        "speed": 7.9,
+        "maneuverability": 105,
+        "broadsideArmor": 4.5,
+        "hold": 12500,
+        "crew": 108,
+        "hullDimensions": "22x7",
+        "displacement": "1800t",
+        "lightWeapons": "0-10-10",
+        "swivelGuns": 6,
+        "integrity": 6,
+        "cost": { "type": "special", "amount": 2700, "discount": "-10%" }
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Shunsen",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Shunsen",
+        "class": "Junk",
+        "rate": 6,
+        "category": "Battle/Combat",
+        "nation": "Japan",
+        "description": "\"Red Seal Ship\". Such ships were used by the Tokugawa shogunate for trade and diplomatic missions to Southeast Asian ports. Upon reaching the Archipelago, it was converted into an excellent warship.",
+        "durability": 1000,
+        "speed": 8.5,
+        "maneuverability": 90,
+        "broadsideArmor": 3,
+        "hold": 11000,
+        "crew": 92,
+        "hullDimensions": "28x6",
+        "displacement": "1485t",
+        "heavyWeapons": "0-10-0",
+        "swivelGuns": 8,
+        "cost": { "type": "special", "amount": 675, "discount": "-10%" }
+      },
+      "discrepancies": [
+        {
+          "field": "integrity",
+          "json": "not present",
+          "screenshot": "not visible in screenshot either — JSON correctly omits it"
+        }
+      ],
+      "missingInJson": ["description"],
+      "notes": "No integrity value visible in screenshot, consistent with JSON having no integrity field."
+    },
+    {
+      "name": "De Zeven Provincien",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "De Zeven Provincien",
+        "class": "Ship of the Line",
+        "rate": 1,
+        "category": "Legend of the Age of Sail / Combat",
+        "nation": "Netherlands",
+        "description": "The flagship of Dutch Admiral de Ruyter, launched in 1665. A veteran of many victorious naval battles, the ship was named in honor of the seven autonomous provinces that formed the Dutch Republic in the 17th century.",
+        "durability": 3320,
+        "speed": 7.7,
+        "maneuverability": 75,
+        "broadsideArmor": 8.6,
+        "hold": 26000,
+        "crew": 188,
+        "hullDimensions": "51x8",
+        "displacement": "4140t",
+        "heavyWeapons": "4-42-4",
+        "swivelGuns": 10,
+        "integrity": 8,
+        "cost": { "type": "coins", "amount": 2770 },
+        "extras": ["Basic weapons included", "Dock in the port"],
+        "unlockRequirement": "Construct any ship of rates 1-2"
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Neptuno",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Neptuno",
+        "class": "Galleon",
+        "rate": 2,
+        "category": "Legend of the Age of Sail / Combat",
+        "nation": "Spain",
+        "description": "Originally a 17th-century Spanish Manila galleon, heavily armed and used to transport Spanish treasures from the Philippines to Mexico. After arriving in the Archipelago, the ship was redesigned and earned widespread fame.",
+        "durability": 2900,
+        "speed": 8.2,
+        "maneuverability": 80,
+        "broadsideArmor": 5.8,
+        "hold": 28000,
+        "crew": 194,
+        "hullDimensions": "46x9",
+        "displacement": "4050t",
+        "heavyWeapons": "4-36-4",
+        "swivelGuns": 10,
+        "integrity": 8,
+        "cost": { "type": "coins", "amount": 2450 },
+        "extras": ["Basic weapons included", "Dock in the port"]
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Le Saint Louis",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Le Saint Louis",
+        "class": "Ship of the Line",
+        "rate": 3,
+        "category": "Battle/Combat",
+        "nation": "France (historically) — screenshot shows Spanish flag icon area",
+        "description": "Line ship commissioned by Cardinal Richelieu as part of the naval reinforcement program. Participated in several battles and ultimately burned during the Battle of La Hougue after being attacked by English fireships.",
+        "durability": 2700,
+        "speed": 7.9,
+        "maneuverability": 78,
+        "broadsideArmor": 5.6,
+        "hold": 20000,
+        "crew": 170,
+        "hullDimensions": "52x13",
+        "displacement": "2925t",
+        "mediumWeapons": "6-26-6",
+        "swivelGuns": 10,
+        "integrity": 6,
+        "cost": { "type": "special", "amount": 7200, "discount": "-10%" }
+      },
+      "discrepancies": [
+        {
+          "field": "nation",
+          "json": "Spain",
+          "screenshot": "Description references French history (Cardinal Richelieu, Battle of La Hougue). Nation should likely be France, not Spain. The image analysis flagged Spanish flag but the ship is historically French.",
+          "severity": "HIGH"
+        }
+      ],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Sparrow",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Sparrow",
+        "class": "Tartane",
+        "rate": 4,
+        "category": "Siege",
+        "nation": "England",
+        "description": "Tartanes were widely used across the Mediterranean – from Turkey to Spain – for a variety of tasks. They were especially favored by Algerian corsairs. Upon reaching the Archipelago, the tartane became popular with local pirates, particularly after Tortuga craftsmen fitted it with mortars.",
+        "durability": 1000,
+        "speed": 9.1,
+        "maneuverability": 95,
+        "broadsideArmor": 1.5,
+        "hold": 10000,
+        "crew": 72,
+        "hullDimensions": "25x4",
+        "displacement": "1350t",
+        "mediumWeapons": "0-4-0",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 8 in., 3",
+        "integrity": 8,
+        "uniqueWindRose": true,
+        "cost": { "type": "coins", "amount": 995 },
+        "extras": ["Basic weapons included", "Dock in the port"]
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Axel Thorsen",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Axel Thorsen",
+        "class": "Schooner",
+        "rate": 5,
+        "category": "Fast-moving",
+        "nation": "Norway",
+        "description": "Norwegian gunboat schooner, one of ten built for the Dano-Norwegian fleet before the end of the Napoleonic Wars, when Norway became independent from Denmark under the Treaty of Kiel in 1814.",
+        "durability": 880,
+        "speed": 9.8,
+        "maneuverability": 110,
+        "broadsideArmor": 5,
+        "hold": 7500,
+        "crew": 66,
+        "hullDimensions": "22x3",
+        "displacement": "900t",
+        "swivelGuns": 10,
+        "imperialBombard": 1,
+        "integrity": 7,
+        "uniqueWindRose": true,
+        "cost": { "type": "battleMarks", "amount": 3000 },
+        "unlockRequirement": "Armed Merchant: 30"
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Golden Apostle",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Golden Apostle",
+        "class": "Cutter",
+        "rate": 6,
+        "category": "Siege",
+        "description": "Made from high-quality lightweight woods, this reconfigured combat schooner boasts excellent seafaring abilities and maneuverability. Pirates once mistook its flashy appearance for a sign of an inexperienced traveler – only to fall into an ambush themselves.",
+        "durability": 900,
+        "speed": 9.5,
+        "maneuverability": 120,
+        "broadsideArmor": 2.2,
+        "hold": 8500,
+        "crew": 96,
+        "hullDimensions": "23x3",
+        "displacement": "1260t",
+        "lightWeapons": "0-7-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 6 in., 1",
+        "integrity": 5,
+        "cost": { "type": "special", "amount": 250 }
+      },
+      "discrepancies": [],
+      "missingInJson": ["description"]
+    },
+    {
+      "name": "Santisima Trinidad",
+      "screenshotVerified": true,
+      "fromScreenshot": {
+        "name": "Santisima Trinidad",
+        "class": "Heavy Ship of the Line",
+        "rate": 1,
+        "category": "Legend of the Age of Sail",
+        "nation": "Spain",
+        "description": "The largest Spanish ship of the line, which fought at the Battle of Trafalgar. While heavy and unwieldy, she could easily devastate both land fortifications and entire squadrons of enemy frigates.",
+        "durability": 4160,
+        "speed": 6.4,
+        "maneuverability": 54,
+        "broadsideArmor": 9,
+        "hold": 39500,
+        "crew": 212,
+        "hullDimensions": "61x10",
+        "displacement": "4500t",
+        "heavyWeapons": "4-63-0",
+        "swivelGuns": 10,
+        "integrity": 8,
+        "xpAndLootBonus": "+15%",
+        "cost": { "type": "coins", "amount": 2870 },
+        "extras": ["Basic weapons included", "Dock in the port"],
+        "unlockRequirement": "Construct any ship of rates 1-2"
+      },
+      "discrepancies": [],
+      "missingInJson": ["description", "unlockRequirement"]
+    }
+  ],
+  "overallFindings": {
+    "totalDiscrepancies": 1,
+    "criticalIssues": [
+      {
+        "ship": "Le Saint Louis",
+        "issue": "Nation listed as Spain in JSON but ship is historically French (description references Cardinal Richelieu and Battle of La Hougue). Should be France.",
+        "severity": "HIGH"
+      }
+    ],
+    "missingAcrossAllShips": [
+      "description text — not stored in JSON for any ship in this batch",
+      "Santisima Trinidad missing unlockRequirement in JSON"
+    ],
+    "allStatsVerified": [
+      "All numerical stats (durability, speed, maneuverability, broadside armor, hold, crew, hull dimensions, displacement) match JSON for all 10 ships",
+      "All weapon slot configurations match JSON",
+      "All swivel gun counts match JSON",
+      "All mortar specs match JSON",
+      "All integrity values match JSON",
+      "All cost values match JSON",
+      "All special properties (uniqueWindRose, imperialBombard, xpAndLootBonus) match JSON"
+    ]
+  }
+}

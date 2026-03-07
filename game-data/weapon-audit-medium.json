@@ -1,0 +1,421 @@
+{
+  "meta": {
+    "auditType": "MEDIUM",
+    "auditDate": "2026-03-06",
+    "weaponsAudited": 15,
+    "source": "In-game screenshots (Google Drive)",
+    "summary": {
+      "totalDiscrepancies": 2,
+      "newFieldsDiscovered": ["accuracySpread", "placementRestriction", "projectileMultiplier", "firingTime"],
+      "weaponsWithDiscrepancies": ["18-pdr Long Cannon", "28-pdr Carronade"],
+      "notes": "Screenshots only show combat stats panel - cost, description, and weight are NOT visible in these tooltips. All 15 weapons verified for core stats."
+    }
+  },
+  "weapons": [
+    {
+      "name": "16-pdr Cannon",
+      "fileId": "10wPofvxiHZCUpxYiP-Voy29wqLltFdGO",
+      "category": "Medium Cannon",
+      "type": "Cannon",
+      "screenshotStats": {
+        "penetration": 14,
+        "loadTime": 12,
+        "range": 130,
+        "maxAngle": 29,
+        "accuracySpread": 10.5
+      },
+      "jsonStats": {
+        "penetration": 14,
+        "loadTime": 12,
+        "range": 130,
+        "maxAngle": 29
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 10.5
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "18-pdr Cannon",
+      "fileId": "1AhtaDGHSbfiLu5GJX0e6VkNipc-m012u",
+      "category": "Medium Cannon",
+      "type": "Cannon",
+      "screenshotStats": {
+        "penetration": 15,
+        "loadTime": 10.5,
+        "range": 135,
+        "maxAngle": 26,
+        "accuracySpread": 12
+      },
+      "jsonStats": {
+        "penetration": 15,
+        "loadTime": 10.5,
+        "range": 135,
+        "maxAngle": 26
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 12
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "20-pdr Admiral",
+      "fileId": "1NdoRvuGu72SaidqzqN3GbMWuZi5PGO_9",
+      "category": "Medium Cannon",
+      "type": "Cannon",
+      "screenshotStats": {
+        "penetration": 17,
+        "loadTime": 13.5,
+        "range": 130,
+        "maxAngle": 21,
+        "accuracySpread": 11
+      },
+      "jsonStats": {
+        "penetration": 17,
+        "loadTime": 13.5,
+        "range": 130,
+        "maxAngle": 21
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 11
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "16-pdr Culverin",
+      "fileId": "1vAWqwVUu9sba5fm2RurLeCv2ehN3Jada",
+      "category": "Medium Long Cannon",
+      "type": "Long Cannon",
+      "screenshotStats": {
+        "penetration": 15,
+        "loadTime": 17.5,
+        "range": 140,
+        "maxAngle": 14,
+        "accuracySpread": 6.5
+      },
+      "jsonStats": {
+        "penetration": 15,
+        "loadTime": 17.5,
+        "range": 140,
+        "maxAngle": 14
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 6.5
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "18-pdr Long Cannon",
+      "fileId": "1KAa8hjVCBMgVNyV5Q1-zpxmIePDoPeci",
+      "category": "Medium Long Cannon",
+      "type": "Long Cannon",
+      "screenshotStats": {
+        "penetration": 16,
+        "loadTime": 15,
+        "range": 145,
+        "maxAngle": 13,
+        "accuracySpread": 8
+      },
+      "jsonStats": {
+        "penetration": 15,
+        "loadTime": 13,
+        "range": 140,
+        "maxAngle": 16
+      },
+      "discrepancies": [
+        {"field": "penetration", "json": 15, "screenshot": 16, "delta": "+1"},
+        {"field": "loadTime", "json": 13, "screenshot": 15, "delta": "+2"},
+        {"field": "range", "json": 140, "screenshot": 145, "delta": "+5"},
+        {"field": "maxAngle", "json": 16, "screenshot": 13, "delta": "-3"}
+      ],
+      "newData": {
+        "accuracySpread": 8
+      },
+      "placementRestriction": null,
+      "status": "DISCREPANCY",
+      "notes": "ALL 4 core stats differ from JSON. Screenshot values may reflect an in-game upgrade or the JSON data may be outdated. Needs manual verification."
+    },
+    {
+      "name": "22-pdr Scorcher",
+      "fileId": "1ZtDJkkffiMgF3KHkstIP8bPs8Lqs4hU5",
+      "category": "Medium Long Cannon",
+      "type": "Long Cannon",
+      "screenshotStats": {
+        "penetration": 19,
+        "loadTime": 26,
+        "range": 148,
+        "maxAngle": 9,
+        "accuracySpread": 9.5
+      },
+      "jsonStats": {
+        "penetration": 19,
+        "loadTime": 26,
+        "range": 148,
+        "maxAngle": 9
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 9.5
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "24-pdr Carronade",
+      "fileId": "16PXT7V_bkLf19NynO-CIIck10nGLh_kQ",
+      "category": "Medium Carronade",
+      "type": "Carronade",
+      "screenshotStats": {
+        "penetration": 21.5,
+        "loadTime": 25.5,
+        "range": 110,
+        "maxAngle": 21,
+        "accuracySpread": 12
+      },
+      "jsonStats": {
+        "penetration": 21.5,
+        "loadTime": 25.5,
+        "range": 110,
+        "maxAngle": 21
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 12
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "28-pdr Carronade",
+      "fileId": "1ePE5AixkGNml_Bd70LAmkHlrJgzrX-Nb",
+      "category": "Medium Carronade",
+      "type": "Carronade",
+      "screenshotStats": {
+        "penetration": 23,
+        "loadTime": 22.5,
+        "range": 115,
+        "maxAngle": 20,
+        "accuracySpread": 14.5
+      },
+      "jsonStats": {
+        "penetration": 21.5,
+        "loadTime": 19.5,
+        "range": 110,
+        "maxAngle": 23
+      },
+      "discrepancies": [
+        {"field": "penetration", "json": 21.5, "screenshot": 23, "delta": "+1.5"},
+        {"field": "loadTime", "json": 19.5, "screenshot": 22.5, "delta": "+3"},
+        {"field": "range", "json": 110, "screenshot": 115, "delta": "+5"},
+        {"field": "maxAngle", "json": 23, "screenshot": 20, "delta": "-3"}
+      ],
+      "newData": {
+        "accuracySpread": 14.5
+      },
+      "placementRestriction": null,
+      "status": "DISCREPANCY",
+      "notes": "ALL 4 core stats differ from JSON. Same pattern as 18-pdr Long Cannon - possibly upgraded stats or wrong source data."
+    },
+    {
+      "name": "32-pdr Stormbringer",
+      "fileId": "13GttgkAXrq20Z8SxwhgtBMybWFRm-S0q",
+      "category": "Medium Carronade",
+      "type": "Carronade",
+      "screenshotStats": {
+        "penetration": 25.5,
+        "loadTime": 27.5,
+        "range": 105,
+        "maxAngle": 16,
+        "accuracySpread": 13
+      },
+      "jsonStats": {
+        "penetration": 25.5,
+        "loadTime": 27.5,
+        "range": 105,
+        "maxAngle": 16
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 13
+      },
+      "placementRestriction": null,
+      "status": "MATCH"
+    },
+    {
+      "name": "Zeus",
+      "fileId": "1gdajIYRQk6PaTOSXngQodYdhM8RUEs5d",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 19,
+        "loadTime": 21.5,
+        "range": 155,
+        "maxAngle": 21,
+        "accuracySpread": 5
+      },
+      "jsonStats": {
+        "penetration": 19,
+        "loadTime": 21.5,
+        "range": 155,
+        "maxAngle": 21
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 5,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "status": "MATCH"
+    },
+    {
+      "name": "Twin 14-pdr",
+      "fileId": "1i-_nn9a-57yutTCKUgJMiYAY-_F1-cpf",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 17,
+        "projectileMultiplier": 2,
+        "penetrationDisplay": "17 x2",
+        "loadTime": 23.5,
+        "range": 120,
+        "maxAngle": 10,
+        "accuracySpread": 11
+      },
+      "jsonStats": {
+        "penetration": 17,
+        "loadTime": 23.5,
+        "range": 120,
+        "maxAngle": 10
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 11,
+        "projectileMultiplier": 2,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "status": "MATCH"
+    },
+    {
+      "name": "Onager",
+      "fileId": "1R6buwDbmv-cWYlbky6Nd2yQvMKOcwzRH",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 28,
+        "loadTime": 20.5,
+        "range": 85,
+        "maxAngle": 25,
+        "accuracySpread": 13.5
+      },
+      "jsonStats": {
+        "penetration": 28,
+        "loadTime": 20.5,
+        "range": 85,
+        "maxAngle": 25
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 13.5,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "status": "MATCH"
+    },
+    {
+      "name": "Triple 10-pdr",
+      "fileId": "1CKEQL3CZg30nZjSkZMqkDA1CowR2shgQ",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 14,
+        "projectileMultiplier": 3,
+        "penetrationDisplay": "14 x3",
+        "loadTime": 28.5,
+        "range": 135,
+        "maxAngle": 8,
+        "accuracySpread": 13
+      },
+      "jsonStats": {
+        "penetration": 14,
+        "loadTime": 28.5,
+        "range": 135,
+        "maxAngle": 8
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 13,
+        "projectileMultiplier": 3,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "status": "MATCH"
+    },
+    {
+      "name": "Alchemical Fire",
+      "fileId": "1-DsQOJq7Uj-2kQHPWTmbXaz5nah9nyt3",
+      "category": "Medium Special",
+      "type": "Special",
+      "screenshotStats": {
+        "damagePerSecond": 80,
+        "firingTime": 468,
+        "range": 60,
+        "maxAngle": 6,
+        "accuracySpread": 10
+      },
+      "jsonStats": {
+        "range": 60,
+        "maxAngle": 6,
+        "damagePerSecond": 80
+      },
+      "discrepancies": [],
+      "newData": {
+        "accuracySpread": 10,
+        "firingTime": 468,
+        "placementRestriction": "For special ships"
+      },
+      "placementRestriction": "For special ships",
+      "status": "MATCH"
+    },
+    {
+      "name": "Imperial Bombard",
+      "fileId": "1met8yEalKmvwwod2b7czDDJz343b_3xR",
+      "category": "Medium Special",
+      "type": "Special",
+      "screenshotStats": {
+        "penetration": 34,
+        "projectileMultiplier": 8,
+        "penetrationDisplay": "34 x8",
+        "loadTime": 22,
+        "range": 135,
+        "maxAngle": 6,
+        "accuracySpread": 12
+      },
+      "jsonStats": {
+        "penetration": 34,
+        "loadTime": 22,
+        "range": 135,
+        "maxAngle": 6
+      },
+      "discrepancies": [
+        {"field": "type", "json": "Bombard", "screenshot": "Special", "note": "JSON says Bombard but screenshot shows Special type icon"}
+      ],
+      "newData": {
+        "accuracySpread": 12,
+        "projectileMultiplier": 8,
+        "placementRestriction": "For special ships"
+      },
+      "placementRestriction": "For special ships",
+      "status": "DISCREPANCY",
+      "notes": "JSON categorizes as type 'Bombard' but screenshot shows 'Special' type. Also fires 8 projectiles (34 x8). Placement restricted to special ships."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "MaxQuantity": 2,
+    "Effects": "ServMendingStrength +1",
+    "Probability": 0.5
+  },
+  {
+    "MaxQuantity": 1,
+    "Effects": "BCannonBallFosforEffects +1",
+    "Probability": 0.5
+  },
+  {
+    "MaxQuantity": 1,
+    "Effects": "PHealth +20",
+    "Probability": 0.5
+  },
+  {
+    "MaxQuantity": 1,
+    "Effects": "PPowerupItemsReload +40",
+    "Probability": 0.5
+  },
+  {
+    "MaxQuantity": 1,
+    "Effects": "PCannonsReload +20",
+    "Probability": 0.5
+  },
+  {
+    "MaxQuantity": 3,
+    "Effects": "MCannonsDistance +7",
+    "Probability": 0.4
+  },
+  {
+    "MaxQuantity": 2,
+    "Effects": "MMobilityBonus +7",
+    "Probability": 0.4
+  },
+  {
+    "MaxQuantity": 2,
+    "Effects": "MArmor +1",
+    "Probability": 1.5
+  },
+  {
+    "MaxQuantity": 3,
+    "Effects": "PBallDamage +10",
+    "Probability": 1
+  },
+  {
+    "MaxQuantity": 3,
+    "Effects": "MSpeed +1",
+    "Probability": 1
+  },
+  {
+    "MaxQuantity": 3,
+    "Effects": "PHealth +10",
+    "Probability": 1
+  }
+]

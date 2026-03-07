@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "source": "WosbPbs.cs",
+    "description": "Port Battle (PB) system: timing, fort/tower stats, respawns, building costs, and combat rules",
+    "extractedBy": "weezer",
+    "version": "2.0"
+  },
+  "timing": {
+    "initialBattleTimeSec": 1500,
+    "initialBattleTimeMin": 25,
+    "maxBattleTimeSec": 5400,
+    "maxBattleTimeMin": 90,
+    "bonusTimePerTowerDestroyedSec": 600,
+    "bonusTimePerPlayerKillMinSec": 60,
+    "bonusTimePerPlayerKillMaxSec": 120,
+    "inactivityTimeoutSec": 600,
+    "inactivityTimeoutMin": 10
+  },
+  "fortLevels": {
+    "description": "Fort strength and available cannons by port level (0-6)",
+    "levels": [
+      { "level": 0, "modelIndex": 0, "strength": 10000, "cannons": [30, 31] },
+      { "level": 1, "modelIndex": 0, "strength": 12000, "cannons": [30, 31] },
+      { "level": 2, "modelIndex": 1, "strength": 15000, "cannons": [30, 31, 32] },
+      { "level": 3, "modelIndex": 1, "strength": 20000, "cannons": [30, 31, 32] },
+      { "level": 4, "modelIndex": 2, "strength": 25000, "cannons": [30, 31, 32] },
+      { "level": 5, "modelIndex": 2, "strength": 29000, "cannons": [30, 31, 32] },
+      { "level": 6, "modelIndex": 3, "strength": 33000, "cannons": [30, 31, 32] }
+    ]
+  },
+  "towerLevels": {
+    "description": "Tower strength by port level (0-6)",
+    "levels": [
+      { "level": 0, "modelIndex": 0, "strength": 6000 },
+      { "level": 1, "modelIndex": 1, "strength": 7000 },
+      { "level": 2, "modelIndex": 1, "strength": 8000 },
+      { "level": 3, "modelIndex": 1, "strength": 9000 },
+      { "level": 4, "modelIndex": 2, "strength": 10500 },
+      { "level": 5, "modelIndex": 2, "strength": 12000 },
+      { "level": 6, "modelIndex": 2, "strength": 12000 }
+    ]
+  },
+  "towerTypes": {
+    "Mortar": {
+      "range": 120,
+      "reloadTimeSec": 15,
+      "angleOffset": 0,
+      "param1": 50,
+      "param2": 190
+    },
+    "Fire": {
+      "range": 30,
+      "reloadTimeSec": 0.5,
+      "angleOffsetRad": 0.7854,
+      "angleOffsetDeg": 45,
+      "param1": 14,
+      "param2": 115
+    },
+    "Cannons": {
+      "description": "Uses standard cannon mechanics (no special PbsTowerDescription)"
+    }
+  },
+  "buildingStrength": {
+    "description": "Dynamic building strength calculation based on ship rank and team size",
+    "baseStrengthByShallowRank": {
+      "rank1_tower": 12100, "rank1_fort": 26400,
+      "rank2_tower": 10000, "rank2_fort": 21700,
+      "rank3_tower": 9100, "rank3_fort": 20000,
+      "rank4_tower": 7700, "rank4_fort": 16700,
+      "rank5_tower": 6600, "rank5_fort": 14500,
+      "rank6plus_tower": 4500, "rank6plus_fort": 10000
+    },
+    "teamSizeMultiplier": {
+      "40_players": 1.15,
+      "20_players": 1.0,
+      "15_players": 0.85,
+      "10_players": 0.7,
+      "7_players": 0.6,
+      "5_players": 0.5
+    },
+    "portLevelMultiplier": {
+      "level1": 1.0, "level2": 1.04, "level3": 1.08, "level4": 1.12,
+      "level5": 1.16, "level6": 1.2, "level7": 1.24
+    },
+    "formula": "round(baseStrength * teamSizeMultiplier * portLevelMultiplier / 100) * 100"
+  },
+  "respawnSystem": {
+    "maxRespawnsFormula": "(25 + max(0, teamSize-1) * 2.5 * respawnCost) * defenderBonus * tensityBonus",
+    "defenderBonus": 1.0,
+    "attackerPenalty": 0.85,
+    "tensityBonus": 1.07,
+    "respawnCostByShipRank": {
+      "rank1": 7, "rank1_empire": 15,
+      "rank2": 6, "rank3": 5, "rank4": 4, "rank5": 3, "rank6plus": 2
+    },
+    "shipClassBonuses": {
+      "Hardship": "+1 (rank>=4) or +2 (rank<4)",
+      "Battleship": "+1",
+      "Empire": "+1"
+    }
+  },
+  "costs": {
+    "towerBuildCost": {
+      "Stone Blocks": 4,
+      "Bronze Fittings": 4
+    },
+    "changeAttackWindowPrice": 50,
+    "changeAttackWindowCurrency": "Conqueror Badges",
+    "mendingAmountPerHour": 0.02,
+    "mendingCostPer1000": { "resource": "Stone Blocks", "count": 1 },
+    "quickTransferMoneyCC": 10,
+    "quickTransferMoneyTimeoutHours": 3,
+    "guildOpenHqLicensePrice": {
+      "description": "Price in both conqueror badges and gold ingots",
+      "byLevel": [2, 4, 6, 10, 16, 24, 30],
+      "note": "Non-TradeUnion guilds pay half"
+    },
+    "tensityProtectionPrice": {
+      "goldIngots": "(timesUsed + max(0, portCount/2 - 1)) * 10",
+      "conquerorBadges": "timesUsed + max(0, portCount/2 - 1)"
+    },
+    "factoryTempBoostPrice": 15,
+    "factoryBoostTimeoutDays": 5
+  },
+  "rules": {
+    "enableWind": true,
+    "basicTeamLimitation": 20,
+    "avanpostPermanentSafezoneRadius": 50,
+    "againEntryBanDurationMinutes": 1000,
+    "fortBoardingDurationMs": 25000,
+    "fortBoardingDurationSec": 25,
+    "towerCapturingDurationMs": 30000,
+    "towerCapturingDurationSec": 30,
+    "strengthDisablingAttack": 500,
+    "reduceCityLevelAfterDestruction": 1,
+    "providedPortMinLevel": 3,
+    "maxTensityNotInWindow": 0.5,
+    "vassalDurationDays": 5,
+    "tradeUnionPortHqDurationDays": 7,
+    "maxTrustedGuilds": "max(teamSize, 3)",
+    "maxCapturableTowers": "floor((totalTowers - 1) / 2)",
+    "damageFactorFormula": "0.4 + 0.5 * portLeveling",
+    "unitsCountFormula": "round(portLeveling * 130 * 4)"
+  }
+}

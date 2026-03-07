@@ -1,0 +1,1293 @@
+{
+  "upgrades": [
+    {
+      "name": "Cellars",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "Perishable goods do not spoil.",
+      "effects": [
+        {
+          "stat": "Hold",
+          "gameKey": "MCapacity",
+          "rankedValues": [
+            "1500",
+            "1500",
+            "1500",
+            "2000",
+            "2000",
+            "3500",
+            "3500"
+          ],
+          "value": "+1500"
+        },
+        {
+          "stat": "Goods spoilage",
+          "gameKey": "PSouredItemsReduce",
+          "value": "+100%"
+        }
+      ],
+      "effectsRaw": "MCapacity +1500,+1500,+1500,+2000,+2000,+3500,+3500;PSouredItemsReduce +100",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Wood",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Repair Arsenal",
+      "slotType": "normal",
+      "category": "Protection",
+      "description": "This universal upgrade enhances items that restore both temporary and permanent hull integrity.",
+      "effects": [
+        {
+          "stat": "Durability",
+          "gameKey": "MHealth",
+          "rankedValues": [
+            "80",
+            "80",
+            "80",
+            "150",
+            "150",
+            "210",
+            "210"
+          ],
+          "value": "+80"
+        },
+        {
+          "stat": "Repair item eff.",
+          "gameKey": "PPlayerMendingKitEffectivity",
+          "value": "+20%"
+        }
+      ],
+      "effectsRaw": "MHealth +80,+80,+80,+150,+150,+210,+210;PPlayerMendingKitEffectivity +20",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Sturdy Frames",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "Enhances durability - a universal upgrade for any ship.",
+      "effects": [
+        {
+          "stat": "Durability",
+          "gameKey": "PHealth",
+          "value": "+10%"
+        },
+        {
+          "stat": "Hold",
+          "gameKey": "PCapacity",
+          "value": "+12%"
+        },
+        {
+          "stat": "Speed",
+          "gameKey": "PChangeShipSpeedBonus",
+          "value": "-15%"
+        }
+      ],
+      "effectsRaw": "PHealth +10;PCapacity +12;PChangeShipSpeedBonus -15",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Incendiary Mixture",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "Ideal for long-range engagements, particularly effective against armored vessels.",
+      "effects": [
+        {
+          "stat": "Incendiary rounds",
+          "gameKey": "BMoreFireAreaAndBurning",
+          "value": "enabled"
+        },
+        {
+          "stat": "Cannonball speed",
+          "gameKey": "PCannonBallsSpeed",
+          "value": "+10%"
+        }
+      ],
+      "effectsRaw": "BMoreFireAreaAndBurning +1;PCannonBallsSpeed +10",
+      "wearType": "ShotsCount",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Resin",
+            "quantity": 8
+          }
+        ]
+      },
+      "wear": "1400 Cannon volleys"
+    },
+    {
+      "name": "Copper Plating",
+      "slotType": "normal",
+      "category": "Protection",
+      "description": "If the enemy has fire protection, the color of reduced durability above the ship turns gray.",
+      "effects": [
+        {
+          "stat": "Fire damage resist",
+          "gameKey": "PReduceFireAreaDamage",
+          "value": "+25%"
+        },
+        {
+          "stat": "Keg damage resist",
+          "gameKey": "PReducePowderKegDamage",
+          "value": "+30%"
+        }
+      ],
+      "effectsRaw": "PReduceFireAreaDamage +25;PReducePowderKegDamage +30",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Copper",
+            "quantity": 7
+          }
+        ]
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Iron Ram",
+      "slotType": "normal",
+      "category": "Protection",
+      "description": "If the enemy has bow protection, the color of reduced durability above the ship turns gray. Ramming is an effective way to quickly inflict damage, 'trading off' durability.",
+      "effects": [
+        {
+          "stat": "Ram damage",
+          "gameKey": "PAddCollisionDamage",
+          "value": "+20%"
+        },
+        {
+          "stat": "Bow protection",
+          "gameKey": "PReduceDamageToNose",
+          "value": "+20%"
+        },
+        {
+          "stat": "Ram hull breach",
+          "gameKey": "BDestroyFloodingShopByCollision",
+          "value": "enabled"
+        }
+      ],
+      "effectsRaw": "PAddCollisionDamage +20;PReduceDamageToNose +20;BDestroyFloodingShopByCollision +1",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Iron",
+            "quantity": 70
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Fortified Gun Ports",
+      "slotType": "normal",
+      "category": "Protection",
+      "description": "Sail and fire protection for gun ports.",
+      "effects": [
+        {
+          "stat": "Sail protection",
+          "gameKey": "PSailProtection",
+          "value": "+30%"
+        },
+        {
+          "stat": "Sail fire resist",
+          "gameKey": "PReduceDamageToSailFromBurning",
+          "value": "+50%"
+        }
+      ],
+      "effectsRaw": "PSailProtection +30;PReduceDamageToSailFromBurning +50",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Canvas",
+            "quantity": 3
+          }
+        ]
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Combat Arsenal",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "Quick ammo switching or a consumable item activated earlier can decide the battle's outcome.",
+      "effects": [
+        {
+          "stat": "Item reload speed",
+          "gameKey": "PPowerupItemsReload",
+          "value": "+20%"
+        },
+        {
+          "stat": "Cannonball speed",
+          "gameKey": "PChangeCBallsSpeed",
+          "value": "+50%"
+        }
+      ],
+      "effectsRaw": "PPowerupItemsReload +20;PChangeCBallsSpeed +50",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Voodoo Skull",
+            "quantity": 1
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Teak Frames",
+      "slotType": "normal",
+      "category": "Protection",
+      "description": "Trade-off maneuverability for increased defense and boarding effectiveness.",
+      "effects": [
+        {
+          "stat": "Armor",
+          "gameKey": "MArmor",
+          "rankedValues": [
+            "2",
+            "2",
+            "2",
+            "1.5",
+            "1.5",
+            "1",
+            "1"
+          ],
+          "value": "+2"
+        },
+        {
+          "stat": "Crew",
+          "gameKey": "MExtraPlaces",
+          "rankedValues": [
+            "6",
+            "6",
+            "6",
+            "10",
+            "10",
+            "14",
+            "14"
+          ],
+          "value": "+6"
+        },
+        {
+          "stat": "Maneuverability",
+          "gameKey": "PMobilityBonus",
+          "value": "-6%"
+        }
+      ],
+      "effectsRaw": "MArmor +2,+2,+2,+1.5,+1.5,+1,+1;MExtraPlaces +6,+6,+6,+10,+10,+14,+14;PMobilityBonus -6",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Wood",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Reinforced Masts",
+      "slotType": "normal",
+      "category": "Speed",
+      "description": "A universal, but not always necessary upgrade. Best suited for chasing down an enemy.",
+      "effects": [
+        {
+          "stat": "Speed",
+          "gameKey": "MSpeed",
+          "rankedValues": [
+            "1.2",
+            "1.2",
+            "1.2",
+            "1.0",
+            "1.0",
+            "0.8",
+            "0.8"
+          ],
+          "value": "+1.2"
+        },
+        {
+          "stat": "Additional sail eff.",
+          "gameKey": "MPlayerJerkEffectPowerAdd",
+          "rankedValues": [
+            "1.2",
+            "1.2",
+            "1.2",
+            "1",
+            "1",
+            "0.8",
+            "0.8"
+          ],
+          "value": "+1.2"
+        }
+      ],
+      "effectsRaw": "MSpeed +1.2,+1.2,+1.2,+1.0,+1.0,+0.8,+0.8; MPlayerJerkEffectPowerAdd +1.2,+1.2,+1.2,+1,+1,+0.8,+0.8",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Combat Crow's Nest",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "Allows early detection of enemy ships.",
+      "effects": [
+        {
+          "stat": "Visibility range",
+          "gameKey": "PVisibilityZone",
+          "value": "+50%"
+        },
+        {
+          "stat": "Scope speed",
+          "gameKey": "PPlayerSightFocusSpeedAdd",
+          "value": "+60%"
+        }
+      ],
+      "effectsRaw": "PVisibilityZone +50;PPlayerSightFocusSpeedAdd +60",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Ammunition Cradles",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "Inapplicable to mortars.",
+      "effects": [
+        {
+          "stat": "Cannon reload",
+          "gameKey": "PCannonsReload",
+          "value": "+12%"
+        }
+      ],
+      "effectsRaw": "PCannonsReload +12",
+      "wearType": "ShotsCount",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "1400 Cannon volleys"
+    },
+    {
+      "name": "Upper Deck",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "The more swivel guns there are on a ship, the more effective this upgrade is.",
+      "effects": [
+        {
+          "stat": "Keg reload speed",
+          "gameKey": "PPowderKegReloadBoost",
+          "value": "+35%"
+        },
+        {
+          "stat": "Swivel reload speed",
+          "gameKey": "PFalkonetReloadBoost",
+          "value": "+35%"
+        }
+      ],
+      "effectsRaw": "PPowderKegReloadBoost +35;PFalkonetReloadBoost +35",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Swivel Mortars",
+      "slotType": "normal",
+      "category": "Mortars",
+      "description": "The bonus gives mortars a 25-degree turn in either direction.",
+      "effects": [
+        {
+          "stat": "Mortar damage",
+          "gameKey": "PMortarDamageBonus",
+          "value": "+12%"
+        },
+        {
+          "stat": "Mortar angle bonus",
+          "gameKey": "BMortarAngleBonus",
+          "value": "enabled"
+        },
+        {
+          "stat": "Mortar aim speed",
+          "gameKey": "PMortarAimSpeed",
+          "value": "-25%"
+        }
+      ],
+      "effectsRaw": "PMortarDamageBonus +12;BMortarAngleBonus +1;PMortarAimSpeed -25",
+      "wearType": "MortarShotsCount",
+      "cost": {
+        "gold": 600,
+        "materials": [
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "500 Mortar volleys"
+    },
+    {
+      "name": "Extra Bunks",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "The enemy will see a '?' instead of the ship's crew count, so they cannot predict the outcome of a boarding fight.",
+      "effects": [
+        {
+          "stat": "Crew",
+          "gameKey": "MExtraPlaces",
+          "rankedValues": [
+            "10",
+            "10",
+            "10",
+            "14",
+            "14",
+            "20",
+            "20"
+          ],
+          "value": "+10"
+        },
+        {
+          "stat": "Hidden crew",
+          "gameKey": "MMakeInvisiblePlaces",
+          "value": "+1"
+        }
+      ],
+      "effectsRaw": "MExtraPlaces +10,+10,+10,+14,+14,+20,+20;MMakeInvisiblePlaces +1",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Voodoo Skull",
+            "quantity": 1
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Maneuverable Helm",
+      "slotType": "normal",
+      "category": "Speed",
+      "description": "Properly chosen maneuverability will allow you to realize the full potential of guns in both broadside and close combat.",
+      "effects": [
+        {
+          "stat": "Maneuverability",
+          "gameKey": "PMobilityBonus",
+          "value": "+8%"
+        },
+        {
+          "stat": "Cruise speed loss",
+          "gameKey": "PDecreaseSpeedLossMarchingMode",
+          "value": "+15%"
+        }
+      ],
+      "effectsRaw": "PMobilityBonus +8;PDecreaseSpeedLossMarchingMode +15",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Emergency Powder Charge",
+      "slotType": "normal",
+      "category": "Unique",
+      "description": "High potential, though complex to utilize effectively; does not apply to mortars.",
+      "effects": [
+        {
+          "stat": "Low-HP cannon dmg",
+          "gameKey": "PDamageCannonIfStrengthBelow30P",
+          "value": "+25%"
+        }
+      ],
+      "effectsRaw": "PDamageCannonIfStrengthBelow30P +25",
+      "wearType": "ShotsCount",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Battle Mark",
+            "quantity": 38
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "700 Cannon volleys"
+    },
+    {
+      "name": "Extra Ballast",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "Allows safer navigation in storms, including in the Endless Sea. Increases the chance to escape pursuit.",
+      "effects": [
+        {
+          "stat": "Tilt reduction",
+          "gameKey": "PTiltReduce",
+          "value": "+50%"
+        },
+        {
+          "stat": "Cannon scatter",
+          "gameKey": "PReduceCannonsScatter",
+          "value": "+40%"
+        }
+      ],
+      "effectsRaw": "PTiltReduce +50;PReduceCannonsScatter +40",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Iron",
+            "quantity": 70
+          }
+        ]
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Reinforced Cannons",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "Damage from stern and bow weapons +100%.",
+      "effects": [
+        {
+          "stat": "Bow/stern cannon dmg",
+          "gameKey": "PFrontAndBackCannonsAddDamage",
+          "value": "+100%"
+        }
+      ],
+      "effectsRaw": "PFrontAndBackCannonsAddDamage +100",
+      "wearType": "ShotsCount",
+      "cost": {
+        "gold": 798
+      },
+      "wear": "1400 Cannon volleys"
+    },
+    {
+      "name": "Fortified Ports",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "A long-range combat enhancement; does not apply to mortars.",
+      "effects": [
+        {
+          "stat": "Cannon range",
+          "gameKey": "MCannonsDistance",
+          "value": "+10"
+        }
+      ],
+      "effectsRaw": "MCannonsDistance +10",
+      "wearType": "ShotsCount",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Bulkhead",
+            "quantity": 1
+          }
+        ]
+      },
+      "wear": "1400 Cannon volleys"
+    },
+    {
+      "name": "Iron Plating",
+      "slotType": "normal",
+      "category": "Protection",
+      "description": "If the enemy has fire protection, the color of reduced durability above the ship turns gray.",
+      "effects": [
+        {
+          "stat": "Fire damage resist",
+          "gameKey": "PReduceFireAreaDamage",
+          "value": "+45%"
+        },
+        {
+          "stat": "Armor",
+          "gameKey": "PArmor",
+          "value": "-10%"
+        }
+      ],
+      "effectsRaw": "PReduceFireAreaDamage +45;PArmor -10",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Bulkhead",
+            "quantity": 1
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Structural Expansion",
+      "slotType": "normal",
+      "category": "Unique",
+      "description": "Sacrifice maneuverability to boost other characteristics, which can be justified by strategy.",
+      "effects": [
+        {
+          "stat": "Upgrade slots",
+          "gameKey": "MExtraUpgradePlaces",
+          "value": "+2"
+        },
+        {
+          "stat": "Maneuverability",
+          "gameKey": "PMobilityBonus",
+          "value": "-10%"
+        }
+      ],
+      "effectsRaw": "MExtraUpgradePlaces +2;PMobilityBonus -10",
+      "wearType": "None",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Battle Mark",
+            "quantity": 38
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Advanced Gun Carriages",
+      "slotType": "normal",
+      "category": "Combat",
+      "description": "Most effective in mid and close-range battles, especially on ships with low maneuverability that often fail to turn for a broadside.",
+      "effects": [
+        {
+          "stat": "Cannon angle",
+          "gameKey": "MCannonsAngleBonus",
+          "value": "+10"
+        },
+        {
+          "stat": "Scope speed",
+          "gameKey": "PPlayerSightFocusSpeedAdd",
+          "value": "+30%"
+        }
+      ],
+      "effectsRaw": "MCannonsAngleBonus +10;PPlayerSightFocusSpeedAdd +30",
+      "wearType": "ShotsCount",
+      "cost": {
+        "gold": 300
+      },
+      "wear": "1400 Cannon volleys"
+    },
+    {
+      "name": "Strong Beams",
+      "slotType": "normal",
+      "category": "Unique",
+      "description": "Offers unique protection against mortars, invaluable during Port Battles.",
+      "effects": [
+        {
+          "stat": "Durability",
+          "gameKey": "PHealth",
+          "value": "+5%"
+        },
+        {
+          "stat": "Mortar damage resist",
+          "gameKey": "PReduceReceivesMortarDamage",
+          "value": "+30%"
+        },
+        {
+          "stat": "Speed",
+          "gameKey": "PSpeed",
+          "value": "-5%"
+        }
+      ],
+      "effectsRaw": "PHealth +5;PReduceReceivesMortarDamage +30;PSpeed -5",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Copper",
+            "quantity": 32
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Lightweight Hull",
+      "slotType": "normal",
+      "category": "Speed",
+      "description": "A hull modification that increases speed and maneuverability at the cost of armor.",
+      "effects": [
+        {
+          "stat": "Maneuverability",
+          "gameKey": "PMobilityBonus",
+          "value": "+5%"
+        },
+        {
+          "stat": "Speed",
+          "gameKey": "PSpeed",
+          "value": "+4%"
+        },
+        {
+          "stat": "Armor",
+          "gameKey": "PArmor",
+          "value": "-15%"
+        }
+      ],
+      "effectsRaw": "PMobilityBonus +5;PSpeed +4;PArmor -15",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Beam",
+            "quantity": 1
+          }
+        ]
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Double Hold",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "The effect of reducing losses does not stack with flags but works in addition.",
+      "effects": [
+        {
+          "stat": "Hold",
+          "gameKey": "MCapacity",
+          "rankedValues": [
+            "3000",
+            "3000",
+            "3000",
+            "4500",
+            "4500",
+            "6500",
+            "6500"
+          ],
+          "value": "+3000"
+        },
+        {
+          "stat": "Cargo loss on death",
+          "gameKey": "PReduceLossesWhenKilled",
+          "value": "+40%"
+        },
+        {
+          "stat": "Durability",
+          "gameKey": "PHealth",
+          "value": "-5%"
+        }
+      ],
+      "effectsRaw": "MCapacity +3000,+3000,+3000,+4500,+4500,+6500,+6500;PReduceLossesWhenKilled +40;PHealth -5",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 150,
+        "materials": [
+          {
+            "item": "Beam",
+            "quantity": 1
+          }
+        ]
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Long-Range Mortars",
+      "slotType": "normal",
+      "category": "Mortars",
+      "description": "Losing maneuver will make it harder to aim mortars at targets and retreat, but the increase in range can be justified.",
+      "effects": [
+        {
+          "stat": "Mortar range",
+          "gameKey": "MMortarMaxDistance",
+          "value": "+10"
+        },
+        {
+          "stat": "Maneuverability",
+          "gameKey": "PMobilityBonus",
+          "value": "-8%"
+        }
+      ],
+      "effectsRaw": "MMortarMaxDistance +10;PMobilityBonus -8",
+      "wearType": "MortarShotsCount",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Bronze",
+            "quantity": 2
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "500 Mortar volleys"
+    },
+    {
+      "name": "Portable Chest",
+      "slotType": "normal",
+      "category": "Unique",
+      "description": "You can loot gold from the enemy during boarding and store it in chests, but if you lose, the enemy can take your gold.",
+      "effects": [
+        {
+          "stat": "Boarding gold bonus",
+          "gameKey": "PBoardingGold",
+          "value": "+5%"
+        }
+      ],
+      "effectsRaw": "PBoardingGold +5",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Battle Mark",
+            "quantity": 38
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Cheap Sails",
+      "slotType": "sail",
+      "category": "Sailes",
+      "description": "Increase the speed bonus. The ship gradually gains additional speed by moving in cruising mode (under full sails).",
+      "effects": [
+        {
+          "stat": "Cruise max. speed",
+          "gameKey": "PMarchingSpeed",
+          "value": "+35%"
+        }
+      ],
+      "effectsRaw": "PMarchingSpeed +35",
+      "wearType": "None",
+      "cost": {
+        "gold": 240
+      },
+      "wear": null
+    },
+    {
+      "name": "Stitched Sails",
+      "slotType": "sail",
+      "category": "Sailes",
+      "description": "Increase the speed bonus. The ship gradually gains additional speed by moving in cruising mode (under full sails).",
+      "effects": [
+        {
+          "stat": "Cruise max. speed",
+          "gameKey": "PMarchingSpeed",
+          "value": "+45%"
+        }
+      ],
+      "effectsRaw": "PMarchingSpeed +45",
+      "wearType": "None",
+      "cost": {
+        "gold": 240,
+        "materials": [
+          {
+            "item": "Fabric",
+            "quantity": 53
+          }
+        ]
+      },
+      "wear": null
+    },
+    {
+      "name": "Elite Sails",
+      "slotType": "sail",
+      "category": "Sailes",
+      "description": "Increase the speed bonus. The ship gradually gains additional speed by moving in cruising mode (under full sails).",
+      "effects": [
+        {
+          "stat": "Cruise max. speed",
+          "gameKey": "PMarchingSpeed",
+          "value": "+60%"
+        }
+      ],
+      "effectsRaw": "PMarchingSpeed +60",
+      "wearType": "None",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Fabric",
+            "quantity": 90
+          }
+        ]
+      },
+      "wear": null
+    },
+    {
+      "name": "Tarpaulin Sails",
+      "slotType": "sail",
+      "category": "Sailes",
+      "description": "Increase the speed bonus. The ship gradually gains additional speed by moving in cruising mode (under full sails).",
+      "effects": [
+        {
+          "stat": "Cruise max. speed",
+          "gameKey": "PMarchingSpeed",
+          "value": "+70%"
+        },
+        {
+          "stat": "Maneuverability",
+          "gameKey": "MMobilityBonus",
+          "value": "-1"
+        }
+      ],
+      "effectsRaw": "PMarchingSpeed +70;MMobilityBonus -1",
+      "wearType": "None",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Canvas",
+            "quantity": 10
+          }
+        ]
+      },
+      "wear": null
+    },
+    {
+      "name": "Small Hooks",
+      "slotType": "normal",
+      "category": "Support",
+      "description": "Speed increases when inspecting anything but does not affect crew landing.",
+      "effects": [
+        {
+          "stat": "Loot collection speed",
+          "gameKey": "PDropLootingSpeed",
+          "value": "+250%"
+        },
+        {
+          "stat": "Fishing speed",
+          "gameKey": "PFishingSpeed",
+          "value": "+30%"
+        },
+        {
+          "stat": "Boarding range",
+          "gameKey": "PBoardingDistance",
+          "value": "+15%"
+        }
+      ],
+      "effectsRaw": "PDropLootingSpeed +250;PFishingSpeed +30;PBoardingDistance +15",
+      "wearType": "SailingDistance",
+      "cost": {
+        "gold": 240
+      },
+      "wear": "220000 Distance traveled"
+    },
+    {
+      "name": "Reinforced centre-line",
+      "slotType": "normal",
+      "category": "Mortars",
+      "description": "Improves mortar aiming speed and reduces dead zone.",
+      "effects": [
+        {
+          "stat": "Mortar aim speed",
+          "gameKey": "PMortarAimSpeed",
+          "value": "+40%"
+        },
+        {
+          "stat": "Mortar deadzone",
+          "gameKey": "PMortarDecreaseDeadzone",
+          "value": "+30%"
+        }
+      ],
+      "effectsRaw": "PMortarAimSpeed +40;PMortarDecreaseDeadzone +30",
+      "wearType": "MortarShotsCount",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Bronze",
+            "quantity": 2
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "500 Mortar volleys"
+    },
+    {
+      "name": "High Helm Port",
+      "slotType": "normal",
+      "category": "Unique",
+      "description": "Does not apply to fire ships.",
+      "effects": [
+        {
+          "stat": "Drop kegs at any speed",
+          "gameKey": "BAllowPowderKegAnySpeed",
+          "value": "enabled"
+        },
+        {
+          "stat": "Keg trigger radius",
+          "gameKey": "PPowderKegIncreaseTriggerRadius",
+          "value": "+30%"
+        }
+      ],
+      "effectsRaw": "BAllowPowderKegAnySpeed +1;PPowderKegIncreaseTriggerRadius +30",
+      "wearType": "ReceivedDamage",
+      "cost": {
+        "gold": 300,
+        "materials": [
+          {
+            "item": "Battle Mark",
+            "quantity": 38
+          },
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "150000 Damage taken"
+    },
+    {
+      "name": "Lightweight Construction",
+      "slotType": "normal",
+      "category": "Mortars",
+      "description": "Mortar reload boost at the cost of mortar damage.",
+      "effects": [
+        {
+          "stat": "Mortar reload",
+          "gameKey": "PMortarReload",
+          "value": "+40%"
+        },
+        {
+          "stat": "Hold",
+          "gameKey": "PCapacity",
+          "value": "+25%"
+        },
+        {
+          "stat": "Mortar damage",
+          "gameKey": "PMortarDamageBonus",
+          "value": "-25%"
+        }
+      ],
+      "effectsRaw": "PMortarReload +40;PCapacity +25;PMortarDamageBonus -25",
+      "wearType": "MortarShotsCount",
+      "cost": {
+        "gold": 600,
+        "materials": [
+          {
+            "item": "Rum",
+            "quantity": 105
+          }
+        ]
+      },
+      "wear": "500 Mortar volleys"
+    },
+    {
+      "name": "Mortar Fitted",
+      "slotType": "normal",
+      "category": "Modification",
+      "description": "",
+      "effects": [
+        {
+          "stat": "Mortar slots",
+          "gameKey": "BExtraMortars",
+          "value": "enabled"
+        },
+        {
+          "stat": "Speed",
+          "gameKey": "PSpeed",
+          "value": "+0%"
+        },
+        {
+          "stat": "Maneuverability",
+          "gameKey": "MMobilityBonus",
+          "value": "+0"
+        },
+        {
+          "stat": "Weapons on each side",
+          "gameKey": "MPReduceCannonsQuantity",
+          "value": "+0"
+        },
+        {
+          "stat": "Hold",
+          "gameKey": "PCapacity",
+          "value": "+0%"
+        },
+        {
+          "stat": "Durability",
+          "gameKey": "MHealth",
+          "value": "+0"
+        },
+        {
+          "stat": "Crew",
+          "gameKey": "MExtraPlaces",
+          "value": "+0"
+        }
+      ],
+      "effectsRaw": "BExtraMortars +1;PSpeed 0;MMobilityBonus 0;MPReduceCannonsQuantity 0;PCapacity 0;MHealth 0;MExtraPlaces 0;",
+      "wearType": "MortarShotsCount"
+    },
+    {
+      "name": "Mortar Fitted (Friede)",
+      "category": "Modification",
+      "slotType": "modification",
+      "description": "Ship modification for Friede. Does not occupy an upgrade slot. Cannot be removed.",
+      "effects": [
+        {
+          "stat": "Mortar slots",
+          "value": "+1",
+          "gameKey": "BExtraMortars"
+        },
+        {
+          "stat": "Speed",
+          "value": "+5%",
+          "gameKey": "PSpeed"
+        },
+        {
+          "stat": "Maneuverability",
+          "value": "+10",
+          "gameKey": "MMobilityBonus"
+        },
+        {
+          "stat": "Weapons on each side",
+          "value": "-2",
+          "gameKey": "MPReduceCannonsQuantity"
+        },
+        {
+          "stat": "Hold",
+          "value": "-20%",
+          "gameKey": "PCapacity"
+        },
+        {
+          "stat": "Durability",
+          "value": "-60",
+          "gameKey": "MHealth"
+        },
+        {
+          "stat": "Crew",
+          "value": "-18",
+          "gameKey": "MExtraPlaces"
+        }
+      ],
+      "cost": {
+        "gold": 798
+      },
+      "ship": "Friede"
+    },
+    {
+      "name": "Mortar Fitted (Falmouth)",
+      "category": "Modification",
+      "slotType": "modification",
+      "description": "Ship modification for Falmouth. Does not occupy an upgrade slot. Cannot be removed.",
+      "effects": [
+        {
+          "stat": "Mortar slots",
+          "value": "+2",
+          "gameKey": "BExtraMortars"
+        },
+        {
+          "stat": "Speed",
+          "value": "+5%",
+          "gameKey": "PSpeed"
+        },
+        {
+          "stat": "Maneuverability",
+          "value": "+10",
+          "gameKey": "MMobilityBonus"
+        },
+        {
+          "stat": "Weapons on each side",
+          "value": "-5",
+          "gameKey": "MPReduceCannonsQuantity"
+        },
+        {
+          "stat": "Hold",
+          "value": "-20%",
+          "gameKey": "PCapacity"
+        },
+        {
+          "stat": "Durability",
+          "value": "-140",
+          "gameKey": "MHealth"
+        },
+        {
+          "stat": "Crew",
+          "value": "-31",
+          "gameKey": "MExtraPlaces"
+        }
+      ],
+      "ship": "Falmouth"
+    },
+    {
+      "name": "Mortar Fitted (Black Wind)",
+      "category": "Modification",
+      "slotType": "modification",
+      "description": "Ship modification for Black Wind. Does not occupy an upgrade slot. Cannot be removed.",
+      "effects": [
+        {
+          "stat": "Mortar slots",
+          "value": "+1",
+          "gameKey": "BExtraMortars"
+        },
+        {
+          "stat": "Maneuverability",
+          "value": "+15",
+          "gameKey": "MMobilityBonus"
+        },
+        {
+          "stat": "Weapons on each side",
+          "value": "-5",
+          "gameKey": "MPReduceCannonsQuantity"
+        },
+        {
+          "stat": "Durability",
+          "value": "-180",
+          "gameKey": "MHealth"
+        },
+        {
+          "stat": "Crew",
+          "value": "-23",
+          "gameKey": "MExtraPlaces"
+        }
+      ],
+      "ship": "Black Wind"
+    }
+  ]
+}

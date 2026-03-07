@@ -1,0 +1,242 @@
+{
+  "_meta": {
+    "source": "GeneratedQuests.cs",
+    "description": "Procedurally generated port quest types, education quests, and quest parameters",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "questGeneration": {
+    "zoneMinDistDefault": 250,
+    "zoneMaxDistDefault": 680,
+    "dailyQuestPirateMonetBonus": 60,
+    "dailyQuestsForceAddToShip": true
+  },
+  "portQuestTypes": [
+    {
+      "type": "Trading/Delivery",
+      "company": "Trading",
+      "questsPerPort": 20,
+      "description": "Deliver resources to another port or sea trader. Includes smuggling variants.",
+      "hardnessLevels": "1-3 based on distance, cargo weight, and smuggling",
+      "hardnessFactors": ["isSmuggling (+1)", "distance > 2500 (+1)", "distance > 5000 (+1)", "mass > 7000 (+1)"],
+      "rewards": "Gold + XP + 1 Map Part",
+      "timedVariant": "Every other quest has time limit (ports with region level >= 2)",
+      "specialConditions": ["Up to 2 'don't get damaged' challenges per port", "Smuggling requires non-peaceful flag"],
+      "note": "Some have 'don't get damaged' or spoilable cargo warnings"
+    },
+    {
+      "type": "Passenger Transport",
+      "company": "Coastal",
+      "questsPerPort": 4,
+      "description": "Transport passengers to a destination port without taking too much damage.",
+      "restrictions": ["Don't get damaged", "Keep ship health above 80%"],
+      "rewards": "Gold + XP + 1 Map Part",
+      "timed": true,
+      "hardnessLevels": "1-3 based on sailing distance"
+    },
+    {
+      "type": "Collecting",
+      "company": "Coastal",
+      "questsPerPort": 4,
+      "description": "Collect floating items in the sea and return to port.",
+      "itemCount": "4-8 depending on region level",
+      "rewards": "XP + ShipXP (XP/2)",
+      "hardnessLevels": "1-2",
+      "disableReputation": true
+    },
+    {
+      "type": "Escort Crew",
+      "company": "Coastal",
+      "questsPerPort": 4,
+      "description": "Find a person from a ship and escort them back to port.",
+      "rewards": "Gold (240 + 140 * regionLevel) + XP (gold/2)",
+      "conditions": ["Don't get damaged"],
+      "disableReputation": true
+    },
+    {
+      "type": "Boarding Revenge",
+      "company": "Battle",
+      "questsPerPort": "min(reinforcedPirates, 4)",
+      "description": "Board reinforced pirate ships in the region.",
+      "minRank": 7,
+      "rewards": "Auto-calculated gold/XP/resources + ShipXP",
+      "hardnessLevels": "2-3",
+      "conditions": ["First quest requires non-peaceful flag"]
+    },
+    {
+      "type": "Destroy Sails",
+      "company": "Battle",
+      "questsPerPort": "min(pirates, 4)",
+      "description": "Kill pirates after destroying their sails to 70-80%.",
+      "minRank": 8,
+      "killCount": "2-3",
+      "hardnessLevels": "2-3"
+    },
+    {
+      "type": "Kill Traders",
+      "company": "Battle",
+      "questsPerPort": 3,
+      "description": "Destroy NPC trader ships in the region.",
+      "killCount": "2-6 depending on region level",
+      "conditions": ["Alternating 'don't get damaged' / 'don't die'"],
+      "hardnessLevels": "1-2"
+    },
+    {
+      "type": "Kill Pirates (Faction 1)",
+      "company": "Battle",
+      "questsPerPort": 3,
+      "description": "Destroy pirate ships (faction 1 or faction 2 or fanatics).",
+      "killCount": "3-5",
+      "conditions": ["Don't die"],
+      "hardnessLevels": "1-2"
+    },
+    {
+      "type": "Kill Pirates (Timed)",
+      "company": "Battle",
+      "questsPerPort": 2,
+      "description": "Destroy pirate faction 1 ships within a time limit.",
+      "killCount": "3-6",
+      "timeLimit": "25-27 minutes",
+      "conditions": ["Don't die"],
+      "hardnessLevels": "2-3"
+    },
+    {
+      "type": "Caper (Kill Traders with Sails)",
+      "company": "Battle",
+      "questsPerPort": "min(4, regularTraders)",
+      "description": "Kill trader ships after their sails are at 70% or below.",
+      "killCount": "2-3",
+      "minRank": 12,
+      "hardnessLevels": 2
+    },
+    {
+      "type": "Powder Keg Diversion",
+      "company": "Coastal",
+      "questsPerPort": 2,
+      "description": "Deal powder keg damage to reinforced pirates.",
+      "hardnessLevels": "2-3",
+      "conditions": ["First quest has 'don't get damaged' + 2x gold"]
+    },
+    {
+      "type": "Challenge (Kill Without Damage)",
+      "company": "Battle",
+      "questsPerPort": 2,
+      "description": "Kill a pirate without taking damage from the target.",
+      "rewards": "Auto gold/XP + bonus iron ingots + 750 gold",
+      "hardnessLevel": 3,
+      "conditions": ["Don't get damaged by target"]
+    },
+    {
+      "type": "Kill Legendary Boss",
+      "company": "Battle",
+      "questsPerPort": 1,
+      "description": "Board the legendary reinforced pirate in the region.",
+      "minRank": 7,
+      "hardnessLevel": 3,
+      "conditions": ["Don't die", "Fails if killed without accepting quest"],
+      "rewards": "Auto gold/XP + ShipXP + minimum 250 + regionLevel * 110 gold"
+    },
+    {
+      "type": "Kill Ferry",
+      "company": "Battle",
+      "questsPerPort": 1,
+      "description": "Destroy a ferryman trader.",
+      "hardnessLevel": 3,
+      "conditions": ["Non-peaceful flag required"],
+      "rewards": "Auto gold/XP * 1.2 + 100 gold"
+    },
+    {
+      "type": "Capture and Deliver Pirate",
+      "company": "Battle",
+      "questsPerPort": "min(4, reinforcedPirates)",
+      "description": "Capture a reinforced pirate ship and escort it to port.",
+      "minRank": 12,
+      "hardnessLevels": "2-3 (alternating hard/normal)",
+      "rewards": "Auto gold/XP/resources + ShipXP"
+    },
+    {
+      "type": "Grabbing Trader",
+      "company": "Coastal",
+      "questsPerPort": 4,
+      "description": "Triggered event quest - get attacked by nearby pirates, receive resources.",
+      "rewards": "Resources worth ~220 + 130 * regionLevel gold value",
+      "hardnessLevel": 2,
+      "disableReputation": true
+    },
+    {
+      "type": "Guild Supply Mission",
+      "company": "War",
+      "questsPerPort": 1,
+      "description": "Deliver wood to another port as guild supply (smuggling mode).",
+      "resourceDelivered": "Wood",
+      "amount": "30000 / woodMediumCost * portLevel",
+      "goldReward": 40000,
+      "guildGoldReward": 40000,
+      "guildQuestPoints": 500000,
+      "timeLimit": 45,
+      "hardnessLevel": 3,
+      "conditions": ["Non-peaceful flag required", "Shared reward with group"]
+    }
+  ],
+  "educationQuests": {
+    "description": "Tutorial quest chain (8 sequential quests)",
+    "quests": [
+      {
+        "step": 1,
+        "name": "education_quest_1",
+        "objectives": ["Destroy NPC (black)", "Deal falconet damage", "Deal powder keg damage"],
+        "reward": { "gold": 500 }
+      },
+      {
+        "step": 2,
+        "name": "education_quest_2",
+        "objectives": ["Sell items in trade", "Buy cannon balls"],
+        "reward": { "xp": 100 }
+      },
+      {
+        "step": 3,
+        "name": "education_quest_3",
+        "objectives": ["Install upgrade", "Use powerup items"],
+        "reward": { "gold": 250 }
+      },
+      {
+        "step": 4,
+        "name": "education_quest_4",
+        "objectives": ["Use powerup item in battle"],
+        "reward": { "ironIngots": "enough for next ship", "powerupItems": { "id": 41, "count": 3 } }
+      },
+      {
+        "step": 5,
+        "name": "education_quest_5",
+        "objectives": ["Build next ship (ship #6)"],
+        "reward": { "gold": 500 }
+      },
+      {
+        "step": 6,
+        "name": "education_quest_6",
+        "objectives": ["Craft cannon", "Get crew for new ship", "Install upgrade on non-starter ship"],
+        "reward": { "gold": 500, "crewToPort": { "Iron Ingots": 5 }, "designElement": 94, "randomSpecialUnit": true }
+      },
+      {
+        "step": 7,
+        "name": "education_quest_8",
+        "objectives": ["World travel", "Buy wood in other port", "Research sailing skill"],
+        "reward": { "xp": 300 }
+      },
+      {
+        "step": 8,
+        "name": "education_quest_7",
+        "objectives": "Continues the tutorial chain"
+      }
+    ]
+  },
+  "questSkillBonuses": {
+    "description": "Craft time skill bonus awarded for completing port quests (minutes)",
+    "battle": 15,
+    "trading_transfer": 20,
+    "trading_other": 10,
+    "coastal": 10,
+    "other": 0,
+    "hardness3Bonus": 5
+  }
+}

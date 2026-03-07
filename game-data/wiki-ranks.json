@@ -1,0 +1,118 @@
+[
+  {
+    "rank": 29,
+    "xpRequired": 140
+  },
+  {
+    "rank": 28,
+    "xpRequired": 240
+  },
+  {
+    "rank": 27,
+    "xpRequired": 400
+  },
+  {
+    "rank": 26,
+    "xpRequired": 600
+  },
+  {
+    "rank": 25,
+    "xpRequired": 1100
+  },
+  {
+    "rank": 24,
+    "xpRequired": 1600
+  },
+  {
+    "rank": 23,
+    "xpRequired": 2500
+  },
+  {
+    "rank": 22,
+    "xpRequired": 3800
+  },
+  {
+    "rank": 21,
+    "xpRequired": 5000
+  },
+  {
+    "rank": 20,
+    "xpRequired": 7000
+  },
+  {
+    "rank": 19,
+    "xpRequired": 10000
+  },
+  {
+    "rank": 18,
+    "xpRequired": 12000
+  },
+  {
+    "rank": 17,
+    "xpRequired": 17000
+  },
+  {
+    "rank": 16,
+    "xpRequired": 19000
+  },
+  {
+    "rank": 15,
+    "xpRequired": 20000
+  },
+  {
+    "rank": 14,
+    "xpRequired": 24000
+  },
+  {
+    "rank": 13,
+    "xpRequired": 26000
+  },
+  {
+    "rank": 12,
+    "xpRequired": 32000
+  },
+  {
+    "rank": 11,
+    "xpRequired": 39000
+  },
+  {
+    "rank": 10,
+    "xpRequired": 45000
+  },
+  {
+    "rank": 9,
+    "xpRequired": 60000
+  },
+  {
+    "rank": 8,
+    "xpRequired": 70000
+  },
+  {
+    "rank": 7,
+    "xpRequired": 95000
+  },
+  {
+    "rank": 6,
+    "xpRequired": 130000
+  },
+  {
+    "rank": 5,
+    "xpRequired": 180000
+  },
+  {
+    "rank": 4,
+    "xpRequired": 220000
+  },
+  {
+    "rank": 3,
+    "xpRequired": 300000
+  },
+  {
+    "rank": 2,
+    "xpRequired": 340000
+  },
+  {
+    "rank": 1,
+    "xpRequired": 400000
+  }
+]

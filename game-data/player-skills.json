@@ -1,0 +1,495 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "dataType": "Player Skills",
+    "extractedFrom": "In-game screenshots",
+    "extractedDate": "2026-03-05",
+    "totalSkills": 46,
+    "notes": "Most skills appear as single-level unlocks. Some skills are mutually exclusive (e.g., Carpentry vs Blacksmithing). Legend tree is locked until level 30."
+  },
+  "skillTrees": {
+    "battles": [
+      {
+        "name": "Sixth Sense",
+        "tree": "battles",
+        "description": "You will be able to see the resources in players' holds when hovering over a target, just like with NPCs.",
+        "levels": [
+          { "level": 1, "effect": "See resources in players' holds when hovering over a target" }
+        ],
+        "cost": { "skillPoints": 2, "gold": 7000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Squadron Captain",
+        "tree": "battles",
+        "description": "Take up to 3 ships into your squadron by boardings or bribing.",
+        "levels": [
+          { "level": 1, "effect": "Take up to 3 ships into your squadron by boardings or bribing" }
+        ],
+        "cost": { "skillPoints": 2, "gold": 7000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Targeted Fire",
+        "tree": "battles",
+        "description": "Single cannon shots become 50% more accurate and 50% more effective at penetrating the stern and bow of an enemy ship.",
+        "levels": [
+          { "level": 1, "effect": "Single cannon shots become 50% more accurate and 50% more effective at penetrating stern and bow" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": [],
+        "notes": "Prerequisite for Double Salvo"
+      },
+      {
+        "name": "Slaveholding",
+        "tree": "battles",
+        "description": "Take prisoners in addition to the captured crew during boardings. We can always find use for them...",
+        "levels": [
+          { "level": 1, "effect": "Take prisoners in addition to captured crew during boardings" }
+        ],
+        "cost": { "gold": 5000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Salvo Fire",
+        "tree": "battles",
+        "description": "Execute a quick and concentrated broadside salvo that can also detonate sinking ships. Switch with [Alt]. A 3-second delay follows each salvo.",
+        "levels": [
+          { "level": 1, "effect": "Quick broadside salvo, can detonate sinking ships, 3-second delay between salvos" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": [],
+        "slot": "Right Hand"
+      },
+      {
+        "name": "Fire Extinguishing",
+        "tree": "battles",
+        "description": "Firefighting is now an automatic background task performed by your crew, no shouting necessary.",
+        "levels": [
+          { "level": 1, "effect": "Firefighting becomes automatic background task" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": []
+      },
+      {
+        "name": "Donor",
+        "tree": "battles",
+        "description": "Some durability is restored following a successful boarding.",
+        "levels": [
+          { "level": 1, "effect": "Some durability restored after successful boarding" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": []
+      },
+      {
+        "name": "Double Salvo",
+        "tree": "battles",
+        "description": "Fire salvoes from both sides simultaneously by holding [Alt] and the fire button.",
+        "levels": [
+          { "level": 1, "effect": "Fire salvoes from both sides simultaneously" }
+        ],
+        "cost": { "gold": 5000 },
+        "prerequisites": ["Targeted Fire"],
+        "requiredRank": 25
+      },
+      {
+        "name": "Vulnerabilities",
+        "tree": "battles",
+        "description": "Damage to the crew from any ammo type, except for grapeshot, will be increased by a third.",
+        "levels": [
+          { "level": 1, "effect": "Crew damage from all ammo except grapeshot increased by 33%" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": []
+      },
+      {
+        "name": "Repair Gear",
+        "tree": "battles",
+        "description": "Captured ships will be repaired by 50% of their durability.",
+        "levels": [
+          { "level": 1, "effect": "Captured ships repaired by 50% durability" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 2000 },
+        "prerequisites": ["previous skill"]
+      },
+      {
+        "name": "Right Hand",
+        "tree": "battles",
+        "description": "Hire more specialist crew on your ship: +1 place.",
+        "levels": [
+          { "level": 1, "effect": "+1 specialist crew slot" }
+        ],
+        "cost": { "skillPoints": 3 },
+        "prerequisites": []
+      },
+      {
+        "name": "Gunnery Crack",
+        "tree": "battles",
+        "description": "Aim your guns 1.5 times faster.",
+        "levels": [
+          { "level": 1, "effect": "Aim guns 1.5x faster" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": []
+      },
+      {
+        "name": "Mining",
+        "tree": "battles",
+        "description": "Set a 2-4 minute fuse on powder barrels. For mines +1 minute.",
+        "levels": [
+          { "level": 1, "effect": "Set 2-4 minute fuse on powder barrels; mines get +1 minute" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": []
+      },
+      {
+        "name": "Morale",
+        "tree": "battles",
+        "description": "Special crew wages are reduced by a third.",
+        "levels": [
+          { "level": 1, "effect": "Special crew wages reduced by 33%" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": ["previous skill"]
+      }
+    ],
+    "craft": [
+      {
+        "name": "Protection",
+        "tree": "craft",
+        "description": "Captured ships will receive less damage when losing command.",
+        "levels": [
+          { "level": 1, "effect": "Captured ships receive less damage when losing command" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": ["previous skill"]
+      },
+      {
+        "name": "Combat Log",
+        "tree": "craft",
+        "description": "You can take up to 4 quests from the tavern.",
+        "levels": [
+          { "level": 1, "effect": "Take up to 4 quests from the tavern" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 10000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Trade Affairs",
+        "tree": "craft",
+        "description": "Ability to post lots of goods and orders on the exchange.",
+        "levels": [
+          { "level": 1, "effect": "Post 5 lots of goods and orders on the exchange" }
+        ],
+        "cost": { "gold": 250 },
+        "prerequisites": []
+      },
+      {
+        "name": "Helping Hand",
+        "tree": "craft",
+        "description": "Each completed quest restores 10-20 units of craft time.",
+        "levels": [
+          { "level": 1, "effect": "Each completed quest restores 10-20 units of craft time" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": []
+      },
+      {
+        "name": "Quartermaster",
+        "tree": "craft",
+        "description": "Increase the warehouse capacity of all mines and manufactories by 25%.",
+        "levels": [
+          { "level": 1, "effect": "Warehouse capacity of all mines and manufactories +25%" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": [],
+        "notes": "Prerequisite for other skills"
+      },
+      {
+        "name": "Trade License",
+        "tree": "craft",
+        "description": "Post up to 20 lots of goods and orders on the exchange.",
+        "levels": [
+          { "level": 1, "effect": "Post up to 20 lots on the exchange" }
+        ],
+        "cost": { "skillPoints": 2, "gold": 5000 },
+        "prerequisites": ["previous skill"]
+      },
+      {
+        "name": "Apprentice",
+        "tree": "craft",
+        "description": "Create more items at the port with a limit of 600 craft-time units and a respawn rate of 40 units per hour.",
+        "levels": [
+          { "level": 1, "effect": "600 craft-time unit limit, 40 units/hour respawn rate" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 2000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Quick Delivery",
+        "tree": "craft",
+        "description": "Increase the operational speed of mines and manufactories in dangerous waters by 25%.",
+        "levels": [
+          { "level": 1, "effect": "Mine/manufactory speed in dangerous waters +25%" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": []
+      },
+      {
+        "name": "Even the Scraps",
+        "tree": "craft",
+        "description": "Dismantling captured ships yields 33% more wood and fabric, plus a few beams.",
+        "levels": [
+          { "level": 1, "effect": "+33% wood and fabric from dismantling, plus bonus beams" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 2500 },
+        "prerequisites": []
+      },
+      {
+        "name": "Master",
+        "tree": "craft",
+        "description": "Increases the craft-time limit to 1000 units and the respawn rate to 50 units per hour.",
+        "levels": [
+          { "level": 1, "effect": "Craft-time limit: 1000 units, respawn rate: 50 units/hour" }
+        ],
+        "cost": { "skillPoints": 2, "gold": 20000 },
+        "prerequisites": ["previous skill"]
+      },
+      {
+        "name": "Self-Supply",
+        "tree": "craft",
+        "description": "High-level mines and manufactories will keep running without provisions, but production rate slows to just below level 2. Does not affect farms.",
+        "levels": [
+          { "level": 1, "effect": "Mines/manufactories run without provisions at reduced rate (below level 2); farms unaffected" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": []
+      },
+      {
+        "name": "Carpentry",
+        "tree": "craft",
+        "description": "Production of beams and bulkheads is 7% cheaper in ports.",
+        "levels": [
+          { "level": 1, "effect": "Beam and bulkhead production 7% cheaper in ports" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": [],
+        "notes": "Mutually exclusive with Blacksmithing"
+      },
+      {
+        "name": "Blacksmithing",
+        "tree": "craft",
+        "description": "Reduce the cost of producing plates and bronze in ports by 10%.",
+        "levels": [
+          { "level": 1, "effect": "Plate and bronze production 10% cheaper in ports" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": [],
+        "notes": "Mutually exclusive with Carpentry"
+      },
+      {
+        "name": "Workforce Management",
+        "tree": "craft",
+        "description": "Gain a +5 unit bonus to the craft-time limit for each specialization workshop across different ports.",
+        "levels": [
+          { "level": 1, "effect": "+5 craft-time limit per specialization workshop across ports" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": [],
+        "requiredRank": 20
+      },
+      {
+        "name": "Alloys",
+        "tree": "craft",
+        "description": "Casting the best weapons in ports with a weapons workshop is 10% cheaper.",
+        "levels": [
+          { "level": 1, "effect": "Best weapons casting 10% cheaper in ports with weapons workshop" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": []
+      },
+      {
+        "name": "Underground Hall",
+        "tree": "craft",
+        "description": "Build 2 Specialty Workshops in dangerous water ports without warehouse ties.",
+        "levels": [
+          { "level": 1, "effect": "Build 2 Specialty Workshops in dangerous water ports without warehouse ties" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 50000 },
+        "prerequisites": ["previous skill"],
+        "requiredRank": 20
+      }
+    ],
+    "exploration": [
+      {
+        "name": "Seamanship",
+        "tree": "exploration",
+        "description": "Cruising speed is higher when sailing on a broad reach with the wind (the wind direction indicator turns green).",
+        "levels": [
+          { "level": 1, "effect": "Higher cruising speed when sailing on a broad reach with the wind" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": [],
+        "notes": "Top-level skill, prerequisite for others"
+      },
+      {
+        "name": "Fast Travel",
+        "tree": "exploration",
+        "description": "You will be able to travel twice in a row instead of once between neighboring non-pirate ports, without resources.",
+        "levels": [
+          { "level": 1, "effect": "Travel twice in a row between neighboring non-pirate ports without resources" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 1000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Escort",
+        "tree": "exploration",
+        "description": "Enter ports through the lighthouse under any flag except military (only if port entry is allowed).",
+        "levels": [
+          { "level": 1, "effect": "Enter ports via lighthouse under any flag except military" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": []
+      },
+      {
+        "name": "Decoy Flags",
+        "tree": "exploration",
+        "description": "Reduces the aggression distance of dangerous NPCs by a third.",
+        "levels": [
+          { "level": 1, "effect": "NPC aggression distance reduced by 33%" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": []
+      },
+      {
+        "name": "Logistics",
+        "tree": "exploration",
+        "description": "Fast travel twice in a row.",
+        "levels": [
+          { "level": 1, "effect": "Fast travel twice in a row" }
+        ],
+        "cost": { "skillPoints": 2 },
+        "prerequisites": []
+      },
+      {
+        "name": "Personal Islands",
+        "tree": "exploration",
+        "description": "You can own a second personal island and travel between them.",
+        "levels": [
+          { "level": 1, "effect": "Own a second personal island and travel between them" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 300000 },
+        "prerequisites": [],
+        "requiredAchievement": "Faction Decree"
+      },
+      {
+        "name": "Good Connections",
+        "tree": "exploration",
+        "description": "Unlocks contraband quests. Good profit, but peace flags are unavailable.",
+        "levels": [
+          { "level": 1, "effect": "Unlocks contraband quests; disables peace flags" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 1500 },
+        "prerequisites": []
+      },
+      {
+        "name": "Storekeeper",
+        "tree": "exploration",
+        "description": "Store more resources across the world by having up to 6 warehouses.",
+        "levels": [
+          { "level": 1, "effect": "Up to 6 warehouses" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": [],
+        "requiredBuildings": "1 warehouse"
+      },
+      {
+        "name": "Third Island",
+        "tree": "exploration",
+        "description": "Three personal islands are even better than two. The travel interval is reduced, allowing for faster movement between islands.",
+        "levels": [
+          { "level": 1, "effect": "Own 3 personal islands with reduced travel interval" }
+        ],
+        "cost": { "voodooSkull": 1000, "constructionLicense": 1 },
+        "prerequisites": ["Personal Islands"]
+      },
+      {
+        "name": "Illegal Mooring",
+        "tree": "exploration",
+        "description": "Cut mooring fees by 50% (does not affect Peace Flags).",
+        "levels": [
+          { "level": 1, "effect": "Mooring fees reduced by 50% (Peace Flags unaffected)" }
+        ],
+        "cost": { "skillPoints": 1 },
+        "prerequisites": ["previous skill"]
+      },
+      {
+        "name": "Patrician",
+        "tree": "exploration",
+        "description": "Store even more resources: up to 11 warehouses.",
+        "levels": [
+          { "level": 1, "effect": "Up to 11 warehouses" }
+        ],
+        "cost": { "skillPoints": 3 },
+        "prerequisites": ["Storekeeper"],
+        "requiredBuildings": "1 warehouse"
+      },
+      {
+        "name": "Workforce",
+        "tree": "exploration",
+        "description": "Build up to 4 different mines and manufactories, instead of 2.",
+        "levels": [
+          { "level": 1, "effect": "Build up to 4 mines/manufactories (up from 2)" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 5000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Trade Pact",
+        "tree": "exploration",
+        "description": "Purchase ammunition at cost from merchants and settlements at sea and encounter more trading opportunities.",
+        "levels": [
+          { "level": 1, "effect": "Buy ammo at cost from merchants/settlements; more trading opportunities" }
+        ],
+        "cost": { "skillPoints": 1, "gold": 2000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Arsenal",
+        "tree": "exploration",
+        "description": "The consumable item limit in the warehouse is increased to 400.",
+        "levels": [
+          { "level": 1, "effect": "Consumable item warehouse limit increased to 400" }
+        ],
+        "cost": { "skillPoints": 2, "gold": 60000 },
+        "prerequisites": [],
+        "requiredRank": 20
+      },
+      {
+        "name": "Construction Expertise",
+        "tree": "exploration",
+        "description": "Allows the construction of 6 different mines and manufactories.",
+        "levels": [
+          { "level": 1, "effect": "Build up to 6 mines/manufactories" }
+        ],
+        "cost": { "skillPoints": 2, "gold": 60000 },
+        "prerequisites": []
+      },
+      {
+        "name": "Magnate",
+        "tree": "exploration",
+        "description": "Allows building up to 8 different mines and manufactories.",
+        "levels": [
+          { "level": 1, "effect": "Build up to 8 mines/manufactories" }
+        ],
+        "cost": { "skillPoints": 4, "gold": 200000 },
+        "prerequisites": ["Construction Expertise"]
+      }
+    ],
+    "legend": {
+      "skills": [],
+      "notes": "Legend tree is locked until player level 30. No skills available to document yet."
+    }
+  }
+}

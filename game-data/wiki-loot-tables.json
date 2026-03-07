@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "extracted": "2026-03-07",
+    "sources": ["WosbLoot.cs"],
+    "note": "Probabilities are relative weights. Zone scaling: max = 1 + zone*0.15*9/7, random = max * rand(0.5, 1.5)"
+  },
+  "zoneScaling": {
+    "formula": "zoneMax = 1.5 * (1 + zone * 0.15 * 9/7), zoneRandom = (1 + zone * 0.15 * 9/7) * rand(0.5, 1.5)"
+  },
+  "worldMapLoot": [
+    {
+      "model": "GiftBox", "probability": 20, "interaction": "PickUp", "serverEffect": "None",
+      "condition": "New Year event only",
+      "rewards": {
+        "guaranteed": "150-300 Meat",
+        "random": [
+          { "chance": 56, "reward": "90-175 Ice Balls" },
+          { "chance": 36, "reward": "30 Falconet Fireworks" },
+          { "chance": 3.5, "reward": "10 Escudo" },
+          { "chance": 3, "reward": "5 Voodoo Skulls" },
+          { "chance": 1, "reward": "1 Pearl" },
+          { "chance": 0.3, "reward": "1 Ancient Artifact" },
+          { "chance": 0.2, "reward": "1 Imperial Legend Currency" }
+        ]
+      }
+    },
+    {
+      "model": "Pumpkin", "probability": 20, "interaction": "PickUp", "serverEffect": "None",
+      "condition": "Halloween event only",
+      "rewards": {
+        "random": [
+          { "chance": 14, "reward": "MINE TRAP (explosion)" },
+          { "chance": 60, "reward": "90-175 Ice Balls" },
+          { "chance": 25, "reward": "1 Large Powder Keg" },
+          { "chance": 6, "reward": "10 Escudo" },
+          { "chance": 6, "reward": "5 Voodoo Skulls" },
+          { "chance": 2.2, "reward": "1 Pearl" },
+          { "chance": 0.5, "reward": "1 Ancient Artifact" },
+          { "chance": 0.3, "reward": "1 Imperial Legend Currency" }
+        ]
+      }
+    },
+    {
+      "model": "Whale", "probability": 8, "interaction": "Looting",
+      "rewards": "Whale Oil + Meat (scaled by zone). 7% chance of 10x loot in hazard zones. XP bonus included.",
+      "note": "Also gives Gold Fish currency (amount = gold/1400)"
+    },
+    {
+      "model": "Fishing", "probability": 22, "interaction": "Looting", "serverEffect": "SpawnFar",
+      "rewards": {
+        "guaranteed": "Fish (scaled by zone, ~400 gold value)",
+        "bonus": [
+          { "chance": 30, "reward": "1 random trade good (IDs 30,17,35,53,20)" },
+          { "chance": 7, "reward": "1 rare item (IDs 38,37,24,35)" },
+          { "chance": 0.5, "reward": "1 Imperial Legend Currency" }
+        ],
+        "goldFishEvent": "50% chance of 1 Gold Fish"
+      }
+    },
+    {
+      "model": "SmallDebris", "probability": 16, "interaction": "PickUp",
+      "rewards": "Wood (~35 * zone) + Charcoal (~8 * zone) + 66% chance Rope (~10 * zone)"
+    },
+    {
+      "model": "SmallBox", "probability": 15, "interaction": "PickUp", "serverEffect": "CanHavePowderKegs",
+      "rewards": "Charcoal (~5 * zone) + 10-25 gold. 6% chance of 1 Gem instead of gold. Ice Balls during events."
+    },
+    {
+      "model": "ShipDebris", "probability": 14, "interaction": "LongWatching", "serverEffect": "CanHavePirateTrap, SpawnNearIsles",
+      "rewards": "2 random crafting materials (Iron Ingots, Copper Ingots, Resin, Lead) scaled by zone. 8% chance of random non-mortar cannon."
+    },
+    {
+      "model": "DebrisWithBox", "probability": 10, "interaction": "LongWatching", "serverEffect": "CanHavePowderKegs, SpawnNearIsles",
+      "rewards": "Random trade good (Rum/Wood/Beer) + Wood + Stone Blocks(50%). Random powerup item (20% chance Phosphor). 1 powder keg."
+    },
+    {
+      "model": "IsleFarming", "probability": 10, "interaction": "MiningByCrew", "serverEffect": "SpawnOnIsles",
+      "rewards": "2 raw materials + 1 regional trade good + Fruits + Volcanic Ore. 2% chance of Gem. XP bonus. Scaled by zone ~500 gold value."
+    },
+    {
+      "model": "RuinsFarming", "probability": 1.2, "interaction": "LongWatching", "serverEffect": "CanHavePirateTrap, SpawnOnIsles",
+      "rewards": "1 rare item (Voodoo Skull, Treasure Map, or Gem) + Volcanic Ore scaled by zone"
+    },
+    {
+      "model": "EmpireUnderwaterBox", "probability": 1, "interaction": "PickUp", "serverEffect": "SpawnFar",
+      "rewards": {
+        "random": [
+          { "chance": 35, "reward": "15-25 Gems" },
+          { "chance": 35, "reward": "2-3 Escudo" },
+          { "chance": 20, "reward": "1 Imperial Legend Currency" },
+          { "chance": 10, "reward": "1 Treasure Map" }
+        ]
+      }
+    },
+    {
+      "model": "UnitOnRaft", "probability": 3.5, "interaction": "PickUp", "serverEffect": "SpawnCloseToShipDebris",
+      "rewards": "1 Rope Ladder + 1 random Adventurer special crew unit"
+    },
+    {
+      "model": "FishingShip", "probability": 20, "interaction": "LongWatching", "serverEffect": "CanHavePirateTrap, SpawnNearIsles",
+      "rewards": "Fish (~60 * zone) + Rope Ladders (3-7) + random Sailor/Boarding crew (scaled by zone)"
+    },
+    {
+      "model": "IsleTreasures", "probability": 0.2, "interaction": "LongWatching", "serverEffect": "SpawnOnIsles, GlobalMapEvent",
+      "rewards": "Gems (~15,000-30,000 gold value). 30% chance +1 Voodoo Skull. 10% chance +1 Treasure Map (halves gem value).",
+      "note": "Rarest world event — shows on global map"
+    }
+  ],
+  "arenaDrops": {
+    "bonusItems": ["Copper Ingots (index 11)", "Wood (index 1)", "Planks (index 27)"],
+    "debrisAmmo": "50-100 random ammo (Round/Grape/Beer/Heavy) scaled by factor"
+  },
+  "passingMapDrops": {
+    "bonusItems": ["Rope Ladders", "Marks", "Voodoo Skulls", "Rations", "Ancient Artifacts", "Phosphor Powder", "Sailcloth"],
+    "itemChance": 30,
+    "resourceChance": 50,
+    "woodAndRopeChance": 20,
+    "scalingFormula": "max(1, (6 - avgRank) / 3)"
+  }
+}

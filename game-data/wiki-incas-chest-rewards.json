@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFile": "Common.Game/IncasTreasureChestRewards.cs"
+  },
+  "probabilityGroups": [
+    {
+      "groupWeight": 0.1,
+      "tier": 3,
+      "rewards": [
+        { "reward": "Ship ID 65 (Huracan)", "rareDisplay": true, "flags": { "DisallowOnLowRang": true } }
+      ]
+    },
+    {
+      "groupWeight": 1.0,
+      "tier": 3,
+      "rewards": [
+        { "reward": "3000 Monets" }
+      ]
+    },
+    {
+      "groupWeight": 2.0,
+      "tier": 3,
+      "rewards": [
+        { "reward": "1,500,000 Gold" }
+      ]
+    },
+    {
+      "groupWeight": 25.0,
+      "tier": 2,
+      "rewards": [
+        { "reward": "1000 Pirate Tokens", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "150,000 Gold" },
+        { "reward": "+30 Escudo", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "+8 Imperial Legend currency", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "5x Cannon ID 33 (quality)", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "5x Cannon ID 34 (quality)", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "15x Cannon ID 31", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "15x Cannon ID 32", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "15x Cannon ID 30", "flags": { "FirstOpenChestCategory": true } }
+      ]
+    },
+    {
+      "groupWeight": 71.9,
+      "tier": 1,
+      "rewards": [
+        { "reward": "150 Pirate Tokens" },
+        { "reward": "1 Imperial Legend currency" },
+        { "reward": "5x Powerup 16 (shadow2)" },
+        { "reward": "35x Powerup 3 (mendkit_debris)" },
+        { "reward": "8x Powerup 14 (shield2)" },
+        { "reward": "40x Powerup 2 (mendkit3)" },
+        { "reward": "120x Powerup 12 (rope2)" },
+        { "reward": "500x Heavy ammo" },
+        { "reward": "800x Saxon ammo" },
+        { "reward": "50 Marks" },
+        { "reward": "3 Voodoo Skulls" },
+        { "reward": "2500 Iron Ingots" },
+        { "reward": "12000 Wood" },
+        { "reward": "1500 Coal" },
+        { "reward": "1000 Fruits" }
+      ]
+    }
+  ]
+}

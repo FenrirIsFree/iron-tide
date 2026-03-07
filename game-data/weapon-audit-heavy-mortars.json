@@ -1,0 +1,450 @@
+{
+  "meta": {
+    "auditDate": "2026-03-06",
+    "source": "Google Drive screenshots (in-game weapon cards)",
+    "auditor": "subagent",
+    "weaponsAudited": 18,
+    "summary": "All core stats (penetration, loadTime, range, maxAngle, damage) match weapon-stats.json. New fields discovered: accuracySpread, splashRadius, reduction, preparation, placement restrictions, special effects, barrel multipliers."
+  },
+  "newFieldsDiscovered": {
+    "heavyWeapons": ["accuracySpread", "placementRestriction"],
+    "mortars": ["splashRadius", "reduction", "preparation", "specialEffect"],
+    "note": "These fields are NOT in weapon-stats.json and should be added"
+  },
+  "weapons": [
+    {
+      "name": "36-pdr Inrog",
+      "fileId": "1CAe3OB3q1x1zxqp3UHsQe8WylTPtl1P_",
+      "category": "Heavy Cannon",
+      "type": "Cannon",
+      "screenshotStats": {
+        "penetration": 20,
+        "loadTime": 16,
+        "range": 135,
+        "maxAngle": 16,
+        "accuracySpread": 13.5
+      },
+      "jsonStats": {
+        "penetration": 20,
+        "loadTime": 16,
+        "range": 135,
+        "maxAngle": 16
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "32-pdr Cannon",
+      "fileId": "1X1TkZa0NoDxZyrcLYpEEgWulDGyATOGu",
+      "category": "Heavy Cannon",
+      "type": "Cannon",
+      "screenshotStats": {
+        "penetration": 17.5,
+        "loadTime": 12,
+        "range": 140,
+        "maxAngle": 20,
+        "accuracySpread": 15
+      },
+      "jsonStats": {
+        "penetration": 17.5,
+        "loadTime": 12,
+        "range": 140,
+        "maxAngle": 20
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "38-pdr Jericho",
+      "fileId": "1kj1DF0fnK31kyCsVdp3oJD2hKr51x4pN",
+      "category": "Heavy Long Cannon",
+      "type": "Long Cannon",
+      "screenshotStats": {
+        "penetration": 22,
+        "loadTime": 30.5,
+        "range": 153,
+        "maxAngle": 7,
+        "accuracySpread": 12
+      },
+      "jsonStats": {
+        "penetration": 22,
+        "loadTime": 30.5,
+        "range": 153,
+        "maxAngle": 7
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "32-pdr Long Cannon",
+      "fileId": "1ir4TL26ckh0yQsFMvMrBvq2C4vefrvvU",
+      "category": "Heavy Long Cannon",
+      "type": "Long Cannon",
+      "screenshotStats": {
+        "penetration": 18.5,
+        "loadTime": 17.5,
+        "range": 150,
+        "maxAngle": 10,
+        "accuracySpread": 10
+      },
+      "jsonStats": {
+        "penetration": 18.5,
+        "loadTime": 17.5,
+        "range": 150,
+        "maxAngle": 10
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "48-pdr Colossus",
+      "fileId": "1wdGvzeDT5xDY0vbHCvWbdall5ktx_gHH",
+      "category": "Heavy Carronade",
+      "type": "Carronade",
+      "screenshotStats": {
+        "penetration": 30,
+        "loadTime": 32,
+        "range": 110,
+        "maxAngle": 12,
+        "accuracySpread": 16
+      },
+      "jsonStats": {
+        "penetration": 30,
+        "loadTime": 32,
+        "range": 110,
+        "maxAngle": 12
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "42-pdr Carronade",
+      "fileId": "1eNdaE8ufmVxr8vyEj1cgTGBxbMiSrlmT",
+      "category": "Heavy Carronade",
+      "type": "Carronade",
+      "screenshotStats": {
+        "penetration": 27,
+        "loadTime": 26,
+        "range": 120,
+        "maxAngle": 15,
+        "accuracySpread": 18
+      },
+      "jsonStats": {
+        "penetration": 27,
+        "loadTime": 26,
+        "range": 120,
+        "maxAngle": 15
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "Gilgamesh",
+      "fileId": "1yqukg68rlNdzZlaSSLQu_QatotSbw1Kc",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 22,
+        "loadTime": 25,
+        "range": 160,
+        "maxAngle": 16,
+        "accuracySpread": 6,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "jsonStats": {
+        "penetration": 22,
+        "loadTime": 25,
+        "range": 160,
+        "maxAngle": 16
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread", "placementRestriction"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "Twin 20-pdr",
+      "fileId": "1wIPgAHSuzthdPSqi9sXtbvCGEgXyHqKX",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 20,
+        "penetrationNote": "x2 (twin barrels)",
+        "loadTime": 27,
+        "range": 125,
+        "maxAngle": 8,
+        "accuracySpread": 14,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "jsonStats": {
+        "penetration": 20,
+        "loadTime": 27,
+        "range": 125,
+        "maxAngle": 8
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread", "placementRestriction", "barrelCount"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "Mjolnir",
+      "fileId": "1EuAhIXdX27zkOzEx_4y0UNOK-W0e1RDO",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 32.5,
+        "loadTime": 24,
+        "range": 90,
+        "maxAngle": 20,
+        "accuracySpread": 17,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "jsonStats": {
+        "penetration": 32.5,
+        "loadTime": 24,
+        "range": 90,
+        "maxAngle": 20
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread", "placementRestriction"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "Triple 16-pdr",
+      "fileId": "1i9_o1-Z8dk-cdAKe-1Ucis4S4kUBsYme",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "screenshotStats": {
+        "penetration": 16.5,
+        "penetrationNote": "x3 (triple barrels)",
+        "loadTime": 33,
+        "range": 140,
+        "maxAngle": 6,
+        "accuracySpread": 16,
+        "placementRestriction": "Only for the bow or stern"
+      },
+      "jsonStats": {
+        "penetration": 16.5,
+        "loadTime": 33,
+        "range": 140,
+        "maxAngle": 6
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["accuracySpread", "placementRestriction", "barrelCount"],
+      "missingFromScreenshot": ["cost", "damage", "description", "weight"]
+    },
+    {
+      "name": "6 inch Mortar",
+      "fileId": "1zuocos-XS4JkYvPvnbgAt9XXDpGL3AFN",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 100,
+        "loadTime": 20,
+        "rangeMin": 60,
+        "rangeMax": 135,
+        "splashRadius": 11,
+        "reduction": 2,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 20,
+        "rangeMin": 60,
+        "rangeMax": 135,
+        "damage": 100
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "7 inch Mortar",
+      "fileId": "1WlFreq6dQnFwS8fy-c3PkPRrbQ05YFb0",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 125,
+        "loadTime": 24,
+        "rangeMin": 75,
+        "rangeMax": 145,
+        "splashRadius": 11,
+        "reduction": 3,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 24,
+        "rangeMin": 75,
+        "rangeMax": 145,
+        "damage": 125
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "8 inch Mortar",
+      "fileId": "1_dbYOoC_cl3uIF1emK71nFNZzIwI2sSY",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 150,
+        "loadTime": 31,
+        "rangeMin": 85,
+        "rangeMax": 155,
+        "splashRadius": 12,
+        "reduction": 4,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 31,
+        "rangeMin": 85,
+        "rangeMax": 155,
+        "damage": 150
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "9 inch Mortar",
+      "fileId": "1le6ZIWpO5jFVrvGSa8U6lDygaCYxJyP9",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 180,
+        "loadTime": 35,
+        "rangeMin": 75,
+        "rangeMax": 150,
+        "splashRadius": 13,
+        "reduction": 4,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 35,
+        "rangeMin": 75,
+        "rangeMax": 150,
+        "damage": 180
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "10 inch Mortar",
+      "fileId": "1RqkAajGJKgilsD7koK-Zs0ohBkNwh02t",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 210,
+        "loadTime": 38,
+        "rangeMin": 65,
+        "rangeMax": 145,
+        "splashRadius": 14,
+        "reduction": 5,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 38,
+        "rangeMin": 65,
+        "rangeMax": 145,
+        "damage": 210
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "11 inch Mortar",
+      "fileId": "1bOPHOfr4c5ylsPUZVim0WpZkS1EzVMHr",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 245,
+        "loadTime": 42,
+        "rangeMin": 60,
+        "rangeMax": 140,
+        "splashRadius": 15,
+        "reduction": 5.5,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 42,
+        "rangeMin": 60,
+        "rangeMax": 140,
+        "damage": 245
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "Heavy Mortar",
+      "fileId": "1ckDj_zMscEbpas1-J8e7b_xJjIINnejS",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 155,
+        "loadTime": 34,
+        "rangeMin": 95,
+        "rangeMax": 155,
+        "splashRadius": 9,
+        "reduction": 4,
+        "preparation": 4.8,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 34,
+        "rangeMin": 95,
+        "rangeMax": 155,
+        "damage": 155
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "preparation", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    },
+    {
+      "name": "Barrel Launcher",
+      "fileId": "1DjkTzNzf_9132TxiBctPzqSVnO2UQEPY",
+      "category": "Mortar",
+      "type": "Mortar",
+      "screenshotStats": {
+        "damage": 90,
+        "loadTime": 25,
+        "rangeMin": 80,
+        "rangeMax": 140,
+        "splashRadius": 22,
+        "reduction": 4,
+        "preparation": 3.5,
+        "specialEffect": "Damage to structures x2"
+      },
+      "jsonStats": {
+        "loadTime": 25,
+        "rangeMin": 80,
+        "rangeMax": 140,
+        "damage": 90
+      },
+      "comparison": "MATCH",
+      "missingFromJson": ["splashRadius", "reduction", "preparation", "specialEffect"],
+      "missingFromScreenshot": ["cost"]
+    }
+  ],
+  "overallResult": {
+    "totalAudited": 18,
+    "matches": 18,
+    "discrepancies": 0,
+    "verdict": "ALL STATS MATCH - No discrepancies found between screenshots and weapon-stats.json",
+    "recommendations": [
+      "Add 'accuracySpread' field to all heavy weapons (10 weapons have this stat visible)",
+      "Add 'placementRestriction' field to bombards: Gilgamesh, Twin 20-pdr, Mjolnir, Triple 16-pdr all show 'Only for the bow or stern'",
+      "Add 'barrelCount' to Twin 20-pdr (x2) and Triple 16-pdr (x3) to indicate multi-barrel mechanics",
+      "Add mortar-specific fields: splashRadius, reduction, specialEffect ('Damage to structures x2')",
+      "Add 'preparation' field to Heavy Mortar (4.8s) and Barrel Launcher (3.5s)",
+      "Cost data and description text were not visible in these screenshot tooltips - need different screenshots or source"
+    ]
+  }
+}

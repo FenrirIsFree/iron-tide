@@ -1,0 +1,650 @@
+{
+  "meta": {
+    "batch": 4,
+    "totalBatches": 6,
+    "auditDate": "2026-03-06",
+    "shipsAudited": 10
+  },
+  "results": [
+    {
+      "name": "Le Cerf",
+      "driveFileId": "1stheVnY_AV7RUth1wLsRkQyKdWjKrzl_",
+      "screenshotExtracted": {
+        "name": "Le Cerf",
+        "class": "Cutter",
+        "rate": "VI",
+        "category": "Fast-moving",
+        "nation": "France",
+        "description": "Launched on March 2, 1779, in Saint-Malo, the \"Le Cerf\" patrolled the coast of Brittany and fought its first battle against two English cutters on June 21. She became famous for her evasiveness.",
+        "stats": {
+          "durability": 900,
+          "speed": 10,
+          "maneuverability": 97,
+          "broadsideArmor": 1.8,
+          "hold": 8000,
+          "crew": 78,
+          "hullDimensions": "22x3",
+          "displacement": "990t",
+          "lightWeapons": "0-9-0",
+          "swivelGuns": 8,
+          "integrity": 6
+        },
+        "cost": {
+          "wood": 460,
+          "lumber": 23,
+          "cloth": 14
+        },
+        "researchStatus": "640 of 640 (fully researched)"
+      },
+      "jsonEntry": {
+        "name": "Le Cerf",
+        "class": "Cutter",
+        "rate": "VI",
+        "category": "Fast-moving",
+        "nation": "France",
+        "stats": {
+          "durability": 900,
+          "speed": 10,
+          "maneuverability": 97,
+          "broadsideArmor": 1.8,
+          "hold": 8000,
+          "crew": 78,
+          "hullDimensions": "22x3",
+          "displacement": "990t",
+          "lightWeapons": "0-9-0",
+          "swivelGuns": 8,
+          "integrity": 6
+        },
+        "cost": {
+          "wood": 460,
+          "lumber": 23,
+          "cloth": 14
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "Victory",
+      "driveFileId": "1PhBmXLG-86AxoMwh3-1gUVOqLT194Kqj",
+      "screenshotExtracted": {
+        "name": "Victory",
+        "class": "Ship of the Line",
+        "rate": 1,
+        "category": "Combat",
+        "nation": "Britain",
+        "legendOfTheAgeOfSail": true,
+        "description": "The flagship of Horatio Nelson, one of the greatest and largest warships of the British Royal Navy, immortalized at the Battle of Trafalgar. Launched in 1765, she remains the oldest commissioned warship in the world with 245 years of service as of 2023.",
+        "stats": {
+          "durability": 3740,
+          "speed": 7.1,
+          "maneuverability": 66,
+          "broadsideArmor": 8,
+          "hold": 25000,
+          "crew": 204,
+          "hullDimensions": "61x12",
+          "displacement": "4050t",
+          "heavyWeapons": "4-49-4",
+          "swivelGuns": 10,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "5 resources, all quantities hidden (???). -10% discount shown."
+        }
+      },
+      "jsonEntry": {
+        "name": "Victory",
+        "class": "Ship of the Line",
+        "rate": 1,
+        "category": "Combat",
+        "nation": "Britain",
+        "legendOfTheAgeOfSail": true,
+        "stats": {
+          "durability": 3740,
+          "speed": 7.1,
+          "maneuverability": 66,
+          "broadsideArmor": 8,
+          "hold": 25000,
+          "crew": 204,
+          "hullDimensions": "61x12",
+          "displacement": "4050t",
+          "heavyWeapons": "4-49-4",
+          "swivelGuns": 10,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "Sans Pareil",
+      "driveFileId": "1ScOCd8pYazUbqbR_jBVePjHBM0VMpTuj",
+      "screenshotExtracted": {
+        "name": "Sans Pareil",
+        "class": "Ship of the Line",
+        "rate": 2,
+        "category": "Combat",
+        "nation": "France",
+        "description": "Originally a French ship of the line, she was captured by Englishmen during the \"Glorious First of June\" battle in 1794. She served actively in the Royal Navy until 1807, participating in several engagements and capturing enemy vessels. In 1807, she was converted into a prison ship.",
+        "stats": {
+          "durability": 3000,
+          "speed": 7.7,
+          "maneuverability": 74,
+          "broadsideArmor": 6.4,
+          "hold": 21500,
+          "crew": 184,
+          "hullDimensions": "55x6",
+          "displacement": "3330t",
+          "heavyWeapons": "4-38-2",
+          "swivelGuns": 10,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "5 resources, all quantities hidden (???). -10% discount shown."
+        },
+        "researchProgress": "1651 / 5400"
+      },
+      "jsonEntry": {
+        "name": "Sans Pareil",
+        "class": "Ship of the Line",
+        "rate": 2,
+        "category": "Combat",
+        "nation": "France",
+        "stats": {
+          "durability": 3000,
+          "speed": 7.7,
+          "maneuverability": 74,
+          "broadsideArmor": 6.4,
+          "hold": 21500,
+          "crew": 184,
+          "hullDimensions": "55x6",
+          "displacement": "3330t",
+          "heavyWeapons": "4-38-2",
+          "swivelGuns": 10,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "Anson",
+      "driveFileId": "1IZr0oKcLowVhwotAhbp4iGm3oKsGsyt-",
+      "screenshotExtracted": {
+        "name": "Anson",
+        "class": "Ship of the Line",
+        "rate": 3,
+        "category": "Combat",
+        "nation": "Britain",
+        "legendOfTheAgeOfSail": true,
+        "description": "A warship with an impressive service record. She fought at the Battle of the Saintes on April 9, 1782, under Admiral Sir George Rodney against Admiral de Grasse. In 1794, she was rebuilt as a large 44-gun frigate and later took part in the Revolutionary and Napoleonic wars.",
+        "stats": {
+          "durability": 2700,
+          "speed": 8.2,
+          "maneuverability": 80,
+          "broadsideArmor": 5.6,
+          "hold": 18500,
+          "crew": 160,
+          "hullDimensions": "52x10",
+          "displacement": "3150t",
+          "mediumWeapons": "4-30-2",
+          "swivelGuns": 8,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "5 resources, all quantities hidden (???). -10% discount shown."
+        }
+      },
+      "jsonEntry": {
+        "name": "Anson",
+        "class": "Ship of the Line",
+        "rate": 3,
+        "category": "Combat",
+        "nation": "Britain",
+        "legendOfTheAgeOfSail": true,
+        "stats": {
+          "durability": 2700,
+          "speed": 8.2,
+          "maneuverability": 80,
+          "broadsideArmor": 5.6,
+          "hold": 18500,
+          "crew": 160,
+          "hullDimensions": "52x10",
+          "displacement": "3150t",
+          "mediumWeapons": "4-30-2",
+          "swivelGuns": 8,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "Essex",
+      "driveFileId": "1twLVAP8jf2pdwDlC-H9Tf9qnt5jZAUU4",
+      "screenshotExtracted": {
+        "name": "Essex",
+        "class": "Frigate",
+        "rate": 4,
+        "category": "Combat",
+        "nation": "United States",
+        "legendOfTheAgeOfSail": true,
+        "description": "A heavily-armed American frigate. It served in the First Barbary War and the War of 1812, where it captured 13 whaling ships during a single cruise. Later captured by the British, the 'Essex' went on to serve under the British Crown.",
+        "stats": {
+          "durability": 2160,
+          "speed": 8.9,
+          "maneuverability": 88,
+          "broadsideArmor": 4.8,
+          "hold": 15500,
+          "crew": 136,
+          "hullDimensions": "38x6",
+          "displacement": "2115t",
+          "mediumWeapons": "2-21-2",
+          "swivelGuns": 8,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "resources": [
+            {"icon": "metal/fittings", "amount": 130},
+            {"icon": "planks/wood", "amount": 136},
+            {"icon": "sail cloth", "amount": 87},
+            {"icon": "cloth", "amount": 175}
+          ],
+          "discount": "-10%"
+        },
+        "researchProgress": "7101 of 15400"
+      },
+      "jsonEntry": {
+        "name": "Essex",
+        "class": "Frigate",
+        "rate": 4,
+        "category": "Combat",
+        "nation": "United States",
+        "legendOfTheAgeOfSail": true,
+        "stats": {
+          "durability": 2160,
+          "speed": 8.9,
+          "maneuverability": 88,
+          "broadsideArmor": 4.8,
+          "hold": 15500,
+          "crew": 136,
+          "hullDimensions": "38x6",
+          "displacement": "2115t",
+          "mediumWeapons": "2-21-2",
+          "swivelGuns": 8,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Multiple resources required"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "notes": "Cost partially visible: 4 resources shown with quantities (130, 136, 87, 175). JSON only has generic note.",
+      "status": "MATCH"
+    },
+    {
+      "name": "Black Wind",
+      "driveFileId": "1_jX0dsQqa2HWnN7066d1xG41fJBjVHoz",
+      "screenshotExtracted": {
+        "name": "Black Wind",
+        "class": "Frigate",
+        "rate": 5,
+        "category": "Combat",
+        "description": "The \"Black Wind\" has a sturdy hull and can accommodate a large crew, providing solid protection in battle. However, this comes at the cost of a reduced cargo hold, making her less suitable for trade or prolonged engagements.",
+        "stats": {
+          "durability": 1820,
+          "speed": 9.4,
+          "maneuverability": 84,
+          "broadsideArmor": 4,
+          "hold": 13000,
+          "crew": 116,
+          "hullDimensions": "45x8",
+          "displacement": "2250t",
+          "lightWeapons": "2-16-2",
+          "swivelGuns": 6,
+          "mortarModification": true,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "resources": [
+            {"amount": 11},
+            {"amount": 68},
+            {"amount": 35},
+            {"amount": 97}
+          ],
+          "discount": "-10%"
+        },
+        "researchStatus": "4950 of 4950 (fully researched)"
+      },
+      "jsonEntry": {
+        "name": "Black Wind",
+        "class": "Frigate",
+        "rate": 5,
+        "category": "Combat",
+        "stats": {
+          "durability": 1820,
+          "speed": 9.4,
+          "maneuverability": 84,
+          "broadsideArmor": 4,
+          "hold": 13000,
+          "crew": 116,
+          "hullDimensions": "45x8",
+          "displacement": "2250t",
+          "lightWeapons": "2-16-2",
+          "swivelGuns": 6,
+          "mortarModification": true,
+          "integrity": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Multiple resources required"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description", "nation"],
+        "inScreenshot": ["nation (flag unclear)"]
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "La Salamandre",
+      "driveFileId": "1g0v3ZDlHX6pJctbWgpr0Sjq8tfAzwwTc",
+      "screenshotExtracted": {
+        "name": "La Salamandre",
+        "class": "Ketch",
+        "rate": 6,
+        "category": "Combat",
+        "nation": "France",
+        "description": "Built in 1752 in Toulon, she was successfully used to bombard Berber pirate bases in Algeria.",
+        "stats": {
+          "durability": 1160,
+          "speed": 8.8,
+          "maneuverability": 82,
+          "broadsideArmor": 3.6,
+          "hold": 9500,
+          "crew": 96,
+          "hullDimensions": "25x5",
+          "displacement": "1350t",
+          "lightWeapons": "2-10-0",
+          "swivelGuns": 6
+        },
+        "cost": {
+          "type": "resources",
+          "resources": [
+            {"icon": "wood/planks", "amount": 693},
+            {"icon": "lumber", "amount": 22}
+          ],
+          "discount": "-10%"
+        },
+        "researchStatus": "880 of 880 (fully researched)"
+      },
+      "jsonEntry": {
+        "name": "La Salamandre",
+        "class": "Ketch",
+        "rate": 6,
+        "category": "Combat",
+        "nation": "France",
+        "stats": {
+          "durability": 1160,
+          "speed": 8.8,
+          "maneuverability": 82,
+          "broadsideArmor": 3.6,
+          "hold": 9500,
+          "crew": 96,
+          "hullDimensions": "25x5",
+          "displacement": "1350t",
+          "lightWeapons": "2-10-0",
+          "swivelGuns": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Multiple resources required"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description", "integrity"],
+        "inScreenshot": ["integrity (not shown in panel)"]
+      },
+      "notes": "Screenshot shows no integrity stat. JSON also has no integrity. Both consistent.",
+      "status": "MATCH"
+    },
+    {
+      "name": "Horizont",
+      "driveFileId": "1jkqT0_yR5ZYrHZGNsUvmf9t6RSyGvrvO",
+      "screenshotExtracted": {
+        "name": "Horizont",
+        "class": "Brigantine",
+        "rate": 7,
+        "category": "Combat",
+        "description": "The brigantine gained fame among pirates thanks to its seafaring capabilities, maneuverability, and speed. Even the name changed its meaning, literally becoming 'brigantine' (in Italian, brigante means 'outlaw, pirate')",
+        "stats": {
+          "durability": 850,
+          "speed": 8.4,
+          "maneuverability": 80,
+          "broadsideArmor": 3.2,
+          "hold": 7000,
+          "crew": 78,
+          "hullDimensions": "26x5",
+          "displacement": "1125t",
+          "lightWeapons": "2-8-0",
+          "swivelGuns": 6
+        },
+        "cost": {
+          "type": "resources",
+          "resources": [
+            {"icon": "wood/planks", "amount": 688},
+            {"icon": "iron/metal", "amount": 198},
+            {"icon": "sail cloth", "amount": 27}
+          ],
+          "discount": "-10%"
+        }
+      },
+      "jsonEntry": {
+        "name": "Horizont",
+        "class": "Brigantine",
+        "rate": 7,
+        "category": "Combat",
+        "stats": {
+          "durability": 850,
+          "speed": 8.4,
+          "maneuverability": 80,
+          "broadsideArmor": 3.2,
+          "hold": 7000,
+          "crew": 78,
+          "hullDimensions": "26x5",
+          "displacement": "1125t",
+          "lightWeapons": "2-8-0",
+          "swivelGuns": 6
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Multiple resources required"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description", "integrity"],
+        "inScreenshot": ["integrity (not shown)"]
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "La Creole",
+      "driveFileId": "1YhOdKOID3Ioy6J6kcq3Jql8x5kJN3NCE",
+      "screenshotExtracted": {
+        "name": "La Creole",
+        "class": "Corvette",
+        "rate": "V",
+        "category": "Fast-moving",
+        "nation": "France",
+        "description": "A lightweight and fast corvette of the French Navy with formidable armament. It took part in the First Franco-Mexican War and the bombardment of Fort San Juan de Ulua near Veracruz.",
+        "stats": {
+          "durability": 1400,
+          "speed": 11,
+          "maneuverability": 100,
+          "broadsideArmor": 2,
+          "hold": 11000,
+          "crew": 96,
+          "hullDimensions": "39x5",
+          "displacement": "1620t",
+          "lightWeapons": "4-12-0",
+          "swivelGuns": 8,
+          "integrity": 7
+        },
+        "cost": {
+          "wood": 11,
+          "cloth": 76,
+          "planks": 21,
+          "iron": 184
+        },
+        "researchStatus": "3600 of 3600 (fully researched)"
+      },
+      "jsonEntry": {
+        "name": "La Creole",
+        "class": "Corvette",
+        "rate": "V",
+        "category": "Fast-moving",
+        "nation": "France",
+        "stats": {
+          "durability": 1400,
+          "speed": 11,
+          "maneuverability": 100,
+          "broadsideArmor": 2,
+          "hold": 11000,
+          "crew": 96,
+          "hullDimensions": "39x5",
+          "displacement": "1620t",
+          "lightWeapons": "4-12-0",
+          "swivelGuns": 8,
+          "integrity": 7
+        },
+        "cost": {
+          "wood": 11,
+          "cloth": 76,
+          "planks": 21,
+          "iron": 184
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "status": "MATCH"
+    },
+    {
+      "name": "Ingermanland",
+      "driveFileId": "1iYX7REoKHUsLqBTwmBYZhPri7EhFprCI",
+      "screenshotExtracted": {
+        "name": "Ingermanland",
+        "class": "Ship of the Line",
+        "rate": 2,
+        "category": "Fast-moving",
+        "nation": "Russia",
+        "description": "A warship of the Baltic Fleet of the Russian Empire, designed by Peter the Great. It was the first of its class and one of the Tsar's favorite ships. During the Great Northern War, it served as the flagship of both the Russian and the combined Russo-Danish-Dutch-English fleets, occasionally sailing under Peter's personal standard.",
+        "stats": {
+          "durability": 2340,
+          "speed": 9,
+          "maneuverability": 87,
+          "broadsideArmor": 3.2,
+          "hold": 17500,
+          "crew": 152,
+          "hullDimensions": "48x8",
+          "displacement": "3060t",
+          "heavyWeapons": "0-32-4",
+          "swivelGuns": 12,
+          "integrity": 7
+        },
+        "cost": {
+          "type": "resources",
+          "note": "5 resources, all quantities hidden (???). -20% discount shown (faction port)."
+        }
+      },
+      "jsonEntry": {
+        "name": "Ingermanland",
+        "class": "Ship of the Line",
+        "rate": 2,
+        "category": "Fast-moving",
+        "nation": "Russia",
+        "stats": {
+          "durability": 2340,
+          "speed": 9,
+          "maneuverability": 87,
+          "broadsideArmor": 3.2,
+          "hold": 17500,
+          "crew": 152,
+          "hullDimensions": "48x8",
+          "displacement": "3060t",
+          "heavyWeapons": "0-32-4",
+          "swivelGuns": 12,
+          "integrity": 7
+        },
+        "cost": {
+          "type": "resources",
+          "note": "Costs hidden - previous ship not researched"
+        }
+      },
+      "discrepancies": [],
+      "missingFields": {
+        "inJson": ["description"],
+        "inScreenshot": []
+      },
+      "status": "MATCH"
+    }
+  ],
+  "summary": {
+    "totalShips": 10,
+    "matches": 10,
+    "discrepancies": 0,
+    "commonMissingField": "description - missing from all JSON entries but visible in screenshots",
+    "notes": [
+      "All 10 ships' core stats (durability, speed, maneuverability, broadside armor, hold, crew, hull dimensions, displacement, weapons, swivel guns, integrity) match perfectly between screenshots and JSON.",
+      "No ships in this batch have: mortars (except Black Wind has mortar modification), special weapons, imperial bombards, spaces for upgrades, or special properties (mobile outpost, oars, invisibility, etc).",
+      "Ship descriptions are available in screenshots but not captured in the JSON for any ship in this batch.",
+      "Some cost details are partially visible in screenshots (Essex, Black Wind, La Salamandre, Horizont) where JSON only has generic 'Multiple resources required' note.",
+      "Le Cerf and La Creole have exact resource costs visible and matching JSON.",
+      "La Salamandre and Horizont have no integrity stat listed in either screenshot or JSON - consistent.",
+      "Ingermanland screenshot shows -20% crafting discount (faction port) vs the -10% on other ships (foreign faction port)."
+    ]
+  }
+}

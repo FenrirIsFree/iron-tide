@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFile": "Common.Game/AltarRewards.cs"
+  },
+  "totalEntries": 15,
+  "rewards": [
+    { "index": 0, "weight": 40.0, "reward": "+2 Map Parts", "destination": "TreasuryMaps" },
+    { "index": 1, "weight": 30.0, "reward": "+4 Map Parts", "destination": "TreasuryMaps" },
+    { "index": 2, "weight": 60.0, "reward": "+15 Marks", "destination": "Ship hold" },
+    { "index": 3, "weight": 10.0, "reward": "+30 Marks", "destination": "Ship hold" },
+    { "index": 4, "weight": 50.0, "reward": "+1 Voodoo Skulls", "destination": "Ship hold" },
+    { "index": 5, "weight": 10.0, "reward": "+3 Voodoo Skulls", "destination": "Ship hold" },
+    { "index": 6, "weight": 50.0, "reward": "500 Gold" },
+    { "index": 7, "weight": 10.0, "reward": "3000 Gold" },
+    { "index": 8, "weight": 30.0, "reward": "1x Capture NPC item (powerup 17)" },
+    { "index": 9, "weight": 30.0, "reward": "2x Phosphorus Powder (powerup 40)" },
+    { "index": 10, "weight": 15.0, "reward": "30x Falconet ammo (18)", "destination": "Ship hold" },
+    { "index": 11, "weight": 15.0, "reward": "+10 Provisions/Rations", "destination": "Ship hold" },
+    { "index": 12, "weight": 5.0, "reward": "+7 Gold Fish", "destination": "Ship hold", "condition": "GoldFish event" },
+    { "index": 13, "weight": 2.0, "reward": "+1 Treasure Map", "destination": "Ship hold" },
+    { "index": 14, "weight": 0.75, "reward": "Random altar design (from Gameplay.RandomDesignsForAltar)" }
+  ]
+}

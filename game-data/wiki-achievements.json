@@ -1,0 +1,515 @@
+[
+  {
+    "gameId": "achiv_1",
+    "triggerId": "FirstPlayerKill",
+    "name": "First Blood",
+    "description": "Sink the first ship in PvP",
+    "ratingWeight": 19,
+    "isSingleGive": true,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_2",
+    "triggerId": "TheLastEffortPve",
+    "name": "Tis but a scratch (PvE)",
+    "description": "Sink 5 NPS' with durability below 20%",
+    "ratingWeight": 5,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_3",
+    "triggerId": "TheLastEffortPvp",
+    "name": "Tis but a scratch (PvP)",
+    "description": "Sink 3 other players' ships with durability below 20%",
+    "ratingWeight": 10,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_5",
+    "triggerId": "FinishOffPowderKeg",
+    "name": "Barrel of Death",
+    "description": "Finish off another player's ship with a powder barrel",
+    "ratingWeight": 6,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_6",
+    "triggerId": "Mortar2Ships",
+    "name": "Gift from the Skies",
+    "description": "Sink 2 ships with one shot from a mortar or round",
+    "ratingWeight": 12,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_7",
+    "triggerId": "GetAwayFromChase",
+    "name": "Beyond the Horizon",
+    "description": "Escape pursuit with less than half remaining durability",
+    "ratingWeight": 9,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_11",
+    "triggerId": "GladiatorRating",
+    "name": "Cutthroat",
+    "description": "Win 5 consecutive matches Tournament Mode",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_12",
+    "triggerId": "GladiatorMass",
+    "name": "Gladiator",
+    "description": "Win 5 consecutive matches in any mass mode on the Arena",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_13",
+    "triggerId": "Veteran",
+    "name": "Veteran",
+    "description": "Win an Arena match with less than 30% durability and dealing over 400 damage",
+    "ratingWeight": 4,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_14",
+    "triggerId": "ArenaTopDamage",
+    "name": "Leader",
+    "description": "Get the first place on the Arena as part of a team of three or more players. Counts as a victory.",
+    "ratingWeight": 10,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_15",
+    "triggerId": "ArenaFortBattleWinNoDeath",
+    "name": "Clean Sweep",
+    "description": "Win on the Arena in \"Battle of Forts\" mode without sinking once",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_17",
+    "triggerId": "ArenaNoDamageReceiveWithoutDuel",
+    "name": "Under the Dome",
+    "description": "Win on the Arena in any mass mode, when your ship took no damage and you dealt 400+ damage",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_18",
+    "triggerId": "Arkana",
+    "name": "Arcane",
+    "description": "Participate actively in a port battle, dealing over 2000 damage",
+    "ratingWeight": 12,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_19",
+    "triggerId": "SingleKillLegend",
+    "name": "Lone Warrior",
+    "description": "For sinking a Imperial Flagship with 20k+ durability alone (dealing more than 80% damage)",
+    "ratingWeight": 20,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_20",
+    "triggerId": "AllSinglePassed",
+    "name": "Voyager",
+    "description": "Complete all single-player mode levels",
+    "ratingWeight": 75,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_21",
+    "triggerId": "TrialKillNpcBetterStrength",
+    "name": "Sharpshooter Trial",
+    "description": "Sink an NPS with higher durability than your own (but not less than 1000) without taking damage",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_22",
+    "triggerId": "NoCannonsPassing",
+    "name": "Medal of Bravery",
+    "description": "Complete a single-player mode with half or fewer guns on your ship",
+    "ratingWeight": 17,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_23",
+    "triggerId": "Kill1Rang",
+    "name": "Medal of Resolve",
+    "description": "For sinking a 1 rate ship on a 3-6 rate ship (dealing at least 20% damage)",
+    "ratingWeight": 22,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_24",
+    "triggerId": "WinBoardingLessCrew",
+    "name": "Excellent Strategy",
+    "description": "Win a boarding battle with a smaller crew",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_25",
+    "triggerId": "Capture3Traders",
+    "name": "Lust for Loot",
+    "description": "Capture or plunder two consecutive merchant ships from the same squadron",
+    "ratingWeight": 8,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_27",
+    "triggerId": "DeathBeforeGunWithKill",
+    "name": "Decisive Volley",
+    "description": "Sink an enemy ship with a shot fired before your own ship is destroyed",
+    "ratingWeight": 15,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_28",
+    "triggerId": "RangFive",
+    "name": "Test of Time",
+    "description": "Awarded once for reaching 5, 10, 15, 20, 25, 30 captain ranks",
+    "ratingWeight": 5,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_29",
+    "triggerId": "ContrabandaWithoutCannons",
+    "name": "Risky Business",
+    "description": "Smuggle without guns on board, without entering the port",
+    "ratingWeight": 7,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_30",
+    "triggerId": "Board3Players",
+    "name": "Boarding King",
+    "description": "Successfully board three unique players in a row without entering a port",
+    "ratingWeight": 30,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_31",
+    "triggerId": "KillStrongerPlayer",
+    "name": "Battle Glory",
+    "description": "x2 Battle Marks for sinking a player at sea with a higher-rated ship",
+    "ratingWeight": 12,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_26",
+    "triggerId": "KillNpcWithMoreHp",
+    "name": "Medal of Mastery",
+    "description": "x2 experience for sinking an NPS with twice the durability of your ship",
+    "ratingWeight": 5,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_32",
+    "triggerId": "BoardLotOfCargo",
+    "name": "Plunderer",
+    "description": "For raiding a fort belonging to a guild, player, or Imperial Flagship and stealing over 4000 cargo units",
+    "ratingWeight": 17,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_33",
+    "triggerId": "Kill5PlayersOneCall",
+    "name": "Dominance",
+    "description": "Sink 5 player ships without entering the port or sinking",
+    "ratingWeight": 20,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_34",
+    "triggerId": "Build5Ships",
+    "name": "Shipwright",
+    "description": "Own more than 5 ships in the dock",
+    "ratingWeight": 50,
+    "isSingleGive": true,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_35",
+    "triggerId": "Build10Ships",
+    "name": "Collector",
+    "description": "Own more than 10 ships in the dock",
+    "ratingWeight": 75,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_36",
+    "triggerId": "ArenaTournamentGold",
+    "name": "Tournament Legend",
+    "description": "Take the first place in an Arena tournament",
+    "ratingWeight": 200,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_37",
+    "triggerId": "What",
+    "name": "What Was That?",
+    "description": "For an unfortunate death... within 30 seconds of leaving the port",
+    "ratingWeight": -1,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_38",
+    "triggerId": "Deliver3Missions",
+    "name": "Cargo Delivered",
+    "description": "Complete 3 consecutive cargo missions in one game session",
+    "ratingWeight": 10,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_39",
+    "triggerId": "KillLegendaryPlayer",
+    "name": "Bounty Hunter",
+    "description": "Sink a player from the Legendary Board (PvP) with 3 or more points",
+    "ratingWeight": 12,
+    "isSingleGive": false,
+    "category": "Battle"
+  },
+  {
+    "gameId": "achiv_40",
+    "triggerId": "WorldChestResearcher",
+    "name": "Treasure Hunter",
+    "description": "Collect 4 items at sea in less than a minute",
+    "ratingWeight": 3,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_41",
+    "triggerId": "BeforeRang30",
+    "name": "Legend of the Seas",
+    "description": "For every time you fill the experience bar after reaching rank 30",
+    "ratingWeight": 50,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_42",
+    "triggerId": "ArenaTournamentSilver",
+    "name": "King of the Tournament",
+    "description": "Take the second place in the Arena tournament",
+    "ratingWeight": 75,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_43",
+    "triggerId": "Have5kkGold",
+    "name": "Aristocracy",
+    "description": "Enter port while having 5 million gold in your account",
+    "ratingWeight": 75,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_44",
+    "triggerId": "Have10kkGold",
+    "name": "Golden Mania",
+    "description": "Enter port while having 10 million gold in your account",
+    "ratingWeight": 150,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_45",
+    "triggerId": "FullReputation",
+    "name": "Faction Decree",
+    "description": "For reaching +100 reputation in any faction or -100 in all as part of a pirate guild.",
+    "ratingWeight": 100,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_46",
+    "triggerId": "AuctionTrade1000k",
+    "name": "Merchant",
+    "description": "Trade in the Auction House with a total of 1 million gold in one game session",
+    "ratingWeight": 50,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_47",
+    "triggerId": "AuctionTrade10000k",
+    "name": "Horn of Plenty",
+    "description": "Trade in the Auction House with a total of 10 million gold in one game session",
+    "ratingWeight": 200,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_48",
+    "triggerId": "PbTopParticipant",
+    "name": "Fleet Admiral",
+    "description": "Increased reward for the top spot in the PB rankings (number of spots depends on participants)",
+    "ratingWeight": 75,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_49",
+    "triggerId": "Open20Workshos",
+    "name": "Craftsman",
+    "description": "Open a total of 20 Specialty Workshops in total",
+    "ratingWeight": 50,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_50",
+    "triggerId": "ParticipateTender",
+    "name": "Golden Dinar",
+    "description": "Contribute to the guild's victory in the tender and earn the Vizier status",
+    "ratingWeight": 30,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_51",
+    "triggerId": "PassingMapMaxDiff",
+    "name": "Endless Mystery",
+    "description": "Complete a mode on epic difficulty with a 1-2-3 rate ship",
+    "ratingWeight": 25,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_52",
+    "triggerId": "CollectAllSailageLegends",
+    "name": "Armada",
+    "description": "Collect 12 fully researched legends of the Age of Sail",
+    "ratingWeight": 100,
+    "isSingleGive": true,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_53",
+    "triggerId": "LuckyOne",
+    "name": "Lucky One",
+    "description": "Open {0} chests using coins or keys",
+    "ratingWeight": 33,
+    "isSingleGive": true,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_54",
+    "triggerId": "WorldResearched",
+    "name": "New Frontiers",
+    "description": "Explore the entire map",
+    "ratingWeight": 50,
+    "isSingleGive": true,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_55",
+    "triggerId": "ManyFriendsReferal",
+    "name": "Recruiter",
+    "description": "Invite 30 captains to the game",
+    "ratingWeight": 75,
+    "isSingleGive": true,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_56",
+    "triggerId": "KillWhales",
+    "name": "Whale Hunter",
+    "description": "Catch 5 whales in a row while at sea",
+    "ratingWeight": 5,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_57",
+    "triggerId": "DestroyFort",
+    "name": "Rubicon",
+    "description": "For destroying an Empire fort at sea with over 10,000 damage",
+    "ratingWeight": 7,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_58",
+    "triggerId": "ArenaTournamentBronze",
+    "name": "Tournament Finalist",
+    "description": "For winning bronze in the Arena Tournament",
+    "ratingWeight": 50,
+    "isSingleGive": false,
+    "category": "Top"
+  },
+  {
+    "gameId": "achiv_59",
+    "triggerId": "ArmedBusinessman",
+    "name": "Armed Merchant",
+    "description": "For completing 5 daily quests in one day",
+    "ratingWeight": 33,
+    "isSingleGive": false,
+    "category": "Other"
+  },
+  {
+    "gameId": "achiv_60",
+    "triggerId": "ArenaRatingGold",
+    "name": "Arena Legend",
+    "description": "For a gold place in the Arena ranking",
+    "ratingWeight": 1000,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_61",
+    "triggerId": "ArenaRatingSilver",
+    "name": "Arena King",
+    "description": "For a silver place in the Arena ranking",
+    "ratingWeight": 700,
+    "isSingleGive": false,
+    "category": "Arena"
+  },
+  {
+    "gameId": "achiv_62",
+    "triggerId": "ArenaRatingBronze",
+    "name": "Arena Prizewinner",
+    "description": "For a bronze place in the Arena ranking",
+    "ratingWeight": 300,
+    "isSingleGive": false,
+    "category": "Arena"
+  }
+]

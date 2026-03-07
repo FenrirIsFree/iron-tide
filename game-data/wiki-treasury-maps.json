@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "source": "WosbTreasuryMaps.cs",
+    "description": "Treasury map completion requirements and treasure quest mechanics",
+    "extractedBy": "weezer",
+    "version": "2.0"
+  },
+  "mapCompletionCounts": {
+    "description": "Number of map pieces needed to complete a full map. -1 means infinite/special handling.",
+    "maps": [
+      { "resourceId": 35, "resource": "Map Parts", "piecesNeeded": -1, "note": "Infinite/special - standard map fragments" },
+      { "resourceId": 72, "resource": "Pirate Tokens", "piecesNeeded": -1, "note": "Infinite/special" },
+      { "resourceId": 71, "piecesNeeded": 7, "note": "New Year map" },
+      { "resourceId": 73, "piecesNeeded": 5 },
+      { "resourceId": 74, "piecesNeeded": 10 },
+      { "resourceId": 75, "piecesNeeded": 15 }
+    ]
+  },
+  "treasureQuestSpawn": {
+    "description": "When a map is completed, a treasure quest spawns at a random isle position",
+    "minDistanceFromPlayer": 1000,
+    "maxDistanceFromPlayer": 4500,
+    "spawnLocation": "Random position on an isle within distance range"
+  },
+  "newYearMapRestrictions": {
+    "maxUsesPerDay": 3,
+    "maxMapPieces": 7,
+    "condition": "CalendarEvents.IsNewYear must be true",
+    "note": "Player must have < 7 of map ID 71 and used < 3 today"
+  }
+}

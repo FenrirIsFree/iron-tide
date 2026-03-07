@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFile": "Common.Game/GuildCommon.cs"
+  },
+  "creation": {
+    "flotillaGoldCost": 10000,
+    "guildGoldCost": 3000000,
+    "guildGoldCostWithBadges": 2000000
+  },
+  "playerLimits": {
+    "flotillaMaxPlayers": 30,
+    "guildMaxPlayers": 70,
+    "flotillaInitialPlayers": 30,
+    "guildInitialPlayers": 10
+  },
+  "rankRequirements": {
+    "flotillaMinCaptainRank": 5,
+    "guildMinCaptainRank": 20
+  },
+  "nationRequirements": {
+    "flotillaMinMembersForNation": 20,
+    "guildMinMembersForNation": 25,
+    "minMembersForNationKick": 15,
+    "minMembersToUpdateFlotilia": 5
+  },
+  "colonizeTax": {
+    "Pirates": 0.6,
+    "Nations": 0.4,
+    "TradeUnion": 0.0
+  },
+  "alliances": {
+    "maxTrustedGuilds": 4,
+    "trustedGuildConfirmDelayMs": 7200000
+  },
+  "relogRestriction": {
+    "flotillaHours": 1,
+    "guildHours": 48
+  },
+  "effectDurations": {
+    "ChangeFractionRestriction": "FractionAPI.ChangeAgainRestrictionDays (or 1 day if LowChangeFractionCooldown event active)",
+    "DisputeVoteReceived": "7 days",
+    "HqOrLicenseInPort_TradeUnion": "7 days",
+    "HqOrLicenseInPort_Other": "permanent (-1)",
+    "BlockChangeWindowAgain": "3 days",
+    "VassalPortMarker": "5 days",
+    "DisputeProtection": "10 days",
+    "BlockPortCaptureAgain": "10 days",
+    "UpgradeStaff": "permanent (-1)"
+  },
+  "upgradeCosts": {
+    "staffUpgrade": {
+      "description": "Cost to add +1 max player slot",
+      "ingotsPerUpgrade": 2,
+      "badgesPerUpgrade": {
+        "below30": 0,
+        "30to49": 1,
+        "50to59": 2,
+        "60plus": 4
+      }
+    },
+    "guildUpgradeIngotsCostFormula": "(GuildCreateCost(guild) - GuildCreateCost(flotilla)) / 500"
+  },
+  "titleDistribution": {
+    "Gold": { "count": 1 },
+    "Silver": { "countFormula": "max(1, guildsCount * 3 / 500)" },
+    "Bronze": { "countFormula": "max(1, guildsCount * 4 / 500)" },
+    "Copper": { "countFormula": "max(1, guildsCount * 5 / 500)" }
+  },
+  "economy": {
+    "ReparationIngotsPrice": 5000,
+    "MembershipConquerBadgesPrice": 25,
+    "MakeDisputePrice": 10,
+    "salaryShare": 0.2,
+    "salaryNotes": "20% of money shared when HasMintAndSalary (guilds only, not flotillas)",
+    "initialConquerBadges": 10
+  },
+  "hq": {
+    "allyHqLimit": 1,
+    "hqBonusDurationDays": 7
+  },
+  "misc": {
+    "DelayMinutesToApplyRules": 120,
+    "ActionLogRecordLimit": 100,
+    "PbsAttackWindowDefault": 20
+  }
+}

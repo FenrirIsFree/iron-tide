@@ -1,0 +1,1687 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "source": "In-game screenshots from WoSB Catalog Info (Google Drive)",
+    "extractedDate": "2026-03-05",
+    "totalShips": 62
+  },
+  "ships": [
+    {
+      "name": "Santisima Trinidad",
+      "screenshot": "Screenshot (42)",
+      "driveFileId": "1bApH7ZvZtP3lkDK-yBe4y3l9ATG4g5qU",
+      "class": "Heavy Ship of the Line",
+      "rate": 1,
+      "category": "Legend of the Age of Sail",
+      "nation": "Spain",
+      "stats": {
+        "durability": 4160,
+        "speed": 6.4,
+        "maneuverability": 54,
+        "broadsideArmor": 9,
+        "hold": 39500,
+        "crew": 212,
+        "hullDimensions": "61x10",
+        "displacement": "4500t",
+        "heavyWeapons": "4-63-0",
+        "swivelGuns": 10,
+        "integrity": 8,
+        "xpAndLootBonus": "+15%"
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 2870
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "Golden Apostle",
+      "screenshot": "Screenshot (43)",
+      "driveFileId": "1IO8IsJpzTI74EvW0jCqsTT4aEfZ72ZIz",
+      "class": "Cutter",
+      "rate": 6,
+      "category": "Siege",
+      "stats": {
+        "durability": 900,
+        "speed": 9.5,
+        "maneuverability": 120,
+        "broadsideArmor": 2.2,
+        "hold": 8500,
+        "crew": 96,
+        "hullDimensions": "23x3",
+        "displacement": "1260t",
+        "lightWeapons": "0-7-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 6 in., 1",
+        "integrity": 5
+      },
+      "cost": {
+        "type": "special",
+        "amount": 250
+      }
+    },
+    {
+      "name": "Axel Thorsen",
+      "screenshot": "Screenshot (44)",
+      "driveFileId": "1_511-vfF8AMMfbb-CzExdwlr0p4NAzW1",
+      "class": "Schooner",
+      "rate": 5,
+      "category": "Fast-moving",
+      "nation": "Norway",
+      "stats": {
+        "durability": 880,
+        "speed": 9.8,
+        "maneuverability": 110,
+        "broadsideArmor": 5,
+        "hold": 7500,
+        "crew": 66,
+        "hullDimensions": "22x3",
+        "displacement": "900t",
+        "swivelGuns": 10,
+        "imperialBombard": 1,
+        "integrity": 7,
+        "uniqueWindRose": true
+      },
+      "cost": {
+        "type": "battleMarks",
+        "amount": 3000
+      },
+      "unlockRequirement": "Armed Merchant: 30"
+    },
+    {
+      "name": "Sparrow",
+      "screenshot": "Screenshot (45)",
+      "driveFileId": "1h3uDZicWU9IWlR0RzdmwI-xfhwwwj-FN",
+      "class": "Tartane",
+      "rate": 4,
+      "category": "Siege",
+      "nation": "England",
+      "stats": {
+        "durability": 1000,
+        "speed": 9.1,
+        "maneuverability": 95,
+        "broadsideArmor": 1.5,
+        "hold": 10000,
+        "crew": 72,
+        "hullDimensions": "25x4",
+        "displacement": "1350t",
+        "mediumWeapons": "0-4-0",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 8 in., 3",
+        "integrity": 8,
+        "uniqueWindRose": true
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 995
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "Le Saint Louis",
+      "screenshot": "Screenshot (46)",
+      "driveFileId": "1naC03HPP7piq2Y-6X2TAwYoNf01n-Z9h",
+      "class": "Ship of the Line",
+      "rate": 3,
+      "category": "Combat",
+      "nation": "Spain",
+      "stats": {
+        "durability": 2700,
+        "speed": 7.9,
+        "maneuverability": 78,
+        "broadsideArmor": 5.6,
+        "hold": 20000,
+        "crew": 170,
+        "hullDimensions": "52x13",
+        "displacement": "2925t",
+        "mediumWeapons": "6-26-6",
+        "swivelGuns": 10,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "special",
+        "amount": 7200,
+        "discount": "-10%"
+      }
+    },
+    {
+      "name": "Neptuno",
+      "screenshot": "Screenshot (47)",
+      "driveFileId": "1ieYO4Bbf8gbovXn4pmR919vxHMxvQw7Q",
+      "class": "Galleon",
+      "rate": 2,
+      "category": "Legend of the Age of Sail / Combat",
+      "nation": "Spain",
+      "stats": {
+        "durability": 2900,
+        "speed": 8.2,
+        "maneuverability": 80,
+        "broadsideArmor": 5.8,
+        "hold": 28000,
+        "crew": 194,
+        "hullDimensions": "46x9",
+        "displacement": "4050t",
+        "heavyWeapons": "4-36-4",
+        "swivelGuns": 10,
+        "integrity": 8
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 2450
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "De Zeven Provincien",
+      "screenshot": "Screenshot (48)",
+      "driveFileId": "1HZbGLvZtPjofnoka_jN4_HPqb1BQle9m",
+      "class": "Ship of the Line",
+      "rate": 1,
+      "category": "Legend of the Age of Sail / Combat",
+      "nation": "Netherlands",
+      "stats": {
+        "durability": 3320,
+        "speed": 7.7,
+        "maneuverability": 75,
+        "broadsideArmor": 8.6,
+        "hold": 26000,
+        "crew": 188,
+        "hullDimensions": "51x8",
+        "displacement": "4140t",
+        "heavyWeapons": "4-42-4",
+        "swivelGuns": 10,
+        "integrity": 8
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 2770
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ],
+      "unlockRequirement": "Construct any ship of rates 1-2"
+    },
+    {
+      "name": "Shunsen",
+      "screenshot": "Screenshot (49)",
+      "driveFileId": "1xfaej5rT_6lXSSaytklLdkLJHzS_CvYn",
+      "class": "Junk",
+      "rate": 6,
+      "category": "Combat",
+      "nation": "Japan",
+      "stats": {
+        "durability": 1000,
+        "speed": 8.5,
+        "maneuverability": 90,
+        "broadsideArmor": 3,
+        "hold": 11000,
+        "crew": 92,
+        "hullDimensions": "28x6",
+        "displacement": "1485t",
+        "heavyWeapons": "0-10-0",
+        "swivelGuns": 8
+      },
+      "cost": {
+        "type": "special",
+        "amount": 675,
+        "discount": "-10%"
+      }
+    },
+    {
+      "name": "Kwee Song",
+      "screenshot": "Screenshot (50)",
+      "driveFileId": "1sMi09h2PAwCOC-sOJqgvdKj0Dv8GqmsK",
+      "class": "Phanokson",
+      "rate": 5,
+      "category": "Combat",
+      "nation": "Korea",
+      "stats": {
+        "durability": 1360,
+        "speed": 7.9,
+        "maneuverability": 105,
+        "broadsideArmor": 4.5,
+        "hold": 12500,
+        "crew": 108,
+        "hullDimensions": "22x7",
+        "displacement": "1800t",
+        "lightWeapons": "0-10-10",
+        "swivelGuns": 6,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "special",
+        "amount": 2700,
+        "discount": "-10%"
+      }
+    },
+    {
+      "name": "Friedrich Wilhelm",
+      "screenshot": "Screenshot (51)",
+      "driveFileId": "1-kdDT-G_ETw7qWmKQ7N085LhWtKafsBW",
+      "class": "Frigate",
+      "rate": 4,
+      "category": "Transport",
+      "nation": "Germany",
+      "stats": {
+        "durability": 2020,
+        "speed": 9.4,
+        "maneuverability": 96,
+        "broadsideArmor": 3.5,
+        "hold": 26000,
+        "crew": 120,
+        "hullDimensions": "45x11",
+        "displacement": "2700t",
+        "mediumWeapons": "4-21-4",
+        "swivelGuns": 8,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "special",
+        "amount": 4500
+      }
+    },
+    {
+      "name": "Azov",
+      "screenshot": "Screenshot (52)",
+      "driveFileId": "1X-I5KBXvjUYIJImOwQ7lrXYalaTqWKva",
+      "class": "Heavy Ship of the Line",
+      "rate": 3,
+      "category": "Combat",
+      "nation": "Russia",
+      "stats": {
+        "durability": 3000,
+        "speed": 7.7,
+        "maneuverability": 65,
+        "broadsideArmor": 6.7,
+        "hold": 26000,
+        "crew": 174,
+        "hullDimensions": "53x10",
+        "displacement": "3150t",
+        "mediumWeapons": "8-35-6",
+        "swivelGuns": 8,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "special",
+        "amount": 8000
+      }
+    },
+    {
+      "name": "Vasa",
+      "screenshot": "Screenshot (53)",
+      "driveFileId": "1SLGgvTSoI7fduVEo4zOqMa-iTKT29k8x",
+      "class": "Ship of the Line",
+      "rate": 2,
+      "category": "Combat",
+      "nation": "Sweden",
+      "stats": {
+        "durability": 4040,
+        "speed": 6.6,
+        "maneuverability": 64,
+        "broadsideArmor": 7.5,
+        "hold": 35000,
+        "crew": 206,
+        "hullDimensions": "47x11",
+        "displacement": "3825t",
+        "heavyWeapons": "4-31-2",
+        "swivelGuns": 14,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "special",
+        "amount": 60000
+      }
+    },
+    {
+      "name": "Sovereign",
+      "screenshot": "Screenshot (54)",
+      "driveFileId": "17n0OPaC6Aw7o_CPYA-1lLevpBWG9Ku0_",
+      "class": "Galleon",
+      "rate": 1,
+      "category": "Legend of the Age of Sail / Combat",
+      "nation": "Britain",
+      "stats": {
+        "durability": 3600,
+        "speed": 7.4,
+        "maneuverability": 70,
+        "broadsideArmor": 7,
+        "hold": 26500,
+        "crew": 192,
+        "hullDimensions": "48x11",
+        "displacement": "4275t",
+        "heavyWeapons": "4-38-8",
+        "swivelGuns": 10,
+        "mortars": "caliber up to 7 in., 2",
+        "integrity": 6
+      },
+      "cost": {
+        "type": "special",
+        "amount": 13500,
+        "discount": "-10%"
+      }
+    },
+    {
+      "name": "Southampton",
+      "screenshot": "Screenshot (55)",
+      "driveFileId": "13qveM8FeQBnPKQ_tO8e9RBIJjFMpC3Hs",
+      "class": "Frigate",
+      "rate": 5,
+      "category": "Transport",
+      "stats": {
+        "durability": 1760,
+        "speed": 9.7,
+        "maneuverability": 88,
+        "broadsideArmor": 3.2,
+        "hold": 20500,
+        "crew": 102,
+        "hullDimensions": "46x8",
+        "displacement": "1980t",
+        "lightWeapons": "2-15-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "premium",
+        "note": "Cannot be built or bought"
+      },
+      "nation": "Britain"
+    },
+    {
+      "name": "Flying Cloud",
+      "screenshot": "Screenshot (56)",
+      "driveFileId": "151iKooS4iKC_p6aM0Ufk0tqsjZpRQOVv",
+      "class": "Clipper",
+      "rate": 4,
+      "category": "Transport",
+      "stats": {
+        "durability": 1800,
+        "speed": 11.5,
+        "maneuverability": 58,
+        "broadsideArmor": 2.9,
+        "hold": 30000,
+        "crew": 100,
+        "hullDimensions": "60x8",
+        "displacement": "3375t",
+        "mediumWeapons": "0-16-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "special",
+        "amount": 4500
+      }
+    },
+    {
+      "name": "Shen",
+      "screenshot": "Screenshot (57)",
+      "driveFileId": "1K-1wtVnWcyD5dEh9p7rNALIi76CBYYcy",
+      "class": "Galiot",
+      "rate": 3,
+      "category": "Siege",
+      "stats": {
+        "durability": 2160,
+        "speed": 7.9,
+        "maneuverability": 85,
+        "broadsideArmor": 5.2,
+        "hold": 19000,
+        "crew": 158,
+        "hullDimensions": "52x7",
+        "displacement": "2925t",
+        "mediumWeapons": "0-22-1",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 11 in., 2",
+        "specialWeapon": 1,
+        "integrity": 6,
+        "uniqueWindRose": true
+      },
+      "cost": {
+        "type": "special",
+        "amount": 8000
+      }
+    },
+    {
+      "name": "St. Pavel",
+      "screenshot": "Screenshot (58)",
+      "driveFileId": "1KbtX3dZ9k6G2uW_Cvxq5V8xxeiHk03sI",
+      "class": "Ship of the Line",
+      "rate": 2,
+      "category": "Combat",
+      "nation": "Russia",
+      "stats": {
+        "durability": 3260,
+        "speed": 7.3,
+        "maneuverability": 64,
+        "broadsideArmor": 7.3,
+        "hold": 33500,
+        "crew": 190,
+        "hullDimensions": "47x8",
+        "displacement": "4050t",
+        "heavyWeapons": "2-44-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "special",
+        "amount": 12000
+      }
+    },
+    {
+      "name": "Three Hierarchs",
+      "screenshot": "Screenshot (59)",
+      "driveFileId": "146xSHFHFhhpFs9JFWLOD_Lv4FxdgWWVw",
+      "class": "Ship of the Line",
+      "rate": 4,
+      "category": "Combat",
+      "stats": {
+        "durability": 2420,
+        "speed": 8.4,
+        "maneuverability": 72,
+        "broadsideArmor": 5.6,
+        "hold": 21000,
+        "crew": 152,
+        "hullDimensions": "48x9",
+        "displacement": "2475t",
+        "mediumWeapons": "0-27-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "premium",
+        "note": "Cannot be built or bought"
+      },
+      "nation": "Russia"
+    },
+    {
+      "name": "Iberia",
+      "screenshot": "Screenshot (60)",
+      "driveFileId": "1v1g33j3CfYtcjiYemgT9peE-FFCKX51p",
+      "class": "Frigate",
+      "rate": 3,
+      "category": "Fast-moving",
+      "nation": "Spain",
+      "stats": {
+        "durability": 2220,
+        "speed": 9.3,
+        "maneuverability": 92,
+        "broadsideArmor": 3.1,
+        "hold": 16500,
+        "crew": 140,
+        "hullDimensions": "54x8",
+        "displacement": "2565t",
+        "mediumWeapons": "0-24-4",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "premium",
+        "note": "Cannot be built or bought"
+      }
+    },
+    {
+      "name": "Montanes",
+      "screenshot": "Screenshot (61)",
+      "driveFileId": "1PjSjW1e8AcBW6GkzxITArPyl97o1d6TN",
+      "class": "Ship of the Line",
+      "rate": 2,
+      "category": "Combat",
+      "nation": "Spain",
+      "stats": {
+        "durability": 2940,
+        "speed": 7.5,
+        "maneuverability": 71,
+        "broadsideArmor": 7.2,
+        "hold": 23500,
+        "crew": 194,
+        "hullDimensions": "59x11",
+        "displacement": "3420t",
+        "heavyWeapons": "6-38-4",
+        "swivelGuns": 10,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "premium",
+        "note": "Cannot be built or bought"
+      }
+    },
+    {
+      "name": "Firestorm",
+      "screenshot": "Screenshot (41)",
+      "driveFileId": "1hLFQKZRukrpr0C-cBrhvlv9E8fDVjWBf",
+      "class": "Frigate",
+      "rate": 2,
+      "category": "Fast-moving",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 2600,
+        "speed": 8.7,
+        "maneuverability": 85,
+        "broadsideArmor": 4.2,
+        "hold": 20000,
+        "crew": 170,
+        "hullDimensions": "46x8",
+        "displacement": "3150t",
+        "heavyWeapons": "12-28-1",
+        "swivelGuns": 10,
+        "specialWeapon": 1,
+        "integrity": 8
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 2570
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "Prins Willem",
+      "screenshot": "Screenshot (40)",
+      "driveFileId": "1Ckacp-gZHfQpbsWr5ryfHRdbXGsNfeQF",
+      "class": "Galleon",
+      "rate": 3,
+      "category": "Transport",
+      "nation": "Netherlands",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 2440,
+        "speed": 8.5,
+        "maneuverability": 78,
+        "broadsideArmor": 4.8,
+        "hold": 45000,
+        "crew": 170,
+        "hullDimensions": "53x11",
+        "displacement": "3150t",
+        "mediumWeapons": "6-26-4",
+        "swivelGuns": 8,
+        "integrity": 8,
+        "spacesForUpgrades": 1
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 1600
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "Red Arrow",
+      "screenshot": "Screenshot (39)",
+      "driveFileId": "1acZF8JvHoL7GFwi6Ab-zjJpg-9UBace0",
+      "class": "Galleon",
+      "rate": 4,
+      "category": "Combat",
+      "stats": {
+        "durability": 1940,
+        "speed": 8.6,
+        "maneuverability": 95,
+        "broadsideArmor": 5.5,
+        "hold": 18000,
+        "crew": 140,
+        "hullDimensions": "38x6",
+        "displacement": "2700t",
+        "mediumWeapons": "0-15-6",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 7 in., 1",
+        "integrity": 8
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 1190
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "Eagle",
+      "screenshot": "Screenshot (38)",
+      "driveFileId": "1lJOgQktU2MI_YL-LgxLZgZHh3hrdlv0q",
+      "class": "Flute",
+      "rate": 5,
+      "category": "Siege",
+      "nation": "England",
+      "stats": {
+        "durability": 1600,
+        "speed": 9.4,
+        "maneuverability": 110,
+        "broadsideArmor": 2.2,
+        "hold": 14000,
+        "crew": 84,
+        "hullDimensions": "27x6",
+        "displacement": "1575t",
+        "lightWeapons": "4-8-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 7 in., 2",
+        "integrity": 8
+      },
+      "cost": {
+        "type": "coins",
+        "amount": 580
+      },
+      "extras": [
+        "Basic weapons included",
+        "Dock in the port"
+      ]
+    },
+    {
+      "name": "Savannah",
+      "screenshot": "Screenshot (37)",
+      "driveFileId": "1aKyt5BXIfPuASS8F6jzmIZ_a_QeHmGKc",
+      "class": "Frigate",
+      "rate": 6,
+      "category": "Fast-moving",
+      "stats": {
+        "durability": 1000,
+        "speed": 10.8,
+        "maneuverability": 92,
+        "broadsideArmor": 3,
+        "hold": 10000,
+        "crew": 94,
+        "hullDimensions": "39x4",
+        "displacement": "1575t",
+        "lightWeapons": "0-9-0",
+        "swivelGuns": 6
+      },
+      "cost": {
+        "type": "battleMarks",
+        "amount": 750
+      },
+      "unlockRequirement": "Lucky One: Chests opened 1"
+    },
+    {
+      "name": "Huracan",
+      "screenshot": "Screenshot (36)",
+      "driveFileId": "17bjfHzgqVuXVROH4afdvyHj_hC-fU-Bm",
+      "class": "Ship of the Line",
+      "rate": 1,
+      "category": "Imperial",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 8000,
+        "speed": 5.5,
+        "maneuverability": 42,
+        "broadsideArmor": 11.5,
+        "hold": 54000,
+        "crew": 288,
+        "hullDimensions": "90x18",
+        "displacement": "5625t",
+        "heavyWeapons": "0-85-2",
+        "swivelGuns": 18,
+        "specialWeapon": 2,
+        "integrity": 7,
+        "spacesForUpgrades": 1,
+        "mobileOutpost": true,
+        "imperialNPSDoNotAttack": true
+      },
+      "cost": {
+        "type": "imperial",
+        "note": "40 imperial tokens + 10000 gold"
+      },
+      "unlockRequirement": "Find a port with an Imperial shipwright"
+    },
+    {
+      "name": "Octopus",
+      "screenshot": "Screenshot (35)",
+      "driveFileId": "1CZebn7ClVlGBV4Payqy2nIyYEQqUrnvM",
+      "class": "Ship",
+      "rate": 2,
+      "category": "Imperial",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 2760,
+        "speed": 8.3,
+        "maneuverability": 75,
+        "broadsideArmor": 6.8,
+        "hold": 23000,
+        "crew": 176,
+        "hullDimensions": "48x7",
+        "displacement": "3375t",
+        "heavyWeapons": "8-37-0",
+        "swivelGuns": 10,
+        "integrity": 4,
+        "uniqueWindRose": true,
+        "invisibility": true,
+        "imperialNPSDoNotAttack": true
+      },
+      "cost": {
+        "type": "imperial",
+        "note": "20 imperial tokens + 5000 gold"
+      },
+      "unlockRequirement": "Find a port with an Imperial shipwright"
+    },
+    {
+      "name": "Deadfish",
+      "screenshot": "Screenshot (34)",
+      "driveFileId": "1lRBiWe1i3GanuTAFoYq51jG8z4JZ0xhh",
+      "class": "Imperial",
+      "rate": 3,
+      "category": "Imperial",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 3000,
+        "speed": 6.6,
+        "maneuverability": 66,
+        "broadsideArmor": 8,
+        "hold": 27000,
+        "crew": 166,
+        "hullDimensions": "47x11",
+        "displacement": "4950t",
+        "mediumWeapons": "8-25-1",
+        "swivelGuns": 10,
+        "specialWeapon": 1,
+        "integrity": 7,
+        "imperialNPSDoNotAttack": true
+      },
+      "cost": {
+        "type": "imperial",
+        "note": "5 imperial tokens + 400 gold"
+      },
+      "unlockRequirement": "Find a port with an Imperial shipwright"
+    },
+    {
+      "name": "Devourer",
+      "screenshot": "Screenshot (33)",
+      "driveFileId": "1Eb3KlMsWjbwhtpJPOer8F0Dm0bvMBzj0",
+      "class": "Barque",
+      "rate": 4,
+      "category": "Imperial",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 1760,
+        "speed": 7.5,
+        "maneuverability": 110,
+        "broadsideArmor": 5.5,
+        "hold": 17000,
+        "crew": 144,
+        "hullDimensions": "37x7",
+        "displacement": "2610t",
+        "mediumWeapons": "12-11-8",
+        "swivelGuns": 8,
+        "integrity": 6,
+        "imperialNPSDoNotAttack": true
+      },
+      "cost": {
+        "type": "imperial",
+        "note": "1 imperial token + 150 gold"
+      },
+      "unlockRequirement": "Find a port with an Imperial shipwright"
+    },
+    {
+      "name": "Black Prince",
+      "screenshot": "Screenshot (32)",
+      "driveFileId": "1BQY7l7JzgmB6R5-4ZykJJLeDWqCdN5kP",
+      "class": "Galleon",
+      "rate": 5,
+      "category": "Imperial",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 1700,
+        "speed": 9.9,
+        "maneuverability": 90,
+        "broadsideArmor": 3,
+        "hold": 14500,
+        "crew": 120,
+        "hullDimensions": "37x7",
+        "displacement": "1800t",
+        "lightWeapons": "2-15-2",
+        "swivelGuns": 6,
+        "integrity": 6,
+        "imperialNPSDoNotAttack": true
+      },
+      "cost": {
+        "type": "imperial",
+        "note": "25 + 20 imperial resources"
+      },
+      "unlockRequirement": "Find a port with an Imperial shipwright"
+    },
+    {
+      "name": "Balloon",
+      "screenshot": "Screenshot (31)",
+      "driveFileId": "181RZ_7hUAlaC3af5pMLcllhaPklH56d8",
+      "class": "Montgolfiere",
+      "rate": 6,
+      "category": "Imperial",
+      "nation": "Imperial",
+      "stats": {
+        "durability": 200,
+        "speed": 21,
+        "maneuverability": 50,
+        "broadsideArmor": 1,
+        "hold": 1000,
+        "crew": 8,
+        "imperialNPSDoNotAttack": true
+      },
+      "cost": {
+        "type": "escudo",
+        "amount": 1000
+      },
+      "unlockRequirement": "Faction Decree (rep 34/100), Horn of Plenty (10M gold deals), Armada (12 legends collected)"
+    },
+    {
+      "name": "La Royale",
+      "screenshot": "Screenshot (30)",
+      "driveFileId": "1z0SDtRyCkrJ83zRWPcMcizShdf09YeYO",
+      "class": "Galley",
+      "rate": 1,
+      "category": "Siege",
+      "nation": "France",
+      "stats": {
+        "durability": 2900,
+        "speed": 7.4,
+        "maneuverability": 83,
+        "broadsideArmor": 6.5,
+        "hold": 24000,
+        "crew": 156,
+        "hullDimensions": "60x9",
+        "displacement": "3870t",
+        "heavyWeapons": "0-18-6",
+        "swivelGuns": 12,
+        "mortars": "caliber up to 11 in., 3",
+        "integrity": 6,
+        "uniqueWindRose": true,
+        "equippedWithOars": true
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Adventure",
+      "screenshot": "Screenshot (29)",
+      "driveFileId": "1CGXcTsF2gPiRkIQHokI6GE7sBvYC6Ecg",
+      "class": "Galley",
+      "rate": 2,
+      "category": "Siege",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 2660,
+        "speed": 8.2,
+        "maneuverability": 92,
+        "broadsideArmor": 5.2,
+        "hold": 21000,
+        "crew": 140,
+        "hullDimensions": "47x6",
+        "displacement": "2925t",
+        "heavyWeapons": "4-19-0",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 10 in., 2",
+        "integrity": 6,
+        "equippedWithOars": true
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Kobukson",
+      "screenshot": "Screenshot (28)",
+      "driveFileId": "1LarCp-Qj4oXajgW4NIx6BiIqdLesQD51",
+      "class": "Phanokson",
+      "rate": 3,
+      "category": "Siege",
+      "nation": "Korea",
+      "stats": {
+        "durability": 2000,
+        "speed": 8,
+        "maneuverability": 85,
+        "broadsideArmor": 4.6,
+        "hold": 18000,
+        "crew": 124,
+        "hullDimensions": "37x6",
+        "displacement": "2250t",
+        "mediumWeapons": "0-15-0",
+        "swivelGuns": 8,
+        "mortars": "caliber up to 9 in., 4",
+        "integrity": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Le Requin",
+      "screenshot": "Screenshot (27)",
+      "driveFileId": "1kNrspKk6eXs-Bk-mav9SkBSt0s8wc9Rz",
+      "class": "Xebec",
+      "rate": 5,
+      "category": "Siege",
+      "nation": "France",
+      "stats": {
+        "durability": 1520,
+        "speed": 9.6,
+        "maneuverability": 105,
+        "broadsideArmor": 3.2,
+        "hold": 12500,
+        "crew": 88,
+        "hullDimensions": "37x4",
+        "displacement": "2025t",
+        "lightWeapons": "2-12-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 7 in., 1",
+        "integrity": 6,
+        "uniqueWindRose": true
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Polacca",
+      "screenshot": "Screenshot (26)",
+      "driveFileId": "110pu6LS5i2nGIrFgmKWiYa6q6ZucjpED",
+      "class": "Polacca",
+      "rate": 6,
+      "category": "Siege",
+      "nation": "Venice",
+      "stats": {
+        "durability": 980,
+        "speed": 9,
+        "maneuverability": 102,
+        "broadsideArmor": 2.9,
+        "hold": 9000,
+        "crew": 74,
+        "hullDimensions": "23x5",
+        "displacement": "1575t",
+        "lightWeapons": "0-7-0",
+        "swivelGuns": 6,
+        "mortars": "caliber up to 6 in., 1",
+        "integrity": 5,
+        "uniqueWindRose": true
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "12 Apostolov",
+      "screenshot": "Screenshot (23)",
+      "driveFileId": "1f0h3ze_Ruumijkj3KSeGss9Zw0p9wFUG",
+      "class": "Ship of the Line",
+      "rate": 1,
+      "category": "Heavy",
+      "nation": "Russia",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 4400,
+        "speed": 6.2,
+        "maneuverability": 49,
+        "broadsideArmor": 10,
+        "hold": 36000,
+        "crew": 220,
+        "hullDimensions": "66x11",
+        "displacement": "4500t",
+        "heavyWeapons": "0-59-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Redoutable",
+      "screenshot": "Screenshot (22)",
+      "driveFileId": "1lyqTPYRkuBwtAAcrZoouikmlWxlaJvwx",
+      "class": "Ship of the Line",
+      "rate": 2,
+      "category": "Heavy",
+      "nation": "France",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 3540,
+        "speed": 7,
+        "maneuverability": 57,
+        "broadsideArmor": 8,
+        "hold": 30500,
+        "crew": 198,
+        "hullDimensions": "53x7",
+        "displacement": "3600t",
+        "heavyWeapons": "0-43-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Bellona",
+      "screenshot": "Screenshot (21)",
+      "driveFileId": "1LHV69oPPTss_h973B23PlF6iOa266QoX",
+      "class": "Ship of the Line",
+      "rate": 3,
+      "category": "Heavy",
+      "nation": "Britain",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 3180,
+        "speed": 7.5,
+        "maneuverability": 62,
+        "broadsideArmor": 7,
+        "hold": 26000,
+        "crew": 174,
+        "hullDimensions": "49x9",
+        "displacement": "3915t",
+        "mediumWeapons": "0-35-0",
+        "swivelGuns": 10,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Constitution",
+      "screenshot": "Screenshot (20)",
+      "driveFileId": "1J050B5VTY5v7YXjuYgoQ3tYThrROsjTK",
+      "class": "Frigate",
+      "rate": 4,
+      "category": "Heavy",
+      "nation": "United States",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 2560,
+        "speed": 8,
+        "maneuverability": 68,
+        "broadsideArmor": 6,
+        "hold": 21500,
+        "crew": 148,
+        "hullDimensions": "53x6",
+        "displacement": "2565t",
+        "mediumWeapons": "0-26-0",
+        "swivelGuns": 8,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "San Martin",
+      "screenshot": "Screenshot (18)",
+      "driveFileId": "1lvHX7fcMKzYQ3pq5pil0Cy-16xbwSVG_",
+      "class": "Heavy Galleon",
+      "rate": 5,
+      "category": "Heavy",
+      "nation": "Spain",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 2140,
+        "speed": 8.5,
+        "maneuverability": 72,
+        "broadsideArmor": 5,
+        "hold": 17500,
+        "crew": 126,
+        "hullDimensions": "40x9",
+        "displacement": "2475t",
+        "lightWeapons": "0-20-0",
+        "swivelGuns": 6,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Phoenix",
+      "screenshot": "Screenshot (17)",
+      "driveFileId": "1CVlhjFB4GHAVRESzx4ZARlzT5bIyJGZQ",
+      "class": "Brig",
+      "rate": 6,
+      "category": "Heavy",
+      "nation": "Russia",
+      "stats": {
+        "durability": 1380,
+        "speed": 8.2,
+        "maneuverability": 75,
+        "broadsideArmor": 4.5,
+        "hold": 12500,
+        "crew": 104,
+        "hullDimensions": "27x6",
+        "displacement": "1440t",
+        "lightWeapons": "0-12-0",
+        "swivelGuns": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "La Couronne",
+      "screenshot": "Screenshot (16)",
+      "driveFileId": "1AHFft_3Io2hs1PGNMS_5LETWtI4jjpIU",
+      "class": "Galleon",
+      "rate": 1,
+      "category": "Transport",
+      "nation": "France",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 3500,
+        "speed": 7.6,
+        "maneuverability": 72,
+        "broadsideArmor": 5.5,
+        "hold": 50000,
+        "crew": 188,
+        "hullDimensions": "61x9",
+        "displacement": "4500t",
+        "heavyWeapons": "8-28-0",
+        "swivelGuns": 14,
+        "integrity": 7,
+        "spacesForUpgrades": 1
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "La Sirene",
+      "screenshot": "Screenshot (15)",
+      "driveFileId": "1EEJgNeQv_bG6GLNSq736I6xRup7sJ2mU",
+      "class": "Ship",
+      "rate": 2,
+      "category": "Transport",
+      "nation": "France",
+      "stats": {
+        "durability": 2660,
+        "speed": 8.1,
+        "maneuverability": 80,
+        "broadsideArmor": 4.4,
+        "hold": 43000,
+        "crew": 170,
+        "hullDimensions": "50x9",
+        "displacement": "3600t",
+        "heavyWeapons": "4-32-0",
+        "swivelGuns": 8,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Mordaunt",
+      "screenshot": "Screenshot (14)",
+      "driveFileId": "1YhhtFWVRqma0tAz_vRidDSziukwUW4KT",
+      "class": "Ship of the Line",
+      "rate": 3,
+      "category": "Transport",
+      "nation": "Britain",
+      "stats": {
+        "durability": 2380,
+        "speed": 8.7,
+        "maneuverability": 87,
+        "broadsideArmor": 3.9,
+        "hold": 34000,
+        "crew": 148,
+        "hullDimensions": "41x7",
+        "displacement": "2475t",
+        "mediumWeapons": "4-26-0",
+        "swivelGuns": 6,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Falmouth",
+      "screenshot": "Screenshot (13)",
+      "driveFileId": "1gfxT8vuX-K3-erYPmFIJ9k9oqgaLJwd9",
+      "class": "Ship",
+      "rate": 4,
+      "category": "Transport",
+      "stats": {
+        "durability": 1920,
+        "speed": 9.4,
+        "maneuverability": 96,
+        "broadsideArmor": 3.3,
+        "hold": 27500,
+        "crew": 126,
+        "hullDimensions": "44x8",
+        "displacement": "3060t",
+        "mediumWeapons": "4-18-0",
+        "swivelGuns": 8,
+        "mortarModification": true,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Russia",
+      "screenshot": "Screenshot (12)",
+      "driveFileId": "13flPLbti1FkcDaK_S1VaVgruo5UQA3gP",
+      "class": "Frigate",
+      "rate": 5,
+      "category": "Transport",
+      "nation": "Russia",
+      "stats": {
+        "durability": 1600,
+        "speed": 9.9,
+        "maneuverability": 91,
+        "broadsideArmor": 2.7,
+        "hold": 22000,
+        "crew": 108,
+        "hullDimensions": "37x7",
+        "displacement": "2070t",
+        "lightWeapons": "2-14-0",
+        "swivelGuns": 6,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Mercury",
+      "screenshot": "Screenshot (11)",
+      "driveFileId": "1YyGez1YSXN5R6JfzYDglPXmSp9K_J-C_",
+      "class": "Galleon",
+      "rate": 6,
+      "category": "Transport",
+      "stats": {
+        "durability": 1040,
+        "speed": 9.2,
+        "maneuverability": 89,
+        "broadsideArmor": 2.5,
+        "hold": 15500,
+        "crew": 88,
+        "hullDimensions": "32x8",
+        "displacement": "2025t",
+        "lightWeapons": "2-9-0",
+        "swivelGuns": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Friede",
+      "screenshot": "Screenshot (10)",
+      "driveFileId": "1c43DKNzetKUKf5sifhsNU3SvG8jRRv_q",
+      "class": "Flute",
+      "rate": 7,
+      "category": "Transport",
+      "nation": "Netherlands",
+      "stats": {
+        "durability": 750,
+        "speed": 8.8,
+        "maneuverability": 86,
+        "broadsideArmor": 2.2,
+        "hold": 11000,
+        "crew": 72,
+        "hullDimensions": "33x6",
+        "displacement": "1350t",
+        "lightWeapons": "2-7-0",
+        "swivelGuns": 6,
+        "mortarModification": true
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Victory",
+      "screenshot": "Screenshot (9)",
+      "driveFileId": "1PhBmXLG-86AxoMwh3-1gUVOqLT194Kqj",
+      "class": "Ship of the Line",
+      "rate": 1,
+      "category": "Combat",
+      "nation": "Britain",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 3740,
+        "speed": 7.1,
+        "maneuverability": 66,
+        "broadsideArmor": 8,
+        "hold": 25000,
+        "crew": 204,
+        "hullDimensions": "61x12",
+        "displacement": "4050t",
+        "heavyWeapons": "4-49-4",
+        "swivelGuns": 10,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Sans Pareil",
+      "screenshot": "Screenshot (8)",
+      "driveFileId": "1ScOCd8pYazUbqbR_jBVePjHBM0VMpTuj",
+      "class": "Ship of the Line",
+      "rate": 2,
+      "category": "Combat",
+      "nation": "France",
+      "stats": {
+        "durability": 3000,
+        "speed": 7.7,
+        "maneuverability": 74,
+        "broadsideArmor": 6.4,
+        "hold": 21500,
+        "crew": 184,
+        "hullDimensions": "55x6",
+        "displacement": "3330t",
+        "heavyWeapons": "4-38-2",
+        "swivelGuns": 10,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Anson",
+      "screenshot": "Screenshot (7)",
+      "driveFileId": "1IZr0oKcLowVhwotAhbp4iGm3oKsGsyt-",
+      "class": "Ship of the Line",
+      "rate": 3,
+      "category": "Combat",
+      "nation": "Britain",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 2700,
+        "speed": 8.2,
+        "maneuverability": 80,
+        "broadsideArmor": 5.6,
+        "hold": 18500,
+        "crew": 160,
+        "hullDimensions": "52x10",
+        "displacement": "3150t",
+        "mediumWeapons": "4-30-2",
+        "swivelGuns": 8,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Essex",
+      "screenshot": "Screenshot (6)",
+      "driveFileId": "1twLVAP8jf2pdwDlC-H9Tf9qnt5jZAUU4",
+      "class": "Frigate",
+      "rate": 4,
+      "category": "Combat",
+      "nation": "United States",
+      "legendOfTheAgeOfSail": true,
+      "stats": {
+        "durability": 2160,
+        "speed": 8.9,
+        "maneuverability": 88,
+        "broadsideArmor": 4.8,
+        "hold": 15500,
+        "crew": 136,
+        "hullDimensions": "38x6",
+        "displacement": "2115t",
+        "mediumWeapons": "2-21-2",
+        "swivelGuns": 8,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Black Wind",
+      "screenshot": "Screenshot (5)",
+      "driveFileId": "1_jX0dsQqa2HWnN7066d1xG41fJBjVHoz",
+      "class": "Frigate",
+      "rate": 5,
+      "category": "Combat",
+      "stats": {
+        "durability": 1820,
+        "speed": 9.4,
+        "maneuverability": 84,
+        "broadsideArmor": 4,
+        "hold": 13000,
+        "crew": 116,
+        "hullDimensions": "45x8",
+        "displacement": "2250t",
+        "lightWeapons": "2-16-2",
+        "swivelGuns": 6,
+        "mortarModification": true,
+        "integrity": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "La Salamandre",
+      "screenshot": "Screenshot (4)",
+      "driveFileId": "1g0v3ZDlHX6pJctbWgpr0Sjq8tfAzwwTc",
+      "class": "Ketch",
+      "rate": 6,
+      "category": "Combat",
+      "nation": "France",
+      "stats": {
+        "durability": 1160,
+        "speed": 8.8,
+        "maneuverability": 82,
+        "broadsideArmor": 3.6,
+        "hold": 9500,
+        "crew": 96,
+        "hullDimensions": "25x5",
+        "displacement": "1350t",
+        "lightWeapons": "2-10-0",
+        "swivelGuns": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Horizont",
+      "screenshot": "Screenshot (3)",
+      "driveFileId": "1jkqT0_yR5ZYrHZGNsUvmf9t6RSyGvrvO",
+      "class": "Brigantine",
+      "rate": 7,
+      "category": "Combat",
+      "stats": {
+        "durability": 850,
+        "speed": 8.4,
+        "maneuverability": 80,
+        "broadsideArmor": 3.2,
+        "hold": 7000,
+        "crew": 78,
+        "hullDimensions": "26x5",
+        "displacement": "1125t",
+        "lightWeapons": "2-8-0",
+        "swivelGuns": 6
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Multiple resources required"
+      }
+    },
+    {
+      "name": "Ingermanland",
+      "screenshot": "Screenshot (2)",
+      "driveFileId": "1iYX7REoKHUsLqBTwmBYZhPri7EhFprCI",
+      "class": "Ship of the Line",
+      "rate": 2,
+      "category": "Fast-moving",
+      "nation": "Russia",
+      "stats": {
+        "durability": 2340,
+        "speed": 9,
+        "maneuverability": 87,
+        "broadsideArmor": 3.2,
+        "hold": 17500,
+        "crew": 152,
+        "hullDimensions": "48x8",
+        "displacement": "3060t",
+        "heavyWeapons": "0-32-4",
+        "swivelGuns": 12,
+        "integrity": 7
+      },
+      "cost": {
+        "type": "resources",
+        "note": "Costs hidden - previous ship not researched"
+      }
+    },
+    {
+      "name": "Pickle",
+      "class": "Schooner",
+      "rate": "VII",
+      "category": "Fast-moving",
+      "nation": "Britain",
+      "stats": {
+        "durability": 700,
+        "speed": 9.2,
+        "maneuverability": 94,
+        "broadsideArmor": 1.6,
+        "hold": 6000,
+        "crew": 66,
+        "hullDimensions": "24x4",
+        "displacement": "900t",
+        "lightWeapons": "0-6-0",
+        "swivelGuns": 4
+      },
+      "cost": {
+        "wood": 775,
+        "cloth": 135,
+        "fittings": 30
+      }
+    },
+    {
+      "name": "Le Cerf",
+      "class": "Cutter",
+      "rate": "VI",
+      "category": "Fast-moving",
+      "nation": "France",
+      "stats": {
+        "durability": 900,
+        "speed": 10,
+        "maneuverability": 97,
+        "broadsideArmor": 1.8,
+        "hold": 8000,
+        "crew": 78,
+        "hullDimensions": "22x3",
+        "displacement": "990t",
+        "lightWeapons": "0-9-0",
+        "swivelGuns": 8,
+        "integrity": 6
+      },
+      "cost": {
+        "wood": 460,
+        "lumber": 23,
+        "cloth": 14
+      }
+    },
+    {
+      "name": "La Creole",
+      "class": "Corvette",
+      "rate": "V",
+      "category": "Fast-moving",
+      "nation": "France",
+      "stats": {
+        "durability": 1400,
+        "speed": 11,
+        "maneuverability": 100,
+        "broadsideArmor": 2,
+        "hold": 11000,
+        "crew": 96,
+        "hullDimensions": "39x5",
+        "displacement": "1620t",
+        "lightWeapons": "4-12-0",
+        "swivelGuns": 8,
+        "integrity": 7
+      },
+      "cost": {
+        "wood": 11,
+        "cloth": 76,
+        "planks": 21,
+        "iron": 184
+      }
+    },
+    {
+      "name": "Surprise",
+      "class": "Corvette",
+      "rate": "IV",
+      "category": "Fast-moving",
+      "nation": "Britain",
+      "stats": {
+        "durability": 1680,
+        "speed": 10.5,
+        "maneuverability": 105,
+        "broadsideArmor": 2.4,
+        "hold": 13000,
+        "crew": 112,
+        "hullDimensions": "45x5",
+        "displacement": "2025t",
+        "mediumWeapons": "0-18-2",
+        "swivelGuns": 8,
+        "integrity": 7
+      },
+      "cost": {
+        "wood": 130,
+        "cloth": 151,
+        "fittings": 54,
+        "coins": 351
+      }
+    },
+    {
+      "name": "Poltava",
+      "class": "Ship of the Line",
+      "rate": "III",
+      "category": "Fast-moving",
+      "nation": "Russia",
+      "legend": true,
+      "stats": {
+        "durability": 2100,
+        "speed": 9.6,
+        "maneuverability": 95,
+        "broadsideArmor": 2.8,
+        "hold": 15500,
+        "crew": 132,
+        "hullDimensions": "41x6",
+        "displacement": "2475t",
+        "mediumWeapons": "0-23-4",
+        "swivelGuns": 10,
+        "integrity": 7
+      }
+    }
+  ]
+}

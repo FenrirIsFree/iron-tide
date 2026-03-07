@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "source": "Decompiled Common.dll (Common.Game, Common.Resources namespaces)",
+    "version": "2026-03-07",
+    "notes": "All internal speed values (MSpeed) are 2x displayed knot values. Divide by 2 for display."
+  },
+  "speedSystem": {
+    "overview": "Ships have 3 forward speed modes plus reverse. Internal speed values are 2x the displayed knot values.",
+    "speedModes": {
+      "stop": {
+        "code": 0,
+        "description": "No movement. Ship can still turn with axis controls."
+      },
+      "slow": {
+        "code": 1,
+        "description": "First speed. Sails partially deployed."
+      },
+      "combat": {
+        "code": 2,
+        "description": "Second speed. More sails deployed. Standard combat speed."
+      },
+      "full": {
+        "code": 3,
+        "description": "Third speed / full sails. All sails deployed. Enables cruise speed ramp-up."
+      },
+      "reverse": {
+        "code": 4,
+        "description": "Backward movement. Limited speed."
+      }
+    },
+    "speedFormula": {
+      "description": "Final Speed = BasicSpeed * (1 + PSpeed_bonuses) + MSpeed_bonuses",
+      "displayConversion": "Displayed knots = internal speed / 2",
+      "example": "Ship with BasicSpeed 9.0 internal = 4.5 knt displayed"
+    },
+    "minimumSpeed": 3.0,
+    "minimumSpeedNote": "Speed is clamped to minimum 3.0 internal (1.5 knt) even with penalties"
+  },
+  "cruiseSpeed": {
+    "overview": "When at full sails (speed mode 3), going straight, and at max speed, ships gain bonus 'cruise' (marching) speed over time.",
+    "maxCruiseSpeed": {
+      "formula": "MarchingModeSpeed = 7.0 * (1 + sailMarchingBonus) * (2 - max(1, (Speed + 35) / 50))",
+      "variables": {
+        "sailMarchingBonus": "PMarchingSpeed bonus from equipped sails (e.g. Triangular Sails give +20%)",
+        "Speed": "Ship's current total speed (internal value, 2x display knt)"
+      },
+      "notes": [
+        "Faster ships get LESS cruise bonus (the formula penalizes high base speed)",
+        "A ship with 15 internal speed (7.5 knt) gets: 7 * 1 * (2 - 1) = 7.0 cruise bonus",
+        "A ship with 9 internal speed (4.5 knt) gets: 7 * 1 * (2 - 0.88) = 7.84 cruise bonus",
+        "Ships with Speed >= 65 internal get zero cruise bonus (Speed+35)/50 >= 2"
+      ]
+    },
+    "windBonus": {
+      "formula": "PalyerMarchingModeBonus = windAlignmentFactor * PlayerMarchingModeBonusBySkill",
+      "windAlignmentFactor": "Saturate((1 - 30 * |WindingDot - 0.9|) * 3 * max(0, WindingDotGradientDirection))",
+      "playerSkillBonus": "2 + CaptainSkills[CWindBonusSpeed]",
+      "description": "Additional cruise speed bonus when sailing with favorable wind (WindingDot near 0.9). Requires wind alignment.",
+      "balloonException": "Balloons use: Saturate((WindingDot - 0.95) / 0.05) instead"
+    },
+    "totalMaxCruise": "MaxExtraMarchSpeed = MarchingModeSpeed + PalyerMarchingModeBonus",
+    "rampUp": {
+      "formula": "rampRate = deltaTime * 0.45 * max(1, (baseSpeed + 15) / 30) * (1 + SpeedChangeBonus + (hasSailBonus ? 0.2 : 0)) * (1 - lowHpDebuff)",
+      "conditions": [
+        "Must be at full sails (LinearStateCode == 3)",
+        "Must be going straight (AxisStateCode == 0, no turning)",
+        "Must be at or near max speed (NowSpeed >= PrevMaxSpeed - 0.3)"
+      ],
+      "lowHpDebuff": {
+        "formula": "Saturate((0.25 - hpFactor) / 0.15) * 0.33",
+        "description": "Ships below 25% HP get up to 33% cruise ramp penalty"
+      },
+      "minimumCruise": "When at full sails, cruise speed is always at least 2.5 internal"
+    },
+    "speedLoss": {
+      "whenNotFullSails": {
+        "formula": "loss = deltaTime * 7.0 / ExperimentalShipLinearSpeed",
+        "ExperimentalShipLinearSpeed": 0.95,
+        "description": "Cruise speed drops at rate 7.0/0.95 \u2248 7.37 per second when not at full sails"
+      },
+      "whenTurning": {
+        "formula": "loss = deltaTime * 2.5 / ExperimentalShipLinearSpeed * SpeedLossInMarchingMode * (0.4 + 0.7 * mobility / 100)",
+        "description": "Turning while at full sails causes cruise speed loss. Higher mobility = MORE loss (ships turn more sharply).",
+        "SpeedLossInMarchingMode": "1 - PDecreaseSpeedLossMarchingMode bonus (Pilot crew gives -25%)"
+      },
+      "whenDamaged": {
+        "formula": "marchModeBonusSpeed -= healthDamage / (1 + currentHP) * 100 + sailDamage * 100",
+        "description": "Taking damage directly reduces cruise speed accumulation"
+      }
+    },
+    "displayFactor": {
+      "formula": "displayCruiseMax = MaxExtraMarchSpeed * Saturate(1.33 * SailSpeedFactor * capacitySpeedFactor)",
+      "description": "The displayed max cruise includes sail damage and cargo weight penalties"
+    }
+  },
+  "holdCapacity": {
+    "overview": "Cargo weight affects ship speed through a capacity speed factor.",
+    "formula": {
+      "description": "Speed multiplier based on cargo load percentage",
+      "under50percent": {
+        "formula": "1 + (1 - load/0.5) * (0.7/SpeedWithoutTemp)",
+        "description": "BONUS speed when under 50% loaded. Lighter = faster."
+      },
+      "from50to100percent": {
+        "formula": "1 - (0.7/SpeedWithoutTemp) * (load - 0.5) / 0.5",
+        "description": "Linear penalty from 50% to 100% load"
+      },
+      "over100percent": {
+        "formula": "Lerp((1 - penalty) / (load^3), 1 - penalty, OverweightFineReduce)",
+        "description": "CUBIC penalty for overweight. Gets very harsh quickly.",
+        "penalty": "0.7 / SpeedWithoutTempEffects"
+      },
+      "at250percent": "Speed factor = 0 (ship cannot move at 250%+ load)",
+      "raftException": "Ship ID 1 (raft/rowboat) always has capacity factor = 1.0"
+    }
+  },
+  "sailDamage": {
+    "sailSpeedFactor": {
+      "formula": "SailSpeedFactor = min(1, FirstSailHP / 0.99)",
+      "description": "Sail damage reduces speed. FirstSailHP is weighted average of all sail hitbox health values.",
+      "weightedAverage": "Sum of (sailHP[i] * sailWeight[i]) for each sail section"
+    },
+    "mobilityPenalty": {
+      "formula": "mobilityFactor = (FirstSailHP < 0.95) ? Lerp(0.8, 1.0, Saturate((FirstSailHP - 0.8) / 0.15)) : 1.0",
+      "description": "Below 95% sail HP, mobility drops. At 80% sail HP, mobility is 80% of normal."
+    }
+  },
+  "windEffects": {
+    "windEffectivity": {
+      "formula": "LastWindEffectivity = min(1, (WindingDot * 0.5 + 0.5) * 1.8 + HardnessFactor * 0.15)",
+      "description": "How much wind helps/hinders. WindingDot is dot product of ship heading with wind direction.",
+      "range": "0 (sailing directly into wind) to 1 (sailing with wind)",
+      "balloonException": "Balloons: WindEffectivity = max(0, WindingDot)"
+    },
+    "windCourseChange": {
+      "formula": "yaw -= sign(crosswind) * deltaTime * 0.004",
+      "strongWindTurning": "yaw -= sign(crosswind) * deltaTime * min(0.19, pow(max(0, (1-WindEffectivity-0.15)/0.85), 1.7)) * 0.25 * (1 - |axisInertia|)",
+      "description": "Wind pushes your heading. Stronger effect when sailing against wind. Disabled by BDisableWindCourseChange (Sailing Master crew).",
+      "paddleShipsExempt": "Ships with paddles or steam wheels are not affected by strong wind turning"
+    },
+    "backwindPenalty": {
+      "formula": "minSpeed = -CBackwindSpeed(speed) = -speed/3",
+      "description": "When sailing against wind, there's a minimum speed based on ship speed / 3"
+    },
+    "stormBonus": {
+      "formula": "StormBonusSpeed = max(extraWindEffect * 3, min(8, outsideSeamLevel * 15))",
+      "description": "Storms add bonus speed from wind effects and being near map edges"
+    },
+    "riverEffect": "Rivers provide minimum 50% wind effectivity even when sailing against wind",
+    "uniqueWindRose": {
+      "description": "Ships with HasUniqueWindRose use modified wind calculation with 0.94 blend factor. At WindingDot > 0.95, effectivity drops (can't sail directly downwind efficiently)."
+    }
+  },
+  "paddlesAndSteam": {
+    "overview": "Ships with paddles or steam wheels can supplement sail speed.",
+    "paddleSpeed": {
+      "formula": "paddleMaxSpeed = min(shipSpeed * capacityFactor, PatSpeed + 1) * speedModeFactor * min(1, capacityFactor * 1.1) * crewEfficiency + PaddleSpeedExtraBonus",
+      "speedModeFactor": "0.7 at slow speed (mode 1), 1.0 at other speeds",
+      "bonus": "LastPaddlesSpeedBonus = max(0, paddleMaxSpeed - windDrivenSpeed)",
+      "description": "Paddles only kick in when wind-driven speed is insufficient. Limited by crew efficiency."
+    },
+    "steamWheel": {
+      "description": "Steam wheels work like paddles but require coal. Can be toggled on/off.",
+      "coalUsage": "Uses coal on a 1-second timer loop when active"
+    }
+  },
+  "cannonSpeedFactor": {
+    "overview": "Each cannon type has a SpeedFactor that affects cannonball projectile speed.",
+    "values": {
+      "0.8": "Slow projectiles: Cast Iron Howitzer, Iron Howitzer types, Heavy Howitzer, Swivel Gun",
+      "1.0": "Standard: Most base cannons, Bronze types, Mortars",
+      "1.1": "Light Premium cannon (ncs_cannon_37)",
+      "1.15": "Medium Premium cannon (ncs_cannon_38)",
+      "1.2": "Heavy Premium cannon (ncs_cannon_39)",
+      "1.25": "Fast projectiles: Long Barrel types, Culverin types, Demi-Culverin",
+      "1.5": "Fastest: Special cannon ncs_cannon_41"
+    },
+    "note": "This multiplies the base projectile speed. Combined with PCannonBallsSpeed bonus."
+  },
+  "combat": {
+    "damageFormula": {
+      "description": "Damage is applied through the MakeDamage system with multiple components",
+      "healthDamage": "Direct HP damage, reduced by PReduceDamage bonus (max 99%)",
+      "sailDamage": "Distributed across all sails (TotalSailDamage) or specific sail (SingleSailDamage)",
+      "damageReduction": "DamageReduce = min(0.99, PReduceDamage bonus)",
+      "educationMapBonus": "Players take 1/1.5 = 67% damage in education maps. PvP damage in education = 1.2x"
+    },
+    "cannonDamage": {
+      "ballDamageBonus": "BallDamageBonusToAll = PBallDamage + DamageUpIfStrengthBefore30pNow",
+      "lowHpDamageBonus": "PDamageCannonIfStrengthBelow30P activates below 50% HP (despite name saying 30%)",
+      "buildDamage": "BallDamageBonusToBuilds = PDamageToBuilds + DamageUpIfStrengthBefore30pNow",
+      "frontBackBonus": "PFrontAndBackCannonsAddDamage \u2014 bonus for bow/stern cannons",
+      "penetration": "WeaponPenetrationBonus = MWeaponPenetration bonus",
+      "cannonBallSpeed": "CannonBallSpeedFactor = 1 + PCannonBallsSpeed bonus",
+      "distance": "BallDistanceBonusValue = min(15, MCannonsDistance bonus)"
+    },
+    "reloadMechanics": {
+      "reloadBonus": "CannonsReloadSpeedBonus = PCannonsReload + (below 50% HP ? PCannonsReloadWithLowHp : 0)",
+      "mendingPenalty": "Reloading speed is 15% while mending, 0% while shooting or boarding",
+      "singleShotBonus": "ReloadingBonusAfterSingleShot from PReloadingAfterSingleShot",
+      "falkonetReload": "FalkonetReloadBonus from PFalkonetReloadBoost"
+    },
+    "mortars": {
+      "aimSpeed": "MortarAimingSpeed = 1.1 - (mortarCount + extraMortar) * 0.1 + PMortarAimSpeed + PPlayerSightFocusSpeedAdd",
+      "damageBonus": "MortarDamagBonus from PMortarDamageBonus",
+      "sailProtection": "MortarDamageToSailFactor = max(0, 1 - PSailProtection)",
+      "reloadBonus": "MortarReloadBonus = PMortarReload + (allCannonsReloaded ? PMortarReloadWhenCannonsAreReloaded : 0)",
+      "distanceBonus": "MortarMaxDistanceBonus from MMortarMaxDistance",
+      "deadzoneDecrease": "MortarDeadzoneDecrease from PMortarDecreaseDeadzone"
+    },
+    "criticalEffects": {
+      "corpusCritical": "Creates a 'big hole' that reduces speed to 30% for UCritCorpusTimeSec seconds",
+      "burningCritical": "Starts a fire on the ship. Different PredefinedBurningTypes.",
+      "cannonCritical": "Breaks a cannon, requiring repair",
+      "crewDamage": "Kills specific crew members",
+      "speedDebuff": "Temporary speed reduction from sail hits"
+    },
+    "collisionDamage": {
+      "description": "Ship-to-ship collision system",
+      "damageBonus": "DamageBonusForCollision from PAddCollisionDamage",
+      "corpusCritChance": "Collisions can cause corpus critical (10 second big hole)",
+      "fireOnCollision": "Some collisions can start fires (InfiniteAllowMening type)",
+      "destroyFlooding": "BDestroyFloodingShopByCollision upgrade allows destroying sinking ships by ramming"
+    },
+    "armorSystem": {
+      "formula": "Armor = BasicArmor * (1 + PArmor) + MArmor",
+      "description": "Armor reduces damage. Higher armor = less damage taken from cannonballs.",
+      "noseProtection": "PReduceDamageToNose \u2014 specific protection for bow hits"
+    },
+    "fireSystem": {
+      "bigFire": {
+        "fightingSpeed": "BigFireFightingSpeed = 1 + PBigFireFightingSpeed",
+        "damageFactor": "BigFireDamageFactor = max(0.001, 1 - PReduceBigFireDamage)",
+        "description": "Big fires cause continuous damage and must be actively fought"
+      },
+      "microfire": {
+        "durationFactor": "MicrofireDurationFactor = max(0.001, 1 - PMicrofireFightingSpeed)",
+        "description": "Small fires on specific ship areas. Auto-extinguish over time."
+      },
+      "fireArea": {
+        "damageFactor": "FireAreaDamageFactor = max(0.01, 1 - PReduceFireAreaDamage)",
+        "sailDamage": "DamageToSailFromBurningFactor = 1 - PReduceDamageToSailFromBurning"
+      }
+    },
+    "powderKegs": {
+      "reloadBoost": "PowderKegReloadBoost from PPowderKegReloadBoost",
+      "triggerRadius": "TriggerRadius * (1 + PPowderKegIncreaseTriggerRadius)",
+      "protection": "PowderKegProtection from PReducePowderKegDamage",
+      "anySpeedAllowed": "BAllowPowderKegAnySpeed \u2014 normally restricted by speed"
+    }
+  },
+  "boarding": {
+    "overview": "Boarding is a crew combat minigame when two ships are close enough.",
+    "constants": {
+      "preparationTime": "4100ms (4.1 seconds)",
+      "duration": "30000ms (30 seconds, editable)",
+      "updateInterval": "3000ms (3 seconds between combat rounds)",
+      "minimumDuration": "7000ms (7 seconds minimum)",
+      "actionTime": "14000ms (14 seconds for boarding actions)",
+      "preponderanceToWin": 1.5
+    },
+    "requirements": {
+      "distance": "BoardingFailureDistance = (myWidth + targetWidth) * 0.3 + (isHook ? 7 : (speed < 2 ? 11 : 9)) * (1 + PBoardingDistance)",
+      "targetHP": "Target must be below 50% HP (for player targets)",
+      "alignment": "Ships must be roughly parallel (dot products > 0.8)",
+      "noFlooding": "Neither ship can be flooding",
+      "noFire": "Neither ship can have active big fire"
+    },
+    "crewCombat": {
+      "unitInProtection": {
+        "damageIn": "Units in protection take only 20% damage",
+        "damageOut": "Units in protection deal only 20% damage"
+      },
+      "crewProtection": {
+        "boardingCrewProtection": "PBoardingCrewProtectionCballs \u2014 boarding crew resist cannonball damage",
+        "sailingCrewProtection": "PSailorsCrewProtectionCballs \u2014 sailor crew resist cannonball damage"
+      },
+      "boardingWeight": "PMoreWeightAtBoarding \u2014 per boarding unit bonus",
+      "hookReload": "PBoardingHookReload \u2014 faster boarding hook cooldown"
+    },
+    "rewards": {
+      "xpBonus": "XP from boarding = target MaxHp / 10",
+      "goldBonus": "PBoardingGold \u2014 bonus gold from boarding",
+      "captives": "PMoreBondmanFromBoarding \u2014 more captives",
+      "cannonStealChance": "Lerp(25%, 10%, Saturate((shipRank - 1) / 6)) \u2014 requires Rang >= 15",
+      "restoreUnits": "PRestoreUnitsAfterBoarding \u2014 restore units after boarding",
+      "noTargetStart": "BBoardingStartsWithNoTarget \u2014 board without selecting target first",
+      "musketeersDefence": "BBoardingStartsMusketeersDefence \u2014 start boarding with musketeer defense active"
+    },
+    "cannonDrops": {
+      "quantityMultiplier": "DropCannonsQuantityMultiplier = PImproveQuantityOfDropCannons + 1",
+      "reduceBoardCannons": "ReduceBoardCannonsQuantity from MPReduceCannonsQuantity"
+    }
+  },
+  "crewSystem": {
+    "efficiency": {
+      "description": "Crew efficiency affects reload speed, paddle speed, and sail handling",
+      "formula": "CrewFactor = min(1, crewCount / crewPlaces)",
+      "sailorRequirement": "NeedSailors = crewPlaces / 2",
+      "boardingRequirement": "NeedBoarding = crewPlaces - NeedSailors"
+    },
+    "factions": {
+      "Military": "Combats in game data. Focused on combat bonuses. Conflicts with Pirates.",
+      "Sailors": "Ship handling, speed, repair bonuses.",
+      "Pirates": "Boarding, looting, visibility bonuses. Conflicts with Military.",
+      "Adventurers": "Exploration, XP, special crew finding bonuses."
+    },
+    "specialCrewSlots": "Up to 4 special crew (3 base + potential skill bonus)",
+    "extraCrewLimit": "ExtraCrewLimit = 20 + MMoreExtraCrew bonus"
+  },
+  "repairSystem": {
+    "mending": {
+      "description": "Repair while at sea. Activated by player, runs on 900ms timer.",
+      "speedRestriction": "Must be at speed 0 or 1 (or speed 2 with BRepairAllowOnSpeed2 crew)",
+      "reloadPenalty": "While mending, weapon reload is only 15% speed",
+      "effectivity": "PMendingEffectivity bonus per sailor",
+      "kitBonus": "PPlayerMendingKitEffectivity for mending kit items"
+    },
+    "sailRepair": {
+      "autoRepairSpeed": "PSailAutoRepairSpeed bonus",
+      "distribution": "Repair is distributed across all damaged sails inversely proportional to their weight"
+    },
+    "unitHealing": "BHealUnitsWhenMending \u2014 heal random units during mending"
+  },
+  "shallowWater": {
+    "description": "Shallow water penalty based on ship rank and position",
+    "formula": "speedMultiplier = max(0.0001, 1 - shallowLevel)",
+    "lookAhead": "Checks 50 units ahead to see if shallows increase (slows before grounding)",
+    "worldmapOnly": "Only applies on worldmap, not in port or education"
+  },
+  "flooding": {
+    "mobilityPenalty": "60% mobility when flooding (multiplied by 0.6)",
+    "stoppedByExplosions": "Powder kegs, mortars, stern damage, and fireworks stop flooding",
+    "collisionReduces": "Collisions reduce flooding by damage/maxHP ratio"
+  },
+  "destructionTilt": {
+    "condition": "Rain > 0.5 AND not destroyed/flooding AND not education AND |pitch| > 0.25 AND rang > 5",
+    "rampUp": "Increases at rate 1/8 per second, scaled by speed ratio",
+    "rampDown": "Decreases at rate 1/8 per second, faster when slow",
+    "description": "In storms, ships can tilt and potentially capsize"
+  },
+  "visibility": {
+    "viewDistance": "ViewDistanceMultiplier = 1 + PVisibilityZone",
+    "minimapLoot": "MinimapLootVisibleDistanceFactor = 1 + PMinimapLootVisibleDistance",
+    "invisibility": "PInvisibility \u2014 makes ship harder to spot",
+    "makeCrewInvisible": "MMakeInvisiblePlaces \u2014 hides crew count from other players"
+  },
+  "economyEffects": {
+    "xpBonus": "PlayerXpAndRewardBonus from PServer_XpAndRewardBonus",
+    "xpOnly": "PlayerXpOnlyBonus from PXpBonus",
+    "xpUpgrades": "PlayerXpBonusUpgradesAndBranch from PXpBonusUpgradesAndBranch",
+    "lootAtSea": "LootAtSeaBonus from PMoreLootAtSea",
+    "rareItems": "LootRareItemsChanseBonus from PMoreRareItemsAtSea",
+    "fishingSpeed": "FishingSpeedBonus from PFishingSpeed",
+    "fishingProfit": "FishingProfitBonus from PFishingProfit",
+    "foodValue": "FoodValueBonus from PFoodValueBonus",
+    "reduceSpoilage": "ReduceSouringItems from PSouredItemsReduce",
+    "reduceSickness": {
+      "deathChance": "SickDeadFactor = 1 - PReduceSickDeadChanse",
+      "gettingChance": "SickGetChanse = 1 - PReduceSickGettingChanse"
+    },
+    "reduceLosses": "ReduceLossesWhenKilled from PReduceLossesWhenKilled",
+    "crewFineReduce": "CrewFineReduce from PCrewFineReduce",
+    "overweightFineReduce": "OverweightFineReduce from POverweightFineReduce",
+    "cannonWear": "CannonWearFactor = 1 - PReduceCannonsWear",
+    "dropLootSpeed": "PDropLootingSpeed \u2014 faster debris collection",
+    "lootInteropDistance": "PLootInteropDistance \u2014 farther loot pickup range",
+    "protectCrewLooting": "BCrewWillntDeadInSea \u2014 crew don't die when looting at sea"
+  },
+  "specialAbilities": {
+    "jerkEffect": "EffectJerkBonusSpeed from MPlayerJerkEffectPowerAdd",
+    "tiltReduce": "TiltReduce from PTiltReduce",
+    "changeBallsSpeed": "ChangeCBallsBonus from PChangeCBallsSpeed \u2014 faster ammo switching per sailor",
+    "sightFocus": "SightFocusSpeedAdd from PPlayerSightFocusSpeedAdd",
+    "cannonsAngle": "CannonsAxisBonusRad = ToRadians(MCannonsAngleBonus)",
+    "reduceCannonsScatter": "ReduceCannonsScatter from PReduceCannonsScatter",
+    "specialBallEffects": {
+      "phosphor": "BCannonBallFosforEffects",
+      "bombershell": "BCannonBallBobershell",
+      "moreFireArea": "BMoreFireAreaAndBurning",
+      "buckshot": "PBuckshotDamage"
+    }
+  },
+  "npcSystem": {
+    "overview": "NPCs are procedurally generated based on region level, ship pool, and type-specific modifiers. Named bosses have fixed stats.",
+    "statGeneration": {
+      "description": "Regular NPC stats derived from base ship stats with random variation",
+      "armor": "Ship base armor + random lerp between worst and best upgrade values (minus 0.3). Elite ships get -0.5.",
+      "speed": "Ship base speed - (1 - regionFactor) + destroyer bonus \u00d7 1.5 + random upgrade lerp. Region 5-6 get +0.07-0.15 bonus.",
+      "hp": "Ship base HP \u00d7 (0.7 + 0.3 \u00d7 regionFactor + 0.2 \u00d7 destroyerBonus - heavy ship penalty) + random upgrade lerp. Region 0: \u00d70.85, Region 1: \u00d70.9.",
+      "damage": "Cannon penetration \u00d7 side port count \u00d7 0.9 \u00d7 (0.5 + 0.5 \u00d7 regionFactor + region bonus). Region 0: \u00d70.85.",
+      "reload": "Cannon reload time \u00d7 (1 - 0.2 \u00d7 destroyerBonus). Minimum 5500ms.",
+      "mobility": "Ship base mobility + random upgrade lerp.",
+      "attackDistance": "Cannon max distance \u00d7 lerp(0.8, 1.0, regionFactor) + bonus for short-range cannons.",
+      "regionFactor": "min(regionLevel / 7, 1.0) \u2014 scales stats from weak (region 0) to full power (region 7+)"
+    },
+    "crewFormula": {
+      "description": "Crew count for NPC ships",
+      "formula": "max(500, HP) / 50, capped at 40 + (excess-40)/2, then +3 + hash_bonus, then \u00d7 multiplier \u00d7 4",
+      "multipliers": {
+        "Empire_Legendary2l": 0.8,
+        "allOthers": 0.92
+      },
+      "examples": {
+        "500hp_ship": "~40 crew",
+        "2000hp_ship": "~152 crew",
+        "5000hp_ship": "~244 crew",
+        "45000hp_ship": "~1500+ crew (DRAGON boss)"
+      }
+    },
+    "rewardCalculation": {
+      "description": "XP and gold rewards based on NPC combat power",
+      "goldFormula": "base(75 or 150 for traders) + locationMultiplier \u00d7 (combatBonus + damageBonus) \u00d7 GameSpeed \u00d7 0.792",
+      "xpFormula": "gold \u00d7 BasicXpInGold \u00d7 typeModifier(0.56-0.9) \u00d7 0.9",
+      "locationMultipliers": {
+        "worldMap": "Gameplay.WorldMapMultiplier",
+        "seamlessSea": "Gameplay.OutsideSeamMultiplier (higher)",
+        "bonusMap": "Gameplay.DefaultBonusMapMultiplier",
+        "legendary3l": "1.7\u00d7 base multiplier"
+      }
+    },
+    "captureRules": {
+      "capturable": [
+        "Pirates (all 6 types)",
+        "Traders (both)",
+        "Seafarers",
+        "Fanatics",
+        "Bounty Hunters",
+        "SpecialNoReward"
+      ],
+      "notCapturable": [
+        "Empire Regular",
+        "Empire Invasion",
+        "Imperial Flagship (2-star)",
+        "Imperial Legend (3-star)",
+        "Port Patrol",
+        "Bonus Map Boss",
+        "Event NPCs"
+      ],
+      "arenaException": "No captures allowed in arena maps"
+    },
+    "spawnIntervals": {
+      "regular": "Continuous respawn",
+      "legendary2l": "5 minutes",
+      "legendary3l": "720 minutes (12 hours)",
+      "reinforced": "4 minutes (Fleet/Ferryman types)",
+      "bountyHunter": "(20 - wantedLevel \u00d7 5) \u00d7 60 seconds"
+    },
+    "randomUpgrades": {
+      "regular": [
+        "ReduceFireAreaDamage",
+        "SailProtection",
+        "ReduceDamageToNose",
+        "AddCollisionDamage",
+        "MoreFireAreaAndBurning",
+        "CannonBallsSpeed"
+      ],
+      "upgradeCount": "0-2 random (usually 2 for reinforced types)",
+      "passingMapExtras": [
+        "MHealth",
+        "MArmor",
+        "FrontAndBackCannonsAddDamage",
+        "ReduceReceivesMortarDamage"
+      ]
+    },
+    "typeBehaviors": {
+      "pirateFr2Fitting": "Order of the New Ark ships get -2 speed, +2 armor (slower but tougher)",
+      "northRegionBonus": "Pirates in north regions: HP \u00d71.2, damage \u00d71.1",
+      "fanaticSpeed": "Fanatics get +1 \u00d7 regionLevel speed bonus",
+      "destroyerBonus": "Destroyers and Mortars get bonus speed and damage scaling"
+    }
+  }
+}

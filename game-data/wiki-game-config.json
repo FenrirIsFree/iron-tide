@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "source": "CommonGameConfig.cs",
+    "description": "Server-synced game configuration: speed multipliers, timers, season dates",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "defaults": {
+    "timeSpeed": 1.0,
+    "windRefreshTimerSec": 540,
+    "windRefreshTimerMin": 9,
+    "weatherRefreshTimerSec": 59,
+    "specialMsgTimerMs": 1500,
+    "experimentalShipLinearSpeed": 0.95,
+    "experimentalShipAxisSpeed": 0.95,
+    "experimentalCannonBallsSpeed": 1.0,
+    "experimentalCannonBallsDistance": 1.0,
+    "experimentalShipSpeedChange": 1.0,
+    "firstSeasonStartDate": "2024-12-01"
+  },
+  "notes": {
+    "description": "These values are server-configurable defaults. The server sends the current config to clients on connection.",
+    "shipSpeed": "Ship linear and axis speed are multiplied by 0.95 by default (5% slower than raw physics)",
+    "cannonBalls": "Cannonball speed and distance multipliers are 1.0 (no adjustment by default)",
+    "windRefresh": "Wind direction changes every 9 minutes",
+    "weatherRefresh": "Weather state updates every 59 seconds"
+  }
+}

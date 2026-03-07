@@ -1,0 +1,722 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "totalWeapons": 42,
+    "lastUpdated": "2026-03-06",
+    "source": "wosbcraft.com + in-game screenshot audit (2026-03-06)"
+  },
+  "weapons": [
+    {
+      "name": "6 pdr Rusty Cannon",
+      "category": "Light Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 13,
+        "loadTime": 10.5,
+        "range": 125,
+        "maxAngle": 34,
+        "accuracySpread": 8.5
+      },
+      "cost": {
+        "gold": 50
+      }
+    },
+    {
+      "name": "8 pdr Cannon",
+      "category": "Light Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 14,
+        "loadTime": 9,
+        "range": 130,
+        "maxAngle": 31,
+        "accuracySpread": 9.5
+      },
+      "cost": {
+        "iron": 160,
+        "rum": 40
+      }
+    },
+    {
+      "name": "6 pdr Culverin",
+      "category": "Light Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 14,
+        "loadTime": 15.5,
+        "range": 135,
+        "maxAngle": 17,
+        "accuracySpread": 5
+      },
+      "cost": {
+        "gold": 150
+      }
+    },
+    {
+      "name": "8 pdr Culverin",
+      "category": "Light Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 15,
+        "loadTime": 13,
+        "range": 140,
+        "maxAngle": 16,
+        "accuracySpread": 6
+      },
+      "cost": {
+        "iron": 240,
+        "rum": 60
+      }
+    },
+    {
+      "name": "12 pdr Carronade",
+      "category": "Light Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 20,
+        "loadTime": 22,
+        "range": 105,
+        "maxAngle": 26,
+        "accuracySpread": 9.5
+      },
+      "cost": {
+        "gold": 200
+      }
+    },
+    {
+      "name": "16 pdr Carronade",
+      "category": "Light Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 21.5,
+        "loadTime": 19.5,
+        "range": 110,
+        "maxAngle": 23,
+        "accuracySpread": 11.5
+      },
+      "cost": {
+        "iron": 320,
+        "rum": 80
+      }
+    },
+    {
+      "name": "Basilisk",
+      "category": "Light Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 17.5,
+        "loadTime": 18.5,
+        "range": 150,
+        "maxAngle": 25,
+        "accuracySpread": 4
+      },
+      "cost": {
+        "pirate_token": 45
+      },
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Poseidon",
+      "category": "Light Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 26,
+        "loadTime": 18,
+        "range": 80,
+        "maxAngle": 30,
+        "accuracySpread": 11
+      },
+      "cost": {
+        "pirate_token": 55
+      },
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Twin 6 pdr",
+      "category": "Light Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 16,
+        "loadTime": 20,
+        "range": 115,
+        "maxAngle": 12,
+        "accuracySpread": 9
+      },
+      "cost": {
+        "iron": 480,
+        "rum": 120
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "projectileCount": 2
+    },
+    {
+      "name": "16 pdr Cannon",
+      "category": "Medium Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 14,
+        "loadTime": 12,
+        "range": 130,
+        "maxAngle": 29,
+        "accuracySpread": 10.5
+      },
+      "cost": {
+        "gold": 200
+      }
+    },
+    {
+      "name": "18 pdr Cannon",
+      "category": "Medium Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 15,
+        "loadTime": 10.5,
+        "range": 135,
+        "maxAngle": 26,
+        "accuracySpread": 12
+      },
+      "cost": {
+        "iron": 303,
+        "rum": 50,
+        "copper": 23
+      }
+    },
+    {
+      "name": "20 pdr Admiral",
+      "category": "Medium Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 17,
+        "loadTime": 13.5,
+        "range": 130,
+        "maxAngle": 21,
+        "accuracySpread": 11
+      },
+      "cost": {
+        "pirate_token": 40
+      }
+    },
+    {
+      "name": "16 pdr Culverin",
+      "category": "Medium Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 15,
+        "loadTime": 17.5,
+        "range": 140,
+        "maxAngle": 14,
+        "accuracySpread": 6.5
+      },
+      "cost": {
+        "gold": 300
+      }
+    },
+    {
+      "name": "18 pdr Long Cannon",
+      "category": "Medium Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 16,
+        "loadTime": 15,
+        "range": 145,
+        "maxAngle": 13,
+        "accuracySpread": 8
+      },
+      "cost": {
+        "iron": 450,
+        "rum": 75,
+        "copper": 35
+      }
+    },
+    {
+      "name": "22 pdr Scorcher",
+      "category": "Medium Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 19,
+        "loadTime": 26,
+        "range": 148,
+        "maxAngle": 9,
+        "accuracySpread": 9.5
+      },
+      "cost": {
+        "pirate_token": 60
+      }
+    },
+    {
+      "name": "24 pdr Carronade",
+      "category": "Medium Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 21.5,
+        "loadTime": 25.5,
+        "range": 110,
+        "maxAngle": 21,
+        "accuracySpread": 12
+      },
+      "cost": {
+        "gold": 400
+      }
+    },
+    {
+      "name": "28 pdr Carronade",
+      "category": "Medium Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 23,
+        "loadTime": 22.5,
+        "range": 115,
+        "maxAngle": 20,
+        "accuracySpread": 14.5
+      },
+      "cost": {
+        "iron": 607,
+        "rum": 100,
+        "copper": 46
+      }
+    },
+    {
+      "name": "32 pdr Stormbringer",
+      "category": "Medium Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 25.5,
+        "loadTime": 27.5,
+        "range": 105,
+        "maxAngle": 16,
+        "accuracySpread": 13
+      },
+      "cost": {
+        "pirate_token": 80
+      }
+    },
+    {
+      "name": "Zeus",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 19,
+        "loadTime": 21.5,
+        "range": 155,
+        "maxAngle": 21,
+        "accuracySpread": 5
+      },
+      "cost": {
+        "pirate_token": 120
+      },
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Onager",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 28,
+        "loadTime": 20.5,
+        "range": 85,
+        "maxAngle": 25,
+        "accuracySpread": 13.5
+      },
+      "cost": {
+        "pirate_token": 150
+      },
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Twin 14 pdr",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 17,
+        "loadTime": 23.5,
+        "range": 120,
+        "maxAngle": 10,
+        "accuracySpread": 11
+      },
+      "cost": {
+        "iron": 900,
+        "rum": 150,
+        "copper": 70
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "projectileCount": 2
+    },
+    {
+      "name": "Triple 10 pdr",
+      "category": "Medium Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 14,
+        "loadTime": 28.5,
+        "range": 135,
+        "maxAngle": 8,
+        "accuracySpread": 13
+      },
+      "cost": {
+        "iron": 1131,
+        "rum": 187,
+        "copper": 87
+      },
+      "placementRestriction": "Only for the bow or stern",
+      "projectileCount": 3
+    },
+    {
+      "name": "Alchemical Fire",
+      "category": "Medium Special",
+      "type": "Special",
+      "stats": {
+        "range": 60,
+        "maxAngle": 6,
+        "damagePerSecond": 80,
+        "accuracySpread": 10,
+        "firingTime": 468
+      },
+      "cost": {
+        "iron": 7503,
+        "rum": 1250,
+        "copper": 583
+      },
+      "placementRestriction": "For special ships"
+    },
+    {
+      "name": "Imperial Bombard",
+      "category": "Medium Special",
+      "type": "Special",
+      "stats": {
+        "penetration": 34,
+        "loadTime": 22,
+        "range": 135,
+        "maxAngle": 6,
+        "accuracySpread": 12
+      },
+      "cost": {
+        "iron": 6007,
+        "rum": 1000,
+        "copper": 466
+      },
+      "placementRestriction": "For special ships",
+      "projectileCount": 8
+    },
+    {
+      "name": "36 pdr Inrog",
+      "category": "Heavy Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 20,
+        "loadTime": 16,
+        "range": 135,
+        "maxAngle": 16,
+        "accuracySpread": 13.5
+      },
+      "cost": {
+        "pirate_token": 100
+      }
+    },
+    {
+      "name": "32 pdr Cannon",
+      "category": "Heavy Cannon",
+      "type": "Cannon",
+      "stats": {
+        "penetration": 17.5,
+        "loadTime": 12,
+        "range": 140,
+        "maxAngle": 20,
+        "accuracySpread": 15
+      },
+      "cost": {
+        "iron": 483,
+        "volcanic_ore": 13,
+        "battle_mark": 3,
+        "bronze": 4
+      }
+    },
+    {
+      "name": "32 pdr Long Cannon",
+      "category": "Heavy Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 18.5,
+        "loadTime": 17.5,
+        "range": 150,
+        "maxAngle": 10,
+        "accuracySpread": 10
+      },
+      "cost": {
+        "iron": 753,
+        "volcanic_ore": 20,
+        "battle_mark": 4,
+        "bronze": 6
+      }
+    },
+    {
+      "name": "38 pdr Jericho",
+      "category": "Heavy Long Cannon",
+      "type": "Long Cannon",
+      "stats": {
+        "penetration": 22,
+        "loadTime": 30.5,
+        "range": 153,
+        "maxAngle": 7,
+        "accuracySpread": 12
+      },
+      "cost": {
+        "pirate_token": 150
+      }
+    },
+    {
+      "name": "42 pdr Carronade",
+      "category": "Heavy Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 27,
+        "loadTime": 26,
+        "range": 120,
+        "maxAngle": 15,
+        "accuracySpread": 18
+      },
+      "cost": {
+        "iron": 837,
+        "volcanic_ore": 26,
+        "battle_mark": 6,
+        "bronze": 9
+      }
+    },
+    {
+      "name": "48 pdr Colossus",
+      "category": "Heavy Carronade",
+      "type": "Carronade",
+      "stats": {
+        "penetration": 30,
+        "loadTime": 32,
+        "range": 110,
+        "maxAngle": 12,
+        "accuracySpread": 16
+      },
+      "cost": {
+        "pirate_token": 200
+      }
+    },
+    {
+      "name": "Gilgamesh",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 22,
+        "loadTime": 25,
+        "range": 160,
+        "maxAngle": 16,
+        "accuracySpread": 6
+      },
+      "cost": {
+        "pirate_token": 300
+      },
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Mjolnir",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 32.5,
+        "loadTime": 24,
+        "range": 90,
+        "maxAngle": 20,
+        "accuracySpread": 17
+      },
+      "cost": {
+        "pirate_token": 380
+      },
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Twin 20 pdr",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 20,
+        "loadTime": 27,
+        "range": 125,
+        "maxAngle": 8,
+        "accuracySpread": 14
+      },
+      "cost": {
+        "iron": 1310,
+        "volcanic_ore": 40,
+        "battle_mark": 9,
+        "bronze": 13
+      },
+      "projectileCount": 2,
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "Triple 16 pdr",
+      "category": "Heavy Bombard",
+      "type": "Bombard",
+      "stats": {
+        "penetration": 16.5,
+        "loadTime": 33,
+        "range": 140,
+        "maxAngle": 6,
+        "accuracySpread": 16
+      },
+      "cost": {
+        "iron": 1557,
+        "volcanic_ore": 50,
+        "battle_mark": 11,
+        "bronze": 17
+      },
+      "projectileCount": 3,
+      "placementRestriction": "Only for the bow or stern"
+    },
+    {
+      "name": "6 inch Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 20,
+        "rangeMin": 60,
+        "rangeMax": 135,
+        "damage": 100,
+        "splashRadius": 11,
+        "reduction": 2
+      },
+      "cost": {
+        "iron": 1000,
+        "rum": 250
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "7 inch Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 24,
+        "rangeMin": 75,
+        "rangeMax": 145,
+        "damage": 125,
+        "splashRadius": 11,
+        "reduction": 3
+      },
+      "cost": {
+        "iron": 2500,
+        "rum": 625
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "8 inch Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 31,
+        "rangeMin": 85,
+        "rangeMax": 155,
+        "damage": 150,
+        "splashRadius": 12,
+        "reduction": 4
+      },
+      "cost": {
+        "iron": 4220,
+        "rum": 703,
+        "copper": 328
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "9 inch Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 35,
+        "rangeMin": 75,
+        "rangeMax": 150,
+        "damage": 180,
+        "splashRadius": 13,
+        "reduction": 4
+      },
+      "cost": {
+        "iron": 8441,
+        "rum": 1406,
+        "copper": 656
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "10 inch Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 38,
+        "rangeMin": 65,
+        "rangeMax": 145,
+        "damage": 210,
+        "splashRadius": 14,
+        "reduction": 5
+      },
+      "cost": {
+        "iron": 11000,
+        "volcanic_ore": 375,
+        "battle_mark": 84,
+        "bronze": 129
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "11 inch Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 42,
+        "rangeMin": 60,
+        "rangeMax": 140,
+        "damage": 245,
+        "splashRadius": 15,
+        "reduction": 5.5
+      },
+      "cost": {
+        "iron": 17000,
+        "volcanic_ore": 562,
+        "battle_mark": 126,
+        "bronze": 194
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "Heavy Mortar",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 34,
+        "rangeMin": 95,
+        "rangeMax": 155,
+        "damage": 155,
+        "splashRadius": 9,
+        "reduction": 4,
+        "preparation": 4.8
+      },
+      "cost": {
+        "pirate_token": 670
+      },
+      "specialEffect": "Damage to structures x2"
+    },
+    {
+      "name": "Barrel Launcher",
+      "category": "Mortar",
+      "type": "Mortar",
+      "stats": {
+        "loadTime": 25,
+        "rangeMin": 80,
+        "rangeMax": 140,
+        "damage": 90,
+        "splashRadius": 22,
+        "reduction": 4,
+        "preparation": 3.5
+      },
+      "cost": {
+        "pirate_token": 500
+      },
+      "specialEffect": "Damage to structures x2"
+    }
+  ]
+}

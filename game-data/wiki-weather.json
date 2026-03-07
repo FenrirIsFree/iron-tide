@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFile": "Common.Game/WeatherEngine.cs"
+  },
+  "seaStates": {
+    "Calm": { "wavesHeight": 0.3, "wavesSpeed": 2.184 },
+    "Restless": { "wavesHeight": 0.7, "wavesSpeed": 2.352 },
+    "Storm": { "wavesHeight": 1.1, "wavesSpeed": 2.352 },
+    "DangedStorm": { "wavesHeight": 3.5, "wavesSpeed": 2.352 }
+  },
+  "windPower": {
+    "Calm": 0.15,
+    "Restless": 0.4,
+    "Storm": 0.7,
+    "DangedStorm": 1.0
+  },
+  "skydomeStates": {
+    "Sunny": { "cloudyLevel": 0.0, "fogLevel": 0.0 },
+    "Cloudy": { "cloudyLevel": 0.3, "fogLevel": 0.1 },
+    "Rain": { "cloudyLevel": 0.7, "fogLevel": 0.4 },
+    "HeavyRain": { "cloudyLevel": 1.0, "fogLevel": 0.6 }
+  },
+  "stormAreas": {
+    "externalRadius": 5092.734,
+    "internalRadius": 2263.4373,
+    "maxStormAreas": 1,
+    "maxFogAreas": 2,
+    "fogRadiusMultiplier": 0.4,
+    "movementSpeed": "14146.483 units per 1400 seconds (world crossing time)",
+    "fogSpeedMultiplier": 0.5
+  },
+  "timing": {
+    "windChangeToNextTimeSec": 20.0,
+    "weatherChangeToNextTimeSec": 60.0,
+    "timeForWalkCrossWorldSec": 1400.0
+  },
+  "wavesHeightModifiers": {
+    "minDeepnessHeightMul": 0.6,
+    "maxDeepnessHeightMul": 2.0615,
+    "maxWaveHeightDangerStorm": 3.5,
+    "notes": "Wave height scales between 0.6x-2.06x base height based on water depth. Storm areas override to DangerStorm max. Fog reduces depth effect."
+  },
+  "educationMapStormLimit": 800.0,
+  "fixedSpeed": 2.352
+}

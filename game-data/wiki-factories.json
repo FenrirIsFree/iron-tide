@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "extracted": "2026-03-07",
+    "sources": ["WosbCrafting.cs InitFactories()"],
+    "note": "Each factory has 4 upgrade levels. Input = resources consumed per cycle, output = resources produced per cycle, capacity = total resource storage."
+  },
+  "buildCosts": {
+    "goldByLevel": [500, 3000, 9000, 0],
+    "resourcesByLevel": [
+      {},
+      {},
+      {},
+      { "ironBars": 20, "stoneBlocks": 20, "iceBlocks": 1000 }
+    ],
+    "portFactoryPriceByRank": {
+      "below10": 500,
+      "10to14": 1500,
+      "15to19": 4000,
+      "20to24": 6000,
+      "25plus": 10000,
+      "topWeaponsSurcharge": 10000,
+      "craftTime": "playerCraftTimeLimit / 3"
+    }
+  },
+  "workshopLevels": [
+    { "level": 0, "timeLimit": 300, "timeUpdate": 30 },
+    { "level": 1, "timeLimit": 600, "timeUpdate": 40 },
+    { "level": 2, "timeLimit": 1000, "timeUpdate": 50 }
+  ],
+  "factories": {
+    "Woodcutter": {
+      "type": "NWoodcutter",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "wood": 20 }, "capacity": 820 },
+        { "level": 2, "input": {}, "output": { "wood": 30 }, "capacity": 1440 },
+        { "level": 3, "input": { "rations": 1 }, "output": { "wood": 70 }, "capacity": 3920 },
+        { "level": 4, "input": { "rations": 2 }, "output": { "wood": 110 }, "capacity": 7150 }
+      ]
+    },
+    "IronMine": {
+      "type": "NIronMine",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "ironOre": 15 }, "capacity": 615 },
+        { "level": 2, "input": {}, "output": { "ironOre": 22 }, "capacity": 1080 },
+        { "level": 3, "input": { "rations": 1 }, "output": { "ironOre": 52 }, "capacity": 2940 },
+        { "level": 4, "input": { "rations": 2 }, "output": { "ironOre": 82 }, "capacity": 5362 }
+      ]
+    },
+    "CopperMine": {
+      "type": "NCopperMine",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "copperOre": 2 }, "capacity": 82 },
+        { "level": 2, "input": {}, "output": { "copperOre": 3 }, "capacity": 144 },
+        { "level": 3, "input": { "rations": 1 }, "output": { "copperOre": 6 }, "capacity": 392 },
+        { "level": 4, "input": { "rations": 2 }, "output": { "copperOre": 10 }, "capacity": 715 }
+      ]
+    },
+    "ResinFactory": {
+      "type": "NResinFactory",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "resin": 2 }, "capacity": 82 },
+        { "level": 2, "input": {}, "output": { "resin": 3 }, "capacity": 144 },
+        { "level": 3, "input": { "rations": 1 }, "output": { "resin": 6 }, "capacity": 336 },
+        { "level": 4, "input": { "rations": 2 }, "output": { "resin": 9 }, "capacity": 585 }
+      ]
+    },
+    "RumFactory": {
+      "type": "NRumFactory",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "rum": 5 }, "capacity": 205 },
+        { "level": 2, "input": { "sugar": 1 }, "output": { "rum": 12 }, "capacity": 576 },
+        { "level": 3, "input": { "sugar": 2 }, "output": { "rum": 19 }, "capacity": 1064 },
+        { "level": 4, "input": { "sugar": 3 }, "output": { "rum": 26 }, "capacity": 1690 }
+      ]
+    },
+    "Farm": {
+      "type": "NFarm",
+      "levels": [
+        { "level": 1, "input": { "corn": 3 }, "output": { "livestock": 12 }, "capacity": 200 },
+        { "level": 2, "input": { "corn": 3 }, "output": { "livestock": 12 }, "capacity": 400 },
+        { "level": 3, "input": { "corn": 4 }, "output": { "livestock": 16 }, "capacity": 600 },
+        { "level": 4, "input": { "corn": 5 }, "output": { "livestock": 20 }, "capacity": 750 }
+      ]
+    },
+    "IceFactory": {
+      "type": "NIceFactory",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "iceBlocks": 20 }, "capacity": 820 },
+        { "level": 2, "input": { "coal": 2 }, "output": { "iceBlocks": 40 }, "capacity": 1920 },
+        { "level": 3, "input": { "coal": 5 }, "output": { "iceBlocks": 70 }, "capacity": 3920 },
+        { "level": 4, "input": { "coal": 10 }, "output": { "iceBlocks": 110 }, "capacity": 7150 }
+      ]
+    },
+    "CoalMine": {
+      "type": "NCoalMine",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "coal": 4 }, "capacity": 164 },
+        { "level": 2, "input": {}, "output": { "coal": 6 }, "capacity": 288 },
+        { "level": 3, "input": { "rations": 1 }, "output": { "coal": 14 }, "capacity": 784 },
+        { "level": 4, "input": { "rations": 2 }, "output": { "coal": 22 }, "capacity": 1430 }
+      ]
+    },
+    "Underground": {
+      "type": "NUnderground",
+      "levels": [
+        { "level": 1, "input": {}, "output": { "marks": 1 }, "capacity": 40 },
+        { "level": 2, "input": { "rations": 2 }, "output": { "marks": 2 }, "capacity": 90 },
+        { "level": 3, "input": { "rations": 3 }, "output": { "marks": 3 }, "capacity": 120 },
+        { "level": 4, "input": { "rations": 4 }, "output": { "marks": 4 }, "capacity": 140 }
+      ]
+    }
+  },
+  "isleFactories": {
+    "BeerFactory": { "output": { "beer": 84 }, "capacity": "unlimited" },
+    "CornFactory": { "output": { "corn": 56 }, "capacity": "unlimited" },
+    "FruitsFactory": { "output": { "fruits": 28 }, "capacity": "unlimited" },
+    "SugarFactory": { "output": { "sugar": 14 }, "capacity": "unlimited" },
+    "VulkanoOreFactory": { "output": { "volcanicOre": 10 }, "capacity": "unlimited" }
+  }
+}

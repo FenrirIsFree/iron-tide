@@ -1,0 +1,246 @@
+{
+  "_meta": {
+    "source": "Gameplay.cs",
+    "description": "Core gameplay constants, formulas, costs, and balance values",
+    "extractedBy": "weezer",
+    "version": "1.0"
+  },
+  "worldMap": {
+    "sizeX": 14146.483,
+    "sizeY": 17290.12,
+    "maxSizeX": 17843.484,
+    "maxSizeY": 21826.12,
+    "educationMapSize": 1150
+  },
+  "shipMovement": {
+    "movementConstant": 0.00036421,
+    "speed3Start": 2.5,
+    "speed3Finish": 4.5,
+    "speed3BonusNpc": 5.0,
+    "speed3FinishAdd": 0.45,
+    "speed3FinishLoss": [2.5, 7.0],
+    "speedStartDrift": 18.0,
+    "speedStartDriftRang2Plus": 19.0,
+    "shipTiltFromWind": 1.0,
+    "cannonballSpeed": 45.76,
+    "sailAnimDurationBasic": 3.0,
+    "maxShipOverload": 2.5,
+    "backwindSpeedDivisor": 3
+  },
+  "shipRanks": {
+    "totalRanks": 7,
+    "initialShipPlaces": 6,
+    "hazardWatersBlockUntilRank": 12
+  },
+  "premium": {
+    "bonusMultiplier": 0.4,
+    "premiumSlotReloadBoost": 0.4,
+    "note": "Premium gives 40% bonus to XP, gold, and other rewards"
+  },
+  "combat": {
+    "mendingAmountPerSec": 9.0,
+    "mendingAmountPerSecRank123": 15.0,
+    "microburningDamage": 4.0,
+    "burningLoopMs": 1000,
+    "mendingLoopMs": 900,
+    "rocketReloadMs": 23000,
+    "powerupItemExtraSlotTimeoutMs": 120000,
+    "destroyCannonsBeforeShotsNum": 350,
+    "battleEndTimerPveSec": 25,
+    "battleEndTimerPvpSec": 40,
+    "battleEndTimerPortBattleSec": 40,
+    "agressionFlagResetTimerSec": 120,
+    "blackMarkTimeInitialSec": 900,
+    "blackMarkTimeMaxSec": 1800
+  },
+  "steamWheel": {
+    "coalLoopMs": 1000,
+    "coalUsingCost": 0.1
+  },
+  "passingMaps": {
+    "lifeUnderTowerSecSingle": 240,
+    "lifeUnderTowerSecMultiplayer": 160
+  },
+  "spawning": {
+    "npcWorldMapBorder": 50,
+    "simpleTradersMaxDistFromPort": 1900,
+    "personalIsleRadius": 255,
+    "specialLootAreaSize": 450,
+    "npcSpawnGuildPatrolRadiusOfFort": 510,
+    "portAquatoriaSize": 765,
+    "maxDistToRespawnOnFloatingVillage": 1300,
+    "timeToRespawnBeingOnBoatSec": 240,
+    "waitSessionMapToCloseMs": 3000
+  },
+  "economy": {
+    "basicXpInGold": 0.4,
+    "gameSpeed": 1.35,
+    "increaseDropOutsideSeam": 1.33,
+    "worldMapMultiplier": 2.5,
+    "outsideSeamMultiplier": 3.325,
+    "defaultBonusMapMultiplier": 2.8,
+    "defaultArenaMapMultiplier": 2.2
+  },
+  "upgradeStrengthWear": {
+    "description": "Usage thresholds before upgrades degrade",
+    "None": 0,
+    "MortarShotsCount": 500,
+    "ReceivedDamage": 150000,
+    "SailingDistance": 220000,
+    "ShotsCount": 1400
+  },
+  "shipResearchCostByRank": {
+    "description": "XP cost to research ships at each rank level (index = 7 - rank)",
+    "rank7": 0,
+    "rank6": 800,
+    "rank5": 4500,
+    "rank4": 14000,
+    "rank3": 25000,
+    "rank2": 50000,
+    "rank1": 70000,
+    "classModifiers": {
+      "Destroyer": 0.8,
+      "Battleship": 1.1,
+      "CargoShip": 0.9,
+      "Hardship": 1.2
+    }
+  },
+  "arenaUpgradePrices": {
+    "description": "Arena currency cost for each successive upgrade (24 total)",
+    "prices": [30, 40, 50, 55, 60, 65, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240]
+  },
+  "shipwayDurationByRank": {
+    "description": "Seconds to build a ship on the slipway by rank (Elite/Unique = 0)",
+    "rank7": 60,
+    "rank6": 300,
+    "rank5": 600,
+    "rank4": 3600,
+    "rank3": 7200,
+    "rank2": 14400,
+    "rank1": 21600
+  },
+  "welcomeBack": {
+    "daysAbsent": 37,
+    "goldLow": 30000,
+    "goldHigh": 150000,
+    "freeResTeleports": 3,
+    "premiumDays": 15,
+    "note": "Gold amount depends on rank: >25 gets high, ≤25 gets low"
+  },
+  "referralSystem": {
+    "bonusRank": 10,
+    "replenishShare": 0.05,
+    "originReward": {
+      "marks": 300,
+      "premiumDays": 7,
+      "at10Referrals": "5x design element #419",
+      "at30Referrals": "1000 Monets + achievement ManyFriendsReferal"
+    },
+    "invitedReward": {
+      "extraShips": 3,
+      "premiumDays": 3
+    }
+  },
+  "miscCosts": {
+    "publicDesignPrice": 6800,
+    "changeNicknameCostMonets": 290,
+    "exchangeMarkToConquerorBadges": 300,
+    "exchangeMarkToConquerorBadgesPiratePort": 200,
+    "resetCaptainSkillGold": {
+      "rank0to4": 250,
+      "rank5to9": 1000,
+      "rank10to14": 4000,
+      "rank15to19": 7000,
+      "rank20plus": 10000
+    }
+  },
+  "cannonCraftCostFormulas": {
+    "description": "Cannon crafting cost distribution by category",
+    "light": { "Iron Ingots": "60%", "Rum": "40%" },
+    "medium": { "Iron Ingots": "45%", "Rum": "20%", "Copper Ingots": "35%" },
+    "heavy": { "Iron Ingots": "30%", "Volcanic Ore": "10%", "Marks": "15%", "Bronze Fittings": "45%" }
+  },
+  "empireShipCraftCosts": {
+    "description": "Special resources needed for Empire-tier ships by rank",
+    "rank4": { "Imperial Legend currency": 25, "Escudo": 20 },
+    "rank3": { "Legend Tokens": 1, "Escudo": 150 },
+    "rank2": { "Legend Tokens": 5, "Escudo": 400 },
+    "rank1": { "Legend Tokens": 20, "Escudo": 5000 },
+    "rank0": { "Legend Tokens": 40, "Escudo": 10000 }
+  },
+  "uniqueShipCraftCosts": {
+    "description": "Marks needed for Unique-tier ships by rank",
+    "rank5": 750,
+    "rank5_special16": 250,
+    "rank4": 3000,
+    "rank3": 4500,
+    "rank2": 8000,
+    "rank1": 10000,
+    "rank0": 15000,
+    "special38": 12000
+  },
+  "arenaRewardFormulas": {
+    "description": "Arena reward calculation parameters by mode",
+    "wallVsWall": {
+      "ratingMultiplier": 0.0036,
+      "xpMultiplier": 0.1,
+      "goldMultiplier": 0.7,
+      "marksMultiplier": 0.002,
+      "ratingOnWinOnly": true
+    },
+    "collecting": {
+      "ratingMultiplier": 0.0038,
+      "xpMultiplier": 0.125,
+      "goldMultiplier": 0.88,
+      "marksMultiplier": 0.0025,
+      "ratingOnWinOnly": true
+    },
+    "duelRating": {
+      "ratingFixed": 30,
+      "xpMultiplier": 0.15,
+      "goldMultiplier": 1.05,
+      "marksMultiplier": 0.0025
+    },
+    "lossPenalty": {
+      "duel": 0.5,
+      "other": 0.6
+    },
+    "shipRankModifiers": {
+      "rank1": 0.7,
+      "rank2": 0.8,
+      "rank3": 0.85,
+      "rank4": 1.0,
+      "rank5": 1.15,
+      "rank6plus": 1.4
+    }
+  },
+  "arenaBattleRating": {
+    "description": "Base battle rating by ship rank for arena matchmaking",
+    "rank1": 9.5,
+    "rank2": 8.0,
+    "rank3": 6.0,
+    "rank4": 4.0,
+    "rank5": 3.0,
+    "rank6": 2.0,
+    "rank7": 1.5,
+    "bonuses": {
+      "upgradesInstalled": "0.05 per upgrade, max 0.15",
+      "eliteCoolness": 0.1,
+      "highRankOrRating": 0.2,
+      "lowRank": -0.1
+    }
+  },
+  "pvpRewards": {
+    "description": "Marks and XP from PvP kills",
+    "marksFormula": "1 + round(0.8 * enemyHP / 666) if positive reputation",
+    "xpFormula": "1 + ComputeBasicBonus(HP+250, 17, 2) * gameSpeed * basicXpInGold * arenaMultiplier * 0.6"
+  },
+  "mendingCostFactors": {
+    "description": "Mending cost multiplier by ship rank and player rank",
+    "rank5plus": 1.3,
+    "rank2to4": 1.8,
+    "rank1": 2.5,
+    "highPlayerRank17plus": 1.8,
+    "highPlayerRank25plusWithRank5Ship": 2.2
+  }
+}

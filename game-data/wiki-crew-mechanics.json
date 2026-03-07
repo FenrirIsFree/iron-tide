@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "source": "WosbCrew.cs",
+    "description": "Crew mechanics: faction conflicts, satiety bonuses, special unit acquisition, hire limits, reload formulas",
+    "extractedBy": "weezer",
+    "version": "2.0"
+  },
+  "factionConflicts": {
+    "description": "Special unit class conflicts - conflicting units cannot serve on the same ship",
+    "Pirates": { "conflictsWith": ["Combats"] },
+    "Combats": { "conflictsWith": ["Pirates"] }
+  },
+  "satietyBonuses": {
+    "description": "Bonuses applied when crew is fully fed (satiety at max)",
+    "bonuses": [
+      { "effect": "PChangeShipSpeedBonus", "value": 5, "unit": "%" },
+      { "effect": "PPowerupItemsReload", "value": 5, "unit": "%" },
+      { "effect": "PMendingEffectivity", "value": 12, "unit": "%" },
+      { "effect": "PCannonsReload", "value": 5, "unit": "%" },
+      { "effect": "PPlayerSightFocusSpeedAdd", "value": 8, "unit": "%" }
+    ],
+    "hoursToFullRefilLimit": 12
+  },
+  "weaponsReloadByCrew": {
+    "description": "Cannon reload speed factor based on crew ratio",
+    "formula": "n + n*(1-n)/2 * 0.75 where n = currentCrew / maxCrew",
+    "examples": {
+      "100%_crew": 1.0,
+      "75%_crew": 0.8906,
+      "50%_crew": 0.6875,
+      "25%_crew": 0.3906
+    }
+  },
+  "specialUnitAcquisition": {
+    "boarding": {
+      "legendaryBoss3Star": {
+        "baseChance": 1.0,
+        "note": "100% base, multiplied by ChanseMultiplier"
+      },
+      "legendaryBoss2Star": {
+        "baseChance": 0.8
+      },
+      "reinforcedPirate": {
+        "baseChance": 0.2,
+        "improvedChanceMultiplier": 2.0,
+        "improvedCondition": "Player has ≤ 6 total special units (storage + ships)"
+      },
+      "imperialNpc": {
+        "usesShipBonus": "GetSpecialUnitChanseBonusImperal",
+        "outsideSeamPenalty": 0.66,
+        "excludeClass": "Adventurers"
+      }
+    },
+    "taverna": {
+      "minRank": 10,
+      "normalChance": 0.15,
+      "improvedChance": 0.45,
+      "afterCooldownChance": 0.015,
+      "afterCooldownImprovedChance": 0.03,
+      "cooldownAfterAcquisitionSec": 43200,
+      "cooldownHours": 12,
+      "piratePortGivesPirateClass": true
+    },
+    "passingMaps": {
+      "baseChance": "0.5 + shipBonus * 1.25",
+      "formula": "chance * 4 * 100 * playersCount / totalNpcCount * ChanseMultiplier"
+    },
+    "chanseMultiplier": {
+      "formula": "clamp(1 - (totalSpecialUnits - 500) / 1000, 0.33, 1.0)",
+      "note": "Diminishing returns: fewer new units drop when you have many"
+    },
+    "newUnitBias": {
+      "description": "When acquiring units, system biases toward units you don't already own",
+      "biasChance": "lerp(0.1, 0.5, unownedCount / totalSpecialUnits)"
+    }
+  },
+  "npcCrewComposition": {
+    "description": "NPC ships crew is generated with: 50% sailors (unit 1), 25% random boarding type, 25% another boarding type",
+    "sailorUnitId": 1,
+    "boardingUnitIds": [2, 3, 4],
+    "formula": "Sailors: round(total/2), Type1: round(total/4), Type2: round(total/4)"
+  },
+  "crewHireLimits": {
+    "personalIsle": 250,
+    "portSpecific": "varies by port (NearPortCrewHireLimit)",
+    "default": 150,
+    "belowRank10": "limit / 2",
+    "crewPerUnitType": {
+      "sailors": "limit * 1.25 + hash variance * 0.5",
+      "boarding": "limit * 0.75 + hash variance * 0.5"
+    }
+  },
+  "crewHirePrice": {
+    "formula": "lerp(2 * goldCost, goldCost, min(1, 1.2 * currentCount / limit))",
+    "note": "Price decreases as port has more available crew"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "extracted": "2026-03-07",
+    "sources": ["PowerupItemsGenerator.cs"],
+    "note": "Index is 0-based sequential. Duration in seconds, cooldown in seconds. P prefix = percentage, M prefix = flat value, B prefix = boolean."
+  },
+  "consumables": [
+    { "index": 0, "name": "Removed", "category": "mending", "icon": "mendkit1", "status": "removed" },
+    { "index": 1, "name": "Basic Repair Kit", "category": "mending", "icon": "mendkit1", "duration": 120, "cooldown": 12,
+      "craft": { "wood": 10 }, "bonuses": [{ "effect": "ServMendingStrengthTemporal", "value": 150 }] },
+    { "index": 2, "name": "Iron Repair Kit", "category": "mending", "icon": "mendkit2", "duration": 120, "cooldown": 12,
+      "craft": { "ironIngots": 30 }, "bonuses": [{ "effect": "ServMendingStrengthTemporal", "value": 250 }], "canBeUsedByNpc": true },
+    { "index": 3, "name": "Bronze Repair Kit", "category": "mending", "icon": "mendkit3", "duration": 120, "cooldown": 12,
+      "craft": { "bronzeFittings": 1 }, "bonuses": [{ "effect": "ServMendingStrengthTemporal", "value": 400 }], "minShipRank": 3, "canBeUsedByNpc": true },
+    { "index": 4, "name": "Debris Repair Kit", "category": "mending", "icon": "mendkit_debris", "duration": 65, "cooldown": 1,
+      "craft": { "charcoal": 25, "marks": 1 }, "bonuses": [{ "effect": "ServMendingStrengthTemporal", "value": 200 }], "minShipRank": 3 },
+    { "index": 5, "name": "Removed", "status": "removed" },
+    { "index": 6, "name": "Removed", "status": "removed" },
+    { "index": 7, "name": "Removed", "status": "removed" },
+    { "index": 8, "name": "Light Combat Kit", "category": "mending", "icon": "combkit1", "duration": 120, "cooldown": 10,
+      "craft": { "rope": 8, "wood": 10 },
+      "bonuses": [
+        { "effect": "ServMendingStrength", "value": 100 },
+        { "effect": "ServMendingSailes", "value": 8 },
+        { "effect": "PReduceDamage", "value": -25 }
+      ], "allowInterrupt": true },
+    { "index": 9, "name": "Medium Combat Kit", "category": "mending", "icon": "combkit2", "duration": 120, "cooldown": 10,
+      "craft": { "rope": 30, "ironIngots": 22 },
+      "bonuses": [
+        { "effect": "ServMendingStrength", "value": 150 },
+        { "effect": "ServMendingSailes", "value": 12 },
+        { "effect": "PReduceDamage", "value": -25 }
+      ], "allowInterrupt": true, "canBeUsedByNpc": true },
+    { "index": 10, "name": "Heavy Combat Kit", "category": "mending", "icon": "combkit3", "duration": 120, "cooldown": 10,
+      "craft": { "sailcloth": 1, "bronzeFittings": 1 },
+      "bonuses": [
+        { "effect": "ServMendingStrength", "value": 230 },
+        { "effect": "ServMendingSailes", "value": 15 },
+        { "effect": "PReduceDamage", "value": -25 }
+      ], "minShipRank": 3, "allowInterrupt": true },
+    { "index": 11, "name": "Field Surgery Kit", "category": "mending", "icon": "hikekit", "duration": 60, "cooldown": 1,
+      "craft": { "rum": 10, "gold": 100 },
+      "serverEffect": "HealHurtedCrew",
+      "note": "Fixes big holes, clears fires, restores 3 broken cannons, heals 2% HP * (1 + mendingBonus)" },
+    { "index": 12, "name": "Light Speed Rope", "category": "boost", "icon": "rope1", "duration": 60, "cooldown": 30,
+      "craft": { "gold": 40 }, "bonuses": [{ "effect": "MSpeed", "value": 2 }], "allowInterrupt": true },
+    { "index": 13, "name": "Heavy Speed Rope", "category": "boost", "icon": "rope2", "duration": 60, "cooldown": 30,
+      "craft": { "sailcloth": 2 },
+      "bonuses": [
+        { "effect": "MSpeed", "value": 3 },
+        { "effect": "PSailProtection", "value": -75 }
+      ], "allowInterrupt": true, "canBeUsedByNpc": true, "note": "Also triggers jerk effect on activation" },
+    { "index": 14, "name": "Light Armor Shield", "category": "boost", "icon": "shield1", "duration": 40, "cooldown": 30,
+      "craft": { "ironIngots": 30 },
+      "bonuses": [
+        { "effect": "MArmor", "value": 2.5 },
+        { "effect": "PMobilityBonus", "value": -6 }
+      ], "allowInterrupt": true },
+    { "index": 15, "name": "Heavy Armor Shield", "category": "boost", "icon": "shield2", "duration": 50, "cooldown": 30,
+      "craft": { "marks": 5, "stoneBlocks": 1 },
+      "bonuses": [
+        { "effect": "MArmor", "value": 4 },
+        { "effect": "PMicrofireFightingSpeed", "value": 50 },
+        { "effect": "PMobilityBonus", "value": -10 }
+      ], "allowInterrupt": true, "canBeUsedByNpc": true, "minShipRank": 3 },
+    { "index": 16, "name": "Light Shadow Cloak", "category": "boost", "icon": "shadow1", "duration": 25, "cooldown": 45,
+      "craft": { "marks": 10 }, "bonuses": [{ "effect": "PReduceDamage", "value": 14 }] },
+    { "index": 17, "name": "Heavy Shadow Cloak", "category": "boost", "icon": "shadow2", "duration": 60, "cooldown": 30,
+      "craft": { "marks": 10, "ironIngots": 40 }, "bonuses": [{ "effect": "PReduceDamage", "value": 24 }], "canBeUsedByNpc": true },
+    { "index": 18, "name": "Capture NPC Item", "category": "boost", "icon": "extrause", "duration": 240, "cooldown": 0,
+      "craft": { "voodooSkulls": 1 }, "serverEffect": "CaptureNearNpc", "note": "Captures nearby NPC within 50 units" },
+    { "index": 19, "name": "Removed", "status": "removed" },
+    { "index": 20, "name": "Removed", "status": "removed" },
+    { "index": 21, "name": "Removed", "status": "removed" },
+    { "index": 22, "name": "Black Gunpowder", "category": "boost", "icon": "powder_black", "duration": 30, "cooldown": 50,
+      "craft": { "gold": 60 },
+      "bonuses": [
+        { "effect": "MWeaponPenetration", "value": 2.5 },
+        { "effect": "PMortarDamageBonus", "value": 14 },
+        { "effect": "PCannonsReload", "value": -9 },
+        { "effect": "PMortarReload", "value": -9 }
+      ], "allowInterrupt": true, "canBeUsedByNpc": true },
+    { "index": 23, "name": "Removed", "status": "removed" },
+    { "index": 24, "name": "Red Gunpowder", "category": "boost", "icon": "powder_red", "duration": 30, "cooldown": 50,
+      "craft": { "gold": 60 },
+      "bonuses": [
+        { "effect": "PDamageToBuilds", "value": 25 },
+        { "effect": "PFalkonetReloadBoost", "value": 30 }
+      ], "allowInterrupt": true },
+    { "index": 25, "name": "Removed", "status": "removed" },
+    { "index": 26, "name": "Removed", "status": "removed" },
+    { "index": 27, "name": "Removed", "status": "removed" },
+    { "index": 28, "name": "White Gunpowder", "category": "boost", "icon": "powder_white", "duration": 30, "cooldown": 50,
+      "craft": { "gold": 60 },
+      "bonuses": [
+        { "effect": "MCannonsDistance", "value": 10 },
+        { "effect": "MMortarMaxDistance", "value": 10 },
+        { "effect": "PPlayerSightFocusSpeedAdd", "value": 20 },
+        { "effect": "MSpeed", "value": -1 }
+      ], "allowInterrupt": true },
+    { "index": 29, "name": "Blue Signal Rocket", "category": "group", "icon": "rocket_blue", "duration": 40, "cooldown": 80,
+      "craft": { "gold": 130 }, "bonuses": [{ "effect": "MSpeed", "value": 1 }],
+      "groupEffect": true, "groupRange": 500 },
+    { "index": 30, "name": "Red Signal Rocket", "category": "group", "icon": "rocket_red", "duration": 40, "cooldown": 80,
+      "craft": { "gold": 200 }, "bonuses": [{ "effect": "PBallDamage", "value": 5 }],
+      "groupEffect": true, "groupRange": 500 },
+    { "index": 31, "name": "Yellow Signal Rocket", "category": "group", "icon": "rocket_yellow", "duration": 40, "cooldown": 80,
+      "craft": { "marks": 10 },
+      "bonuses": [
+        { "effect": "MSpeed", "value": 1 },
+        { "effect": "PBallDamage", "value": 5 }
+      ], "groupEffect": true, "groupRange": 500 },
+    { "index": 32, "name": "War Horn", "category": "group", "icon": "horn", "duration": 120, "cooldown": 0,
+      "craft": { "voodooSkulls": 1 },
+      "note": "Adds 5% temporary HP to all allies within range * (1 + mendingBonus)",
+      "groupEffect": true, "groupRange": 500 },
+    { "index": 33, "name": "Removed", "status": "removed" },
+    { "index": 34, "name": "Rum Barrel", "category": "boost", "icon": "rumkit", "duration": 80, "cooldown": 60,
+      "craft": { "rum": 20 },
+      "bonuses": [
+        { "effect": "PCannonsReload", "value": 20 },
+        { "effect": "PSpeed", "value": -8 }
+      ] },
+    { "index": 35, "name": "Meat & Fish Rations", "category": "boost", "icon": "meatAndFish", "duration": 60, "cooldown": 120,
+      "craft": { "fish": 20, "meat": 40 },
+      "bonuses": [
+        { "effect": "PSpeedPaddles", "value": "dynamic (1.5/displayFactor * 100)" },
+        { "effect": "PMendingEffectivity", "value": 30 },
+        { "effect": "PChangeShipSpeedBonus", "value": 10 },
+        { "effect": "PPowerupItemsReload", "value": 30 },
+        { "effect": "PChangeCBallsSpeed", "value": 30 },
+        { "effect": "MMobilityBonus", "value": 5 }
+      ], "allowInterrupt": true },
+    { "index": 36, "name": "Ultimate Repair Kit", "category": "mending", "icon": "mendkit4", "duration": 120, "cooldown": 10,
+      "craft": {}, "bonuses": [{ "effect": "ServMendingStrengthTemporal", "value": 500 }], "hiddenFromCraftUI": true },
+    { "index": 37, "name": "Removed", "status": "removed" },
+    { "index": 38, "name": "HP Restore Bonus", "category": "boost", "icon": "bonus_hp", "duration": 60, "cooldown": 0,
+      "craft": {}, "note": "Restores 20% HP instantly", "hiddenFromCraftUI": true },
+    { "index": 39, "name": "Range Bonus", "category": "boost", "icon": "bonus_weapons", "duration": 60, "cooldown": 30,
+      "craft": {},
+      "bonuses": [
+        { "effect": "MCannonsDistance", "value": 14 },
+        { "effect": "MMortarMaxDistance", "value": 14 }
+      ], "hiddenFromCraftUI": true },
+    { "index": 40, "name": "Speed Bonus", "category": "boost", "icon": "bonus_speed", "duration": 60, "cooldown": 30,
+      "craft": {}, "bonuses": [{ "effect": "MSpeed", "value": 3 }], "hiddenFromCraftUI": true },
+    { "index": 41, "name": "Phosphor Powder", "category": "boost", "icon": "fosfpowder", "duration": 30, "cooldown": 60,
+      "craft": { "marks": 4, "gold": 150 },
+      "bonuses": [
+        { "effect": "MCannonsAngleBonus", "value": -5 },
+        { "effect": "BCannonBallFosforEffects", "value": 1 },
+        { "effect": "MWeaponPenetration", "value": 2 }
+      ] },
+    { "index": 42, "name": "Bomber Shell", "category": "boost", "icon": "bombershell", "duration": 40, "cooldown": 50,
+      "craft": { "marks": 4, "gold": 150 },
+      "bonuses": [
+        { "effect": "PBallDamage", "value": -50 },
+        { "effect": "MCannonsDistance", "value": -5 },
+        { "effect": "BCannonBallBobershell", "value": 1 }
+      ], "allowInterrupt": true },
+    { "index": 43, "name": "Drop Boost", "category": "boost", "icon": "dropboost", "duration": 180, "cooldown": 90,
+      "craft": { "voodooSkulls": 1, "gold": 5000 },
+      "bonuses": [{ "effect": "PImproveQuantityOfDropCannons", "value": 100 }],
+      "note": "Doubles cannon drop chance from NPC kills" },
+    { "index": 44, "name": "Invisibility", "category": "boost", "icon": "empire_skill", "duration": 70, "cooldown": 18,
+      "craft": null, "bonuses": [{ "effect": "PInvisibility", "value": 60 }],
+      "note": "Empire special skill" },
+    { "index": 45, "name": "Outpost Mode", "category": "boost", "icon": "empire_skill", "duration": 180, "cooldown": 420,
+      "craft": null,
+      "bonuses": [
+        { "effect": "BAvanpostMode", "value": 1 },
+        { "effect": "BCanGoOnly2Speed", "value": 1 },
+        { "effect": "PCannonsReload", "value": -50 }
+      ], "allowInterrupt": true, "note": "Locks to combat speed, halves reload time" },
+    { "index": 46, "name": "Removed", "status": "removed" },
+    { "index": 47, "name": "Removed", "status": "removed" },
+    { "index": 48, "name": "Removed", "status": "removed" }
+  ]
+}

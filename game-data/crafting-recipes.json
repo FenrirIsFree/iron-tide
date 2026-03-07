@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "totalRecipes": 47,
+    "lastUpdated": "2026-03-05",
+    "source": "Nick's Resources Google Doc"
+  },
+  "categories": {
+    "processing": [
+      { "name": "Iron", "output": 10, "ingredients": { "Iron Ore": 10, "Coal": 1 }, "craftTime": 1 },
+      { "name": "Copper", "output": 1, "ingredients": { "Copper Ore": 1, "Coal": 1 }, "craftTime": 2 },
+      { "name": "Coal", "output": 1, "ingredients": { "Wreckage": 2 }, "craftTime": 1 },
+      { "name": "Fresh Meat", "output": 3, "ingredients": { "Animals": 1 }, "craftTime": 1 },
+      { "name": "Fabric + Leather", "output": "50 Fabric, 1 Leather", "ingredients": { "Animals": 10 }, "craftTime": 20 },
+      { "name": "Beam", "output": 1, "ingredients": { "Wood": 100, "Iron": 5 }, "craftTime": 5 },
+      { "name": "Bronze", "output": 1, "ingredients": { "Iron": 20, "Copper": 10, "Coal": 1 }, "craftTime": 6 },
+      { "name": "Plate", "output": 1, "ingredients": { "Coal": 15, "Resin": 4, "Iron": 30 }, "craftTime": 6 },
+      { "name": "Canvas", "output": 1, "ingredients": { "Fabric": 10, "Resin": 1 }, "craftTime": 3 },
+      { "name": "Bulkhead", "output": 1, "ingredients": { "Resin": 1, "Iron": 70 }, "craftTime": 5 },
+      { "name": "Provision", "output": 1, "ingredients": { "Rum": 1, "Supplies": 2, "Fresh Meat": 3 }, "craftTime": 2 },
+      { "name": "Tackle", "output": 1, "ingredients": { "Wood": 5, "Iron": 1 }, "craftTime": 1 },
+      { "name": "Chest", "output": 1, "ingredients": { "Gold": 500 }, "craftTime": 1 },
+      { "name": "Imperial Blueprint", "output": 1, "ingredients": { "Blueprint Fragments": 100, "Gold": 100000 }, "craftTime": 200 }
+    ],
+    "ammunition": [
+      { "name": "Round Shots", "output": 100, "ingredients": { "Iron": 8 }, "craftTime": 1 },
+      { "name": "Heated Shots", "output": 100, "ingredients": { "Iron": 5, "Whale Oil": 2 }, "craftTime": 1 },
+      { "name": "Shrapnel Rounds", "output": 3, "ingredients": { "Copper": 1, "Iron": 5 }, "craftTime": 1 },
+      { "name": "Small Flaming Barrels", "output": 10, "ingredients": { "Wood": 100, "Whale Oil": 10 }, "craftTime": 1 },
+      { "name": "Large Shrapnel Mines", "output": 10, "ingredients": { "Resin": 20, "Iron": 200 }, "craftTime": 1 }
+    ],
+    "repairs": [
+      { "name": "Wooden Patches", "output": 1, "ingredients": { "Wood": 10 }, "craftTime": null },
+      { "name": "Iron Patches", "output": 1, "ingredients": { "Iron": 30 }, "craftTime": null },
+      { "name": "Bronze Patches", "output": 1, "ingredients": { "Bronze": 1 }, "craftTime": null },
+      { "name": "Wreckage Patches", "output": 1, "ingredients": { "Wreckage": 25, "Battle Mark": 1 }, "craftTime": null },
+      { "name": "Wooden Repair Kit", "output": 1, "ingredients": { "Fabric": 8, "Wood": 10 }, "craftTime": null },
+      { "name": "Iron Repair Kit", "output": 1, "ingredients": { "Fabric": 30, "Iron": 22 }, "craftTime": null },
+      { "name": "Bronze Repair Kit", "output": 1, "ingredients": { "Canvas": 1, "Bronze": 1 }, "craftTime": null },
+      { "name": "Field Kit", "output": 1, "ingredients": { "Rum": 10, "Gold": 100 }, "craftTime": null }
+    ],
+    "consumables": [
+      { "name": "Small Additional Sails", "output": 1, "ingredients": { "Gold": 40 }, "craftTime": null },
+      { "name": "Large Additional Sails", "output": 1, "ingredients": { "Canvas": 2 }, "craftTime": null },
+      { "name": "Small Plates", "output": 1, "ingredients": { "Iron": 30 }, "craftTime": null },
+      { "name": "Large Plates", "output": 1, "ingredients": { "Battle Mark": 5, "Plate": 1 }, "craftTime": null },
+      { "name": "Smoke Bomb", "output": 1, "ingredients": { "Battle Mark": 10 }, "craftTime": null },
+      { "name": "Smoke Screen", "output": 1, "ingredients": { "Battle Mark": 10, "Iron": 40 }, "craftTime": null },
+      { "name": "Bribery", "output": 1, "ingredients": { "Voodoo Skull": 1 }, "craftTime": null },
+      { "name": "Black Double Powder", "output": 1, "ingredients": { "Gold": 60 }, "craftTime": null },
+      { "name": "Red Double Powder", "output": 1, "ingredients": { "Gold": 60 }, "craftTime": null },
+      { "name": "White Double Powder", "output": 1, "ingredients": { "Gold": 60 }, "craftTime": null },
+      { "name": "Rum Ration", "output": 1, "ingredients": { "Rum": 20 }, "craftTime": null },
+      { "name": "Filling Ration", "output": 1, "ingredients": { "Fish": 20, "Fresh Meat": 40 }, "craftTime": null },
+      { "name": "Phosphorus", "output": 1, "ingredients": { "Battle Mark": 4, "Gold": 150 }, "craftTime": null },
+      { "name": "Powder Charge", "output": 1, "ingredients": { "Battle Mark": 4, "Gold": 150 }, "craftTime": null },
+      { "name": "Poseidon's Hook", "output": 1, "ingredients": { "Voodoo Skull": 1, "Gold": 5000 }, "craftTime": null },
+      { "name": "Blue Signal Flare", "output": 1, "ingredients": { "Gold": 130 }, "craftTime": null },
+      { "name": "Red Signal Flare", "output": 1, "ingredients": { "Gold": 200 }, "craftTime": null },
+      { "name": "Yellow Signal Flare", "output": 1, "ingredients": { "Battle Mark": 10 }, "craftTime": null },
+      { "name": "Horn", "output": 1, "ingredients": { "Voodoo Skull": 1 }, "craftTime": null }
+    ],
+    "variable": [
+      { "name": "Iron (from Volcanic Ore)", "output": "9–16.9", "ingredients": { "Volcanic Ore": 1, "Coal": 1 }, "craftTime": null },
+      { "name": "Copper (from Antiquities)", "output": "0.7–1.3", "ingredients": { "Antiquities": 1, "Coal": 1 }, "craftTime": null }
+    ]
+  }
+}

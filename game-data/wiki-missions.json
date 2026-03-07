@@ -1,0 +1,134 @@
+[
+  {
+    "gameId": "map_passing1",
+    "name": "Pirate Raid",
+    "description": "A small military patrol, the only hope against a pirate raid on a remote trade route, barely manages its combat mission. Defend the law and destroy all enemies.",
+    "maxShipRank": "5-7",
+    "scrollsCost": 14,
+    "marksBonus": 20,
+    "skullsBonus": 1,
+    "mode": "HasAllies",
+    "playersCount": 1
+  },
+  {
+    "gameId": "map_passing2",
+    "name": "Governor's Escort",
+    "description": "You are tasked with transporting the new governor to Bridgetown. Midway, you fall into an ambush. Fulfill your duty to the end: protect the governor and crush the enemy.",
+    "maxShipRank": "4-6",
+    "scrollsCost": 24,
+    "marksBonus": 30,
+    "skullsBonus": 1,
+    "mode": "HasAlliesShouldProtect",
+    "playersCount": 1
+  },
+  {
+    "gameId": "map_passing3",
+    "name": "Baptism by Fire",
+    "description": "The Order of the New Ark invites you to join the ranks of the 'chosen.' To earn the title of a knight in the Order, you must endure the crucible of combat against numerous foes. The mission requires more than mere survival; you must also protect as many of your fellow Order ships as possible - your future comrades in arms.",
+    "maxShipRank": "3-5",
+    "scrollsCost": 29,
+    "marksBonus": 40,
+    "skullsBonus": 1,
+    "mode": "HasAllies",
+    "playersCount": 1
+  },
+  {
+    "gameId": "map_passing4",
+    "name": "Northern Relic",
+    "description": "Beyond the howling wind and the noise of waves crashing against icebergs, unknown ships guard burials near the glacier. According to one legend, colorful islands existed here before the Cataclysm. The first ice cutter settlements reportedly uncovered a dreadful mystery, after which they were destroyed and buried.",
+    "maxShipRank": "1-3",
+    "scrollsCost": 30,
+    "marksBonus": 50,
+    "skullsBonus": 2,
+    "mode": "HasAllies",
+    "playersCount": 1
+  },
+  {
+    "gameId": "map_passing6",
+    "name": "Blood Moon",
+    "description": "The Imperial fleet conducts a traditional battle on the Blood Moon. Young lieutenants face their trial by combat. Achieve victory over the \"blacks\" and disrupt their examination.",
+    "maxShipRank": "1-4",
+    "scrollsCost": 30,
+    "marksBonus": 50,
+    "skullsBonus": 2,
+    "mode": "Default",
+    "playersCount": 2
+  },
+  {
+    "gameId": "map_passing5",
+    "name": "Rise of the Longhorn",
+    "description": "The most renowned and heavily guarded route in the Endless Sea leads directly to buried treasures. Daily, various captains try to lead their crew to the end, but few return...",
+    "maxShipRank": "2-4",
+    "scrollsCost": 30,
+    "marksBonus": 60,
+    "skullsBonus": 5,
+    "mode": "Default",
+    "playersCount": 2
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "maxShipRank": "1-5",
+    "scrollsCost": 21,
+    "marksBonus": 0,
+    "skullsBonus": 0,
+    "mode": "Default",
+    "playersCount": 1
+  },
+  {
+    "gameId": "removed",
+    "name": "removed",
+    "description": "",
+    "maxShipRank": "1-5",
+    "scrollsCost": 21,
+    "marksBonus": 0,
+    "skullsBonus": 0,
+    "mode": "Default",
+    "playersCount": 1
+  },
+  {
+    "gameId": "map_passing9",
+    "name": "Espanola Raid",
+    "description": "After the Cataclysm, a certain group of people renounced society and established a settlement. Their intentions are far from noble - they consider all common people unworthy and, reportedly, are preparing a series of attacks in the Archipelago.",
+    "maxShipRank": "2-4",
+    "scrollsCost": 25,
+    "marksBonus": 50,
+    "skullsBonus": 4,
+    "mode": "Default",
+    "playersCount": 2
+  },
+  {
+    "gameId": "map_passing10",
+    "name": "Order Settlement Raid",
+    "description": "According to found records, the \"Order of the New Ark\" received technology from the empire that could create a ship capable of navigating through the storms of the Endless Sea. Whether this is true remains to be discovered...",
+    "maxShipRank": "3-5",
+    "scrollsCost": 25,
+    "marksBonus": 60,
+    "skullsBonus": 4,
+    "mode": "Default",
+    "playersCount": 3
+  },
+  {
+    "gameId": "map_passing11",
+    "name": "Black Horizon",
+    "description": "The leader of the \"black pirates\" vanished after the reconstruction of Tortuga, along with his entire personal fleet, which was enhanced with the latest technologies. Whose side he is on now is unknown, but coordinates are available for those who wish to search for him.",
+    "maxShipRank": "3-5",
+    "scrollsCost": 30,
+    "marksBonus": 70,
+    "skullsBonus": 4,
+    "mode": "Default",
+    "playersCount": 4
+  },
+  {
+    "gameId": "map_passing12",
+    "name": "Far North",
+    "description": "You found a map that leads around an iceberg to its top. Although you found no burials here, smoke is visible ahead...",
+    "maxShipRank": "1-4",
+    "scrollsCost": 30,
+    "marksBonus": 70,
+    "skullsBonus": 4,
+    "mode": "Default",
+    "playersCount": 4
+  }
+]

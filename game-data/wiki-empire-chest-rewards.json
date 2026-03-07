@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFile": "Common.Game/EmpireChestRewards.cs"
+  },
+  "notes": "Organized by probability groups. Final weights determined by ShopChestApplyHelper.ComposeByProbabilityGroup().",
+  "probabilityGroups": [
+    {
+      "groupWeight": 0.5,
+      "tier": 3,
+      "rewards": [
+        { "reward": "Random ship from IDs 72, 73, 74, 75 (Early Access Ships)", "rareDisplay": true, "assurance": { "openCount": 8, "guaranteeAt": 100 } }
+      ]
+    },
+    {
+      "groupWeight": 1.0,
+      "tier": 3,
+      "rewards": [
+        { "reward": "Random unique hull paint (IDs: 454,455,449,448,428,425,409,451,432,450,408,427,407,426,397)", "assurance": { "openCount": 3, "guaranteeAt": 75 } }
+      ]
+    },
+    {
+      "groupWeight": 1.5,
+      "tier": 3,
+      "rewards": [
+        { "reward": "Random unique sail design (IDs: 459,460,406,219,453,431,399,398,400,411)", "assurance": { "openCount": 4, "guaranteeAt": 50 }, "flags": { "FirstOpenChestCategory": true } }
+      ]
+    },
+    {
+      "groupWeight": 2.0,
+      "tier": 3,
+      "rewards": [
+        { "reward": "Random unique flag (IDs: 456,457,458,405,419,452,403,430,401,410)", "flags": { "FirstOpenChestCategory": true } }
+      ]
+    },
+    {
+      "groupWeight": 20.0,
+      "tier": 2,
+      "rewards": [
+        { "reward": "150,000 Gold" },
+        { "reward": "+200 Marks", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "+30 Escudo", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "+20 Voodoo Skulls", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "+8 Imperial Legend currency", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "5000x Saxon ammo", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "3500x Heavy ammo", "flags": { "FirstOpenChestCategory": true } },
+        { "reward": "+1 Pearl" }
+      ]
+    },
+    {
+      "groupWeight": 10.0,
+      "tier": 1,
+      "rewards": [
+        { "reward": "3x Powder Kegs (type 5)" },
+        { "reward": "50x Ammo type 16" }
+      ]
+    },
+    {
+      "groupWeight": 25.0,
+      "tier": 1,
+      "rewards": [
+        { "reward": "5x Powerup 16 (shadow2)" },
+        { "reward": "35x Powerup 3 (mendkit_debris)" },
+        { "reward": "8x Powerup 14 (shield2)" },
+        { "reward": "40x Powerup 2 (mendkit3)" },
+        { "reward": "120x Powerup 12 (rope2)" }
+      ]
+    },
+    {
+      "groupWeight": 40.0,
+      "tier": 1,
+      "rewards": [
+        { "reward": "+250 Provisions/Rations" },
+        { "reward": "+250 Sailcloth" },
+        { "reward": "+70 Planks" },
+        { "reward": "+50 Stone Blocks" },
+        { "reward": "+45 Iron Bars" },
+        { "reward": "+2500 Iron Ingots" },
+        { "reward": "+1000 Fruits" }
+      ]
+    }
+  ]
+}

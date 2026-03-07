@@ -1,0 +1,295 @@
+[
+  {
+    "name": "Firestorm",
+    "class": "Frigate",
+    "rate": 2,
+    "category": "Fast-moving",
+    "nation": "Imperial",
+    "description": "With a fearsome appearance, powerful armament, a strong hull, and a large cargo hold, the \"Firestorm\" became a legendary Imperial ship. The first \"Firestorms\" were captured and studied after Longhorn's victory over the Immortal Admirals.",
+    "stats": {
+      "durability": 2600,
+      "speed": 8.7,
+      "maneuverability": 85,
+      "broadsideArmor": 4.2,
+      "hold": 20000,
+      "crew": 170,
+      "hullDimensions": "46x8",
+      "displacement": "3150t",
+      "heavyWeapons": "12-28-1",
+      "swivelGuns": 10,
+      "specialWeapon": 1,
+      "integrity": 8
+    },
+    "cost": {
+      "type": "coins",
+      "amount": 2570
+    },
+    "extras": ["Basic weapons included", "Dock in the port"],
+    "discrepancies": []
+  },
+  {
+    "name": "Prins Willem",
+    "class": "Galleon",
+    "rate": 3,
+    "category": "Transport",
+    "nation": "Netherlands",
+    "legendOfTheAgeOfSail": true,
+    "description": "A 17th-century East Indiaman, belonging to the Dutch East India Company and the largest ship in their fleet. Her maiden voyage to the Dutch East Indies was in 1651. After several voyages, she sank near Madagascar in 1662. Fortunately, her blueprints are still in the hands of local shipwrights.",
+    "stats": {
+      "durability": 2440,
+      "speed": 8.5,
+      "maneuverability": 78,
+      "broadsideArmor": 4.8,
+      "hold": 45000,
+      "crew": 170,
+      "hullDimensions": "53x11",
+      "displacement": "3150t",
+      "mediumWeapons": "6-26-4",
+      "swivelGuns": 8,
+      "integrity": 8,
+      "spacesForUpgrades": 1
+    },
+    "cost": {
+      "type": "coins",
+      "amount": 1600
+    },
+    "extras": ["Basic weapons included", "Dock in the port"],
+    "discrepancies": [
+      "JSON has nation as 'Netherlands' but screenshot shows Spanish flag icon — likely the flag shown is the port's nation, not the ship's. Netherlands attribution appears correct from the description (Dutch East India Company)."
+    ]
+  },
+  {
+    "name": "Red Arrow",
+    "class": "Galleon",
+    "rate": 4,
+    "category": "Combat",
+    "nation": null,
+    "description": "First built by Maurice \"Shipwright\" Fleury in the port of Aruba. After falling victim to a plot by the Levenhook brothers, Maurice was tragically executed. In his memory, a skeleton holding a chalice - a symbol of grief - and a spear - a symbol of revenge - adorns the bow.",
+    "stats": {
+      "durability": 1940,
+      "speed": 8.6,
+      "maneuverability": 95,
+      "broadsideArmor": 5.5,
+      "hold": 18000,
+      "crew": 140,
+      "hullDimensions": "38x6",
+      "displacement": "2700t",
+      "mediumWeapons": "0-15-6",
+      "swivelGuns": 8,
+      "mortars": "caliber up to 7 in., 1",
+      "integrity": 8
+    },
+    "cost": {
+      "type": "coins",
+      "amount": 1190
+    },
+    "extras": ["Basic weapons included", "Dock in the port"],
+    "discrepancies": [
+      "JSON shows category as 'Combat' but screenshot shows 'Battle' — likely a translation variant, same meaning."
+    ]
+  },
+  {
+    "name": "Eagle",
+    "class": "Flute",
+    "rate": 5,
+    "category": "Siege",
+    "nation": "England",
+    "description": "Originally a Dutch fluyt, it underwent significant redesign after arriving at the Archipelago. Many mistake it for the lightly armed \"Friede\", only to realize their error too late as mortar shells tear through their decks.",
+    "stats": {
+      "durability": 1600,
+      "speed": 9.4,
+      "maneuverability": 110,
+      "broadsideArmor": 2.2,
+      "hold": 14000,
+      "crew": 84,
+      "hullDimensions": "27x6",
+      "displacement": "1575t",
+      "lightWeapons": "4-8-0",
+      "swivelGuns": 6,
+      "mortars": "caliber up to 7 in., 2",
+      "integrity": 8
+    },
+    "cost": {
+      "type": "coins",
+      "amount": 580
+    },
+    "extras": ["Basic weapons included", "Dock in the port"],
+    "discrepancies": []
+  },
+  {
+    "name": "Savannah",
+    "class": "Frigate",
+    "rate": 6,
+    "category": "Fast-moving",
+    "nation": null,
+    "description": "A paddle-wheeled steamboat, found frozen in the northern ice of the Archipelago. No survivors were found, leaving the mystery of how it ended up there. Despite its revolutionary design, the inefficient, massive steam engine requires large amounts of coal, leaving the ship poorly armed and unsuited to harsh conditions.",
+    "stats": {
+      "durability": 1000,
+      "speed": 10.8,
+      "maneuverability": 92,
+      "broadsideArmor": 3,
+      "hold": 10000,
+      "crew": 94,
+      "hullDimensions": "39x4",
+      "displacement": "1575t",
+      "lightWeapons": "0-9-0",
+      "swivelGuns": 6
+    },
+    "cost": {
+      "type": "battleMarks",
+      "amount": 750
+    },
+    "unlockRequirement": "Lucky One: Chests opened 1",
+    "discrepancies": [
+      "JSON is missing integrity field — screenshot also does not show integrity, so both consistent (no integrity stat for this ship)."
+    ]
+  },
+  {
+    "name": "Huracan",
+    "class": "Ship of the Line",
+    "rate": 1,
+    "category": "Imperial",
+    "nation": "Imperial",
+    "description": "Named after the Mayan god of wind - Huracan, this giant is a symbol of the Inhagger Empire's military might, a native civilization whose technological level rivals and often surpasses that of the Archipelago states.",
+    "stats": {
+      "durability": 8000,
+      "speed": 5.5,
+      "maneuverability": 42,
+      "broadsideArmor": 11.5,
+      "hold": 54000,
+      "crew": 288,
+      "hullDimensions": "90x18",
+      "displacement": "5625t",
+      "heavyWeapons": "0-85-2",
+      "swivelGuns": 18,
+      "specialWeapon": 2,
+      "integrity": 7,
+      "spacesForUpgrades": 1,
+      "mobileOutpost": true,
+      "imperialNPSDoNotAttack": true
+    },
+    "cost": {
+      "type": "imperial",
+      "note": "40 imperial tokens + 10000 gold"
+    },
+    "unlockRequirement": "Find a port with an Imperial shipwright",
+    "discrepancies": []
+  },
+  {
+    "name": "Octopus",
+    "class": "Ship",
+    "rate": 2,
+    "category": "Imperial",
+    "nation": "Imperial",
+    "description": "A warship built by the Empire's shipwrights. It was first captured during a battle with the Cult of the Witnesses of the Apocalypse. According to the dying captain of the cultists, these ships were found drifting crewless somewhere in the Endless Sea.",
+    "stats": {
+      "durability": 2760,
+      "speed": 8.3,
+      "maneuverability": 75,
+      "broadsideArmor": 6.8,
+      "hold": 23000,
+      "crew": 176,
+      "hullDimensions": "48x7",
+      "displacement": "3375t",
+      "heavyWeapons": "8-37-0",
+      "swivelGuns": 10,
+      "integrity": 4,
+      "uniqueWindRose": true,
+      "invisibility": true,
+      "imperialNPSDoNotAttack": true
+    },
+    "cost": {
+      "type": "imperial",
+      "note": "20 imperial tokens + 5000 gold"
+    },
+    "unlockRequirement": "Find a port with an Imperial shipwright",
+    "discrepancies": []
+  },
+  {
+    "name": "Deadfish",
+    "class": "Imperial",
+    "rate": 3,
+    "category": "Imperial",
+    "nation": "Imperial",
+    "description": "These Imperial ships were first deployed at the Battle of Devios as part of the \"Iron Squadron.\" Slow, heavily armored, and equipped with powerful weaponry, they withstood the brunt of the Espanyola fleet. The battle site became known as Lagrimas de Viudas - Widows' Tears Sea.",
+    "stats": {
+      "durability": 3000,
+      "speed": 6.6,
+      "maneuverability": 66,
+      "broadsideArmor": 8,
+      "hold": 27000,
+      "crew": 166,
+      "hullDimensions": "47x11",
+      "displacement": "4950t",
+      "mediumWeapons": "8-25-1",
+      "swivelGuns": 10,
+      "specialWeapon": 1,
+      "integrity": 7,
+      "imperialNPSDoNotAttack": true
+    },
+    "cost": {
+      "type": "imperial",
+      "note": "5 imperial tokens + 400 gold"
+    },
+    "unlockRequirement": "Find a port with an Imperial shipwright",
+    "discrepancies": [
+      "JSON has class as 'Imperial' — screenshot shows 'Ship III rate'. The class field may actually be 'Ship' with the 'Imperial' being the category. Needs verification."
+    ]
+  },
+  {
+    "name": "Devourer",
+    "class": "Barque",
+    "rate": 4,
+    "category": "Imperial",
+    "nation": "Imperial",
+    "description": "The \"Devourer\" is an Imperial ship with heavy armament on both the bow and stern. Its thick hull offers excellent protection, while jibs ensure good maneuverability.",
+    "stats": {
+      "durability": 1760,
+      "speed": 7.5,
+      "maneuverability": 110,
+      "broadsideArmor": 5.5,
+      "hold": 17000,
+      "crew": 144,
+      "hullDimensions": "37x7",
+      "displacement": "2610t",
+      "mediumWeapons": "12-11-8",
+      "swivelGuns": 8,
+      "integrity": 6,
+      "imperialNPSDoNotAttack": true
+    },
+    "cost": {
+      "type": "imperial",
+      "note": "1 imperial token + 150 gold"
+    },
+    "unlockRequirement": "Find a port with an Imperial shipwright",
+    "discrepancies": []
+  },
+  {
+    "name": "Black Prince",
+    "class": "Galleon",
+    "rate": 5,
+    "category": "Imperial",
+    "nation": "Imperial",
+    "description": "The combat galleon of the pirate prince Morgan Black, rumored to have been gifted to him by the Empire for his service. It's one of the best-armed ships of its class.",
+    "stats": {
+      "durability": 1700,
+      "speed": 9.9,
+      "maneuverability": 90,
+      "broadsideArmor": 3,
+      "hold": 14500,
+      "crew": 120,
+      "hullDimensions": "37x7",
+      "displacement": "1800t",
+      "lightWeapons": "2-15-2",
+      "swivelGuns": 6,
+      "integrity": 6,
+      "imperialNPSDoNotAttack": true
+    },
+    "cost": {
+      "type": "imperial",
+      "note": "25 + 20 imperial resources"
+    },
+    "unlockRequirement": "Find a port with an Imperial shipwright",
+    "discrepancies": []
+  }
+]

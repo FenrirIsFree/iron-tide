@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "batch": 3,
+    "auditDate": "2026-03-06",
+    "auditor": "subagent",
+    "shipsAudited": 11
+  },
+  "results": [
+    {
+      "name": "San Martin",
+      "driveFileId": "1lvHX7fcMKzYQ3pq5pil0Cy-16xbwSVG_",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "San Martin",
+        "class": "Heavy Galleon",
+        "rate": 5,
+        "category": "Heavy",
+        "nation": "Spain",
+        "legendOfTheAgeOfSail": true,
+        "description": "The flagship of the Duke of Medina Sidonia, commander of the Spanish Armada. First launched in 1580, she played a crucial role in defending the Armada as she sailed through the English Channel. She survived the storm and English cannons to return safely to Spain.",
+        "stats": {
+          "durability": 2140,
+          "speed": 8.5,
+          "maneuverability": 72,
+          "broadsideArmor": 5,
+          "hold": 17500,
+          "crew": 126,
+          "hullDimensions": "40x9",
+          "displacement": "2475t",
+          "lightWeapons": "0-20-0",
+          "swivelGuns": 6,
+          "integrity": 7
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description"],
+      "notes": "All numeric stats match JSON perfectly. Description text not stored in JSON."
+    },
+    {
+      "name": "Phoenix",
+      "driveFileId": "1CVlhjFB4GHAVRESzx4ZARlzT5bIyJGZQ",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Phoenix",
+        "class": "Brig",
+        "rate": 6,
+        "category": "Heavy",
+        "nation": "Russia",
+        "description": "The first two of these ships were spotted near Grey Island, crewed by Russian sailors and officers who fled the Tsar's rule in search of freedom.",
+        "stats": {
+          "durability": 1380,
+          "speed": 8.2,
+          "maneuverability": 75,
+          "broadsideArmor": 4.5,
+          "hold": 12500,
+          "crew": 104,
+          "hullDimensions": "27x6",
+          "displacement": "1440t",
+          "lightWeapons": "0-12-0",
+          "swivelGuns": 6
+        },
+        "cost": {
+          "resource1": 965,
+          "resource2": 29
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description", "integrity (not shown in screenshot either)"],
+      "notes": "All stats match. No integrity shown in screenshot or JSON. Construction costs visible but JSON only has generic note."
+    },
+    {
+      "name": "La Couronne",
+      "driveFileId": "1AHFft_3Io2hs1PGNMS_5LETWtI4jjpIU",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "La Couronne",
+        "class": "Galleon",
+        "rate": 1,
+        "category": "Transport",
+        "nation": "France",
+        "legendOfTheAgeOfSail": true,
+        "description": "The first ship of the line in the French Navy, 'La Couronne' was laid down at the La Roche Bernard shipyard in 1629 at the personal initiative of Cardinal Richelieu. It served as the flagship during the Battle of Guetaria, where the new French fleet defeated a Spanish squadron.",
+        "stats": {
+          "durability": 3500,
+          "speed": 7.6,
+          "maneuverability": 72,
+          "broadsideArmor": 5.5,
+          "hold": 50000,
+          "crew": 188,
+          "hullDimensions": "61x9",
+          "displacement": "4500t",
+          "heavyWeapons": "8-28-0",
+          "swivelGuns": 14,
+          "integrity": 7,
+          "spacesForUpgrades": 1
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description"],
+      "notes": "All stats match JSON perfectly. Costs hidden in screenshot (previous ship not researched)."
+    },
+    {
+      "name": "La Sirene",
+      "driveFileId": "1EEJgNeQv_bG6GLNSq736I6xRup7sJ2mU",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "La Sirene",
+        "class": "Ship",
+        "rate": 2,
+        "category": "Transport",
+        "nation": "France",
+        "description": "A French ship of the line from the late 17th century. Launched in 1691, she participated in the War of the League of Augsburg. During the War of Spanish Succession (1701-1713), she was captured by the English and destroyed in Vigo Bay in 1702.",
+        "stats": {
+          "durability": 2660,
+          "speed": 8.1,
+          "maneuverability": 80,
+          "broadsideArmor": 4.4,
+          "hold": 43000,
+          "crew": 170,
+          "hullDimensions": "50x9",
+          "displacement": "3600t",
+          "heavyWeapons": "4-32-0",
+          "swivelGuns": 8,
+          "integrity": 7
+        },
+        "cost": {
+          "resource1": 160,
+          "resource2": 567,
+          "resource3": 297,
+          "resource4": 524,
+          "resource5": 65
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description", "detailed cost breakdown"],
+      "notes": "All stats match. JSON has generic cost note; screenshot shows 5 resource costs (160, 567, 297, 524, 65)."
+    },
+    {
+      "name": "Mordaunt",
+      "driveFileId": "1YhhtFWVRqma0tAz_vRidDSziukwUW4KT",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Mordaunt",
+        "class": "Ship of the Line",
+        "rate": 3,
+        "category": "Transport",
+        "nation": "Britain",
+        "description": "Constructed in 1681 with private funds by Charles Mordaunt, Earl of Peterborough, and named after him. The ship was too heavily armed for a private vessel, leading to its confiscation in 1683. After legal battles, it was later purchased by the Royal Navy.",
+        "stats": {
+          "durability": 2380,
+          "speed": 8.7,
+          "maneuverability": 87,
+          "broadsideArmor": 3.9,
+          "hold": 34000,
+          "crew": 148,
+          "hullDimensions": "41x7",
+          "displacement": "2475t",
+          "mediumWeapons": "4-26-0",
+          "swivelGuns": 6,
+          "integrity": 7
+        },
+        "cost": {
+          "resource1": 120,
+          "resource2": 292,
+          "resource3": 135,
+          "resource4": 329,
+          "resource5": 31
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description", "detailed cost breakdown"],
+      "notes": "All stats match. JSON has generic cost note; screenshot shows 5 resource costs."
+    },
+    {
+      "name": "Falmouth",
+      "driveFileId": "1gfxT8vuX-K3-erYPmFIJ9k9oqgaLJwd9",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Falmouth",
+        "class": "Ship",
+        "rate": 4,
+        "category": "Transport",
+        "description": "Originally designed for trade expeditions and provisioning cities with its massive hold, this ship can also hold its own in combat. It gained an unfortunate reputation as a slave transporter during the height of the Atlantic slave trade.",
+        "stats": {
+          "durability": 1920,
+          "speed": 9.4,
+          "maneuverability": 96,
+          "broadsideArmor": 3.3,
+          "hold": 27500,
+          "crew": 126,
+          "hullDimensions": "44x8",
+          "displacement": "3060t",
+          "mediumWeapons": "4-18-0",
+          "swivelGuns": 8,
+          "mortarModification": true,
+          "integrity": 7
+        },
+        "cost": {
+          "resource1": 60,
+          "resource2": 178,
+          "resource3": 59,
+          "resource4": 227
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description", "nation (not visible in screenshot either)", "detailed cost breakdown"],
+      "notes": "All stats match. Mortar modification confirmed. 4 resource costs visible (60, 178, 59, 227)."
+    },
+    {
+      "name": "Russia",
+      "driveFileId": "13flPLbti1FkcDaK_S1VaVgruo5UQA3gP",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Russia",
+        "class": "Frigate",
+        "rate": 5,
+        "category": "Transport",
+        "nation": "Russia",
+        "description": "A sail frigate of the Russian Empire, laid down in 1724 during the reign of Peter the Great by master shipbuilder Richard Browne. Launched in 1728, it participated in two wars, and in 1734, during the blockade of Danzig, it captured the French 30-gun frigate 'Le Brillant'.",
+        "stats": {
+          "durability": 1600,
+          "speed": 9.9,
+          "maneuverability": 91,
+          "broadsideArmor": 2.7,
+          "hold": 22000,
+          "crew": 108,
+          "hullDimensions": "37x7",
+          "displacement": "2070t",
+          "lightWeapons": "2-14-0",
+          "swivelGuns": 6,
+          "integrity": 7
+        },
+        "cost": {
+          "resource1": 25,
+          "resource2": 65,
+          "resource3": 18,
+          "resource4": 89
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description", "detailed cost breakdown"],
+      "notes": "All stats match. Screenshot shows -20% crafting discount (port of your faction). 4 resource costs visible."
+    },
+    {
+      "name": "Mercury",
+      "driveFileId": "1YyGez1YSXN5R6JfzYDglPXmSp9K_J-C_",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Mercury",
+        "class": "Galleon",
+        "rate": 6,
+        "category": "Transport",
+        "description": "These clumsy but reliable ships sailed between the New and Old Worlds for over 200 years, transporting goods and treasures, including gold from South America to Spain. They became prime targets for pirates, leading to a long conflict between brigantines and galleons.",
+        "stats": {
+          "durability": 1040,
+          "speed": 9.2,
+          "maneuverability": 89,
+          "broadsideArmor": 2.5,
+          "hold": 15500,
+          "crew": 88,
+          "hullDimensions": "32x8",
+          "displacement": "2025t",
+          "lightWeapons": "2-9-0",
+          "swivelGuns": 6
+        },
+        "cost": {
+          "resource1": 535,
+          "resource2": 27
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description", "integrity (not shown in screenshot either)"],
+      "notes": "All stats match. No integrity visible in screenshot, none in JSON. 2 resource costs visible."
+    },
+    {
+      "name": "Friede",
+      "driveFileId": "1c43DKNzetKUKf5sifhsNU3SvG8jRRv_q",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Friede",
+        "class": "Flute",
+        "rate": 7,
+        "category": "Transport",
+        "nation": "Netherlands",
+        "description": "A revolutionary Dutch ship from the late 16th century, designed to optimize transoceanic voyages by maximizing hold capacity and crew efficiency. The fluyt gave Dutch traders a competitive edge, helping the Netherlands rise to naval power.",
+        "stats": {
+          "durability": 750,
+          "speed": 8.8,
+          "maneuverability": 86,
+          "broadsideArmor": 2.2,
+          "hold": 11000,
+          "crew": 72,
+          "hullDimensions": "33x6",
+          "displacement": "1350t",
+          "lightWeapons": "2-7-0",
+          "swivelGuns": 6,
+          "mortarModification": true
+        },
+        "cost": {
+          "resource1": 850,
+          "resource2": 150,
+          "resource3": 30
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description"],
+      "notes": "All stats match. Mortar modification confirmed. No integrity in screenshot or JSON."
+    },
+    {
+      "name": "Surprise",
+      "driveFileId": "11morsu_eZQoQsMLRmvkjrxInDjHks9eJ",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Surprise",
+        "class": "Corvette",
+        "rate": 4,
+        "category": "Fast-moving",
+        "nation": "Britain",
+        "description": "The French ship Unite was captured and commissioned into the Royal Navy as HMS Surprise. She was considered a hybrid between a corvette and a frigate. The Surprise became famous in 1799 when she recaptured HMS Hermione from the French.",
+        "stats": {
+          "durability": 1680,
+          "speed": 10.5,
+          "maneuverability": 105,
+          "broadsideArmor": 2.4,
+          "hold": 13000,
+          "crew": 112,
+          "hullDimensions": "45x5",
+          "displacement": "2025t",
+          "mediumWeapons": "0-18-2",
+          "swivelGuns": 8,
+          "integrity": 7
+        },
+        "cost": {
+          "wood": 130,
+          "cloth": 151,
+          "fittings": 54,
+          "coins": 351
+        }
+      },
+      "discrepancies": [],
+      "missingFromJson": ["description"],
+      "notes": "All stats match. Cost values match JSON (wood 130, cloth 151, fittings 54, coins 351)."
+    },
+    {
+      "name": "Pickle",
+      "driveFileId": "1AgYUPEnGtffh1U3i2ZN0aEK8U9dck9fn",
+      "status": "MATCH",
+      "screenshotData": {
+        "name": "Pickle",
+        "class": "Schooner",
+        "rate": 7,
+        "category": "Fast-moving",
+        "nation": "Britain",
+        "description": "A classic topsail schooner with light armament. It became famous for delivering the news of Nelson's victory at the Battle of Trafalgar to England. Why is it that new captains arrive in the Archipelago aboard this schooner?...",
+        "stats": {
+          "durability": 700,
+          "speed": 9.2,
+          "maneuverability": 94,
+          "broadsideArmor": 1.6,
+          "hold": 6000,
+          "crew": 66,
+          "hullDimensions": "24x4",
+          "displacement": "900t",
+          "lightWeapons": "0-6-0",
+          "swivelGuns": 4
+        },
+        "cost": {
+          "wood": 775,
+          "cloth": 135,
+          "fittings": 30
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "rate",
+          "jsonValue": "VII",
+          "screenshotValue": 7,
+          "note": "JSON uses string 'VII' instead of numeric 7 — inconsistent with other entries that use numeric rates"
+        }
+      ],
+      "missingFromJson": ["description"],
+      "notes": "All numeric stats match. Rate stored as string 'VII' in JSON vs numeric in other entries. Cost values match (wood 775, cloth 135, fittings 30)."
+    }
+  ],
+  "summary": {
+    "totalShips": 11,
+    "allStatsMatch": 11,
+    "withDiscrepancies": 1,
+    "discrepancySummary": [
+      "Pickle: rate stored as string 'VII' instead of numeric 7 (inconsistent formatting)"
+    ],
+    "globalMissingFields": [
+      "description — Not stored for any ship in JSON. All 11 screenshots contain ship description text.",
+      "Detailed construction costs — Most ships in this batch have generic 'Multiple resources required' notes instead of actual resource amounts visible in screenshots."
+    ],
+    "consistencyNotes": [
+      "Pickle and several fast-moving ships use string rates ('VII', 'VI', etc.) while other ships use numeric rates — formatting inconsistency in JSON",
+      "Some ships show 'integrity' in screenshot but not in JSON (Phoenix, Mercury) — these appear to genuinely not have integrity displayed",
+      "Falmouth and Friede both confirm mortarModification property matches JSON"
+    ]
+  }
+}

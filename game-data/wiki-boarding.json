@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-07",
+    "sourceFiles": [
+      "Common.Game/BoardingCombatInstance.cs",
+      "Common.Game/BoardingCombatChanges.cs",
+      "Common.Game/WosbBoarding.cs"
+    ],
+    "lastUpdated": "2026-03-07"
+  },
+  "constants": {
+    "AllCrewCanBeDestroyed": false,
+    "PreparationTimeMs": 4100.0,
+    "DurationMs": 30000.0,
+    "DurationMinMs": 7000.0,
+    "UpdateIntervalMs": 3000.0,
+    "TimeForActionBoardingMs": 14000.0,
+    "PreponderanceToWin": 1.5
+  },
+  "protectionDamageModifiers": {
+    "UnitInProtectionDamageIn": 0.2,
+    "UnitInProtectionDamageOut": 0.2,
+    "notes": "Units in protection take only 20% damage and deal only 20% damage. Can be overridden via Editor_ fields."
+  },
+  "visualGroupSize": {
+    "formula": "16 + maxCrewPlaces / 15",
+    "notes": "Crew is divided into visual groups of this size for the boarding combat UI. Each group tracks its own health and unit composition."
+  },
+  "npcTargeting": {
+    "description": "NPCs randomly target 1-3 enemy visual groups (shuffled). They select min(random(1,4), enemyGroups.size) groups.",
+    "playerInitialTargeting": "Players target up to 3 enemy groups. If BoardingStartsWithNoTarget, targets 1 random group."
+  },
+  "musketeersDefence": {
+    "description": "If ship has BoardingStartsMusketeersDefence, musketeer groups are auto-set to protection at start. Limited by BoardingProtectedGroupsLimit."
+  },
+  "xpBonus": {
+    "formula": "MaxHP / 10"
+  },
+  "stealCannonChance": {
+    "minimumRank": 15,
+    "formula": "Lerp(25%, 10%, Saturate((shipRank - 1) / 6))",
+    "notes": "Higher ship rank = lower steal chance"
+  },
+  "boardingAvailability": {
+    "disallowConditions": [
+      "Target is player with certain game rights restrictions",
+      "Target player is static with boarding restriction",
+      "NPC ship ID == 1",
+      "Ships not parallel (dot product checks > 0.8 / < 0.8)",
+      "Distance exceeds BoardingFailureDistance",
+      "Either ship is static, flooding, or burning",
+      "Target HP > 50% MaxHP (for players, unless testing mode)"
+    ]
+  }
+}

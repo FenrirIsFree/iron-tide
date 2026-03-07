@@ -1,0 +1,894 @@
+{
+  "meta": {
+    "game": "World of Sea Battle",
+    "source": "UnitsInfo_j.json + local_en.fx + decompiled source",
+    "date": "2026-03-07",
+    "totalUnits": 55,
+    "basicCrew": 4,
+    "specialCrew": 51
+  },
+  "crew": [
+    {
+      "name": "Sailor",
+      "gameId": "unit_sailor_1",
+      "role": "Ship operations",
+      "description": "Sailors operate the ship. Insufficient sailors slow reloading and maneuvering. Extra sailors provide crew reserve.",
+      "stats": {
+        "cargoCapacity": 30,
+        "vitality": 380,
+        "boardingDamage": 15
+      },
+      "cost": 15
+    },
+    {
+      "name": "Musketeer",
+      "gameId": "unit_musketeer_1",
+      "role": "Ranged boarding support",
+      "description": "Participates in boarding actions, providing long-range fire support.",
+      "stats": {
+        "cargoCapacity": 20,
+        "vitality": 170,
+        "boardingDamage": 50
+      },
+      "cost": 30
+    },
+    {
+      "name": "Soldier",
+      "gameId": "unit_boarding_1",
+      "role": "Versatile boarding fighter",
+      "description": "Participates in boarding, a versatile fighter.",
+      "stats": {
+        "cargoCapacity": 40,
+        "vitality": 320,
+        "boardingDamage": 30
+      },
+      "cost": 30
+    },
+    {
+      "name": "Mercenary",
+      "gameId": "unit_boarding_2",
+      "role": "Resilient boarding fighter",
+      "description": "Participates in boarding actions, known for enhanced resilience and high cargo capacity.",
+      "stats": {
+        "cargoCapacity": 90,
+        "vitality": 450,
+        "boardingDamage": 20
+      },
+      "cost": 30
+    }
+  ],
+  "specialCrew": [
+    {
+      "name": "Midshipman",
+      "gameId": "unit_special_2",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BBoardingStartsMusketeersDefence",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Boarding starts with musketeers defence active"
+    },
+    {
+      "name": "Watchman",
+      "gameId": "unit_special_3",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PBigFireFightingSpeed",
+          "value": "+40",
+          "scalingType": null
+        }
+      ],
+      "ability": "Fire extinguishing speed ++40%"
+    },
+    {
+      "name": "Junior provost",
+      "gameId": "unit_special_3b",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PReduceBigFireDamage",
+          "value": "+50",
+          "scalingType": null
+        }
+      ],
+      "ability": "Reduce big fire damage ++50%"
+    },
+    {
+      "name": "Provost",
+      "gameId": "unit_special_3c",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMicrofireFightingSpeed",
+          "value": "+25",
+          "scalingType": null
+        }
+      ],
+      "ability": "Microfire fighting speed ++25%"
+    },
+    {
+      "name": "Surgeon",
+      "gameId": "unit_special_4",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BHealUnitsWhenMending",
+          "value": "+1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Heal random units when mending"
+    },
+    {
+      "name": "Sub-lieutenant",
+      "gameId": "unit_special_5",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PPowerupItemsReload",
+          "value": "+0.1",
+          "scalingType": "perSailor"
+        }
+      ],
+      "ability": "Bonus per sailor: Items reload ++0.1%",
+      "scalingType": "perSailor"
+    },
+    {
+      "name": "Naval Cadet",
+      "gameId": "unit_special_5b",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PBuckshotDamage",
+          "value": "33",
+          "scalingType": null
+        }
+      ],
+      "ability": "Buckshot damage +33%"
+    },
+    {
+      "name": "Commodore",
+      "gameId": "unit_special_7",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PPlayerSightFocusSpeedAdd",
+          "value": "20",
+          "scalingType": null
+        }
+      ],
+      "ability": "Sight focus speed +20%"
+    },
+    {
+      "name": "Commander",
+      "gameId": "unit_special_7b",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PChangeCBallsSpeed",
+          "value": "0.2",
+          "scalingType": "perSailor"
+        }
+      ],
+      "ability": "Bonus per sailor: Ammo switch speed +0.2%",
+      "scalingType": "perSailor"
+    },
+    {
+      "name": "Gunner",
+      "gameId": "unit_special_8",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PCannonsReload",
+          "value": "+4",
+          "scalingType": null
+        }
+      ],
+      "ability": "Cannon reload speed ++4%"
+    },
+    {
+      "name": "Armorer",
+      "gameId": "unit_special_8b",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PReloadingAfterSingleShot",
+          "value": "+20",
+          "scalingType": null
+        }
+      ],
+      "ability": "Reload bonus after single shot ++20%"
+    },
+    {
+      "name": "Master Gunner",
+      "gameId": "unit_special_8c",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PCannonsReloadWithLowHp",
+          "value": "0.1",
+          "scalingType": "perSailor"
+        }
+      ],
+      "ability": "Bonus per sailor: Cannon reload at low HP +0.1%",
+      "scalingType": "perSailor"
+    },
+    {
+      "name": "Artillerist",
+      "gameId": "unit_special_9",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMortarAimSpeed",
+          "value": "25",
+          "scalingType": null
+        }
+      ],
+      "ability": "Mortar aim speed +25%"
+    },
+    {
+      "name": "Bombardier",
+      "gameId": "unit_special_9b",
+      "faction": "Military",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMortarReloadWhenCannonsAreReloaded",
+          "value": "10",
+          "scalingType": null
+        }
+      ],
+      "ability": "Mortar reload when cannons loaded +10%"
+    },
+    {
+      "name": "Pilot",
+      "gameId": "unit_special_10",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PDecreaseSpeedLossMarchingMode",
+          "value": "25",
+          "scalingType": null
+        }
+      ],
+      "ability": "Speed loss when turning in cruise -25%"
+    },
+    {
+      "name": "First Mate",
+      "gameId": "unit_special_10b",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PChangeShipSpeedBonus",
+          "value": "0.2",
+          "scalingType": "perSailor"
+        }
+      ],
+      "ability": "Bonus per sailor: Speed change +0.2%",
+      "scalingType": "perSailor"
+    },
+    {
+      "name": "Sail Handler",
+      "gameId": "unit_special_11",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PSpeed",
+          "value": "+4",
+          "scalingType": null
+        }
+      ],
+      "ability": "Speed ++4%"
+    },
+    {
+      "name": "Helmsman",
+      "gameId": "unit_special_11b",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "MMobility0And1",
+          "value": "4",
+          "scalingType": null
+        }
+      ],
+      "ability": "Mobility at low speeds +4"
+    },
+    {
+      "name": "Steersman",
+      "gameId": "unit_special_11c",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "MMobilityWithLowHp",
+          "value": "6",
+          "scalingType": null
+        }
+      ],
+      "ability": "Mobility bonus at low HP +6"
+    },
+    {
+      "name": "Rigger",
+      "gameId": "unit_special_12",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PSailAutoRepairSpeed",
+          "value": "25",
+          "scalingType": null
+        }
+      ],
+      "ability": "Sail auto-repair speed +25%"
+    },
+    {
+      "name": "Carpenter",
+      "gameId": "unit_special_13",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMendingEffectivity",
+          "value": "0.3",
+          "scalingType": "perSailor"
+        }
+      ],
+      "ability": "Bonus per sailor: Mending effectiveness +0.3%",
+      "scalingType": "perSailor"
+    },
+    {
+      "name": "Ship's Carpenter",
+      "gameId": "unit_special_13b",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BRepairAllowOnSpeed2",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Repairs available on second speed"
+    },
+    {
+      "name": "Purser",
+      "gameId": "unit_special_14",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "POverweightFineReduce",
+          "value": "30",
+          "scalingType": null
+        }
+      ],
+      "ability": "Overweight fine reduced by 30%"
+    },
+    {
+      "name": "Butcher",
+      "gameId": "unit_special_15",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BAllowConsumeAnimalsToFood",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Can consume animals as food"
+    },
+    {
+      "name": "Cook",
+      "gameId": "unit_special_16",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PFoodValueBonus",
+          "value": "33",
+          "scalingType": null
+        }
+      ],
+      "ability": "Food value bonus +33%"
+    },
+    {
+      "name": "Clerk",
+      "gameId": "unit_special_17",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PReduceCannonsWear",
+          "value": "40",
+          "scalingType": null
+        }
+      ],
+      "ability": "Cannon wear reduced by 40%"
+    },
+    {
+      "name": "Fisherman",
+      "gameId": "unit_special_18",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PFishingProfit",
+          "value": "+0.5",
+          "scalingType": "perBoarder"
+        }
+      ],
+      "ability": "Bonus per boarder: Fishing profit ++0.5%",
+      "scalingType": "perBoarder"
+    },
+    {
+      "name": "Boatman",
+      "gameId": "unit_special_18b",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PFishingSpeed",
+          "value": "+1",
+          "scalingType": "perSailor"
+        }
+      ],
+      "ability": "Bonus per sailor: Fishing speed ++1%",
+      "scalingType": "perSailor"
+    },
+    {
+      "name": "Corsair",
+      "gameId": "unit_special_19",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PXpBonus",
+          "value": "6",
+          "scalingType": null
+        }
+      ],
+      "ability": "XP bonus +6%"
+    },
+    {
+      "name": "Scribe",
+      "gameId": "unit_special_19b",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PXpBonusUpgradesAndBranch",
+          "value": "20",
+          "scalingType": null
+        }
+      ],
+      "ability": "XP from upgrades and branches +20%"
+    },
+    {
+      "name": "Mastman",
+      "gameId": "unit_special_20",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PVisibilityZone",
+          "value": "10",
+          "scalingType": null
+        }
+      ],
+      "ability": "Visibility range +10%"
+    },
+    {
+      "name": "Navigator",
+      "gameId": "unit_special_20b",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMinimapLootVisibleDistance",
+          "value": "40",
+          "scalingType": null
+        }
+      ],
+      "ability": "Minimap loot visible distance +40%"
+    },
+    {
+      "name": "Quartermaster",
+      "gameId": "unit_special_21",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BBoardingStartsWithNoTarget",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Boarding starts without selecting target"
+    },
+    {
+      "name": "Harpooner",
+      "gameId": "unit_special_22",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PBoardingHookReload",
+          "value": "60",
+          "scalingType": null
+        }
+      ],
+      "ability": "Boarding hook reload +60%"
+    },
+    {
+      "name": "Skipper",
+      "gameId": "unit_special_23",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMoreWeightAtBoarding",
+          "value": "0.5",
+          "scalingType": "perBoarder"
+        }
+      ],
+      "ability": "Bonus per boarder: Boarding weight +0.5%",
+      "scalingType": "perBoarder"
+    },
+    {
+      "name": "Swimmer",
+      "gameId": "unit_special_23b",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PLootInteropDistance",
+          "value": "40",
+          "scalingType": null
+        }
+      ],
+      "ability": "Loot pickup distance +40%"
+    },
+    {
+      "name": "Daredevil",
+      "gameId": "unit_special_25",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BCrewWillntDeadInSea",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Crew will not die in sorties at sea"
+    },
+    {
+      "name": "Doctor",
+      "gameId": "unit_special_26",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PBoardingCrewProtectionCballs",
+          "value": "40",
+          "scalingType": null
+        }
+      ],
+      "ability": "Boarding crew survivability during shelling +40%"
+    },
+    {
+      "name": "Senior doctor",
+      "gameId": "unit_special_26b",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PRestoreUnitsAfterBoarding",
+          "value": "20",
+          "scalingType": null
+        }
+      ],
+      "ability": "Restore units after boarding +20%"
+    },
+    {
+      "name": "Recruiter",
+      "gameId": "unit_special_27",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "MMoreExtraCrew",
+          "value": "10",
+          "scalingType": null
+        }
+      ],
+      "ability": "Extra crew limit +10"
+    },
+    {
+      "name": "Powder Monkey",
+      "gameId": "unit_special_28",
+      "faction": "Pirates",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PFalkonetReloadBoost",
+          "value": "+20",
+          "scalingType": null
+        }
+      ],
+      "ability": "Falconet reload speed ++20%"
+    },
+    {
+      "name": "Lifeguard",
+      "gameId": "unit_special_29",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PSpecialUnitImperialUniqueChance",
+          "value": "15",
+          "scalingType": null
+        }
+      ],
+      "ability": "Chance to find unique crew from Empire ships +15%"
+    },
+    {
+      "name": "Explorer",
+      "gameId": "unit_special_29b",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PSpecialUnitChanseAtSea",
+          "value": "5",
+          "scalingType": null
+        }
+      ],
+      "ability": "Chance to find special crew at sea +5%"
+    },
+    {
+      "name": "Seafarer",
+      "gameId": "unit_special_29c",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PSpecialUnitGameModeUniqueChance",
+          "value": "50",
+          "scalingType": null
+        }
+      ],
+      "ability": "Chance to find unique crew in game modes +50%"
+    },
+    {
+      "name": "Scout",
+      "gameId": "unit_special_30",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMoreBondmanFromBoarding",
+          "value": "30",
+          "scalingType": null
+        }
+      ],
+      "ability": "More captives from boarding +30%"
+    },
+    {
+      "name": "Lucky One",
+      "gameId": "unit_special_31",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMoreLootAtSea",
+          "value": "20",
+          "scalingType": null
+        }
+      ],
+      "ability": "More loot found at sea +20%"
+    },
+    {
+      "name": "Seeker",
+      "gameId": "unit_special_31b",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PMoreRareItemsAtSea",
+          "value": "10",
+          "scalingType": null
+        }
+      ],
+      "ability": "Chance to find rare items at sea +10%"
+    },
+    {
+      "name": "Veteran",
+      "gameId": "unit_special_33",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BExtraItemHasNoTimeout",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Consumables picked up at sea have no timer until port"
+    },
+    {
+      "name": "Old Hand",
+      "gameId": "unit_special_33b",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "PRestoreHealthWhenGettingDebris",
+          "value": "5",
+          "scalingType": null
+        }
+      ],
+      "ability": "Restore durability when examining wreckage +5%"
+    },
+    {
+      "name": "Ginger",
+      "gameId": "unit_special_34",
+      "faction": "Adventurers",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BSpecialUnitEndConflicts",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Reduces faction conflicts between crew"
+    },
+    {
+      "name": "Sailing Master",
+      "gameId": "unit_special_35",
+      "faction": "Sailors",
+      "boarding": false,
+      "cost": 1000,
+      "costMarks": 0,
+      "effects": [
+        {
+          "key": "BDisableWindCourseChange",
+          "value": "1",
+          "scalingType": null
+        }
+      ],
+      "ability": "Wind no longer changes ship course"
+    }
+  ],
+  "notes": [
+    "All special crew do not participate in boarding",
+    "Four factions: Adventurers, Pirates, Military (Combats), Sailors",
+    "Pirates and Military conflict with each other when mixed",
+    "Some crew have per-sailor or per-boarder scaling bonuses",
+    "Ginger (unit_special_34) reduces faction conflicts between crew",
+    "Total: 4 basic + 51 special = 55 crew types"
+  ]
+}
