@@ -144,7 +144,8 @@ function applyMod(base: number | null, value: string): number | null {
 type CruiseSpeedInfo = {
   maxCruiseBonus: number       // display knt
   totalMaxSpeed: number        // display knt (combat + cruise)
-  rampRate: 'fast' | 'medium' | 'slow'
+  rampRate: number             // units per tick
+  timeToCruise: number         // seconds to reach full cruise speed
   sailMarchingBonus: number    // % from sails
 }
 
@@ -176,11 +177,12 @@ function computeCruiseSpeed(ship: Ship, modStats: ModifiedStats, equippedUpgrade
   // Total max = combat + cruise (cruise is also internal, display = /2)
   const totalMaxSpeed = combatSpeedKnt + maxCruiseKnt
 
-  // Ramp rate based on: 0.45 * max(1, (baseSpeed + 15) / 30)
+  // Ramp rate: 0.45 * max(1, (baseSpeed + 15) / 30) * (1 + SpeedChangeBonus)
   const rampFactor = 0.45 * Math.max(1, (internalSpeed + 15) / 30)
-  const rampRate: 'fast' | 'medium' | 'slow' = rampFactor >= 0.6 ? 'fast' : rampFactor >= 0.45 ? 'medium' : 'slow'
+  // Time to cruise = max cruise internal value / ramp rate (in seconds)
+  const timeToCruise = rampFactor > 0 ? maxCruiseInternal / rampFactor : 0
 
-  return { maxCruiseBonus: maxCruiseKnt, totalMaxSpeed, rampRate, sailMarchingBonus: sailMarchingBonus * 100 }
+  return { maxCruiseBonus: maxCruiseKnt, totalMaxSpeed, rampRate: rampFactor, timeToCruise, sailMarchingBonus: sailMarchingBonus * 100 }
 }
 
 function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): ModifiedStats {
@@ -525,10 +527,10 @@ function ExpandedShipView({
           <span className="text-foreground">
             Total Max: <strong className="text-accent">{cruiseInfo.totalMaxSpeed.toFixed(1)}</strong> knt
           </span>
-          <span className="text-foreground-secondary">
-            Ramp: <span className={cruiseInfo.rampRate === 'fast' ? 'text-green-400' : cruiseInfo.rampRate === 'medium' ? 'text-yellow-400' : 'text-red-400'}>
-              {cruiseInfo.rampRate === 'fast' ? '🚀 Fast' : cruiseInfo.rampRate === 'medium' ? '⏱️ Medium' : '🐌 Slow'}
-            </span>
+          <span className="text-foreground">
+            Time to Cruise: <strong className={cruiseInfo.timeToCruise <= 11 ? 'text-green-400' : cruiseInfo.timeToCruise <= 13 ? 'text-yellow-400' : 'text-red-400'}>
+              {cruiseInfo.timeToCruise.toFixed(1)}s
+            </strong>
           </span>
         </div>
       )}
