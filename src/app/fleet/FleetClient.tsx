@@ -67,6 +67,16 @@ interface Props {
 
 const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
 
+// Special crew effects that modify displayed ship stats
+// key = crew name, value = { gameKey, value, scalingType }
+const CREW_STAT_EFFECTS: Record<string, { gameKey: string; value: number; scalingType?: 'perSailor' | 'perBoarder' }> = {
+  'Sail Handler': { gameKey: 'pspeed', value: 4 },
+  'Helmsman': { gameKey: 'mmobility', value: 4 },
+  'Steersman': { gameKey: 'mmobility', value: 6 },
+  'Recruiter': { gameKey: 'mextraplaces', value: 10 },
+  'First Mate': { gameKey: 'pspeed', value: 0.2, scalingType: 'perSailor' },
+}
+
 type SortKey = 'name' | 'rate' | 'class' | 'type' | 'date'
 
 // Map DB role values to display class names
@@ -185,7 +195,7 @@ function computeCruiseSpeed(ship: Ship, modStats: ModifiedStats, equippedUpgrade
   return { maxCruiseBonus: maxCruiseKnt, totalMaxSpeed, rampRate: rampFactor, timeToCruise, sailMarchingBonus: sailMarchingBonus * 100 }
 }
 
-function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): ModifiedStats {
+function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[], equippedCrew?: LoadoutCrew[]): ModifiedStats {
   const stats: ModifiedStats = {
     hp: ship.hp,
     speed: ship.speed,
@@ -256,6 +266,34 @@ function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): M
           const { amount } = parseModValue(val)
           stats.broadsideSlots = Math.max(0, stats.broadsideSlots + amount)
         }
+      }
+    }
+  }
+
+  // Apply special crew stat effects
+  if (equippedCrew) {
+    const sailorCount = equippedCrew
+      .filter(c => c.crewType.name === 'Sailor')
+      .reduce((sum, c) => sum + c.quantity, 0)
+
+    for (const lc of equippedCrew) {
+      const effect = CREW_STAT_EFFECTS[lc.crewType.name]
+      if (!effect) continue
+
+      let amount = effect.value
+      if (effect.scalingType === 'perSailor') {
+        amount = amount * sailorCount
+      }
+
+      if (effect.gameKey === 'pspeed') {
+        // Percentage speed bonus
+        if (stats.speed != null) stats.speed = stats.speed * (1 + amount / 100)
+      } else if (effect.gameKey === 'mmobility') {
+        // Flat maneuverability bonus
+        if (stats.maneuverability != null) stats.maneuverability = stats.maneuverability + amount
+      } else if (effect.gameKey === 'mextraplaces') {
+        // Flat crew capacity bonus
+        if (stats.crewCapacity != null) stats.crewCapacity = stats.crewCapacity + amount
       }
     }
   }
@@ -497,7 +535,7 @@ function ExpandedShipView({
   const currentLoadout = loadouts.find(l => l.id === activeTab) || loadouts[0]
 
   // Compute modified stats based on current loadout's upgrades
-  const modStats = currentLoadout ? computeModifiedStats(ship, currentLoadout.upgrades) : null
+  const modStats = currentLoadout ? computeModifiedStats(ship, currentLoadout.upgrades, currentLoadout.crew) : null
   const cruiseInfo = currentLoadout && modStats ? computeCruiseSpeed(ship, modStats, currentLoadout.upgrades) : null
 
   return (
