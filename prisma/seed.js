@@ -164,19 +164,30 @@ async function seedCurrencies() {
 async function seedCrewTypes() {
   const data = loadJson('crew-stats.json');
   let count = 0;
+  // Basic crew (Sailor, Musketeer, Soldier, Mercenary)
   for (const c of data.crew) {
     await prisma.crewType.upsert({
       where: { name: c.name },
-      update: { description: c.description || null },
-      create: { name: c.name, description: c.description || null },
+      update: { description: c.description || null, gameId: c.gameId || null },
+      create: { name: c.name, description: c.description || null, gameId: c.gameId || null },
     });
     count++;
   }
+  // Special crew (51 types across 4 factions)
   for (const c of data.specialCrew) {
     await prisma.crewType.upsert({
       where: { name: c.name },
-      update: { description: c.ability || null, faction: c.faction || null },
-      create: { name: c.name, description: c.ability || null, faction: c.faction || null },
+      update: {
+        description: c.ability || null,
+        faction: c.faction || null,
+        gameId: c.gameId || null,
+      },
+      create: {
+        name: c.name,
+        description: c.ability || null,
+        faction: c.faction || null,
+        gameId: c.gameId || null,
+      },
     });
     count++;
   }

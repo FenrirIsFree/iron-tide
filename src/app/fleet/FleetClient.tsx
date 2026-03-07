@@ -137,6 +137,52 @@ function applyMod(base: number | null, value: string): number | null {
   return base + amount
 }
 
+// ============================================================
+// CRUISE SPEED CALCULATOR
+// ============================================================
+
+type CruiseSpeedInfo = {
+  maxCruiseBonus: number       // display knt
+  totalMaxSpeed: number        // display knt (combat + cruise)
+  rampRate: 'fast' | 'medium' | 'slow'
+  sailMarchingBonus: number    // % from sails
+}
+
+function computeCruiseSpeed(ship: Ship, modStats: ModifiedStats, equippedUpgrades: LoadoutUpgrade[]): CruiseSpeedInfo {
+  // Get combat speed in display knt
+  const combatSpeedKnt = modStats.speed ?? ship.speed ?? 0
+  // Internal speed = 2x display knt
+  const internalSpeed = combatSpeedKnt * 2
+
+  // Check equipped sails for PMarchingSpeed
+  let sailMarchingBonus = 0
+  for (const lu of equippedUpgrades) {
+    const effects = (lu.upgrade as Upgrade).effects
+    if (!effects) continue
+    for (const e of effects) {
+      const gk = (e.gameKey || '').toLowerCase()
+      if (gk === 'pmarchingspeed') {
+        const val = e.rankedValues ? getRankedValue(e, ship.rate) : e.value
+        sailMarchingBonus += parseFloat(val.replace(/[+%]/g, '')) / 100
+      }
+    }
+  }
+
+  // MarchingModeSpeed = 7.0 * (1 + sailBonus) * (2 - max(1, (Speed + 35) / 50))
+  const cruiseFactor = 2 - Math.max(1, (internalSpeed + 35) / 50)
+  const maxCruiseInternal = 7.0 * (1 + sailMarchingBonus) * cruiseFactor
+  const maxCruiseKnt = Math.max(0, maxCruiseInternal / 2)
+
+  // Total max = combat + cruise (cruise is also internal, display = /2)
+  const totalMaxSpeed = combatSpeedKnt + maxCruiseKnt
+
+  // Ramp rate based on: 0.45 * max(1, (baseSpeed + 15) / 30)
+  const rampFactor = 0.45 * Math.max(1, (internalSpeed + 15) / 30)
+  const rampRate: 'fast' | 'medium' | 'slow' = rampFactor >= 0.6 ? 'fast' : rampFactor >= 0.45 ? 'medium' : 'slow'
+
+  return { maxCruiseBonus: maxCruiseKnt, totalMaxSpeed, rampRate, sailMarchingBonus: sailMarchingBonus * 100 }
+}
+
 function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[]): ModifiedStats {
   const stats: ModifiedStats = {
     hp: ship.hp,
@@ -450,6 +496,7 @@ function ExpandedShipView({
 
   // Compute modified stats based on current loadout's upgrades
   const modStats = currentLoadout ? computeModifiedStats(ship, currentLoadout.upgrades) : null
+  const cruiseInfo = currentLoadout && modStats ? computeCruiseSpeed(ship, modStats, currentLoadout.upgrades) : null
 
   return (
     <div className="border-t border-surface-border p-5 space-y-5">
@@ -463,6 +510,28 @@ function ExpandedShipView({
         <StatBadge label="Cargo" base={ship.cargoHold} modified={modStats?.cargoHold} />
         <StatBadge label="Durability" base={ship.integrity} modified={modStats?.integrity} />
       </div>
+
+      {/* Cruise Speed Section */}
+      {cruiseInfo && cruiseInfo.maxCruiseBonus > 0 && (
+        <div className="bg-background/50 rounded-lg p-3 flex flex-wrap gap-4 items-center text-xs">
+          <span className="text-accent font-medium">⛵ Cruise Speed</span>
+          <span className="text-foreground">
+            Combat: <strong>{(modStats?.speed ?? ship.speed ?? 0).toFixed(1)}</strong> knt
+          </span>
+          <span className="text-foreground">
+            Cruise Bonus: <strong className="text-green-400">+{cruiseInfo.maxCruiseBonus.toFixed(1)}</strong> knt
+            {cruiseInfo.sailMarchingBonus > 0 && <span className="text-foreground-secondary ml-1">(sail +{cruiseInfo.sailMarchingBonus.toFixed(0)}%)</span>}
+          </span>
+          <span className="text-foreground">
+            Total Max: <strong className="text-accent">{cruiseInfo.totalMaxSpeed.toFixed(1)}</strong> knt
+          </span>
+          <span className="text-foreground-secondary">
+            Ramp: <span className={cruiseInfo.rampRate === 'fast' ? 'text-green-400' : cruiseInfo.rampRate === 'medium' ? 'text-yellow-400' : 'text-red-400'}>
+              {cruiseInfo.rampRate === 'fast' ? '🚀 Fast' : cruiseInfo.rampRate === 'medium' ? '⏱️ Medium' : '🐌 Slow'}
+            </span>
+          </span>
+        </div>
+      )}
 
       {/* Weapon Slots Summary — uses modified values */}
       <div className="flex flex-wrap gap-2 text-xs">
