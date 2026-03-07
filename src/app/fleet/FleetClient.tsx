@@ -35,7 +35,7 @@ type Weapon = {
   caliber: number | null; placementRestriction: string | null
   isPremium: boolean; description: string | null
 }
-type Upgrade = { id: string; name: string; slot: string | null; effect: string | null }
+type Upgrade = { id: string; name: string; slot: string | null; effect: string | null; category?: string | null; slotType?: string | null }
 type Ammo = { id: string; name: string; effect: string | null }
 type Crew = { id: string; name: string; description: string | null }
 
@@ -379,6 +379,7 @@ function ExpandedShipView({
             startTransition={startTransition}
           />
           <UpgradesPanel
+            ship={ship}
             loadout={currentLoadout}
             upgradeCatalog={upgradeCatalog}
             startTransition={startTransition}
@@ -445,17 +446,32 @@ function getCompatibleWeapons(weaponCatalog: Weapon[], ship: Ship, position: str
   })
 }
 
+// Ships that can get mortar slots via the "Mortar Modification Available" upgrade
+const MORTAR_MOD_SHIPS: Record<string, number> = {
+  'Falmouth': 7,
+  'Black Wind': 7,
+  'Friede': 6,
+}
+
 function WeaponPositionsPanel({ ship, loadout, weaponCatalog, startTransition }: {
   ship: Ship; loadout: Loadout; weaponCatalog: Weapon[]
   startTransition: (fn: () => void) => void
 }) {
+  // Check if Mortar Modification Available upgrade is equipped
+  const hasMortarMod = loadout.upgrades.some(u => u.upgrade.name === 'Mortar Modification Available')
+  const mortarModCaliber = MORTAR_MOD_SHIPS[ship.name]
+
+  // Effective mortar slots: built-in + from upgrade
+  const effectiveMortarSlots = ship.mortarSlots + (hasMortarMod && mortarModCaliber ? 1 : 0)
+  const effectiveMortarCaliber = ship.mortarMaxCaliber || (hasMortarMod ? mortarModCaliber : null)
+
   const positions: { key: string; label: string; slots: number; note?: string }[] = [
     { key: 'stern', label: 'Stern', slots: ship.sternSlots },
     { key: 'port', label: 'Port', slots: ship.broadsideSlots },
     { key: 'starboard', label: 'Starboard', slots: ship.broadsideSlots },
     { key: 'bow', label: 'Bow', slots: ship.bowSlots },
   ]
-  if (ship.mortarSlots > 0) positions.push({ key: 'mortar', label: 'Mortar', slots: ship.mortarSlots, note: `max ${ship.mortarMaxCaliber}"` })
+  if (effectiveMortarSlots > 0) positions.push({ key: 'mortar', label: 'Mortar', slots: effectiveMortarSlots, note: `max ${effectiveMortarCaliber}"` })
   if (ship.specialWeaponSlots > 0) positions.push({ key: 'special', label: 'Special', slots: ship.specialWeaponSlots })
 
   return (
@@ -571,7 +587,7 @@ function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
   startTransition: (fn: () => void) => void
 }) {
   const [selectedCrewId, setSelectedCrewId] = useState('')
-  const basicCrewTypes = crewCatalog.filter(c => BASIC_CREW.includes(c.name))
+  const basicCrewTypes = BASIC_CREW.map(name => crewCatalog.find(c => c.name === name)).filter((c): c is Crew => c != null)
   const specialCrewTypes = crewCatalog.filter(c => !BASIC_CREW.includes(c.name))
 
   const crewCapacity = ship.crewCapacity || 0
@@ -586,7 +602,8 @@ function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
   const hasMilitary = specialCrew.some(c => MILITARY_CREW.includes(c.crewType.name))
   const factionConflict = hasPirate && hasMilitary
 
-  // Available special crew (no duplicates, max 3)
+  // Available special crew (no duplicates, max 4 — default 3, +1 with "Right Hand" skill)
+  const MAX_SPECIAL_CREW = 4
   const equippedSpecialIds = new Set(specialCrew.map(c => c.crewType.id))
   const availableSpecial = specialCrewTypes.filter(c => !equippedSpecialIds.has(c.id))
 
@@ -596,7 +613,7 @@ function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
   }
 
   function handleAddSpecialCrew() {
-    if (!selectedCrewId || specialCrew.length >= 3) return
+    if (!selectedCrewId || specialCrew.length >= MAX_SPECIAL_CREW) return
     startTransition(async () => {
       await addCrewToLoadout(loadout.id, selectedCrewId, 1)
       setSelectedCrewId('')
@@ -655,7 +672,7 @@ function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs">
           <span className="text-foreground-secondary">Special Crew</span>
-          <span className="text-foreground-secondary">{specialCrew.length} / 3</span>
+          <span className="text-foreground-secondary">{specialCrew.length} / {MAX_SPECIAL_CREW}</span>
         </div>
 
         {factionConflict && (
@@ -671,7 +688,7 @@ function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
           </div>
         ))}
 
-        {specialCrew.length < 3 && (
+        {specialCrew.length < MAX_SPECIAL_CREW && (
           <div className="flex gap-1 items-center">
             <select value={selectedCrewId} onChange={e => setSelectedCrewId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
               <option value="">Add special crew…</option>
@@ -691,33 +708,85 @@ function CrewPanel({ ship, loadout, crewCatalog, startTransition }: {
 // UPGRADES PANEL
 // ============================================================
 
-function UpgradesPanel({ loadout, upgradeCatalog, startTransition }: {
-  loadout: Loadout; upgradeCatalog: Upgrade[]
+function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
+  ship: Ship; loadout: Loadout; upgradeCatalog: Upgrade[]
   startTransition: (fn: () => void) => void
 }) {
-  const [selectedId, setSelectedId] = useState('')
+  const [selectedSailId, setSelectedSailId] = useState('')
+  const [selectedUpgradeId, setSelectedUpgradeId] = useState('')
+
+  // Split catalog into sails vs regular upgrades (DB slot field = category from game data)
+  const isSail = (u: Upgrade) => u.slot === 'Sails' || u.slot === 'sail' || u.name.toLowerCase().includes('sails')
+  const sailCatalog = upgradeCatalog.filter(isSail)
+  const regularCatalog = upgradeCatalog.filter(u => {
+    if (isSail(u)) return false
+    // Only show Mortar Modification for compatible ships
+    if (u.name === 'Mortar Modification Available') {
+      return ship.name in MORTAR_MOD_SHIPS
+    }
+    return true
+  })
+
+  // Split equipped upgrades
+  const equippedSails = loadout.upgrades.filter(u => isSail(u.upgrade as Upgrade))
+  const equippedRegular = loadout.upgrades.filter(u => !isSail(u.upgrade as Upgrade))
 
   return (
-    <div className="bg-background/50 rounded-lg p-4">
-      <h4 className="text-sm font-medium text-accent mb-3">🛡️ Upgrades</h4>
-      {loadout.upgrades.length > 0 && (
-        <div className="flex flex-wrap gap-1 mb-2">
-          {loadout.upgrades.map(u => (
-            <span key={u.id} className="inline-flex items-center gap-1 text-xs bg-surface rounded px-2 py-0.5 text-foreground">
-              {u.upgrade.name}
-              <button onClick={() => startTransition(() => removeUpgradeFromLoadout(u.id))} className="text-foreground-secondary hover:text-primary ml-1">×</button>
-            </span>
-          ))}
+    <div className="space-y-4">
+      {/* Sails Section */}
+      <div className="bg-background/50 rounded-lg p-4">
+        <h4 className="text-sm font-medium text-accent mb-3">⛵ Sails</h4>
+        {equippedSails.length > 0 && (
+          <div className="flex flex-wrap gap-1 mb-2">
+            {equippedSails.map(u => (
+              <span key={u.id} className="inline-flex items-center gap-1 text-xs bg-surface rounded px-2 py-0.5 text-foreground">
+                {u.upgrade.name}
+                <button onClick={() => startTransition(() => removeUpgradeFromLoadout(u.id))} className="text-foreground-secondary hover:text-primary ml-1">×</button>
+              </span>
+            ))}
+          </div>
+        )}
+        {equippedSails.length === 0 && (
+          <div className="flex gap-1 items-center">
+            <select value={selectedSailId} onChange={e => setSelectedSailId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
+              <option value="">Select sail…</option>
+              {sailCatalog.map(u => (
+                <option key={u.id} value={u.id}>{u.name}</option>
+              ))}
+            </select>
+            <button onClick={() => { if (selectedSailId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedSailId)); setSelectedSailId('') } }} disabled={!selectedSailId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
+          </div>
+        )}
+        <p className="text-xs text-foreground-secondary/60 mt-1">1 sail slot per ship</p>
+      </div>
+
+      {/* Upgrades Section */}
+      <div className="bg-background/50 rounded-lg p-4">
+        <h4 className="text-sm font-medium text-accent mb-3">🛡️ Upgrades</h4>
+        {equippedRegular.length > 0 && (
+          <div className="flex flex-wrap gap-1 mb-2">
+            {equippedRegular.map(u => {
+              const isMortarMod = u.upgrade.name === 'Mortar Modification Available'
+              return (
+                <span key={u.id} className={`inline-flex items-center gap-1 text-xs rounded px-2 py-0.5 ${isMortarMod ? 'bg-accent/20 text-accent' : 'bg-surface text-foreground'}`}>
+                  {u.upgrade.name}
+                  {isMortarMod && <span>🎯</span>}
+                  <button onClick={() => startTransition(() => removeUpgradeFromLoadout(u.id))} className="text-foreground-secondary hover:text-primary ml-1">×</button>
+                </span>
+              )
+            })}
+          </div>
+        )}
+        <div className="flex gap-1 items-center">
+          <select value={selectedUpgradeId} onChange={e => setSelectedUpgradeId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
+            <option value="">Add upgrade…</option>
+            {regularCatalog.map(u => (
+              <option key={u.id} value={u.id}>{u.name}{u.slot ? ` (${u.slot})` : ''}</option>
+            ))}
+          </select>
+          <button onClick={() => { if (selectedUpgradeId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedUpgradeId)); setSelectedUpgradeId('') } }} disabled={!selectedUpgradeId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
         </div>
-      )}
-      <div className="flex gap-1 items-center">
-        <select value={selectedId} onChange={e => setSelectedId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
-          <option value="">Add upgrade…</option>
-          {upgradeCatalog.map(u => (
-            <option key={u.id} value={u.id}>{u.name}{u.slot ? ` (${u.slot})` : ''}</option>
-          ))}
-        </select>
-        <button onClick={() => { if (selectedId) { startTransition(() => addUpgradeToLoadout(loadout.id, selectedId)); setSelectedId('') } }} disabled={!selectedId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
+        <p className="text-xs text-foreground-secondary/60 mt-1">4 upgrade slots + 1 special add-on slot (late-game)</p>
       </div>
     </div>
   )
