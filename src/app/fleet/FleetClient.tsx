@@ -38,7 +38,7 @@ type Weapon = {
 type UpgradeEffect = { stat: string; value: string }
 type Upgrade = { id: string; name: string; slot: string | null; effect: string | null; effects: UpgradeEffect[] | null }
 type Ammo = { id: string; name: string; effect: string | null }
-type Crew = { id: string; name: string; description: string | null }
+type Crew = { id: string; name: string; description: string | null; faction: string | null }
 
 type LoadoutWeapon = { id: string; weapon: Weapon; position: string; quantity: number }
 type LoadoutUpgrade = { id: string; upgrade: Upgrade }
@@ -786,8 +786,8 @@ function CrewPanel({ ship, loadout, crewCatalog, modStats, startTransition }: {
   const totalBasic = basicCrew.reduce((sum, c) => sum + c.quantity, 0)
 
   // Faction conflict detection
-  const hasPirate = specialCrew.some(c => PIRATE_CREW.includes(c.crewType.name))
-  const hasMilitary = specialCrew.some(c => MILITARY_CREW.includes(c.crewType.name))
+  const hasPirate = specialCrew.some(c => (c.crewType as Crew).faction === 'Pirates')
+  const hasMilitary = specialCrew.some(c => (c.crewType as Crew).faction === 'Military')
   const factionConflict = hasPirate && hasMilitary
 
   // Available special crew (no duplicates, max 4 — default 3, +1 with "Right Hand" skill)
@@ -869,9 +869,12 @@ function CrewPanel({ ship, loadout, crewCatalog, modStats, startTransition }: {
         )}
 
         {specialCrew.map(c => (
-          <div key={c.id} className="flex items-center justify-between text-xs">
-            <span className="text-foreground">{c.crewType.name}</span>
-            <button onClick={() => startTransition(() => removeCrewFromLoadout(c.id))} className="text-foreground-secondary hover:text-primary">×</button>
+          <div key={c.id} className="flex items-center justify-between gap-2 text-xs">
+            <div className="flex-1 min-w-0">
+              <span className="text-foreground font-medium">{c.crewType.name}</span>
+              {c.crewType.description && <span className="text-foreground-secondary/70 ml-1">— {c.crewType.description}</span>}
+            </div>
+            <button onClick={() => startTransition(() => removeCrewFromLoadout(c.id))} className="text-foreground-secondary hover:text-primary shrink-0">×</button>
           </div>
         ))}
 
@@ -879,9 +882,17 @@ function CrewPanel({ ship, loadout, crewCatalog, modStats, startTransition }: {
           <div className="flex gap-1 items-center">
             <select value={selectedCrewId} onChange={e => setSelectedCrewId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
               <option value="">Add special crew…</option>
-              {availableSpecial.map(c => (
-                <option key={c.id} value={c.id}>{c.name}</option>
-              ))}
+              {['Adventurers', 'Pirates', 'Sailors', 'Military'].map(faction => {
+                const group = availableSpecial.filter(c => c.faction === faction)
+                if (group.length === 0) return null
+                return (
+                  <optgroup key={faction} label={`── ${faction} ──`}>
+                    {group.map(c => (
+                      <option key={c.id} value={c.id}>{c.name} — {c.description || ''}</option>
+                    ))}
+                  </optgroup>
+                )
+              })}
             </select>
             <button onClick={handleAddSpecialCrew} disabled={!selectedCrewId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
           </div>

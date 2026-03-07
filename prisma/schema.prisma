@@ -194,6 +194,7 @@ model CrewType {
   id          String   @id @default(uuid())
   name        String   @unique
   description String?
+  faction     String?  // "Adventurers", "Pirates", "Sailors", "Military", or null for basic crew
 
   loadoutCrew LoadoutCrew[]
 

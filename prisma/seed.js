@@ -175,8 +175,8 @@ async function seedCrewTypes() {
   for (const c of data.specialCrew) {
     await prisma.crewType.upsert({
       where: { name: c.name },
-      update: { description: c.ability || null },
-      create: { name: c.name, description: c.ability || null },
+      update: { description: c.ability || null, faction: c.faction || null },
+      create: { name: c.name, description: c.ability || null, faction: c.faction || null },
     });
     count++;
   }
