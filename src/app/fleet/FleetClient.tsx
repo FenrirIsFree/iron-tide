@@ -794,7 +794,10 @@ function CrewPanel({ ship, loadout, crewCatalog, modStats, startTransition }: {
                     crewId={existing.id}
                     value={existing.quantity}
                     min={isSailor ? minSailors : 0}
-                    max={crewCapacity - totalBasic + existing.quantity}
+                    max={Math.min(
+                      isSailor ? crewCapacity : Math.floor(crewCapacity / 2),
+                      crewCapacity - totalBasic + existing.quantity
+                    )}
                     onSave={(val) => startTransition(() => updateCrewQuantity(existing.id, val))}
                   />
                   <button onClick={() => startTransition(() => removeCrewFromLoadout(existing.id))} className="text-foreground-secondary hover:text-primary">×</button>
