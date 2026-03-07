@@ -334,9 +334,17 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
                 <label className="block text-sm text-foreground-secondary mb-1">Ship</label>
                 <select value={selectedShipId} onChange={e => setSelectedShipId(e.target.value)} className="w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-foreground focus:border-accent focus:outline-none">
                   <option value="">Select a ship…</option>
-                  {shipCatalog.map(s => (
-                    <option key={s.id} value={s.id}>{s.name} (Rate {s.rate}, {displayClass(s.role)}, {s.shipClass})</option>
-                  ))}
+                  {['Fast-moving', 'Battle', 'Transport', 'Heavy', 'Siege', 'Imperial'].map(role => {
+                    const group = shipCatalog.filter(s => s.role === role)
+                    if (group.length === 0) return null
+                    return (
+                      <optgroup key={role} label={`── ${displayClass(role)} ──`}>
+                        {group.map(s => (
+                          <option key={s.id} value={s.id}>{s.name} (Rate {s.rate}, {s.shipClass})</option>
+                        ))}
+                      </optgroup>
+                    )
+                  })}
                 </select>
               </div>
               <div>
