@@ -74,7 +74,7 @@ const CREW_STAT_EFFECTS: Record<string, { gameKey: string; value: number; scalin
   'Helmsman': { gameKey: 'mmobility', value: 4 },
   'Steersman': { gameKey: 'mmobility', value: 6 },
   'Recruiter': { gameKey: 'mextraplaces', value: 10 },
-  'First Mate': { gameKey: 'pspeed', value: 0.2, scalingType: 'perSailor' },
+  'First Mate': { gameKey: 'pspeedchange', value: 0.2, scalingType: 'perSailor' },
 }
 
 type SortKey = 'name' | 'rate' | 'class' | 'type' | 'date'
@@ -157,9 +157,10 @@ type CruiseSpeedInfo = {
   rampRate: number             // units per tick
   timeToCruise: number         // seconds to reach full cruise speed
   sailMarchingBonus: number    // % from sails
+  speedChangeBonus: number     // % from crew (First Mate)
 }
 
-function computeCruiseSpeed(ship: Ship, modStats: ModifiedStats, equippedUpgrades: LoadoutUpgrade[]): CruiseSpeedInfo {
+function computeCruiseSpeed(ship: Ship, modStats: ModifiedStats, equippedUpgrades: LoadoutUpgrade[], equippedCrew?: LoadoutCrew[]): CruiseSpeedInfo {
   // Get combat speed in display knt
   const combatSpeedKnt = modStats.speed ?? ship.speed ?? 0
   // Internal speed = 2x display knt
@@ -187,12 +188,26 @@ function computeCruiseSpeed(ship: Ship, modStats: ModifiedStats, equippedUpgrade
   // Total max = combat + cruise (cruise is also internal, display = /2)
   const totalMaxSpeed = combatSpeedKnt + maxCruiseKnt
 
+  // Compute SpeedChangeBonus from crew (First Mate: +0.2% per sailor)
+  let speedChangeBonus = 0
+  if (equippedCrew) {
+    const sailorCount = equippedCrew
+      .filter(c => c.crewType.name === 'Sailor')
+      .reduce((sum, c) => sum + c.quantity, 0)
+    for (const lc of equippedCrew) {
+      const effect = CREW_STAT_EFFECTS[lc.crewType.name]
+      if (effect?.gameKey === 'pspeedchange') {
+        speedChangeBonus += (effect.value * (effect.scalingType === 'perSailor' ? sailorCount : 1)) / 100
+      }
+    }
+  }
+
   // Ramp rate: 0.45 * max(1, (baseSpeed + 15) / 30) * (1 + SpeedChangeBonus)
-  const rampFactor = 0.45 * Math.max(1, (internalSpeed + 15) / 30)
+  const rampFactor = 0.45 * Math.max(1, (internalSpeed + 15) / 30) * (1 + speedChangeBonus)
   // Time to cruise = max cruise internal value / ramp rate (in seconds)
   const timeToCruise = rampFactor > 0 ? maxCruiseInternal / rampFactor : 0
 
-  return { maxCruiseBonus: maxCruiseKnt, totalMaxSpeed, rampRate: rampFactor, timeToCruise, sailMarchingBonus: sailMarchingBonus * 100 }
+  return { maxCruiseBonus: maxCruiseKnt, totalMaxSpeed, rampRate: rampFactor, timeToCruise, sailMarchingBonus: sailMarchingBonus * 100, speedChangeBonus: speedChangeBonus * 100 }
 }
 
 function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[], equippedCrew?: LoadoutCrew[]): ModifiedStats {
@@ -536,7 +551,7 @@ function ExpandedShipView({
 
   // Compute modified stats based on current loadout's upgrades
   const modStats = currentLoadout ? computeModifiedStats(ship, currentLoadout.upgrades, currentLoadout.crew) : null
-  const cruiseInfo = currentLoadout && modStats ? computeCruiseSpeed(ship, modStats, currentLoadout.upgrades) : null
+  const cruiseInfo = currentLoadout && modStats ? computeCruiseSpeed(ship, modStats, currentLoadout.upgrades, currentLoadout.crew) : null
 
   return (
     <div className="border-t border-surface-border p-5 space-y-5">
@@ -569,6 +584,7 @@ function ExpandedShipView({
             Time to Cruise: <strong className={cruiseInfo.timeToCruise <= 11 ? 'text-green-400' : cruiseInfo.timeToCruise <= 13 ? 'text-yellow-400' : 'text-red-400'}>
               {cruiseInfo.timeToCruise.toFixed(1)}s
             </strong>
+            {cruiseInfo.speedChangeBonus > 0 && <span className="text-foreground-secondary ml-1">(First Mate +{cruiseInfo.speedChangeBonus.toFixed(1)}%)</span>}
           </span>
         </div>
       )}
