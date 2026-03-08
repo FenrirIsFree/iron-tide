@@ -610,7 +610,17 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                                 <Tag label="Ship Classes" value={npc.shipClasses.map(c => SHIP_CLASS_NAMES[c] ?? c).join(', ')} />
                               ) : null}
                               {npc.namePool ? (
-                                <Tag label="Name Pool" value={npc.namePool.replace(/Names?$/, '').replace(/([A-Z])/g, ' $1').trim()} />
+                                <Tag label="Name Pool" value={
+                                  ({
+                                    pirateNamesShort: 'Pirate (short names)',
+                                    pirateNamesLong: 'Pirate (long names)',
+                                    traderNames: 'Merchant',
+                                    horrorNames: 'Horror / Cult',
+                                    religiousNames: 'Religious / Order',
+                                    ancientNames: 'Ancient Greek',
+                                    legendNames: 'Legendary',
+                                  } as Record<string, string>)[npc.namePool] ?? npc.namePool
+                                } />
                               ) : null}
                               {npc.spawnCount ? (
                                 <Tag label="Spawn Count" value={npc.spawnCount} />
@@ -647,14 +657,15 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                                 <div className="flex flex-wrap gap-2">
                                   {Object.entries(npc.statModifiers).map(([key, val]) => {
                                     const label = key
+                                      .replace(/Multiplier/i, '')
+                                      .replace(/Bonus/i, '')
+                                      .replace(/Reduction/i, '')
                                       .replace(/([A-Z])/g, ' $1')
-                                      .replace(/Multiplier/, '×')
-                                      .replace(/Bonus/, '+')
-                                      .replace(/Reduction/, '−')
                                       .trim()
+                                    const prefix = /multiplier/i.test(key) ? '×' : /bonus/i.test(key) ? '+' : /reduction/i.test(key) ? '−' : ''
                                     return (
                                       <span key={key} className="bg-surface text-foreground-secondary text-xs px-2 py-1 rounded">
-                                        {label}: <span className="text-accent">{String(val)}</span>
+                                        {label}: <span className="text-accent">{prefix}{String(val)}</span>
                                       </span>
                                     )
                                   })}
@@ -671,7 +682,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
 
                             {/* Port ship selection */}
                             {npc.portShipSelection ? (
-                              <InfoSection title="🚢 Ship Selection by Region">
+                              <InfoSection title="🚢 Ship Selection by Water Hazard">
                                 <p className="text-foreground-secondary text-sm">{npc.portShipSelection}</p>
                               </InfoSection>
                             ) : null}
@@ -685,7 +696,18 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                                   <div className="grid gap-2 text-sm">
                                     {Object.entries(lootInfo as Record<string, string>).map(([key, val]) => (
                                       <div key={key}>
-                                        <span className="text-foreground font-medium capitalize">{key.replace(/_/g, ' ').replace(/fr[12]/, '').replace('fleet ', 'Fleet: ')}:</span>{' '}
+                                        <span className="text-foreground font-medium capitalize">{
+                                          key === 'regular' ? 'Regular' :
+                                          key === 'reinforced' ? 'Reinforced' :
+                                          key === 'fleet_fr1' ? 'Pirate Fleets' :
+                                          key === 'fleet_fr2_order' ? 'Order Convoys' :
+                                          key === 'ferryman' ? 'Caravans' :
+                                          key === 'invasion' ? 'Invasion Forces' :
+                                          key === 'legendary2l' ? '2-Star Bosses' :
+                                          key === 'legendary3l' ? '3-Star Bosses' :
+                                          key === 'tradingRouteBonus' ? 'Trading Route Bonus' :
+                                          key.replace(/_/g, ' ')
+                                        }:</span>{' '}
                                         <span className="text-foreground-secondary">{val}</span>
                                       </div>
                                     ))}
@@ -716,22 +738,37 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
           {/* Spawn mechanics */}
           <div className="bg-surface border border-surface-border rounded-xl p-4">
             <h3 className="text-foreground font-semibold text-lg mb-3">🌊 Water Hazard Spawning</h3>
-            {npcs.spawnMechanics?.regionSpawning ? (
-              <div className="grid gap-2 text-sm">
-                {Object.entries(npcs.spawnMechanics.regionSpawning as Record<string, string>).map(([key, val]) => (
-                  <div key={key}>
-                    <span className="text-accent font-medium capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>{' '}
-                    <span className="text-foreground-secondary">{val}</span>
-                  </div>
-                ))}
-              </div>
-            ) : null}
+            {npcs.spawnMechanics?.regionSpawning ? (() => {
+              const SPAWN_LABELS: Record<string, string> = {
+                description: 'Overview',
+                areaFactor: 'Area Size Factor',
+                pirateRegularCount: 'Pirates (Regular)',
+                pirateReinforcedCount: 'Pirates (Reinforced)',
+                pirateFleetCount: 'Pirate Squadrons',
+                fr2Count: 'Order of the New Ark',
+                fanaticCount: 'Witnesses of the Apocalypse',
+                traderCount: 'Merchants',
+                ferrymanCount: 'Merchant Caravans',
+                headhunterCount: 'Bounty Hunters',
+                seaElfCount: 'Sea Elves (Event)',
+              }
+              return (
+                <div className="grid gap-2 text-sm">
+                  {Object.entries(npcs.spawnMechanics.regionSpawning as Record<string, string>).map(([key, val]) => (
+                    <div key={key}>
+                      <span className="text-accent font-medium">{SPAWN_LABELS[key] ?? key.replace(/([A-Z])/g, ' $1').trim()}:</span>{' '}
+                      <span className="text-foreground-secondary">{String(val)}</span>
+                    </div>
+                  ))}
+                </div>
+              )
+            })() : null}
           </div>
 
           {/* Procedural NPCs */}
           <div className="bg-surface border border-surface-border rounded-xl p-4">
             <h3 className="text-foreground font-semibold text-lg mb-3">👻 Procedural NPCs</h3>
-            <p className="text-foreground-secondary text-sm mb-3">These NPCs are generated dynamically in each region.</p>
+            <p className="text-foreground-secondary text-sm mb-3">These NPCs are generated dynamically in each Water Hazard level.</p>
             <div className="grid gap-3">
               {Object.entries(npcs.proceduralNpcs).map(([key, npc]) => (
                 <div key={key} className="bg-surface-hover rounded-lg p-3">
@@ -763,16 +800,27 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
             <h3 className="text-foreground font-semibold text-lg mb-3">📜 NPC Ship Names</h3>
             <p className="text-foreground-secondary text-sm mb-3">NPCs are randomly assigned names from pools based on their type.</p>
             <div className="grid md:grid-cols-2 gap-3">
-              {Object.entries(npcs.npcShipNames).map(([pool, names]) => (
+              {Object.entries(npcs.npcShipNames).map(([pool, names]) => {
+                const POOL_NAMES: Record<string, string> = {
+                  traderNames: '🪙 Merchant Ships',
+                  pirateNamesShort: '🏴‍☠️ Pirates (Short Names)',
+                  pirateNamesLong: '🏴‍☠️ Pirates (Long Names)',
+                  ancientNames: '🏛️ Ancient Names',
+                  horrorNames: '💀 Horror / Cult Names',
+                  religiousNames: '⛪ Religious / Order Names',
+                  legendNames: '👑 Legendary Names',
+                }
+                return (
                 <div key={pool} className="bg-surface-hover rounded-lg p-3">
-                  <h4 className="text-foreground font-medium capitalize mb-1">
-                    {pool.replace(/([A-Z])/g, ' $1').trim()} <span className="text-foreground-muted font-normal">({names.length} names)</span>
+                  <h4 className="text-foreground font-medium mb-1">
+                    {POOL_NAMES[pool] ?? pool} <span className="text-foreground-muted font-normal">({names.length} names)</span>
                   </h4>
                   <p className="text-foreground-secondary text-xs leading-relaxed">
                     {names.slice(0, 8).join(', ')}{names.length > 8 ? `, +${names.length - 8} more...` : ''}
                   </p>
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
@@ -793,21 +841,23 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
           <div className="bg-surface border border-surface-border rounded-xl p-4">
             <h3 className="text-foreground font-semibold text-lg mb-3">🎯 Wanted Level</h3>
             <p className="text-foreground-secondary text-sm mb-2">
-              Attacking NPCs increases your wanted level. Higher levels cause Bounty Hunters to spawn more aggressively.
+              {(npcs.wantedLevel as Record<string, unknown>)?.description as string ?? 'Attacking NPCs increases your wanted level. Higher levels cause Bounty Hunters to spawn more aggressively.'}
             </p>
             <div className="bg-surface-hover rounded-lg p-3">
-              <p className="text-sm text-foreground-secondary">
-                <span className="text-accent font-medium">Bounty Hunter spawn interval:</span>{' '}
-                <code className="text-cyan-400">(20 − wantedLevel × 5) × 60 seconds</code>
-              </p>
-              <div className="grid grid-cols-3 gap-2 mt-2 text-xs text-center">
+              <div className="grid grid-cols-3 gap-2 text-sm text-center">
                 {[1, 2, 3].map(level => (
-                  <div key={level} className="bg-surface rounded p-2">
-                    <span className="text-foreground-muted block">Level {level}</span>
+                  <div key={level} className="bg-surface rounded p-3">
+                    <span className="text-foreground-muted block text-xs mb-1">Wanted Level {level}</span>
                     <span className="text-foreground font-medium">{(20 - level * 5)} min</span>
+                    <span className="text-foreground-muted block text-xs">between Bounty Hunters</span>
                   </div>
                 ))}
               </div>
+              {(npcs.wantedLevel as Record<string, unknown>)?.tradingRouteBonus ? (
+                <p className="text-foreground-muted text-xs mt-2">
+                  📝 {(npcs.wantedLevel as Record<string, unknown>).tradingRouteBonus as string}
+                </p>
+              ) : null}
             </div>
           </div>
 
@@ -869,25 +919,47 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
           <div className="bg-surface border border-surface-border rounded-xl p-4">
             <h3 className="text-foreground font-semibold text-lg mb-3">💎 Loot Drops by NPC Type</h3>
             <div className="grid gap-3">
-              {Object.entries(lootByType).map(([category, loot]) => (
-                <div key={category} className="bg-surface-hover rounded-lg p-3">
-                  <h4 className="text-foreground font-medium capitalize mb-2">
-                    {CATEGORY_ICONS[category] ?? '📦'} {category.replace(/([A-Z])/g, ' $1').trim()}
-                  </h4>
-                  {typeof loot === 'string' ? (
-                    <p className="text-foreground-secondary text-sm">{loot}</p>
-                  ) : (
-                    <div className="grid gap-1 text-sm">
-                      {Object.entries(loot as Record<string, string>).map(([key, val]) => (
-                        <div key={key}>
-                          <span className="text-accent capitalize">{key.replace(/_/g, ' ')}:</span>{' '}
-                          <span className="text-foreground-secondary">{val}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+              {Object.entries(lootByType).map(([category, loot]) => {
+                const LOOT_CAT_NAMES: Record<string, string> = {
+                  pirates: '🏴‍☠️ Pirates',
+                  empire: '👑 Empire',
+                  traders: '🪙 Traders',
+                  seafarer: '⚓ Small Vessels',
+                  fanatics: '💀 Witnesses of the Apocalypse',
+                  bountyHunter: '🎯 Bounty Hunters',
+                  nyEventNpc: '❄️ Sea Elves (Event)',
+                }
+                const LOOT_SUB_NAMES: Record<string, string> = {
+                  regular: 'Regular',
+                  reinforced: 'Reinforced',
+                  fleet_fr1: 'Pirate Fleets',
+                  fleet_fr2_order: 'Order Convoys',
+                  ferryman: 'Caravans',
+                  invasion: 'Invasion Forces',
+                  legendary2l: '2-Star Bosses',
+                  legendary3l: '3-Star Bosses',
+                  tradingRouteBonus: 'Trading Route Bonus',
+                }
+                return (
+                  <div key={category} className="bg-surface-hover rounded-lg p-3">
+                    <h4 className="text-foreground font-medium mb-2">
+                      {LOOT_CAT_NAMES[category] ?? `📦 ${category.replace(/([A-Z])/g, ' $1').trim()}`}
+                    </h4>
+                    {typeof loot === 'string' ? (
+                      <p className="text-foreground-secondary text-sm">{loot}</p>
+                    ) : (
+                      <div className="grid gap-1 text-sm">
+                        {Object.entries(loot as Record<string, string>).map(([key, val]) => (
+                          <div key={key}>
+                            <span className="text-accent">{LOOT_SUB_NAMES[key] ?? key.replace(/_/g, ' ')}:</span>{' '}
+                            <span className="text-foreground-secondary">{val}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
             </div>
           </div>
 
@@ -896,12 +968,21 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
             <h3 className="text-foreground font-semibold text-lg mb-3">📊 Reward Calculations</h3>
             {npcs.rewardSystem?.basicRewardFormula ? (
               <div className="grid gap-2 text-sm">
-                {Object.entries(npcs.rewardSystem.basicRewardFormula as Record<string, string>).map(([key, val]) => (
-                  <div key={key} className="bg-surface-hover rounded p-2">
-                    <span className="text-accent font-medium capitalize block text-xs mb-1">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                    <code className="text-foreground-secondary text-xs">{val}</code>
-                  </div>
-                ))}
+                {Object.entries(npcs.rewardSystem.basicRewardFormula as Record<string, string>).map(([key, val]) => {
+                  const FORMULA_NAMES: Record<string, string> = {
+                    goldCalculation: '💰 Gold Earned',
+                    xpCalculation: '⭐ XP Earned',
+                    combatBonus: '⚔️ Combat Bonus',
+                    damageBonus: '💥 Damage Bonus',
+                    cannonBalls: '💣 Ammo Drops',
+                  }
+                  return (
+                    <div key={key} className="bg-surface-hover rounded p-2">
+                      <span className="text-accent font-medium block text-xs mb-1">{FORMULA_NAMES[key] ?? key}</span>
+                      <span className="text-foreground-secondary text-xs">{val}</span>
+                    </div>
+                  )
+                })}
               </div>
             ) : null}
           </div>
@@ -942,14 +1023,25 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
             return (
               <div className="bg-surface border border-surface-border rounded-xl p-4">
                 <h3 className="text-foreground font-semibold text-lg mb-3">💣 Ammo Drops</h3>
-                <div className="grid gap-2 text-sm">
-                  {Object.entries(drops).map(([key, val]) => (
-                    <div key={key}>
-                      <span className="text-accent font-medium capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>{' '}
-                      <span className="text-foreground-secondary">{val}</span>
+                {(() => {
+                  const AMMO_DROP_LABELS: Record<string, string> = {
+                    description: 'Overview',
+                    chance: 'Drop Chance',
+                    amount: 'Amount',
+                    typeSelection: 'Ammo Type',
+                    tutorialBonus: 'Tutorial Bonus',
+                  }
+                  return (
+                    <div className="grid gap-2 text-sm">
+                      {Object.entries(drops).map(([key, val]) => (
+                        <div key={key}>
+                          <span className="text-accent font-medium">{AMMO_DROP_LABELS[key] ?? key}:</span>{' '}
+                          <span className="text-foreground-secondary">{val}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  )
+                })()}
               </div>
             )
           })() : null}
@@ -964,15 +1056,12 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                 <p className="text-foreground-secondary text-sm mb-2">{dismantle.description as string}</p>
                 <p className="text-foreground-muted text-xs mb-3">Total value: {dismantle.totalValue as string}</p>
                 <div className="grid gap-1 text-sm">
-                  {Object.entries(breakdown).map(([key, val]) => {
-                    const name = key.replace(/_res\d+/, '').replace(/_/g, ' ')
-                    return (
-                      <div key={key} className="flex justify-between bg-surface-hover rounded p-2">
-                        <span className="text-foreground capitalize">{name}</span>
-                        <span className="text-accent">{val}</span>
-                      </div>
-                    )
-                  })}
+                  {Object.entries(breakdown).map(([key, val]) => (
+                    <div key={key} className="flex justify-between bg-surface-hover rounded p-2">
+                      <span className="text-foreground">{key}</span>
+                      <span className="text-accent">{val}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             )

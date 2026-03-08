@@ -56,7 +56,7 @@
         "Mortar"
       ],
       "fleetSize": "1-2 (alternating)",
-      "spawnCount": "5-10 per region (more in low-level regions)"
+      "spawnCount": "5-10 per Water Hazard level (more in low Water Hazard levels)"
     },
     {
       "typeId": "PirateFraction1_Reinforced",
@@ -88,7 +88,7 @@
         "Battleship"
       ],
       "statModifiers": {
-        "hpMultiplier": "1.1 + 0.2 \u00d7 regionLevel",
+        "hpMultiplier": "1.1 + 0.2 \u00d7 waterHazard",
         "damageMultiplier": 1.3
       }
     },
@@ -124,7 +124,7 @@
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 \u00d7 regionLevel + (200-600) \u00d7 fleetIndex"
+      "hpFormula": "600 + 600 \u00d7 waterHazard + (200-600) \u00d7 fleetIndex"
     },
     {
       "typeId": "PirateFraction2_Regular",
@@ -157,7 +157,7 @@
         "speedReduction": -2,
         "armorBonus": 2
       },
-      "spawnCount": "5 per region (only in regions level > 2)"
+      "spawnCount": "5 per Water Hazard level (only in Water Hazard 4+)"
     },
     {
       "typeId": "PirateFraction2_Reinforced",
@@ -190,7 +190,7 @@
         "Mortar"
       ],
       "statModifiers": {
-        "hpMultiplier": "1.1 + 0.2 \u00d7 regionLevel",
+        "hpMultiplier": "1.1 + 0.2 \u00d7 waterHazard",
         "damageMultiplier": 1.2,
         "speedReduction": -2,
         "armorBonus": 2
@@ -228,7 +228,7 @@
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 \u00d7 regionLevel + (200-600) \u00d7 fleetIndex",
+      "hpFormula": "600 + 600 \u00d7 waterHazard + (200-600) \u00d7 fleetIndex",
       "statModifiers": {
         "speedReduction": -2,
         "armorBonus": 2
@@ -263,9 +263,9 @@
         "CargoShip"
       ],
       "fleetSize": "2-3",
-      "spawnCount": "5 per region",
+      "spawnCount": "5 per Water Hazard level",
       "statModifiers": {
-        "hpMultiplier": "0.75 + 0.15 \u00d7 regionLevel",
+        "hpMultiplier": "0.75 + 0.15 \u00d7 waterHazard",
         "damageMultiplier": 0.9,
         "reloadMultiplier": 1.1
       }
@@ -295,7 +295,7 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "freeFloatingSpeed": 1,
-      "namePool": "Ferryman (fixed name)",
+      "namePool": null,
       "shipClasses": [
         "Battleship",
         "CargoShip"
@@ -303,7 +303,8 @@
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 \u00d7 regionLevel + 200-600"
+      "hpFormula": "600 + 600 \u00d7 waterHazard + 200-600",
+      "fixedName": "Ferryman"
     },
     {
       "typeId": "PortPatrol",
@@ -468,7 +469,7 @@
         "CargoShip"
       ],
       "spawnCondition": "Only near pirate strongholds",
-      "spawnCount": "5 regular + reinforced variants per region"
+      "spawnCount": "5 regular + reinforced variants per Water Hazard level"
     },
     {
       "typeId": "BonusMap",
@@ -535,7 +536,7 @@
         "Hardship",
         "CargoShip"
       ],
-      "spawnCount": "6 per region",
+      "spawnCount": "6 per Water Hazard level",
       "statScaling": "3 tiers (index % 3): HP/damage \u00d7(0.8+tier\u00d70.3), speed \u00d7(0.95+tier\u00d70.1)",
       "spawnTrigger": "Wanted level \u2014 interval = (20 - wantedLevel \u00d7 5) \u00d7 60 seconds",
       "marchingSpeedBonus": 40
@@ -554,10 +555,10 @@
       "fixedName": "Sea Elf",
       "visual": "IceShip",
       "specialBalls": 21,
-      "hp": "7500 \u00d7 (0.75 + 0.5 \u00d7 regionLevel)",
+      "hp": "7500 \u00d7 (0.75 + 0.5 \u00d7 waterHazard)",
       "usesShipId": 76,
       "usesShipName": "Old Octopus",
-      "spawnCount": "3 per region (regions level \u2265 2)"
+      "spawnCount": "3 per Water Hazard level (Water Hazard 3+)"
     },
     {
       "typeId": "Rem_PirateAmbush",
@@ -604,7 +605,7 @@
       "reloadSec": 15,
       "cannonClass": "LiteCannon",
       "specialBalls": 10,
-      "specialBallsNote": "variable _007B4129_007D = 10",
+      "specialBallsNote": "Uses Special Ammo",
       "visual": "IceShip",
       "spawnRegions": [
         3,
@@ -627,7 +628,7 @@
       "reloadSec": 7,
       "cannonClass": "LiteCannon",
       "specialBalls": 7,
-      "specialBallsNote": "variable _007B4127_007D = 7",
+      "specialBallsNote": "Uses Grape Shot",
       "visual": "ShadowShip",
       "spawnRegions": [
         2,
@@ -690,7 +691,7 @@
       "reloadSec": 15,
       "cannonClass": "DistanceCannon",
       "specialBalls": 9,
-      "specialBallsNote": "variable _007B4128_007D = 9",
+      "specialBallsNote": "Uses Explosive Shells",
       "visual": "ShadowShip",
       "spawnRegions": [
         2,
@@ -714,7 +715,7 @@
       "reloadSec": 6,
       "cannonClass": "LiteCannon",
       "specialBalls": 2,
-      "specialBallsNote": "variable _007B4126_007D = 2",
+      "specialBallsNote": "Uses Fire Balls",
       "visual": "Regular",
       "specialServerEffect": 2,
       "spawnRegions": [
@@ -957,7 +958,7 @@
         "attackDistBonus": 10
       },
       "specialBalls": "500 (every 3rd ship) or 7 (others)",
-      "notes": "Generated per region with random ship selection from ranks 2-6"
+      "notes": "Generated per Water Hazard level with random ship selection from ranks 2-6"
     },
     "fanaticSwarm": {
       "count": 12,
@@ -981,7 +982,7 @@
       "name": "Expedition",
       "type": "SpecialNoReward",
       "usesShip": "Balloon (IsBalloon flag)",
-      "notes": "No combat capability (1 damage). One per region for regions level < 2."
+      "notes": "No combat capability (1 damage). One per Water Hazard level for Water Hazard 1-2."
     }
   },
   "educationMapNpcs": [
@@ -1324,17 +1325,17 @@
   "rewardSystem": {
     "description": "How NPC rewards are calculated based on ship stats and NPC type",
     "basicRewardFormula": {
-      "xpCalculation": "Base from HP^0.97 \u00d7 1.19, modified by speed, armor, and damage output. XP = goldReward \u00d7 BasicXpInGold \u00d7 typeModifier \u00d7 0.9",
-      "goldCalculation": "baseGold(75 or 150 for traders) + locationMultiplier \u00d7 (combatBonus + damageBonus) \u00d7 GameSpeed \u00d7 0.88 \u00d7 0.9",
-      "combatBonus": "ComputeBasicBonus(HP \u00d7 0.69 + 330, speed, armor)",
-      "damageBonus": "(DPS \u00d7 (300 + HP) / 75) \u00d7 0.85 \u00d7 2 / 10",
-      "cannonBalls": "15 + hazardLevel \u00d7 6 for regular, 45 + hazardLevel \u00d7 15 for legendary"
+      "xpCalculation": "XP from HP^0.97 \u00d7 1.19, modified by speed/armor/damage. Final XP = gold reward \u00d7 XP rate \u00d7 type modifier \u00d7 0.9",
+      "goldCalculation": "Base gold (75, or 150 for traders) + location multiplier \u00d7 (combat + damage bonus) \u00d7 game speed \u00d7 0.79",
+      "combatBonus": "Based on HP \u00d7 0.69 + 330, speed, and armor",
+      "damageBonus": "Based on DPS \u00d7 (300 + HP) \u00f7 75, scaled down",
+      "cannonBalls": "15 + Water Hazard level \u00d7 6 for regular NPCs, 45 + Water Hazard level \u00d7 15 for legendary"
     },
     "locationMultipliers": {
-      "worldMap": "Gameplay.WorldMapMultiplier",
-      "seamlessSea": "Gameplay.OutsideSeamMultiplier",
-      "bonusMap": "Gameplay.DefaultBonusMapMultiplier",
-      "empireInvasion": "locationMultiplier \u00d7 0.7"
+      "worldMap": "Standard world map multiplier",
+      "openSea": "Open sea multiplier (outside normal boundaries)",
+      "bonusMap": "Bonus/passing map multiplier",
+      "empireInvasion": "Invasion NPCs get 70% of normal location rewards"
     },
     "sinkingVsBoarding": {
       "sinking": "Get resource drops + gold + cannonballs + chance for powerup items",
@@ -1342,30 +1343,30 @@
     },
     "lootByType": {
       "pirates": {
-        "regular": "70% gold, 30% provisions (region resources). Pirate Treasure Maps (1 in 30 chance). In north regions, additional trade goods.",
-        "reinforced": "Pirate Tokens (res 72) in hazard zones (HP/100 rounded), otherwise Wood (res 1) at 33% gold value. Bonus resource packs (res 24) at 80% gold value.",
+        "regular": "70% gold, 30% local trade goods. Pirate Treasure Maps (1 in 30 chance). In northern waters, additional trade goods drop.",
+        "reinforced": "Pirate Tokens in hazard waters (based on HP \u00f7 100), otherwise Wood at 33% gold value. Bonus resource packs at 80% gold value.",
         "fleet_fr1": "Cannon drops from ship's allowed cannon types",
         "fleet_fr2_order": "2 random picks from [res 39, 9, 10, 22, 1] at 50% gold value each"
       },
       "traders": {
-        "regular": "Region-specific trade goods from nearby ports. Merchant Supply Maps (1 in 20 chance). Gold portion: 33% in safe zones, 25% in hazard zones.",
+        "regular": "Local trade goods from nearby ports. Merchant Supply Maps (1 in 20 chance). Gold portion: 33% in safe waters, 25% in hazard waters.",
         "ferryman": "3 different trade resources (RandomCut 3), richer loot per resource",
         "tradingRouteBonus": "If trader is on a trading route, its resource gets extra weight"
       },
       "empire": {
-        "regular": "Imperial Stamps (Escudo, res 15) \u2014 amount based on HP, scaled by location",
+        "regular": "Escudo (Imperial Stamps) \u2014 amount based on HP, scaled by location",
         "invasion": "Reduced rewards (0.7\u00d7 location multiplier). Escudo drops.",
-        "legendary2l": "Escudo (HP/3200), rare trade goods (1500 gold value), 50% chance of specialty ammo (res 24). Gold remainder.",
-        "legendary3l": "Large Escudo drops (4-6 for fleet 3, 8-10 for fleet 2, 24-28 for solo). Copper (res 11) 17-25, Voodoo Skulls (res 38) \u00d73, Iron (res 4). Creates loot by dropping chests."
+        "legendary2l": "Escudo (HP \u00f7 3200), rare trade goods (1500 gold value), 50% chance of specialty ammo. Remaining value as gold.",
+        "legendary3l": "Large Escudo drops (4-6 per escort, 8-10 per pair, 24-28 solo). Copper 17-25, Voodoo Skulls \u00d73, Iron. Drops loot chests on the water."
       },
       "fanatics": "Same as regular pirates (provisions + gold)",
       "seafarer": "No rewards (0 gold, 0 XP)",
-      "bountyHunter": "Iron (res 1) at 33% gold value, Fabric (res 3) at 17% gold value. Remaining 5% as gold.",
-      "nyEventNpc": "50% gold, Event currency (res 71) \u00d71, Event tokens (res 69) scaled by HP/10000"
+      "bountyHunter": "Iron at 33% gold value, Fabric at 17% gold value. Remaining 5% as gold.",
+      "nyEventNpc": "50% gold. Event currency \u00d71, Event tokens scaled by HP \u00f7 10000."
     },
     "powerupDrops": {
-      "description": "Consumable items (temporary ship upgrades) dropped by defeated NPCs",
-      "dropLogic": "If NPC health < 30%: 70% chance of emergency drop [33, 2, 9]. If < 60%: 60% chance. Otherwise: 42% base chance.",
+      "description": "Temporary ship buffs dropped by defeated NPCs (speed boost, armor boost, etc.)",
+      "dropLogic": "Drop chance depends on how damaged the NPC was: below 30% HP \u2192 70% chance, below 60% \u2192 60%, above 60% \u2192 42% base chance.",
       "speedDrop": {
         "shipIds": [
           2,
@@ -1413,32 +1414,32 @@
         ],
         "condition": "Default pool (speed < 18 and armor < 6)"
       },
-      "sizeScaling": "Items downgraded for low-HP NPCs: <1000 HP \u2192 tier 0/7, <1600 HP \u2192 tier 1/8"
+      "sizeScaling": "Weaker NPCs drop lower-tier items: below 1000 HP \u2192 basic tier, below 1600 HP \u2192 mid tier"
     },
     "cannonballDrops": {
       "description": "Ammo dropped by defeated NPCs",
-      "chance": "50% base chance (100% for ice regions if enabled)",
+      "chance": "50% base chance (100% for northern waters if enabled)",
       "amount": "CountAmmoWillFound \u00d7 random(0.85-1.25)",
-      "typeSelection": "Uses NPC's override ball type, or random 1-3 from region. Ice regions force type 5.",
+      "typeSelection": "Uses NPC's override ball type, or random 1-3 from area. Northern waters force type 5.",
       "tutorialBonus": "FirstShip scenario: +58 type 2, +63 type 3"
     },
     "dismantleRewards": {
-      "description": "Resources from destroying/dismantling captured NPC ships",
-      "totalValue": "goldBonus \u00d7 1.3 (+ NpcDecraftBonus skill)",
+      "description": "Resources earned from dismantling a captured NPC ship",
+      "totalValue": "Gold value \u00d7 1.3 (increased by Dismantle skill)",
       "breakdown": {
-        "wood_res1": "45% of value",
-        "prinsWillem_res20": "20% of value",
-        "fabric_res3": "30% of value",
-        "resin_res13": "15% of value",
-        "leCerf_res27": "50% of value (only with PMoreResourcesForDestryingNpc skill)"
+        "Wood": "45% of total value",
+        "Fabric": "30% of total value",
+        "Tar": "15% of total value",
+        "Saltpeter": "20% of total value",
+        "Beams": "50% of total value (requires Extra Resources skill)"
       }
     }
   },
   "captureSystem": {
-    "canCapture": "Pirates (all 6 types), Traders (both types), Seafarers, Fanatics, HeadHunters, SpecialNoReward",
-    "cannotCapture": "Empire (Regular, Invasion, Legendary2l, Legendary3l), PortPatrol, BonusMapBoss, NyEventNpc",
-    "captureRule": "AllowCapture returns false for IsEmpire, PortPatrol, BonusMapBoss, NyEventNpc, and arena maps",
-    "mechanics": "Capture through boarding action"
+    "canCapture": "Pirates (all types), Traders (Merchants & Caravans), Small Vessels, Witnesses of the Apocalypse, Bounty Hunters",
+    "cannotCapture": "Imperial ships (Raiders, Invasion, Flagships, Legends), Faction Patrols, Bonus Map Bosses, Event NPCs",
+    "captureRule": "Boarding is required to capture. Empire ships and Patrols cannot be captured. Not available in arena maps.",
+    "mechanics": "Board the ship, defeat the crew, then choose to capture or dismantle"
   },
   "spawnMechanics": {
     "regionSpawning": {
@@ -1450,9 +1451,9 @@
       "pirateReinforcedCount": "~8-12 based on 1.4 \u00d7 (9 - level/3) \u00d7 areaFactor",
       "pirateFleetCount": "~3-6 based on 3 \u00d7 areaFactor",
       "fr2Count": "Same formulas but not doubled for low Water Hazard levels",
-      "fanaticCount": "5 per region (near strongholds only) + reinforced variants",
+      "fanaticCount": "5 per Water Hazard level (near strongholds only) + reinforced variants",
       "headhunterCount": 6,
-      "seaElfCount": "3 per region (level \u2265 2, event only)"
+      "seaElfCount": "3 per Water Hazard level (WH 3+, event only)"
     },
     "bossSpawning": {
       "legendary2l": "Spawn across specific Water Hazard levels. 5-min respawn interval.",
@@ -1468,32 +1469,33 @@
     "npcStats": {
       "description": "Regular NPC stats generated procedurally from ship base stats, scaled by Water Hazard level",
       "shipSelection": "CanBeUsedForNpc ships matching Water Hazard level \u00b1 rank tolerance (\u00b12, or \u00b10 for port patrols)",
-      "armorCalc": "baseArmor + lerp(minUpgrade - 0.3, maxUpgrade, random). Elite ships get -0.5 armor.",
-      "speedCalc": "baseSpeed - (1-regionFactor) + regionBonus + destroyerBonus\u00d71.5 + lerp(minUpgrade, maxUpgrade, random)",
-      "hpCalc": "baseHP \u00d7 (0.7 + 0.3\u00d7regionFactor + 0.2\u00d7destroyerBonus - heavyShipPenalty) + lerp(minUpgrade, maxUpgrade, random). WH 1: \u00d70.85, WH 2: \u00d70.9",
-      "damageCalc": "cannonPenetration \u00d7 portCount \u00d7 0.9 \u00d7 (0.5 + 0.5\u00d7regionFactor + regionBonus). WH 1: \u00d70.85",
-      "reloadCalc": "cannonReloadTime \u00d7 (1 - 0.2\u00d7destroyerBonus). Minimum 5500ms.",
-      "randomUpgrades": "0-2 random upgrades from: ReduceFireDamage, SailProtection, ReduceNoseDamage, CollisionDamage, MoreFireDamage, CannonBallSpeed"
+      "armorCalc": "Base armor + random upgrade range (\u22120.3 offset). Elite ships get \u22120.5 armor.",
+      "speedCalc": "Base speed \u2212 (1 \u2212 hazard factor) + bonus + destroyer bonus \u00d7 1.5 + random upgrade range",
+      "hpCalc": "Base HP \u00d7 (0.7 + 0.3 \u00d7 hazard factor + 0.2 \u00d7 destroyer bonus \u2212 heavy ship penalty) + upgrade range. WH 1: \u00d70.85, WH 2: \u00d70.90",
+      "damageCalc": "Cannon penetration \u00d7 port count \u00d7 0.9 \u00d7 (0.5 + 0.5 \u00d7 hazard factor + WH bonus). WH 1: \u00d70.85",
+      "reloadCalc": "Cannon reload time \u00d7 (1 \u2212 0.2 \u00d7 destroyer bonus). Minimum 5500ms.",
+      "randomUpgrades": "0-2 random upgrades: Fire Resistance, Sail Protection, Nose Armor, Collision Damage, Extra Fire Damage, Cannonball Speed"
     }
   },
   "npcCrewCount": {
-    "formula": "floor(((min(40, HP/50) or 40+(excess/2)) + 3 + hash_bonus) \u00d7 typeMultiplier \u00d7 4)",
+    "description": "Crew count scales with the NPC ship's HP. Higher HP ships get more crew, with diminishing returns above ~2000 HP. Imperial Flagships (2-Star Bosses) get 20% fewer crew.",
+    "formula": "Base crew = HP \u00f7 50 (min 10, soft cap at 40 \u2014 excess halved) + 3 + random bonus. Then multiplied by type factor \u00d7 4.",
+    "inputHP": "Minimum 500 HP used for calculation",
+    "cap": "At 40 base crew, additional crew is halved (e.g. 50 raw \u2192 45)",
     "typeMultipliers": {
-      "Empire_Legendary2l": 0.8,
-      "allOthers": 0.92
-    },
-    "inputHP": "max(500, actualHP)",
-    "cap": "At 40 crew base, excess is halved: 40 + (raw - 40) / 2",
-    "description": "Higher HP ships get more crew but with diminishing returns above ~2000 HP. Legendary2l bosses get 13% fewer crew proportionally."
+      "Imperial Flagship (2-Star)": "\u00d70.80",
+      "All other NPCs": "\u00d70.92"
+    }
   },
   "wantedLevel": {
-    "headhunterSpawnInterval": "(20 - wantedLevel \u00d7 5) \u00d7 60 seconds",
-    "wantedLevelDiffs": {
-      "diff1": 0.3,
-      "diff2": 0.7,
-      "diff3": 1.0
+    "description": "Attacking certain NPCs raises your wanted level (1-3). Higher wanted levels cause Bounty Hunters to spawn faster.",
+    "levels": {
+      "Level 1": "Bounty Hunters every 15 minutes",
+      "Level 2": "Bounty Hunters every 10 minutes",
+      "Level 3": "Bounty Hunters every 5 minutes"
     },
-    "tradingRouteBonus": "0.12 wanted level added when NPC uses trading route and condition met"
+    "formula": "Spawn interval = (20 \u2212 wanted level \u00d7 5) \u00d7 60 seconds",
+    "tradingRouteBonus": "NPCs on trading routes add 0.12 wanted level when attacked"
   },
   "visualEffects": [
     "Regular",
@@ -1505,15 +1507,15 @@
     "DestroyedShip"
   ],
   "specialBallTypes": {
-    "1": "Standard cannonball",
-    "2": "Fire ball (variable _007B4126_007D)",
-    "3": "Chain shot",
-    "5": "Ice ball",
-    "7": "Grape shot (variable _007B4127_007D)",
-    "9": "Explosive (variable _007B4128_007D)",
-    "10": "Special ammo type 10 (variable _007B4129_007D)",
-    "21": "Event ammo",
-    "500": "Boss special ammo"
+    "1": "Round Shot",
+    "2": "Fire Ball",
+    "3": "Chain Shot",
+    "5": "Ice Ball",
+    "7": "Grape Shot",
+    "9": "Explosive Shell",
+    "10": "Special Ammo",
+    "21": "Event Ammo (New Year)",
+    "500": "Boss Special Ammo"
   },
   "resourceMap": {
     "1": "Wood",
