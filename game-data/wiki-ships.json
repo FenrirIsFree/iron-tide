@@ -39,6 +39,13 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 90,
+      "Planks": 1130,
+      "Iron Bars": 1500,
+      "Battle Marks": 945,
+      "Ship Blueprint": 1
     }
   },
   {
@@ -87,7 +94,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 2.45,
         "category": "PremiumShip"
       },
@@ -96,7 +103,13 @@
         "dropRate": 20.0,
         "category": "SpecialShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Stone Blocks": 80,
+      "Planks": 825,
+      "Iron Bars": 1300,
+      "Battle Marks": 810
+    }
   },
   {
     "gameId": 65,
@@ -197,6 +210,12 @@
     ],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 55,
+      "Planks": 1160,
+      "Iron Bars": 785,
+      "Battle Marks": 595
     }
   },
   {
@@ -242,6 +261,12 @@
     ],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 80,
+      "Planks": 745,
+      "Iron Bars": 1000,
+      "Battle Marks": 825
     }
   },
   {
@@ -292,11 +317,17 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 10.87,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Stone Blocks": 105,
+      "Planks": 1130,
+      "Iron Bars": 1340,
+      "Battle Marks": 1060
+    }
   },
   {
     "gameId": 46,
@@ -346,7 +377,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.05,
         "category": "UniqueShip"
       },
@@ -397,6 +428,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 90,
+      "Planks": 900,
+      "Iron Bars": 1200,
+      "Battle Marks": 915
     }
   },
   {
@@ -441,6 +478,12 @@
     ],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 34,
+      "Planks": 385,
+      "Iron Bars": 345,
+      "Battle Marks": 380
     }
   },
   {
@@ -489,11 +532,17 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 2.45,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Stone Blocks": 65,
+      "Planks": 570,
+      "Iron Bars": 400,
+      "Battle Marks": 670
+    }
   },
   {
     "gameId": 50,
@@ -535,6 +584,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 37,
+      "Planks": 410,
+      "Iron Bars": 235,
+      "Battle Marks": 415
     }
   },
   {
@@ -577,6 +632,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 31,
+      "Planks": 525,
+      "Iron Bars": 265,
+      "Battle Marks": 355
     }
   },
   {
@@ -678,11 +739,17 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 16.3,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Stone Blocks": 45,
+      "Planks": 565,
+      "Iron Bars": 455,
+      "Battle Marks": 515
+    }
   },
   {
     "gameId": 62,
@@ -781,6 +848,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 37,
+      "Planks": 525,
+      "Iron Bars": 510,
+      "Battle Marks": 415
     }
   },
   {
@@ -823,6 +896,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 38,
+      "Planks": 420,
+      "Iron Bars": 405,
+      "Battle Marks": 420
     }
   },
   {
@@ -955,6 +1034,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 19,
+      "Planks": 230,
+      "Iron Bars": 185,
+      "Battle Marks": 230
     }
   },
   {
@@ -1042,6 +1127,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 18,
+      "Planks": 285,
+      "Iron Bars": 230,
+      "Battle Marks": 225
     }
   },
   {
@@ -1185,6 +1276,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 22,
+      "Planks": 185,
+      "Iron Bars": 185,
+      "Battle Marks": 260
     }
   },
   {
@@ -1274,6 +1371,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 16,
+      "Planks": 270,
+      "Iron Bars": 120,
+      "Battle Marks": 200
     }
   },
   {
@@ -1316,6 +1419,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Stone Blocks": 17,
+      "Planks": 225,
+      "Iron Bars": 105,
+      "Battle Marks": 215
     }
   },
   {
@@ -1366,11 +1475,17 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 16.3,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Stone Blocks": 17,
+      "Planks": 275,
+      "Iron Bars": 135,
+      "Battle Marks": 210
+    }
   },
   {
     "gameId": 26,
@@ -1420,7 +1535,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.05,
         "category": "UniqueShip"
       }
@@ -1466,6 +1581,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Planks": 175,
+      "Iron Bars": 125,
+      "Battle Marks": 85
     }
   },
   {
@@ -1556,6 +1676,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Planks": 140,
+      "Iron Bars": 100,
+      "Battle Marks": 80
     }
   },
   {
@@ -1598,6 +1723,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Planks": 165,
+      "Iron Bars": 65,
+      "Battle Marks": 75
     }
   },
   {
@@ -1646,7 +1776,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.05,
         "category": "UniqueShip"
       }
@@ -1743,11 +1873,16 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 16.3,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Planks": 105,
+      "Iron Bars": 100,
+      "Battle Marks": 70
+    }
   },
   {
     "gameId": 13,
@@ -1797,11 +1932,16 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 19.02,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Planks": 60,
+      "Iron Bars": 45,
+      "Battle Marks": 65
+    }
   },
   {
     "gameId": 58,
@@ -1843,6 +1983,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Sailcloth": 38,
+      "Planks": 140,
+      "Iron Bars": 55,
+      "Battle Marks": 80
     }
   },
   {
@@ -2034,6 +2180,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Planks": 70,
+      "Iron Bars": 39,
+      "Battle Marks": 11
     }
   },
   {
@@ -2082,11 +2233,17 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 16.3,
         "category": "PremiumShip"
       }
-    ]
+    ],
+    "craftingCost": {
+      "Sailcloth": 3,
+      "Planks": 40,
+      "Iron Bars": 24,
+      "Battle Marks": 11
+    }
   },
   {
     "gameId": 23,
@@ -2136,7 +2293,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.05,
         "category": "UniqueShip"
       }
@@ -2182,6 +2339,12 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Sailcloth": 22,
+      "Planks": 70,
+      "Iron Bars": 21,
+      "Battle Marks": 11
     }
   },
   {
@@ -2226,6 +2389,12 @@
     ],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Sailcloth": 4,
+      "Planks": 60,
+      "Iron Bars": 37,
+      "Battle Marks": 11
     }
   },
   {
@@ -2268,6 +2437,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Planks": 80,
+      "Iron Bars": 24,
+      "Battle Marks": 11
     }
   },
   {
@@ -2310,6 +2484,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Planks": 85,
+      "Iron Bars": 50,
+      "Battle Marks": 11
     }
   },
   {
@@ -2452,7 +2631,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.05,
         "category": "UniqueShip"
       }
@@ -2498,6 +2677,10 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Iron Ingots": 885,
+      "Planks": 23
     }
   },
   {
@@ -2540,6 +2723,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Iron Ingots": 530,
+      "Sailcloth": 14,
+      "Planks": 23
     }
   },
   {
@@ -2582,6 +2770,10 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Iron Ingots": 615,
+      "Planks": 27
     }
   },
   {
@@ -2624,6 +2816,10 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Iron Ingots": 1110,
+      "Planks": 29
     }
   },
   {
@@ -2668,6 +2864,10 @@
     ],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Iron Ingots": 715,
+      "Planks": 21
     }
   },
   {
@@ -2716,7 +2916,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.05,
         "category": "UniqueShip"
       }
@@ -2770,7 +2970,7 @@
     },
     "chestSources": [
       {
-        "chest": "Big Chest",
+        "chest": "Large Chest",
         "dropRate": 0.03,
         "category": "UniqueShip"
       }
@@ -2816,6 +3016,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Wood": 850,
+      "Rope": 30,
+      "Iron Ingots": 165
     }
   },
   {
@@ -2858,6 +3063,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Wood": 760,
+      "Rope": 30,
+      "Iron Ingots": 245
     }
   },
   {
@@ -2900,6 +3110,11 @@
     "bonuses": [],
     "acquisition": {
       "type": "craftable"
+    },
+    "craftingCost": {
+      "Wood": 775,
+      "Rope": 30,
+      "Iron Ingots": 145
     }
   }
 ]

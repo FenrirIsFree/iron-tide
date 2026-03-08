@@ -56,6 +56,7 @@ interface Ship {
   bonuses: string[]
   acquisition: Acquisition & { imperialChestOnly?: boolean }
   chestSources?: ChestSource[]
+  craftingCost?: Record<string, number>
 }
 
 type SortKey = 'name' | 'health' | 'speed' | 'mobility' | 'armor' | 'capacity' | 'crew' | 'coolness' | 'rank'
@@ -388,9 +389,19 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                             {ship.acquisition?.type === 'craftable' && (
                               <div className="bg-surface-hover rounded px-3 py-2">
                                 <span className="text-green-400 text-sm font-medium">🔨 Craftable</span>
-                                <p className="text-foreground-muted text-xs mt-1">
-                                  Built at the shipyard. Resource costs scale with ship stats and vary with upgrades and bonuses.
-                                </p>
+                                {ship.craftingCost && Object.keys(ship.craftingCost).length > 0 ? (
+                                  <div className="mt-1">
+                                    <span className="text-foreground-muted text-xs">Base crafting cost:</span>
+                                    {Object.entries(ship.craftingCost).map(([resource, amount]) => (
+                                      <div key={resource} className="flex justify-between text-sm mt-0.5">
+                                        <span className="text-foreground-secondary">{resource}</span>
+                                        <span className="text-accent font-medium">{amount.toLocaleString()}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <p className="text-foreground-muted text-xs mt-1">Built at the shipyard</p>
+                                )}
                               </div>
                             )}
                             {ship.acquisition?.type === 'premium' && ship.acquisition.cost && (
