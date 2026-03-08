@@ -1,6 +1,8 @@
 'use server'
 
+import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'
+import { revalidatePath } from 'next/cache'
 
 const rankOrder: Record<string, number> = {
   FOUNDER: 0,
@@ -10,6 +12,48 @@ const rankOrder: Record<string, number> = {
   MIDSHIPMAN: 4,
   SAILOR: 5,
   CABIN_BOY: 6,
+}
+
+const RANKS = ['FOUNDER', 'ADMIRAL', 'COMMODORE', 'OFFICER', 'MIDSHIPMAN', 'SAILOR', 'CABIN_BOY'] as const
+type GuildRank = typeof RANKS[number]
+
+export async function updateMemberRank(targetUserId: string, newRank: string) {
+  // Auth check
+  const supabase = await createServerSupabaseClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('Not authenticated')
+
+  const currentUser = await prisma.user.findUnique({ where: { supabaseId: user.id } })
+  if (!currentUser) throw new Error('User not found')
+
+  const targetUser = await prisma.user.findUnique({ where: { id: targetUserId } })
+  if (!targetUser) throw new Error('Target user not found')
+
+  // Validate rank
+  if (!RANKS.includes(newRank as GuildRank)) throw new Error('Invalid rank')
+
+  const myRankLevel = rankOrder[currentUser.rank] ?? 99
+  const targetCurrentLevel = rankOrder[targetUser.rank] ?? 99
+  const newRankLevel = rankOrder[newRank] ?? 99
+
+  // Can't change your own rank
+  if (currentUser.id === targetUserId) throw new Error("Can't change your own rank")
+
+  // Must outrank the target (lower number = higher rank)
+  if (myRankLevel >= targetCurrentLevel) throw new Error('You can only manage members below your rank')
+
+  // Can't promote someone to your rank or above
+  if (newRankLevel <= myRankLevel) throw new Error("Can't promote someone to your rank or above")
+
+  // Only Founder can set Admiral
+  if (newRank === 'ADMIRAL' && currentUser.rank !== 'FOUNDER') throw new Error('Only the Founder can appoint Admirals')
+
+  await prisma.user.update({
+    where: { id: targetUserId },
+    data: { rank: newRank as GuildRank },
+  })
+
+  revalidatePath('/roster')
 }
 
 export async function getMembers() {

@@ -11,7 +11,7 @@ export default async function RosterPage() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
 
-  const dbUser = await prisma.user.findUnique({ where: { supabaseId: user.id }, select: { id: true } })
+  const dbUser = await prisma.user.findUnique({ where: { supabaseId: user.id }, select: { id: true, rank: true } })
   const members = await getMembers()
 
   return (
@@ -21,6 +21,7 @@ export default async function RosterPage() {
         <RosterClient
           members={JSON.parse(JSON.stringify(members))}
           currentUserId={dbUser?.id ?? ''}
+          currentUserRank={dbUser?.rank ?? 'CABIN_BOY'}
         />
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { getMemberFleet } from '@/app/actions/roster'
+import { getMemberFleet, updateMemberRank } from '@/app/actions/roster'
 import { computeModifiedStats, type ModifiedStats } from '@/lib/statEngine'
 
 type Member = {
@@ -53,10 +53,31 @@ const rankConfig: Record<string, { label: string; emoji: string; color: string }
   CABIN_BOY: { label: 'Cabin Boy', emoji: '🧹', color: 'text-foreground-secondary border-surface-border' },
 }
 
-export default function RosterClient({ members, currentUserId }: { members: Member[]; currentUserId: string }) {
+const RANK_ORDER: Record<string, number> = {
+  FOUNDER: 0, ADMIRAL: 1, COMMODORE: 2, OFFICER: 3, MIDSHIPMAN: 4, SAILOR: 5, CABIN_BOY: 6,
+}
+const ALL_RANKS = ['ADMIRAL', 'COMMODORE', 'OFFICER', 'MIDSHIPMAN', 'SAILOR', 'CABIN_BOY'] as const
+
+export default function RosterClient({ members, currentUserId, currentUserRank }: { members: Member[]; currentUserId: string; currentUserRank: string }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [fleet, setFleet] = useState<MemberShip[]>([])
   const [isPending, startTransition] = useTransition()
+  const [editingRankId, setEditingRankId] = useState<string | null>(null)
+
+  const myRankLevel = RANK_ORDER[currentUserRank] ?? 99
+  // Can manage ranks if you're Officer or above (level 3 or lower)
+  const canManageRanks = myRankLevel <= 3
+
+  function handleRankChange(targetId: string, newRank: string) {
+    startTransition(async () => {
+      try {
+        await updateMemberRank(targetId, newRank)
+        setEditingRankId(null)
+      } catch (e: unknown) {
+        alert(e instanceof Error ? e.message : 'Failed to update rank')
+      }
+    })
+  }
 
   function handleViewFleet(userId: string) {
     if (selectedId === userId) {
@@ -83,6 +104,19 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
             const rc = rankConfig[m.rank] ?? rankConfig.CABIN_BOY
             const isMe = m.id === currentUserId
             const isExpanded = selectedId === m.id
+            const targetRankLevel = RANK_ORDER[m.rank] ?? 99
+            // Can edit if: you outrank them, they're not you, and you're Officer+
+            const canEditThisRank = canManageRanks && !isMe && myRankLevel < targetRankLevel
+            const isEditingRank = editingRankId === m.id
+            // Available ranks: only ranks below yours
+            const availableRanks = ALL_RANKS.filter(r => {
+              const level = RANK_ORDER[r]
+              // Must be below your rank
+              if (level <= myRankLevel) return false
+              // Only Founder can set Admiral
+              if (r === 'ADMIRAL' && currentUserRank !== 'FOUNDER') return false
+              return true
+            })
 
             return (
               <div key={m.id} className={`bg-surface border rounded-xl overflow-hidden ${isMe ? 'border-accent' : 'border-surface-border'}`}>
@@ -97,9 +131,30 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                           {m.username}
                           {isMe && <span className="text-accent text-xs ml-1">(you)</span>}
                         </span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full border ${rc.color}`}>
-                          {rc.emoji} {rc.label}
-                        </span>
+                        {isEditingRank ? (
+                          <select
+                            value={m.rank}
+                            onClick={e => e.stopPropagation()}
+                            onChange={e => { e.stopPropagation(); handleRankChange(m.id, e.target.value) }}
+                            onBlur={() => setEditingRankId(null)}
+                            autoFocus
+                            className="text-xs bg-surface border border-accent rounded px-2 py-0.5 text-foreground focus:outline-none"
+                          >
+                            <option value={m.rank}>{rc.emoji} {rc.label} (current)</option>
+                            {availableRanks.filter(r => r !== m.rank).map(r => {
+                              const rrc = rankConfig[r]
+                              return <option key={r} value={r}>{rrc.emoji} {rrc.label}</option>
+                            })}
+                          </select>
+                        ) : (
+                          <span
+                            className={`text-xs px-2 py-0.5 rounded-full border ${rc.color} ${canEditThisRank ? 'cursor-pointer hover:ring-1 hover:ring-accent' : ''}`}
+                            onClick={e => { if (canEditThisRank) { e.stopPropagation(); setEditingRankId(m.id) } }}
+                            title={canEditThisRank ? 'Click to change rank' : undefined}
+                          >
+                            {rc.emoji} {rc.label}
+                          </span>
+                        )}
                       </div>
                       {m.inGameName && (
                         <p className="text-sm text-foreground-secondary mt-0.5">IGN: {m.inGameName}</p>
