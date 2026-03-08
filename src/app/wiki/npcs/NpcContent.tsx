@@ -557,15 +557,28 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                 <div className="grid gap-3">
                   {types.map(npc => {
                     const isExpanded = expandedType === npc.typeId
-                    const lootCategory = npc.category === 'pirate' ? 'pirates'
-                      : npc.category === 'trader' ? 'traders'
-                      : npc.category === 'empire' ? 'empire'
-                      : npc.typeId === 'Fanatics' ? 'fanatics'
-                      : npc.typeId === 'Seafarer' ? 'seafarer'
-                      : npc.typeId.includes('HeadHunter') ? 'bountyHunter'
-                      : npc.typeId === 'NyEventNpc' ? 'nyEventNpc'
-                      : null
-                    const lootInfo = lootCategory ? lootByType[lootCategory] : null
+                    // Map NPC type to loot category + sub-key
+                    const lootMapping: Record<string, { category: string; subKey?: string }> = {
+                      Seafarer: { category: 'seafarer' },
+                      PirateFraction1_Regular: { category: 'pirates', subKey: 'regular' },
+                      PirateFraction1_Reinforced: { category: 'pirates', subKey: 'reinforced' },
+                      PirateFraction1_Fleet: { category: 'pirates', subKey: 'reinforced' },
+                      PirateFraction2_Regular: { category: 'order', subKey: 'regular' },
+                      PirateFraction2_Reinforced: { category: 'order', subKey: 'reinforced' },
+                      PirateFraction2_Fleet: { category: 'order', subKey: 'convoy' },
+                      Trader_Regular: { category: 'traders', subKey: 'regular' },
+                      Trader_Ferryman: { category: 'traders', subKey: 'ferryman' },
+                      Empire_Regular: { category: 'empire', subKey: 'regular' },
+                      Empire_Invasion: { category: 'empire', subKey: 'invasion' },
+                      Empire_Legendary2l: { category: 'empire', subKey: 'legendary2l' },
+                      Empire_Legendary3l: { category: 'empire', subKey: 'legendary3l' },
+                      PortPatrol: { category: 'portPatrol' },
+                      Fanatics: { category: 'order', subKey: 'regular' },
+                      HeadHunter: { category: 'bountyHunter' },
+                      NyEventNpc: { category: 'nyEventNpc' },
+                    }
+                    const mapping = lootMapping[npc.typeId]
+                    const lootCatData = mapping ? lootByType[mapping.category] as Record<string, unknown> | undefined : undefined
 
                     return (
                       <div
@@ -688,33 +701,26 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                             ) : null}
 
                             {/* Loot info */}
-                            {lootInfo != null ? (
-                              <InfoSection title="💰 Loot Drops">
-                                {typeof lootInfo === 'string' ? (
-                                  <p className="text-foreground-secondary text-sm">{lootInfo}</p>
-                                ) : (
-                                  <div className="grid gap-2 text-sm">
-                                    {Object.entries(lootInfo as Record<string, string>).map(([key, val]) => (
-                                      <div key={key}>
-                                        <span className="text-foreground font-medium capitalize">{
-                                          key === 'regular' ? 'Regular' :
-                                          key === 'reinforced' ? 'Reinforced' :
-                                          key === 'fleet_fr1' ? 'Pirate Fleets' :
-                                          key === 'fleet_fr2_order' ? 'Order Convoys' :
-                                          key === 'ferryman' ? 'Caravans' :
-                                          key === 'invasion' ? 'Invasion Forces' :
-                                          key === 'legendary2l' ? '2-Star Bosses' :
-                                          key === 'legendary3l' ? '3-Star Bosses' :
-                                          key === 'tradingRouteBonus' ? 'Trading Route Bonus' :
-                                          key.replace(/_/g, ' ')
-                                        }:</span>{' '}
-                                        <span className="text-foreground-secondary">{val}</span>
-                                      </div>
-                                    ))}
-                                  </div>
-                                )}
-                              </InfoSection>
-                            ) : null}
+                            {lootCatData ? (() => {
+                              // Get the specific sub-entry or top-level drops
+                              const subData = mapping?.subKey ? lootCatData[mapping.subKey] as Record<string, unknown> | undefined : null
+                              const drops = (subData?.drops ?? lootCatData.drops ?? null) as string[] | null
+                              const summary = (subData ? null : lootCatData.summary) as string | null
+
+                              if (!drops && !summary) return null
+                              return (
+                                <InfoSection title="💰 Loot Drops">
+                                  {summary ? <p className="text-foreground-secondary text-sm mb-2">{summary}</p> : null}
+                                  {drops ? (
+                                    <ul className="space-y-1">
+                                      {drops.map((drop, i) => (
+                                        <li key={i} className="text-foreground-secondary text-sm">{drop}</li>
+                                      ))}
+                                    </ul>
+                                  ) : null}
+                                </InfoSection>
+                              )
+                            })() : null}
 
                             {/* Notes */}
                             {npc.notes ? (
@@ -918,45 +924,50 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
           {/* Loot by type */}
           <div className="bg-surface border border-surface-border rounded-xl p-4">
             <h3 className="text-foreground font-semibold text-lg mb-3">💎 Loot Drops by NPC Type</h3>
-            <div className="grid gap-3">
-              {Object.entries(lootByType).map(([category, loot]) => {
+            <div className="grid gap-4">
+              {Object.entries(lootByType).map(([category, catData]) => {
                 const LOOT_CAT_NAMES: Record<string, string> = {
-                  pirates: '🏴‍☠️ Pirates',
-                  empire: '👑 Empire',
-                  traders: '🪙 Traders',
                   seafarer: '⚓ Small Vessels',
-                  fanatics: '💀 Witnesses of the Apocalypse',
+                  pirates: '🏴‍☠️ Pirates',
+                  order: '⛪ Order of the New Ark',
+                  traders: '🪙 Traders',
+                  empire: '👑 Empire',
                   bountyHunter: '🎯 Bounty Hunters',
+                  portPatrol: '🛡️ Faction Patrols',
                   nyEventNpc: '❄️ Sea Elves (Event)',
                 }
-                const LOOT_SUB_NAMES: Record<string, string> = {
-                  regular: 'Regular',
-                  reinforced: 'Reinforced',
-                  fleet_fr1: 'Pirate Fleets',
-                  fleet_fr2_order: 'Order Convoys',
-                  ferryman: 'Caravans',
-                  invasion: 'Invasion Forces',
-                  legendary2l: '2-Star Bosses',
-                  legendary3l: '3-Star Bosses',
-                  tradingRouteBonus: 'Trading Route Bonus',
-                }
+                const cat = catData as Record<string, unknown>
                 return (
-                  <div key={category} className="bg-surface-hover rounded-lg p-3">
-                    <h4 className="text-foreground font-medium mb-2">
-                      {LOOT_CAT_NAMES[category] ?? `📦 ${category.replace(/([A-Z])/g, ' $1').trim()}`}
+                  <div key={category} className="bg-surface-hover rounded-lg p-4">
+                    <h4 className="text-foreground font-semibold mb-2">
+                      {LOOT_CAT_NAMES[category] ?? category}
                     </h4>
-                    {typeof loot === 'string' ? (
-                      <p className="text-foreground-secondary text-sm">{loot}</p>
-                    ) : (
-                      <div className="grid gap-1 text-sm">
-                        {Object.entries(loot as Record<string, string>).map(([key, val]) => (
-                          <div key={key}>
-                            <span className="text-accent">{LOOT_SUB_NAMES[key] ?? key.replace(/_/g, ' ')}:</span>{' '}
-                            <span className="text-foreground-secondary">{val}</span>
-                          </div>
+                    {cat.summary ? <p className="text-foreground-secondary text-sm mb-3">{cat.summary as string}</p> : null}
+                    {/* Top-level drops (for categories without sub-types) */}
+                    {Array.isArray(cat.drops) ? (
+                      <ul className="space-y-1 ml-1">
+                        {(cat.drops as string[]).map((drop, i) => (
+                          <li key={i} className="text-foreground-secondary text-sm">{drop}</li>
                         ))}
-                      </div>
-                    )}
+                      </ul>
+                    ) : null}
+                    {/* Sub-types with their own drops */}
+                    {Object.entries(cat).filter(([k]) => k !== 'summary' && k !== 'drops').map(([subKey, subData]) => {
+                      const sub = subData as Record<string, unknown>
+                      if (!sub.label && !sub.drops) return null
+                      return (
+                        <div key={subKey} className="mt-3 bg-surface rounded-lg p-3">
+                          {sub.label ? <h5 className="text-accent font-medium text-sm mb-2">{sub.label as string}</h5> : null}
+                          {Array.isArray(sub.drops) ? (
+                            <ul className="space-y-1 ml-1">
+                              {(sub.drops as string[]).map((drop, i) => (
+                                <li key={i} className="text-foreground-secondary text-sm">{drop as string}</li>
+                              ))}
+                            </ul>
+                          ) : null}
+                        </div>
+                      )
+                    })}
                   </div>
                 )
               })}
