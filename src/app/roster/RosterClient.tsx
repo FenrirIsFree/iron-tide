@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react'
 import { getMemberFleet } from '@/app/actions/roster'
+import { computeModifiedStats, type ModifiedStats } from '@/lib/statEngine'
 
 type Member = {
   id: string
@@ -12,7 +13,7 @@ type Member = {
 }
 
 type LoadoutWeapon = { id: string; weapon: { name: string; type: string }; position: string; quantity: number }
-type LoadoutUpgrade = { id: string; upgrade: { name: string } }
+type LoadoutUpgrade = { id: string; upgrade: { name: string; effects?: { stat: string; value: string; gameKey?: string; rankedValues?: string[] }[] | null; effect?: string | null; category?: string | null } }
 type LoadoutAmmo = { id: string; ammoType: { name: string }; quantity: number }
 type LoadoutCrew = { id: string; crewType: { name: string }; quantity: number }
 
@@ -30,9 +31,9 @@ type MemberShip = {
   ship: {
     name: string; shipClass: string; rate: number; weaponClass: string | null
     broadsideSlots: number; crewCapacity: number | null; role: string | null
-    speed: number | null; maneuverability: number | null; armor: number | null
-    hp: number | null; holdCapacity: number | null; sternSlots: number | null; bowSlots: number | null
-    mortarSlots: number | null
+    speed: number | null; maneuverability: number | null; broadsideArmor: number | null
+    hp: number | null; holdCapacity: number | null; crewCapacity: number | null
+    sternSlots: number | null; bowSlots: number | null; mortarSlots: number | null
   }
   loadouts: ActiveLoadout[]
 }
@@ -121,6 +122,19 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                         {fleet.map((s) => {
                           const loadout = s.loadouts[0]
+                          // Compute modified stats
+                          const modStats: ModifiedStats | null = loadout ? computeModifiedStats(
+                            {
+                              hp: s.ship.hp, speed: s.ship.speed, maneuverability: s.ship.maneuverability,
+                              broadsideArmor: s.ship.broadsideArmor, cargoHold: s.ship.holdCapacity,
+                              crewCapacity: s.ship.crewCapacity, integrity: null,
+                              broadsideSlots: s.ship.broadsideSlots, mortarSlots: s.ship.mortarSlots ?? 0,
+                              rate: s.ship.rate,
+                            },
+                            loadout.upgrades,
+                            loadout.crew,
+                          ) : null
+
                           const portWeapons = loadout?.weapons.filter(w => w.position === 'port') || []
                           const starboardWeapons = loadout?.weapons.filter(w => w.position === 'starboard') || []
                           const sternWeapons = loadout?.weapons.filter(w => w.position === 'stern') || []
@@ -141,28 +155,13 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                 </p>
                               </div>
 
-                              {/* Ship Stats */}
+                              {/* Ship Stats — show modified if loadout exists */}
                               <div className="grid grid-cols-5 gap-1 text-xs">
-                                <div className="text-center">
-                                  <span className="text-foreground-secondary block">SPD</span>
-                                  <span className="text-foreground font-medium">{s.ship.speed ?? '—'}</span>
-                                </div>
-                                <div className="text-center">
-                                  <span className="text-foreground-secondary block">MANEUV</span>
-                                  <span className="text-foreground font-medium">{s.ship.maneuverability ?? '—'}</span>
-                                </div>
-                                <div className="text-center">
-                                  <span className="text-foreground-secondary block">ARM</span>
-                                  <span className="text-foreground font-medium">{s.ship.armor ?? '—'}</span>
-                                </div>
-                                <div className="text-center">
-                                  <span className="text-foreground-secondary block">DUR</span>
-                                  <span className="text-foreground font-medium">{s.ship.hp ?? '—'}</span>
-                                </div>
-                                <div className="text-center">
-                                  <span className="text-foreground-secondary block">CARGO</span>
-                                  <span className="text-foreground font-medium">{s.ship.holdCapacity ?? '—'}</span>
-                                </div>
+                                <RosterStat label="SPD" base={s.ship.speed} modified={modStats?.speed} />
+                                <RosterStat label="MANEUV" base={s.ship.maneuverability} modified={modStats?.maneuverability} />
+                                <RosterStat label="ARM" base={s.ship.broadsideArmor} modified={modStats?.broadsideArmor} />
+                                <RosterStat label="DUR" base={s.ship.hp} modified={modStats?.hp} />
+                                <RosterStat label="CARGO" base={s.ship.holdCapacity} modified={modStats?.cargoHold} />
                               </div>
 
                               {/* Slots Summary */}
@@ -218,6 +217,21 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
           })}
         </div>
       )}
+    </div>
+  )
+}
+
+function RosterStat({ label, base, modified }: { label: string; base: number | null; modified?: number | null }) {
+  const display = modified ?? base
+  const changed = modified != null && base != null && Math.abs(modified - base) > 0.01
+  const isBuff = changed && modified! > base!
+  const isNerf = changed && modified! < base!
+  return (
+    <div className="text-center">
+      <span className="text-foreground-secondary block">{label}</span>
+      <span className={`font-medium ${isNerf ? 'text-red-400' : isBuff ? 'text-green-400' : 'text-foreground'}`}>
+        {display != null ? (Number.isInteger(display) ? display : display.toFixed(1)) : '—'}
+      </span>
     </div>
   )
 }
