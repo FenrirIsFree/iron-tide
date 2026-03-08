@@ -123,8 +123,6 @@ interface NpcData {
 
 // ── Humanize helpers ──
 
-// Water Hazard level = region level + 1 (from decompiled: spawnRegion - 1 == LevelInt)
-// In-game the world map shows "Water Hazard" 1–7
 const WATER_HAZARD: Record<number, string> = {
   1: 'Water Hazard 1 (Starter)',
   2: 'Water Hazard 2',
@@ -133,6 +131,16 @@ const WATER_HAZARD: Record<number, string> = {
   5: 'Water Hazard 5',
   6: 'Water Hazard 6',
   7: 'Water Hazard 7 (Endgame)',
+}
+
+const WH_SHORT: Record<number, string> = {
+  1: 'WH 1',
+  2: 'WH 2',
+  3: 'WH 3',
+  4: 'WH 4',
+  5: 'WH 5',
+  6: 'WH 6',
+  7: 'WH 7',
 }
 
 const VISUAL_NAMES: Record<string, string> = {
@@ -209,6 +217,26 @@ const FLAG_NAMES: Record<string, string> = {
   War: '⚔️ War flag',
   NoFlag: 'No flag',
 }
+
+// WH stat scaling data (from decompiled npcStats)
+const WH_SCALING = [
+  { wh: 1, hp: '~60%', damage: '~42%', speed: 'Slower', range: 'Shorter', color: 'text-green-400' },
+  { wh: 2, hp: '~67%', damage: '~50%', speed: 'Slower', range: 'Shorter', color: 'text-green-300' },
+  { wh: 3, hp: '~74%', damage: '~58%', speed: 'Moderate', range: 'Moderate', color: 'text-yellow-400' },
+  { wh: 4, hp: '~83%', damage: '~67%', speed: 'Moderate', range: 'Moderate', color: 'text-yellow-300' },
+  { wh: 5, hp: '~90%', damage: '~75%', speed: 'Near full', range: 'Near full', color: 'text-orange-400' },
+  { wh: 6, hp: '~96%', damage: '~92%', speed: 'Near full', range: 'Near full', color: 'text-orange-300' },
+  { wh: 7, hp: '100%', damage: '100%', speed: 'Full', range: 'Full', color: 'text-red-400' },
+]
+
+// What spawns where
+const WH_SPAWN_INFO: { wh: string; npcs: string; color: string }[] = [
+  { wh: 'WH 1–2', npcs: 'Small Vessels, Regular Pirates, Khanfar Merchants, Imperial Raiders, Bounty Hunters', color: 'text-green-400' },
+  { wh: 'WH 3', npcs: '+ Order of the New Ark appears, Mortar ships, Sea Elves (event)', color: 'text-yellow-400' },
+  { wh: 'WH 4+', npcs: '+ Pirate Barons, Order Warships, stronger fleets, Order of the New Ark regulars', color: 'text-orange-400' },
+  { wh: 'WH 5–7', npcs: '+ Strongest ships, Witnesses of the Apocalypse near strongholds, highest-rank ships', color: 'text-red-400' },
+  { wh: 'Legend Zone', npcs: '3-Star Bosses only — center of map, requires rank 12+', color: 'text-purple-400' },
+]
 
 // ── Sub-components ──
 
@@ -307,10 +335,82 @@ function renderBehavior(behavior?: Record<string, boolean>) {
   )
 }
 
+// Loot mapping shared between bosses and NPC encounters
+const LOOT_MAPPING: Record<string, { category: string; subKey?: string }> = {
+  Seafarer: { category: 'seafarer' },
+  PirateFraction1_Regular: { category: 'pirates', subKey: 'regular' },
+  PirateFraction1_Reinforced: { category: 'pirates', subKey: 'reinforced' },
+  PirateFraction1_Fleet: { category: 'pirates', subKey: 'reinforced' },
+  PirateFraction2_Regular: { category: 'order', subKey: 'regular' },
+  PirateFraction2_Reinforced: { category: 'order', subKey: 'reinforced' },
+  PirateFraction2_Fleet: { category: 'order', subKey: 'convoy' },
+  Trader_Regular: { category: 'traders', subKey: 'regular' },
+  Trader_Ferryman: { category: 'traders', subKey: 'ferryman' },
+  Empire_Regular: { category: 'empire', subKey: 'regular' },
+  Empire_Invasion: { category: 'empire', subKey: 'invasion' },
+  Empire_Legendary2l: { category: 'empire', subKey: 'legendary2l' },
+  Empire_Legendary3l: { category: 'empire', subKey: 'legendary3l' },
+  PortPatrol: { category: 'portPatrol' },
+  Fanatics: { category: 'order', subKey: 'regular' },
+  HeadHunter: { category: 'bountyHunter' },
+  NyEventNpc: { category: 'nyEventNpc' },
+}
+
+function LootDrops({ typeId, lootByType }: { typeId: string; lootByType: Record<string, unknown> }) {
+  const mapping = LOOT_MAPPING[typeId]
+  if (!mapping) return null
+  const lootCatData = lootByType[mapping.category] as Record<string, unknown> | undefined
+  if (!lootCatData) return null
+
+  const subData = mapping.subKey ? lootCatData[mapping.subKey] as Record<string, unknown> | undefined : null
+  const drops = (subData?.drops ?? lootCatData.drops ?? null) as string[] | null
+  const summary = (subData ? null : lootCatData.summary) as string | null
+  const subLabel = subData?.label as string | null
+
+  if (!drops && !summary) return null
+  return (
+    <InfoSection title="💰 Loot Drops">
+      {subLabel ? <p className="text-accent text-xs font-medium mb-1">{subLabel}</p> : null}
+      {summary ? <p className="text-foreground-secondary text-sm mb-2">{summary}</p> : null}
+      {drops ? (
+        <ul className="space-y-1">
+          {drops.map((drop, i) => (
+            <li key={i} className="text-foreground-secondary text-sm">{drop}</li>
+          ))}
+        </ul>
+      ) : null}
+    </InfoSection>
+  )
+}
+
+// WH spawn range data for NPC types
+const NPC_WH_RANGES: Record<string, string> = {
+  Seafarer: 'WH 1–7',
+  PirateFraction1_Regular: 'WH 1–7 (doubled in WH 1–3)',
+  PirateFraction1_Reinforced: 'WH 1–7',
+  PirateFraction1_Fleet: 'WH 1–7',
+  PirateFraction2_Regular: 'WH 4+',
+  PirateFraction2_Reinforced: 'WH 4+',
+  PirateFraction2_Fleet: 'WH 4+',
+  Trader_Regular: 'WH 1–7',
+  Trader_Ferryman: 'WH 1–7',
+  PortPatrol: 'All ports',
+  Empire_Regular: 'WH 1–7',
+  Empire_Invasion: 'All ports',
+  Empire_Legendary2l: 'Varies by boss',
+  Empire_Legendary3l: 'Legend Boss Zone',
+  Fanatics: 'WH 1–7 (near strongholds)',
+  HeadHunter: 'WH 1–7 (wanted level)',
+  NyEventNpc: 'WH 3+ (event only)',
+  BonusMap: 'Bonus maps only',
+  BonusMapBoss: 'Bonus maps only',
+  SpecialNoReward: 'Special / Tutorial',
+}
+
 // ── Main Component ──
 
 export default function NpcContent({ npcs }: { npcs: NpcData }) {
-  const [tab, setTab] = useState<'bosses' | 'types' | 'spawns' | 'rewards'>('bosses')
+  const [tab, setTab] = useState<'bosses' | 'encounters' | 'guide'>('bosses')
   const [expandedBoss, setExpandedBoss] = useState<string | null>(null)
   const [expandedType, setExpandedType] = useState<string | null>(null)
   const [tierFilter, setTierFilter] = useState<string>('all')
@@ -324,13 +424,11 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
     return [...bosses2Star, ...bosses3Star]
   }, [tierFilter, bosses2Star, bosses3Star])
 
-  // Exclude removed NPC types
   const activeNpcTypes = useMemo(() =>
-    npcs.npcTypes.filter(n => !n.typeId.startsWith('Rem_')),
+    npcs.npcTypes.filter(n => !n.typeId.startsWith('Rem_') && n.typeId !== 'SpecialNoReward' && n.typeId !== 'BonusMap' && n.typeId !== 'BonusMapBoss'),
     [npcs.npcTypes]
   )
 
-  // Group NPC types by category
   const npcsByCategory = useMemo(() => {
     const groups: Record<string, NpcType[]> = {}
     for (const n of activeNpcTypes) {
@@ -348,10 +446,9 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
       {/* Tabs */}
       <div className="flex gap-2 mb-6 flex-wrap">
         {[
-          { id: 'bosses' as const, label: `🏴‍☠️ Named Bosses (${npcs.bosses.length})` },
-          { id: 'types' as const, label: `⚓ NPC Types (${activeNpcTypes.length})` },
-          { id: 'spawns' as const, label: '🌊 Spawns & World' },
-          { id: 'rewards' as const, label: '💰 Rewards & Loot' },
+          { id: 'bosses' as const, label: `🏴‍☠️ Bosses (${npcs.bosses.length})` },
+          { id: 'encounters' as const, label: `⚓ NPC Encounters (${activeNpcTypes.length})` },
+          { id: 'guide' as const, label: '🗺️ Water Hazard Guide' },
         ].map(t => (
           <button
             key={t.id}
@@ -366,7 +463,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
       </div>
 
       {/* ═══════════════════ BOSSES TAB ═══════════════════ */}
-      {tab === 'bosses' && (
+      {tab === 'bosses' ? (
         <div>
           <div className="flex gap-2 mb-4">
             {['all', '2-star', '3-star'].map(tier => (
@@ -428,7 +525,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                     </div>
                   </div>
 
-                  {isExpanded && (
+                  {isExpanded ? (
                     <div className="px-4 pb-4 border-t border-surface-border pt-3">
                       {/* Combat Stats */}
                       <h4 className="text-foreground-muted text-xs font-medium mb-2 uppercase tracking-wider">Combat Stats</h4>
@@ -464,7 +561,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                         <Tag label="Spawn Location" value={
                           boss.tier === '3-star'
                             ? 'Legend Boss Zone (center of map)'
-                            : boss.spawnRegions.map(r => WATER_HAZARD[r] ?? `WH ${r}`).join(', ')
+                            : boss.spawnRegions.map(r => WH_SHORT[r] ?? `WH ${r}`).join(', ')
                         } />
                         <Tag label="Fleet Composition" value={
                           boss.fleetSize === 1
@@ -481,7 +578,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                         )}
                       </div>
 
-                      {/* Total encounter damage */}
+                      {/* Escort Ships */}
                       {boss.defenseWaves.length > 0 ? (
                         <InfoSection title={`🛡️ Escort Ships (${boss.defenseWaves.reduce((s, w) => s + w.count, 0)} total)`}>
                           <div className="grid gap-2">
@@ -512,36 +609,32 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                         </InfoSection>
                       ) : null}
 
+                      {/* Loot Drops — NEW */}
+                      <LootDrops typeId={boss.type} lootByType={lootByType} />
+
                       {/* Notes */}
                       {boss.notes ? (
                         <p className="text-foreground-muted text-xs mt-3 italic">📝 {boss.notes}</p>
                       ) : null}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               )
             })}
           </div>
         </div>
-      )}
+      ) : null}
 
-      {/* ═══════════════════ NPC TYPES TAB ═══════════════════ */}
-      {tab === 'types' && (
+      {/* ═══════════════════ NPC ENCOUNTERS TAB ═══════════════════ */}
+      {tab === 'encounters' ? (
         <div>
-          {/* Capture rules banner */}
+          {/* Stat scaling note */}
           <div className="bg-surface border border-surface-border rounded-xl p-4 mb-4 text-sm">
-            <h3 className="text-foreground font-semibold mb-2">🏴 Capture Rules</h3>
-            <div className="grid md:grid-cols-2 gap-3">
-              <div>
-                <span className="text-green-400 font-medium">Can capture:</span>
-                <p className="text-foreground-secondary mt-1">{npcs.captureSystem?.canCapture ?? 'Pirates, Traders, Seafarers, Fanatics'}</p>
-              </div>
-              <div>
-                <span className="text-red-400 font-medium">Cannot capture:</span>
-                <p className="text-foreground-secondary mt-1">{npcs.captureSystem?.cannotCapture ?? 'Empire, Port Patrol'}</p>
-              </div>
-            </div>
-            <p className="text-foreground-muted text-xs mt-2">{npcs.captureSystem?.captureRule}</p>
+            <p className="text-foreground-secondary">
+              📊 <strong className="text-foreground">Stats scale with Water Hazard level</strong> — NPCs are weaker in low WH zones and reach full strength in WH 7.
+              Northern waters (some WH 3–6 regions) give pirates <span className="text-red-400">+20% HP</span> and <span className="text-orange-400">+10% damage</span>.
+              See the <button onClick={() => setTab('guide')} className="text-accent underline hover:text-accent/80">Water Hazard Guide</button> for full scaling details.
+            </p>
           </div>
 
           {/* NPC types grouped by category */}
@@ -557,28 +650,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                 <div className="grid gap-3">
                   {types.map(npc => {
                     const isExpanded = expandedType === npc.typeId
-                    // Map NPC type to loot category + sub-key
-                    const lootMapping: Record<string, { category: string; subKey?: string }> = {
-                      Seafarer: { category: 'seafarer' },
-                      PirateFraction1_Regular: { category: 'pirates', subKey: 'regular' },
-                      PirateFraction1_Reinforced: { category: 'pirates', subKey: 'reinforced' },
-                      PirateFraction1_Fleet: { category: 'pirates', subKey: 'reinforced' },
-                      PirateFraction2_Regular: { category: 'order', subKey: 'regular' },
-                      PirateFraction2_Reinforced: { category: 'order', subKey: 'reinforced' },
-                      PirateFraction2_Fleet: { category: 'order', subKey: 'convoy' },
-                      Trader_Regular: { category: 'traders', subKey: 'regular' },
-                      Trader_Ferryman: { category: 'traders', subKey: 'ferryman' },
-                      Empire_Regular: { category: 'empire', subKey: 'regular' },
-                      Empire_Invasion: { category: 'empire', subKey: 'invasion' },
-                      Empire_Legendary2l: { category: 'empire', subKey: 'legendary2l' },
-                      Empire_Legendary3l: { category: 'empire', subKey: 'legendary3l' },
-                      PortPatrol: { category: 'portPatrol' },
-                      Fanatics: { category: 'order', subKey: 'regular' },
-                      HeadHunter: { category: 'bountyHunter' },
-                      NyEventNpc: { category: 'nyEventNpc' },
-                    }
-                    const mapping = lootMapping[npc.typeId]
-                    const lootCatData = mapping ? lootByType[mapping.category] as Record<string, unknown> | undefined : undefined
+                    const whRange = NPC_WH_RANGES[npc.typeId]
 
                     return (
                       <div
@@ -592,48 +664,34 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                           <div className="flex items-center gap-3 flex-wrap">
                             <h4 className="text-foreground font-medium">{npc.displayName}</h4>
                             {npc.behavior?.canBeCaptured ? (
-                              <span className="text-green-400 text-xs">🏴 Capturable</span>
-                            ) : null}
+                              <span className="text-xs px-2 py-0.5 rounded bg-green-400/10 text-green-400 font-medium">🏴 Capturable</span>
+                            ) : (
+                              <span className="text-xs px-2 py-0.5 rounded bg-red-400/10 text-red-400">🚫 Not capturable</span>
+                            )}
                             {npc.behavior?.aggressive ? (
                               <span className="text-red-400 text-xs">⚔️ Hostile</span>
                             ) : null}
                             {npc.behavior && !npc.behavior.aggressive && !npc.behavior.attacksPlayers ? (
                               <span className="text-green-400 text-xs">🕊️ Peaceful</span>
                             ) : null}
-                            {npc.behavior?.showOnWorldMap ? (
-                              <span className="text-blue-400 text-xs">🗺️ On Map</span>
+                            {whRange ? (
+                              <span className="text-foreground-muted text-xs">📍 {whRange}</span>
                             ) : null}
                           </div>
                           <span className="text-foreground-muted text-sm">{isExpanded ? '▲' : '▼'}</span>
                         </div>
 
-                        {isExpanded && (
+                        {isExpanded ? (
                           <div className="px-4 pb-4 border-t border-surface-border pt-3">
                             <p className="text-foreground-secondary text-sm mb-3">{npc.description}</p>
 
                             {/* Behavior badges */}
                             {renderBehavior(npc.behavior)}
 
-                            {/* Quick stats */}
+                            {/* Key hunt info */}
                             <div className="flex flex-wrap gap-2 mb-3">
-                              {npc.flag && npc.flag !== 'NoFlag' ? (
-                                <Tag label="Flag" value={FLAG_NAMES[npc.flag] ?? npc.flag} />
-                              ) : null}
                               {npc.shipClasses ? (
                                 <Tag label="Ship Classes" value={npc.shipClasses.map(c => SHIP_CLASS_NAMES[c] ?? c).join(', ')} />
-                              ) : null}
-                              {npc.namePool ? (
-                                <Tag label="Name Pool" value={
-                                  ({
-                                    pirateNamesShort: 'Pirate (short names)',
-                                    pirateNamesLong: 'Pirate (long names)',
-                                    traderNames: 'Merchant',
-                                    horrorNames: 'Horror / Cult',
-                                    religiousNames: 'Religious / Order',
-                                    ancientNames: 'Ancient Greek',
-                                    legendNames: 'Legendary',
-                                  } as Record<string, string>)[npc.namePool] ?? npc.namePool
-                                } />
                               ) : null}
                               {npc.spawnCount ? (
                                 <Tag label="Spawn Count" value={npc.spawnCount} />
@@ -644,20 +702,23 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                               {npc.fleetSize ? (
                                 <Tag label="Fleet Size" value={npc.fleetSize} />
                               ) : null}
-                              {npc.spawnPerPort ? (
-                                <Tag label="Per Port" value={npc.spawnPerPort} />
-                              ) : null}
-                              {npc.lifetime ? (
-                                <Tag label="Lifetime" value={String(npc.lifetime)} />
+                              {npc.hasDefenseWaves ? (
+                                <Tag label="Defense Waves" value={npc.defenseWaveCount ?? 'Yes'} />
                               ) : null}
                               {npc.respawnIntervalMin ? (
                                 <Tag label="Respawn" value={npc.respawnIntervalMin >= 60 ? `${npc.respawnIntervalMin / 60} hours` : `${npc.respawnIntervalMin} min`} />
                               ) : null}
-                              {npc.hasDefenseWaves ? (
-                                <Tag label="Defense Waves" value={npc.defenseWaveCount ?? 'Yes'} />
+                              {npc.spawnIntervalMin ? (
+                                <Tag label="Spawn Interval" value={`${npc.spawnIntervalMin} min`} />
                               ) : null}
-                              {npc.powerupItemChance ? (
-                                <Tag label="Powerup Drop Chance" value={`${npc.powerupItemChance}%`} />
+                              {npc.lifetime ? (
+                                <Tag label="Lifetime" value={String(npc.lifetime)} />
+                              ) : null}
+                              {npc.spawnPerPort ? (
+                                <Tag label="Per Port" value={npc.spawnPerPort} />
+                              ) : null}
+                              {npc.flag && npc.flag !== 'NoFlag' ? (
+                                <Tag label="Flag" value={FLAG_NAMES[npc.flag] ?? npc.flag} />
                               ) : null}
                               {npc.spawnTrigger ? (
                                 <Tag label="Spawn Trigger" value={npc.spawnTrigger} />
@@ -701,33 +762,14 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                             ) : null}
 
                             {/* Loot info */}
-                            {lootCatData ? (() => {
-                              // Get the specific sub-entry or top-level drops
-                              const subData = mapping?.subKey ? lootCatData[mapping.subKey] as Record<string, unknown> | undefined : null
-                              const drops = (subData?.drops ?? lootCatData.drops ?? null) as string[] | null
-                              const summary = (subData ? null : lootCatData.summary) as string | null
-
-                              if (!drops && !summary) return null
-                              return (
-                                <InfoSection title="💰 Loot Drops">
-                                  {summary ? <p className="text-foreground-secondary text-sm mb-2">{summary}</p> : null}
-                                  {drops ? (
-                                    <ul className="space-y-1">
-                                      {drops.map((drop, i) => (
-                                        <li key={i} className="text-foreground-secondary text-sm">{drop}</li>
-                                      ))}
-                                    </ul>
-                                  ) : null}
-                                </InfoSection>
-                              )
-                            })() : null}
+                            <LootDrops typeId={npc.typeId} lootByType={lootByType} />
 
                             {/* Notes */}
                             {npc.notes ? (
                               <p className="text-foreground-muted text-xs mt-3 italic">📝 {npc.notes}</p>
                             ) : null}
                           </div>
-                        )}
+                        ) : null}
                       </div>
                     )
                   })}
@@ -736,360 +778,279 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
             )
           })}
         </div>
-      )}
+      ) : null}
 
-      {/* ═══════════════════ SPAWNS TAB ═══════════════════ */}
-      {tab === 'spawns' && (
-        <div className="grid gap-4">
-          {/* Spawn mechanics */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">🌊 Water Hazard Spawning</h3>
-            {npcs.spawnMechanics?.regionSpawning ? (() => {
-              const SPAWN_LABELS: Record<string, string> = {
-                description: 'Overview',
-                areaFactor: 'Area Size Factor',
-                pirateRegularCount: 'Pirates (Regular)',
-                pirateReinforcedCount: 'Pirates (Reinforced)',
-                pirateFleetCount: 'Pirate Squadrons',
-                fr2Count: 'Order of the New Ark',
-                fanaticCount: 'Witnesses of the Apocalypse',
-                traderCount: 'Merchants',
-                ferrymanCount: 'Merchant Caravans',
-                headhunterCount: 'Bounty Hunters',
-                seaElfCount: 'Sea Elves (Event)',
-              }
-              return (
-                <div className="grid gap-2 text-sm">
-                  {Object.entries(npcs.spawnMechanics.regionSpawning as Record<string, string>).map(([key, val]) => (
-                    <div key={key}>
-                      <span className="text-accent font-medium">{SPAWN_LABELS[key] ?? key.replace(/([A-Z])/g, ' $1').trim()}:</span>{' '}
-                      <span className="text-foreground-secondary">{String(val)}</span>
-                    </div>
-                  ))}
-                </div>
-              )
-            })() : null}
-          </div>
+      {/* ═══════════════════ WATER HAZARD GUIDE TAB ═══════════════════ */}
+      {tab === 'guide' ? (
+        <div className="grid gap-6">
 
-          {/* Procedural NPCs */}
+          {/* Section 1: Stat Scaling */}
           <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">👻 Procedural NPCs</h3>
-            <p className="text-foreground-secondary text-sm mb-3">These NPCs are generated dynamically in each Water Hazard level.</p>
-            <div className="grid gap-3">
-              {Object.entries(npcs.proceduralNpcs).map(([key, npc]) => (
-                <div key={key} className="bg-surface-hover rounded-lg p-3">
-                  <h4 className="text-foreground font-medium mb-2">{npc.name || key}</h4>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {npc.count ? <Tag label="Count per Water Hazard" value={String(npc.count)} /> : null}
-                    {npc.visual ? <Tag label="Appearance" value={VISUAL_NAMES[npc.visual] ?? npc.visual} /> : null}
-                    {npc.shipClasses ? <Tag label="Ship Classes" value={npc.shipClasses.map(c => SHIP_CLASS_NAMES[c] ?? c).join(', ')} /> : null}
-                    {npc.spawnIntervalMin ? <Tag label="Spawn Interval" value={`${npc.spawnIntervalMin} min`} /> : null}
-                  </div>
-                  {npc.statModifiers ? (
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {Object.entries(npc.statModifiers).map(([k, v]) => (
-                        <span key={k} className="text-xs text-foreground-secondary bg-surface px-2 py-0.5 rounded">
-                          {k.replace(/([A-Z])/g, ' $1').trim()}: <span className="text-accent">{String(v)}</span>
-                        </span>
-                      ))}
-                    </div>
-                  ) : null}
-                  {npc.specialBalls ? <p className="text-foreground-muted text-xs">Special ammo: {npc.specialBalls}</p> : null}
-                  {npc.notes ? <p className="text-foreground-muted text-xs italic mt-1">📝 {npc.notes}</p> : null}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Ship name pools */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">📜 NPC Ship Names</h3>
-            <p className="text-foreground-secondary text-sm mb-3">NPCs are randomly assigned names from pools based on their type.</p>
-            <div className="grid md:grid-cols-2 gap-3">
-              {Object.entries(npcs.npcShipNames).map(([pool, names]) => {
-                const POOL_NAMES: Record<string, string> = {
-                  traderNames: '🪙 Merchant Ships',
-                  pirateNamesShort: '🏴‍☠️ Pirates (Short Names)',
-                  pirateNamesLong: '🏴‍☠️ Pirates (Long Names)',
-                  ancientNames: '🏛️ Ancient Names',
-                  horrorNames: '💀 Horror / Cult Names',
-                  religiousNames: '⛪ Religious / Order Names',
-                  legendNames: '👑 Legendary Names',
-                }
-                return (
-                <div key={pool} className="bg-surface-hover rounded-lg p-3">
-                  <h4 className="text-foreground font-medium mb-1">
-                    {POOL_NAMES[pool] ?? pool} <span className="text-foreground-muted font-normal">({names.length} names)</span>
-                  </h4>
-                  <p className="text-foreground-secondary text-xs leading-relaxed">
-                    {names.slice(0, 8).join(', ')}{names.length > 8 ? `, +${names.length - 8} more...` : ''}
-                  </p>
-                </div>
-                )
-              })}
-            </div>
-          </div>
-
-          {/* Crew count formula */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">👥 NPC Crew Count</h3>
-            <p className="text-foreground-secondary text-sm mb-2">{npcs.npcCrewCount?.description}</p>
-            <div className="bg-surface-hover rounded-lg p-3">
-              <code className="text-cyan-400 text-xs block mb-2">{npcs.npcCrewCount?.formula}</code>
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="text-foreground-secondary">Minimum HP input: {npcs.npcCrewCount?.inputHP}</span>
-                <span className="text-foreground-secondary">Cap: {npcs.npcCrewCount?.cap}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Wanted level */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">🎯 Wanted Level</h3>
-            <p className="text-foreground-secondary text-sm mb-2">
-              {(npcs.wantedLevel as Record<string, unknown>)?.description as string ?? 'Attacking NPCs increases your wanted level. Higher levels cause Bounty Hunters to spawn more aggressively.'}
+            <h3 className="text-foreground font-semibold text-lg mb-3">📊 NPC Stat Scaling by Water Hazard Level</h3>
+            <p className="text-foreground-secondary text-sm mb-4">
+              NPC stats are generated from the ship&apos;s base stats, then scaled by the Water Hazard level. Lower WH zones have significantly weaker NPCs.
             </p>
-            <div className="bg-surface-hover rounded-lg p-3">
-              <div className="grid grid-cols-3 gap-2 text-sm text-center">
-                {[1, 2, 3].map(level => (
-                  <div key={level} className="bg-surface rounded p-3">
-                    <span className="text-foreground-muted block text-xs mb-1">Wanted Level {level}</span>
-                    <span className="text-foreground font-medium">{(20 - level * 5)} min</span>
-                    <span className="text-foreground-muted block text-xs">between Bounty Hunters</span>
-                  </div>
-                ))}
-              </div>
-              {(npcs.wantedLevel as Record<string, unknown>)?.tradingRouteBonus ? (
-                <p className="text-foreground-muted text-xs mt-2">
-                  📝 {(npcs.wantedLevel as Record<string, unknown>).tradingRouteBonus as string}
-                </p>
-              ) : null}
-            </div>
-          </div>
-
-          {/* Tutorial NPCs */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">📚 Tutorial NPCs</h3>
-            <p className="text-foreground-secondary text-sm mb-3">NPCs encountered during the tutorial and education maps.</p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-foreground-secondary text-left border-b border-surface-border">
-                    <th className="pb-2 pr-3">Name</th>
-                    <th className="pb-2 pr-3">Ship</th>
-                    <th className="pb-2 pr-3">HP</th>
-                    <th className="pb-2 pr-3">Speed</th>
-                    <th className="pb-2 pr-3">Damage</th>
-                    <th className="pb-2 pr-3">Role</th>
+                    <th className="pb-2 pr-4">Level</th>
+                    <th className="pb-2 pr-4">HP</th>
+                    <th className="pb-2 pr-4">Damage</th>
+                    <th className="pb-2 pr-4">Speed</th>
+                    <th className="pb-2 pr-4">Range</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {npcs.educationMapNpcs.map((npc, i) => (
-                    <tr key={i} className="border-b border-surface-border/50">
-                      <td className="py-2 pr-3 text-foreground font-medium">{npc.name}</td>
-                      <td className="py-2 pr-3 text-foreground-secondary">{npc.shipName}</td>
-                      <td className="py-2 pr-3 text-red-400">{npc.hp}</td>
-                      <td className="py-2 pr-3 text-foreground-secondary">{npc.speed} kn</td>
-                      <td className="py-2 pr-3 text-foreground-secondary">{npc.damagePerShot}</td>
-                      <td className="py-2 pr-3 text-foreground-muted">
-                        {npc.scenario === 'BattleEnemies' ? '🎯 Enemy' : npc.scenario === 'BattleAllies' ? '🤝 Ally' : npc.scenario === 'FirstShip' ? '📚 First Battle' : npc.scenario}
-                      </td>
+                  {WH_SCALING.map(row => (
+                    <tr key={row.wh} className="border-b border-surface-border/50">
+                      <td className={`py-2 pr-4 font-medium ${row.color}`}>WH {row.wh}</td>
+                      <td className="py-2 pr-4 text-foreground-secondary">{row.hp}</td>
+                      <td className="py-2 pr-4 text-foreground-secondary">{row.damage}</td>
+                      <td className="py-2 pr-4 text-foreground-secondary">{row.speed}</td>
+                      <td className="py-2 pr-4 text-foreground-secondary">{row.range}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* ═══════════════════ REWARDS TAB ═══════════════════ */}
-      {tab === 'rewards' && (
-        <div className="grid gap-4">
-          {/* How rewards work */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4 mb-0">
-            <h3 className="text-foreground font-semibold text-lg mb-2">📊 How Rewards Work</h3>
-            <p className="text-foreground-secondary text-sm">
-              {(npcs.rewardSystem as Record<string, unknown>)?.description as string ?? 'Every NPC has a kill value based on its combat stats.'}
-            </p>
-            <p className="text-foreground-muted text-xs mt-2">
-              The kill value is calculated from the NPC&apos;s <strong>HP</strong>, <strong>speed</strong>, <strong>armor</strong>, and <strong>DPS</strong>. Traders start with a higher base (150 gold vs 75 for other NPCs). Location multipliers apply — open sea and hazard waters can increase rewards.
-            </p>
-          </div>
-
-          {/* Sinking vs Boarding */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">⚔️ Sinking vs Boarding</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-surface-hover rounded-lg p-3">
-                <h4 className="text-red-400 font-medium mb-2">💥 Sinking</h4>
-                <p className="text-foreground-secondary text-sm">Destroying an NPC ship drops resources, gold, cannonball ammo, and has a chance for powerup consumable items.</p>
-              </div>
-              <div className="bg-surface-hover rounded-lg p-3">
-                <h4 className="text-green-400 font-medium mb-2">🏴 Boarding & Capture</h4>
-                <p className="text-foreground-secondary text-sm">Boarding lets you capture the ship (if capturable), recruit crew, and access different loot tables. Captured ships can be dismantled for resources.</p>
-              </div>
+            <div className="bg-orange-400/10 rounded-lg p-3 mt-4 text-sm">
+              <span className="text-orange-400 font-medium">⚠️ Northern Waters Bonus:</span>
+              <span className="text-foreground-secondary ml-2">
+                Some regions in WH 3, 4, 5, 6 are &quot;northern waters&quot; — pirates there get <strong className="text-red-400">+20% HP</strong> and <strong className="text-orange-400">+10% damage</strong>. Ammo drops are also 100% guaranteed and force Ice Ball (type 5).
+              </span>
             </div>
           </div>
 
-          {/* Loot by type */}
+          {/* Section 2: What Spawns Where */}
           <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">💎 Loot Drops by NPC Type</h3>
-            <div className="grid gap-4">
-              {Object.entries(lootByType).map(([category, catData]) => {
-                const LOOT_CAT_NAMES: Record<string, string> = {
-                  seafarer: '⚓ Small Vessels',
-                  pirates: '🏴‍☠️ Pirates',
-                  order: '⛪ Order of the New Ark',
-                  traders: '🪙 Traders',
-                  empire: '👑 Empire',
-                  bountyHunter: '🎯 Bounty Hunters',
-                  portPatrol: '🛡️ Faction Patrols',
-                  nyEventNpc: '❄️ Sea Elves (Event)',
-                }
-                const cat = catData as Record<string, unknown>
-                return (
-                  <div key={category} className="bg-surface-hover rounded-lg p-4">
-                    <h4 className="text-foreground font-semibold mb-2">
-                      {LOOT_CAT_NAMES[category] ?? category}
-                    </h4>
-                    {cat.summary ? <p className="text-foreground-secondary text-sm mb-3">{cat.summary as string}</p> : null}
-                    {/* Top-level drops (for categories without sub-types) */}
-                    {Array.isArray(cat.drops) ? (
-                      <ul className="space-y-1 ml-1">
-                        {(cat.drops as string[]).map((drop, i) => (
-                          <li key={i} className="text-foreground-secondary text-sm">{drop}</li>
-                        ))}
-                      </ul>
-                    ) : null}
-                    {/* Sub-types with their own drops */}
-                    {Object.entries(cat).filter(([k]) => k !== 'summary' && k !== 'drops').map(([subKey, subData]) => {
-                      const sub = subData as Record<string, unknown>
-                      if (!sub.label && !sub.drops) return null
+            <h3 className="text-foreground font-semibold text-lg mb-3">🌊 What Spawns Where</h3>
+            <div className="grid gap-3 mb-6">
+              {WH_SPAWN_INFO.map((row, i) => (
+                <div key={i} className="bg-surface-hover rounded-lg p-3">
+                  <span className={`font-semibold ${row.color}`}>{row.wh}:</span>
+                  <span className="text-foreground-secondary ml-2 text-sm">{row.npcs}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* 2-Star Boss Spawn Locations */}
+            <h4 className="text-foreground font-medium mb-3">⭐⭐ 2-Star Boss Spawn Locations</h4>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+              {bosses2Star.map(boss => (
+                <div key={boss.name} className="bg-surface-hover rounded-lg p-3 flex justify-between items-center">
+                  <span className="text-foreground font-medium text-sm">{boss.name}</span>
+                  <span className="text-blue-400 text-xs font-medium">
+                    {boss.spawnRegions.map(r => `WH ${r}`).join(', ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* 3-Star Bosses */}
+            <h4 className="text-foreground font-medium mb-3">⭐⭐⭐ 3-Star Boss Spawn Location</h4>
+            <div className="bg-purple-400/10 rounded-lg p-3 text-sm">
+              <span className="text-purple-400 font-medium">Legend Boss Zone (center of map)</span>
+              <span className="text-foreground-secondary ml-2">— all {bosses3Star.length} legendary bosses spawn here. 12-hour respawn. Requires rank 12+.</span>
+            </div>
+          </div>
+
+          {/* Section 3: Capture Rules */}
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-foreground font-semibold text-lg mb-3">🏴 Capture Rules</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-green-400/5 rounded-lg p-3">
+                <h4 className="text-green-400 font-medium mb-2">✅ Can Capture</h4>
+                <p className="text-foreground-secondary text-sm">{npcs.captureSystem?.canCapture ?? 'Pirates, Traders, Seafarers, Fanatics'}</p>
+              </div>
+              <div className="bg-red-400/5 rounded-lg p-3">
+                <h4 className="text-red-400 font-medium mb-2">❌ Cannot Capture</h4>
+                <p className="text-foreground-secondary text-sm">{npcs.captureSystem?.cannotCapture ?? 'Empire, Port Patrol'}</p>
+              </div>
+            </div>
+            <p className="text-foreground-muted text-xs mt-3">{npcs.captureSystem?.captureRule}</p>
+            {npcs.captureSystem?.mechanics ? (
+              <p className="text-foreground-secondary text-sm mt-2">⚓ {npcs.captureSystem.mechanics}</p>
+            ) : null}
+          </div>
+
+          {/* Section 4: Reward Mechanics */}
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-foreground font-semibold text-lg mb-3">💰 Reward Mechanics</h3>
+
+            {/* How kill value works */}
+            <div className="bg-surface-hover rounded-lg p-3 mb-4">
+              <h4 className="text-foreground font-medium text-sm mb-2">📊 Kill Value</h4>
+              <p className="text-foreground-secondary text-sm">
+                {(npcs.rewardSystem as Record<string, unknown>)?.description as string ?? 'Every NPC has a kill value based on its combat stats.'}
+              </p>
+              <p className="text-foreground-muted text-xs mt-2">
+                Calculated from <strong>HP</strong>, <strong>speed</strong>, <strong>armor</strong>, and <strong>DPS</strong>. Traders start with a higher base (150 gold vs 75). Location multipliers apply.
+              </p>
+            </div>
+
+            {/* Sinking vs Boarding */}
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <div className="bg-surface-hover rounded-lg p-3">
+                <h4 className="text-red-400 font-medium text-sm mb-2">💥 Sinking</h4>
+                <p className="text-foreground-secondary text-sm">Drops gold, resources, ammo, and chance for powerup items. Full kill value rewarded.</p>
+              </div>
+              <div className="bg-surface-hover rounded-lg p-3">
+                <h4 className="text-green-400 font-medium text-sm mb-2">🏴 Boarding & Capture</h4>
+                <p className="text-foreground-secondary text-sm">Capture the ship (if capturable), recruit crew, and dismantle for resources. Different loot table.</p>
+              </div>
+            </div>
+
+            {/* Dismantle */}
+            {npcs.rewardSystem?.dismantleRewards ? (() => {
+              const dismantle = npcs.rewardSystem.dismantleRewards as Record<string, unknown>
+              const breakdown = (dismantle.breakdown ?? {}) as Record<string, string>
+              return (
+                <div className="bg-surface-hover rounded-lg p-3 mb-4">
+                  <h4 className="text-foreground font-medium text-sm mb-2">🔨 Dismantle Rewards</h4>
+                  <p className="text-foreground-secondary text-sm mb-2">{dismantle.description as string}</p>
+                  <p className="text-foreground-muted text-xs mb-2">Total value: {dismantle.totalValue as string}</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
+                    {Object.entries(breakdown).map(([key, val]) => (
+                      <div key={key} className="flex justify-between bg-surface rounded p-1.5">
+                        <span className="text-foreground-secondary">{key}</span>
+                        <span className="text-accent">{val}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })() : null}
+
+            {/* Powerup drops */}
+            {npcs.rewardSystem?.powerupDrops ? (() => {
+              const drops = npcs.rewardSystem.powerupDrops as Record<string, unknown>
+              return (
+                <div className="bg-surface-hover rounded-lg p-3 mb-4">
+                  <h4 className="text-foreground font-medium text-sm mb-2">⚡ Powerup Drops</h4>
+                  <p className="text-foreground-secondary text-sm mb-2">{drops.description as string}</p>
+                  <p className="text-foreground-muted text-xs mb-2">{drops.dropLogic as string}</p>
+                  <div className="grid sm:grid-cols-3 gap-2 text-xs">
+                    {['speedDrop', 'armorDrop', 'commonDrop'].map(key => {
+                      const drop = drops[key] as Record<string, unknown> | undefined
+                      if (!drop) return null
                       return (
-                        <div key={subKey} className="mt-3 bg-surface rounded-lg p-3">
-                          {sub.label ? <h5 className="text-accent font-medium text-sm mb-2">{sub.label as string}</h5> : null}
-                          {Array.isArray(sub.drops) ? (
-                            <ul className="space-y-1 ml-1">
-                              {(sub.drops as string[]).map((drop, i) => (
-                                <li key={i} className="text-foreground-secondary text-sm">{drop as string}</li>
-                              ))}
-                            </ul>
-                          ) : null}
+                        <div key={key} className="bg-surface rounded-lg p-2">
+                          <span className="text-foreground font-medium block mb-1">
+                            {key === 'speedDrop' ? '⚡ Speed' : key === 'armorDrop' ? '🛡️ Armor' : '📦 Common'}
+                          </span>
+                          <span className="text-foreground-muted block">{drop.condition as string}</span>
                         </div>
                       )
                     })}
                   </div>
-                )
-              })}
-            </div>
-          </div>
-
-          {/* Reward formulas */}
-          <div className="bg-surface border border-surface-border rounded-xl p-4">
-            <h3 className="text-foreground font-semibold text-lg mb-3">📊 Reward Calculations</h3>
-            {npcs.rewardSystem?.basicRewardFormula ? (
-              <div className="grid gap-2 text-sm">
-                {Object.entries(npcs.rewardSystem.basicRewardFormula as Record<string, string>).map(([key, val]) => {
-                  const FORMULA_NAMES: Record<string, string> = {
-                    goldCalculation: '💰 Gold Earned',
-                    xpCalculation: '⭐ XP Earned',
-                    combatBonus: '⚔️ Combat Bonus',
-                    damageBonus: '💥 Damage Bonus',
-                    cannonBalls: '💣 Ammo Drops',
-                  }
-                  return (
-                    <div key={key} className="bg-surface-hover rounded p-2">
-                      <span className="text-accent font-medium block text-xs mb-1">{FORMULA_NAMES[key] ?? key}</span>
-                      <span className="text-foreground-secondary text-xs">{val}</span>
-                    </div>
-                  )
-                })}
-              </div>
-            ) : null}
-          </div>
-
-          {/* Powerup drops */}
-          {npcs.rewardSystem?.powerupDrops ? (() => {
-            const drops = npcs.rewardSystem.powerupDrops as Record<string, unknown>
-            return (
-              <div className="bg-surface border border-surface-border rounded-xl p-4">
-                <h3 className="text-foreground font-semibold text-lg mb-3">⚡ Powerup Item Drops</h3>
-                <p className="text-foreground-secondary text-sm mb-3">{drops.description as string}</p>
-                <div className="bg-surface-hover rounded-lg p-3 mb-3">
-                  <p className="text-sm text-foreground-secondary">{drops.dropLogic as string}</p>
+                  <p className="text-foreground-muted text-xs mt-2">Size scaling: {drops.sizeScaling as string}</p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-3 text-sm">
-                  {['speedDrop', 'armorDrop', 'commonDrop'].map(key => {
-                    const drop = drops[key] as Record<string, unknown> | undefined
-                    if (!drop) return null
+              )
+            })() : null}
+
+            {/* Ammo drops */}
+            {npcs.rewardSystem?.cannonballDrops ? (() => {
+              const drops = npcs.rewardSystem.cannonballDrops as Record<string, string>
+              return (
+                <div className="bg-surface-hover rounded-lg p-3 mb-4">
+                  <h4 className="text-foreground font-medium text-sm mb-2">💣 Ammo Drops</h4>
+                  <div className="grid gap-1 text-sm">
+                    <p className="text-foreground-secondary text-xs">Chance: {drops.chance}</p>
+                    <p className="text-foreground-secondary text-xs">Amount: {drops.amount}</p>
+                    <p className="text-foreground-secondary text-xs">Type: {drops.typeSelection}</p>
+                  </div>
+                </div>
+              )
+            })() : null}
+
+            {/* Reward formulas */}
+            {npcs.rewardSystem?.basicRewardFormula ? (
+              <div className="bg-surface-hover rounded-lg p-3">
+                <h4 className="text-foreground font-medium text-sm mb-2">📊 Reward Formulas</h4>
+                <div className="grid gap-1 text-xs">
+                  {Object.entries(npcs.rewardSystem.basicRewardFormula as Record<string, string>).map(([key, val]) => {
+                    const names: Record<string, string> = {
+                      goldCalculation: '💰 Gold',
+                      xpCalculation: '⭐ XP',
+                      combatBonus: '⚔️ Combat Bonus',
+                      damageBonus: '💥 Damage Bonus',
+                      cannonBalls: '💣 Ammo',
+                    }
                     return (
-                      <div key={key} className="bg-surface-hover rounded-lg p-3">
-                        <h4 className="text-foreground font-medium capitalize mb-1">
-                          {key === 'speedDrop' ? '⚡ Speed Powerups' : key === 'armorDrop' ? '🛡️ Armor Powerups' : '📦 Common Powerups'}
-                        </h4>
-                        <p className="text-foreground-muted text-xs mb-1">{drop.condition as string}</p>
-                        <p className="text-foreground-secondary text-xs">Ships: {(drop.shipNames as string[]).join(', ')}</p>
+                      <div key={key} className="bg-surface rounded p-1.5">
+                        <span className="text-accent font-medium">{names[key] ?? key}:</span>{' '}
+                        <span className="text-foreground-secondary">{val}</span>
                       </div>
                     )
                   })}
                 </div>
-                <p className="text-foreground-muted text-xs mt-2">Size scaling: {drops.sizeScaling as string}</p>
               </div>
-            )
-          })() : null}
+            ) : null}
+          </div>
 
-          {/* Cannonball drops */}
-          {npcs.rewardSystem?.cannonballDrops ? (() => {
-            const drops = npcs.rewardSystem.cannonballDrops as Record<string, string>
-            return (
-              <div className="bg-surface border border-surface-border rounded-xl p-4">
-                <h3 className="text-foreground font-semibold text-lg mb-3">💣 Ammo Drops</h3>
-                {(() => {
-                  const AMMO_DROP_LABELS: Record<string, string> = {
-                    description: 'Overview',
-                    chance: 'Drop Chance',
-                    amount: 'Amount',
-                    typeSelection: 'Ammo Type',
-                    tutorialBonus: 'Tutorial Bonus',
-                  }
-                  return (
-                    <div className="grid gap-2 text-sm">
-                      {Object.entries(drops).map(([key, val]) => (
-                        <div key={key}>
-                          <span className="text-accent font-medium">{AMMO_DROP_LABELS[key] ?? key}:</span>{' '}
-                          <span className="text-foreground-secondary">{val}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )
-                })()}
+          {/* Section 5: Crew Count & Wanted Level */}
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-foreground font-semibold text-lg mb-3">👥 NPC Crew Count & Wanted Level</h3>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* Crew count */}
+              <div className="bg-surface-hover rounded-lg p-3">
+                <h4 className="text-foreground font-medium text-sm mb-2">👥 Crew Count</h4>
+                <p className="text-foreground-secondary text-sm mb-2">{npcs.npcCrewCount?.description}</p>
+                <code className="text-cyan-400 text-xs block mb-2">{npcs.npcCrewCount?.formula}</code>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <span className="text-foreground-secondary">Min HP input: {npcs.npcCrewCount?.inputHP}</span>
+                  <span className="text-foreground-secondary">Cap: {npcs.npcCrewCount?.cap}</span>
+                </div>
               </div>
-            )
-          })() : null}
 
-          {/* Dismantle rewards */}
-          {npcs.rewardSystem?.dismantleRewards ? (() => {
-            const dismantle = npcs.rewardSystem.dismantleRewards as Record<string, unknown>
-            const breakdown = (dismantle.breakdown ?? {}) as Record<string, string>
-            return (
-              <div className="bg-surface border border-surface-border rounded-xl p-4">
-                <h3 className="text-foreground font-semibold text-lg mb-3">🔨 Ship Dismantle Rewards</h3>
-                <p className="text-foreground-secondary text-sm mb-2">{dismantle.description as string}</p>
-                <p className="text-foreground-muted text-xs mb-3">Total value: {dismantle.totalValue as string}</p>
-                <div className="grid gap-1 text-sm">
-                  {Object.entries(breakdown).map(([key, val]) => (
-                    <div key={key} className="flex justify-between bg-surface-hover rounded p-2">
-                      <span className="text-foreground">{key}</span>
-                      <span className="text-accent">{val}</span>
+              {/* Wanted level */}
+              <div className="bg-surface-hover rounded-lg p-3">
+                <h4 className="text-foreground font-medium text-sm mb-2">🎯 Wanted Level</h4>
+                <p className="text-foreground-secondary text-sm mb-2">
+                  {(npcs.wantedLevel as Record<string, unknown>)?.description as string ?? 'Attacking NPCs raises your wanted level.'}
+                </p>
+                <div className="grid grid-cols-3 gap-2 text-xs text-center">
+                  {[1, 2, 3].map(level => (
+                    <div key={level} className="bg-surface rounded p-2">
+                      <span className="text-foreground-muted block">Level {level}</span>
+                      <span className="text-foreground font-medium">{(20 - level * 5)} min</span>
+                      <span className="text-foreground-muted block">between hunters</span>
                     </div>
                   ))}
                 </div>
+                {(npcs.wantedLevel as Record<string, unknown>)?.tradingRouteBonus ? (
+                  <p className="text-foreground-muted text-xs mt-2">
+                    📝 {(npcs.wantedLevel as Record<string, unknown>).tradingRouteBonus as string}
+                  </p>
+                ) : null}
               </div>
-            )
-          })() : null}
+            </div>
+          </div>
+
+          {/* Procedural NPCs — condensed */}
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-foreground font-semibold text-lg mb-3">👻 Procedural NPCs</h3>
+            <p className="text-foreground-secondary text-sm mb-3">Dynamically generated NPCs in each Water Hazard level.</p>
+            <div className="grid gap-3">
+              {Object.entries(npcs.proceduralNpcs).map(([key, npc]) => (
+                <div key={key} className="bg-surface-hover rounded-lg p-3">
+                  <div className="flex items-center gap-3 flex-wrap mb-2">
+                    <h4 className="text-foreground font-medium">{npc.name || key}</h4>
+                    {npc.count ? <Badge color="blue" text={`${npc.count} per WH level`} /> : null}
+                    {npc.visual ? <Badge color="purple" text={VISUAL_NAMES[npc.visual] ?? npc.visual} /> : null}
+                  </div>
+                  {npc.shipClasses ? (
+                    <p className="text-foreground-secondary text-xs mb-1">Ships: {npc.shipClasses.map(c => SHIP_CLASS_NAMES[c] ?? c).join(', ')}</p>
+                  ) : null}
+                  {npc.notes ? <p className="text-foreground-muted text-xs italic">📝 {npc.notes}</p> : null}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }
