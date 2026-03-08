@@ -7,10 +7,11 @@ const globalForPrisma = globalThis as unknown as { prisma: PrismaClient; pool: P
 if (!globalForPrisma.pool) {
   globalForPrisma.pool = new Pool({
     connectionString: process.env.DATABASE_URL!,
-    max: 2,
-    idleTimeoutMillis: 10000,
-    connectionTimeoutMillis: 5000,
-  })
+    max: 1,
+    idleTimeoutMillis: 5000,
+    connectionTimeoutMillis: 10000,
+    statement_timeout: 30000,
+  } as ConstructorParameters<typeof Pool>[0])
 }
 
 const prisma =
