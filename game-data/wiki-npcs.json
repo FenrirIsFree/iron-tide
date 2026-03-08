@@ -26,7 +26,17 @@
       "flag": "NoFlag",
       "powerupItemChance": 0,
       "moreRandomUpgrades": false,
-      "reinforceCannonAngle": 0
+      "reinforceCannonAngle": 0,
+      "dropInfo": {
+        "summary": "No rewards",
+        "items": [
+          {
+            "icon": "\ud83d\udeab",
+            "label": "Nothing",
+            "value": "0 gold, 0 XP \u2014 not worth attacking"
+          }
+        ]
+      }
     },
     {
       "typeId": "PirateFraction1_Regular",
@@ -56,7 +66,37 @@
         "Mortar"
       ],
       "fleetSize": "1-2 (alternating)",
-      "spawnCount": "5-10 per Water Hazard level (more in low Water Hazard levels)"
+      "spawnCount": "5-10 per Water Hazard level (more in low Water Hazard levels)",
+      "dropInfo": {
+        "summary": "Gold + local trade goods",
+        "items": [
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Gold",
+            "value": "~70% of kill value"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Local Trade Goods",
+            "value": "~30% of kill value converted to provisions"
+          },
+          {
+            "icon": "\ud83d\uddfa\ufe0f",
+            "label": "Pirate Treasure Map",
+            "value": "1 in 30 chance (~3.3%)"
+          },
+          {
+            "icon": "\u2744\ufe0f",
+            "label": "Bonus Goods (North)",
+            "value": "Extra trade goods in northern waters"
+          }
+        ],
+        "exampleKillValues": {
+          "WH 2": "~359 gold \u2192 ~251 gold + goods",
+          "WH 4": "~691 gold \u2192 ~483 gold + goods",
+          "WH 6": "~1585 gold \u2192 ~1109 gold + goods"
+        }
+      }
     },
     {
       "typeId": "PirateFraction1_Reinforced",
@@ -90,6 +130,36 @@
       "statModifiers": {
         "hpMultiplier": "1.1 + 0.2 \u00d7 waterHazard",
         "damageMultiplier": 1.3
+      },
+      "dropInfo": {
+        "summary": "Pirate Tokens or Wood + Resource Packs",
+        "items": [
+          {
+            "icon": "\ud83c\udff4",
+            "label": "Pirate Tokens",
+            "value": "HP \u00f7 100 (hazard waters only)"
+          },
+          {
+            "icon": "\ud83e\udeb5",
+            "label": "Wood",
+            "value": "33% of kill value (safe waters only)"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Resource Packs",
+            "value": "80% of kill value, minimum 1 Chest"
+          },
+          {
+            "icon": "\ud83d\udca3",
+            "label": "Ammo",
+            "value": "15 + WH level \u00d7 6"
+          }
+        ],
+        "exampleKillValues": {
+          "WH 2 (safe)": "~100 Wood + 2 Chests",
+          "WH 4 (hazard)": "~16 Pirate Tokens + 5 Chests",
+          "WH 6 (hazard)": "~38 Pirate Tokens + 11 Chests"
+        }
       }
     },
     {
@@ -124,7 +194,32 @@
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 \u00d7 waterHazard + (200-600) \u00d7 fleetIndex"
+      "hpFormula": "600 + 600 \u00d7 waterHazard + (200-600) \u00d7 fleetIndex",
+      "dropInfo": {
+        "summary": "Same as Pirate Baron + cannon drop",
+        "items": [
+          {
+            "icon": "\ud83c\udff4",
+            "label": "Pirate Tokens",
+            "value": "HP \u00f7 100 (hazard waters only)"
+          },
+          {
+            "icon": "\ud83e\udeb5",
+            "label": "Wood",
+            "value": "33% of kill value (safe waters only)"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Resource Packs",
+            "value": "80% of kill value, minimum 1 Chest"
+          },
+          {
+            "icon": "\ud83d\udd2b",
+            "label": "Cannon",
+            "value": "Random cannon from the ship's weapon types"
+          }
+        ]
+      }
     },
     {
       "typeId": "PirateFraction2_Regular",
@@ -157,7 +252,27 @@
         "speedReduction": -2,
         "armorBonus": 2
       },
-      "spawnCount": "5 per Water Hazard level (only in Water Hazard 4+)"
+      "spawnCount": "5 per Water Hazard level (only in Water Hazard 4+)",
+      "dropInfo": {
+        "summary": "Same as regular pirates but with Fanatic Camp Maps",
+        "items": [
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Gold",
+            "value": "~70% of kill value"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Local Trade Goods",
+            "value": "~30% of kill value"
+          },
+          {
+            "icon": "\ud83d\uddfa\ufe0f",
+            "label": "Fanatic Camp Map",
+            "value": "1 in 40 chance (~2.5%)"
+          }
+        ]
+      }
     },
     {
       "typeId": "PirateFraction2_Reinforced",
@@ -194,6 +309,26 @@
         "damageMultiplier": 1.2,
         "speedReduction": -2,
         "armorBonus": 2
+      },
+      "dropInfo": {
+        "summary": "Same as Pirate Baron \u2014 Pirate Tokens or Wood + Chests",
+        "items": [
+          {
+            "icon": "\ud83c\udff4",
+            "label": "Pirate Tokens",
+            "value": "HP \u00f7 100 (hazard waters only)"
+          },
+          {
+            "icon": "\ud83e\udeb5",
+            "label": "Wood",
+            "value": "33% of kill value (safe waters)"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Resource Packs",
+            "value": "80% of kill value, minimum 1 Chest"
+          }
+        ]
       }
     },
     {
@@ -232,6 +367,26 @@
       "statModifiers": {
         "speedReduction": -2,
         "armorBonus": 2
+      },
+      "dropInfo": {
+        "summary": "2 random provisions + Pirate Tokens/Wood + Chests",
+        "items": [
+          {
+            "icon": "\ud83c\udff4",
+            "label": "Pirate Tokens",
+            "value": "HP \u00f7 100 (hazard waters only)"
+          },
+          {
+            "icon": "\ud83e\udeb5",
+            "label": "Wood",
+            "value": "33% of kill value (safe waters)"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "2 Random Resources",
+            "value": "From: Provision, Supplies, Grain, Animals, Wood \u2014 each at 50% kill value"
+          }
+        ]
       }
     },
     {
@@ -268,6 +423,40 @@
         "hpMultiplier": "0.75 + 0.15 \u00d7 waterHazard",
         "damageMultiplier": 0.9,
         "reloadMultiplier": 1.1
+      },
+      "dropInfo": {
+        "summary": "Trade goods from nearby ports + gold",
+        "items": [
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Trade Goods",
+            "value": "1 type from nearby port, amount scales with kill value"
+          },
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Gold",
+            "value": "33% in safe waters, 25% in hazard waters"
+          },
+          {
+            "icon": "\ud83d\uddfa\ufe0f",
+            "label": "Merchant Supply Map",
+            "value": "1 in 20 chance (5%)"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Bonus Wood/Supplies",
+            "value": "50% chance"
+          },
+          {
+            "icon": "\ud83d\udea2",
+            "label": "Trade Route Bonus",
+            "value": "Extra goods if trader was on an active route"
+          }
+        ],
+        "exampleKillValues": {
+          "WH 2": "~413 gold (150 base for traders)",
+          "WH 4": "~621 gold"
+        }
       }
     },
     {
@@ -304,7 +493,22 @@
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
       "hpFormula": "600 + 600 \u00d7 waterHazard + 200-600",
-      "fixedName": "Ferryman"
+      "fixedName": "Ferryman",
+      "dropInfo": {
+        "summary": "Rich cargo \u2014 3 different trade resources",
+        "items": [
+          {
+            "icon": "\ud83d\udce6",
+            "label": "3 Trade Resources",
+            "value": "Larger quantities than regular merchants"
+          },
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Base Value",
+            "value": "150 gold base (2\u00d7 regular NPCs)"
+          }
+        ]
+      }
     },
     {
       "typeId": "PortPatrol",
@@ -330,7 +534,17 @@
       "reinforceCannonAngle": 0,
       "spawnIntervalMin": 3,
       "fixedName": "Patrol",
-      "spawnPerPort": "3 per faction + 1 flagship + 3 invasion ships"
+      "spawnPerPort": "3 per faction + 1 flagship + 3 invasion ships",
+      "dropInfo": {
+        "summary": "Minimal loot",
+        "items": [
+          {
+            "icon": "\ud83e\udeb5",
+            "label": "Wood",
+            "value": "Small amount (10-20% of kill value)"
+          }
+        ]
+      }
     },
     {
       "typeId": "Empire_Regular",
@@ -354,7 +568,22 @@
       "powerupItemChance": 0,
       "moreRandomUpgrades": false,
       "reinforceCannonAngle": 0,
-      "notes": "Also used for procedurally generated 'Sea Spirit' shadow ships (19 per Water Hazard level)"
+      "notes": "Also used for procedurally generated 'Sea Spirit' shadow ships (19 per Water Hazard level)",
+      "dropInfo": {
+        "summary": "Escudo (Imperial Stamps)",
+        "items": [
+          {
+            "icon": "\u2b50",
+            "label": "Escudo",
+            "value": "(500 + HP) \u00f7 1660 \u2014 scales with NPC strength"
+          }
+        ],
+        "exampleKillValues": {
+          "WH 2 (~800 HP)": "~1 Escudo",
+          "WH 4 (~1500 HP)": "~1-2 Escudo",
+          "WH 6 (~3000 HP)": "~2-3 Escudo"
+        }
+      }
     },
     {
       "typeId": "Empire_Invasion",
@@ -386,7 +615,22 @@
         "reloadMultiplier": 0.9,
         "mobilityMultiplier": 1.1
       },
-      "portShipSelection": "Ship ID based on Water Hazard level: WH 1-2\u2192Black Prince, WH 2-4\u2192Devourer, WH 4-6\u2192Deadfish, WH 7\u2192Octopus"
+      "portShipSelection": "Ship ID based on Water Hazard level: WH 1-2\u2192Black Prince, WH 2-4\u2192Devourer, WH 4-6\u2192Deadfish, WH 7\u2192Octopus",
+      "dropInfo": {
+        "summary": "Escudo (reduced rewards)",
+        "items": [
+          {
+            "icon": "\u2b50",
+            "label": "Escudo",
+            "value": "1 (more in open sea)"
+          },
+          {
+            "icon": "\u26a0\ufe0f",
+            "label": "Penalty",
+            "value": "30% less total loot than normal Empire ships"
+          }
+        ]
+      }
     },
     {
       "typeId": "Empire_Legendary2l",
@@ -411,7 +655,32 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "freeFloatingSpeed": 3,
-      "respawnIntervalMin": 5
+      "respawnIntervalMin": 5,
+      "dropInfo": {
+        "summary": "See individual boss cards in the Bosses tab for exact drops",
+        "items": [
+          {
+            "icon": "\ud83d\udc51",
+            "label": "Legend Tokens",
+            "value": "HP \u00f7 3200"
+          },
+          {
+            "icon": "\u2b50",
+            "label": "Escudo",
+            "value": "1"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Rare Trade Goods",
+            "value": "~1500 gold worth"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Chest + Wood/Supplies",
+            "value": "50% chance each"
+          }
+        ]
+      }
     },
     {
       "typeId": "Empire_Legendary3l",
@@ -439,7 +708,37 @@
       "reinforceCannonAngle": 10,
       "freeFloatingSpeed": 3,
       "respawnIntervalMin": 720,
-      "notes": "12-hour respawn timer. Only spawn in the Legend Boss Zone (center of map)."
+      "notes": "12-hour respawn timer. Only spawn in the Legend Boss Zone (center of map).",
+      "dropInfo": {
+        "summary": "See individual boss cards in the Bosses tab for exact drops",
+        "items": [
+          {
+            "icon": "\ud83d\udc51",
+            "label": "Legend Tokens",
+            "value": "4-28 depending on fleet size"
+          },
+          {
+            "icon": "\u2b50",
+            "label": "Escudo",
+            "value": "1-4"
+          },
+          {
+            "icon": "\ud83d\udfe4",
+            "label": "Copper",
+            "value": "17-25"
+          },
+          {
+            "icon": "\ud83d\udc80",
+            "label": "Voodoo Skulls",
+            "value": "3"
+          },
+          {
+            "icon": "\ud83d\udc8e",
+            "label": "Loot Chests",
+            "value": "Drops on water"
+          }
+        ]
+      }
     },
     {
       "typeId": "Fanatics",
@@ -469,7 +768,32 @@
         "CargoShip"
       ],
       "spawnCondition": "Only near pirate strongholds",
-      "spawnCount": "5 regular + reinforced variants per Water Hazard level"
+      "spawnCount": "5 regular + reinforced variants per Water Hazard level",
+      "dropInfo": {
+        "summary": "Same as regular pirates + guaranteed powerup drop",
+        "items": [
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Gold",
+            "value": "~70% of kill value"
+          },
+          {
+            "icon": "\ud83d\udce6",
+            "label": "Local Trade Goods",
+            "value": "~30% of kill value"
+          },
+          {
+            "icon": "\ud83d\uddfa\ufe0f",
+            "label": "Fanatic Camp Map",
+            "value": "1 in 40 chance (~2.5%)"
+          },
+          {
+            "icon": "\u26a1",
+            "label": "Powerup Item",
+            "value": "100% drop chance (guaranteed)"
+          }
+        ]
+      }
     },
     {
       "typeId": "BonusMap",
@@ -539,7 +863,31 @@
       "spawnCount": "6 per Water Hazard level",
       "statScaling": "3 tiers (index % 3): HP/damage \u00d7(0.8+tier\u00d70.3), speed \u00d7(0.95+tier\u00d70.1)",
       "spawnTrigger": "Wanted level \u2014 interval = (20 - wantedLevel \u00d7 5) \u00d7 60 seconds",
-      "marchingSpeedBonus": 40
+      "marchingSpeedBonus": 40,
+      "dropInfo": {
+        "summary": "Crafting materials \u2014 Iron and Fabric",
+        "items": [
+          {
+            "icon": "\u2692\ufe0f",
+            "label": "Iron",
+            "value": "~33% of kill value"
+          },
+          {
+            "icon": "\ud83e\uddf5",
+            "label": "Fabric",
+            "value": "~17% of kill value"
+          },
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Gold",
+            "value": "Small amount (~5%)"
+          }
+        ],
+        "exampleKillValues": {
+          "Tier 1 (weakest)": "~22 Iron + ~15 Fabric",
+          "Tier 3 (strongest)": "~39 Iron + ~27 Fabric"
+        }
+      }
     },
     {
       "typeId": "NyEventNpc",
@@ -558,7 +906,27 @@
       "hp": "7500 \u00d7 (0.75 + 0.5 \u00d7 waterHazard)",
       "usesShipId": 76,
       "usesShipName": "Old Octopus",
-      "spawnCount": "3 per Water Hazard level (Water Hazard 3+)"
+      "spawnCount": "3 per Water Hazard level (Water Hazard 3+)",
+      "dropInfo": {
+        "summary": "Event currency",
+        "items": [
+          {
+            "icon": "\ud83d\udcb0",
+            "label": "Gold",
+            "value": "50% of kill value"
+          },
+          {
+            "icon": "\ud83d\uddfa\ufe0f",
+            "label": "Mysterious Map",
+            "value": "1"
+          },
+          {
+            "icon": "\ud83d\udc34",
+            "label": "Seahorses",
+            "value": "HP \u00f7 1000 (roughly)"
+          }
+        ]
+      }
     },
     {
       "typeId": "Rem_PirateAmbush",

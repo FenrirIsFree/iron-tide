@@ -41,6 +41,11 @@ interface NpcType {
   statScaling?: string
   spawnTrigger?: string
   spawnPerPort?: string
+  dropInfo?: {
+    summary: string
+    items: { icon: string; label: string; value: string }[]
+    exampleKillValues?: Record<string, string>
+  }
 }
 
 interface DefenseWave {
@@ -837,7 +842,33 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                             ) : null}
 
                             {/* Loot info */}
-                            <LootDrops typeId={npc.typeId} lootByType={lootByType} />
+                            {npc.dropInfo ? (
+                              <InfoSection title={`💰 ${npc.dropInfo.summary}`}>
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm mb-2">
+                                  {npc.dropInfo.items.map((item, i) => (
+                                    <div key={i} className="bg-surface rounded p-2">
+                                      <span className="text-foreground-muted text-xs block">{item.icon} {item.label}</span>
+                                      <span className="text-foreground-secondary text-xs">{item.value}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                                {npc.dropInfo.exampleKillValues ? (
+                                  <div className="mt-2">
+                                    <span className="text-foreground-muted text-xs font-medium block mb-1">📊 Example drops by Water Hazard:</span>
+                                    <div className="flex flex-wrap gap-2">
+                                      {Object.entries(npc.dropInfo.exampleKillValues).map(([wh, val]) => (
+                                        <span key={wh} className="bg-surface text-xs px-2 py-1 rounded">
+                                          <span className="text-accent">{wh}:</span>{' '}
+                                          <span className="text-foreground-secondary">{val}</span>
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ) : null}
+                              </InfoSection>
+                            ) : (
+                              <LootDrops typeId={npc.typeId} lootByType={lootByType} />
+                            )}
 
                             {/* Notes */}
                             {npc.notes ? (
