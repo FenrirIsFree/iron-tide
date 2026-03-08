@@ -56,6 +56,9 @@ export default function Navbar() {
               <Link href="/roster" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
                 Roster
               </Link>
+              <Link href="/wiki" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
+                Wiki
+              </Link>
               <span className="text-accent text-sm font-medium">
                 {username || '...'}
               </span>
@@ -67,6 +70,9 @@ export default function Navbar() {
             </>
           ) : (
             <>
+              <Link href="/wiki" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
+                Wiki
+              </Link>
               <Link href="/login" className="px-4 py-2 text-sm font-medium text-accent border border-accent rounded-lg hover:bg-accent hover:text-background transition-colors">
                 Login
               </Link>
