@@ -7,7 +7,9 @@ const globalForPrisma = globalThis as unknown as { prisma: PrismaClient; pool: P
 if (!globalForPrisma.pool) {
   globalForPrisma.pool = new Pool({
     connectionString: process.env.DATABASE_URL!,
-    max: 5,
+    max: 2,
+    idleTimeoutMillis: 10000,
+    connectionTimeoutMillis: 5000,
   })
 }
 
@@ -18,6 +20,6 @@ const prisma =
     return new PrismaClient({ adapter })
   })()
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+globalForPrisma.prisma = prisma
 
 export default prisma
