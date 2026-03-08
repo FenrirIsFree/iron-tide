@@ -57,6 +57,8 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
   // Group resources by type
   const rawResources = inventory.resources.filter(r => r.resource.type === 'Raw')
   const processedResources = inventory.resources.filter(r => r.resource.type === 'Processed')
+  const tradeGoods = inventory.resources.filter(r => r.resource.type === 'Trade Good')
+  const specialItems = inventory.resources.filter(r => r.resource.type === 'Special')
 
   // Group consumables by category
   const consumableCategories = [...new Set(inventory.consumables.map(c => c.consumable.category || 'General'))].sort()
@@ -107,6 +109,40 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
           </ItemGroup>
           <ItemGroup title="🔧 Processed Resources">
             {processedResources.map(r => (
+              <ItemCard
+                key={r.id}
+                name={r.resource.name}
+                value={r.quantity}
+                isPublic={r.isPublic}
+                isEditing={editingId === r.id}
+                editValue={editValue}
+                onStartEdit={() => { setEditingId(r.id); setEditValue(String(r.quantity)) }}
+                onChangeEdit={setEditValue}
+                onSave={() => handleSave('resources', r.resourceId)}
+                onCancel={() => setEditingId(null)}
+                onToggleVisibility={() => startTransition(() => toggleItemVisibility('resource', r.id))}
+              />
+            ))}
+          </ItemGroup>
+          <ItemGroup title="🏪 Trade Goods">
+            {tradeGoods.map(r => (
+              <ItemCard
+                key={r.id}
+                name={r.resource.name}
+                value={r.quantity}
+                isPublic={r.isPublic}
+                isEditing={editingId === r.id}
+                editValue={editValue}
+                onStartEdit={() => { setEditingId(r.id); setEditValue(String(r.quantity)) }}
+                onChangeEdit={setEditValue}
+                onSave={() => handleSave('resources', r.resourceId)}
+                onCancel={() => setEditingId(null)}
+                onToggleVisibility={() => startTransition(() => toggleItemVisibility('resource', r.id))}
+              />
+            ))}
+          </ItemGroup>
+          <ItemGroup title="⭐ Special Items">
+            {specialItems.map(r => (
               <ItemCard
                 key={r.id}
                 name={r.resource.name}

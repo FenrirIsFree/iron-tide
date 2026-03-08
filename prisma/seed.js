@@ -199,8 +199,17 @@ async function seedConsumables() {
 }
 
 async function seedResources() {
+  const allResources = loadJson('wiki-resources.json');
   const raw = ['Wood', 'Iron Ore', 'Copper Ore', 'Coal', 'Fish', 'Resin', 'Wreckage', 'Whale Oil', 'Fresh Meat', 'Grain', 'Water', 'Volcanic Ore', 'Animals', 'Antiquities', 'Captives', 'Supplies'];
-  const processed = ['Iron', 'Copper', 'Bronze', 'Canvas', 'Fabric', 'Beam', 'Bulkhead', 'Plate', 'Tackle', 'Rum', 'Provision'];
+  const processed = ['Iron', 'Copper', 'Bronze', 'Canvas', 'Fabric', 'Beam', 'Bulkhead', 'Plate', 'Tackles', 'Rum', 'Provision'];
+  const tradeGoods = allResources
+    .filter(r => r.name !== 'removed' && (r.effects || '').includes('TradingItem'))
+    .map(r => r.name);
+  const specialItems = ['Chest', 'Chest (Arena)', 'Chest Key', 'Scrolls', 'Mysterious Map', 'Pirate Token',
+    'Merchant Supply Map', 'Pirate Treasure Map', 'Fanatic Camp Map', 'Blueprint Fragment',
+    'Imperial Blueprint', 'Modification Blueprint', 'Construction License', 'Escudo',
+    'Voodoo Skull', 'Battle Mark', 'Insurance', 'Seahorse', 'Cargo Crate'];
+
   let count = 0;
   for (const name of raw) {
     await prisma.resource.upsert({ where: { name }, update: { type: 'Raw' }, create: { name, type: 'Raw' } });
@@ -208,6 +217,14 @@ async function seedResources() {
   }
   for (const name of processed) {
     await prisma.resource.upsert({ where: { name }, update: { type: 'Processed' }, create: { name, type: 'Processed' } });
+    count++;
+  }
+  for (const name of tradeGoods) {
+    await prisma.resource.upsert({ where: { name }, update: { type: 'Trade Good' }, create: { name, type: 'Trade Good' } });
+    count++;
+  }
+  for (const name of specialItems) {
+    await prisma.resource.upsert({ where: { name }, update: { type: 'Special' }, create: { name, type: 'Special' } });
     count++;
   }
   return count;
