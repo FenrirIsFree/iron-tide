@@ -30,7 +30,7 @@ type MemberShip = {
   ship: {
     name: string; shipClass: string; rate: number; weaponClass: string | null
     broadsideSlots: number; crewCapacity: number | null; role: string | null
-    speed: number | null; maneuverability: number | null; durability: number | null
+    speed: number | null; maneuverability: number | null; hp: number | null
     holdCapacity: number | null; sternSlots: number | null; bowSlots: number | null
     mortarSlots: number | null
   }
@@ -151,8 +151,8 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                   <span className="text-foreground font-medium">{s.ship.maneuverability ?? '—'}</span>
                                 </div>
                                 <div className="text-center">
-                                  <span className="text-foreground-secondary block">HP</span>
-                                  <span className="text-foreground font-medium">{s.ship.durability ?? '—'}</span>
+                                  <span className="text-foreground-secondary block">DUR</span>
+                                  <span className="text-foreground font-medium">{s.ship.hp ?? '—'}</span>
                                 </div>
                                 <div className="text-center">
                                   <span className="text-foreground-secondary block">HOLD</span>

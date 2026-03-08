@@ -564,13 +564,13 @@ function ExpandedShipView({
     <div className="border-t border-surface-border p-5 space-y-5">
       {/* Ship Stats — Base + Modified */}
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
-        <StatBadge label="HP" base={ship.hp} modified={modStats?.hp} />
+        <StatBadge label="Durability" base={ship.hp} modified={modStats?.hp} />
         <StatBadge label="Speed" base={ship.speed} modified={modStats?.speed} />
         <StatBadge label="Maneuver" base={ship.maneuverability} modified={modStats?.maneuverability} />
         <StatBadge label="Armor" base={ship.broadsideArmor} modified={modStats?.broadsideArmor} />
         <StatBadge label="Crew Cap" base={ship.crewCapacity} modified={modStats?.crewCapacity} />
         <StatBadge label="Cargo" base={ship.cargoHold} modified={modStats?.cargoHold} />
-        <StatBadge label="Durability" base={ship.integrity} modified={modStats?.integrity} />
+        <StatBadge label="Integrity" base={ship.integrity} modified={modStats?.integrity} />
       </div>
 
       {/* Cruise Speed Section */}
