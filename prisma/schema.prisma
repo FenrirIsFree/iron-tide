@@ -152,7 +152,8 @@ model Consumable {
   description String?
   effect      String?
 
-  userConsumables UserConsumable[]
+  userConsumables    UserConsumable[]
+  loadoutConsumables LoadoutConsumable[]
 
   @@map("consumables")
 }
@@ -231,10 +232,11 @@ model Loadout {
   updatedAt  DateTime @updatedAt
 
   userShip UserShip        @relation(fields: [userShipId], references: [id], onDelete: Cascade)
-  weapons  LoadoutWeapon[]
-  upgrades LoadoutUpgrade[]
-  ammo     LoadoutAmmo[]
-  crew     LoadoutCrew[]
+  weapons      LoadoutWeapon[]
+  upgrades     LoadoutUpgrade[]
+  ammo         LoadoutAmmo[]
+  crew         LoadoutCrew[]
+  consumables  LoadoutConsumable[]
 
   @@map("loadouts")
 }
@@ -285,6 +287,18 @@ model LoadoutCrew {
   crewType CrewType @relation(fields: [crewTypeId], references: [id])
 
   @@map("loadout_crew")
+}
+
+model LoadoutConsumable {
+  id           String @id @default(uuid())
+  loadoutId    String
+  consumableId String
+  quantity     Int    @default(1)
+
+  loadout    Loadout    @relation(fields: [loadoutId], references: [id], onDelete: Cascade)
+  consumable Consumable @relation(fields: [consumableId], references: [id])
+
+  @@map("loadout_consumables")
 }
 
 // ============================================================

@@ -8,6 +8,7 @@ import {
   addUpgradeToLoadout, removeUpgradeFromLoadout,
   addAmmoToLoadout, removeAmmoFromLoadout,
   addCrewToLoadout, removeCrewFromLoadout, updateCrewQuantity,
+  addConsumableToLoadout, removeConsumableFromLoadout,
 } from '@/app/actions/fleet'
 
 // ============================================================
@@ -38,17 +39,20 @@ type Weapon = {
 type UpgradeEffect = { stat: string; value: string; gameKey?: string; rankedValues?: string[] }
 type Upgrade = { id: string; name: string; slot: string | null; effect: string | null; effects: UpgradeEffect[] | null }
 type Ammo = { id: string; name: string; effect: string | null }
+type ConsumableItem = { id: string; name: string; category: string | null; description: string | null; effect: string | null }
 type Crew = { id: string; name: string; description: string | null; faction: string | null }
 
 type LoadoutWeapon = { id: string; weapon: Weapon; position: string; quantity: number }
 type LoadoutUpgrade = { id: string; upgrade: Upgrade }
 type LoadoutAmmo = { id: string; ammoType: Ammo; quantity: number }
+type LoadoutConsumable = { id: string; consumable: ConsumableItem; quantity: number }
 type LoadoutCrew = { id: string; crewType: Crew; quantity: number }
 
 type Loadout = {
   id: string; name: string; isActive: boolean
   weapons: LoadoutWeapon[]; upgrades: LoadoutUpgrade[]
   ammo: LoadoutAmmo[]; crew: LoadoutCrew[]
+  consumables: LoadoutConsumable[]
 }
 
 type UserShip = {
@@ -63,6 +67,7 @@ interface Props {
   upgradeCatalog: Upgrade[]
   ammoCatalog: Ammo[]
   crewCatalog: Crew[]
+  consumableCatalog: ConsumableItem[]
 }
 
 const BASIC_CREW = ['Sailor', 'Musketeer', 'Soldier', 'Mercenary']
@@ -320,7 +325,7 @@ function computeModifiedStats(ship: Ship, equippedUpgrades: LoadoutUpgrade[], eq
 // MAIN COMPONENT
 // ============================================================
 
-export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog }: Props) {
+export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog, consumableCatalog }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [showAddModal, setShowAddModal] = useState(false)
   const [isPending, startTransition] = useTransition()
@@ -473,6 +478,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
                     upgradeCatalog={upgradeCatalog}
                     ammoCatalog={ammoCatalog}
                     crewCatalog={crewCatalog}
+                    consumableCatalog={consumableCatalog}
                     isPending={isPending}
                     startTransition={startTransition}
                     onRemove={() => handleRemove(us.id)}
@@ -534,13 +540,14 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
 // ============================================================
 
 function ExpandedShipView({
-  userShip, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog, isPending, startTransition, onRemove,
+  userShip, weaponCatalog, upgradeCatalog, ammoCatalog, crewCatalog, consumableCatalog, isPending, startTransition, onRemove,
 }: {
   userShip: UserShip
   weaponCatalog: Weapon[]
   upgradeCatalog: Upgrade[]
   ammoCatalog: Ammo[]
   crewCatalog: Crew[]
+  consumableCatalog: ConsumableItem[]
   isPending: boolean
   startTransition: (fn: () => void) => void
   onRemove: () => void
@@ -681,6 +688,11 @@ function ExpandedShipView({
           <AmmoPanel
             loadout={currentLoadout}
             ammoCatalog={ammoCatalog}
+            startTransition={startTransition}
+          />
+          <ConsumablePanel
+            loadout={currentLoadout}
+            consumableCatalog={consumableCatalog}
             startTransition={startTransition}
           />
         </div>
@@ -1227,6 +1239,62 @@ function AmmoPanel({ loadout, ammoCatalog, startTransition }: {
         <input type="number" min={1} value={qty} onChange={e => setQty(Math.max(1, parseInt(e.target.value) || 1))} className="w-14 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none" />
         <button onClick={() => { if (selectedId) { startTransition(() => addAmmoToLoadout(loadout.id, selectedId, qty)); setSelectedId(''); setQty(1) } }} disabled={!selectedId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
       </div>
+    </div>
+  )
+}
+
+const MAX_CONSUMABLES = 3
+
+function ConsumablePanel({ loadout, consumableCatalog, startTransition }: {
+  loadout: Loadout; consumableCatalog: ConsumableItem[]
+  startTransition: (fn: () => void) => void
+}) {
+  const [selectedId, setSelectedId] = useState('')
+  const [qty, setQty] = useState(1)
+
+  const equippedIds = new Set(loadout.consumables.map(c => c.consumable.id))
+  const available = consumableCatalog.filter(c => !equippedIds.has(c.id))
+
+  // Group available by category
+  const categories = [...new Set(available.map(c => c.category || 'Other'))].sort()
+
+  return (
+    <div className="bg-background/50 rounded-lg p-4">
+      <h4 className="text-sm font-medium text-accent mb-3">🧪 Consumables <span className="text-foreground-secondary font-normal">({loadout.consumables.length}/{MAX_CONSUMABLES})</span></h4>
+      {loadout.consumables.length > 0 && (
+        <div className="space-y-1 mb-2">
+          {loadout.consumables.map(c => (
+            <div key={c.id} className="flex items-center justify-between text-xs">
+              <div className="flex-1 min-w-0">
+                <span className="text-foreground font-medium">{c.consumable.name}</span>
+                <span className="text-foreground-secondary ml-1">x{c.quantity}</span>
+                {c.consumable.effect && <span className="text-foreground-secondary/70 ml-1">— {c.consumable.effect}</span>}
+              </div>
+              <button onClick={() => startTransition(() => removeConsumableFromLoadout(c.id))} className="text-foreground-secondary hover:text-primary shrink-0 ml-1">×</button>
+            </div>
+          ))}
+        </div>
+      )}
+      {loadout.consumables.length < MAX_CONSUMABLES && (
+        <div className="flex gap-1 items-center">
+          <select value={selectedId} onChange={e => setSelectedId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
+            <option value="">Add consumable…</option>
+            {categories.map(cat => {
+              const group = available.filter(c => (c.category || 'Other') === cat)
+              if (group.length === 0) return null
+              return (
+                <optgroup key={cat} label={`── ${cat} ──`}>
+                  {group.map(c => (
+                    <option key={c.id} value={c.id}>{c.name}{c.effect ? ` — ${c.effect}` : ''}</option>
+                  ))}
+                </optgroup>
+              )
+            })}
+          </select>
+          <input type="number" min={1} max={200} value={qty} onChange={e => setQty(Math.min(200, Math.max(1, parseInt(e.target.value) || 1)))} className="w-14 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none" />
+          <button onClick={() => { if (selectedId) { startTransition(() => addConsumableToLoadout(loadout.id, selectedId, qty)); setSelectedId(''); setQty(1) } }} disabled={!selectedId} className="px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary-hover disabled:opacity-50">+</button>
+        </div>
+      )}
     </div>
   )
 }

@@ -18,6 +18,7 @@ const loadoutInclude = {
   upgrades: { include: { upgrade: true } },
   ammo: { include: { ammoType: true } },
   crew: { include: { crewType: true } },
+  consumables: { include: { consumable: true } },
 }
 
 export async function getUserFleet() {
@@ -240,5 +241,29 @@ export async function removeCrewFromLoadout(loadoutCrewId: string) {
 export async function updateCrewQuantity(loadoutCrewId: string, quantity: number) {
   await getCurrentUser()
   await prisma.loadoutCrew.update({ where: { id: loadoutCrewId }, data: { quantity } })
+  revalidatePath('/fleet')
+}
+
+// ============================================================
+// LOADOUT CONSUMABLES
+// ============================================================
+
+export async function getConsumableCatalog() {
+  return prisma.consumable.findMany({ orderBy: { name: 'asc' } })
+}
+
+export async function addConsumableToLoadout(loadoutId: string, consumableId: string, quantity: number) {
+  const user = await getCurrentUser()
+  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  if (!loadout) throw new Error('Loadout not found')
+  const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
+  if (!ship) throw new Error('Not authorized')
+  await prisma.loadoutConsumable.create({ data: { loadoutId, consumableId, quantity: Math.min(200, Math.max(1, quantity)) } })
+  revalidatePath('/fleet')
+}
+
+export async function removeConsumableFromLoadout(loadoutConsumableId: string) {
+  await getCurrentUser()
+  await prisma.loadoutConsumable.delete({ where: { id: loadoutConsumableId } })
   revalidatePath('/fleet')
 }
