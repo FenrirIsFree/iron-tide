@@ -123,15 +123,16 @@ interface NpcData {
 
 // ── Humanize helpers ──
 
+// SpawnRegion value = Hazard Level + 1 (from decompiled: num - 1 == LevelInt)
 const REGION_NAMES: Record<number, string> = {
-  1: 'Deep Waters (Highest)',
-  2: 'Region 2',
-  3: 'Region 3',
-  4: 'Region 4',
-  5: 'Region 5',
-  6: 'Region 6',
-  7: 'Region 7',
-  8: 'Region 8 (Starter)',
+  1: 'Hazard 0 (Starter)',
+  2: 'Hazard 1',
+  3: 'Hazard 2',
+  4: 'Hazard 3',
+  5: 'Hazard 4',
+  6: 'Hazard 5',
+  7: 'Hazard 6',
+  8: 'Hazard 7 (Center)',
 }
 
 const VISUAL_NAMES: Record<string, string> = {
@@ -385,11 +386,11 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
           <div className="bg-surface border border-surface-border rounded-xl p-4 mb-4 text-sm text-foreground-secondary grid md:grid-cols-2 gap-4">
             <div>
               <h4 className="text-blue-400 font-medium mb-1">⭐⭐ 2-Star Bosses ({bosses2Star.length})</h4>
-              <p>Imperial Flagships that spawn across <strong>multiple regions</strong>. Moderate difficulty — good for farming Escudo. 5-minute respawn timer. Can extinguish fires and resist collision damage.</p>
+              <p>Imperial Flagships that spawn across <strong>multiple water hazard levels</strong> (Hazard 1–7). Moderate difficulty — good for farming Escudo. 5-minute respawn timer. Can extinguish fires and resist collision damage.</p>
             </div>
             <div>
               <h4 className="text-purple-400 font-medium mb-1">⭐⭐⭐ 3-Star Bosses ({bosses3Star.length})</h4>
-              <p>Imperial Legends — the most powerful NPCs in the game. Only spawn in <strong>Deep Waters</strong> (highest region). <strong>12-hour respawn</strong>. Drop loot chests with large Escudo, Copper, and Voodoo Skulls. Hidden crew counts.</p>
+              <p>Imperial Legends — the most powerful NPCs in the game. Only spawn in the <strong>center hazard zone (Hazard 7)</strong>. <strong>12-hour respawn</strong>. Drop loot chests with large Escudo, Copper, and Voodoo Skulls. Hidden crew counts. Requires player rank 12+ to enter the hazard zone.</p>
             </div>
           </div>
 
