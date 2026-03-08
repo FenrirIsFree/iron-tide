@@ -205,11 +205,6 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                                 Type: {formatSubtype(ship.subtype)}
                               </span>
                             )}
-                            {ship.requiredRank > 0 && (
-                              <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                                Requires Rank {ship.requiredRank}
-                              </span>
-                            )}
                             {ship.extraUpgradeSlots > 0 && (
                               <span className="bg-surface-hover text-accent text-xs px-2 py-1 rounded">
                                 +{ship.extraUpgradeSlots} upgrade slot{ship.extraUpgradeSlots > 1 ? 's' : ''}
