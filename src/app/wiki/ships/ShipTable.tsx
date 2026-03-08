@@ -17,6 +17,8 @@ interface ChestSource {
   chest: string
   dropRate: number | null
   category: string
+  categoryRate?: number
+  categoryLabel?: string
 }
 
 interface Ship {
@@ -299,11 +301,6 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                             Faction: {ship.faction}
                           </span>
                         )}
-                        {ship.subtype && (
-                          <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                            {formatSubtype(ship.subtype)}
-                          </span>
-                        )}
                         {ship.displacement && (
                           <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
                             ⚓ {ship.displacement}
@@ -459,11 +456,18 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                               <div className="bg-surface-hover rounded px-3 py-2">
                                 <span className="text-cyan-400 text-sm font-medium">🎁 Available from Chests</span>
                                 {ship.chestSources.map((cs, i) => (
-                                  <div key={i} className="flex justify-between text-sm mt-1">
-                                    <span className="text-foreground-secondary">{cs.chest}</span>
-                                    <span className="text-foreground-muted text-xs">
-                                      {cs.dropRate != null ? `~${cs.dropRate}%` : ''}
-                                    </span>
+                                  <div key={i} className="mt-1">
+                                    <div className="flex justify-between text-sm">
+                                      <span className="text-foreground-secondary">{cs.chest}</span>
+                                      <span className="text-foreground-muted text-xs">
+                                        {cs.dropRate != null ? `${cs.dropRate}%` : ''}
+                                      </span>
+                                    </div>
+                                    {cs.categoryRate != null && (
+                                      <div className="text-foreground-muted text-xs">
+                                        {cs.categoryLabel}: {cs.categoryRate}% chance (shared)
+                                      </div>
+                                    )}
                                   </div>
                                 ))}
                               </div>

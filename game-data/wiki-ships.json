@@ -95,8 +95,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 2.45,
-        "category": "PremiumShip"
+        "dropRate": 0.09,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       },
       {
         "chest": "New Year Chest",
@@ -163,7 +165,7 @@
     "chestSources": [
       {
         "chest": "Inca Chest",
-        "dropRate": null,
+        "dropRate": 0.1,
         "category": "UniqueShip"
       }
     ]
@@ -318,8 +320,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 10.87,
-        "category": "PremiumShip"
+        "dropRate": 0.39,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -378,8 +382,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.05,
-        "category": "UniqueShip"
+        "dropRate": 0.02,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       },
       {
         "chest": "New Year Chest",
@@ -533,8 +539,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 2.45,
-        "category": "PremiumShip"
+        "dropRate": 0.09,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -688,7 +696,7 @@
     "chestSources": [
       {
         "chest": "Imperial Chest",
-        "dropRate": null,
+        "dropRate": 0.5,
         "category": "EarlyAccessShip"
       }
     ]
@@ -740,8 +748,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 16.3,
-        "category": "PremiumShip"
+        "dropRate": 0.59,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -1231,7 +1241,7 @@
     "chestSources": [
       {
         "chest": "Imperial Chest",
-        "dropRate": null,
+        "dropRate": 0.5,
         "category": "EarlyAccessShip"
       }
     ]
@@ -1476,8 +1486,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 16.3,
-        "category": "PremiumShip"
+        "dropRate": 0.59,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -1536,8 +1548,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.05,
-        "category": "UniqueShip"
+        "dropRate": 0.02,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       }
     ]
   },
@@ -1777,8 +1791,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.05,
-        "category": "UniqueShip"
+        "dropRate": 0.02,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       }
     ]
   },
@@ -1874,8 +1890,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 16.3,
-        "category": "PremiumShip"
+        "dropRate": 0.59,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -1933,8 +1951,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 19.02,
-        "category": "PremiumShip"
+        "dropRate": 0.69,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -2039,7 +2059,7 @@
     "chestSources": [
       {
         "chest": "Imperial Chest",
-        "dropRate": null,
+        "dropRate": 0.5,
         "category": "EarlyAccessShip"
       }
     ]
@@ -2234,8 +2254,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 16.3,
-        "category": "PremiumShip"
+        "dropRate": 0.59,
+        "category": "PremiumShip",
+        "categoryRate": 3.62,
+        "categoryLabel": "Premium Ship"
       }
     ],
     "craftingCost": {
@@ -2294,8 +2316,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.05,
-        "category": "UniqueShip"
+        "dropRate": 0.02,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       }
     ]
   },
@@ -2539,7 +2563,7 @@
     "chestSources": [
       {
         "chest": "Imperial Chest",
-        "dropRate": null,
+        "dropRate": 0.5,
         "category": "EarlyAccessShip"
       }
     ]
@@ -2632,8 +2656,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.05,
-        "category": "UniqueShip"
+        "dropRate": 0.02,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       }
     ]
   },
@@ -2917,8 +2943,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.05,
-        "category": "UniqueShip"
+        "dropRate": 0.02,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       }
     ]
   },
@@ -2971,8 +2999,10 @@
     "chestSources": [
       {
         "chest": "Large Chest",
-        "dropRate": 0.03,
-        "category": "UniqueShip"
+        "dropRate": 0.01,
+        "category": "UniqueShip",
+        "categoryRate": 0.13,
+        "categoryLabel": "Unique Ship"
       }
     ]
   },
