@@ -51,7 +51,10 @@
       "moreRandomUpgrades": false,
       "reinforceCannonAngle": 0,
       "namePool": "pirateNamesShort",
-      "shipClasses": ["Destroyer", "Mortar"],
+      "shipClasses": [
+        "Destroyer",
+        "Mortar"
+      ],
       "fleetSize": "1-2 (alternating)",
       "spawnCount": "5-10 per region (more in low-level regions)"
     },
@@ -80,8 +83,14 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "namePool": "pirateNamesLong",
-      "shipClasses": ["Hardship", "Battleship"],
-      "statModifiers": { "hpMultiplier": "1.1 + 0.2 × regionLevel", "damageMultiplier": 1.3 }
+      "shipClasses": [
+        "Hardship",
+        "Battleship"
+      ],
+      "statModifiers": {
+        "hpMultiplier": "1.1 + 0.2 \u00d7 regionLevel",
+        "damageMultiplier": 1.3
+      }
     },
     {
       "typeId": "PirateFraction1_Fleet",
@@ -107,18 +116,22 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "namePool": "pirateNamesLong",
-      "shipClasses": ["Battleship", "Hardship", "CargoShip"],
+      "shipClasses": [
+        "Battleship",
+        "Hardship",
+        "CargoShip"
+      ],
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 × regionLevel + (200-600) × fleetIndex"
+      "hpFormula": "600 + 600 \u00d7 regionLevel + (200-600) \u00d7 fleetIndex"
     },
     {
       "typeId": "PirateFraction2_Regular",
       "enumValue": 4,
       "displayName": "Order of the New Ark",
       "category": "pirate",
-      "description": "Religious zealot pirates — the Order of the New Ark",
+      "description": "Religious zealot pirates \u2014 the Order of the New Ark",
       "behavior": {
         "aggressive": true,
         "attacksPlayers": true,
@@ -136,8 +149,14 @@
       "moreRandomUpgrades": false,
       "reinforceCannonAngle": 0,
       "namePool": "religiousNames",
-      "shipClasses": ["Mortar", "CargoShip"],
-      "statModifiers": { "speedReduction": -2, "armorBonus": 2 },
+      "shipClasses": [
+        "Mortar",
+        "CargoShip"
+      ],
+      "statModifiers": {
+        "speedReduction": -2,
+        "armorBonus": 2
+      },
       "spawnCount": "5 per region (only in regions level > 2)"
     },
     {
@@ -165,8 +184,17 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "namePool": "religiousNames",
-      "shipClasses": ["Hardship", "Battleship", "Mortar"],
-      "statModifiers": { "hpMultiplier": "1.1 + 0.2 × regionLevel", "damageMultiplier": 1.2, "speedReduction": -2, "armorBonus": 2 }
+      "shipClasses": [
+        "Hardship",
+        "Battleship",
+        "Mortar"
+      ],
+      "statModifiers": {
+        "hpMultiplier": "1.1 + 0.2 \u00d7 regionLevel",
+        "damageMultiplier": 1.2,
+        "speedReduction": -2,
+        "armorBonus": 2
+      }
     },
     {
       "typeId": "PirateFraction2_Fleet",
@@ -192,12 +220,19 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "namePool": "religiousNames",
-      "shipClasses": ["Battleship", "Hardship", "CargoShip"],
+      "shipClasses": [
+        "Battleship",
+        "Hardship",
+        "CargoShip"
+      ],
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 × regionLevel + (200-600) × fleetIndex",
-      "statModifiers": { "speedReduction": -2, "armorBonus": 2 }
+      "hpFormula": "600 + 600 \u00d7 regionLevel + (200-600) \u00d7 fleetIndex",
+      "statModifiers": {
+        "speedReduction": -2,
+        "armorBonus": 2
+      }
     },
     {
       "typeId": "Trader_Regular",
@@ -218,15 +253,22 @@
       },
       "icon": "None",
       "flag": "Trader",
-      "lifetime": "~10800 sec (3 hours, ×0.8-1.2 random)",
+      "lifetime": "~10800 sec (3 hours, \u00d70.8-1.2 random)",
       "powerupItemChance": 0,
       "moreRandomUpgrades": false,
       "reinforceCannonAngle": 0,
       "namePool": "traderNames",
-      "shipClasses": ["Destroyer", "CargoShip"],
+      "shipClasses": [
+        "Destroyer",
+        "CargoShip"
+      ],
       "fleetSize": "2-3",
       "spawnCount": "5 per region",
-      "statModifiers": { "hpMultiplier": "0.75 + 0.15 × regionLevel", "damageMultiplier": 0.9, "reloadMultiplier": 1.1 }
+      "statModifiers": {
+        "hpMultiplier": "0.75 + 0.15 \u00d7 regionLevel",
+        "damageMultiplier": 0.9,
+        "reloadMultiplier": 1.1
+      }
     },
     {
       "typeId": "Trader_Ferryman",
@@ -248,17 +290,20 @@
       },
       "icon": "Star",
       "flag": "Trader",
-      "lifetime": "~10800 sec (3 hours, ×0.8-1.2 random)",
+      "lifetime": "~10800 sec (3 hours, \u00d70.8-1.2 random)",
       "powerupItemChance": 39.6,
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "freeFloatingSpeed": 1,
       "namePool": "Ferryman (fixed name)",
-      "shipClasses": ["Battleship", "CargoShip"],
+      "shipClasses": [
+        "Battleship",
+        "CargoShip"
+      ],
       "spawnIntervalMin": 4,
       "hasDefenseWaves": true,
       "defenseWaveCount": "2-3",
-      "hpFormula": "600 + 600 × regionLevel + 200-600"
+      "hpFormula": "600 + 600 \u00d7 regionLevel + 200-600"
     },
     {
       "typeId": "PortPatrol",
@@ -308,7 +353,7 @@
       "powerupItemChance": 0,
       "moreRandomUpgrades": false,
       "reinforceCannonAngle": 0,
-      "notes": "Also used for procedurally generated 'Sea Spirit' shadow ships (19 per region)"
+      "notes": "Also used for procedurally generated 'Sea Spirit' shadow ships (19 per Water Hazard level)"
     },
     {
       "typeId": "Empire_Invasion",
@@ -334,15 +379,20 @@
       "reinforceCannonAngle": 0,
       "namePool": "legendNames",
       "visual": "ShadowShip",
-      "statModifiers": { "hpMultiplier": 1.4, "damageMultiplier": 1.2, "reloadMultiplier": 0.9, "mobilityMultiplier": 1.1 },
-      "portShipSelection": "Ship ID based on region level: ≤1→12(Black Prince), ≤3→14(Devourer), ≤5→35(Deadfish), else→62(Octopus)"
+      "statModifiers": {
+        "hpMultiplier": 1.4,
+        "damageMultiplier": 1.2,
+        "reloadMultiplier": 0.9,
+        "mobilityMultiplier": 1.1
+      },
+      "portShipSelection": "Ship ID based on Water Hazard level: WH 1-2\u2192Black Prince, WH 2-4\u2192Devourer, WH 4-6\u2192Deadfish, WH 7\u2192Octopus"
     },
     {
       "typeId": "Empire_Legendary2l",
       "enumValue": 12,
       "displayName": "Imperial Flagship",
       "category": "empire",
-      "description": "Powerful Imperial flagships — named bosses with unique stats",
+      "description": "Powerful Imperial flagships \u2014 named bosses with unique stats",
       "behavior": {
         "aggressive": true,
         "attacksPlayers": true,
@@ -367,7 +417,7 @@
       "enumValue": 13,
       "displayName": "Imperial Legend",
       "category": "empire",
-      "description": "The most powerful bosses in the game — legendary Imperial warships",
+      "description": "The most powerful bosses in the game \u2014 legendary Imperial warships",
       "behavior": {
         "aggressive": true,
         "attacksPlayers": true,
@@ -388,7 +438,7 @@
       "reinforceCannonAngle": 10,
       "freeFloatingSpeed": 3,
       "respawnIntervalMin": 720,
-      "notes": "12-hour respawn timer. Only spawn in highest-level region."
+      "notes": "12-hour respawn timer. Only spawn in the Legend Boss Zone (center of map)."
     },
     {
       "typeId": "Fanatics",
@@ -413,7 +463,10 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "namePool": "horrorNames",
-      "shipClasses": ["Destroyer", "CargoShip"],
+      "shipClasses": [
+        "Destroyer",
+        "CargoShip"
+      ],
       "spawnCondition": "Only near pirate strongholds",
       "spawnCount": "5 regular + reinforced variants per region"
     },
@@ -443,7 +496,7 @@
       "enumValue": 17,
       "displayName": "Special (No Reward)",
       "category": "other",
-      "description": "Special NPCs that give no rewards — tutorial enemies, expedition balloons",
+      "description": "Special NPCs that give no rewards \u2014 tutorial enemies, expedition balloons",
       "behavior": {
         "aggressive": false,
         "attacksPlayers": false,
@@ -477,10 +530,14 @@
       "moreRandomUpgrades": true,
       "reinforceCannonAngle": 10,
       "namePool": "pirateNamesShort",
-      "shipClasses": ["Battleship", "Hardship", "CargoShip"],
+      "shipClasses": [
+        "Battleship",
+        "Hardship",
+        "CargoShip"
+      ],
       "spawnCount": "6 per region",
-      "statScaling": "3 tiers (index % 3): HP/damage ×(0.8+tier×0.3), speed ×(0.95+tier×0.1)",
-      "spawnTrigger": "Wanted level — interval = (20 - wantedLevel × 5) × 60 seconds",
+      "statScaling": "3 tiers (index % 3): HP/damage \u00d7(0.8+tier\u00d70.3), speed \u00d7(0.95+tier\u00d70.1)",
+      "spawnTrigger": "Wanted level \u2014 interval = (20 - wantedLevel \u00d7 5) \u00d7 60 seconds",
       "marchingSpeedBonus": 40
     },
     {
@@ -488,7 +545,7 @@
       "enumValue": 19,
       "displayName": "Sea Elf (Event NPC)",
       "category": "other",
-      "description": "Special event NPC — New Year's sea elf",
+      "description": "Special event NPC \u2014 New Year's sea elf",
       "behavior": {
         "canBeCaptured": false
       },
@@ -497,17 +554,17 @@
       "fixedName": "Sea Elf",
       "visual": "IceShip",
       "specialBalls": 21,
-      "hp": "7500 × (0.75 + 0.5 × regionLevel)",
+      "hp": "7500 \u00d7 (0.75 + 0.5 \u00d7 regionLevel)",
       "usesShipId": 76,
       "usesShipName": "Old Octopus",
-      "spawnCount": "3 per region (regions level ≥ 2)"
+      "spawnCount": "3 per region (regions level \u2265 2)"
     },
     {
       "typeId": "Rem_PirateAmbush",
       "enumValue": 20,
       "displayName": "Pirate Ambush (Removed)",
       "category": "other",
-      "description": "Removed NPC type — pirate ambush"
+      "description": "Removed NPC type \u2014 pirate ambush"
     }
   ],
   "bosses": [
@@ -525,7 +582,11 @@
       "cannonClass": "DistanceCannon",
       "specialBalls": 500,
       "visual": "BloodShip",
-      "spawnRegions": [2, 3, 4],
+      "spawnRegions": [
+        2,
+        3,
+        4
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": []
@@ -545,7 +606,10 @@
       "specialBalls": 10,
       "specialBallsNote": "variable _007B4129_007D = 10",
       "visual": "IceShip",
-      "spawnRegions": [3, 6],
+      "spawnRegions": [
+        3,
+        6
+      ],
       "fleetsPerRegion": 3,
       "fleetSize": 1,
       "defenseWaves": []
@@ -565,7 +629,11 @@
       "specialBalls": 7,
       "specialBallsNote": "variable _007B4127_007D = 7",
       "visual": "ShadowShip",
-      "spawnRegions": [2, 4, 6],
+      "spawnRegions": [
+        2,
+        4,
+        6
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": [],
@@ -585,7 +653,12 @@
       "cannonClass": "LiteCannon",
       "specialBalls": null,
       "visual": "DirtShip",
-      "spawnRegions": [4, 5, 7, 8],
+      "spawnRegions": [
+        4,
+        5,
+        7,
+        8
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": [
@@ -619,7 +692,11 @@
       "specialBalls": 9,
       "specialBallsNote": "variable _007B4128_007D = 9",
       "visual": "ShadowShip",
-      "spawnRegions": [2, 5, 7],
+      "spawnRegions": [
+        2,
+        5,
+        7
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": []
@@ -640,7 +717,10 @@
       "specialBallsNote": "variable _007B4126_007D = 2",
       "visual": "Regular",
       "specialServerEffect": 2,
-      "spawnRegions": [4, 6],
+      "spawnRegions": [
+        4,
+        6
+      ],
       "fleetsPerRegion": 1,
       "fleetSize": 1,
       "defenseWaves": [],
@@ -661,7 +741,9 @@
       "specialBalls": 9,
       "visual": "ShadowShip",
       "overrideCrewCount": 260,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 3,
       "defenseWaves": [],
@@ -682,7 +764,9 @@
       "specialBalls": null,
       "visual": "ShadowShip",
       "overrideCrewCount": 300,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 3,
       "defenseWaves": []
@@ -702,7 +786,9 @@
       "specialBalls": null,
       "visual": "ShadowShip",
       "overrideCrewCount": 350,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 3,
       "defenseWaves": [],
@@ -724,7 +810,9 @@
       "visual": "MagmaShip",
       "specialServerEffect": 2,
       "overrideCrewCount": 400,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 3,
       "fleetSize": 2,
       "defenseWaves": [],
@@ -746,7 +834,9 @@
       "visual": "ShadowShip",
       "specialServerEffect": 1,
       "overrideCrewCount": 470,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 3,
       "fleetSize": 2,
       "defenseWaves": []
@@ -766,7 +856,9 @@
       "specialBalls": 9,
       "visual": "MagmaShip",
       "overrideCrewCount": 480,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 2,
       "defenseWaves": [
@@ -799,7 +891,9 @@
       "specialBalls": 7,
       "visual": "BloodShip",
       "overrideCrewCount": 570,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": [],
@@ -820,7 +914,9 @@
       "specialBalls": 9,
       "visual": "MagmaShip",
       "overrideCrewCount": 620,
-      "spawnRegions": [1],
+      "spawnRegions": [
+        1
+      ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": [
@@ -847,8 +943,19 @@
       "type": "Empire_Regular",
       "visual": "ShadowShip",
       "spawnIntervalMin": 4,
-      "shipClasses": ["Destroyer", "Hardship", "Battleship", "CargoShip", "Mortar"],
-      "statModifiers": { "hpMultiplier": 1.4, "speedBonus": 1, "armorBonus": 1.5, "attackDistBonus": 10 },
+      "shipClasses": [
+        "Destroyer",
+        "Hardship",
+        "Battleship",
+        "CargoShip",
+        "Mortar"
+      ],
+      "statModifiers": {
+        "hpMultiplier": 1.4,
+        "speedBonus": 1,
+        "armorBonus": 1.5,
+        "attackDistBonus": 10
+      },
       "specialBalls": "500 (every 3rd ship) or 7 (others)",
       "notes": "Generated per region with random ship selection from ranks 2-6"
     },
@@ -858,8 +965,16 @@
       "type": "Fanatics",
       "visual": "DestroyedShip",
       "spawnIntervalMin": 2,
-      "shipClasses": ["Destroyer", "Hardship", "Mortar"],
-      "statModifiers": { "armorMultiplier": 0.5, "armorMin": 1, "speedBonus": 5 },
+      "shipClasses": [
+        "Destroyer",
+        "Hardship",
+        "Mortar"
+      ],
+      "statModifiers": {
+        "armorMultiplier": 0.5,
+        "armorMin": 1,
+        "speedBonus": 5
+      },
       "notes": "Fast, low-armor destroyed-looking ships. Generation 2-3."
     },
     "expeditionBalloon": {
@@ -957,79 +1072,269 @@
   ],
   "npcShipNames": {
     "trader": [
-      "Golden Voyage", "Silver Gull", "Emerald Horizon", "Prosperity", "Fortune's Favor",
-      "Calm Waters", "Sunlit Crest", "Merchant's Grace", "Star of the Sea", "Velvet Wind",
-      "Golden Harbor", "Pearl Voyager", "Sea Prosper", "Trade Winds", "Velvet Horizon",
-      "Silver Crest", "Starlight Merchant", "Azure Tide", "Sunrise Gale", "Ocean's Bounty",
-      "Majestic Wave", "Fortunate Sail", "Amber Dawn", "Seafarer's Luck", "Golden Bale",
-      "Sapphire Route", "Harbor Star", "Serene Mariner", "Merchant's Jewel", "Windborne Fortune"
+      "Golden Voyage",
+      "Silver Gull",
+      "Emerald Horizon",
+      "Prosperity",
+      "Fortune's Favor",
+      "Calm Waters",
+      "Sunlit Crest",
+      "Merchant's Grace",
+      "Star of the Sea",
+      "Velvet Wind",
+      "Golden Harbor",
+      "Pearl Voyager",
+      "Sea Prosper",
+      "Trade Winds",
+      "Velvet Horizon",
+      "Silver Crest",
+      "Starlight Merchant",
+      "Azure Tide",
+      "Sunrise Gale",
+      "Ocean's Bounty",
+      "Majestic Wave",
+      "Fortunate Sail",
+      "Amber Dawn",
+      "Seafarer's Luck",
+      "Golden Bale",
+      "Sapphire Route",
+      "Harbor Star",
+      "Serene Mariner",
+      "Merchant's Jewel",
+      "Windborne Fortune"
     ],
     "pirateShort": [
-      "Black Raven", "Sea Serpent", "Iron Whale", "Crimson Tide", "Silent Hunter",
-      "Golden Fang", "Nightshade", "Storm Chaser", "Sea Wolf", "Shadow Gale",
-      "Bloodfin", "Dark Fortune", "Siren's Call", "Wave Breaker", "Tempest",
-      "Widowmaker", "Savage Gull", "Ironclad", "Ghost Sails", "Black Moon",
-      "Blazing Star", "Howling Gale", "Silver Pike", "Storm Crow", "Drake's Fury",
-      "Red Corsair", "Steel Tempest", "Harbinger", "Phantom Tide", "Lost Horizon",
-      "Dark Mariner", "Rogue Wave", "Thunder Crest", "Venom Fang", "Scarlet Vulture",
-      "Black Reaver", "Leviathan", "Storm Reaver", "Burning Horizon", "Grim Tide"
+      "Black Raven",
+      "Sea Serpent",
+      "Iron Whale",
+      "Crimson Tide",
+      "Silent Hunter",
+      "Golden Fang",
+      "Nightshade",
+      "Storm Chaser",
+      "Sea Wolf",
+      "Shadow Gale",
+      "Bloodfin",
+      "Dark Fortune",
+      "Siren's Call",
+      "Wave Breaker",
+      "Tempest",
+      "Widowmaker",
+      "Savage Gull",
+      "Ironclad",
+      "Ghost Sails",
+      "Black Moon",
+      "Blazing Star",
+      "Howling Gale",
+      "Silver Pike",
+      "Storm Crow",
+      "Drake's Fury",
+      "Red Corsair",
+      "Steel Tempest",
+      "Harbinger",
+      "Phantom Tide",
+      "Lost Horizon",
+      "Dark Mariner",
+      "Rogue Wave",
+      "Thunder Crest",
+      "Venom Fang",
+      "Scarlet Vulture",
+      "Black Reaver",
+      "Leviathan",
+      "Storm Reaver",
+      "Burning Horizon",
+      "Grim Tide"
     ],
     "pirateLong": [
-      "The Munlochy", "The Pillager", "The New Pearl", "The Last Privateer", "The Rising Plunder",
-      "The Silent Raider", "The Fortune Sea", "Daughter of Storm", "The Howling Captain", "The Bloody Gold",
-      "The Bloody Dagger", "The Executioner", "The Broken Galley", "The Deceit", "The Lust Princess",
-      "The Hateful Wolf", "The Horrid Shark", "The Murderous Tide", "The Black Grail", "The Hellscream",
-      "Sanguine Flag", "Black Snake Raiders", "Gilded Cannon", "White Squid", "Silver Sword",
-      "Hired Swords", "Salty Swabbers", "Dread Buccaneers", "Sanguine Bandits", "Siren's Song",
-      "Tortuga Raiders", "Thunder Buccaneers", "Crazy Eyes", "Golden Pillagers", "Corsa Noir",
-      "Seven Seas", "Cursed Doubloon", "Hollow Plunderers", "Silver Wave Pirates", "Black Sun",
-      "Golden Tooth", "Silver Moon", "Black Diamond"
+      "The Munlochy",
+      "The Pillager",
+      "The New Pearl",
+      "The Last Privateer",
+      "The Rising Plunder",
+      "The Silent Raider",
+      "The Fortune Sea",
+      "Daughter of Storm",
+      "The Howling Captain",
+      "The Bloody Gold",
+      "The Bloody Dagger",
+      "The Executioner",
+      "The Broken Galley",
+      "The Deceit",
+      "The Lust Princess",
+      "The Hateful Wolf",
+      "The Horrid Shark",
+      "The Murderous Tide",
+      "The Black Grail",
+      "The Hellscream",
+      "Sanguine Flag",
+      "Black Snake Raiders",
+      "Gilded Cannon",
+      "White Squid",
+      "Silver Sword",
+      "Hired Swords",
+      "Salty Swabbers",
+      "Dread Buccaneers",
+      "Sanguine Bandits",
+      "Siren's Song",
+      "Tortuga Raiders",
+      "Thunder Buccaneers",
+      "Crazy Eyes",
+      "Golden Pillagers",
+      "Corsa Noir",
+      "Seven Seas",
+      "Cursed Doubloon",
+      "Hollow Plunderers",
+      "Silver Wave Pirates",
+      "Black Sun",
+      "Golden Tooth",
+      "Silver Moon",
+      "Black Diamond"
     ],
     "ancient": [
-      "Heron", "Kyros", "Linus", "Nikias", "Plato", "Thales", "Aeropos", "Aftonio",
-      "Arye", "Chares", "Cleofas", "Epaphras", "Hermie", "Isocrates", "Kleitos", "Meliton",
-      "Platon", "Priam", "Taras", "Zenon", "Zopyros", "Ceas", "Didius", "Erbin",
-      "Eleon", "Gessius", "Idaios", "Kir", "Mus", "Naevius", "Orpheus", "Varro"
+      "Heron",
+      "Kyros",
+      "Linus",
+      "Nikias",
+      "Plato",
+      "Thales",
+      "Aeropos",
+      "Aftonio",
+      "Arye",
+      "Chares",
+      "Cleofas",
+      "Epaphras",
+      "Hermie",
+      "Isocrates",
+      "Kleitos",
+      "Meliton",
+      "Platon",
+      "Priam",
+      "Taras",
+      "Zenon",
+      "Zopyros",
+      "Ceas",
+      "Didius",
+      "Erbin",
+      "Eleon",
+      "Gessius",
+      "Idaios",
+      "Kir",
+      "Mus",
+      "Naevius",
+      "Orpheus",
+      "Varro"
     ],
     "horror": [
-      "Black Abyss", "Bloodwake", "Nightmare", "Grim Reaper", "Ghost Fang",
-      "Dark Widow", "Shadow Maw", "Doomtide", "Silent Curse", "Bone Raven",
-      "Death Whisper", "Soul Reaver", "Black Howl", "Crimson Fog", "Phantom Gale",
-      "Rotfang", "Forsaken", "Voidstalker", "Dead Tide", "Haunted Wave",
-      "Wraith", "Specter", "Dagger Wind", "Mourning Star", "Hex",
-      "Gallows", "Plague Wind", "Shrouded Doom", "Black Omen", "Duskfall",
-      "Blood Vow", "Dark Veil", "Death Knell", "Ravenous", "Silent Wraith",
-      "Black Fang", "Chill Tide", "Dire Gale", "Twilight Reaper", "Doomsayer"
+      "Black Abyss",
+      "Bloodwake",
+      "Nightmare",
+      "Grim Reaper",
+      "Ghost Fang",
+      "Dark Widow",
+      "Shadow Maw",
+      "Doomtide",
+      "Silent Curse",
+      "Bone Raven",
+      "Death Whisper",
+      "Soul Reaver",
+      "Black Howl",
+      "Crimson Fog",
+      "Phantom Gale",
+      "Rotfang",
+      "Forsaken",
+      "Voidstalker",
+      "Dead Tide",
+      "Haunted Wave",
+      "Wraith",
+      "Specter",
+      "Dagger Wind",
+      "Mourning Star",
+      "Hex",
+      "Gallows",
+      "Plague Wind",
+      "Shrouded Doom",
+      "Black Omen",
+      "Duskfall",
+      "Blood Vow",
+      "Dark Veil",
+      "Death Knell",
+      "Ravenous",
+      "Silent Wraith",
+      "Black Fang",
+      "Chill Tide",
+      "Dire Gale",
+      "Twilight Reaper",
+      "Doomsayer"
     ],
     "religious": [
-      "Last Judgement", "Doom Ark", "Holy Wrath", "Prophet's Voice", "Seraphim's Wing",
-      "Requiem", "Divine Fury", "Ashen Covenant", "Pale Prophet", "Eclipse of Faith",
-      "Sinner's Bane", "Final Psalm", "Wrathful Angel", "Penitent Flame", "Heaven's Scourge",
-      "Seal of the End", "Omen of Fire", "Gospel of Doom", "Ark of Revelation", "The Redeemer",
-      "Sword of Faith", "Chalice of Woe", "Exodus", "Purgatory's Wake", "Lamb's Sacrifice",
-      "Covenant of Ash", "The Anointed", "Martyrs Cry", "Herald of Ruin", "Veil of the End"
+      "Last Judgement",
+      "Doom Ark",
+      "Holy Wrath",
+      "Prophet's Voice",
+      "Seraphim's Wing",
+      "Requiem",
+      "Divine Fury",
+      "Ashen Covenant",
+      "Pale Prophet",
+      "Eclipse of Faith",
+      "Sinner's Bane",
+      "Final Psalm",
+      "Wrathful Angel",
+      "Penitent Flame",
+      "Heaven's Scourge",
+      "Seal of the End",
+      "Omen of Fire",
+      "Gospel of Doom",
+      "Ark of Revelation",
+      "The Redeemer",
+      "Sword of Faith",
+      "Chalice of Woe",
+      "Exodus",
+      "Purgatory's Wake",
+      "Lamb's Sacrifice",
+      "Covenant of Ash",
+      "The Anointed",
+      "Martyrs Cry",
+      "Herald of Ruin",
+      "Veil of the End"
     ],
     "legend": [
-      "The Unseen", "Relentless", "The Untamed", "Unyielding", "Phantom Pursuer",
-      "Everwatching", "Stormbringer", "The Dauntless", "Silent Avenger", "Distant Thunder",
-      "The Uncatchable", "Eternal Hunter", "Farsight", "The Reckoner", "Ghost of the Deep",
-      "Windspeaker", "The Unforgiving", "Piercing Gaze", "The Indomitable", "Iron Will"
+      "The Unseen",
+      "Relentless",
+      "The Untamed",
+      "Unyielding",
+      "Phantom Pursuer",
+      "Everwatching",
+      "Stormbringer",
+      "The Dauntless",
+      "Silent Avenger",
+      "Distant Thunder",
+      "The Uncatchable",
+      "Eternal Hunter",
+      "Farsight",
+      "The Reckoner",
+      "Ghost of the Deep",
+      "Windspeaker",
+      "The Unforgiving",
+      "Piercing Gaze",
+      "The Indomitable",
+      "Iron Will"
     ]
   },
   "rewardSystem": {
     "description": "How NPC rewards are calculated based on ship stats and NPC type",
     "basicRewardFormula": {
-      "xpCalculation": "Base from HP^0.97 × 1.19, modified by speed, armor, and damage output. XP = goldReward × BasicXpInGold × typeModifier × 0.9",
-      "goldCalculation": "baseGold(75 or 150 for traders) + locationMultiplier × (combatBonus + damageBonus) × GameSpeed × 0.88 × 0.9",
-      "combatBonus": "ComputeBasicBonus(HP × 0.69 + 330, speed, armor)",
-      "damageBonus": "(DPS × (300 + HP) / 75) × 0.85 × 2 / 10",
-      "cannonBalls": "15 + hazardLevel × 6 for regular, 45 + hazardLevel × 15 for legendary"
+      "xpCalculation": "Base from HP^0.97 \u00d7 1.19, modified by speed, armor, and damage output. XP = goldReward \u00d7 BasicXpInGold \u00d7 typeModifier \u00d7 0.9",
+      "goldCalculation": "baseGold(75 or 150 for traders) + locationMultiplier \u00d7 (combatBonus + damageBonus) \u00d7 GameSpeed \u00d7 0.88 \u00d7 0.9",
+      "combatBonus": "ComputeBasicBonus(HP \u00d7 0.69 + 330, speed, armor)",
+      "damageBonus": "(DPS \u00d7 (300 + HP) / 75) \u00d7 0.85 \u00d7 2 / 10",
+      "cannonBalls": "15 + hazardLevel \u00d7 6 for regular, 45 + hazardLevel \u00d7 15 for legendary"
     },
     "locationMultipliers": {
       "worldMap": "Gameplay.WorldMapMultiplier",
       "seamlessSea": "Gameplay.OutsideSeamMultiplier",
       "bonusMap": "Gameplay.DefaultBonusMapMultiplier",
-      "empireInvasion": "locationMultiplier × 0.7"
+      "empireInvasion": "locationMultiplier \u00d7 0.7"
     },
     "sinkingVsBoarding": {
       "sinking": "Get resource drops + gold + cannonballs + chance for powerup items",
@@ -1048,46 +1353,78 @@
         "tradingRouteBonus": "If trader is on a trading route, its resource gets extra weight"
       },
       "empire": {
-        "regular": "Imperial Stamps (Escudo, res 15) — amount based on HP, scaled by location",
-        "invasion": "Reduced rewards (0.7× location multiplier). Escudo drops.",
+        "regular": "Imperial Stamps (Escudo, res 15) \u2014 amount based on HP, scaled by location",
+        "invasion": "Reduced rewards (0.7\u00d7 location multiplier). Escudo drops.",
         "legendary2l": "Escudo (HP/3200), rare trade goods (1500 gold value), 50% chance of specialty ammo (res 24). Gold remainder.",
-        "legendary3l": "Large Escudo drops (4-6 for fleet 3, 8-10 for fleet 2, 24-28 for solo). Copper (res 11) 17-25, Voodoo Skulls (res 38) ×3, Iron (res 4). Creates loot by dropping chests."
+        "legendary3l": "Large Escudo drops (4-6 for fleet 3, 8-10 for fleet 2, 24-28 for solo). Copper (res 11) 17-25, Voodoo Skulls (res 38) \u00d73, Iron (res 4). Creates loot by dropping chests."
       },
       "fanatics": "Same as regular pirates (provisions + gold)",
       "seafarer": "No rewards (0 gold, 0 XP)",
       "bountyHunter": "Iron (res 1) at 33% gold value, Fabric (res 3) at 17% gold value. Remaining 5% as gold.",
-      "nyEventNpc": "50% gold, Event currency (res 71) ×1, Event tokens (res 69) scaled by HP/10000"
+      "nyEventNpc": "50% gold, Event currency (res 71) \u00d71, Event tokens (res 69) scaled by HP/10000"
     },
     "powerupDrops": {
       "description": "Consumable items (temporary ship upgrades) dropped by defeated NPCs",
       "dropLogic": "If NPC health < 30%: 70% chance of emergency drop [33, 2, 9]. If < 60%: 60% chance. Otherwise: 42% base chance.",
       "speedDrop": {
-        "shipIds": [2, 8, 11, 12, 28],
-        "shipNames": ["Pickle", "Phoenix", "Essex", "Black Prince", "Firestorm"],
-        "condition": "NPC max speed ≥ 18"
+        "shipIds": [
+          2,
+          8,
+          11,
+          12,
+          28
+        ],
+        "shipNames": [
+          "Pickle",
+          "Phoenix",
+          "Essex",
+          "Black Prince",
+          "Firestorm"
+        ],
+        "condition": "NPC max speed \u2265 18"
       },
       "armorDrop": {
-        "shipIds": [2, 15, 16, 13, 14],
-        "shipNames": ["Pickle", "Friede", "Golden Apostle", "Sparrow", "Devourer"],
-        "condition": "NPC armor ≥ 6"
+        "shipIds": [
+          2,
+          15,
+          16,
+          13,
+          14
+        ],
+        "shipNames": [
+          "Pickle",
+          "Friede",
+          "Golden Apostle",
+          "Sparrow",
+          "Devourer"
+        ],
+        "condition": "NPC armor \u2265 6"
       },
       "commonDrop": {
-        "shipIds": [2, 27, 21],
-        "shipNames": ["Pickle", "Le Cerf", "Unknown"],
+        "shipIds": [
+          2,
+          27,
+          21
+        ],
+        "shipNames": [
+          "Pickle",
+          "Le Cerf",
+          "Unknown"
+        ],
         "condition": "Default pool (speed < 18 and armor < 6)"
       },
-      "sizeScaling": "Items downgraded for low-HP NPCs: <1000 HP → tier 0/7, <1600 HP → tier 1/8"
+      "sizeScaling": "Items downgraded for low-HP NPCs: <1000 HP \u2192 tier 0/7, <1600 HP \u2192 tier 1/8"
     },
     "cannonballDrops": {
       "description": "Ammo dropped by defeated NPCs",
       "chance": "50% base chance (100% for ice regions if enabled)",
-      "amount": "CountAmmoWillFound × random(0.85-1.25)",
+      "amount": "CountAmmoWillFound \u00d7 random(0.85-1.25)",
       "typeSelection": "Uses NPC's override ball type, or random 1-3 from region. Ice regions force type 5.",
       "tutorialBonus": "FirstShip scenario: +58 type 2, +63 type 3"
     },
     "dismantleRewards": {
       "description": "Resources from destroying/dismantling captured NPC ships",
-      "totalValue": "goldBonus × 1.3 (+ NpcDecraftBonus skill)",
+      "totalValue": "goldBonus \u00d7 1.3 (+ NpcDecraftBonus skill)",
       "breakdown": {
         "wood_res1": "45% of value",
         "prinsWillem_res20": "20% of value",
@@ -1105,42 +1442,42 @@
   },
   "spawnMechanics": {
     "regionSpawning": {
-      "description": "Each region generates NPCs based on level and area factor",
-      "areaFactor": "region.AreaFactor × 73/85 squared × 1.07",
+      "description": "Each Water Hazard level generates NPCs based on difficulty and area size",
+      "areaFactor": "region.AreaFactor \u00d7 73/85 squared \u00d7 1.07",
       "traderCount": 5,
-      "ferrymanCount": "~4-8 based on area factor (×2 for last region, ×3)",
-      "pirateRegularCount": "5-10 (doubled in low-level regions ≤ 2)",
-      "pirateReinforcedCount": "~8-12 based on 1.4 × (9 - level/3) × areaFactor",
-      "pirateFleetCount": "~3-6 based on 3 × areaFactor",
-      "fr2Count": "Same formulas but not doubled for low-level regions",
+      "ferrymanCount": "~4-8 based on area factor (\u00d72 for last region, \u00d73)",
+      "pirateRegularCount": "5-10 (doubled in low Water Hazard levels, WH 1-3)",
+      "pirateReinforcedCount": "~8-12 based on 1.4 \u00d7 (9 - level/3) \u00d7 areaFactor",
+      "pirateFleetCount": "~3-6 based on 3 \u00d7 areaFactor",
+      "fr2Count": "Same formulas but not doubled for low Water Hazard levels",
       "fanaticCount": "5 per region (near strongholds only) + reinforced variants",
       "headhunterCount": 6,
-      "seaElfCount": "3 per region (level ≥ 2, event only)"
+      "seaElfCount": "3 per region (level \u2265 2, event only)"
     },
     "bossSpawning": {
-      "legendary2l": "Spawn per-region based on SpawnRegions array. 5-min respawn interval.",
-      "legendary3l": "Only in highest-level region. 720-min (12h) respawn. Spawn in LegendBossZone.",
-      "generation": "FleetsPerRegion × FleetSize total ships active"
+      "legendary2l": "Spawn across specific Water Hazard levels. 5-min respawn interval.",
+      "legendary3l": "Only in Legend Boss Zone (center of map). 720-min (12h) respawn.",
+      "generation": "FleetsPerRegion \u00d7 FleetSize total ships active"
     },
     "portSpawning": {
       "description": "Each port with AllowCapture generates patrol NPCs",
       "patrols": "3 per faction (cycling through nations + None)",
-      "flagship": "1 per port — ship selected by region level (ID 12/14/35/62)",
+      "flagship": "1 per port \u2014 ship selected by region level (ID 12/14/35/62)",
       "invasionShips": "3 per port"
     },
     "npcStats": {
-      "description": "Regular NPC stats generated procedurally from ship base stats",
-      "shipSelection": "CanBeUsedForNpc ships matching region level ± rank tolerance (±2, or ±0 for port patrols)",
+      "description": "Regular NPC stats generated procedurally from ship base stats, scaled by Water Hazard level",
+      "shipSelection": "CanBeUsedForNpc ships matching Water Hazard level \u00b1 rank tolerance (\u00b12, or \u00b10 for port patrols)",
       "armorCalc": "baseArmor + lerp(minUpgrade - 0.3, maxUpgrade, random). Elite ships get -0.5 armor.",
-      "speedCalc": "baseSpeed - (1-regionFactor) + regionBonus + destroyerBonus×1.5 + lerp(minUpgrade, maxUpgrade, random)",
-      "hpCalc": "baseHP × (0.7 + 0.3×regionFactor + 0.2×destroyerBonus - heavyShipPenalty) + lerp(minUpgrade, maxUpgrade, random). Region 0: ×0.85, Region 1: ×0.9",
-      "damageCalc": "cannonPenetration × portCount × 0.9 × (0.5 + 0.5×regionFactor + regionBonus). Region 0: ×0.85",
-      "reloadCalc": "cannonReloadTime × (1 - 0.2×destroyerBonus). Minimum 5500ms.",
+      "speedCalc": "baseSpeed - (1-regionFactor) + regionBonus + destroyerBonus\u00d71.5 + lerp(minUpgrade, maxUpgrade, random)",
+      "hpCalc": "baseHP \u00d7 (0.7 + 0.3\u00d7regionFactor + 0.2\u00d7destroyerBonus - heavyShipPenalty) + lerp(minUpgrade, maxUpgrade, random). WH 1: \u00d70.85, WH 2: \u00d70.9",
+      "damageCalc": "cannonPenetration \u00d7 portCount \u00d7 0.9 \u00d7 (0.5 + 0.5\u00d7regionFactor + regionBonus). WH 1: \u00d70.85",
+      "reloadCalc": "cannonReloadTime \u00d7 (1 - 0.2\u00d7destroyerBonus). Minimum 5500ms.",
       "randomUpgrades": "0-2 random upgrades from: ReduceFireDamage, SailProtection, ReduceNoseDamage, CollisionDamage, MoreFireDamage, CannonBallSpeed"
     }
   },
   "npcCrewCount": {
-    "formula": "floor(((min(40, HP/50) or 40+(excess/2)) + 3 + hash_bonus) × typeMultiplier × 4)",
+    "formula": "floor(((min(40, HP/50) or 40+(excess/2)) + 3 + hash_bonus) \u00d7 typeMultiplier \u00d7 4)",
     "typeMultipliers": {
       "Empire_Legendary2l": 0.8,
       "allOthers": 0.92
@@ -1150,7 +1487,7 @@
     "description": "Higher HP ships get more crew but with diminishing returns above ~2000 HP. Legendary2l bosses get 13% fewer crew proportionally."
   },
   "wantedLevel": {
-    "headhunterSpawnInterval": "(20 - wantedLevel × 5) × 60 seconds",
+    "headhunterSpawnInterval": "(20 - wantedLevel \u00d7 5) \u00d7 60 seconds",
     "wantedLevelDiffs": {
       "diff1": 0.3,
       "diff2": 0.7,
