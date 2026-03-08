@@ -7,7 +7,7 @@ const sections = [
     title: '🚢 Ships',
     desc: 'Browse all 69 ships — stats, classes, factions, and descriptions.',
     href: '/wiki/ships',
-    count: '69 ships',
+    count: '63 ships',
   },
   {
     title: '🔫 Weapons',
