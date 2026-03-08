@@ -2,6 +2,22 @@
 
 import { useState, useMemo } from 'react'
 
+interface WeaponSlots {
+  stern: number
+  broadside: number
+  bow: number
+}
+
+interface Acquisition {
+  type: string
+  cost?: Record<string, number>
+}
+
+interface ChestDrop {
+  dropRate: number
+  category: string
+}
+
 interface Ship {
   gameId: number
   name: string
@@ -24,6 +40,21 @@ interface Ship {
   canBeNpc: boolean
   requiredRank: number
   canBeUsedForNpc: boolean
+  // Extended stats
+  broadsideArmor: number
+  hold: number
+  displacement: string
+  integrity: number
+  weaponSlots: WeaponSlots
+  swivelGuns: number
+  mortarSlots: number
+  specialWeaponSlots: number
+  role: string
+  inGameClass: string
+  inGameRate: number
+  bonuses: string[]
+  acquisition: Acquisition
+  chestDrop?: ChestDrop
 }
 
 type SortKey = 'name' | 'health' | 'speed' | 'mobility' | 'armor' | 'capacity' | 'crew' | 'coolness' | 'rank'
@@ -235,82 +266,175 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                 {expanded === ship.gameId && (
                   <tr key={`${ship.gameId}-detail`} className="bg-surface">
                     <td colSpan={10} className="px-4 py-4">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {/* Description & Tags */}
+                      {ship.description && (
+                        <p className="text-foreground-secondary text-sm mb-3">{ship.description}</p>
+                      )}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {ship.inGameClass && (
+                          <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
+                            {ship.inGameClass}
+                          </span>
+                        )}
+                        {ship.role && (
+                          <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
+                            Role: {ship.role}
+                          </span>
+                        )}
+                        {ship.faction && (
+                          <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
+                            Faction: {ship.faction}
+                          </span>
+                        )}
+                        {ship.subtype && (
+                          <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
+                            {formatSubtype(ship.subtype)}
+                          </span>
+                        )}
+                        {ship.displacement && (
+                          <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
+                            ⚓ {ship.displacement}
+                          </span>
+                        )}
+                        {ship.extraUpgradeSlots > 0 && (
+                          <span className="bg-surface-hover text-accent text-xs px-2 py-1 rounded">
+                            +{ship.extraUpgradeSlots} upgrade slot{ship.extraUpgradeSlots > 1 ? 's' : ''}
+                          </span>
+                        )}
+                        {ship.canBeUsedForNpc && (
+                          <span className="bg-surface-hover text-red-400 text-xs px-2 py-1 rounded">
+                            NPC Hull
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {/* Core Stats */}
                         <div>
-                          <p className="text-foreground-secondary text-sm mb-3">{ship.description}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {ship.faction && (
-                              <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                                Faction: {ship.faction}
-                              </span>
+                          <h4 className="text-foreground font-semibold text-xs uppercase mb-2">Core Stats</h4>
+                          <div className="space-y-1">
+                            {[
+                              ['Durability', ship.health.toLocaleString()],
+                              ['Speed', `${ship.speed} kn`],
+                              ['Maneuverability', ship.mobility],
+                              ['Broadside Armor', ship.broadsideArmor],
+                              ['Hold', ship.hold.toLocaleString()],
+                              ['Crew', ship.crew],
+                              ['Integrity', ship.integrity],
+                            ].map(([label, val]) => (
+                              <div key={label as string} className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                                <span className="text-foreground-muted">{label}</span>
+                                <span className="text-foreground font-medium">{val}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Armament */}
+                        <div>
+                          <h4 className="text-foreground font-semibold text-xs uppercase mb-2">Armament</h4>
+                          <div className="space-y-1">
+                            {ship.weaponSlots && (
+                              <>
+                                <div className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                                  <span className="text-foreground-muted">Broadside Guns</span>
+                                  <span className="text-foreground font-medium">{ship.weaponSlots.broadside}</span>
+                                </div>
+                                <div className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                                  <span className="text-foreground-muted">Stern Guns</span>
+                                  <span className="text-foreground font-medium">{ship.weaponSlots.stern}</span>
+                                </div>
+                                <div className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                                  <span className="text-foreground-muted">Bow Guns</span>
+                                  <span className="text-foreground font-medium">{ship.weaponSlots.bow}</span>
+                                </div>
+                              </>
                             )}
-                            {ship.subtype && (
-                              <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                                Type: {formatSubtype(ship.subtype)}
-                              </span>
+                            <div className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                              <span className="text-foreground-muted">Swivel Guns</span>
+                              <span className="text-foreground font-medium">{ship.swivelGuns}</span>
+                            </div>
+                            {ship.mortarSlots > 0 && (
+                              <div className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                                <span className="text-foreground-muted">Mortar Slots</span>
+                                <span className="text-foreground font-medium">{ship.mortarSlots}</span>
+                              </div>
                             )}
-                            {ship.extraUpgradeSlots > 0 && (
-                              <span className="bg-surface-hover text-accent text-xs px-2 py-1 rounded">
-                                +{ship.extraUpgradeSlots} upgrade slot{ship.extraUpgradeSlots > 1 ? 's' : ''}
-                              </span>
-                            )}
-                            {ship.costReal > 0 && (
-                              <span className="bg-surface-hover text-yellow-400 text-xs px-2 py-1 rounded">
-                                🪙 {ship.costReal.toLocaleString()} Coins
-                              </span>
-                            )}
-                            {ship.costReal === 0 && ship.coolness.includes('Unique') && (
-                              <span className="bg-surface-hover text-yellow-400 text-xs px-2 py-1 rounded">
-                                🏆 Special Acquisition
-                              </span>
-                            )}
-                            {ship.costReal === 0 && ship.coolness.includes('Empire') && (
-                              <span className="bg-surface-hover text-purple-400 text-xs px-2 py-1 rounded">
-                                🏰 Empire Exclusive
-                              </span>
-                            )}
-                            {ship.costReal === 0 && ship.coolness.includes('Elite') && (
-                              <span className="bg-surface-hover text-blue-400 text-xs px-2 py-1 rounded">
-                                🔨 Craftable
-                              </span>
-                            )}
-                            {ship.costReal === 0 && ship.coolness === 'Default' && (
-                              <span className="bg-surface-hover text-green-400 text-xs px-2 py-1 rounded">
-                                🔨 Craftable
-                              </span>
-                            )}
-                            {ship.canBeUsedForNpc && (
-                              <span className="bg-surface-hover text-red-400 text-xs px-2 py-1 rounded">
-                                NPC Hull
-                              </span>
+                            {ship.specialWeaponSlots > 0 && (
+                              <div className="flex justify-between bg-surface-hover rounded px-2 py-1 text-sm">
+                                <span className="text-foreground-muted">Special Weapon Slots</span>
+                                <span className="text-foreground font-medium">{ship.specialWeaponSlots}</span>
+                              </div>
                             )}
                           </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-2 text-sm">
-                          <div className="bg-surface-hover rounded p-2">
-                            <span className="text-foreground-muted">Durability</span>
-                            <span className="text-foreground float-right font-medium">{ship.health.toLocaleString()}</span>
+
+                        {/* Acquisition */}
+                        <div>
+                          <h4 className="text-foreground font-semibold text-xs uppercase mb-2">How to Get</h4>
+                          <div className="space-y-2">
+                            {ship.acquisition?.type === 'craftable' && (
+                              <div className="bg-surface-hover rounded px-3 py-2">
+                                <span className="text-green-400 text-sm font-medium">🔨 Craftable</span>
+                                <p className="text-foreground-muted text-xs mt-1">Build at the shipyard with resources</p>
+                              </div>
+                            )}
+                            {ship.acquisition?.type === 'premium' && ship.acquisition.cost && (
+                              <div className="bg-surface-hover rounded px-3 py-2">
+                                <span className="text-yellow-400 text-sm font-medium">🪙 Premium Ship</span>
+                                {Object.entries(ship.acquisition.cost).map(([currency, amount]) => (
+                                  <div key={currency} className="flex justify-between text-sm mt-1">
+                                    <span className="text-foreground-secondary">{currency}</span>
+                                    <span className="text-accent font-medium">{(amount as number).toLocaleString()}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {ship.acquisition?.type === 'unique' && ship.acquisition.cost && (
+                              <div className="bg-surface-hover rounded px-3 py-2">
+                                <span className="text-yellow-400 text-sm font-medium">🏆 Unique Ship</span>
+                                {Object.entries(ship.acquisition.cost).map(([currency, amount]) => (
+                                  <div key={currency} className="flex justify-between text-sm mt-1">
+                                    <span className="text-foreground-secondary">{currency}</span>
+                                    <span className="text-accent font-medium">{(amount as number).toLocaleString()}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {ship.acquisition?.type === 'empire' && ship.acquisition.cost && (
+                              <div className="bg-surface-hover rounded px-3 py-2">
+                                <span className="text-purple-400 text-sm font-medium">🏰 Empire Ship</span>
+                                {Object.entries(ship.acquisition.cost).map(([currency, amount]) => (
+                                  <div key={currency} className="flex justify-between text-sm mt-1">
+                                    <span className="text-foreground-secondary">{currency}</span>
+                                    <span className="text-accent font-medium">{(amount as number).toLocaleString()}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {ship.chestDrop && (
+                              <div className="bg-surface-hover rounded px-3 py-2">
+                                <span className="text-cyan-400 text-sm font-medium">🎁 Chest Drop</span>
+                                <div className="text-foreground-muted text-xs mt-1">
+                                  Drop rate: ~{ship.chestDrop.dropRate}%
+                                </div>
+                              </div>
+                            )}
                           </div>
-                          <div className="bg-surface-hover rounded p-2">
-                            <span className="text-foreground-muted">Speed</span>
-                            <span className="text-foreground float-right font-medium">{ship.speed} kn</span>
-                          </div>
-                          <div className="bg-surface-hover rounded p-2">
-                            <span className="text-foreground-muted">Maneuverability</span>
-                            <span className="text-foreground float-right font-medium">{ship.mobility}</span>
-                          </div>
-                          <div className="bg-surface-hover rounded p-2">
-                            <span className="text-foreground-muted">Armor</span>
-                            <span className="text-foreground float-right font-medium">{ship.armor}</span>
-                          </div>
-                          <div className="bg-surface-hover rounded p-2">
-                            <span className="text-foreground-muted">Cargo</span>
-                            <span className="text-foreground float-right font-medium">{ship.capacity.toLocaleString()}</span>
-                          </div>
-                          <div className="bg-surface-hover rounded p-2">
-                            <span className="text-foreground-muted">Crew</span>
-                            <span className="text-foreground float-right font-medium">{ship.crew}</span>
-                          </div>
+
+                          {/* Bonuses */}
+                          {ship.bonuses && ship.bonuses.length > 0 && (
+                            <div className="mt-3">
+                              <h4 className="text-foreground font-semibold text-xs uppercase mb-1">Ship Bonuses</h4>
+                              <div className="space-y-1">
+                                {ship.bonuses.map((bonus, i) => (
+                                  <div key={i} className="bg-surface-hover rounded px-2 py-1 text-xs text-accent">
+                                    ✨ {bonus}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </td>

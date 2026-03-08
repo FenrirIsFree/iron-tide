@@ -23,7 +23,7 @@ export default function ShipsPage() {
             {ships.length} ships — click any row to expand details
           </p>
         </div>
-        <ShipTable ships={ships} />
+        <ShipTable ships={ships as any} />
       </main>
       <Footer />
     </div>

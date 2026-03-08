@@ -20,7 +20,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 10,
+    "hold": 36000,
+    "displacement": "4500t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 59,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 1,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 61,
@@ -43,7 +62,33 @@
     "costReal": 2770,
     "canBeNpc": false,
     "requiredRank": 20,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 8.6,
+    "hold": 26000,
+    "displacement": "4140t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 42,
+      "bow": 4
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 1,
+    "bonuses": [],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 2770
+      }
+    },
+    "chestDrop": {
+      "dropRate": 2.45,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 65,
@@ -66,7 +111,34 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 11.5,
+    "hold": 54000,
+    "displacement": "5625t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 85,
+      "bow": 2
+    },
+    "swivelGuns": 18,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 2,
+    "role": "Imperial",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 1,
+    "bonuses": [
+      "+1 upgrade space",
+      "Mobile Outpost",
+      "Imperial NPCs do not attack"
+    ],
+    "acquisition": {
+      "type": "empire",
+      "cost": {
+        "Legend Tokens": 40,
+        "Escudo": 10000
+      }
+    }
   },
   {
     "gameId": 49,
@@ -89,7 +161,28 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 24,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5.5,
+    "hold": 50000,
+    "displacement": "4500t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 8,
+      "broadside": 28,
+      "bow": 0
+    },
+    "swivelGuns": 14,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Galleon",
+    "inGameRate": 1,
+    "bonuses": [
+      "Spaces for upgrades: +1"
+    ],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 60,
@@ -112,7 +205,29 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 6.5,
+    "hold": 24000,
+    "displacement": "3870t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 18,
+      "bow": 6
+    },
+    "swivelGuns": 12,
+    "mortarSlots": 3,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Galley",
+    "inGameRate": 1,
+    "bonuses": [
+      "Unique wind rose",
+      "Equipped with oars"
+    ],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 36,
@@ -135,7 +250,35 @@
     "costReal": 2870,
     "canBeNpc": true,
     "requiredRank": 8,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 9,
+    "hold": 39500,
+    "displacement": "4500t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 63,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 1,
+    "bonuses": [
+      "XP and loot from battles +15%"
+    ],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 2870
+      }
+    },
+    "chestDrop": {
+      "dropRate": 10.87,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 46,
@@ -158,7 +301,35 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 24,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 7,
+    "hold": 26500,
+    "displacement": "4275t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 38,
+      "bow": 8
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 2,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Galleon",
+    "inGameRate": 1,
+    "bonuses": [
+      "Construction cost -10%"
+    ],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 15000
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.05,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 31,
@@ -181,7 +352,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 24,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 8,
+    "hold": 25000,
+    "displacement": "4050t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 49,
+      "bow": 4
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 1,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 54,
@@ -204,7 +394,28 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5.2,
+    "hold": 21000,
+    "displacement": "2925t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 19,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 2,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Galley",
+    "inGameRate": 2,
+    "bonuses": [
+      "Equipped with oars"
+    ],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 28,
@@ -227,7 +438,33 @@
     "costReal": 2570,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 4.2,
+    "hold": 20000,
+    "displacement": "3150t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 12,
+      "broadside": 28,
+      "bow": 1
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 1,
+    "role": "Fast-moving",
+    "inGameClass": "Frigate",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 2570
+      }
+    },
+    "chestDrop": {
+      "dropRate": 2.45,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 50,
@@ -250,7 +487,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3.2,
+    "hold": 17500,
+    "displacement": "3060t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 32,
+      "bow": 4
+    },
+    "swivelGuns": 12,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 32,
@@ -273,7 +529,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 21,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4.4,
+    "hold": 43000,
+    "displacement": "3600t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 32,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 75,
@@ -296,7 +571,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 7.2,
+    "hold": 23500,
+    "displacement": "3420t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 6,
+      "broadside": 38,
+      "bow": 4
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 10000
+      }
+    }
   },
   {
     "gameId": 39,
@@ -319,7 +616,33 @@
     "costReal": 2450,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5.8,
+    "hold": 28000,
+    "displacement": "4050t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 36,
+      "bow": 4
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Galleon",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 2450
+      }
+    },
+    "chestDrop": {
+      "dropRate": 16.3,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 62,
@@ -342,7 +665,34 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 20,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 6.8,
+    "hold": 23000,
+    "displacement": "3375t",
+    "integrity": 4,
+    "weaponSlots": {
+      "stern": 8,
+      "broadside": 37,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Imperial",
+    "inGameClass": "Ship",
+    "inGameRate": 2,
+    "bonuses": [
+      "Unique wind rose",
+      "Invisibility",
+      "Imperial NPCs do not attack"
+    ],
+    "acquisition": {
+      "type": "empire",
+      "cost": {
+        "Legend Tokens": 20,
+        "Escudo": 5000
+      }
+    }
   },
   {
     "gameId": 52,
@@ -365,7 +715,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 8,
+    "hold": 30500,
+    "displacement": "3600t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 43,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 41,
@@ -388,7 +757,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 23,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 6.4,
+    "hold": 21500,
+    "displacement": "3330t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 38,
+      "bow": 2
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 38,
@@ -411,7 +799,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 7.3,
+    "hold": 33500,
+    "displacement": "4050t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 44,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 12000
+      }
+    }
   },
   {
     "gameId": 70,
@@ -434,7 +844,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 7.5,
+    "hold": 35000,
+    "displacement": "3825t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 31,
+      "bow": 2
+    },
+    "swivelGuns": 14,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 2,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 10000
+      }
+    }
   },
   {
     "gameId": 19,
@@ -457,7 +889,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5.6,
+    "hold": 18500,
+    "displacement": "3150t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 30,
+      "bow": 2
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 69,
@@ -480,7 +931,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 6.7,
+    "hold": 26000,
+    "displacement": "3150t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 8,
+      "broadside": 35,
+      "bow": 6
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 8000
+      }
+    }
   },
   {
     "gameId": 44,
@@ -503,7 +976,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 24,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 7,
+    "hold": 26000,
+    "displacement": "3915t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 35,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 35,
@@ -526,7 +1018,32 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 22,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 8,
+    "hold": 27000,
+    "displacement": "4950t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 8,
+      "broadside": 25,
+      "bow": 1
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 1,
+    "role": "Imperial",
+    "inGameClass": "Imperial",
+    "inGameRate": 3,
+    "bonuses": [
+      "Imperial NPCs do not attack"
+    ],
+    "acquisition": {
+      "type": "empire",
+      "cost": {
+        "Legend Tokens": 5,
+        "Escudo": 400
+      }
+    }
   },
   {
     "gameId": 73,
@@ -549,7 +1066,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 3.1,
+    "hold": 16500,
+    "displacement": "2565t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 24,
+      "bow": 4
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Frigate",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 8000
+      }
+    }
   },
   {
     "gameId": 40,
@@ -572,7 +1111,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 19,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4.6,
+    "hold": 18000,
+    "displacement": "2250t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 15,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 4,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Siege",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 68,
@@ -595,7 +1153,31 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 5.6,
+    "hold": 20000,
+    "displacement": "2925t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 6,
+      "broadside": 26,
+      "bow": 6
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 3,
+    "bonuses": [
+      "Construction cost -10%"
+    ],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 8000
+      }
+    }
   },
   {
     "gameId": 53,
@@ -618,7 +1200,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3.9,
+    "hold": 34000,
+    "displacement": "2475t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 26,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 57,
@@ -641,7 +1242,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.8,
+    "hold": 15500,
+    "displacement": "2475t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 23,
+      "bow": 4
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 3,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 20,
@@ -664,7 +1284,35 @@
     "costReal": 1600,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4.8,
+    "hold": 45000,
+    "displacement": "3150t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 6,
+      "broadside": 26,
+      "bow": 4
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Galleon",
+    "inGameRate": 3,
+    "bonuses": [
+      "+1 upgrade space"
+    ],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 1600
+      }
+    },
+    "chestDrop": {
+      "dropRate": 16.3,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 26,
@@ -687,7 +1335,35 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 17,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5.2,
+    "hold": 19000,
+    "displacement": "2925t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 22,
+      "bow": 1
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 2,
+    "specialWeaponSlots": 1,
+    "role": "Siege",
+    "inGameClass": "Galiot",
+    "inGameRate": 3,
+    "bonuses": [
+      "Unique Wind Rose"
+    ],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 8000
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.05,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 25,
@@ -710,7 +1386,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 6,
+    "hold": 21500,
+    "displacement": "2565t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 26,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Heavy Frigate",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 14,
@@ -733,7 +1428,32 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 19,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5.5,
+    "hold": 17000,
+    "displacement": "2610t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 8,
+      "broadside": 11,
+      "bow": 12
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Imperial",
+    "inGameClass": "Barque",
+    "inGameRate": 4,
+    "bonuses": [
+      "Imperial NPCs do not attack"
+    ],
+    "acquisition": {
+      "type": "empire",
+      "cost": {
+        "Legend Tokens": 1,
+        "Escudo": 150
+      }
+    }
   },
   {
     "gameId": 11,
@@ -756,7 +1476,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 15,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4.8,
+    "hold": 15500,
+    "displacement": "2115t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 21,
+      "bow": 2
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Frigate",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 17,
@@ -779,7 +1518,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 17,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3.3,
+    "hold": 27500,
+    "displacement": "3060t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 18,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Frigate",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 34,
@@ -802,7 +1560,33 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 18,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.9,
+    "hold": 30000,
+    "displacement": "3375t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 16,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Clipper",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 4500
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.05,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 67,
@@ -825,7 +1609,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 3.5,
+    "hold": 26000,
+    "displacement": "2700t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 21,
+      "bow": 4
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Frigate",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 4500
+      }
+    }
   },
   {
     "gameId": 7,
@@ -848,7 +1654,33 @@
     "costReal": 1190,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 5.5,
+    "hold": 18000,
+    "displacement": "2700t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 15,
+      "bow": 6
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 1,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Galleon",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 1190
+      }
+    },
+    "chestDrop": {
+      "dropRate": 16.3,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 13,
@@ -871,7 +1703,35 @@
     "costReal": 995,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 1.5,
+    "hold": 10000,
+    "displacement": "1350t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 4,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 3,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Tartane",
+    "inGameRate": 4,
+    "bonuses": [
+      "Unique Wind Rose"
+    ],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 995
+      }
+    },
+    "chestDrop": {
+      "dropRate": 19.02,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 58,
@@ -894,7 +1754,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 20,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.4,
+    "hold": 13000,
+    "displacement": "2025t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 18,
+      "bow": 2
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Corvette",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 74,
@@ -917,7 +1796,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 5.6,
+    "hold": 21000,
+    "displacement": "2475t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 27,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Ship of the Line",
+    "inGameRate": 4,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 4500
+      }
+    }
   },
   {
     "gameId": 71,
@@ -940,7 +1841,32 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 5,
+    "hold": 7500,
+    "displacement": "900t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 0,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 1,
+    "role": "Fast-moving",
+    "inGameClass": "Schooner",
+    "inGameRate": 5,
+    "bonuses": [
+      "Unique Wind Rose",
+      "Imperial Bombard x1"
+    ],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 3000
+      }
+    }
   },
   {
     "gameId": 12,
@@ -963,7 +1889,32 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 14,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3,
+    "hold": 14500,
+    "displacement": "1800t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 15,
+      "bow": 2
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Imperial",
+    "inGameClass": "Galleon",
+    "inGameRate": 5,
+    "bonuses": [
+      "Imperial NPCs do not attack"
+    ],
+    "acquisition": {
+      "type": "empire",
+      "cost": {
+        "Imperial Legend Currency": 25,
+        "Escudo": 20
+      }
+    }
   },
   {
     "gameId": 22,
@@ -986,7 +1937,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 12,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4,
+    "hold": 13000,
+    "displacement": "2250t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 16,
+      "bow": 2
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Frigate",
+    "inGameRate": 5,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 18,
@@ -1009,7 +1979,33 @@
     "costReal": 580,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.2,
+    "hold": 14000,
+    "displacement": "1575t",
+    "integrity": 8,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 8,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 2,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Flute",
+    "inGameRate": 5,
+    "bonuses": [],
+    "acquisition": {
+      "type": "premium",
+      "cost": {
+        "Coins": 580
+      }
+    },
+    "chestDrop": {
+      "dropRate": 16.3,
+      "category": "PremiumShip"
+    }
   },
   {
     "gameId": 23,
@@ -1032,7 +2028,35 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 12,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4.5,
+    "hold": 12500,
+    "displacement": "1800t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 10,
+      "bow": 10
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Panokson",
+    "inGameRate": 5,
+    "bonuses": [
+      "Construction cost -10%"
+    ],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 3000
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.05,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 24,
@@ -1055,7 +2079,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 13,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2,
+    "hold": 11000,
+    "displacement": "1620t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 4,
+      "broadside": 12,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Corvette",
+    "inGameRate": 5,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 47,
@@ -1078,7 +2121,28 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 10,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3.2,
+    "hold": 12500,
+    "displacement": "2025t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 12,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 1,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Xebec",
+    "inGameRate": 5,
+    "bonuses": [
+      "Unique wind rose"
+    ],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 10,
@@ -1101,7 +2165,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 11,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.7,
+    "hold": 22000,
+    "displacement": "2070t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 14,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Frigate",
+    "inGameRate": 5,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 59,
@@ -1124,7 +2207,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 14,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 5,
+    "hold": 17500,
+    "displacement": "2475t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 20,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Heavy Galleon",
+    "inGameRate": 5,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 72,
@@ -1147,7 +2249,29 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 1,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 3.2,
+    "hold": 20500,
+    "displacement": "1980t",
+    "integrity": 7,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 15,
+      "bow": 0
+    },
+    "swivelGuns": 10,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Frigate",
+    "inGameRate": 5,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 3000
+      }
+    }
   },
   {
     "gameId": 56,
@@ -1170,7 +2294,25 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 20,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 1,
+    "hold": 1000,
+    "displacement": null,
+    "integrity": null,
+    "weaponSlots": null,
+    "swivelGuns": null,
+    "mortarSlots": null,
+    "specialWeaponSlots": null,
+    "role": "Imperial",
+    "inGameClass": "Montgolfiere",
+    "inGameRate": 6,
+    "bonuses": [
+      "Imperial NPCs do not attack"
+    ],
+    "acquisition": {
+      "type": "empire",
+      "cost": {}
+    }
   },
   {
     "gameId": 16,
@@ -1193,7 +2335,33 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.2,
+    "hold": 8500,
+    "displacement": "1260t",
+    "integrity": 5,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 7,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 1,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Cutter",
+    "inGameRate": 6,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 250
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.05,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 4,
@@ -1216,7 +2384,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 4,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3.6,
+    "hold": 9500,
+    "displacement": "1350t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 10,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Ketch",
+    "inGameRate": 6,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 27,
@@ -1239,7 +2426,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 6,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 1.8,
+    "hold": 8000,
+    "displacement": "990t",
+    "integrity": 6,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 9,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Cutter",
+    "inGameRate": 6,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 9,
@@ -1262,7 +2468,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 9,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.5,
+    "hold": 15500,
+    "displacement": "2025t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 9,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Galleon",
+    "inGameRate": 6,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 8,
@@ -1285,7 +2510,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 7,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 4.5,
+    "hold": 12500,
+    "displacement": "1440t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 12,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Heavy",
+    "inGameClass": "Brig",
+    "inGameRate": 6,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 5,
@@ -1308,7 +2552,28 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 8,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.9,
+    "hold": 9000,
+    "displacement": "1575t",
+    "integrity": 5,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 7,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 1,
+    "specialWeaponSlots": 0,
+    "role": "Siege",
+    "inGameClass": "Polacca",
+    "inGameRate": 6,
+    "bonuses": [
+      "Unique wind rose"
+    ],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 63,
@@ -1331,7 +2596,33 @@
     "costReal": 0,
     "canBeNpc": false,
     "requiredRank": 20,
-    "canBeUsedForNpc": false
+    "canBeUsedForNpc": false,
+    "broadsideArmor": 3,
+    "hold": 10000,
+    "displacement": "1575t",
+    "integrity": null,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 9,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Frigate",
+    "inGameRate": 6,
+    "bonuses": [],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 750
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.05,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 3,
@@ -1354,7 +2645,35 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3,
+    "hold": 11000,
+    "displacement": "1485t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 10,
+      "bow": 0
+    },
+    "swivelGuns": 8,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Junk",
+    "inGameRate": 6,
+    "bonuses": [
+      "Construction cost -10%"
+    ],
+    "acquisition": {
+      "type": "unique",
+      "cost": {
+        "Battle Marks": 750
+      }
+    },
+    "chestDrop": {
+      "dropRate": 0.03,
+      "category": "UniqueShip"
+    }
   },
   {
     "gameId": 15,
@@ -1377,7 +2696,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 4,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 2.2,
+    "hold": 11000,
+    "displacement": "1350t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 7,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Transport",
+    "inGameClass": "Flute",
+    "inGameRate": 7,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 6,
@@ -1400,7 +2738,26 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 3.2,
+    "hold": 7000,
+    "displacement": "1125t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 2,
+      "broadside": 8,
+      "bow": 0
+    },
+    "swivelGuns": 6,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Battle",
+    "inGameClass": "Brigantine",
+    "inGameRate": 7,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   },
   {
     "gameId": 2,
@@ -1423,6 +2780,25 @@
     "costReal": 0,
     "canBeNpc": true,
     "requiredRank": 1,
-    "canBeUsedForNpc": true
+    "canBeUsedForNpc": true,
+    "broadsideArmor": 1.6,
+    "hold": 6000,
+    "displacement": "900t",
+    "integrity": 0,
+    "weaponSlots": {
+      "stern": 0,
+      "broadside": 6,
+      "bow": 0
+    },
+    "swivelGuns": 4,
+    "mortarSlots": 0,
+    "specialWeaponSlots": 0,
+    "role": "Fast-moving",
+    "inGameClass": "Schooner",
+    "inGameRate": 7,
+    "bonuses": [],
+    "acquisition": {
+      "type": "craftable"
+    }
   }
 ]
