@@ -467,7 +467,7 @@ export default function FleetClient({ initialFleet, shipCatalog, weaponCatalog, 
                   <span className="text-foreground-secondary text-sm">{us.ship.weaponClass || '—'}</span>
                   <span className="text-foreground-secondary text-sm">{us.ship.broadsideSlots}</span>
                   <span className="text-foreground-secondary text-sm">{us.ship.crewCapacity || '—'}</span>
-                  <span className="text-foreground-secondary text-xs truncate">{weaponSummary}</span>
+                  <span className="text-foreground-secondary text-xs truncate" title={weaponSummary}>{active?.name || '—'}</span>
                 </div>
 
                 {/* Expanded view */}

@@ -27,7 +27,13 @@ type ActiveLoadout = {
 type MemberShip = {
   id: string
   nickname: string | null
-  ship: { name: string; shipClass: string; rate: number; weaponClass: string | null; broadsideSlots: number; crewCapacity: number | null }
+  ship: {
+    name: string; shipClass: string; rate: number; weaponClass: string | null
+    broadsideSlots: number; crewCapacity: number | null; role: string | null
+    speed: number | null; maneuverability: number | null; durability: number | null
+    holdCapacity: number | null; sternSlots: number | null; bowSlots: number | null
+    mortarSlots: number | null
+  }
   loadouts: ActiveLoadout[]
 }
 
@@ -130,12 +136,42 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                   {s.nickname && <span className="text-accent ml-1">&ldquo;{s.nickname}&rdquo;</span>}
                                 </h4>
                                 <p className="text-xs text-foreground-secondary">
-                                  {s.ship.shipClass} · Rate {s.ship.rate} · {s.ship.weaponClass || '?'}
+                                  {s.ship.shipClass} · Rate {s.ship.rate} · {s.ship.role || '?'}
                                 </p>
                               </div>
 
+                              {/* Ship Stats */}
+                              <div className="grid grid-cols-4 gap-1 text-xs">
+                                <div className="text-center">
+                                  <span className="text-foreground-secondary block">SPD</span>
+                                  <span className="text-foreground font-medium">{s.ship.speed ?? '—'}</span>
+                                </div>
+                                <div className="text-center">
+                                  <span className="text-foreground-secondary block">MAN</span>
+                                  <span className="text-foreground font-medium">{s.ship.maneuverability ?? '—'}</span>
+                                </div>
+                                <div className="text-center">
+                                  <span className="text-foreground-secondary block">HP</span>
+                                  <span className="text-foreground font-medium">{s.ship.durability ?? '—'}</span>
+                                </div>
+                                <div className="text-center">
+                                  <span className="text-foreground-secondary block">HOLD</span>
+                                  <span className="text-foreground font-medium">{s.ship.holdCapacity ?? '—'}</span>
+                                </div>
+                              </div>
+
+                              {/* Slots Summary */}
+                              <p className="text-xs text-foreground-secondary">
+                                🔫 {s.ship.broadsideSlots}/side
+                                {(s.ship.sternSlots ?? 0) > 0 && <span> · Stern {s.ship.sternSlots}</span>}
+                                {(s.ship.bowSlots ?? 0) > 0 && <span> · Bow {s.ship.bowSlots}</span>}
+                                {(s.ship.mortarSlots ?? 0) > 0 && <span> · Mortar {s.ship.mortarSlots}</span>}
+                                {s.ship.crewCapacity && <span> · 👥 {s.ship.crewCapacity}</span>}
+                              </p>
+
                               {loadout && (
-                                <div className="space-y-1 text-xs text-foreground-secondary">
+                                <div className="space-y-1 text-xs text-foreground-secondary border-t border-surface-border pt-2">
+                                  <p className="text-accent font-medium">{loadout.name}</p>
                                   {portWeapons.length > 0 && (
                                     <p>⚔️ Broadside: {portWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
                                   )}
