@@ -65,6 +65,7 @@ export interface Weapon {
   acquisition: string   // "Craftable", "Gold Purchase", "Premium"
   price: number         // gold price
   isPremium: boolean
+  craftingRecipe?: Record<string, number>  // resource name -> amount
 
   // Legacy (for compatibility)
   description: string
@@ -114,6 +115,68 @@ export interface MechanicCategory {
 // ── Loaders ──
 export function getShips(): Ship[] {
   return loadJson<Ship[]>('wiki-ships.json')
+}
+
+// ── Weapon crafting cost calculator (from decompiled Gameplay.CannonCraftCost) ──
+const RESOURCE_MEDIUM_COSTS: Record<number, [string, number]> = {
+  2: ['Rum', 8], 4: ['Iron', 3], 11: ['Copper', 30],
+  14: ['Bronze', 390], 23: ['Volcanic Ore', 30], 37: ['Battle Mark', 200],
+}
+const WEAPON_RECIPE_TEMPLATES: Record<string, [number, number][]> = {
+  Light:  [[4, 60], [2, 40]],
+  Medium: [[4, 45], [2, 20], [11, 35]],
+  Heavy:  [[4, 30], [23, 10], [37, 15], [14, 45]],
+}
+
+function computeWeaponCraftRecipe(totalGold: number, category: string): Record<string, number> {
+  const template = WEAPON_RECIPE_TEMPLATES[category]
+  if (!template) return {}
+
+  const amounts = new Array(template.length).fill(0)
+  let minCostIdx = 0
+  let minCost = RESOURCE_MEDIUM_COSTS[template[0][0]][1]
+  let totalValue = 0
+
+  for (let i = 0; i < template.length; i++) {
+    const [resId, pct] = template[i]
+    const medCost = RESOURCE_MEDIUM_COSTS[resId][1]
+    if (medCost < minCost) { minCost = medCost; minCostIdx = i }
+    if (pct > 0 && medCost > 0) {
+      amounts[i] = Math.floor(totalGold * pct / 100 / medCost)
+      totalValue += amounts[i] * medCost
+    }
+  }
+
+  const remainder = totalGold - totalValue
+  if (Math.abs(remainder) > 0.0001) {
+    const cheapCost = RESOURCE_MEDIUM_COSTS[template[minCostIdx][0]][1]
+    const adjust = Math.round(remainder / cheapCost)
+    const newTotal = totalValue + adjust * cheapCost
+    if (Math.abs(totalGold - newTotal) <= Math.abs(remainder)) {
+      amounts[minCostIdx] += adjust
+    }
+  }
+
+  const recipe: Record<string, number> = {}
+  for (let i = 0; i < template.length; i++) {
+    if (amounts[i] > 0) {
+      recipe[RESOURCE_MEDIUM_COSTS[template[i][0]][0]] = amounts[i]
+    }
+  }
+  return recipe
+}
+
+function getWeaponCraftCategory(v: Record<string, unknown>, w: Record<string, unknown>): string {
+  const wtype = v.type as string || ''
+  const wclass = v.weightClass as string || ''
+  if (wtype === 'Mortar') {
+    const cal = v.caliber as number | null
+    if (cal === 6 || cal === 7) return 'Light'
+    if (cal === 8 || cal === 9) return 'Medium'
+    if (cal === 10 || cal === 11) return 'Heavy'
+    return 'Medium' // fallback for special mortars
+  }
+  return wclass
 }
 
 export function getWeapons(): Weapon[] {
@@ -184,13 +247,16 @@ export function getWeapons(): Weapon[] {
     if (placementRestriction === 'Only for the bow or stern') placementRestriction = 'Bow or Stern only'
     if (placementRestriction === 'For special ships') placementRestriction = 'Special weapon slot'
 
-    // Acquisition
+    // Acquisition & crafting recipe
     const craftingType = w.craftingType as string
     let acquisition = 'Unknown'
+    let craftingRecipe: Record<string, number> | undefined
     if (isPremium || craftingType === 'NotAvailable') {
       acquisition = 'Premium'
     } else if (craftingType === 'ByCraft') {
       acquisition = 'Craftable'
+      const cat = getWeaponCraftCategory(v, w)
+      craftingRecipe = computeWeaponCraftRecipe(w.price as number || 0, cat)
     } else if (craftingType === 'ByGold') {
       acquisition = 'Gold Purchase'
     }
@@ -218,6 +284,7 @@ export function getWeapons(): Weapon[] {
       acquisition,
       price: (w.price as number) || 0,
       isPremium,
+      craftingRecipe,
       description: (w.description as string) || (v.notes as string) || '',
       icon: (w.icon as string) || '',
     }

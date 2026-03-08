@@ -25,6 +25,7 @@ interface Weapon {
   acquisition: string
   price: number
   isPremium: boolean
+  craftingRecipe?: Record<string, number>
   description: string
   icon: string
 }
@@ -258,8 +259,23 @@ export default function WeaponTable({ weapons }: { weapons: Weapon[] }) {
                         {w.structureDamage && <Tag label="Structure Damage" value={w.structureDamage} />}
                         {w.placementRestriction && <Tag label="Placement" value={w.placementRestriction} />}
                         <span className={`text-xs px-2 py-1 rounded bg-surface-hover ${ACQ_COLORS[w.acquisition] ?? 'text-foreground-secondary'}`}>
-                          {w.acquisition}{w.price > 0 ? ` — ${w.price.toLocaleString()} Gold` : ''}
+                          {w.acquisition === 'Gold Purchase' && `Buy with Gold: ${w.price.toLocaleString()}`}
+                          {w.acquisition === 'Premium' && `Premium (Coins): ${w.price.toLocaleString()}`}
+                          {w.acquisition === 'Craftable' && 'Craftable'}
                         </span>
+                        {w.craftingRecipe && Object.keys(w.craftingRecipe).length > 0 && (
+                          <div className="w-full mt-2 bg-surface-hover rounded p-3">
+                            <span className="text-foreground-muted text-xs block mb-1">⚒️ Crafting Cost</span>
+                            <div className="flex flex-wrap gap-3">
+                              {Object.entries(w.craftingRecipe).map(([res, amt]) => (
+                                <span key={res} className="text-sm text-foreground">
+                                  <span className="text-accent font-medium">{amt.toLocaleString()}</span>{' '}
+                                  <span className="text-foreground-secondary">{res}</span>
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </td>
                   </tr>
