@@ -256,7 +256,27 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                             )}
                             {ship.costReal > 0 && (
                               <span className="bg-surface-hover text-yellow-400 text-xs px-2 py-1 rounded">
-                                💎 Premium ({ship.costReal} gems)
+                                🪙 {ship.costReal.toLocaleString()} Coins
+                              </span>
+                            )}
+                            {ship.costReal === 0 && ship.coolness.includes('Unique') && (
+                              <span className="bg-surface-hover text-yellow-400 text-xs px-2 py-1 rounded">
+                                🏆 Special Acquisition
+                              </span>
+                            )}
+                            {ship.costReal === 0 && ship.coolness.includes('Empire') && (
+                              <span className="bg-surface-hover text-purple-400 text-xs px-2 py-1 rounded">
+                                🏰 Empire Exclusive
+                              </span>
+                            )}
+                            {ship.costReal === 0 && ship.coolness.includes('Elite') && (
+                              <span className="bg-surface-hover text-blue-400 text-xs px-2 py-1 rounded">
+                                🔨 Craftable
+                              </span>
+                            )}
+                            {ship.costReal === 0 && ship.coolness === 'Default' && (
+                              <span className="bg-surface-hover text-green-400 text-xs px-2 py-1 rounded">
+                                🔨 Craftable
                               </span>
                             )}
                             {ship.canBeUsedForNpc && (
