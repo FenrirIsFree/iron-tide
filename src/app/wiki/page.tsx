@@ -22,6 +22,12 @@ const sections = [
     count: '14 bosses',
   },
   {
+    title: '🎁 Chests & Loot',
+    desc: 'Complete loot tables for every chest — drop rates, ship chances, and reward breakdowns.',
+    href: '/wiki/chests',
+    count: '4 chest types',
+  },
+  {
     title: '🔨 Crafting',
     desc: 'Recipes, workshop blueprints, furnace smelting, and factory production.',
     href: '/wiki/crafting',
