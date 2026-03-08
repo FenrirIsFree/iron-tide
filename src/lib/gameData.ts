@@ -36,19 +36,38 @@ export interface Ship {
 
 // ── Weapon types ──
 export interface Weapon {
-  gameId: number
+  // Identity
   name: string
+  gameId: string
+  type: string          // Cannon, Long Cannon, Carronade, Bombard, Mortar, Special
+  weightClass: string   // Light, Medium, Heavy, Mortar
+
+  // Core stats
+  damage: number        // per-shot damage (numeric only)
+  damageDisplay: string // e.g. "34 × 8" or "80/sec"
+  reload: number        // seconds
+  range: number         // max range
+  rangeMin?: number     // mortar min range
+  angle: number         // firing arc degrees
+  scatter: number       // accuracy spread
+  dps: number           // computed damage per second
+
+  // Extra properties
+  projectileSpeed: number // speed multiplier (1.0 = normal)
+  splashRadius?: number
+  overheat?: number       // shots until overheat
+  preparation?: number    // mortar prep time multiplier
+  structureDamage?: string // e.g. "x2"
+  placementRestriction?: string // e.g. "Bow or Stern only"
+  shots: number           // multi-shot count (1 for single)
+
+  // Acquisition
+  acquisition: string   // "Craftable", "Gold Purchase", "Premium"
+  price: number         // gold price
+  isPremium: boolean
+
+  // Legacy (for compatibility)
   description: string
-  class: string
-  category: string
-  distance: number
-  penetration: number
-  cooldown: number
-  angle: number
-  scatter: number
-  extra: string
-  craftingType: string
-  price: number
   icon: string
 }
 
@@ -98,7 +117,111 @@ export function getShips(): Ship[] {
 }
 
 export function getWeapons(): Weapon[] {
-  return loadJson<Weapon[]>('wiki-weapons.json')
+  const wiki = loadJson<Record<string, unknown>[]>('wiki-weapons.json')
+  const v2 = loadJson<Record<string, unknown>[]>('weapon-stats-v2.json')
+  const v2ByName = new Map(v2.map(w => [w.name as string, w]))
+
+  return wiki.map(w => {
+    const name = w.name as string
+    const v = v2ByName.get(name) || {}
+
+    const weaponType = (v.type as string) || 'Unknown'
+    const weightClass = (v.weightClass as string) || 'Unknown'
+    const isPremium = (v.isPremium as boolean) || false
+
+    // Parse damage — v2 has "34 x8" strings for multi-shot, or numeric, or special "damage" field
+    let damage = 0
+    let damageDisplay = ''
+    let shots = 1
+    const pen = v.penetration
+    if (pen !== undefined) {
+      if (typeof pen === 'string' && pen.includes('x')) {
+        const parts = pen.split('x').map((s: string) => s.trim())
+        damage = parseFloat(parts[0])
+        shots = parseInt(parts[1])
+        damageDisplay = `${damage} × ${shots}`
+      } else {
+        damage = typeof pen === 'number' ? pen : parseFloat(pen as string)
+        damageDisplay = String(damage)
+      }
+    } else if (v.damage !== undefined) {
+      damage = v.damage as number
+      const unit = v.damageUnit as string
+      damageDisplay = unit ? `${damage}/sec` : String(damage)
+    } else {
+      damage = w.penetration as number || 0
+      damageDisplay = String(damage)
+    }
+
+    // Reload
+    const reload = (v.loading as number) ?? (w.cooldown as number) ?? 0
+
+    // Range
+    const rangeMax = (v.rangeMax as number) ?? (v.range as number) ?? (parseInt(w.distance as string) || 0)
+    const rangeMin = v.rangeMin as number | undefined
+
+    // Angle, scatter
+    const angle = (v.maxAngle as number) ?? (w.angle as number) ?? 0
+    const scatter = (v.accuracySpread as number) ?? (w.scatter as number) ?? 0
+
+    // DPS calculation
+    let dps = 0
+    if (reload > 0) {
+      dps = (damage * shots) / reload
+    }
+
+    // Projectile speed
+    const projectileSpeed = (v.projectileSpeedFactor as number) ?? 1.0
+
+    // Mortar/special fields
+    const splashRadius = v.splashRadius as number | undefined
+    const overheat = (v.untilOverheat as number) ?? undefined
+    const preparation = (v.mortarPreparation as number) ?? undefined
+    const structureDamage = (v.specialAbility as string)?.includes('x2') ? 'x2' : undefined
+
+    // Placement restriction — humanize
+    let placementRestriction = v.placementRestriction as string | undefined
+    if (placementRestriction === 'Only for the bow or stern') placementRestriction = 'Bow or Stern only'
+    if (placementRestriction === 'For special ships') placementRestriction = 'Special weapon slot'
+
+    // Acquisition
+    const craftingType = w.craftingType as string
+    let acquisition = 'Unknown'
+    if (isPremium || craftingType === 'NotAvailable') {
+      acquisition = 'Premium'
+    } else if (craftingType === 'ByCraft') {
+      acquisition = 'Craftable'
+    } else if (craftingType === 'ByGold') {
+      acquisition = 'Gold Purchase'
+    }
+
+    return {
+      name,
+      gameId: (v.gameId as string) || (w.gameId as string) || '',
+      type: weaponType,
+      weightClass,
+      damage,
+      damageDisplay,
+      reload,
+      range: rangeMax,
+      rangeMin,
+      angle,
+      scatter,
+      dps,
+      projectileSpeed,
+      splashRadius,
+      overheat,
+      preparation,
+      structureDamage,
+      placementRestriction,
+      shots,
+      acquisition,
+      price: (w.price as number) || 0,
+      isPremium,
+      description: (w.description as string) || (v.notes as string) || '',
+      icon: (w.icon as string) || '',
+    }
+  })
 }
 
 export function getNpcs(): NpcData {
