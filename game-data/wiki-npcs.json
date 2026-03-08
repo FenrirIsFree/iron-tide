@@ -1323,7 +1323,7 @@
     ]
   },
   "rewardSystem": {
-    "description": "How NPC rewards are calculated based on ship stats and NPC type",
+    "description": "Every NPC has a \"kill value\" based on its combat stats (HP, speed, armor, and DPS). When you sink an NPC, the loot you receive is calculated as portions of this kill value, converted into resources. Tougher NPCs are worth more, so they drop more and better loot.",
     "basicRewardFormula": {
       "xpCalculation": "XP from HP^0.97 \u00d7 1.19, modified by speed/armor/damage. Final XP = gold reward \u00d7 XP rate \u00d7 type modifier \u00d7 0.9",
       "goldCalculation": "Base gold (75, or 150 for traders) + location multiplier \u00d7 (combat + damage bonus) \u00d7 game speed \u00d7 0.79",
@@ -1343,25 +1343,25 @@
     },
     "lootByType": {
       "seafarer": {
-        "summary": "No rewards \u2014 these small vessels give 0 gold and 0 XP when sunk."
+        "summary": "No rewards \u2014 Small Vessels give 0 gold and 0 XP when sunk."
       },
       "pirates": {
-        "summary": "Pirates drop gold, local goods, and have a rare chance for treasure maps.",
+        "summary": "Pirates drop gold, local goods, and have a rare chance for treasure maps. Tougher pirates drop more.",
         "regular": {
           "label": "Regular Pirates",
           "drops": [
-            "\ud83d\udcb0 70% of reward value as Gold",
-            "\ud83d\udce6 30% as local trade goods (provisions from nearby ports)",
+            "\ud83d\udcb0 Most of the kill is paid out as Gold (~70%)",
+            "\ud83d\udce6 Local trade goods from nearby ports (~30%)",
             "\ud83d\uddfa\ufe0f Pirate Treasure Map \u2014 1 in 30 chance per kill",
-            "\u2744\ufe0f Bonus trade goods in northern waters"
+            "\u2744\ufe0f Extra trade goods when killed in northern waters"
           ]
         },
         "reinforced": {
           "label": "Pirate Barons & Pirate Squadrons",
           "drops": [
-            "\ud83c\udff4 Pirate Tokens (in hazard waters) \u2014 amount = HP \u00f7 100",
-            "\ud83e\udeb5 Wood (outside hazard waters) \u2014 33% of reward value",
-            "\ud83d\udce6 Resource Packs (Chests) \u2014 80% of reward value, guaranteed at least 1"
+            "\ud83c\udff4 Pirate Tokens \u2014 only in hazard waters, amount scales with HP (roughly HP \u00f7 100)",
+            "\ud83e\udeb5 Wood \u2014 outside hazard waters, moderate amount",
+            "\ud83d\udce6 Resource Packs (Chests) \u2014 large amount, guaranteed at least 1"
           ]
         },
         "fleet_fr1": {
@@ -1372,62 +1372,62 @@
         }
       },
       "order": {
-        "summary": "The Order of the New Ark drops provisions and religious loot.",
+        "summary": "The Order of the New Ark drops provisions and religious-themed loot.",
         "regular": {
           "label": "Order of the New Ark (Regular)",
           "drops": [
-            "Same as regular pirates \u2014 gold, local goods, and map chances",
-            "\ud83d\uddfa\ufe0f Fanatic Camp Map \u2014 1 in 40 chance per kill"
+            "Same loot as regular pirates \u2014 gold, local goods, and map chances",
+            "\ud83d\uddfa\ufe0f Fanatic Camp Map \u2014 1 in 40 chance per kill (instead of Pirate Treasure Map)"
           ]
         },
         "reinforced": {
           "label": "Order Warships",
           "drops": [
-            "Same as Pirate Barons \u2014 Pirate Tokens or Wood + Resource Packs"
+            "Same loot as Pirate Barons \u2014 Pirate Tokens or Wood + Resource Packs"
           ]
         },
         "convoy": {
           "label": "Order Convoys",
           "drops": [
-            "\ud83d\udce6 2 random resources picked from: Provision, Supplies, Grain, Animals, or Wood",
-            "Each resource worth 50% of the total reward value"
+            "\ud83d\udce6 2 random resources from: Provision, Supplies, Grain, Animals, or Wood",
+            "Each resource given in a generous amount (scales with NPC strength)"
           ]
         }
       },
       "traders": {
-        "summary": "Merchants carry trade goods from nearby ports. Richer caravans carry more variety.",
+        "summary": "Merchants carry trade goods from nearby ports. Better merchants carry more variety.",
         "regular": {
           "label": "Khanfar Merchants",
           "drops": [
-            "\ud83d\udce6 Trade goods from nearby ports (1 type, amount based on reward value)",
-            "\ud83d\udcb0 Gold portion: 33% in safe waters, 25% in hazard waters",
+            "\ud83d\udce6 Trade goods from nearby ports (1 resource type, amount scales with NPC strength)",
+            "\ud83d\udcb0 Gold \u2014 33% of kill in safe waters, 25% in hazard waters",
             "\ud83d\uddfa\ufe0f Merchant Supply Map \u2014 1 in 20 chance per kill",
-            "\ud83d\udce6 50% chance of bonus Supplies or Wood",
-            "\ud83d\udea2 If the trader was on a trade route, its carried goods get extra weight"
+            "\ud83d\udce6 50% chance of bonus Wood or Supplies",
+            "\ud83d\udea2 Traders on active trade routes drop extra of their carried goods"
           ]
         },
         "ferryman": {
           "label": "Khanfar Caravans",
           "drops": [
             "\ud83d\udce6 3 different trade resources (larger quantities than regular merchants)",
-            "\ud83d\udcb0 Higher overall reward value than regular traders"
+            "\ud83d\udcb0 Higher base gold value (150 base vs 75 for regular merchants)"
           ]
         }
       },
       "empire": {
-        "summary": "Imperial ships drop Escudo. Higher-tier Imperial ships drop more valuable loot.",
+        "summary": "Imperial ships drop Escudo (Imperial Stamps). Higher-tier Imperials drop Legend Tokens and rare materials.",
         "regular": {
           "label": "Imperial Raiders",
           "drops": [
-            "\u2b50 Escudo \u2014 amount scales with HP: (500 + HP) \u00f7 1660",
-            "\ud83d\udccd More Escudo in open sea areas"
+            "\u2b50 Escudo \u2014 amount = (500 + HP) \u00f7 1660, so a 2000 HP raider drops ~1-2 Escudo",
+            "\ud83d\udccd More Escudo drops in open sea areas"
           ]
         },
         "invasion": {
           "label": "Imperial Invasion Forces",
           "drops": [
             "\u2b50 1 Escudo (more in open sea)",
-            "\u26a0\ufe0f Reduced overall rewards (70% of normal location multiplier)"
+            "\u26a0\ufe0f 30% less total loot than normal Imperial ships"
           ]
         },
         "legendary2l": {
@@ -1435,7 +1435,7 @@
           "drops": [
             "\ud83d\udc51 Legend Tokens \u2014 amount = HP \u00f7 3200",
             "\u2b50 1 Escudo",
-            "\ud83d\udce6 Rare trade goods worth ~1500 gold",
+            "\ud83d\udce6 Rare trade goods (~1500 gold worth)",
             "\ud83d\udce6 50% chance of a Chest",
             "\ud83d\udce6 50% chance of bonus Wood or Supplies",
             "\ud83d\udcb0 Remaining value as gold"
@@ -1448,10 +1448,10 @@
             "\u2b50 4 Escudo (solo) or 1 (with escorts)",
             "\ud83d\udfe4 17-25 Copper",
             "\ud83d\udc80 3 Voodoo Skulls",
-            "\ud83d\udce6 Rare trade goods worth ~5000 gold",
+            "\ud83d\udce6 Rare trade goods (~5000 gold worth)",
             "\ud83d\udce6 50% chance of a Chest",
             "\ud83d\udce6 50% chance of bonus Wood or Supplies",
-            "\ud83d\udc8e Drops loot chests directly on the water",
+            "\ud83d\udc8e Drops physical loot chests on the water",
             "\ud83d\udcb0 Remaining value as gold"
           ]
         }
@@ -1459,20 +1459,20 @@
       "bountyHunter": {
         "summary": "Bounty Hunters drop crafting materials.",
         "drops": [
-          "\ud83e\udeb5 Iron \u2014 33% of reward value",
-          "\ud83e\uddf5 Fabric \u2014 17% of reward value",
-          "\ud83d\udcb0 Remaining ~5% as gold"
+          "\u2692\ufe0f Iron \u2014 moderate amount (largest share of loot)",
+          "\ud83e\uddf5 Fabric \u2014 smaller amount",
+          "\ud83d\udcb0 Small amount of gold"
         ]
       },
       "portPatrol": {
-        "summary": "Faction Patrols drop a small amount of Wood (10-20% of reward value)."
+        "summary": "Faction Patrols drop a small amount of Wood."
       },
       "nyEventNpc": {
         "summary": "Sea Elves (New Year Event) drop event currency.",
         "drops": [
-          "\ud83d\udcb0 50% of reward value as gold",
+          "\ud83d\udcb0 Half the kill value as gold",
           "\ud83d\uddfa\ufe0f 1 Mysterious Map",
-          "\ud83d\udc34 Seahorses \u2014 scales with HP (HP \u00f7 1000, roughly)"
+          "\ud83d\udc34 Seahorses \u2014 scales with HP (roughly HP \u00f7 1000)"
         ]
       }
     },

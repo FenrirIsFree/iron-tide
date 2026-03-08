@@ -906,6 +906,17 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
       {/* ═══════════════════ REWARDS TAB ═══════════════════ */}
       {tab === 'rewards' && (
         <div className="grid gap-4">
+          {/* How rewards work */}
+          <div className="bg-surface border border-surface-border rounded-xl p-4 mb-0">
+            <h3 className="text-foreground font-semibold text-lg mb-2">📊 How Rewards Work</h3>
+            <p className="text-foreground-secondary text-sm">
+              {(npcs.rewardSystem as Record<string, unknown>)?.description as string ?? 'Every NPC has a kill value based on its combat stats.'}
+            </p>
+            <p className="text-foreground-muted text-xs mt-2">
+              The kill value is calculated from the NPC&apos;s <strong>HP</strong>, <strong>speed</strong>, <strong>armor</strong>, and <strong>DPS</strong>. Traders start with a higher base (150 gold vs 75 for other NPCs). Location multipliers apply — open sea and hazard waters can increase rewards.
+            </p>
+          </div>
+
           {/* Sinking vs Boarding */}
           <div className="bg-surface border border-surface-border rounded-xl p-4">
             <h3 className="text-foreground font-semibold text-lg mb-3">⚔️ Sinking vs Boarding</h3>
