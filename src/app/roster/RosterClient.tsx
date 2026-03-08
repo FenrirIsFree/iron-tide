@@ -34,7 +34,7 @@ type MemberShip = {
     name: string; shipClass: string; rate: number; weaponClass: string | null
     broadsideSlots: number; crewCapacity: number | null; role: string | null
     speed: number | null; maneuverability: number | null; broadsideArmor: number | null
-    hp: number | null; cargoHold: number | null; crewCapacity: number | null
+    hp: number | null; cargoHold: number | null
     sternSlots: number | null; bowSlots: number | null; mortarSlots: number | null
   }
   loadouts: ActiveLoadout[]
