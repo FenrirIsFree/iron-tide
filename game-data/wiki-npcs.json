@@ -1346,7 +1346,7 @@
         "regular": "70% gold, 30% local trade goods. Pirate Treasure Maps (1 in 30 chance). In northern waters, additional trade goods drop.",
         "reinforced": "Pirate Tokens in hazard waters (based on HP \u00f7 100), otherwise Wood at 33% gold value. Bonus resource packs at 80% gold value.",
         "fleet_fr1": "Cannon drops from ship's allowed cannon types",
-        "fleet_fr2_order": "2 random picks from [res 39, 9, 10, 22, 1] at 50% gold value each"
+        "fleet_fr2_order": "2 random picks from Provision, Supplies, Grain, Animals, or Wood at 50% gold value each"
       },
       "traders": {
         "regular": "Local trade goods from nearby ports. Merchant Supply Maps (1 in 20 chance). Gold portion: 33% in safe waters, 25% in hazard waters.",
