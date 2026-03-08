@@ -168,11 +168,11 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                     </div>
                     <div className="bg-surface-hover rounded p-2">
                       <span className="text-foreground-muted block text-xs">Cannon</span>
-                      <span className="text-foreground font-medium">{formatCannonClass(boss.cannonClass)}</span>
+                      <span className="text-foreground font-medium">{boss.cannonClass ? formatCannonClass(boss.cannonClass) : 'Unknown'}</span>
                     </div>
                     <div className="bg-surface-hover rounded p-2">
                       <span className="text-foreground-muted block text-xs">Special Ammo</span>
-                      <span className="text-foreground font-medium">{boss.specialBalls}</span>
+                      <span className="text-foreground font-medium">{boss.specialBalls ?? 'None'}</span>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mt-3">
@@ -180,7 +180,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                       Hull: {boss.shipName}
                     </span>
                     <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                      Appearance: {formatVisual(boss.visual)}
+                      Appearance: {boss.visual ? formatVisual(boss.visual) : 'Unknown'}
                     </span>
                     {boss.spawnRegions.length > 0 && (
                       <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
