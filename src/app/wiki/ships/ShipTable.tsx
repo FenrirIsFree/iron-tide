@@ -13,8 +13,9 @@ interface Acquisition {
   cost?: Record<string, number>
 }
 
-interface ChestDrop {
-  dropRate: number
+interface ChestSource {
+  chest: string
+  dropRate: number | null
   category: string
 }
 
@@ -53,8 +54,8 @@ interface Ship {
   inGameClass: string
   inGameRate: number
   bonuses: string[]
-  acquisition: Acquisition
-  chestDrop?: ChestDrop
+  acquisition: Acquisition & { imperialChestOnly?: boolean }
+  chestSources?: ChestSource[]
 }
 
 type SortKey = 'name' | 'health' | 'speed' | 'mobility' | 'armor' | 'capacity' | 'crew' | 'coolness' | 'rank'
@@ -105,12 +106,14 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
   const [search, setSearch] = useState('')
   const [classFilter, setClassFilter] = useState<string>('all')
   const [factionFilter, setFactionFilter] = useState<string>('all')
+  const [rateFilter, setRateFilter] = useState<string>('all')
   const [sortKey, setSortKey] = useState<SortKey>('coolness')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
   const [expanded, setExpanded] = useState<number | null>(null)
 
   const classes = useMemo(() => [...new Set(ships.map(s => s.displayClass))].sort(), [ships])
   const factions = useMemo(() => [...new Set(ships.map(s => s.faction).filter(Boolean))].sort(), [ships])
+  const rates = useMemo(() => [...new Set(ships.map(s => s.rank))].sort(), [ships])
 
   const filtered = useMemo(() => {
     let result = ships
@@ -120,6 +123,7 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
     }
     if (classFilter !== 'all') result = result.filter(s => s.displayClass === classFilter)
     if (factionFilter !== 'all') result = result.filter(s => s.faction === factionFilter)
+    if (rateFilter !== 'all') result = result.filter(s => s.rank === parseInt(rateFilter))
 
     result.sort((a, b) => {
       if (sortKey === 'coolness') {
@@ -209,6 +213,14 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
         >
           <option value="all">All Factions</option>
           {factions.map(f => <option key={f} value={f}>{f}</option>)}
+        </select>
+        <select
+          value={rateFilter}
+          onChange={e => setRateFilter(e.target.value)}
+          className="bg-surface border border-surface-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-accent"
+        >
+          <option value="all">All Rates</option>
+          {rates.map(r => <option key={r} value={r}>Rate {shipRate(r)}</option>)}
         </select>
         <span className="text-foreground-muted text-sm self-center ml-auto">
           {filtered.length} ship{filtered.length !== 1 ? 's' : ''}
@@ -376,7 +388,9 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                             {ship.acquisition?.type === 'craftable' && (
                               <div className="bg-surface-hover rounded px-3 py-2">
                                 <span className="text-green-400 text-sm font-medium">🔨 Craftable</span>
-                                <p className="text-foreground-muted text-xs mt-1">Build at the shipyard with resources</p>
+                                <p className="text-foreground-muted text-xs mt-1">
+                                  Built at the shipyard. Resource costs scale with ship stats and vary with upgrades and bonuses.
+                                </p>
                               </div>
                             )}
                             {ship.acquisition?.type === 'premium' && ship.acquisition.cost && (
@@ -392,13 +406,31 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                             )}
                             {ship.acquisition?.type === 'unique' && ship.acquisition.cost && (
                               <div className="bg-surface-hover rounded px-3 py-2">
-                                <span className="text-yellow-400 text-sm font-medium">🏆 Unique Ship</span>
-                                {Object.entries(ship.acquisition.cost).map(([currency, amount]) => (
-                                  <div key={currency} className="flex justify-between text-sm mt-1">
-                                    <span className="text-foreground-secondary">{currency}</span>
-                                    <span className="text-accent font-medium">{(amount as number).toLocaleString()}</span>
-                                  </div>
-                                ))}
+                                {ship.acquisition.imperialChestOnly ? (
+                                  <>
+                                    <span className="text-purple-400 text-sm font-medium">🎁 Imperial Chest Only</span>
+                                    <p className="text-foreground-muted text-xs mt-1">Currently only available from Imperial Chests</p>
+                                    <div className="mt-2 border-t border-surface-border pt-2">
+                                      <span className="text-foreground-muted text-xs italic">Potential cost on full release:</span>
+                                      {Object.entries(ship.acquisition.cost).map(([currency, amount]) => (
+                                        <div key={currency} className="flex justify-between text-sm mt-1 opacity-60">
+                                          <span className="text-foreground-secondary">{currency}</span>
+                                          <span className="text-accent font-medium">{(amount as number).toLocaleString()}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </>
+                                ) : (
+                                  <>
+                                    <span className="text-yellow-400 text-sm font-medium">🏆 Unique Ship</span>
+                                    {Object.entries(ship.acquisition.cost).map(([currency, amount]) => (
+                                      <div key={currency} className="flex justify-between text-sm mt-1">
+                                        <span className="text-foreground-secondary">{currency}</span>
+                                        <span className="text-accent font-medium">{(amount as number).toLocaleString()}</span>
+                                      </div>
+                                    ))}
+                                  </>
+                                )}
                               </div>
                             )}
                             {ship.acquisition?.type === 'empire' && ship.acquisition.cost && (
@@ -412,12 +444,17 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                                 ))}
                               </div>
                             )}
-                            {ship.chestDrop && (
+                            {ship.chestSources && ship.chestSources.length > 0 && (
                               <div className="bg-surface-hover rounded px-3 py-2">
-                                <span className="text-cyan-400 text-sm font-medium">🎁 Chest Drop</span>
-                                <div className="text-foreground-muted text-xs mt-1">
-                                  Drop rate: ~{ship.chestDrop.dropRate}%
-                                </div>
+                                <span className="text-cyan-400 text-sm font-medium">🎁 Available from Chests</span>
+                                {ship.chestSources.map((cs, i) => (
+                                  <div key={i} className="flex justify-between text-sm mt-1">
+                                    <span className="text-foreground-secondary">{cs.chest}</span>
+                                    <span className="text-foreground-muted text-xs">
+                                      {cs.dropRate != null ? `~${cs.dropRate}%` : ''}
+                                    </span>
+                                  </div>
+                                ))}
                               </div>
                             )}
                           </div>

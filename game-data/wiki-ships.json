@@ -85,10 +85,18 @@
         "Coins": 2770
       }
     },
-    "chestDrop": {
-      "dropRate": 2.45,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 2.45,
+        "category": "PremiumShip"
+      },
+      {
+        "chest": "New Year Chest",
+        "dropRate": 20.0,
+        "category": "SpecialShip"
+      }
+    ]
   },
   {
     "gameId": 65,
@@ -138,7 +146,14 @@
         "Legend Tokens": 40,
         "Escudo": 10000
       }
-    }
+    },
+    "chestSources": [
+      {
+        "chest": "Inca Chest",
+        "dropRate": null,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 49,
@@ -275,10 +290,13 @@
         "Coins": 2870
       }
     },
-    "chestDrop": {
-      "dropRate": 10.87,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 10.87,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 46,
@@ -326,10 +344,18 @@
         "Battle Marks": 15000
       }
     },
-    "chestDrop": {
-      "dropRate": 0.05,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.05,
+        "category": "UniqueShip"
+      },
+      {
+        "chest": "New Year Chest",
+        "dropRate": 20.0,
+        "category": "SpecialShip"
+      }
+    ]
   },
   {
     "gameId": 31,
@@ -461,10 +487,13 @@
         "Coins": 2570
       }
     },
-    "chestDrop": {
-      "dropRate": 2.45,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 2.45,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 50,
@@ -592,8 +621,16 @@
       "type": "unique",
       "cost": {
         "Battle Marks": 10000
+      },
+      "imperialChestOnly": true
+    },
+    "chestSources": [
+      {
+        "chest": "Imperial Chest",
+        "dropRate": null,
+        "category": "EarlyAccessShip"
       }
-    }
+    ]
   },
   {
     "gameId": 39,
@@ -639,10 +676,13 @@
         "Coins": 2450
       }
     },
-    "chestDrop": {
-      "dropRate": 16.3,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 16.3,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 62,
@@ -692,7 +732,14 @@
         "Legend Tokens": 20,
         "Escudo": 5000
       }
-    }
+    },
+    "chestSources": [
+      {
+        "chest": "New Year Chest",
+        "dropRate": 5.0,
+        "category": "SpecialShip"
+      }
+    ]
   },
   {
     "gameId": 52,
@@ -1087,8 +1134,16 @@
       "type": "unique",
       "cost": {
         "Battle Marks": 8000
+      },
+      "imperialChestOnly": true
+    },
+    "chestSources": [
+      {
+        "chest": "Imperial Chest",
+        "dropRate": null,
+        "category": "EarlyAccessShip"
       }
-    }
+    ]
   },
   {
     "gameId": 40,
@@ -1309,10 +1364,13 @@
         "Coins": 1600
       }
     },
-    "chestDrop": {
-      "dropRate": 16.3,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 16.3,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 26,
@@ -1360,10 +1418,13 @@
         "Battle Marks": 8000
       }
     },
-    "chestDrop": {
-      "dropRate": 0.05,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.05,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 25,
@@ -1583,10 +1644,13 @@
         "Battle Marks": 4500
       }
     },
-    "chestDrop": {
-      "dropRate": 0.05,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.05,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 67,
@@ -1677,10 +1741,13 @@
         "Coins": 1190
       }
     },
-    "chestDrop": {
-      "dropRate": 16.3,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 16.3,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 13,
@@ -1728,10 +1795,13 @@
         "Coins": 995
       }
     },
-    "chestDrop": {
-      "dropRate": 19.02,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 19.02,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 58,
@@ -1817,8 +1887,16 @@
       "type": "unique",
       "cost": {
         "Battle Marks": 4500
+      },
+      "imperialChestOnly": true
+    },
+    "chestSources": [
+      {
+        "chest": "Imperial Chest",
+        "dropRate": null,
+        "category": "EarlyAccessShip"
       }
-    }
+    ]
   },
   {
     "gameId": 71,
@@ -2002,10 +2080,13 @@
         "Coins": 580
       }
     },
-    "chestDrop": {
-      "dropRate": 16.3,
-      "category": "PremiumShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 16.3,
+        "category": "PremiumShip"
+      }
+    ]
   },
   {
     "gameId": 23,
@@ -2053,10 +2134,13 @@
         "Battle Marks": 3000
       }
     },
-    "chestDrop": {
-      "dropRate": 0.05,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.05,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 24,
@@ -2270,8 +2354,16 @@
       "type": "unique",
       "cost": {
         "Battle Marks": 3000
+      },
+      "imperialChestOnly": true
+    },
+    "chestSources": [
+      {
+        "chest": "Imperial Chest",
+        "dropRate": null,
+        "category": "EarlyAccessShip"
       }
-    }
+    ]
   },
   {
     "gameId": 56,
@@ -2358,10 +2450,13 @@
         "Battle Marks": 250
       }
     },
-    "chestDrop": {
-      "dropRate": 0.05,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.05,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 4,
@@ -2619,10 +2714,13 @@
         "Battle Marks": 750
       }
     },
-    "chestDrop": {
-      "dropRate": 0.05,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.05,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 3,
@@ -2670,10 +2768,13 @@
         "Battle Marks": 750
       }
     },
-    "chestDrop": {
-      "dropRate": 0.03,
-      "category": "UniqueShip"
-    }
+    "chestSources": [
+      {
+        "chest": "Big Chest",
+        "dropRate": 0.03,
+        "category": "UniqueShip"
+      }
+    ]
   },
   {
     "gameId": 15,
