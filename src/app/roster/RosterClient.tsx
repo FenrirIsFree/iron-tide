@@ -132,26 +132,32 @@ export default function RosterClient({ members, currentUserId, currentUserRank }
                           {isMe && <span className="text-accent text-xs ml-1">(you)</span>}
                         </span>
                         {isEditingRank ? (
-                          <select
-                            value={m.rank}
-                            onClick={e => e.stopPropagation()}
-                            onChange={e => { e.stopPropagation(); handleRankChange(m.id, e.target.value) }}
-                            onBlur={() => setEditingRankId(null)}
-                            autoFocus
-                            className="text-xs bg-surface border border-accent rounded px-2 py-0.5 text-foreground focus:outline-none"
+                          <div onClick={e => e.stopPropagation()}>
+                            <select
+                              value={m.rank}
+                              onChange={e => handleRankChange(m.id, e.target.value)}
+                              onBlur={() => setEditingRankId(null)}
+                              autoFocus
+                              className="text-xs bg-surface border border-accent rounded px-2 py-0.5 text-foreground focus:outline-none"
+                            >
+                              <option value={m.rank}>{rc.emoji} {rc.label} (current)</option>
+                              {availableRanks.filter(r => r !== m.rank).map(r => {
+                                const rrc = rankConfig[r]
+                                return <option key={r} value={r}>{rrc.emoji} {rrc.label}</option>
+                              })}
+                            </select>
+                          </div>
+                        ) : canEditThisRank ? (
+                          <button
+                            type="button"
+                            onClick={e => { e.stopPropagation(); setEditingRankId(m.id) }}
+                            className={`text-xs px-2 py-0.5 rounded-full border ${rc.color} cursor-pointer hover:ring-1 hover:ring-accent`}
+                            title="Click to change rank"
                           >
-                            <option value={m.rank}>{rc.emoji} {rc.label} (current)</option>
-                            {availableRanks.filter(r => r !== m.rank).map(r => {
-                              const rrc = rankConfig[r]
-                              return <option key={r} value={r}>{rrc.emoji} {rrc.label}</option>
-                            })}
-                          </select>
+                            {rc.emoji} {rc.label}
+                          </button>
                         ) : (
-                          <span
-                            className={`text-xs px-2 py-0.5 rounded-full border ${rc.color} ${canEditThisRank ? 'cursor-pointer hover:ring-1 hover:ring-accent' : ''}`}
-                            onClick={e => { if (canEditThisRank) { e.stopPropagation(); setEditingRankId(m.id) } }}
-                            title={canEditThisRank ? 'Click to change rank' : undefined}
-                          >
+                          <span className={`text-xs px-2 py-0.5 rounded-full border ${rc.color}`}>
                             {rc.emoji} {rc.label}
                           </span>
                         )}
