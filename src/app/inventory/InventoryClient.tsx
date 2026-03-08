@@ -28,7 +28,7 @@ interface Props {
   }
 }
 
-type Tab = 'resources' | 'consumables' | 'currencies' | 'ammo'
+type Tab = 'resources' | 'consumables' | 'tradegoods' | 'ammo' | 'currencies'
 
 export default function InventoryClient({ inventory, catalogs }: Props) {
   const [tab, setTab] = useState<Tab>('resources')
@@ -36,11 +36,16 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editValue, setEditValue] = useState('')
 
+  const nonTradeResources = inventory.resources.filter(r => r.resource.type !== 'Trade Good' && r.resource.type !== 'Special')
+  const tradeGoodItems = inventory.resources.filter(r => r.resource.type === 'Trade Good')
+  const specialItemsList = inventory.resources.filter(r => r.resource.type === 'Special')
+
   const tabs: { key: Tab; label: string; count: number }[] = [
-    { key: 'resources', label: '⛏️ Resources', count: inventory.resources.filter(r => r.quantity > 0).length },
+    { key: 'resources', label: '⛏️ Resources', count: nonTradeResources.filter(r => r.quantity > 0).length },
+    { key: 'tradegoods', label: '🏪 Trade Goods', count: tradeGoodItems.filter(r => r.quantity > 0).length },
     { key: 'consumables', label: '🧪 Consumables', count: inventory.consumables.filter(c => c.quantity > 0).length },
     { key: 'ammo', label: '💣 Ammo', count: inventory.ammo.filter(a => a.quantity > 0).length },
-    { key: 'currencies', label: '💰 Currencies', count: inventory.currencies.filter(c => c.amount > 0).length },
+    { key: 'currencies', label: '💰 Currencies & Special', count: inventory.currencies.filter(c => c.amount > 0).length + specialItemsList.filter(r => r.quantity > 0).length },
   ]
 
   function handleSave(type: Tab, catalogId: string) {
@@ -57,14 +62,13 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
   // Group resources by type
   const rawResources = inventory.resources.filter(r => r.resource.type === 'Raw')
   const processedResources = inventory.resources.filter(r => r.resource.type === 'Processed')
-  const tradeGoods = inventory.resources.filter(r => r.resource.type === 'Trade Good')
-  const specialItems = inventory.resources.filter(r => r.resource.type === 'Special')
 
   // Group consumables by category
   const consumableCategories = [...new Set(inventory.consumables.map(c => c.consumable.category || 'General'))].sort()
 
   // Summary stats
-  const resourceTotal = inventory.resources.reduce((s, r) => s + r.quantity, 0)
+  const resourceTotal = nonTradeResources.reduce((s, r) => s + r.quantity, 0)
+  const tradeGoodTotal = tradeGoodItems.reduce((s, r) => s + r.quantity, 0)
   const consumableTotal = inventory.consumables.reduce((s, c) => s + c.quantity, 0)
   const ammoTotal = inventory.ammo.reduce((s, a) => s + a.quantity, 0)
 
@@ -124,25 +128,15 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
               />
             ))}
           </ItemGroup>
+        </div>
+      )}
+
+      {/* Trade Goods Tab */}
+      {tab === 'tradegoods' && (
+        <div className="space-y-6">
+          <p className="text-sm text-foreground-secondary">Total items: <span className="text-accent font-medium">{tradeGoodTotal.toLocaleString()}</span></p>
           <ItemGroup title="🏪 Trade Goods">
-            {tradeGoods.map(r => (
-              <ItemCard
-                key={r.id}
-                name={r.resource.name}
-                value={r.quantity}
-                isPublic={r.isPublic}
-                isEditing={editingId === r.id}
-                editValue={editValue}
-                onStartEdit={() => { setEditingId(r.id); setEditValue(String(r.quantity)) }}
-                onChangeEdit={setEditValue}
-                onSave={() => handleSave('resources', r.resourceId)}
-                onCancel={() => setEditingId(null)}
-                onToggleVisibility={() => startTransition(() => toggleItemVisibility('resource', r.id))}
-              />
-            ))}
-          </ItemGroup>
-          <ItemGroup title="⭐ Special Items">
-            {specialItems.map(r => (
+            {tradeGoodItems.map(r => (
               <ItemCard
                 key={r.id}
                 name={r.resource.name}
@@ -218,7 +212,7 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
         </div>
       )}
 
-      {/* Currencies Tab */}
+      {/* Currencies & Special Tab */}
       {tab === 'currencies' && (
         <div className="space-y-6">
           <ItemGroup title="💰 Currencies">
@@ -235,6 +229,23 @@ export default function InventoryClient({ inventory, catalogs }: Props) {
                 onSave={() => handleSave('currencies', c.currencyId)}
                 onCancel={() => setEditingId(null)}
                 onToggleVisibility={() => startTransition(() => toggleItemVisibility('currency', c.id))}
+              />
+            ))}
+          </ItemGroup>
+          <ItemGroup title="⭐ Special Items">
+            {specialItemsList.map(r => (
+              <ItemCard
+                key={r.id}
+                name={r.resource.name}
+                value={r.quantity}
+                isPublic={r.isPublic}
+                isEditing={editingId === r.id}
+                editValue={editValue}
+                onStartEdit={() => { setEditingId(r.id); setEditValue(String(r.quantity)) }}
+                onChangeEdit={setEditValue}
+                onSave={() => handleSave('resources', r.resourceId)}
+                onCancel={() => setEditingId(null)}
+                onToggleVisibility={() => startTransition(() => toggleItemVisibility('resource', r.id))}
               />
             ))}
           </ItemGroup>
