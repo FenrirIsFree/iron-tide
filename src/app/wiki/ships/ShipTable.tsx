@@ -26,7 +26,13 @@ interface Ship {
   canBeUsedForNpc: boolean
 }
 
-type SortKey = 'name' | 'health' | 'speed' | 'mobility' | 'armor' | 'capacity' | 'crew' | 'coolness'
+type SortKey = 'name' | 'health' | 'speed' | 'mobility' | 'armor' | 'capacity' | 'crew' | 'coolness' | 'rank'
+
+const ROMAN_NUMERALS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+
+function shipRate(rank: number): string {
+  return ROMAN_NUMERALS[rank] ?? `${rank + 1}`
+}
 
 function formatSubtype(subtype: string): string {
   return subtype
@@ -110,8 +116,44 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
     return sortDir === 'asc' ? '↑' : '↓'
   }
 
+  const [showLegend, setShowLegend] = useState(false)
+
   return (
     <div>
+      {/* Tier & Rate Legend */}
+      <div className="mb-4">
+        <button
+          onClick={() => setShowLegend(!showLegend)}
+          className="text-sm text-accent hover:text-accent-hover transition-colors"
+        >
+          {showLegend ? '▼' : '▶'} What do Rate and Tier mean?
+        </button>
+        {showLegend && (
+          <div className="mt-2 bg-surface border border-surface-border rounded-xl p-4 grid gap-4 sm:grid-cols-2">
+            <div>
+              <h4 className="text-foreground font-semibold text-sm mb-2">⚓ Ship Rate (I–VII)</h4>
+              <p className="text-foreground-secondary text-xs mb-2">
+                Rate indicates a ship&apos;s size and power class, displayed as Roman numerals in-game.
+                Rate I ships are the largest and most powerful. Rate VII are small starter vessels.
+              </p>
+              <p className="text-foreground-secondary text-xs">
+                Rate also affects crafting build time — higher-rate (smaller) ships build faster.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-foreground font-semibold text-sm mb-2">✨ Ship Tier</h4>
+              <ul className="space-y-1 text-xs">
+                <li><span className="text-foreground-secondary">Default</span> — Standard ships with normal crafting cost and build time</li>
+                <li><span className="text-blue-400">Elite</span> — Premium ships, instant build, 25% higher crafting cost</li>
+                <li><span className="text-purple-400">Empire</span> — Empire faction exclusive ships</li>
+                <li><span className="text-yellow-400">Unique</span> — Premium ships, instant build, special acquisition</li>
+                <li className="text-foreground-muted">⛵ = Sailage Legend variant</li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Filters */}
       <div className="flex flex-wrap gap-3 mb-4">
         <input
@@ -149,6 +191,7 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
             <tr className="bg-surface border-b border-surface-border text-foreground-secondary text-left">
               {([
                 ['name', 'Name'],
+                ['rank', 'Rate'],
                 ['health', 'Durability'],
                 ['speed', 'Speed (kn)'],
                 ['mobility', 'Maneuver'],
@@ -177,6 +220,7 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                   className="border-b border-surface-border hover:bg-surface-hover cursor-pointer transition-colors"
                 >
                   <td className="px-3 py-2 font-medium text-foreground">{ship.name}</td>
+                  <td className="px-3 py-2 text-accent font-medium">{shipRate(ship.rank)}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.health.toLocaleString()}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.speed}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.mobility}</td>
@@ -190,7 +234,7 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                 </tr>
                 {expanded === ship.gameId && (
                   <tr key={`${ship.gameId}-detail`} className="bg-surface">
-                    <td colSpan={9} className="px-4 py-4">
+                    <td colSpan={10} className="px-4 py-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <p className="text-foreground-secondary text-sm mb-3">{ship.description}</p>
