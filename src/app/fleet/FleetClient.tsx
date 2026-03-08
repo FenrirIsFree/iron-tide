@@ -1115,6 +1115,11 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
   const equippedSails = loadout.upgrades.filter(u => isSail(u.upgrade as Upgrade))
   const equippedRegular = loadout.upgrades.filter(u => !isSail(u.upgrade as Upgrade))
 
+  // Filter out already-equipped upgrades from dropdowns
+  const equippedUpgradeIds = new Set(loadout.upgrades.map(u => (u.upgrade as Upgrade).id))
+  const availableSails = sailCatalog.filter(u => !equippedUpgradeIds.has(u.id))
+  const availableRegular = regularCatalog.filter(u => !equippedUpgradeIds.has(u.id))
+
   return (
     <div className="space-y-4">
       {/* Sails Section */}
@@ -1134,7 +1139,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
           <div className="flex gap-1 items-center">
             <select value={selectedSailId} onChange={e => setSelectedSailId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
               <option value="">Select sail…</option>
-              {sailCatalog.map(u => (
+              {availableSails.map(u => (
                 <option key={u.id} value={u.id}>{u.name} — {formatEffects(u, ship.rate)}</option>
               ))}
             </select>
@@ -1165,7 +1170,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
           <select value={selectedUpgradeId} onChange={e => setSelectedUpgradeId(e.target.value)} className="flex-1 bg-surface border border-surface-border rounded px-2 py-1 text-xs text-foreground focus:border-accent focus:outline-none">
             <option value="">Add upgrade…</option>
             {['Combat', 'Protection', 'Speed', 'Support', 'Expeditionary', 'Mortars', 'Mortar', 'Unique', 'Unusual', 'Modification'].map(cat => {
-              const group = regularCatalog.filter(u => u.slot === cat)
+              const group = availableRegular.filter(u => u.slot === cat)
               if (group.length === 0) return null
               return (
                 <optgroup key={cat} label={`── ${cat} ──`}>
@@ -1176,7 +1181,7 @@ function UpgradesPanel({ ship, loadout, upgradeCatalog, startTransition }: {
               )
             })}
             {/* Any uncategorized */}
-            {regularCatalog.filter(u => !['Combat', 'Protection', 'Speed', 'Support', 'Expeditionary', 'Mortars', 'Mortar', 'Unique', 'Unusual', 'Modification'].includes(u.slot || '')).map(u => (
+            {availableRegular.filter(u => !['Combat', 'Protection', 'Speed', 'Support', 'Expeditionary', 'Mortars', 'Mortar', 'Unique', 'Unusual', 'Modification'].includes(u.slot || '')).map(u => (
               <option key={u.id} value={u.id}>{u.name} — {formatEffects(u, ship.rate)}</option>
             ))}
           </select>
