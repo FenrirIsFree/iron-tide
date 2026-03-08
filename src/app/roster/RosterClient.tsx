@@ -30,8 +30,8 @@ type MemberShip = {
   ship: {
     name: string; shipClass: string; rate: number; weaponClass: string | null
     broadsideSlots: number; crewCapacity: number | null; role: string | null
-    speed: number | null; maneuverability: number | null; hp: number | null
-    holdCapacity: number | null; sternSlots: number | null; bowSlots: number | null
+    speed: number | null; maneuverability: number | null; armor: number | null
+    hp: number | null; holdCapacity: number | null; sternSlots: number | null; bowSlots: number | null
     mortarSlots: number | null
   }
   loadouts: ActiveLoadout[]
@@ -122,6 +122,7 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                         {fleet.map((s) => {
                           const loadout = s.loadouts[0]
                           const portWeapons = loadout?.weapons.filter(w => w.position === 'port') || []
+                          const starboardWeapons = loadout?.weapons.filter(w => w.position === 'starboard') || []
                           const sternWeapons = loadout?.weapons.filter(w => w.position === 'stern') || []
                           const bowWeapons = loadout?.weapons.filter(w => w.position === 'bow') || []
                           const mortarWeapons = loadout?.weapons.filter(w => w.position === 'mortar') || []
@@ -141,21 +142,25 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                               </div>
 
                               {/* Ship Stats */}
-                              <div className="grid grid-cols-4 gap-1 text-xs">
+                              <div className="grid grid-cols-5 gap-1 text-xs">
                                 <div className="text-center">
                                   <span className="text-foreground-secondary block">SPD</span>
                                   <span className="text-foreground font-medium">{s.ship.speed ?? '—'}</span>
                                 </div>
                                 <div className="text-center">
-                                  <span className="text-foreground-secondary block">MAN</span>
+                                  <span className="text-foreground-secondary block">MANEUV</span>
                                   <span className="text-foreground font-medium">{s.ship.maneuverability ?? '—'}</span>
+                                </div>
+                                <div className="text-center">
+                                  <span className="text-foreground-secondary block">ARM</span>
+                                  <span className="text-foreground font-medium">{s.ship.armor ?? '—'}</span>
                                 </div>
                                 <div className="text-center">
                                   <span className="text-foreground-secondary block">DUR</span>
                                   <span className="text-foreground font-medium">{s.ship.hp ?? '—'}</span>
                                 </div>
                                 <div className="text-center">
-                                  <span className="text-foreground-secondary block">HOLD</span>
+                                  <span className="text-foreground-secondary block">CARGO</span>
                                   <span className="text-foreground font-medium">{s.ship.holdCapacity ?? '—'}</span>
                                 </div>
                               </div>
@@ -173,7 +178,10 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                 <div className="space-y-1 text-xs text-foreground-secondary border-t border-surface-border pt-2">
                                   <p className="text-accent font-medium">{loadout.name}</p>
                                   {portWeapons.length > 0 && (
-                                    <p>⚔️ Broadside: {portWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
+                                    <p>⚔️ Port: {portWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
+                                  )}
+                                  {starboardWeapons.length > 0 && (
+                                    <p>⚔️ Starboard: {starboardWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
                                   )}
                                   {sternWeapons.length > 0 && (
                                     <p>🔙 Stern: {sternWeapons.map(w => `${w.weapon.name} x${w.quantity}`).join(', ')}</p>
@@ -193,7 +201,7 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                   {specialCrew.length > 0 && (
                                     <p>⭐ {specialCrew.map(c => c.crewType.name).join(', ')}</p>
                                   )}
-                                  {!portWeapons.length && !sternWeapons.length && !bowWeapons.length && !loadout.upgrades.length && !basicCrew.length && (
+                                  {!portWeapons.length && !starboardWeapons.length && !sternWeapons.length && !bowWeapons.length && !loadout.upgrades.length && !basicCrew.length && (
                                     <p className="text-foreground-secondary/50">No loadout configured</p>
                                   )}
                                 </div>
