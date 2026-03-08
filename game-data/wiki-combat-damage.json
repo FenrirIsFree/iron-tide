@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "extractedAt": "2026-03-08",
+    "sourceFiles": [
+      "Common.Game/Ship.cs",
+      "Common.Game/ShipPhysics.cs",
+      "Common.Game/SingleShipCollisionData.cs",
+      "Common.Game/DamageData.cs",
+      "Common.Game/DamageID.cs",
+      "Common.Game/CannonBall.cs",
+      "Common.Resources/ShipDynamicInfo.cs",
+      "Common.Resources/ShipBonusEffect.cs",
+      "Common.Resources/CannonBallInfo.cs"
+    ]
+  },
+  "damageTypes": {
+    "CannonBall": "Standard cannon fire",
+    "MortarShot": "Mortar bombardment",
+    "FalkonetBall": "Swivel gun (falconet) shots",
+    "Collision": "Ship-to-ship ramming",
+    "PowderKeg": "Explosive barrel damage",
+    "Burning": "Fire damage over time",
+    "FireArea": "Area of effect fire damage",
+    "Other": "Miscellaneous (environmental, etc.)"
+  },
+  "armorSystem": {
+    "formula": "Armor = BasicArmor × (1 + PArmor%) + MArmor",
+    "damageReduction": "DamageReduce = min(99%, PReduceDamage bonus)",
+    "noseProtection": "PReduceDamageToNose — specific damage reduction for bow hits",
+    "notes": "Exact armor-to-damage-reduction curve is server-side only"
+  },
+  "cannonDamage": {
+    "ballInfo": {
+      "damageFactor": "Per-ammo multiplier applied to base cannon damage",
+      "damageToSails": "Sail damage per hit (varies by ammo type)",
+      "damageToCrew": "Crew kill chance per hit",
+      "minDamageThroughAnyHitbox": "Minimum damage even through armor",
+      "mortarSailDamage": "DamageToSailes / 120 for mortar shots",
+      "mortarCrewDamage": "CrewDamage / 100 for mortar shots"
+    },
+    "bonuses": {
+      "ballDamageBonus": "PBallDamage + lowHpBonus",
+      "lowHpDamageBonus": "PDamageCannonIfStrengthBelow30P — activates below 50% HP (despite name)",
+      "buildDamage": "PDamageToBuilds + lowHpBonus (for forts/towers)",
+      "frontBackBonus": "PFrontAndBackCannonsAddDamage — extra damage from bow/stern cannons",
+      "penetration": "MWeaponPenetration — armor-piercing bonus",
+      "cannonBallSpeed": "1 + PCannonBallsSpeed — projectile velocity multiplier",
+      "maxDistance": "min(15, MCannonsDistance) — range bonus",
+      "buckshotDamage": "PBuckshotDamage — bonus for grapeshot"
+    },
+    "reloadMechanics": {
+      "reloadBonus": "PCannonsReload + (below 50% HP ? PCannonsReloadWithLowHp : 0)",
+      "mendingPenalty": "Reload speed drops to 15% while mending",
+      "shootingPenalty": "Reload speed is 0% while actively shooting",
+      "boardingPenalty": "Reload speed is 0% during boarding",
+      "singleShotBonus": "PReloadingAfterSingleShot — bonus after firing one cannon at a time",
+      "crewEffect": "WeaponsReloadingSpeedByCrew = ratio + ratio × (1 - ratio) / 2 × 0.75 (where ratio = sailors / crewCapacity)",
+      "falkonetReload": "PFalkonetReloadBoost — swivel gun specific reload bonus"
+    }
+  },
+  "mortars": {
+    "aimSpeed": "1.1 - (mortarCount + extraMortars) × 0.1 + PMortarAimSpeed + PPlayerSightFocusSpeedAdd",
+    "damageBonus": "PMortarDamageBonus",
+    "sailProtection": "MortarDamageToSailFactor = max(0, 1 - PSailProtection)",
+    "reloadBonus": "PMortarReload + (allCannonsReloaded ? PMortarReloadWhenCannonsAreReloaded : 0)",
+    "distanceBonus": "MMortarMaxDistance",
+    "deadzoneDecrease": "PMortarDecreaseDeadzone"
+  },
+  "ramming": {
+    "description": "Ship-to-ship collision damage system. Damage is velocity-based and calculated server-side.",
+    "mechanics": {
+      "velocityBased": "ServerCollisionTestVelocity accumulates frame-by-frame movement during collision. Higher relative impact speed = more damage.",
+      "softVsHard": "Low-speed contacts are 'soft collisions' — ships push apart with no damage. High-speed impacts are 'hard collisions' with full damage and physics knockback.",
+      "damageBonus": "PAddCollisionDamage upgrade increases ram damage by X%",
+      "npcBonuses": "NPC bosses (tier 1 and tier 2) have PAddCollisionDamage in their bonus pools"
+    },
+    "criticalEffects": {
+      "corpusCritical": "Ram can punch a 'big hole' — ship speed drops to 30% for 10 seconds",
+      "fireOnImpact": "Some collisions start fires (InfiniteAllowMening burning type — fire that allows mending)",
+      "destroyFlooding": "BDestroyFloodingShopByCollision upgrade allows finishing off sinking ships by ramming (triggers SternDamage flag)"
+    },
+    "floodingInteraction": "Ramming a flooding ship reduces their flooding by damage / maxHP",
+    "damageFormula": "UNKNOWN — calculated server-side. Not present in Common.dll, WorldOfSeaBattleClient.dll, or nbloader.dll. Likely: damage = f(relativeVelocity, shipMass) × (1 + PAddCollisionDamage)",
+    "collisionData": {
+      "fields": {
+        "Damage": "float — pre-computed HP damage (set by server)",
+        "PositionOffset": "Vector2 — physics push direction",
+        "AngleOffset": "float — rotational push",
+        "SpeedAdd": "float — speed change on impact",
+        "CorpusCrit": "bool — whether hull critical triggered",
+        "MakeBurning": "bool — whether fire starts",
+        "SoftCollision": "bool — low-speed (no damage) vs high-speed",
+        "UpgradeDestroyFloodingShip": "bool — finishing blow on sinking ship"
+      }
+    }
+  },
+  "criticalHits": {
+    "corpusCritical": {
+      "effect": "Creates a 'big hole' — speed reduced to 30% for duration",
+      "duration": "UCritCorpusTimeSec (typically 10 seconds)",
+      "sources": "Cannon hits, mortar hits, ramming"
+    },
+    "burningCritical": {
+      "effect": "Starts a fire on the ship requiring active firefighting",
+      "types": [
+        "InfiniteAllowMening — persistent fire, allows mending",
+        "Other PredefinedBurningTypes for different fire behaviors"
+      ],
+      "sources": "Heated shots, phosphorous shots, ramming, powder kegs"
+    },
+    "cannonCritical": {
+      "effect": "Breaks a specific cannon, requiring repair",
+      "index": "UCritCannon identifies which cannon is damaged"
+    },
+    "crewDamage": {
+      "effect": "Kills specific crew members",
+      "data": "CrewDamage byte array contains unit IDs of killed crew"
+    },
+    "sailDamage": {
+      "singleSail": "SingleSailDamage — damages one specific sail (identified by CollisionNodeID)",
+      "totalSail": "TotalSailDamage — distributed across all sails (divided by sail weight)",
+      "speedDebuff": "Sail hits cause temporary 10% speed reduction"
+    },
+    "sternDamage": {
+      "effect": "Special flag for stern hits — can stop flooding on sinking ships"
+    }
+  },
+  "fireSystem": {
+    "bigFire": {
+      "fightingSpeed": "1 + PBigFireFightingSpeed",
+      "damageFactor": "max(0.001, 1 - PReduceBigFireDamage)",
+      "description": "Major fires cause continuous HP damage. Requires active fighting (crew assigned)."
+    },
+    "microfire": {
+      "durationFactor": "max(0.001, 1 - PMicrofireFightingSpeed)",
+      "description": "Small fires at specific hit points. Auto-extinguish over time but can spread."
+    },
+    "fireArea": {
+      "damageFactor": "max(0.01, 1 - PReduceFireAreaDamage)",
+      "sailDamage": "1 - PReduceDamageToSailFromBurning",
+      "description": "Area-of-effect fire zones on the water (from phosphorous, etc.)"
+    }
+  },
+  "powderKegs": {
+    "reloadBoost": "PPowderKegReloadBoost",
+    "triggerRadius": "BaseRadius × (1 + PPowderKegIncreaseTriggerRadius)",
+    "protection": "PReducePowderKegDamage — damage reduction against keg explosions",
+    "anySpeedAllowed": "BAllowPowderKegAnySpeed — normally can only deploy at certain speeds",
+    "description": "Deployable explosive barrels. Detonate when enemy ships enter trigger radius."
+  },
+  "damageEffectsOnShip": {
+    "cruiseSpeedLoss": "marchModeBonusSpeed -= (healthDamage / (1 + currentHP)) × 100 + sailDamage × 100",
+    "sailAutoRepair": "PSailAutoRepairSpeed bonus",
+    "floodingFromDamage": "Hull breaches cause flooding. Flooding stopped by: powder kegs, mortars, burning, stern damage, or ramming by ally.",
+    "educationMapModifiers": {
+      "playerDamage": "÷1.5 (67% of normal)",
+      "pvpDamage": "×1.2 (120% of normal)"
+    }
+  }
+}
