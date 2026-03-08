@@ -21,11 +21,52 @@ interface Weapon {
 
 type SortKey = 'name' | 'distance' | 'penetration' | 'cooldown' | 'angle' | 'scatter' | 'price'
 
+function formatExtra(extra: string): string[] {
+  if (!extra) return []
+  return extra.split(';').map(part => {
+    const [key, val] = part.split(':')
+    switch (key) {
+      case 'SpeedFactor': return `Ball Speed: ×${val}`
+      case 'SplashRadius': return `Splash: ${val}m`
+      case 'Preparation': return `Prep: ${(parseFloat(val) * 100).toFixed(0)}%`
+      case 'UntilOverheat': return `Overheat: ${val} shots`
+      default: return `${key}: ${val}`
+    }
+  })
+}
+
+function formatClass(cls: string): string {
+  return cls
+    .replace('Bombardier ', '')
+    .replace('DistanceCannon ', '')
+    .replace('HeavyCannon ', '')
+    .replace('LiteCannon ', '')
+    .replace('Mortar ', '')
+    .replace('Special ', '')
+    .replace('Default', 'Standard')
+    .replace('Factory', 'Factory-built')
+}
+
+function formatCrafting(type: string): string {
+  switch (type) {
+    case 'ByCraft': return 'Craftable'
+    case 'ByGold': return 'Buy with Gold'
+    case 'NotAvailable': return 'Not Available'
+    default: return type
+  }
+}
+
 const CATEGORY_COLORS: Record<string, string> = {
-  'Cannon': 'text-orange-400',
+  'Heavy Bronze': 'text-orange-400',
+  'Heavy Iron': 'text-orange-300',
+  'Medium Bronze': 'text-yellow-400',
+  'Medium Iron': 'text-yellow-300',
+  'Medium CastIron': 'text-yellow-200',
+  'Light Bronze': 'text-green-400',
+  'Light Iron': 'text-green-300',
+  'Light CastIron': 'text-green-200',
   'Mortar': 'text-purple-400',
-  'Carronade': 'text-red-400',
-  'Special': 'text-cyan-400',
+  'Mortar Factory': 'text-purple-300',
 }
 
 export default function WeaponTable({ weapons }: { weapons: Weapon[] }) {
@@ -148,18 +189,23 @@ export default function WeaponTable({ weapons }: { weapons: Weapon[] }) {
                 {expanded === w.gameId && (
                   <tr key={`${w.gameId}-detail`} className="bg-surface">
                     <td colSpan={9} className="px-4 py-4">
-                      <p className="text-foreground-secondary text-sm mb-3">{w.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {w.extra && (
-                          <span className="bg-surface-hover text-cyan-400 text-xs px-2 py-1 rounded">
-                            ✨ {w.extra}
+                      {w.description && (
+                        <p className="text-foreground-secondary text-sm mb-3">{w.description}</p>
+                      )}
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {w.extra && formatExtra(w.extra).map((text, i) => (
+                          <span key={i} className="bg-surface-hover text-cyan-400 text-xs px-2 py-1 rounded">
+                            {text}
                           </span>
-                        )}
+                        ))}
                         {w.craftingType && (
                           <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                            Crafting: {w.craftingType}
+                            {formatCrafting(w.craftingType)}
                           </span>
                         )}
+                        <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
+                          Type: {formatClass(w.class)}
+                        </span>
                       </div>
                       <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mt-3 text-sm">
                         <div className="bg-surface-hover rounded p-2">

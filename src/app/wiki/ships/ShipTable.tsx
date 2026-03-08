@@ -16,17 +16,43 @@ interface Ship {
   gameType: string
   displayClass: string
   subtype: string
-  coolness: number
+  coolness: string
   faction: string
   gameFaction: string
   extraUpgradeSlots: number
   costReal: number
   canBeNpc: boolean
-  requiredRank: string
+  requiredRank: number
   canBeUsedForNpc: boolean
 }
 
 type SortKey = 'name' | 'health' | 'speed' | 'mobility' | 'armor' | 'capacity' | 'crew' | 'coolness'
+
+function formatSubtype(subtype: string): string {
+  return subtype
+    .replace('subclass_', '')
+    .replace(/^./, s => s.toUpperCase())
+}
+
+const COOLNESS_ORDER: Record<string, number> = {
+  'Default': 0,
+  'Default SailageLegend': 1,
+  'Elite': 2,
+  'Elite SailageLegend': 3,
+  'Empire': 4,
+  'Unique': 5,
+  'Unique SailageLegend': 6,
+}
+
+const COOLNESS_COLORS: Record<string, string> = {
+  'Default': 'text-foreground-secondary',
+  'Default SailageLegend': 'text-foreground-secondary',
+  'Elite': 'text-blue-400',
+  'Elite SailageLegend': 'text-blue-400',
+  'Empire': 'text-purple-400',
+  'Unique': 'text-yellow-400',
+  'Unique SailageLegend': 'text-yellow-400',
+}
 
 const CLASS_COLORS: Record<string, string> = {
   'Sloop': 'text-green-400',
@@ -59,6 +85,11 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
     if (factionFilter !== 'all') result = result.filter(s => s.faction === factionFilter)
 
     result.sort((a, b) => {
+      if (sortKey === 'coolness') {
+        const av = COOLNESS_ORDER[a.coolness] ?? 0
+        const bv = COOLNESS_ORDER[b.coolness] ?? 0
+        return sortDir === 'asc' ? av - bv : bv - av
+      }
       const av = a[sortKey]
       const bv = b[sortKey]
       if (typeof av === 'string' && typeof bv === 'string') {
@@ -118,9 +149,9 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
             <tr className="bg-surface border-b border-surface-border text-foreground-secondary text-left">
               {([
                 ['name', 'Name'],
-                ['health', 'HP'],
-                ['speed', 'Speed'],
-                ['mobility', 'Maneuv'],
+                ['health', 'Durability'],
+                ['speed', 'Speed (kn)'],
+                ['mobility', 'Maneuver'],
                 ['armor', 'Armor'],
                 ['capacity', 'Cargo'],
                 ['crew', 'Crew'],
@@ -152,7 +183,7 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                   <td className="px-3 py-2 text-foreground-secondary">{ship.armor}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.capacity.toLocaleString()}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.crew}</td>
-                  <td className="px-3 py-2 text-accent">{ship.coolness}</td>
+                  <td className={`px-3 py-2 font-medium ${COOLNESS_COLORS[ship.coolness] ?? 'text-foreground-secondary'}`}>{ship.coolness.replace(' SailageLegend', ' ⛵')}</td>
                   <td className={`px-3 py-2 font-medium ${CLASS_COLORS[ship.displayClass] ?? 'text-foreground-secondary'}`}>
                     {ship.displayClass}
                   </td>
@@ -171,12 +202,12 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                             )}
                             {ship.subtype && (
                               <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                                {ship.subtype}
+                                Type: {formatSubtype(ship.subtype)}
                               </span>
                             )}
-                            {ship.requiredRank && (
+                            {ship.requiredRank > 0 && (
                               <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                                Rank: {ship.requiredRank}
+                                Requires Rank {ship.requiredRank}
                               </span>
                             )}
                             {ship.extraUpgradeSlots > 0 && (

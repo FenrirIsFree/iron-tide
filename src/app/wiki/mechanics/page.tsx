@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import MechanicsContent from './MechanicsContent'
 import fs from 'fs'
 import path from 'path'
@@ -21,6 +22,7 @@ export default function MechanicsPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       <main className="flex-1 pt-24 pb-12 px-4 max-w-5xl mx-auto w-full">
+        <WikiBreadcrumb current="Game Mechanics" />
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-foreground">⚙️ Game Mechanics</h1>
           <p className="text-foreground-secondary mt-1">

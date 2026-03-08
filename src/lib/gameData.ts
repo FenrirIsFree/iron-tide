@@ -24,13 +24,13 @@ export interface Ship {
   gameType: string
   displayClass: string
   subtype: string
-  coolness: number
+  coolness: string
   faction: string
   gameFaction: string
   extraUpgradeSlots: number
   costReal: number
   canBeNpc: boolean
-  requiredRank: string
+  requiredRank: number
   canBeUsedForNpc: boolean
 }
 

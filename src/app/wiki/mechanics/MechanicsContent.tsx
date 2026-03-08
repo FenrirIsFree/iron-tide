@@ -56,9 +56,19 @@ function renderValue(value: unknown, depth = 0): React.ReactNode {
   }
 
   if (typeof value === 'string') {
-    // Check if it looks like a formula
-    if (value.includes('*') || value.includes('/') || value.includes('Math.') || value.includes('(')) {
-      return <code className="bg-surface-hover text-cyan-400 px-1.5 py-0.5 rounded text-xs font-mono">{value}</code>
+    // Check if it looks like a formula or code reference
+    if (value.includes('*') || value.includes('/') || value.includes('Math.') || value.includes('(') || value.includes('=')) {
+      // Split on " — " to separate formula from description
+      const parts = value.split(' — ')
+      if (parts.length > 1) {
+        return (
+          <span>
+            <code className="bg-surface-hover text-cyan-400 px-1.5 py-0.5 rounded text-xs font-mono">{parts[0]}</code>
+            <span className="text-foreground-secondary ml-2">— {parts.slice(1).join(' — ')}</span>
+          </span>
+        )
+      }
+      return <code className="bg-surface-hover text-cyan-400 px-1.5 py-0.5 rounded text-xs font-mono break-all">{value}</code>
     }
     return <span className="text-foreground-secondary">{value}</span>
   }
@@ -110,8 +120,18 @@ function renderValue(value: unknown, depth = 0): React.ReactNode {
 
 function formatKey(key: string): string {
   return key
+    // Expand common game abbreviations
+    .replace(/^P([A-Z])/, 'Player $1')  // PSpeed → Player Speed
+    .replace(/^M([A-Z])/, 'Modifier $1') // MSpeed → Modifier Speed
+    .replace(/Cballs/g, 'Cannonballs')
+    .replace(/Hp/g, 'HP')
+    .replace(/Xp/g, 'XP')
+    .replace(/Npc/g, 'NPC')
+    .replace(/Dps/g, 'DPS')
+    // camelCase → spaces
     .replace(/([A-Z])/g, ' $1')
     .replace(/^./, s => s.toUpperCase())
+    .replace(/\s+/g, ' ')
     .trim()
 }
 

@@ -40,6 +40,33 @@ interface NpcData {
   [key: string]: unknown
 }
 
+const REGION_NAMES: Record<number, string> = {
+  1: 'Region 1 (Starter)',
+  2: 'Region 2',
+  3: 'Region 3',
+  4: 'Region 4',
+  5: 'Region 5',
+  6: 'Region 6 (Deep)',
+}
+
+function formatCannonClass(cls: string): string {
+  return cls
+    .replace('DistanceCannon', 'Long Range Cannon')
+    .replace('HeavyCannon', 'Heavy Cannon')
+    .replace('LiteCannon', 'Light Cannon')
+    .replace('Bombardier', 'Bombardier')
+    .replace('Mortar', 'Mortar')
+}
+
+function formatVisual(visual: string): string {
+  return visual
+    .replace('BloodShip', 'Blood Ship (red sails)')
+    .replace('ShadowShip', 'Shadow Ship (dark hull)')
+    .replace('GhostShip', 'Ghost Ship (spectral)')
+    .replace(/([A-Z])/g, ' $1')
+    .trim()
+}
+
 const TIER_COLORS: Record<string, string> = {
   '1-star': 'text-green-400',
   '2-star': 'text-blue-400',
@@ -141,7 +168,7 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                     </div>
                     <div className="bg-surface-hover rounded p-2">
                       <span className="text-foreground-muted block text-xs">Cannon</span>
-                      <span className="text-foreground font-medium">{boss.cannonClass}</span>
+                      <span className="text-foreground font-medium">{formatCannonClass(boss.cannonClass)}</span>
                     </div>
                     <div className="bg-surface-hover rounded p-2">
                       <span className="text-foreground-muted block text-xs">Special Ammo</span>
@@ -153,11 +180,11 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                       Hull: {boss.shipName}
                     </span>
                     <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                      Visual: {boss.visual}
+                      Appearance: {formatVisual(boss.visual)}
                     </span>
                     {boss.spawnRegions.length > 0 && (
                       <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
-                        Regions: {boss.spawnRegions.join(', ')}
+                        Spawns in: {boss.spawnRegions.map(r => REGION_NAMES[r] ?? `Region ${r}`).join(', ')}
                       </span>
                     )}
                     <span className="bg-surface-hover text-foreground-secondary text-xs px-2 py-1 rounded">
