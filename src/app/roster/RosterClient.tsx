@@ -16,6 +16,7 @@ type LoadoutWeapon = { id: string; weapon: { name: string; type: string }; posit
 type LoadoutUpgrade = { id: string; upgrade: { name: string; effects?: { stat: string; value: string; gameKey?: string; rankedValues?: string[] }[] | null; effect?: string | null; category?: string | null } }
 type LoadoutAmmo = { id: string; ammoType: { name: string }; quantity: number }
 type LoadoutCrew = { id: string; crewType: { name: string }; quantity: number }
+type LoadoutConsumable = { id: string; consumable: { name: string }; quantity: number }
 
 type ActiveLoadout = {
   id: string; name: string
@@ -23,6 +24,7 @@ type ActiveLoadout = {
   upgrades: LoadoutUpgrade[]
   ammo: LoadoutAmmo[]
   crew: LoadoutCrew[]
+  consumables: LoadoutConsumable[]
 }
 
 type MemberShip = {
@@ -32,7 +34,7 @@ type MemberShip = {
     name: string; shipClass: string; rate: number; weaponClass: string | null
     broadsideSlots: number; crewCapacity: number | null; role: string | null
     speed: number | null; maneuverability: number | null; broadsideArmor: number | null
-    hp: number | null; holdCapacity: number | null; crewCapacity: number | null
+    hp: number | null; cargoHold: number | null; crewCapacity: number | null
     sternSlots: number | null; bowSlots: number | null; mortarSlots: number | null
   }
   loadouts: ActiveLoadout[]
@@ -126,7 +128,7 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                           const modStats: ModifiedStats | null = loadout ? computeModifiedStats(
                             {
                               hp: s.ship.hp, speed: s.ship.speed, maneuverability: s.ship.maneuverability,
-                              broadsideArmor: s.ship.broadsideArmor, cargoHold: s.ship.holdCapacity,
+                              broadsideArmor: s.ship.broadsideArmor, cargoHold: s.ship.cargoHold,
                               crewCapacity: s.ship.crewCapacity, integrity: null,
                               broadsideSlots: s.ship.broadsideSlots, mortarSlots: s.ship.mortarSlots ?? 0,
                               rate: s.ship.rate,
@@ -161,7 +163,7 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                 <RosterStat label="MANEUV" base={s.ship.maneuverability} modified={modStats?.maneuverability} />
                                 <RosterStat label="ARM" base={s.ship.broadsideArmor} modified={modStats?.broadsideArmor} />
                                 <RosterStat label="DUR" base={s.ship.hp} modified={modStats?.hp} />
-                                <RosterStat label="CARGO" base={s.ship.holdCapacity} modified={modStats?.cargoHold} />
+                                <RosterStat label="CARGO" base={s.ship.cargoHold} modified={modStats?.cargoHold} />
                               </div>
 
                               {/* Slots Summary */}
@@ -200,7 +202,13 @@ export default function RosterClient({ members, currentUserId }: { members: Memb
                                   {specialCrew.length > 0 && (
                                     <p>⭐ {specialCrew.map(c => c.crewType.name).join(', ')}</p>
                                   )}
-                                  {!portWeapons.length && !starboardWeapons.length && !sternWeapons.length && !bowWeapons.length && !loadout.upgrades.length && !basicCrew.length && (
+                                  {loadout.ammo.filter(a => a.quantity > 0).length > 0 && (
+                                    <p>🔴 {loadout.ammo.filter(a => a.quantity > 0).map(a => `${a.ammoType.name} x${a.quantity}`).join(', ')}</p>
+                                  )}
+                                  {loadout.consumables.filter(c => c.quantity > 0).length > 0 && (
+                                    <p>🧪 {loadout.consumables.filter(c => c.quantity > 0).map(c => `${c.consumable.name} x${c.quantity}`).join(', ')}</p>
+                                  )}
+                                  {!portWeapons.length && !starboardWeapons.length && !sternWeapons.length && !bowWeapons.length && !loadout.upgrades.length && !basicCrew.length && !loadout.ammo.some(a => a.quantity > 0) && !loadout.consumables.some(c => c.quantity > 0) && (
                                     <p className="text-foreground-secondary/50">No loadout configured</p>
                                   )}
                                 </div>

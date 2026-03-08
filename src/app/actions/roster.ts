@@ -43,6 +43,7 @@ export async function getMemberFleet(userId: string) {
           upgrades: { include: { upgrade: true } },
           ammo: { include: { ammoType: true } },
           crew: { include: { crewType: true } },
+          consumables: { include: { consumable: true } },
         },
       },
     },
