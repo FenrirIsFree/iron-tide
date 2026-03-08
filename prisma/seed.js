@@ -115,6 +115,68 @@ async function seedUpgrades() {
   return count;
 }
 
+const EFFECT_LABELS = {
+  temporaryDurability: 'Temp HP',
+  instant: 'Instant',
+  durabilityRepair: 'Repair HP',
+  sailRepairPercent: 'Sail Repair',
+  increasedDamageDuringUse: 'Vulnerable while active',
+  weaponsRepaired: 'Repairs weapons',
+  crewHealed: 'Heals crew',
+  durabilityRepairPercent: 'Repair HP',
+  extinguishMinorFires: 'Extinguishes fires',
+  squadronSpeedBonus: 'Squad Speed',
+  squadronDamageBonus: 'Squad Damage',
+  buffDistance: 'Range',
+  squadronTemporaryDurabilityPercent: 'Squad Temp HP',
+  speedBonus: 'Speed',
+  dash: 'Dash ability',
+  sailDamageMultiplier: 'Sail damage taken ×',
+  defenseBonus: 'Defense',
+  maneuverabilityPenalty: 'Maneuver',
+  fasterFireExtinguish: 'Faster fire extinguish',
+  damageReduction: 'Damage Reduction',
+  affectsSailsAndCrew: 'Protects sails & crew',
+  captureNPSShip: 'Capture NPC ship',
+  goldCost: 'Gold cost',
+  penetrationBonus: 'Penetration',
+  mortarDamageBonus: 'Mortar Damage',
+  reloadPenalty: 'Reload',
+  structureDamageBonus: 'Structure Damage',
+  swivelGunReloadBonus: 'Swivel Reload',
+  rangeBonus: 'Range',
+  accuracyBonus: 'Accuracy',
+  speedPenalty: 'Speed',
+  reloadSpeedBonus: 'Reload Speed',
+  maneuverabilityBonus: 'Maneuver',
+  itemReloadBonus: 'Item Reload',
+  sailHandlingBonus: 'Sail Handling',
+  ammoSwapBonus: 'Ammo Swap',
+  repairSpeedBonus: 'Repair Speed',
+  itemRetrievalBonus: 'Item Retrieval',
+  rowingSpeedBonus: 'Rowing Speed',
+  slowOnHit: 'Slows target',
+  reducedFireAngle: 'Reduced fire angle',
+  cannotBeCanceled: 'Cannot be canceled',
+  explosiveAmmo: 'Explosive ammo',
+  areaDamage: 'Area damage',
+  npsVulnerable: 'Effective vs NPCs',
+  rangePenalty: 'Range',
+  penetrationPenalty: 'Penetration',
+  doubleNPSWeaponLoot: '2× NPC weapon loot',
+};
+
+function formatEffectValue(key, val) {
+  if (val === true) return EFFECT_LABELS[key] || key;
+  const label = EFFECT_LABELS[key] || key;
+  const v = String(val);
+  // Already has % or sign
+  if (v.includes('%') || v.startsWith('-') || v.startsWith('+')) return `${label} ${v}`;
+  // Numeric — add + for positive
+  if (typeof val === 'number' && val > 0) return `${label} +${val}`;
+  return `${label}: ${val}`;
+}
+
 async function seedConsumables() {
   const data = loadJson('consumable-stats.json');
   let count = 0;
@@ -124,7 +186,7 @@ async function seedConsumables() {
   }
   for (const c of allConsumables) {
     const effectStr = c.effects
-      ? Object.entries(c.effects).map(([k, v]) => `${k}: ${v}`).join('; ')
+      ? Object.entries(c.effects).map(([k, v]) => formatEffectValue(k, v)).join(', ')
       : null;
     await prisma.consumable.upsert({
       where: { name: c.name },
