@@ -590,7 +590,23 @@
       ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
-      "defenseWaves": []
+      "defenseWaves": [],
+      "killValue": 866,
+      "xpReward": 264,
+      "computedDps": 10.0,
+      "drops": {
+        "legendTokens": "~1",
+        "escudo": 1,
+        "rareTradeGoods": "~1500 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~259-433",
+        "ammo": {
+          "2": 60,
+          "3": 75,
+          "4": 90
+        }
+      }
     },
     {
       "name": "Flying Ice",
@@ -613,7 +629,22 @@
       ],
       "fleetsPerRegion": 3,
       "fleetSize": 1,
-      "defenseWaves": []
+      "defenseWaves": [],
+      "killValue": 2520,
+      "xpReward": 771,
+      "computedDps": 13.3,
+      "drops": {
+        "legendTokens": "~2",
+        "escudo": 1,
+        "rareTradeGoods": "~1500 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~756-1260",
+        "ammo": {
+          "3": 75,
+          "6": 120
+        }
+      }
     },
     {
       "name": "Lighting",
@@ -638,7 +669,23 @@
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": [],
-      "notes": "Fastest legendary boss (speed 23)"
+      "notes": "Fastest legendary boss (speed 23)",
+      "killValue": 872,
+      "xpReward": 266,
+      "computedDps": 7.1,
+      "drops": {
+        "legendTokens": "~1",
+        "escudo": 1,
+        "rareTradeGoods": "~1500 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~261-436",
+        "ammo": {
+          "2": 60,
+          "4": 90,
+          "6": 120
+        }
+      }
     },
     {
       "name": "Sand Storm",
@@ -676,7 +723,24 @@
           "count": 2
         }
       ],
-      "notes": "Highest armor of 2-star bosses (15)"
+      "notes": "Highest armor of 2-star bosses (15)",
+      "killValue": 2785,
+      "xpReward": 852,
+      "computedDps": 8.3,
+      "drops": {
+        "legendTokens": "~1",
+        "escudo": 1,
+        "rareTradeGoods": "~1500 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~835-1392",
+        "ammo": {
+          "4": 90,
+          "5": 105,
+          "7": 135,
+          "8": 150
+        }
+      }
     },
     {
       "name": "Belian",
@@ -700,7 +764,23 @@
       ],
       "fleetsPerRegion": 2,
       "fleetSize": 1,
-      "defenseWaves": []
+      "defenseWaves": [],
+      "killValue": 2229,
+      "xpReward": 682,
+      "computedDps": 16.7,
+      "drops": {
+        "legendTokens": "~2",
+        "escudo": 1,
+        "rareTradeGoods": "~1500 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~668-1114",
+        "ammo": {
+          "2": 60,
+          "5": 105,
+          "7": 135
+        }
+      }
     },
     {
       "name": "Powder God",
@@ -725,7 +805,22 @@
       "fleetsPerRegion": 1,
       "fleetSize": 1,
       "defenseWaves": [],
-      "notes": "Fastest reload of 2-star bosses (6 sec). Has special server effect (explosions)."
+      "notes": "Fastest reload of 2-star bosses (6 sec). Has special server effect (explosions).",
+      "killValue": 3371,
+      "xpReward": 1031,
+      "computedDps": 23.3,
+      "drops": {
+        "legendTokens": "~2",
+        "escudo": 1,
+        "rareTradeGoods": "~1500 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~1011-1685",
+        "ammo": {
+          "4": 90,
+          "6": 120
+        }
+      }
     },
     {
       "name": "Chief Privateer",
@@ -748,7 +843,21 @@
       "fleetsPerRegion": 2,
       "fleetSize": 3,
       "defenseWaves": [],
-      "notes": "Only spawns in highest-level region. Fleet of 3 ships."
+      "notes": "Only spawns in highest-level region. Fleet of 3 ships.",
+      "killValue": 3484,
+      "xpReward": 1066,
+      "computedDps": 25.0,
+      "drops": {
+        "legendTokens": "4-6",
+        "escudo": 1,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~1045-1742",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "Horror Of The Seas",
@@ -770,7 +879,21 @@
       ],
       "fleetsPerRegion": 2,
       "fleetSize": 3,
-      "defenseWaves": []
+      "defenseWaves": [],
+      "killValue": 5136,
+      "xpReward": 1571,
+      "computedDps": 35.7,
+      "drops": {
+        "legendTokens": "4-6",
+        "escudo": 1,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~1540-2568",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "Red Fleet",
@@ -793,7 +916,21 @@
       "fleetsPerRegion": 2,
       "fleetSize": 3,
       "defenseWaves": [],
-      "notes": "Ship ID 30 has no localized name entry"
+      "notes": "Ship ID 30 has no localized name entry",
+      "killValue": 8429,
+      "xpReward": 2579,
+      "computedDps": 46.9,
+      "drops": {
+        "legendTokens": "4-6",
+        "escudo": 1,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~2528-4214",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "Exole",
@@ -817,7 +954,21 @@
       "fleetsPerRegion": 3,
       "fleetSize": 2,
       "defenseWaves": [],
-      "notes": "Highest single-shot damage of 3-star bosses (1200)"
+      "notes": "Highest single-shot damage of 3-star bosses (1200)",
+      "killValue": 13295,
+      "xpReward": 4068,
+      "computedDps": 66.7,
+      "drops": {
+        "legendTokens": "8-10",
+        "escudo": 1,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~3988-6647",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "Johny",
@@ -840,7 +991,21 @@
       ],
       "fleetsPerRegion": 3,
       "fleetSize": 2,
-      "defenseWaves": []
+      "defenseWaves": [],
+      "killValue": 14349,
+      "xpReward": 4390,
+      "computedDps": 41.7,
+      "drops": {
+        "legendTokens": "8-10",
+        "escudo": 1,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~4304-7174",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "Empire Patrol",
@@ -875,7 +1040,21 @@
           "shipName": "Black Prince",
           "count": 3
         }
-      ]
+      ],
+      "killValue": 16464,
+      "xpReward": 5037,
+      "computedDps": 60.0,
+      "drops": {
+        "legendTokens": "8-10",
+        "escudo": 1,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~4939-8232",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "Despando",
@@ -898,7 +1077,21 @@
       "fleetsPerRegion": 2,
       "fleetSize": 1,
       "defenseWaves": [],
-      "notes": "Solo boss, no fleet. Ship ID 37 has no localized name."
+      "notes": "Solo boss, no fleet. Ship ID 37 has no localized name.",
+      "killValue": 52729,
+      "xpReward": 16135,
+      "computedDps": 100.0,
+      "drops": {
+        "legendTokens": "24-28",
+        "escudo": 4,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~15818-26364",
+        "lootChests": "Drops on water"
+      }
     },
     {
       "name": "DRAGON",
@@ -934,7 +1127,21 @@
           "count": 3
         }
       ],
-      "notes": "Most powerful boss in the game. 45000 HP, speed 23, 5-sec reload. Short cannon range (130) but devastating DPS."
+      "notes": "Most powerful boss in the game. 45000 HP, speed 23, 5-sec reload. Short cannon range (130) but devastating DPS.",
+      "killValue": 89211,
+      "xpReward": 27298,
+      "computedDps": 140.0,
+      "drops": {
+        "legendTokens": "24-28",
+        "escudo": 4,
+        "copper": "17-25",
+        "voodooSkulls": 3,
+        "rareTradeGoods": "~5000 gold worth",
+        "chest": "50% chance",
+        "woodOrSupplies": "50% chance",
+        "gold": "~26763-44605",
+        "lootChests": "Drops on water"
+      }
     }
   ],
   "proceduralNpcs": {

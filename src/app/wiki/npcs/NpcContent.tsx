@@ -56,6 +56,19 @@ interface DefenseWave {
   count: number
 }
 
+interface BossDrops {
+  legendTokens: string
+  escudo: number
+  rareTradeGoods: string
+  chest: string
+  woodOrSupplies: string
+  gold: string
+  ammo?: Record<string, number>
+  copper?: string
+  voodooSkulls?: number
+  lootChests?: string
+}
+
 interface Boss {
   name: string
   type: string
@@ -79,6 +92,10 @@ interface Boss {
   fleetSize: number
   defenseWaves: DefenseWave[]
   notes?: string
+  killValue?: number
+  xpReward?: number
+  computedDps?: number
+  drops?: BossDrops
 }
 
 interface ProceduralNpc {
@@ -609,8 +626,66 @@ export default function NpcContent({ npcs }: { npcs: NpcData }) {
                         </InfoSection>
                       ) : null}
 
-                      {/* Loot Drops — NEW */}
-                      <LootDrops typeId={boss.type} lootByType={lootByType} />
+                      {/* Loot Drops */}
+                      {boss.drops ? (
+                        <InfoSection title={`💰 Loot Drops (Kill Value: ${boss.killValue?.toLocaleString() ?? '?'} gold · ${boss.xpReward?.toLocaleString() ?? '?'} XP)`}>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm mb-2">
+                            <div className="bg-surface rounded p-2">
+                              <span className="text-foreground-muted text-xs block">👑 Legend Tokens</span>
+                              <span className="text-yellow-400 font-medium">{boss.drops.legendTokens}</span>
+                            </div>
+                            <div className="bg-surface rounded p-2">
+                              <span className="text-foreground-muted text-xs block">⭐ Escudo</span>
+                              <span className="text-foreground font-medium">{boss.drops.escudo}</span>
+                            </div>
+                            {boss.drops.copper ? (
+                              <div className="bg-surface rounded p-2">
+                                <span className="text-foreground-muted text-xs block">🟤 Copper</span>
+                                <span className="text-foreground font-medium">{boss.drops.copper}</span>
+                              </div>
+                            ) : null}
+                            {boss.drops.voodooSkulls ? (
+                              <div className="bg-surface rounded p-2">
+                                <span className="text-foreground-muted text-xs block">💀 Voodoo Skulls</span>
+                                <span className="text-foreground font-medium">{boss.drops.voodooSkulls}</span>
+                              </div>
+                            ) : null}
+                            <div className="bg-surface rounded p-2">
+                              <span className="text-foreground-muted text-xs block">📦 Rare Trade Goods</span>
+                              <span className="text-foreground-secondary text-xs">{boss.drops.rareTradeGoods}</span>
+                            </div>
+                            <div className="bg-surface rounded p-2">
+                              <span className="text-foreground-muted text-xs block">📦 Chest</span>
+                              <span className="text-foreground-secondary text-xs">{boss.drops.chest}</span>
+                            </div>
+                            <div className="bg-surface rounded p-2">
+                              <span className="text-foreground-muted text-xs block">📦 Wood / Supplies</span>
+                              <span className="text-foreground-secondary text-xs">{boss.drops.woodOrSupplies}</span>
+                            </div>
+                            <div className="bg-surface rounded p-2">
+                              <span className="text-foreground-muted text-xs block">💰 Gold</span>
+                              <span className="text-foreground-secondary text-xs">{boss.drops.gold}</span>
+                            </div>
+                          </div>
+                          {boss.drops.ammo ? (
+                            <div className="flex flex-wrap gap-2 text-xs">
+                              <span className="text-foreground-muted">💣 Ammo:</span>
+                              {Object.entries(boss.drops.ammo).map(([wh, count]) => (
+                                <span key={wh} className="bg-surface text-foreground-secondary px-2 py-0.5 rounded">
+                                  WH {wh}: {count}
+                                </span>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-foreground-muted text-xs">💣 Ammo: Legend Boss Zone rates</p>
+                          )}
+                          {boss.drops.lootChests ? (
+                            <p className="text-green-400 text-xs mt-1">💎 {boss.drops.lootChests}</p>
+                          ) : null}
+                        </InfoSection>
+                      ) : (
+                        <LootDrops typeId={boss.type} lootByType={lootByType} />
+                      )}
 
                       {/* Notes */}
                       {boss.notes ? (
