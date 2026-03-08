@@ -205,10 +205,9 @@ async function seedResources() {
   const tradeGoods = allResources
     .filter(r => r.name !== 'removed' && (r.effects || '').includes('TradingItem'))
     .map(r => r.name);
-  const specialItems = ['Chest', 'Chest (Arena)', 'Chest Key', 'Scrolls', 'Mysterious Map', 'Pirate Token',
-    'Merchant Supply Map', 'Pirate Treasure Map', 'Fanatic Camp Map', 'Blueprint Fragment',
-    'Imperial Blueprint', 'Modification Blueprint', 'Construction License', 'Escudo',
-    'Voodoo Skull', 'Battle Mark', 'Insurance', 'Seahorse', 'Cargo Crate'];
+  // Only items NOT already in currencies table
+  const specialItems = ['Chest (Arena)', 'Mysterious Map', 'Merchant Supply Map',
+    'Pirate Treasure Map', 'Fanatic Camp Map', 'Modification Blueprint', 'Seahorse', 'Cargo Crate'];
 
   let count = 0;
   for (const name of raw) {
