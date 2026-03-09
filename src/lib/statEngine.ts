@@ -175,3 +175,45 @@ export function computeModifiedStats(ship: ShipStats, equippedUpgrades: Equipped
 
   return stats
 }
+
+// ============================================================
+// DPS CALCULATION
+// ============================================================
+
+export type LoadoutWeaponForDPS = {
+  weapon: {
+    penetration: number | null
+    loading: number | null
+    damage: number | null
+    penetrationMulti: string | null
+  }
+  position: string
+  quantity: number
+}
+
+export function computeShipDPS(loadoutWeapons: LoadoutWeaponForDPS[]): number {
+  let totalDPS = 0
+  for (const lw of loadoutWeapons) {
+    const { weapon, quantity, position } = lw
+    if (!weapon.loading || weapon.loading <= 0) continue
+
+    // Determine raw damage per shot
+    let dmgPerShot = 0
+    if (weapon.penetration != null) {
+      dmgPerShot = weapon.penetration
+      // Handle multi-shot (e.g. "x2", "x3")
+      if (weapon.penetrationMulti) {
+        const match = weapon.penetrationMulti.match(/x(\d+)/)
+        if (match) dmgPerShot *= parseInt(match[1])
+      }
+    } else if (weapon.damage != null) {
+      dmgPerShot = weapon.damage
+    } else {
+      continue
+    }
+
+    const weaponDPS = (dmgPerShot / weapon.loading) * quantity
+    totalDPS += weaponDPS
+  }
+  return Math.round(totalDPS * 10) / 10
+}
