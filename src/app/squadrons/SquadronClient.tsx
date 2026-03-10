@@ -27,6 +27,7 @@ import {
   reorderSquadronSlots,
 } from '@/app/actions/squadron'
 import { computeModifiedStats, computeShipDPS } from '@/lib/statEngine'
+import ShipPicker from './ShipPicker'
 
 // ============================================================
 // TYPES
@@ -67,7 +68,7 @@ type SquadronData = {
 type GuildShip = {
   id: string
   user: { id: string; username: string }
-  ship: { id: string; name: string; rate: number }
+  ship: { id: string; name: string; rate: number; shipClass?: string; hp?: number | null; broadsideSlots?: number | null; speed?: number | null }
   loadouts: { id: string; isActive: boolean }[]
 }
 
@@ -171,7 +172,6 @@ function SquadronCard({
   const [isEditing, setIsEditing] = useState(false)
   const [nameInput, setNameInput] = useState(squadron.name)
   const [showAddShip, setShowAddShip] = useState(false)
-  const [selectedShipId, setSelectedShipId] = useState('')
   const [localSlots, setLocalSlots] = useState(squadron.slots)
 
   const isCreator = squadron.createdBy.id === currentUserId
@@ -206,12 +206,9 @@ function SquadronCard({
     setIsEditing(false)
   }
 
-  function handleAddShip() {
-    if (!selectedShipId) return
+  function handleAddShip(shipId: string) {
     startTransition(async () => {
-      await addShipToSquadron(squadron.id, selectedShipId)
-      setSelectedShipId('')
-      setShowAddShip(false)
+      await addShipToSquadron(squadron.id, shipId)
     })
   }
 
@@ -273,35 +270,14 @@ function SquadronCard({
         </div>
       </div>
 
-      {/* Add Ship Dropdown */}
+      {/* Ship Picker */}
       {showAddShip && canEdit && (
-        <div className="px-5 py-3 border-b border-surface-border bg-background/50 flex gap-2 items-center">
-          <select
-            value={selectedShipId}
-            onChange={e => setSelectedShipId(e.target.value)}
-            className="flex-1 bg-surface border border-surface-border rounded px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none"
-          >
-            <option value="">Select a ship from the guild fleet…</option>
-            {availableShips.map(s => (
-              <option key={s.id} value={s.id}>
-                {s.user.username} — {s.ship.name} (Rate {s.ship.rate})
-              </option>
-            ))}
-          </select>
-          <button
-            onClick={handleAddShip}
-            disabled={!selectedShipId || isPending}
-            className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover disabled:opacity-50"
-          >
-            {isPending ? 'Adding…' : 'Add'}
-          </button>
-          <button
-            onClick={() => { setShowAddShip(false); setSelectedShipId('') }}
-            className="px-3 py-2 text-sm text-foreground-secondary hover:text-foreground"
-          >
-            Cancel
-          </button>
-        </div>
+        <ShipPicker
+          availableShips={availableShips}
+          onAdd={handleAddShip}
+          onClose={() => setShowAddShip(false)}
+          isPending={isPending}
+        />
       )}
 
       {/* Column Headers */}
