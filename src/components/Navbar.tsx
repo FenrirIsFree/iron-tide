@@ -56,6 +56,9 @@ export default function Navbar() {
               <Link href="/roster" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
                 Roster
               </Link>
+              <Link href="/squadrons" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
+                Squadrons
+              </Link>
               <Link href="/wiki" className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
                 Wiki
               </Link>
