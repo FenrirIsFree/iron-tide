@@ -1254,5 +1254,31 @@
         "description": "Boolean: can only use speed 2"
       }
     }
+  },
+  "needsTesting": {
+    "angleOfImpactDamage": {
+      "status": "UNKNOWN - server-side only",
+      "what": "How angle of cannonball impact affects damage through armor",
+      "known": "In-game wiki says flat angle = more effective penetration, bow is harder to penetrate",
+      "missing": "Exact formula for angle multiplier on damage/armor",
+      "testPlan": "Fire same cannon at bow vs broadside vs stern of same ship at same range, compare damage numbers",
+      "priority": "high"
+    },
+    "armorDamageReduction": {
+      "status": "PARTIALLY KNOWN",
+      "what": "Exact formula for damage = penetration - armor and how armor scales",
+      "known": "Wiki confirms damage = penetration - defense. Low pen cannons fail vs high armor + bow",
+      "missing": "Is it strictly (penetration - armor) or is there a multiplier/curve? Does distance affect it?",
+      "testPlan": "Use different penetration cannons against ships with known armor values, record damage",
+      "priority": "high"
+    },
+    "bowDamageReduction": {
+      "status": "PARTIALLY KNOWN",
+      "what": "Exact bow damage reduction without Iron Ram upgrade",
+      "known": "In-game wiki says bow is stronger. Iron Ram adds 20%. Bow figureheads add 3-5%.",
+      "missing": "Is there inherent bow reduction or is it purely from angle-of-impact on armor?",
+      "testPlan": "Test ship with no bow upgrades - fire at bow vs broadside with same cannon, compare damage",
+      "priority": "medium"
+    }
   }
 }
