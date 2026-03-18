@@ -1,0 +1,130 @@
+{
+  "collisions": [
+    {
+      "ship_uid": 17047872,
+      "source_ship_uid": 12818923,
+      "damage": 73.27,
+      "position_offset": {
+        "x": 1.928,
+        "y": 0.105
+      },
+      "angle_offset": -0.0871,
+      "speed_change": -9.0096,
+      "collision_point": {
+        "x": -1293.129,
+        "y": 0.154,
+        "z": 364.124
+      },
+      "corpus_critical": false,
+      "make_burning": false,
+      "soft_collision": false,
+      "destroy_flooding_ship": false,
+      "is_isle": true
+    },
+    {
+      "ship_uid": 12818923,
+      "source_ship_uid": 17047872,
+      "damage": 155.66,
+      "position_offset": {
+        "x": -1.903,
+        "y": 0.324
+      },
+      "angle_offset": 0.0574,
+      "speed_change": -3.5157,
+      "collision_point": {
+        "x": -1293.129,
+        "y": 0.154,
+        "z": 364.124
+      },
+      "corpus_critical": false,
+      "make_burning": false,
+      "soft_collision": false,
+      "destroy_flooding_ship": false,
+      "is_isle": true
+    },
+    {
+      "ship_uid": 17047872,
+      "source_ship_uid": 12818923,
+      "damage": 15.89,
+      "position_offset": {
+        "x": 0.692,
+        "y": 0.126
+      },
+      "angle_offset": -0.0373,
+      "speed_change": -4.1591,
+      "collision_point": {
+        "x": -1294.133,
+        "y": -0.057,
+        "z": 365.504
+      },
+      "corpus_critical": false,
+      "make_burning": false,
+      "soft_collision": false,
+      "destroy_flooding_ship": false,
+      "is_isle": true
+    },
+    {
+      "ship_uid": 12818923,
+      "source_ship_uid": 17047872,
+      "damage": 32.5,
+      "position_offset": {
+        "x": -0.703,
+        "y": 0.036
+      },
+      "angle_offset": 0.029,
+      "speed_change": -0.6309,
+      "collision_point": {
+        "x": -1294.133,
+        "y": -0.057,
+        "z": 365.504
+      },
+      "corpus_critical": false,
+      "make_burning": false,
+      "soft_collision": false,
+      "destroy_flooding_ship": false,
+      "is_isle": true
+    },
+    {
+      "ship_uid": 17047872,
+      "source_ship_uid": 12818923,
+      "damage": 11.84,
+      "position_offset": {
+        "x": 0.454,
+        "y": 0.135
+      },
+      "angle_offset": -0.0213,
+      "speed_change": -2.7885,
+      "collision_point": {
+        "x": -1294.836,
+        "y": -0.218,
+        "z": 366.359
+      },
+      "corpus_critical": false,
+      "make_burning": false,
+      "soft_collision": true,
+      "destroy_flooding_ship": false,
+      "is_isle": true
+    },
+    {
+      "ship_uid": 12818923,
+      "source_ship_uid": 17047872,
+      "damage": 23.02,
+      "position_offset": {
+        "x": -0.474,
+        "y": -0.012
+      },
+      "angle_offset": 0.0214,
+      "speed_change": -0.0036,
+      "collision_point": {
+        "x": -1294.836,
+        "y": -0.218,
+        "z": 366.359
+      },
+      "corpus_critical": false,
+      "make_burning": false,
+      "soft_collision": true,
+      "destroy_flooding_ship": false,
+      "is_isle": true
+    }
+  ]
+}
