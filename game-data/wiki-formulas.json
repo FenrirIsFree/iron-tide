@@ -9,7 +9,6 @@
       "Speed constant CShipMovement = 0.00036421 converts internal speed to world units per second"
     ]
   },
-
   "damageCalculation": {
     "description": "How damage is applied to a ship's HP. Damage flows through MakeDamage() which applies HP damage, sail damage, and various critical effects.",
     "formula": "EffectiveHP -= HealthDamage * DamageModifier",
@@ -26,9 +25,42 @@
       "Marching mode speed reduced on damage: marchModeBonusSpeed -= HealthDamage/(1+currentHP)*100 + SailDamage*100",
       "Flooding factor > 0 stops flooding on powder keg, mortar, burning, stern damage, or fireworks hits",
       "Collision damage can reduce flooding by HealthDamage/MaxHp"
-    ]
+    ],
+    "hitLocationMechanics": {
+      "source": "Ship.cs MakeDamage + MakeCollisionDamage, corrected with in-game wiki",
+      "bow": {
+        "description": "Bow (nose) takes REDUCED damage compared to broadside hits",
+        "effect": "PReduceDamageToNose — built-in damage reduction for bow hits",
+        "note": "This is a base game mechanic, not just a player bonus"
+      },
+      "stern": {
+        "description": "Stern hits while flooding cause INSTANT SINK",
+        "method": "StopFloodingSynchronized()",
+        "note": "StopFloodingSynchronized does NOT cancel flooding — it finalizes it and sinks the ship"
+      },
+      "instantSinkWhileFlooding": {
+        "description": "The following damage types while a ship is flooding cause instant destruction",
+        "triggers": [
+          "Stern damage (cannonball hitting the stern)",
+          "Powder keg hit",
+          "Mortar hit",
+          "Burning (if burn duration > 0)",
+          "Fireworks"
+        ],
+        "code": "if (PowderKeg || MortarShot || (Burning && burningDuration > 0) || SternDamage || Fireworks) → StopFloodingSynchronized() → INSTANT SINK"
+      },
+      "sails": {
+        "description": "Each sail has individual HP. Sail damage reduces speed proportional to sail weight.",
+        "types": [
+          "SingleSailDamage (one sail)",
+          "TotalSailDamage (all sails)"
+        ]
+      },
+      "broadside": {
+        "description": "Standard hull damage — no special modifiers. This is the default hit zone."
+      }
+    }
   },
-
   "speedCalculation": {
     "description": "Ship speed is a combination of base speed, percentage bonuses, flat bonuses, wind effects, paddles, cargo, and marching mode.",
     "baseFormula": "Speed = BasicSpeed * (1 + GetBonus(PSpeed)) + GetBonus(MSpeed)",
@@ -72,7 +104,6 @@
       "CShipMovement": 0.00036421
     }
   },
-
   "mobilityCalculation": {
     "description": "Mobility determines turning rate. Affected by HP, sail HP, bonuses, and drift.",
     "formula": "Mobility = (BasicMobility + GetBonus(MMobilityBonus) + GetBonus(PMobilityBonus) * BasicMobility + lowHpBonus) * sailDamageFactor",
@@ -94,7 +125,6 @@
     },
     "sourceMethod": "Ship.Update(), ShipDynamicInfo.Mobility property, ShipPhysics.Update()"
   },
-
   "armorCalculation": {
     "description": "Armor reduces incoming damage. Calculated from base + bonuses.",
     "formula": "Armor = BasicArmor * (1 + GetBonus(PArmor)) + GetBonus(MArmor)",
@@ -105,7 +135,6 @@
     },
     "sourceMethod": "ShipDynamicInfo.Armor property"
   },
-
   "healthCalculation": {
     "description": "Max HP from base + bonuses, with integrity penalty for destroyed integrity.",
     "formula": "MaxHp = (int)(BasicHp * (1 + GetBonus(PHealth)) + GetBonus(MHealth)) * integrityFactor",
@@ -118,7 +147,6 @@
     "hpFactor": "firstHP.Summary / MaxHp",
     "sourceMethod": "ShipDynamicInfo.MaxHp, PlayerShipDynamicInfo.MaxHp"
   },
-
   "capacityCalculation": {
     "description": "Cargo capacity determines how much weight the ship can carry.",
     "formula": "Capacity = (int)(BasicCapacity * (1 + GetBonus(PCapacity)) + GetBonus(MCapacity))",
@@ -134,7 +162,6 @@
       "GetItemsMass() = ballsOfHold.ComputeMass + PrivateResourcesOfHold.ComputeMass + powderKegsOfHold.ComputeMass"
     ]
   },
-
   "mortarMechanics": {
     "poundageMap": {
       "description": "Maps ship rank to mortar poundage — higher rank ships use smaller (lower poundage) mortars with different stats",
@@ -189,7 +216,6 @@
       "sourceMethod": "CannonGameInfo.MortarPreparationTimeMs()"
     }
   },
-
   "boardingMechanics": {
     "description": "Boarding involves crew combat with damage, health, and capacity mechanics",
     "boardingDistance": {
@@ -221,7 +247,6 @@
     "restoreUnitsAfterBoarding": "GetBonus(PRestoreUnitsAfterBoarding) — percentage of crew restored",
     "bondmanBonus": "GetBonus(PMoreBondmanFromBoarding) — extra bondmen from boarding"
   },
-
   "cannonMechanics": {
     "reload": {
       "description": "Cannon reload time from base stat with bonuses",
@@ -279,16 +304,35 @@
       "resetTime": 25.0
     }
   },
-
   "crewMechanics": {
     "satietyBonuses": {
       "description": "When crew is fed (satiety/food bonus > 0), these bonuses are applied proportionally",
       "bonuses": [
-        {"effect": "PChangeShipSpeedBonus", "value": 5, "description": "Speed change bonus +5% at full satiety"},
-        {"effect": "PPowerupItemsReload", "value": 5, "description": "Powerup items reload +5%"},
-        {"effect": "PMendingEffectivity", "value": 12, "description": "Mending effectivity +12%"},
-        {"effect": "PCannonsReload", "value": 5, "description": "Cannons reload +5%"},
-        {"effect": "PPlayerSightFocusSpeedAdd", "value": 8, "description": "Sight focus speed +8%"}
+        {
+          "effect": "PChangeShipSpeedBonus",
+          "value": 5,
+          "description": "Speed change bonus +5% at full satiety"
+        },
+        {
+          "effect": "PPowerupItemsReload",
+          "value": 5,
+          "description": "Powerup items reload +5%"
+        },
+        {
+          "effect": "PMendingEffectivity",
+          "value": 12,
+          "description": "Mending effectivity +12%"
+        },
+        {
+          "effect": "PCannonsReload",
+          "value": 5,
+          "description": "Cannons reload +5%"
+        },
+        {
+          "effect": "PPlayerSightFocusSpeedAdd",
+          "value": 8,
+          "description": "Sight focus speed +8%"
+        }
       ],
       "applicationFormula": "bonusValue = BonusesForSatietyLookup[effect] * internalFoodBonus",
       "hoursToFullRefill": 12,
@@ -317,7 +361,6 @@
       "special": "Unique units with special bonuses, have contract time and salary"
     }
   },
-
   "weatherEffects": {
     "wind": {
       "description": "Wind direction affects ship speed and handling",
@@ -348,10 +391,11 @@
     "fog": {
       "description": "Fog (reduced visibility) affects view distance",
       "viewDistanceMultiplier": "1 + GetBonus(PVisibilityZone)",
-      "notes": ["Fog mechanics are primarily visual/client-side, weather engine handles fog rendering"]
+      "notes": [
+        "Fog mechanics are primarily visual/client-side, weather engine handles fog rendering"
+      ]
     }
   },
-
   "speedCaps": {
     "description": "Various speed limits and constraints in the game",
     "minimumSpeed": "Max(3, ...) — ship always has at least 3 effective max speed",
@@ -370,7 +414,6 @@
     },
     "sourceMethod": "Ship.Update(), ShipPhysics.Update()"
   },
-
   "cargoSpeedPenalty": {
     "description": "Carrying cargo reduces effective max speed. The penalty is proportional to how much cargo you carry relative to capacity.",
     "formula": "CapacitySpeedFactor = SpeedWithoutTempEffects * (basicCapacitySpeedFactor - 1) / (SpeedWithoutTempEffects + tempSpeedEffects) + 1",
@@ -386,7 +429,6 @@
     ],
     "sourceMethod": "Ship.CapacitySpeedFactor property, Ship.Update()"
   },
-
   "marchingMode": {
     "description": "Full sails mode (speed 3) gradually builds up bonus speed over time",
     "activationCondition": "LinearStateCode == 3 AND AxisStateCode == 0 AND NowSpeed >= PrevMaxSpeed - 0.3 AND not destroyed/flooding",
@@ -402,7 +444,6 @@
     "ship38Debuff": "If ship ID 38 and in battle: speed -= 2.5 / PatSpeed",
     "sourceMethod": "Ship.Update()"
   },
-
   "integritySystem": {
     "description": "Capital ships have an integrity system that degrades over time and requires repair",
     "maxIntegrity": "CraftFrom.MaxIntegrity (per-ship, -1 means no integrity system)",
@@ -424,7 +465,6 @@
     },
     "sourceMethod": "Gameplay.RestoreCapitalIntegrityDuration(), Gameplay.CapitalRestoreCost()"
   },
-
   "effectSystem": {
     "bonusCalculation": {
       "description": "Ship bonuses come from 5 sources: Upgrades, Design Elements, Crew, Powerup Items, and Dynamic (temporary) Effects + Food bonus",
@@ -433,9 +473,21 @@
       "extraUpgradeFine": {
         "description": "Penalty for using the last upgrade slot",
         "penalties": [
-          {"effect": "PHealth", "value": -5, "unit": "percent"},
-          {"effect": "PMobilityBonus", "value": -5, "unit": "percent"},
-          {"effect": "PCapacity", "value": -5, "unit": "percent"}
+          {
+            "effect": "PHealth",
+            "value": -5,
+            "unit": "percent"
+          },
+          {
+            "effect": "PMobilityBonus",
+            "value": -5,
+            "unit": "percent"
+          },
+          {
+            "effect": "PCapacity",
+            "value": -5,
+            "unit": "percent"
+          }
         ],
         "condition": "Applied when the MaxUpgradesCount-1 slot has an upgrade installed"
       }
@@ -474,7 +526,6 @@
       "wornOutEffect": "Upgrade effects not applied when Strength <= 0"
     }
   },
-
   "mendingSystem": {
     "description": "Ship repair mechanics while sailing",
     "hpPerSec": {
@@ -494,7 +545,6 @@
     },
     "sourceMethod": "Gameplay.MendingCostGoldStrength()"
   },
-
   "sailMechanics": {
     "sailSpeedFactor": "Min(1, FirstSailHP / 0.99)",
     "sailHPCalculation": "Weighted average of individual sail hitbox strengths",
@@ -510,7 +560,6 @@
     "sailAnimDuration": "CSailAnimDurationBasic(3) + 1 + (1 - crewEffectivity) * 5 seconds",
     "sourceMethod": "Ship.SailSpeedFactor, ShipDynamicInfo.HitboxSailsStrengthCacheUpdate()"
   },
-
   "fireAndBurning": {
     "microburningDamage": 4,
     "burningLoopMs": 1000,
@@ -522,7 +571,6 @@
     "fosforEffects": "GetBonus(BCannonBallFosforEffects) > 0",
     "moreFireArea": "GetBonus(BMoreFireAreaAndBurning) > 0"
   },
-
   "collisionMechanics": {
     "collisionDamageBonus": "GetBonus(PAddCollisionDamage)",
     "corpusCritTime": 10,
@@ -530,7 +578,6 @@
     "speedDebuff": "OnSingleSpeedDebuff: speed reduced by |speed/15| / (2 + cooldown)",
     "cooldownRecovery": "cooldown += 0.4 per debuff, max 5, decays by dt"
   },
-
   "powderKegMechanics": {
     "reloadBoost": "GetBonus(PPowderKegReloadBoost)",
     "damageReduction": "GetBonus(PReducePowderKegDamage)",
@@ -543,7 +590,6 @@
       "4kegs": "Two pairs: inner 0.3 rad spread (dist+5), outer 0.7 rad spread (dist-1), extra radius +2.5"
     }
   },
-
   "xpAndRewards": {
     "basicBonusFormula": "damage / 8 * (1 + (rankMultiplier-1)/11 + viewDistance/150)",
     "pvpReward": {
@@ -569,7 +615,6 @@
     "defaultArenaMapMultiplier": 2.2,
     "researchBonus": "(level + 1) * 0.1 if level > 0, else 0"
   },
-
   "paddleMechanics": {
     "description": "Ships with paddles or steam wheels get bonus speed independent of wind",
     "paddleSpeed": {
@@ -588,7 +633,6 @@
     },
     "windInteraction": "When paddle speed > 3 and wind is against (windDot < 0), sails are closed"
   },
-
   "shipwayDuration": {
     "description": "Time to build a ship at the shipway, by rank",
     "elite_unique": "0 seconds (instant)",
@@ -601,7 +645,6 @@
     "rank1": "21600 seconds (6 hours)",
     "sourceMethod": "Gameplay.ShipwayDuration()"
   },
-
   "constants": {
     "physics": {
       "CShipMovement": 0.00036421,
@@ -640,7 +683,10 @@
       "CShipSpeed3Finish": 4.5,
       "CShipSpeed3BonusNpc": 5.0,
       "CShipSpeed3Finish_add": 0.45,
-      "CShipSpeed3Finish_loss": {"turningLoss": 2.5, "stoppingLoss": 7.0},
+      "CShipSpeed3Finish_loss": {
+        "turningLoss": 2.5,
+        "stoppingLoss": 7.0
+      },
       "CSpeedStartDrift": 18,
       "CSpeedStartDriftRang2p": 19
     },
@@ -714,136 +760,499 @@
         "D_MaxDeriv": 0.36
       },
       "supportUnitsCount": 6,
-      "supportUnitsPressureWater": [2, 2, 8, 8, 5, 5]
+      "supportUnitsPressureWater": [
+        2,
+        2,
+        8,
+        8,
+        5,
+        5
+      ]
     },
     "sailAnimation": {
       "CSailAnimDurationBasic": 3.0,
       "sailAnimFactor": 0.66
     }
   },
-
   "completeEffectEnum": {
     "description": "All ShipBonusEffect values — P = percentage, M = flat, B = boolean",
     "effects": {
-      "Identity": {"id": 0, "description": "No effect / identity"},
-      "PHealth": {"id": 1, "description": "Percentage HP bonus"},
-      "PCannonsReload": {"id": 2, "description": "Percentage cannon reload speed bonus"},
-      "PSpeed": {"id": 3, "description": "Percentage speed bonus"},
-      "PAddCollisionDamage": {"id": 4, "description": "Percentage collision damage bonus"},
-      "PArmor": {"id": 5, "description": "Percentage armor bonus"},
-      "PCapacity": {"id": 6, "description": "Percentage capacity bonus"},
-      "MCapacity": {"id": 7, "description": "Flat capacity bonus"},
-      "MExtraPlaces": {"id": 8, "description": "Flat extra crew places"},
-      "PBallDamage": {"id": 9, "description": "Percentage cannonball damage bonus"},
-      "MHealth": {"id": 10, "description": "Flat HP bonus"},
-      "BMoreFireAreaAndBurning": {"id": 11, "description": "Boolean: more fire area and burning"},
-      "MSpeed": {"id": 12, "description": "Flat speed bonus"},
-      "MArmor": {"id": 13, "description": "Flat armor bonus"},
-      "PVisibilityZone": {"id": 14, "description": "Percentage view distance bonus"},
-      "PPlayerMendingKitEffectivity": {"id": 15, "description": "Percentage mending kit effectivity"},
-      "PSailProtection": {"id": 16, "description": "Percentage sail protection (reduces sail damage)"},
-      "PReduceFireAreaDamage": {"id": 17, "description": "Percentage fire area damage reduction"},
-      "PReduceDamageToNose": {"id": 18, "description": "Percentage nose damage reduction"},
-      "PReduceDamageToSailFromBurning": {"id": 19, "description": "Percentage sail burning damage reduction"},
-      "MPlayerJerkEffectPowerAdd": {"id": 20, "description": "Flat jerk effect power bonus"},
-      "PPlayerSightFocusSpeedAdd": {"id": 21, "description": "Percentage sight focus speed bonus"},
-      "PPowderKegReloadBoost": {"id": 22, "description": "Percentage powder keg reload boost"},
-      "PSpecialUnitImperialUniqueChance": {"id": 23, "description": "Percentage chance for imperial special unit"},
-      "PCannonBallsSpeed": {"id": 24, "description": "Percentage cannonball speed bonus"},
-      "PMortarDamageBonus": {"id": 25, "description": "Percentage mortar damage bonus"},
-      "BMortarAngleBonus": {"id": 26, "description": "Boolean mortar angle bonus"},
-      "MCannonsAngleBonus": {"id": 27, "description": "Flat cannon angle bonus (degrees)"},
-      "MMobilityBonus": {"id": 28, "description": "Flat mobility bonus"},
-      "PChangeShipSpeedBonus": {"id": 29, "description": "Percentage speed change (acceleration) bonus"},
-      "PDamageCannonIfStrengthBelow30P": {"id": 30, "description": "Percentage damage bonus when HP < 50%"},
-      "PFishingSpeed": {"id": 31, "description": "Percentage fishing speed bonus"},
-      "PFrontAndBackCannonsAddDamage": {"id": 32, "description": "Percentage front/back cannon damage bonus"},
-      "PMoreWeightAtBoarding": {"id": 33, "description": "Percentage boarding weight bonus"},
-      "MMakeInvisiblePlaces": {"id": 34, "description": "Makes crew places invisible"},
-      "PPowerupItemsReload": {"id": 35, "description": "Percentage powerup items reload (MULTIPLICATIVE)"},
-      "PChangeCBallsSpeed": {"id": 36, "description": "Percentage cannonball change speed"},
-      "MCannonsDistance": {"id": 37, "description": "Flat cannon distance bonus (capped at 15)"},
-      "MMortarMaxDistance": {"id": 38, "description": "Flat mortar max distance bonus"},
-      "PSouredItemsReduce": {"id": 39, "description": "Percentage spoiled items reduction"},
-      "PServer_XpAndRewardBonus": {"id": 40, "description": "Percentage XP and reward bonus (server)"},
-      "PReduceReceivesMortarDamage": {"id": 41, "description": "Percentage mortar damage received reduction"},
-      "PReduceLossesWhenKilled": {"id": 42, "description": "Percentage loss reduction when killed"},
-      "PReducePowderKegDamage": {"id": 43, "description": "Percentage powder keg damage reduction"},
-      "PDamageToBuilds": {"id": 44, "description": "Percentage damage to buildings bonus"},
-      "PReduceDamage": {"id": 45, "description": "Percentage all damage reduction (capped at 0.99)"},
-      "PFalkonetReloadBoost": {"id": 46, "description": "Percentage falconet reload boost (MULTIPLICATIVE)"},
-      "PMendingEffectivity": {"id": 47, "description": "Percentage mending effectivity bonus"},
-      "BExtraMortars": {"id": 49, "description": "Boolean: extra mortar upgrade available"},
-      "ServMendingSailes": {"id": 50, "description": "Server-side sail mending per sec"},
-      "ServMendingStrength": {"id": 51, "description": "Server-side strength mending per sec"},
-      "ServMendingStrengthTemporal": {"id": 52, "description": "Server-side temporal strength mending per sec"},
-      "BCannonBallFosforEffects": {"id": 53, "description": "Boolean: phosphor cannonball effects"},
-      "MWeaponPenetration": {"id": 54, "description": "Flat weapon penetration bonus"},
-      "BCannonBallBobershell": {"id": 55, "description": "Boolean: bombershell cannonball effects"},
-      "PMortarDecreaseDeadzone": {"id": 56, "description": "Percentage mortar deadzone decrease"},
-      "PTiltReduce": {"id": 57, "description": "Percentage tilt reduction"},
-      "MExtraUpgradePlaces": {"id": 58, "description": "Flat extra upgrade slots"},
-      "PBoardingGold": {"id": 59, "description": "Percentage boarding gold bonus"},
-      "PImproveQuantityOfDropCannons": {"id": 60, "description": "Percentage improved cannon drop quantity"},
-      "PMarchingSpeed": {"id": 62, "description": "Percentage marching mode speed bonus"},
-      "BDestroyFloodingShopByCollision": {"id": 63, "description": "Boolean: destroy flooding ship by collision"},
-      "PDropLootingSpeed": {"id": 64, "description": "Percentage drop looting speed bonus"},
-      "PBoardingDistance": {"id": 65, "description": "Percentage boarding distance bonus"},
-      "PMortarReload": {"id": 66, "description": "Percentage mortar reload bonus (MULTIPLICATIVE)"},
-      "PReduceCannonsScatter": {"id": 67, "description": "Percentage cannon scatter reduction"},
-      "PFoodValueBonus": {"id": 68, "description": "Percentage food value bonus"},
-      "PLootInteropDistance": {"id": 69, "description": "Percentage loot interaction distance bonus"},
-      "BBoardingStartsMusketeersDefence": {"id": 70, "description": "Boolean: boarding starts musketeer defence"},
-      "PBigFireFightingSpeed": {"id": 71, "description": "Percentage big fire fighting speed"},
-      "PReduceBigFireDamage": {"id": 72, "description": "Percentage big fire damage reduction"},
-      "PMicrofireFightingSpeed": {"id": 73, "description": "Percentage microfire fighting speed"},
-      "BHealUnitsWhenMending": {"id": 74, "description": "Boolean: heal units when mending"},
-      "PXpBonusUpgradesAndBranch": {"id": 75, "description": "Percentage XP bonus from upgrades and branch"},
-      "PCrewFineReduce": {"id": 76, "description": "Percentage crew fine reduction"},
-      "PSpecialUnitGameModeUniqueChance": {"id": 77, "description": "Percentage special unit game mode chance"},
-      "PReloadingAfterSingleShot": {"id": 78, "description": "Percentage reload bonus after single shot"},
-      "PCannonsReloadWithLowHp": {"id": 79, "description": "Percentage cannon reload bonus at low HP"},
-      "PMortarAimSpeed": {"id": 80, "description": "Percentage mortar aim speed bonus"},
-      "BSpecialUnitEndConflicts": {"id": 81, "description": "Boolean: special unit ends crew conflicts"},
-      "PMortarReloadWhenCannonsAreReloaded": {"id": 82, "description": "Percentage mortar reload when cannons ready"},
-      "PDecreaseSpeedLossMarchingMode": {"id": 83, "description": "Percentage decrease speed loss in marching"},
-      "PMoreLootAtSea": {"id": 84, "description": "Percentage more loot at sea"},
-      "MMobility0And1": {"id": 85, "description": "Flat mobility bonus at low speeds (divided by 100)"},
-      "MMobilityWithLowHp": {"id": 86, "description": "Flat mobility at low HP"},
-      "PSailAutoRepairSpeed": {"id": 87, "description": "Percentage sail auto-repair speed"},
-      "BRepairAllowOnSpeed2": {"id": 88, "description": "Boolean: allow repair at speed 2"},
-      "POverweightFineReduce": {"id": 89, "description": "Percentage overweight fine reduction"},
-      "BAllowConsumeAnimalsToFood": {"id": 90, "description": "Boolean: allow consuming animals as food"},
-      "PSpecialUnitChanseAtSea": {"id": 91, "description": "Percentage special unit chance at sea"},
-      "PRestoreHealthWhenGettingDebris": {"id": 92, "description": "Percentage HP restore when collecting debris"},
-      "PFishingProfit": {"id": 93, "description": "Percentage fishing profit bonus"},
-      "PXpBonus": {"id": 94, "description": "Percentage XP only bonus"},
-      "PReduceCannonsWear": {"id": 95, "description": "Percentage cannon wear reduction"},
-      "BBoardingStartsWithNoTarget": {"id": 96, "description": "Boolean: boarding starts with no target"},
-      "PBoardingHookReload": {"id": 97, "description": "Percentage boarding hook reload (MULTIPLICATIVE)"},
-      "BExtraItemHasNoTimeout": {"id": 98, "description": "Boolean: extra item has no timeout"},
-      "PMoreBondmanFromBoarding": {"id": 99, "description": "Percentage more bondmen from boarding"},
-      "PMinimapLootVisibleDistance": {"id": 100, "description": "Percentage minimap loot visible distance"},
-      "BCrewWillntDeadInSea": {"id": 101, "description": "Boolean: crew won't die in sea"},
-      "PCrewProtectionCballs": {"id": 102, "description": "Percentage crew protection from cannonballs"},
-      "PReduceSickGettingChanse": {"id": 103, "description": "Percentage reduce sickness chance"},
-      "PBoardingCrewProtectionCballs": {"id": 104, "description": "Percentage boarding crew cannonball protection"},
-      "PSailorsCrewProtectionCballs": {"id": 105, "description": "Percentage sailors cannonball protection"},
-      "MMoreExtraCrew": {"id": 106, "description": "Flat extra crew limit bonus"},
-      "BAllowPowderKegAnySpeed": {"id": 107, "description": "Boolean: allow powder kegs at any speed"},
-      "PMoreRareItemsAtSea": {"id": 108, "description": "Percentage more rare items at sea"},
-      "PReduceSickDeadChanse": {"id": 109, "description": "Percentage reduce sickness death chance"},
-      "PPowderKegIncreaseTriggerRadius": {"id": 110, "description": "Percentage powder keg trigger radius increase"},
-      "PRestoreUnitsAfterBoarding": {"id": 111, "description": "Percentage restore units after boarding"},
-      "PMobilityBonus": {"id": 112, "description": "Percentage mobility bonus (applied to BasicMobility)"},
-      "MPReduceCannonsQuantity": {"id": 113, "description": "Flat reduce cannons quantity in boarding"},
-      "PBuckshotDamage": {"id": 114, "description": "Percentage buckshot damage"},
-      "BDisableWindCourseChange": {"id": 115, "description": "Boolean: disable wind course change"},
-      "PInvisibility": {"id": 116, "description": "Percentage invisibility"},
-      "BCanGoOnly1Speed": {"id": 117, "description": "Boolean: can only use speed 1"},
-      "BAvanpostMode": {"id": 118, "description": "Boolean: outpost/avanpost mode"},
-      "PSpeedPaddles": {"id": 119, "description": "Percentage paddle speed bonus"},
-      "BCanGoOnly2Speed": {"id": 120, "description": "Boolean: can only use speed 2"}
+      "Identity": {
+        "id": 0,
+        "description": "No effect / identity"
+      },
+      "PHealth": {
+        "id": 1,
+        "description": "Percentage HP bonus"
+      },
+      "PCannonsReload": {
+        "id": 2,
+        "description": "Percentage cannon reload speed bonus"
+      },
+      "PSpeed": {
+        "id": 3,
+        "description": "Percentage speed bonus"
+      },
+      "PAddCollisionDamage": {
+        "id": 4,
+        "description": "Percentage collision damage bonus"
+      },
+      "PArmor": {
+        "id": 5,
+        "description": "Percentage armor bonus"
+      },
+      "PCapacity": {
+        "id": 6,
+        "description": "Percentage capacity bonus"
+      },
+      "MCapacity": {
+        "id": 7,
+        "description": "Flat capacity bonus"
+      },
+      "MExtraPlaces": {
+        "id": 8,
+        "description": "Flat extra crew places"
+      },
+      "PBallDamage": {
+        "id": 9,
+        "description": "Percentage cannonball damage bonus"
+      },
+      "MHealth": {
+        "id": 10,
+        "description": "Flat HP bonus"
+      },
+      "BMoreFireAreaAndBurning": {
+        "id": 11,
+        "description": "Boolean: more fire area and burning"
+      },
+      "MSpeed": {
+        "id": 12,
+        "description": "Flat speed bonus"
+      },
+      "MArmor": {
+        "id": 13,
+        "description": "Flat armor bonus"
+      },
+      "PVisibilityZone": {
+        "id": 14,
+        "description": "Percentage view distance bonus"
+      },
+      "PPlayerMendingKitEffectivity": {
+        "id": 15,
+        "description": "Percentage mending kit effectivity"
+      },
+      "PSailProtection": {
+        "id": 16,
+        "description": "Percentage sail protection (reduces sail damage)"
+      },
+      "PReduceFireAreaDamage": {
+        "id": 17,
+        "description": "Percentage fire area damage reduction"
+      },
+      "PReduceDamageToNose": {
+        "id": 18,
+        "description": "Percentage nose damage reduction"
+      },
+      "PReduceDamageToSailFromBurning": {
+        "id": 19,
+        "description": "Percentage sail burning damage reduction"
+      },
+      "MPlayerJerkEffectPowerAdd": {
+        "id": 20,
+        "description": "Flat jerk effect power bonus"
+      },
+      "PPlayerSightFocusSpeedAdd": {
+        "id": 21,
+        "description": "Percentage sight focus speed bonus"
+      },
+      "PPowderKegReloadBoost": {
+        "id": 22,
+        "description": "Percentage powder keg reload boost"
+      },
+      "PSpecialUnitImperialUniqueChance": {
+        "id": 23,
+        "description": "Percentage chance for imperial special unit"
+      },
+      "PCannonBallsSpeed": {
+        "id": 24,
+        "description": "Percentage cannonball speed bonus"
+      },
+      "PMortarDamageBonus": {
+        "id": 25,
+        "description": "Percentage mortar damage bonus"
+      },
+      "BMortarAngleBonus": {
+        "id": 26,
+        "description": "Boolean mortar angle bonus"
+      },
+      "MCannonsAngleBonus": {
+        "id": 27,
+        "description": "Flat cannon angle bonus (degrees)"
+      },
+      "MMobilityBonus": {
+        "id": 28,
+        "description": "Flat mobility bonus"
+      },
+      "PChangeShipSpeedBonus": {
+        "id": 29,
+        "description": "Percentage speed change (acceleration) bonus"
+      },
+      "PDamageCannonIfStrengthBelow30P": {
+        "id": 30,
+        "description": "Percentage damage bonus when HP < 50%"
+      },
+      "PFishingSpeed": {
+        "id": 31,
+        "description": "Percentage fishing speed bonus"
+      },
+      "PFrontAndBackCannonsAddDamage": {
+        "id": 32,
+        "description": "Percentage front/back cannon damage bonus"
+      },
+      "PMoreWeightAtBoarding": {
+        "id": 33,
+        "description": "Percentage boarding weight bonus"
+      },
+      "MMakeInvisiblePlaces": {
+        "id": 34,
+        "description": "Makes crew places invisible"
+      },
+      "PPowerupItemsReload": {
+        "id": 35,
+        "description": "Percentage powerup items reload (MULTIPLICATIVE)"
+      },
+      "PChangeCBallsSpeed": {
+        "id": 36,
+        "description": "Percentage cannonball change speed"
+      },
+      "MCannonsDistance": {
+        "id": 37,
+        "description": "Flat cannon distance bonus (capped at 15)"
+      },
+      "MMortarMaxDistance": {
+        "id": 38,
+        "description": "Flat mortar max distance bonus"
+      },
+      "PSouredItemsReduce": {
+        "id": 39,
+        "description": "Percentage spoiled items reduction"
+      },
+      "PServer_XpAndRewardBonus": {
+        "id": 40,
+        "description": "Percentage XP and reward bonus (server)"
+      },
+      "PReduceReceivesMortarDamage": {
+        "id": 41,
+        "description": "Percentage mortar damage received reduction"
+      },
+      "PReduceLossesWhenKilled": {
+        "id": 42,
+        "description": "Percentage loss reduction when killed"
+      },
+      "PReducePowderKegDamage": {
+        "id": 43,
+        "description": "Percentage powder keg damage reduction"
+      },
+      "PDamageToBuilds": {
+        "id": 44,
+        "description": "Percentage damage to buildings bonus"
+      },
+      "PReduceDamage": {
+        "id": 45,
+        "description": "Percentage all damage reduction (capped at 0.99)"
+      },
+      "PFalkonetReloadBoost": {
+        "id": 46,
+        "description": "Percentage falconet reload boost (MULTIPLICATIVE)"
+      },
+      "PMendingEffectivity": {
+        "id": 47,
+        "description": "Percentage mending effectivity bonus"
+      },
+      "BExtraMortars": {
+        "id": 49,
+        "description": "Boolean: extra mortar upgrade available"
+      },
+      "ServMendingSailes": {
+        "id": 50,
+        "description": "Server-side sail mending per sec"
+      },
+      "ServMendingStrength": {
+        "id": 51,
+        "description": "Server-side strength mending per sec"
+      },
+      "ServMendingStrengthTemporal": {
+        "id": 52,
+        "description": "Server-side temporal strength mending per sec"
+      },
+      "BCannonBallFosforEffects": {
+        "id": 53,
+        "description": "Boolean: phosphor cannonball effects"
+      },
+      "MWeaponPenetration": {
+        "id": 54,
+        "description": "Flat weapon penetration bonus"
+      },
+      "BCannonBallBobershell": {
+        "id": 55,
+        "description": "Boolean: bombershell cannonball effects"
+      },
+      "PMortarDecreaseDeadzone": {
+        "id": 56,
+        "description": "Percentage mortar deadzone decrease"
+      },
+      "PTiltReduce": {
+        "id": 57,
+        "description": "Percentage tilt reduction"
+      },
+      "MExtraUpgradePlaces": {
+        "id": 58,
+        "description": "Flat extra upgrade slots"
+      },
+      "PBoardingGold": {
+        "id": 59,
+        "description": "Percentage boarding gold bonus"
+      },
+      "PImproveQuantityOfDropCannons": {
+        "id": 60,
+        "description": "Percentage improved cannon drop quantity"
+      },
+      "PMarchingSpeed": {
+        "id": 62,
+        "description": "Percentage marching mode speed bonus"
+      },
+      "BDestroyFloodingShopByCollision": {
+        "id": 63,
+        "description": "Boolean: destroy flooding ship by collision"
+      },
+      "PDropLootingSpeed": {
+        "id": 64,
+        "description": "Percentage drop looting speed bonus"
+      },
+      "PBoardingDistance": {
+        "id": 65,
+        "description": "Percentage boarding distance bonus"
+      },
+      "PMortarReload": {
+        "id": 66,
+        "description": "Percentage mortar reload bonus (MULTIPLICATIVE)"
+      },
+      "PReduceCannonsScatter": {
+        "id": 67,
+        "description": "Percentage cannon scatter reduction"
+      },
+      "PFoodValueBonus": {
+        "id": 68,
+        "description": "Percentage food value bonus"
+      },
+      "PLootInteropDistance": {
+        "id": 69,
+        "description": "Percentage loot interaction distance bonus"
+      },
+      "BBoardingStartsMusketeersDefence": {
+        "id": 70,
+        "description": "Boolean: boarding starts musketeer defence"
+      },
+      "PBigFireFightingSpeed": {
+        "id": 71,
+        "description": "Percentage big fire fighting speed"
+      },
+      "PReduceBigFireDamage": {
+        "id": 72,
+        "description": "Percentage big fire damage reduction"
+      },
+      "PMicrofireFightingSpeed": {
+        "id": 73,
+        "description": "Percentage microfire fighting speed"
+      },
+      "BHealUnitsWhenMending": {
+        "id": 74,
+        "description": "Boolean: heal units when mending"
+      },
+      "PXpBonusUpgradesAndBranch": {
+        "id": 75,
+        "description": "Percentage XP bonus from upgrades and branch"
+      },
+      "PCrewFineReduce": {
+        "id": 76,
+        "description": "Percentage crew fine reduction"
+      },
+      "PSpecialUnitGameModeUniqueChance": {
+        "id": 77,
+        "description": "Percentage special unit game mode chance"
+      },
+      "PReloadingAfterSingleShot": {
+        "id": 78,
+        "description": "Percentage reload bonus after single shot"
+      },
+      "PCannonsReloadWithLowHp": {
+        "id": 79,
+        "description": "Percentage cannon reload bonus at low HP"
+      },
+      "PMortarAimSpeed": {
+        "id": 80,
+        "description": "Percentage mortar aim speed bonus"
+      },
+      "BSpecialUnitEndConflicts": {
+        "id": 81,
+        "description": "Boolean: special unit ends crew conflicts"
+      },
+      "PMortarReloadWhenCannonsAreReloaded": {
+        "id": 82,
+        "description": "Percentage mortar reload when cannons ready"
+      },
+      "PDecreaseSpeedLossMarchingMode": {
+        "id": 83,
+        "description": "Percentage decrease speed loss in marching"
+      },
+      "PMoreLootAtSea": {
+        "id": 84,
+        "description": "Percentage more loot at sea"
+      },
+      "MMobility0And1": {
+        "id": 85,
+        "description": "Flat mobility bonus at low speeds (divided by 100)"
+      },
+      "MMobilityWithLowHp": {
+        "id": 86,
+        "description": "Flat mobility at low HP"
+      },
+      "PSailAutoRepairSpeed": {
+        "id": 87,
+        "description": "Percentage sail auto-repair speed"
+      },
+      "BRepairAllowOnSpeed2": {
+        "id": 88,
+        "description": "Boolean: allow repair at speed 2"
+      },
+      "POverweightFineReduce": {
+        "id": 89,
+        "description": "Percentage overweight fine reduction"
+      },
+      "BAllowConsumeAnimalsToFood": {
+        "id": 90,
+        "description": "Boolean: allow consuming animals as food"
+      },
+      "PSpecialUnitChanseAtSea": {
+        "id": 91,
+        "description": "Percentage special unit chance at sea"
+      },
+      "PRestoreHealthWhenGettingDebris": {
+        "id": 92,
+        "description": "Percentage HP restore when collecting debris"
+      },
+      "PFishingProfit": {
+        "id": 93,
+        "description": "Percentage fishing profit bonus"
+      },
+      "PXpBonus": {
+        "id": 94,
+        "description": "Percentage XP only bonus"
+      },
+      "PReduceCannonsWear": {
+        "id": 95,
+        "description": "Percentage cannon wear reduction"
+      },
+      "BBoardingStartsWithNoTarget": {
+        "id": 96,
+        "description": "Boolean: boarding starts with no target"
+      },
+      "PBoardingHookReload": {
+        "id": 97,
+        "description": "Percentage boarding hook reload (MULTIPLICATIVE)"
+      },
+      "BExtraItemHasNoTimeout": {
+        "id": 98,
+        "description": "Boolean: extra item has no timeout"
+      },
+      "PMoreBondmanFromBoarding": {
+        "id": 99,
+        "description": "Percentage more bondmen from boarding"
+      },
+      "PMinimapLootVisibleDistance": {
+        "id": 100,
+        "description": "Percentage minimap loot visible distance"
+      },
+      "BCrewWillntDeadInSea": {
+        "id": 101,
+        "description": "Boolean: crew won't die in sea"
+      },
+      "PCrewProtectionCballs": {
+        "id": 102,
+        "description": "Percentage crew protection from cannonballs"
+      },
+      "PReduceSickGettingChanse": {
+        "id": 103,
+        "description": "Percentage reduce sickness chance"
+      },
+      "PBoardingCrewProtectionCballs": {
+        "id": 104,
+        "description": "Percentage boarding crew cannonball protection"
+      },
+      "PSailorsCrewProtectionCballs": {
+        "id": 105,
+        "description": "Percentage sailors cannonball protection"
+      },
+      "MMoreExtraCrew": {
+        "id": 106,
+        "description": "Flat extra crew limit bonus"
+      },
+      "BAllowPowderKegAnySpeed": {
+        "id": 107,
+        "description": "Boolean: allow powder kegs at any speed"
+      },
+      "PMoreRareItemsAtSea": {
+        "id": 108,
+        "description": "Percentage more rare items at sea"
+      },
+      "PReduceSickDeadChanse": {
+        "id": 109,
+        "description": "Percentage reduce sickness death chance"
+      },
+      "PPowderKegIncreaseTriggerRadius": {
+        "id": 110,
+        "description": "Percentage powder keg trigger radius increase"
+      },
+      "PRestoreUnitsAfterBoarding": {
+        "id": 111,
+        "description": "Percentage restore units after boarding"
+      },
+      "PMobilityBonus": {
+        "id": 112,
+        "description": "Percentage mobility bonus (applied to BasicMobility)"
+      },
+      "MPReduceCannonsQuantity": {
+        "id": 113,
+        "description": "Flat reduce cannons quantity in boarding"
+      },
+      "PBuckshotDamage": {
+        "id": 114,
+        "description": "Percentage buckshot damage"
+      },
+      "BDisableWindCourseChange": {
+        "id": 115,
+        "description": "Boolean: disable wind course change"
+      },
+      "PInvisibility": {
+        "id": 116,
+        "description": "Percentage invisibility"
+      },
+      "BCanGoOnly1Speed": {
+        "id": 117,
+        "description": "Boolean: can only use speed 1"
+      },
+      "BAvanpostMode": {
+        "id": 118,
+        "description": "Boolean: outpost/avanpost mode"
+      },
+      "PSpeedPaddles": {
+        "id": 119,
+        "description": "Percentage paddle speed bonus"
+      },
+      "BCanGoOnly2Speed": {
+        "id": 120,
+        "description": "Boolean: can only use speed 2"
+      }
     }
   }
 }
