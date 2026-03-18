@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "source": "Common.dll decompilation via dnfile + binary string extraction",
+    "version": "2026-03-18",
+    "note": "Full IL decompilation requires ILSpy on Windows/.NET. These are extracted constants and method signatures."
+  },
+  "effectKeys": {
+    "description": "All bonus/effect key prefixes found in Common.dll",
+    "flat": {
+      "MSpeed": "Flat speed modifier (per-rank tiered, 7 values). NOTE: values are 2x display knots - divide by 2",
+      "MHealth": "Flat HP modifier (per-rank tiered)",
+      "MArmor": "Flat armor modifier (per-rank tiered)",
+      "MMobility0And1": "Flat mobility modifier for rank 0 and 1 ships",
+      "MMobilityBonus": "Flat mobility bonus",
+      "MMobilityWithLowHp": "Mobility bonus when HP is low",
+      "MPlayerJerkEffectPowerAdd": "Jerk effect power (display as-is)",
+      "MCannonsAngleBonus": "Cannon firing angle bonus",
+      "MCannonsDistance": "Cannon distance/range bonus",
+      "MCapacity": "Hold capacity modifier",
+      "MExtraPlaces": "Extra crew slot modifier",
+      "MExtraUpgradePlaces": "Extra upgrade slot modifier",
+      "MMakeInvisiblePlaces": "Hidden crew capacity modifier",
+      "MMoreExtraCrew": "Additional extra crew modifier",
+      "MMortarMaxDistance": "Mortar maximum distance bonus",
+      "MWeaponPenetration": "Weapon penetration bonus",
+      "MPReduceCannonsQuantity": "Reduce number of cannons"
+    },
+    "percentage": {
+      "PSpeed": "Percentage speed modifier",
+      "PHealth": "Percentage HP modifier",
+      "PSpeedPaddles": "Percentage paddle speed modifier"
+    },
+    "boolean": {
+      "BExtraMortars": "Enable extra mortar slots",
+      "BExtraItemHasNoTimeout": "Consumable items have no cooldown",
+      "BMortarAngleBonus": "Mortar angle bonus enabled",
+      "BSingleGunAdditionalDamage": "Single gun additional damage enabled"
+    },
+    "captain": {
+      "CWorkshopLevel": "Workshop level from captain skill",
+      "CFishingRod": "Fishing rod from captain skill",
+      "CBoardingHooks_Display": "Boarding hooks display"
+    },
+    "mortar": {
+      "CBallsMortar": "Standard mortar ammo",
+      "CBallsMortar2": "Secondary mortar ammo",
+      "CBallsMortarKeg": "Mortar keg ammo",
+      "CBallsMortarSuper": "Super mortar ammo",
+      "CBallsMortarTower": "Tower mortar ammo"
+    }
+  },
+  "bonusMethods": {
+    "description": "Key gameplay bonus calculation methods found in Common.dll",
+    "speed": [
+      "get_BasicSpeed",
+      "get_SpeedChangeBonus",
+      "get_EffectJerkBonusSpeed",
+      "get_MarchingModeSpeed",
+      "get_SpeedLossInMarchingMode",
+      "get_SpeedWithoutTempEffects",
+      "get_PaddleSpeedExtraBonus",
+      "get_MarchingModeSpeedBonusSail",
+      "get_SpeedCaps",
+      "get_CapacitySpeedFactor",
+      "get_AdditionalShipSpeedReduce",
+      "StormBonusSpeed",
+      "CBackwindSpeed"
+    ],
+    "damage": [
+      "get_BallDamageBonusToAll",
+      "get_WeaponPenetrationBonus",
+      "get_DamageBonusForCollision",
+      "get_DamageReduce",
+      "get_ReduceDamageToNose",
+      "get_ReduceAnyDamageFromMorar",
+      "get_FrontAndBackWeaponsDamageBonus",
+      "get_BuckshotDamage",
+      "get_FireAreaDamageFactor",
+      "get_BigFireDamageFactor",
+      "get_DamageUpIfStrengthBefore30pNow",
+      "get_BallDamageBonusToBuilds",
+      "ComputeDamageFactorTo",
+      "DamageFactorHelper",
+      "MakeDamage",
+      "MakeSimpleDamage",
+      "MakeCollisionDamage",
+      "ServerDamage"
+    ],
+    "mortar": [
+      "get_MortarDamagBonus",
+      "get_MortarDamageToSailFactor",
+      "get_MortarMaxDistanceBonus",
+      "get_MortarReloadBonus",
+      "get_MortarAimingSpeed",
+      "get_MortarDeadzoneDecrease",
+      "get_MortarNeedsPreparation",
+      "MortarPreparationTimeMs",
+      "PenetrationMortar",
+      "ReloadTimeMortar",
+      "DistanceMortar",
+      "get_MortarResourceLimit",
+      "get_MortarResourceFactor",
+      "get_MortarShipModification",
+      "GetMortarPoundage",
+      "GetMortarsAverageParameters",
+      "get_HasExtraMortarUpgrade"
+    ],
+    "crew": [
+      "get_PortEquipUnitsShipWindow_boardDamage",
+      "SetCrewDamage",
+      "CreateDestroyCrewFromDamage",
+      "get_BoardingHookReloadBonus",
+      "get_BoardingWeightBonus",
+      "get_MoreBondmanFromBoardingBonus",
+      "get_GetSpecialUnitChanseBonusImperal",
+      "get_GetSpecialUnitChanseBonusAtSea",
+      "get_GetSpecialUnitChanseBonusGameModes"
+    ],
+    "sailing": [
+      "get_SailRepairSpeed",
+      "get_DamageToSailFromBurningFactor",
+      "DamageToSailFactorFromNodeID",
+      "SailDamageEnergy",
+      "get_MortarDamageToSailFactor"
+    ],
+    "economy": [
+      "get_PlayerXpAndRewardBonus",
+      "upgradeXpBonus",
+      "LootBonus",
+      "PvpMarksBonus",
+      "FactoryLootBonus",
+      "TradingQuestsBonus",
+      "DropLootingSpeedBonus",
+      "get_LootAtSeaBonus",
+      "get_LootRareItemsChanseBonus",
+      "get_FishingSpeedBonus",
+      "get_FishingProfitBonus",
+      "ResearchBonus"
+    ],
+    "misc": [
+      "get_MendingKitEffectivityBonus",
+      "get_MendingEffectivityAdd",
+      "get_ChangeCBallsBonus",
+      "get_CannonsReloadSpeedBonus",
+      "get_FalkonetReloadBonus",
+      "get_SightFocusSpeedAdd",
+      "get_PowerupItemReloadBonus",
+      "get_PowderKegIncreaseTriggerRadiusBonus",
+      "get_IsInvisibilityBonusEnabled",
+      "get_ReloadingBonusAfterSingleShot",
+      "get_FoodValueBonus",
+      "get_CapacityBonus",
+      "get_LootInteropDistanceBonus"
+    ]
+  },
+  "dllTypes": {
+    "Common.dll": {
+      "totalTypes": 1258,
+      "keyNamespaces": {
+        "Common": 27,
+        "Common.Account": 36,
+        "Common.Data": 13,
+        "Common.Game": 339,
+        "Common.Game.Console": 20,
+        "Common.Packets": 248,
+        "Common.Resources": 93,
+        "CommonDataTypes": 46,
+        "UWPhysicsWOSLib": 14,
+        "WOS.Server.Core": 3
+      }
+    }
+  },
+  "shipClasses": ["Destroyer", "Battleship", "CargoShip", "Hardship", "Mortar"],
+  "factions": ["None", "Espaniol", "Antilia", "KaiAndSeveria", "Empire"],
+  "coolnessLevels": ["Default", "Unique", "Elite", "Empire"],
+  "speedConversion": {
+    "note": "MSpeed values in effect strings are 2x the display value in knots. Divide by 2 for display.",
+    "formula": "displaySpeed = internalValue / 2"
+  },
+  "rankTieredValues": {
+    "note": "Per-rank tiered values have 7 entries: [Rank6, Rank5, Rank4, Rank3, Rank2, Rank1, Rank0]",
+    "indexFormula": "rankedValues[7 - rate] where rate 1=highest(Rank0) to 7=lowest(Rank6)"
+  }
+}
