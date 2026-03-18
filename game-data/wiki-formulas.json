@@ -59,6 +59,23 @@
       "broadside": {
         "description": "Standard hull damage — no special modifiers. This is the default hit zone."
       }
+    },
+    "confirmedFormula": {
+      "source": "ship_stat_tt_3 (in-game armor tooltip) + gamewiki_weapons_text3",
+      "formula": "Damage = max(0, Penetration - EffectiveArmor) × Ammo.DamageFactor × BonusEffects",
+      "effectiveArmor": {
+        "description": "Armor thickness increases at an angle, reducing damage",
+        "broadside": "EffectiveArmor = BaseArmor (flat angle = easiest to penetrate)",
+        "angled": "EffectiveArmor = BaseArmor × AngleMultiplier (angled = thicker armor)",
+        "bow": "EffectiveArmor is HIGHEST at bow (more sturdy built-in)",
+        "stern": "EffectiveArmor is LOWEST at stern (less armored)",
+        "note": "Exact angle multiplier formula is server-side, not in client code"
+      },
+      "example": "Cannon pen=10, armor=2 → broadside damage = (10-2) × ammo_factor = 8 × ammo_factor",
+      "zeroDamage": "If Penetration <= EffectiveArmor, damage is 0 (cannon cannot penetrate)",
+      "ammoFactor": "Each ammo type has DamageFactor multiplier (round shot = 1.0)",
+      "bonusEffects": "BallDamageBonusToAll, DamageUpIfStrengthBefore30pNow, FrontAndBackWeaponsDamageBonus, etc.",
+      "tooltipSource": "Armor - the thickness of the side cloth, which reduces damage from cannonballs. If the penetration of a cannon is 10 and the armor is 2, then the ship will take 8 points of damage * ammo type damage and effects. At an angle, the thickness increases, which reduces damage. The bow is more sturdy and the stern is less armored"
     }
   },
   "speedCalculation": {
