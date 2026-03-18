@@ -1,0 +1,2326 @@
+{
+  "meta": {
+    "source": "PVP_Fight_1.pcapng decrypted packets",
+    "date": "2026-03-18",
+    "total_events": 125
+  },
+  "damage_by_node": {
+    "38": {
+      "count": 1,
+      "avg": 2.02,
+      "min": 2.02,
+      "max": 2.02,
+      "values": [
+        2.02
+      ]
+    },
+    "0": {
+      "count": 105,
+      "avg": 16.43,
+      "min": 1.0,
+      "max": 179.04,
+      "values": [
+        1.0,
+        1.0,
+        1.25,
+        4.0,
+        4.0,
+        5.93,
+        5.93,
+        7.44,
+        7.55,
+        7.66,
+        7.79,
+        7.87,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.04,
+        8.1,
+        8.22,
+        8.62,
+        8.72,
+        8.72,
+        8.73,
+        10.08,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        14.22,
+        14.25,
+        14.69,
+        14.71,
+        14.79,
+        14.86,
+        14.91,
+        14.93,
+        14.94,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.04,
+        15.05,
+        15.63,
+        15.64,
+        15.7,
+        15.71,
+        15.71,
+        15.75,
+        15.78,
+        15.78,
+        15.78,
+        15.78,
+        15.78,
+        15.78,
+        15.89,
+        16.0,
+        16.0,
+        16.0,
+        16.51,
+        16.79,
+        17.28,
+        17.69,
+        17.79,
+        17.84,
+        17.9,
+        17.94,
+        18.14,
+        18.27,
+        18.39,
+        18.39,
+        18.6,
+        18.66,
+        18.7,
+        18.72,
+        18.72,
+        18.74,
+        18.76,
+        18.78,
+        18.83,
+        18.85,
+        18.9,
+        18.9,
+        40.24,
+        55.86,
+        89.16,
+        179.04
+      ]
+    },
+    "2": {
+      "count": 1,
+      "avg": 16.0,
+      "min": 16.0,
+      "max": 16.0,
+      "values": [
+        16.0
+      ]
+    },
+    "17": {
+      "count": 4,
+      "avg": 8.16,
+      "min": 7.63,
+      "max": 8.41,
+      "values": [
+        7.63,
+        8.22,
+        8.38,
+        8.41
+      ]
+    },
+    "13": {
+      "count": 1,
+      "avg": 0.65,
+      "min": 0.65,
+      "max": 0.65,
+      "values": [
+        0.65
+      ]
+    },
+    "15": {
+      "count": 4,
+      "avg": 9.39,
+      "min": 6.49,
+      "max": 11.49,
+      "values": [
+        6.49,
+        8.1,
+        11.48,
+        11.49
+      ]
+    },
+    "10": {
+      "count": 1,
+      "avg": 1.15,
+      "min": 1.15,
+      "max": 1.15,
+      "values": [
+        1.15
+      ]
+    },
+    "12": {
+      "count": 2,
+      "avg": 1.69,
+      "min": 1.5,
+      "max": 1.88,
+      "values": [
+        1.5,
+        1.88
+      ]
+    },
+    "7": {
+      "count": 1,
+      "avg": 1.88,
+      "min": 1.88,
+      "max": 1.88,
+      "values": [
+        1.88
+      ]
+    },
+    "8": {
+      "count": 1,
+      "avg": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "values": [
+        1.5
+      ]
+    },
+    "16": {
+      "count": 1,
+      "avg": 16.0,
+      "min": 16.0,
+      "max": 16.0,
+      "values": [
+        16.0
+      ]
+    },
+    "1": {
+      "count": 1,
+      "avg": 16.0,
+      "min": 16.0,
+      "max": 16.0,
+      "values": [
+        16.0
+      ]
+    },
+    "5": {
+      "count": 2,
+      "avg": 1.07,
+      "min": 0.65,
+      "max": 1.5,
+      "values": [
+        0.65,
+        1.5
+      ]
+    }
+  },
+  "damage_by_flags": {
+    "SingleSailDamage, CorpusCritical, CrewDamage": {
+      "count": 1,
+      "avg": 2.02,
+      "values": [
+        2.02
+      ]
+    },
+    "PvPDamage, RemoveCannonBall": {
+      "count": 65,
+      "avg": 14.54,
+      "values": [
+        7.44,
+        7.55,
+        8.22,
+        8.38,
+        8.41,
+        8.62,
+        8.72,
+        8.73,
+        11.48,
+        11.49,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        14.25,
+        14.69,
+        14.71,
+        14.79,
+        14.86,
+        14.91,
+        14.93,
+        14.94,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.04,
+        15.05,
+        15.63,
+        15.64,
+        15.7,
+        15.71,
+        15.71,
+        15.75,
+        15.89,
+        16.0,
+        16.0,
+        16.0,
+        16.0,
+        16.51,
+        16.79,
+        17.28,
+        17.69,
+        17.79,
+        17.9,
+        17.94,
+        18.27,
+        18.39,
+        18.39,
+        18.6,
+        18.7,
+        18.72,
+        18.74,
+        18.76,
+        18.83,
+        18.85,
+        18.9
+      ]
+    },
+    "CrewDamage, PvPDamage, RemoveCannonBall": {
+      "count": 2,
+      "avg": 13.28,
+      "values": [
+        8.72,
+        17.84
+      ]
+    },
+    "PvPDamage, IsHealthDamageReduced, RemoveCannonBall": {
+      "count": 6,
+      "avg": 15.78,
+      "values": [
+        15.78,
+        15.78,
+        15.78,
+        15.78,
+        15.78,
+        15.78
+      ]
+    },
+    "CreateMicroburning, PvPDamage, RemoveCannonBall": {
+      "count": 6,
+      "avg": 17.9,
+      "values": [
+        14.22,
+        18.14,
+        18.66,
+        18.72,
+        18.78,
+        18.9
+      ]
+    },
+    "None": {
+      "count": 4,
+      "avg": 45.57,
+      "values": [
+        1.0,
+        1.0,
+        1.25,
+        179.04
+      ]
+    },
+    "TotalSailDamage": {
+      "count": 6,
+      "avg": 6.67,
+      "values": [
+        4.0,
+        4.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ]
+    },
+    "SingleSailDamage, PvPDamage": {
+      "count": 8,
+      "avg": 5.18,
+      "values": [
+        1.15,
+        1.5,
+        1.5,
+        1.5,
+        1.88,
+        1.88,
+        16.0,
+        16.0
+      ]
+    },
+    "RemoveCannonBall": {
+      "count": 8,
+      "avg": 7.71,
+      "values": [
+        6.49,
+        7.63,
+        7.66,
+        7.79,
+        7.87,
+        8.04,
+        8.1,
+        8.1
+      ]
+    },
+    "CrewDamage, TotalSailDamage": {
+      "count": 4,
+      "avg": 48.84,
+      "values": [
+        10.08,
+        40.24,
+        55.86,
+        89.16
+      ]
+    },
+    "SternDamage, RemoveCannonBall": {
+      "count": 10,
+      "avg": 13.76,
+      "values": [
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76,
+        13.76
+      ]
+    },
+    "SingleSailDamage": {
+      "count": 2,
+      "avg": 0.65,
+      "values": [
+        0.65,
+        0.65
+      ]
+    },
+    "IsHealthDamageReduced, RemoveCannonBall": {
+      "count": 2,
+      "avg": 5.93,
+      "values": [
+        5.93,
+        5.93
+      ]
+    },
+    "CreateMicroburning, RemoveCannonBall": {
+      "count": 1,
+      "avg": 8.22,
+      "values": [
+        8.22
+      ]
+    }
+  },
+  "all_events": [
+    {
+      "source_uid": 393475,
+      "target_uid": 5505089,
+      "health_damage": 2.02,
+      "collision_node_id": 38,
+      "collision_point": {
+        "x": 0.0,
+        "y": -0.002,
+        "z": 0.0
+      },
+      "flags": 261,
+      "flags_hex": "0x0105",
+      "source_pawn_type": 6,
+      "packet_nuid": 10
+    },
+    {
+      "source_uid": 27390061,
+      "target_uid": 12818923,
+      "health_damage": 17.79,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 3.665,
+        "y": 1.802,
+        "z": -1.65
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27390065,
+      "target_uid": 12818923,
+      "health_damage": 17.84,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.064,
+        "y": 1.883,
+        "z": -0.03
+      },
+      "flags": 5376,
+      "flags_hex": "0x1500",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27390072,
+      "target_uid": 12818923,
+      "health_damage": 17.9,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.271,
+        "y": 1.997,
+        "z": 2.476
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27391082,
+      "target_uid": 8903833,
+      "health_damage": 15.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.656,
+        "y": 1.786,
+        "z": -3.482
+      },
+      "flags": 7168,
+      "flags_hex": "0x1c00",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27390841,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.972,
+        "y": 4.427,
+        "z": -0.877
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27391090,
+      "target_uid": 8903833,
+      "health_damage": 18.72,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.185,
+        "y": 1.463,
+        "z": 0.252
+      },
+      "flags": 5184,
+      "flags_hex": "0x1440",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 1.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 4.821,
+        "y": 1.848,
+        "z": -17.836
+      },
+      "flags": 0,
+      "flags_hex": "0x0000",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27391096,
+      "target_uid": 8903833,
+      "health_damage": 18.72,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.127,
+        "y": 1.03,
+        "z": 0.82
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27391094,
+      "target_uid": 8903833,
+      "health_damage": 18.6,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.623,
+        "y": 1.99,
+        "z": 2.571
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27390846,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.057,
+        "y": 4.435,
+        "z": -2.657
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 12818923,
+      "target_uid": 8903833,
+      "health_damage": 4.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "flags": 8192,
+      "flags_hex": "0x2000",
+      "source_pawn_type": 1,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27391854,
+      "target_uid": 8903833,
+      "health_damage": 16.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -3.416,
+        "y": 2.265,
+        "z": -6.486
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27391855,
+      "target_uid": 8903833,
+      "health_damage": 16.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -4.095,
+        "y": 2.242,
+        "z": -5.35
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27391856,
+      "target_uid": 8903833,
+      "health_damage": 16.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.958,
+        "y": 2.575,
+        "z": -1.887
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27391857,
+      "target_uid": 8903833,
+      "health_damage": 16.0,
+      "collision_node_id": 2,
+      "collision_point": {
+        "x": -2.909,
+        "y": 3.249,
+        "z": 1.144
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27392655,
+      "target_uid": 8903833,
+      "health_damage": 7.44,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.391,
+        "y": 0.663,
+        "z": 0.07
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27392628,
+      "target_uid": 8903833,
+      "health_damage": 7.66,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.182,
+        "y": 1.831,
+        "z": -3.208
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27392627,
+      "target_uid": 8903833,
+      "health_damage": 7.63,
+      "collision_node_id": 17,
+      "collision_point": {
+        "x": -1.413,
+        "y": 2.64,
+        "z": -3.683
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 11041,
+      "target_uid": 8903833,
+      "health_damage": 179.04,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 11.386,
+        "y": 1.517,
+        "z": -7.618
+      },
+      "flags": 0,
+      "flags_hex": "0x0000",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 89.16,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 34.891,
+        "y": -2.401,
+        "z": 3.768
+      },
+      "flags": 8448,
+      "flags_hex": "0x2100",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27394708,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.445,
+        "y": 1.676,
+        "z": 4.876
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394712,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.131,
+        "y": 1.618,
+        "z": 4.685
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394716,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 3.1,
+        "y": 1.466,
+        "z": 4.038
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394722,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.799,
+        "y": 1.47,
+        "z": 4.497
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394719,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.425,
+        "y": 1.435,
+        "z": 4.38
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394726,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.66,
+        "y": 2.083,
+        "z": 4.331
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394725,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.276,
+        "y": 1.407,
+        "z": 4.46
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394732,
+      "target_uid": 8903833,
+      "health_damage": 0.65,
+      "collision_node_id": 13,
+      "collision_point": {
+        "x": 2.028,
+        "y": 2.042,
+        "z": -0.92
+      },
+      "flags": 1,
+      "flags_hex": "0x0001",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394734,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.571,
+        "y": 1.573,
+        "z": 4.73
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394742,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.179,
+        "y": 1.775,
+        "z": 4.852
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394739,
+      "target_uid": 8903833,
+      "health_damage": 6.49,
+      "collision_node_id": 15,
+      "collision_point": {
+        "x": 1.044,
+        "y": 3.308,
+        "z": 4.352
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27394744,
+      "target_uid": 8903833,
+      "health_damage": 13.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.711,
+        "y": 1.25,
+        "z": 4.996
+      },
+      "flags": 4224,
+      "flags_hex": "0x1080",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 11041,
+      "target_uid": 8903833,
+      "health_damage": 4.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "flags": 8192,
+      "flags_hex": "0x2000",
+      "source_pawn_type": 1,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27395680,
+      "target_uid": 8903833,
+      "health_damage": 18.9,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.625,
+        "y": 1.784,
+        "z": 1.416
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27395675,
+      "target_uid": 8903833,
+      "health_damage": 18.9,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.064,
+        "y": 1.786,
+        "z": 4.674
+      },
+      "flags": 5184,
+      "flags_hex": "0x1440",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27395683,
+      "target_uid": 8903833,
+      "health_damage": 15.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.443,
+        "y": 1.666,
+        "z": -4.404
+      },
+      "flags": 7168,
+      "flags_hex": "0x1c00",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27395685,
+      "target_uid": 8903833,
+      "health_damage": 1.15,
+      "collision_node_id": 10,
+      "collision_point": {
+        "x": 1.63,
+        "y": 2.17,
+        "z": -3.343
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 12818923,
+      "target_uid": 8903833,
+      "health_damage": 8.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "flags": 8192,
+      "flags_hex": "0x2000",
+      "source_pawn_type": 1,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 11041,
+      "target_uid": 8903833,
+      "health_damage": 8.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "flags": 8192,
+      "flags_hex": "0x2000",
+      "source_pawn_type": 1,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 55.86,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.53,
+        "y": 2.16,
+        "z": -7.858
+      },
+      "flags": 8448,
+      "flags_hex": "0x2100",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27399217,
+      "target_uid": 12818923,
+      "health_damage": 1.88,
+      "collision_node_id": 12,
+      "collision_point": {
+        "x": 6.908,
+        "y": 4.934,
+        "z": -2.115
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27399218,
+      "target_uid": 12818923,
+      "health_damage": 11.48,
+      "collision_node_id": 15,
+      "collision_point": {
+        "x": -0.132,
+        "y": 4.618,
+        "z": -1.515
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27399221,
+      "target_uid": 12818923,
+      "health_damage": 11.49,
+      "collision_node_id": 15,
+      "collision_point": {
+        "x": -0.717,
+        "y": 4.774,
+        "z": -1.611
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27399226,
+      "target_uid": 12818923,
+      "health_damage": 1.88,
+      "collision_node_id": 7,
+      "collision_point": {
+        "x": -3.558,
+        "y": 4.621,
+        "z": -2.112
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27400377,
+      "target_uid": 12818923,
+      "health_damage": 15.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.968,
+        "y": 4.753,
+        "z": 2.525
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27400381,
+      "target_uid": 12818923,
+      "health_damage": 15.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.68,
+        "y": 4.719,
+        "z": 2.864
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 1.25,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -11.229,
+        "y": -3.291,
+        "z": 17.474
+      },
+      "flags": 0,
+      "flags_hex": "0x0000",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27400382,
+      "target_uid": 12818923,
+      "health_damage": 15.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.368,
+        "y": 4.756,
+        "z": 2.105
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27400384,
+      "target_uid": 12818923,
+      "health_damage": 15.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.875,
+        "y": 4.655,
+        "z": 1.702
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 10.08,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 53.136,
+        "y": 5.405,
+        "z": 69.054
+      },
+      "flags": 8448,
+      "flags_hex": "0x2100",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27401267,
+      "target_uid": 8903833,
+      "health_damage": 15.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 4.718,
+        "y": 1.13,
+        "z": 4.332
+      },
+      "flags": 7168,
+      "flags_hex": "0x1c00",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27401268,
+      "target_uid": 8903833,
+      "health_damage": 15.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 5.104,
+        "y": 1.088,
+        "z": 3.994
+      },
+      "flags": 7168,
+      "flags_hex": "0x1c00",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27401272,
+      "target_uid": 8903833,
+      "health_damage": 15.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 4.5,
+        "y": 1.122,
+        "z": 4.54
+      },
+      "flags": 7168,
+      "flags_hex": "0x1c00",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27401277,
+      "target_uid": 8903833,
+      "health_damage": 8.62,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.538,
+        "y": 1.026,
+        "z": 1.475
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27401278,
+      "target_uid": 8903833,
+      "health_damage": 7.55,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -4.213,
+        "y": 0.137,
+        "z": -3.088
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402531,
+      "target_uid": 12818923,
+      "health_damage": 1.5,
+      "collision_node_id": 8,
+      "collision_point": {
+        "x": -2.311,
+        "y": 2.357,
+        "z": -2.097
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402533,
+      "target_uid": 12818923,
+      "health_damage": 8.72,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.111,
+        "y": 2.508,
+        "z": -4.089
+      },
+      "flags": 5376,
+      "flags_hex": "0x1500",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402534,
+      "target_uid": 12818923,
+      "health_damage": 8.72,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.685,
+        "y": 2.483,
+        "z": -3.504
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402536,
+      "target_uid": 12818923,
+      "health_damage": 8.73,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.202,
+        "y": 2.415,
+        "z": -2.433
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402539,
+      "target_uid": 12818923,
+      "health_damage": 1.5,
+      "collision_node_id": 12,
+      "collision_point": {
+        "x": 2.543,
+        "y": 2.053,
+        "z": -5.982
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402900,
+      "target_uid": 8903833,
+      "health_damage": 14.69,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.572,
+        "y": 1.551,
+        "z": -0.189
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27402903,
+      "target_uid": 8903833,
+      "health_damage": 14.71,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.397,
+        "y": 1.563,
+        "z": -0.646
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 40.24,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -4.013,
+        "y": -0.258,
+        "z": -28.903
+      },
+      "flags": 8448,
+      "flags_hex": "0x2100",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27406170,
+      "target_uid": 12818923,
+      "health_damage": 15.75,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.545,
+        "y": 2.054,
+        "z": -4.264
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27406181,
+      "target_uid": 12818923,
+      "health_damage": 15.71,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.036,
+        "y": 1.698,
+        "z": -3.176
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27406183,
+      "target_uid": 12818923,
+      "health_damage": 15.7,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.271,
+        "y": 2.339,
+        "z": -5.092
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27406167,
+      "target_uid": 12818923,
+      "health_damage": 15.71,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.168,
+        "y": 1.376,
+        "z": -1.057
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27406188,
+      "target_uid": 12818923,
+      "health_damage": 15.64,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.407,
+        "y": 1.803,
+        "z": -3.327
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27406195,
+      "target_uid": 12818923,
+      "health_damage": 15.63,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.367,
+        "y": 1.888,
+        "z": -2.169
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407075,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.011,
+        "y": 4.638,
+        "z": 3.945
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407086,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.01,
+        "y": 4.636,
+        "z": 3.163
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407076,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.75,
+        "y": 4.277,
+        "z": -2.213
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407088,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.789,
+        "y": 4.441,
+        "z": 0.285
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407090,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.52,
+        "y": 4.55,
+        "z": 1.489
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407080,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.26,
+        "y": 4.41,
+        "z": -0.467
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407082,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 7.535,
+        "y": 4.059,
+        "z": -3.341
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27407094,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 4.089,
+        "y": 4.383,
+        "z": 0.086
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 17047872,
+      "target_uid": 12818923,
+      "health_damage": 1.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -22.363,
+        "y": 0.104,
+        "z": -18.071
+      },
+      "flags": 0,
+      "flags_hex": "0x0000",
+      "source_pawn_type": 5,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27407096,
+      "target_uid": 12818923,
+      "health_damage": 12.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 5.773,
+        "y": 4.417,
+        "z": 0.655
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27408360,
+      "target_uid": 8903833,
+      "health_damage": 16.0,
+      "collision_node_id": 16,
+      "collision_point": {
+        "x": 1.498,
+        "y": 3.608,
+        "z": -0.536
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27408361,
+      "target_uid": 8903833,
+      "health_damage": 16.0,
+      "collision_node_id": 1,
+      "collision_point": {
+        "x": 3.314,
+        "y": 3.661,
+        "z": -0.532
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 7,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27408936,
+      "target_uid": 12818923,
+      "health_damage": 1.5,
+      "collision_node_id": 5,
+      "collision_point": {
+        "x": -12.504,
+        "y": 3.735,
+        "z": -0.867
+      },
+      "flags": 1025,
+      "flags_hex": "0x0401",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27408935,
+      "target_uid": 12818923,
+      "health_damage": 8.22,
+      "collision_node_id": 17,
+      "collision_point": {
+        "x": 3.526,
+        "y": 3.318,
+        "z": 1.177
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27408927,
+      "target_uid": 12818923,
+      "health_damage": 8.41,
+      "collision_node_id": 17,
+      "collision_point": {
+        "x": 4.578,
+        "y": 3.49,
+        "z": 1.478
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27408933,
+      "target_uid": 12818923,
+      "health_damage": 8.38,
+      "collision_node_id": 17,
+      "collision_point": {
+        "x": 3.42,
+        "y": 3.573,
+        "z": 0.865
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27409618,
+      "target_uid": 8903833,
+      "health_damage": 18.7,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.093,
+        "y": 1.159,
+        "z": -2.321
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27409619,
+      "target_uid": 8903833,
+      "health_damage": 18.76,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.497,
+        "y": 1.066,
+        "z": -4.373
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27409633,
+      "target_uid": 8903833,
+      "health_damage": 18.85,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.262,
+        "y": 0.281,
+        "z": -2.693
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27409634,
+      "target_uid": 8903833,
+      "health_damage": 18.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.035,
+        "y": 1.495,
+        "z": -2.626
+      },
+      "flags": 5184,
+      "flags_hex": "0x1440",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411105,
+      "target_uid": 12818923,
+      "health_damage": 14.86,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.71,
+        "y": 1.575,
+        "z": -0.253
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411109,
+      "target_uid": 12818923,
+      "health_damage": 14.79,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.231,
+        "y": 1.576,
+        "z": 3.239
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411111,
+      "target_uid": 12818923,
+      "health_damage": 14.91,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.795,
+        "y": 1.527,
+        "z": -0.603
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411112,
+      "target_uid": 12818923,
+      "health_damage": 14.93,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.781,
+        "y": 0.968,
+        "z": -0.574
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411119,
+      "target_uid": 12818923,
+      "health_damage": 14.94,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.152,
+        "y": 1.459,
+        "z": -1.898
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411126,
+      "target_uid": 12818923,
+      "health_damage": 15.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.736,
+        "y": 1.97,
+        "z": -4.355
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411133,
+      "target_uid": 12818923,
+      "health_damage": 15.04,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 3.085,
+        "y": 2.059,
+        "z": -6.363
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27411135,
+      "target_uid": 12818923,
+      "health_damage": 15.05,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.698,
+        "y": 1.341,
+        "z": -5.083
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27412895,
+      "target_uid": 12818923,
+      "health_damage": 15.89,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -1.564,
+        "y": 1.002,
+        "z": 0.42
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27412945,
+      "target_uid": 12818923,
+      "health_damage": 16.51,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -4.595,
+        "y": 1.023,
+        "z": -2.298
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413004,
+      "target_uid": 12818923,
+      "health_damage": 16.79,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -3.908,
+        "y": 0.66,
+        "z": -1.47
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413142,
+      "target_uid": 12818923,
+      "health_damage": 17.28,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.553,
+        "y": 0.69,
+        "z": -0.103
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413201,
+      "target_uid": 12818923,
+      "health_damage": 14.25,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 3.451,
+        "y": 1.462,
+        "z": 0.676
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413199,
+      "target_uid": 12818923,
+      "health_damage": 14.22,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 4.301,
+        "y": 1.585,
+        "z": 1.243
+      },
+      "flags": 5184,
+      "flags_hex": "0x1440",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413204,
+      "target_uid": 12818923,
+      "health_damage": 17.69,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.668,
+        "y": 1.148,
+        "z": 1.347
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413287,
+      "target_uid": 12818923,
+      "health_damage": 17.94,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.274,
+        "y": 1.197,
+        "z": 2.638
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413391,
+      "target_uid": 12818923,
+      "health_damage": 18.14,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.684,
+        "y": 1.251,
+        "z": 3.41
+      },
+      "flags": 5184,
+      "flags_hex": "0x1440",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 17047872,
+      "target_uid": 12818923,
+      "health_damage": 8.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "flags": 8192,
+      "flags_hex": "0x2000",
+      "source_pawn_type": 1,
+      "packet_nuid": 138
+    },
+    {
+      "source_uid": 27413486,
+      "target_uid": 12818923,
+      "health_damage": 18.27,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 1.79,
+        "y": 1.315,
+        "z": 2.699
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413491,
+      "target_uid": 8903833,
+      "health_damage": 18.83,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.51,
+        "y": 1.338,
+        "z": -1.451
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413502,
+      "target_uid": 8903833,
+      "health_damage": 15.78,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -3.659,
+        "y": 0.558,
+        "z": -3.669
+      },
+      "flags": 7168,
+      "flags_hex": "0x1c00",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413499,
+      "target_uid": 8903833,
+      "health_damage": 18.74,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.342,
+        "y": 1.045,
+        "z": -3.063
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413507,
+      "target_uid": 8903833,
+      "health_damage": 18.66,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.88,
+        "y": 1.16,
+        "z": -3.499
+      },
+      "flags": 5184,
+      "flags_hex": "0x1440",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413448,
+      "target_uid": 8903833,
+      "health_damage": 5.93,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -4.756,
+        "y": 1.438,
+        "z": -1.55
+      },
+      "flags": 6144,
+      "flags_hex": "0x1800",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413444,
+      "target_uid": 8903833,
+      "health_damage": 5.93,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -5.382,
+        "y": 0.759,
+        "z": -3.36
+      },
+      "flags": 6144,
+      "flags_hex": "0x1800",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413450,
+      "target_uid": 8903833,
+      "health_damage": 7.79,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -3.555,
+        "y": 0.664,
+        "z": -0.81
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413456,
+      "target_uid": 8903833,
+      "health_damage": 7.87,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -2.991,
+        "y": 0.695,
+        "z": -0.452
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413460,
+      "target_uid": 8903833,
+      "health_damage": 0.65,
+      "collision_node_id": 5,
+      "collision_point": {
+        "x": -1.252,
+        "y": 2.834,
+        "z": 1.702
+      },
+      "flags": 1,
+      "flags_hex": "0x0001",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413462,
+      "target_uid": 8903833,
+      "health_damage": 8.04,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.47,
+        "y": 0.766,
+        "z": 1.334
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413470,
+      "target_uid": 8903833,
+      "health_damage": 8.1,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": -0.021,
+        "y": 0.861,
+        "z": 1.681
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413468,
+      "target_uid": 8903833,
+      "health_damage": 8.1,
+      "collision_node_id": 15,
+      "collision_point": {
+        "x": 2.641,
+        "y": 2.956,
+        "z": 2.644
+      },
+      "flags": 4096,
+      "flags_hex": "0x1000",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413980,
+      "target_uid": 12818923,
+      "health_damage": 18.39,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.138,
+        "y": 1.756,
+        "z": 1.82
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27413473,
+      "target_uid": 8903833,
+      "health_damage": 8.22,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 2.585,
+        "y": 0.802,
+        "z": 4.033
+      },
+      "flags": 4160,
+      "flags_hex": "0x1040",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 27414019,
+      "target_uid": 12818923,
+      "health_damage": 18.39,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.017,
+        "y": 1.806,
+        "z": 1.773
+      },
+      "flags": 5120,
+      "flags_hex": "0x1400",
+      "source_pawn_type": 2,
+      "packet_nuid": 189
+    },
+    {
+      "source_uid": 8903833,
+      "target_uid": 12818923,
+      "health_damage": 8.0,
+      "collision_node_id": 0,
+      "collision_point": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "flags": 8192,
+      "flags_hex": "0x2000",
+      "source_pawn_type": 1,
+      "packet_nuid": 138
+    }
+  ]
+}
