@@ -1,0 +1,114 @@
+[
+  {
+    "PvpMode": 2,
+    "MapName": "startmap",
+    "Style": 1,
+    "Isles": [
+      {
+        "LocalPosition": "166.05 -91.955",
+        "Rotation": 0.5910595,
+        "AdditionalScale": 0.798909843,
+        "Path": "rocks\\crag_whouses_rm",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "175.55 -95.13",
+        "Rotation": -0.8371096,
+        "AdditionalScale": 0.798909843,
+        "Path": "isles_y\\tropisle_1",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "154.78 -77.81",
+        "Rotation": -0.180564657,
+        "AdditionalScale": 0.9605961,
+        "Path": "decoration\\dec_trade_houses_1",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "-163.91 -242.66",
+        "Rotation": 0,
+        "AdditionalScale": 1,
+        "Path": "isles_y\\tropisle_2",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "-289.64 -283.5",
+        "Rotation": 0,
+        "AdditionalScale": 1,
+        "Path": "isles_y\\tropisle_3",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "-159.82 -224.86 -3.77",
+        "Rotation": -4.65554667,
+        "AdditionalScale": 1,
+        "Path": "decoration\\dec_destr_spain_houses_2",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "162.43 -106.42 -7.99",
+        "Rotation": 0,
+        "AdditionalScale": 1,
+        "Path": "decoration\\dec_ancient_1",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "141.25 -97.59",
+        "Rotation": 1.75442207,
+        "AdditionalScale": 1,
+        "Path": "underwater\\destr_ships",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "477.38 768.02 -0.8",
+        "Rotation": -0.554123938,
+        "AdditionalScale": 1,
+        "Path": "big\\cont_green6",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "378.46 485.97",
+        "Rotation": 0.93802917,
+        "AdditionalScale": 1,
+        "Path": "rocks_stone\\rockorg_2",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "415.8 415.23 5.72",
+        "Rotation": 0.342868626,
+        "AdditionalScale": 1,
+        "Path": "decoration\\dec_spain_houses_6",
+        "Terrain": -1,
+        "Parameters": ""
+      },
+      {
+        "LocalPosition": "326.32 429.05",
+        "Rotation": 0.671829462,
+        "AdditionalScale": 1,
+        "Path": "ports\\port_center_orange_1",
+        "Terrain": -1,
+        "Parameters": "nport_1"
+      }
+    ],
+    "Ports": [
+      {
+        "Type": "NeutralBay",
+        "PortName": "nport_1",
+        "BuildShipRangs": 6,
+        "PbsTeamLimitation": 5,
+        "Flags": ""
+      }
+    ]
+  }
+]

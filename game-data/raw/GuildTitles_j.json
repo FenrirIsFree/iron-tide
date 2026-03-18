@@ -1,0 +1,122 @@
+[
+  {
+    "Fraction": "Espaniol",
+    "Place": "Gold",
+    "Name": "espaniol_guild_title_1_name",
+    "WinnerRewardMint": 40000000
+  },
+  {
+    "Fraction": "Espaniol",
+    "Place": "Silver",
+    "Name": "espaniol_guild_title_2_name",
+    "WinnerRewardMint": 30000000
+  },
+  {
+    "Fraction": "Espaniol",
+    "Place": "Bronze",
+    "Name": "espaniol_guild_title_3_name",
+    "WinnerRewardMint": 20000000
+  },
+  {
+    "Fraction": "Espaniol",
+    "Place": "Copper",
+    "Name": "espaniol_guild_title_4_name",
+    "WinnerRewardMint": 10000000
+  },
+  {
+    "Fraction": "Antilia",
+    "Place": "Gold",
+    "Name": "antilia_guild_title_1_name",
+    "WinnerRewardMint": 40000000
+  },
+  {
+    "Fraction": "Antilia",
+    "Place": "Silver",
+    "Name": "antilia_guild_title_2_name",
+    "WinnerRewardMint": 30000000
+  },
+  {
+    "Fraction": "Antilia",
+    "Place": "Bronze",
+    "Name": "antilia_guild_title_3_name",
+    "WinnerRewardMint": 20000000
+  },
+  {
+    "Fraction": "Antilia",
+    "Place": "Copper",
+    "Name": "antilia_guild_title_4_name",
+    "WinnerRewardMint": 10000000
+  },
+  {
+    "Fraction": "KaiAndSeveria",
+    "Place": "Gold",
+    "Name": "kai_and_severia_guild_title_1_name",
+    "WinnerRewardMint": 40000000
+  },
+  {
+    "Fraction": "KaiAndSeveria",
+    "Place": "Silver",
+    "Name": "kai_and_severia_guild_title_2_name",
+    "WinnerRewardMint": 30000000
+  },
+  {
+    "Fraction": "KaiAndSeveria",
+    "Place": "Bronze",
+    "Name": "kai_and_severia_guild_title_3_name",
+    "WinnerRewardMint": 20000000
+  },
+  {
+    "Fraction": "KaiAndSeveria",
+    "Place": "Copper",
+    "Name": "kai_and_severia_guild_title_4_name",
+    "WinnerRewardMint": 10000000
+  },
+  {
+    "Fraction": "TradeUnion",
+    "Place": "Gold",
+    "Name": "trader_guild_title_1_name",
+    "WinnerRewardMint": 40000000
+  },
+  {
+    "Fraction": "TradeUnion",
+    "Place": "Silver",
+    "Name": "trader_guild_title_2_name",
+    "WinnerRewardMint": 30000000
+  },
+  {
+    "Fraction": "TradeUnion",
+    "Place": "Bronze",
+    "Name": "trader_guild_title_3_name",
+    "WinnerRewardMint": 20000000
+  },
+  {
+    "Fraction": "TradeUnion",
+    "Place": "Copper",
+    "Name": "trader_guild_title_4_name",
+    "WinnerRewardMint": 10000000
+  },
+  {
+    "Fraction": "Pirate",
+    "Place": "Gold",
+    "Name": "pirate_guild_title_1_name",
+    "WinnerRewardMint": 40000000
+  },
+  {
+    "Fraction": "Pirate",
+    "Place": "Silver",
+    "Name": "pirate_guild_title_2_name",
+    "WinnerRewardMint": 30000000
+  },
+  {
+    "Fraction": "Pirate",
+    "Place": "Bronze",
+    "Name": "pirate_guild_title_3_name",
+    "WinnerRewardMint": 20000000
+  },
+  {
+    "Fraction": "Pirate",
+    "Place": "Copper",
+    "Name": "pirate_guild_title_4_name",
+    "WinnerRewardMint": 10000000
+  }
+]

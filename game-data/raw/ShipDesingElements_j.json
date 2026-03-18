@@ -1,0 +1,5197 @@
+[
+  {
+    "Name": "design_1_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag1"
+  },
+  {
+    "Name": "design_2_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag2"
+  },
+  {
+    "Name": "design_3_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag3"
+  },
+  {
+    "Name": "design_4_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag4"
+  },
+  {
+    "Name": "design_5_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag5"
+  },
+  {
+    "Name": "design_6_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag6"
+  },
+  {
+    "Name": "design_7_name",
+    "InShop": "true Tier4",
+    "Category": "Satellite",
+    "BonusEffectType": "PSpeed PArmor PBallDamage PMortarDamageBonus",
+    "BonusEffectValue": "5 5 4 5",
+    "IconName": "Icons 320 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_8_name",
+    "InShop": "true",
+    "Category": "Satellite",
+    "BonusEffectType": "PMobilityBonus",
+    "BonusEffectValue": 7,
+    "IconName": "Icons 256 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_9_name",
+    "InShop": "true",
+    "Category": "Satellite",
+    "BonusEffectType": "PServer_XpAndRewardBonus",
+    "BonusEffectValue": 10,
+    "IconName": "Icons 0 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_10_name",
+    "InShop": "true Tier2",
+    "Category": "Satellite",
+    "BonusEffectType": "PSpeed",
+    "BonusEffectValue": 6,
+    "IconName": "Icons 64 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_11_name",
+    "InShop": "true",
+    "Category": "Satellite",
+    "BonusEffectType": "PHealth",
+    "BonusEffectValue": 7,
+    "IconName": "Icons 128 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_12_name",
+    "InShop": "true",
+    "Category": "Satellite",
+    "BonusEffectType": "PBallDamage PMortarDamageBonus",
+    "BonusEffectValue": "6 7",
+    "IconName": "Icons 192 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_13_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag7"
+  },
+  {
+    "Name": "design_14_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag8"
+  },
+  {
+    "Name": "design_15_name",
+    "InShop": "ByGold 10000",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a1"
+  },
+  {
+    "Name": "design_16_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a2"
+  },
+  {
+    "Name": "design_17_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a3"
+  },
+  {
+    "Name": "design_18_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a4"
+  },
+  {
+    "Name": "design_19_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b1"
+  },
+  {
+    "Name": "design_20_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b2"
+  },
+  {
+    "Name": "design_21_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b3"
+  },
+  {
+    "Name": "design_22_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b4"
+  },
+  {
+    "Name": "design_23_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b5"
+  },
+  {
+    "Name": "design_24_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b6"
+  },
+  {
+    "Name": "design_25_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b7"
+  },
+  {
+    "Name": "design_26_name",
+    "InShop": "true Tier4",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b8"
+  },
+  {
+    "Name": "design_27_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b9"
+  },
+  {
+    "Name": "design_28_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b10"
+  },
+  {
+    "Name": "design_29_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b11"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2a41d5e9"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b7s01f01"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag14"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail21"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "6e2d943c"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_n1_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b22"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "d46ac4cf"
+  },
+  {
+    "Name": "design_38_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b14"
+  },
+  {
+    "Name": "design_39_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a5"
+  },
+  {
+    "Name": "design_40_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a6"
+  },
+  {
+    "Name": "design_41_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a7"
+  },
+  {
+    "Name": "design_42_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a8"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_a30"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_a9"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "01de499f"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "0c91ac12"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "c0f14b42"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "0c91ac12_p2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "0c91ac12_p3"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "0c91ac12_p4"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag1"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail23"
+  },
+  {
+    "Name": "design_53_name",
+    "InShop": "true Tier2",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b15"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "df1e6ffe"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_56_name",
+    "InShop": "true Tier2",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b16"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "06606749"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag3_a"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail1"
+  },
+  {
+    "Name": "design_n2_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b23"
+  },
+  {
+    "Name": "design_n3_name",
+    "InShop": "true Tier4",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b24"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "shipsail_gl4_c"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail2"
+  },
+  {
+    "Name": "design_private_ship",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_ship",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_n4_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b25"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "198babed"
+  },
+  {
+    "Name": "design_69_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b17"
+  },
+  {
+    "Name": "design_70_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_a30"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b33cc88f"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "24c86565"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag3"
+  },
+  {
+    "Name": "design_n5_name",
+    "InShop": "true Tier2",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b26"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "f4a981a1"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "d84df2fd"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "d46ac4cf_p2"
+  },
+  {
+    "Name": "design_f1_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag16"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "d46ac4cf_p3"
+  },
+  {
+    "Name": "design_private_ship",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_flag16"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "navyPrivFlag"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail3"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_a4"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "7a5f1196"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "7a5f1196_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5920edb8_b"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5920edb8"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5920edb8_flag"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5920edb8_flag2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5920edb8_2"
+  },
+  {
+    "Name": "design_91_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag9"
+  },
+  {
+    "Name": "design_92_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag10"
+  },
+  {
+    "Name": "design_93_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag11"
+  },
+  {
+    "Name": "design_94_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag12"
+  },
+  {
+    "Name": "design_95_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag13"
+  },
+  {
+    "Name": "design_96_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag14"
+  },
+  {
+    "Name": "design_97_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag15"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "9bffb845"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "a3290857_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "6ab96756"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "6ab96756_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "78402040"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "49b91f02"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2e8e68e5"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2e8e68e5_flag"
+  },
+  {
+    "Name": "design_f2_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag17"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "cc018f89"
+  },
+  {
+    "Name": "design_111_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b12"
+  },
+  {
+    "Name": "design_ship_1_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_112_santisima_black",
+    "Texture": "ship_santisima_back:ship_santisima_back_black;ship_santisima_hull2:d112_ship_santisima_hull2;Wood14:Wood16;Wood13:Wood16",
+    "ShipId": 36
+  },
+  {
+    "Name": "design_ship_2_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_113_santisima_yellow",
+    "Texture": "ship_santisima_hull2:d113_ship_santisima_hull2;Wood14:Wood17;",
+    "ShipId": 36
+  },
+  {
+    "Name": "design_ship_3_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_114_victory_red",
+    "Texture": "hmsvictory_hull:d114_hmsvictory_hull;hms_victory_back:d114_hms_victory_back;",
+    "ShipId": 31
+  },
+  {
+    "Name": "design_ship_4_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_115_anson_white",
+    "Texture": "ship_stel_hull:lecfcrt_hull;Mast_1:Wood13;",
+    "ShipId": 19
+  },
+  {
+    "Name": "design_ship_5_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_116_firestorm_fire",
+    "Texture": "firestorm_hull_bw:Magma1;firestorm_hull_1:Magma1;firestorm_hull_2:Magma1;firestorm_decor_1:d116_firestorm_decor_1;Metal1:BloodyWood1;",
+    "ShipId": 28
+  },
+  {
+    "Name": "design_ship_6_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_117_constitution_red",
+    "Texture": "ship_const_hull:Wood14;kaligula_floor_light:lecfcrt_deck;Wood18:Wood14;Vants5:Wood14;Wood19:Wood18;Vants3:Vants3_dark;",
+    "ShipId": 25
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag4"
+  },
+  {
+    "Name": "design_f3_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag18"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "6ab96756_2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "db9ceb9a"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2df0d92f"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "ad3f51ee"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "db9ceb9a_flag"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2df0d92f_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5ab04d0e"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5ab04d0e_2"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "5ab04d0e_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "438d8793"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "438d8793_2"
+  },
+  {
+    "Name": "design_131_name",
+    "InShop": "true Tier2",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_b13"
+  },
+  {
+    "Name": "design_132_name",
+    "InShop": "true Tier2",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a9"
+  },
+  {
+    "Name": "design_133_name",
+    "InShop": "true Tier2",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a10"
+  },
+  {
+    "Name": "design_134_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a11"
+  },
+  {
+    "Name": "design_135_name",
+    "InShop": "ByGold 15000",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a12"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "019e0b9a"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "2b7cb73a_flag"
+  },
+  {
+    "Name": "design_f4_name",
+    "InShop": "true",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag19"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "8bc141a2"
+  },
+  {
+    "Name": "design_140_name",
+    "InShop": "true Tier3",
+    "Category": "Satellite",
+    "BonusEffectType": "PMobilityBonus PServer_XpAndRewardBonus PBallDamage PMortarDamageBonus",
+    "BonusEffectValue": "5 7 4 5",
+    "IconName": "Icons 385 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail5"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail6"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag6"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "8c949511"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "d1723958"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "d85d8173"
+  },
+  {
+    "Name": "design_147_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a13"
+  },
+  {
+    "Name": "design_148_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a14"
+  },
+  {
+    "Name": "design_149_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "design_a15"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail7"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail7b"
+  },
+  {
+    "Name": "desBowFigure1",
+    "InShop": "ByGold 2000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 0 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure2",
+    "InShop": "ByGold 2000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 64 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure3",
+    "InShop": "ByGold 3000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 128 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure4",
+    "InShop": "true Tier2",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 192 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure5",
+    "InShop": "true Tier2",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 256 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure6",
+    "InShop": "ByGold 6000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 320 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure7",
+    "InShop": "true",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 384 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure8",
+    "InShop": "ByGold 20000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 448 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure9",
+    "InShop": "ByGold 9000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 512 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure10",
+    "InShop": "true Tier2",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 576 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure11",
+    "InShop": "false",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 640 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure12",
+    "InShop": "ByGold 10000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 704 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure13",
+    "InShop": "true Tier2",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 768 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure14",
+    "InShop": "true",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 832 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure15",
+    "InShop": "true",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 832 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure16",
+    "InShop": "ByGold 10000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 896 66 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure17",
+    "InShop": "ByGold 50000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 768 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure18",
+    "InShop": "true",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 704 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "291850c7_flag"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail8"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail8b"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "0x16bda23c"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail9"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "0xf20d1bd8"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail10"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag7"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag8"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag9"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail11"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_1"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_3"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_1_flag"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_2_flag"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_3_flag"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "466f0864_4_flag"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail12"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "c773e2fd"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "76ed7eff"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "3ce203b0"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "a3b1d2f2"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail13"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail14"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "0f7d542e"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail15"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag10"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "d62c019b"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "fecf95ba"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail16"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "41ea6ee5"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag11"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag12"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "19f896a6"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "19f896a6_flag"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail17"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag13"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "a14538ac"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "981dd6ad_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "4ef1161b"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "a14538ac_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b2_1_f"
+  },
+  {
+    "Name": "design_219_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_b18"
+  },
+  {
+    "Name": "design_220_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_b19"
+  },
+  {
+    "Name": "design_221_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_b20"
+  },
+  {
+    "Name": "design_222_name",
+    "InShop": "true Tier2",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_a16"
+  },
+  {
+    "Name": "design_223_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_b21"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail4"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag5"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail28_b"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "ba021a61"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "a3b1d2f2_flag"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail14"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "66030364"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "66030364_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "7600cd15"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "7600cd15_3_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "7600cd15_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "7600cd15_2_flag"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail22"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag28"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "8c81fb9a"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "19f896a6_flag2"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail20"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag15"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag15b"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "ea5115a9"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "203463b5"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "66030364_2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "66030364_3"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "66030364_4"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2e5edcff"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2e5edcff_2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_1"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_2"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_3"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_4"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail24"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_7_f"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_8"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_9"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_10"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_2"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag20"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail25"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag21"
+  },
+  {
+    "Name": "design_event_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "event_tourn_gold"
+  },
+  {
+    "Name": "design_event_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "event_tourn_silver"
+  },
+  {
+    "Name": "design_event_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "event_tourn_regular"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shipDesign",
+    "Texture": "ship_stel_hull:SnowRock;ship_stel_hull_decor:Wood21;Vants3:SnowGrassLand1;kaligula_floor:SnowGrassLand1;Flagpoll2:EmptyTexture;"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "85a8b932"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "41ea6ee5_2"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail26"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b26a5355"
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b26a5355_flag"
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "3870ba3c"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail27"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag22"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail28"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag23"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail29"
+  },
+  {
+    "Name": "design_283_name",
+    "InShop": "ByGold 5000",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_a17"
+  },
+  {
+    "Name": "design_284_name",
+    "InShop": "true",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_a18"
+  },
+  {
+    "Name": "design_285_name",
+    "InShop": "true",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_b27"
+  },
+  {
+    "Name": "design_ship_7_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_286_prins_willem_black",
+    "Texture": "ship_pwilliam:customization_dark_hull;kaligula_floor:Wood6;ship_flute_deck:Wood19;ship_pwilliam_back:Wood19;Mast_1:Wood19",
+    "ShipId": 20
+  },
+  {
+    "Name": "design_ship_8_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_287_sovereign_black",
+    "Texture": "ship_sov_hull:customization_dark_hull;Mast_1:Wood13;Vants3:Vants3_dark;lecfcrt_deck:gray_deck;",
+    "ShipId": 46
+  },
+  {
+    "Name": "design_ship_9_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_288_neptuno_fogy",
+    "Texture": "ship_nep_hull:Wood16;Wood17:Wood12;Vants3:Vants3_dark;",
+    "ShipId": 39
+  },
+  {
+    "Name": "design_ship_10_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_289_la_creole_black",
+    "Texture": "ship_lacreole_hull:ship_black;Vants2:Wood12;Vants3:Vants3_dark;",
+    "ShipId": 24
+  },
+  {
+    "Name": "design_ship_11_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_290_ingermanland_light",
+    "Texture": "Wood16:Wood19;Wood6:Wood13;Wood18:Wood19;Wood13:Wood19;Vants3:Vants3_dark;ship_flute_hull_smug:Wood19",
+    "ShipId": 50
+  },
+  {
+    "Name": "design_ship_12_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_291_prins_willem_bloody",
+    "Texture": "ship_pwilliam:des_ship_pwilliam;kaligula_floor:floor_peers;Mast_1:Wood19;Vants3:Vants3_dark;Gold1:iron_cherepica;",
+    "ShipId": 20
+  },
+  {
+    "Name": "design_ship_13_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_292_sans_pareil_dark",
+    "Texture": "ship_stel_hull:ship_qar_hull;Vants3:Vants3_dark;",
+    "ShipId": 41
+  },
+  {
+    "Name": "design_ship_14_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_293_bellona_red",
+    "Texture": "ship_stel_hull:ship_santisima_hull2;Wood6:Wood14;Vants3:Vants3_dark;",
+    "ShipId": 44
+  },
+  {
+    "Name": "design_private_d",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "b1_82"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "2e5edcff_3"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag24"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail30"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag25"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail31"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag26"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag26_b"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag27"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail32"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail33"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail34"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail35"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail36"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag29"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail37"
+  },
+  {
+    "Name": "design_private_guildflag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gflag30"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail38"
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail39"
+  },
+  {
+    "Name": "sailcloth_1",
+    "InShop": "ByGold 2500",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_"
+  },
+  {
+    "Name": "sailcloth_2",
+    "InShop": "ByGold 5000",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail11_"
+  },
+  {
+    "Name": "sailcloth_3",
+    "InShop": "ByGold 10000",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail2_"
+  },
+  {
+    "Name": "sailcloth_4",
+    "InShop": "true",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail12_"
+  },
+  {
+    "Name": "sailcloth_5",
+    "InShop": "true",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail5_"
+  },
+  {
+    "Name": "sailcloth_6",
+    "InShop": "true Tier2",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "shipsail_fs4"
+  },
+  {
+    "Name": "sailcloth_7",
+    "InShop": "true",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail9_"
+  },
+  {
+    "Name": "sailcloth_8",
+    "InShop": "true Tier2",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "shipsail_gl4_c"
+  },
+  {
+    "Name": "sailcloth_9",
+    "InShop": "true",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail7_"
+  },
+  {
+    "Name": "sailcloth_10",
+    "InShop": "true",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail3_"
+  },
+  {
+    "Name": "sailcloth_11",
+    "InShop": "true Tier2",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail8_"
+  },
+  {
+    "Name": "sailcloth_12",
+    "InShop": "true",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail6_"
+  },
+  {
+    "Name": "sailcloth_13",
+    "InShop": "true Tier2",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "black_sail"
+  },
+  {
+    "Name": "design_ship_326_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_326_ingermanland_contrast",
+    "Texture": "kaligula_floor:gray_deck;Wood13:Wood16;Wood6:Wood19;Vants3:Vants3_dark;Wood16:Wood13;",
+    "ShipId": 50
+  },
+  {
+    "Name": "design_ship_327_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_327_ingermanland_bloody",
+    "Texture": "Wood16:Wood21;Wood6:Wood19;Wood18:Wood19;Wood13:Wood19;Vants3:Vants3_dark;ship_flute_hull_smug:Wood19;kaligula_floor:Wood12;",
+    "ShipId": 50
+  },
+  {
+    "Name": "design_ship_328_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_328_black_prince_contrast",
+    "Texture": "ship_black:ship_nep_hull;",
+    "ShipId": 12
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shipDesign",
+    "Texture": "ship_black:ship_nep_hull;",
+    "ShipId": 12
+  },
+  {
+    "Name": "design_ship_330_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_330_black_prince_burgundy",
+    "Texture": "ship_black:ship_qar_hull;Vants3:Vants3_dark;",
+    "ShipId": 12
+  },
+  {
+    "Name": "design_ship_331_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_331_black_prince_light",
+    "Texture": "ship_black:lecfcrt_hull;",
+    "ShipId": 12
+  },
+  {
+    "Name": "design_ship_332_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_332_apostolov_wood",
+    "Texture": "ship_stel_hull:Shen;",
+    "ShipId": 55
+  },
+  {
+    "Name": "design_ship_333_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_333_apostolov_dark",
+    "Texture": "ship_stel_hull:Wood16;Vants3:Vants3_dark;kaligula_floor:hmsvictory_deck;Wood13:Wood16;",
+    "ShipId": 55
+  },
+  {
+    "Name": "design_ship_334_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_334_firestorm_ashen",
+    "Texture": "firestorm_hull_bw:Wood10;firestorm_hull_1:Wood10;firestorm_hull_2:Wood10;Vants3_dark:Vants3;",
+    "ShipId": 28
+  },
+  {
+    "Name": "design_ship_335_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_335_mordaunt_burgundy",
+    "Texture": "ship_fr_hull:Wood14;kaligula_floor:lecfcrt_deck;Wood7:Wood14;Wood12:Wood16;Vants3:Vants3_dark;",
+    "ShipId": 53
+  },
+  {
+    "Name": "design_ship_336_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_336_mordaunt_light",
+    "Texture": "Wood7:Wood12;Wood12:lecfcrt_hull;kaligula_floor:Wood12;ship_fr_hull:Wood13;",
+    "ShipId": 53
+  },
+  {
+    "Name": "design_ship_337_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_337_sans_pareil_wood",
+    "Texture": "ship_stel_hull:ship_lacreole_hull;Vants3:Vants3_dark;kaligula_floor:floor_peers;",
+    "ShipId": 41
+  },
+  {
+    "Name": "design_ship_338_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_338_sans_pareil_light",
+    "Texture": "ship_stel_hull:lecfcrt_hull;BoatTex:BoatTexWhite;kaligula_floor:kaligula_floor_light;ship_kech_kab:Wood13;",
+    "ShipId": 41
+  },
+  {
+    "Name": "design_ship_339_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_339_sparrow_red",
+    "Texture": "ship_flute_deck:Wood14;ship_flute_hull_smug:Wood12;Vants3:Vants3_dark;kaligula_floor:hmsvictory_deck;Mast_1:Wood14;",
+    "ShipId": 13
+  },
+  {
+    "Name": "design_ship_340_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_340_la_couronne_ashen",
+    "Texture": "lacor_hull:Shen;kaligula_floor:gray_deck;",
+    "ShipId": 49
+  },
+  {
+    "Name": "design_ship_341_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_341_bellona_wood",
+    "Texture": "ship_stel_hull:Shen;",
+    "ShipId": 44
+  },
+  {
+    "Name": "design_ship_342_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_342_redoutable_dark",
+    "Texture": "Wood17:Wood19;ship_nep_hull:ship_qar_hull;Wood16:Wood12;Vants3:Wood19;Wood6:Wood21;BoatTex:Wood21;Vants:Vants3_dark;kaligula_floor:Wood8",
+    "ShipId": 52
+  },
+  {
+    "Name": "design_ship_343_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_343_anson_burgundy",
+    "Texture": "ship_stel_hull:ship_qar_hull;Vants3:Vants3_dark;Mast_1:Wood8;kaligula_floor:lecfcrt_deck;BoatTex:Wood10;",
+    "ShipId": 19
+  },
+  {
+    "Name": "design_ship_344_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_343_anson_wood",
+    "Texture": "BoatTex:Shen;Mast_1:Wood13;Wood7:Wood22;ship_stel_hull:Shen;",
+    "ShipId": 19
+  },
+  {
+    "Name": "design_ship_345_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_345_eagle_dark",
+    "Texture": "ship_flute_deck:dfish_hull;Vants3:Vants3_dark;Mast_1:Wood19;hmsvictory_deck:gray_deck;",
+    "ShipId": 18
+  },
+  {
+    "Name": "design_ship_346_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_346_apostolov_white",
+    "Texture": "ship_stel_hull:lecfcrt_hull;Wood18:Wood13;",
+    "ShipId": 55
+  },
+  {
+    "Name": "design_ship_347_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_347_deadfish_bloody",
+    "Texture": "dfish_mast:Wood12;dfish_hull:Wood10;dfish_decor:Wood21;",
+    "ShipId": 35
+  },
+  {
+    "Name": "design_ship_348_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_348_deadfish_white",
+    "Texture": "dfish_mast:Wood13;dfish_hull:Wood12;dfish_decor:Wood8;",
+    "ShipId": 35
+  },
+  {
+    "Name": "design_ship_349_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_349_flying_cloud_wood",
+    "Texture": "fc_hull:ship_kech_hull;Wood7:Wood17;",
+    "ShipId": 34
+  },
+  {
+    "Name": "design_ship_350_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_350_flying_cloud_dark",
+    "Texture": "fc_hull:customization_dark_hull;Wood7:Wood16;Mast_1:Wood16;",
+    "ShipId": 34
+  },
+  {
+    "Name": "design_ship_351_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_351_flying_cloud_light",
+    "Texture": "kaligula_floor:gray_deck;Vants3:Vants3_dark;fc_hull:lecfcrt_hull;Mast_1:Wood16;",
+    "ShipId": 34
+  },
+  {
+    "Name": "design_ship_352_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_352_essex_wenge",
+    "Texture": "ship_essex_hull:firestorm_hull_bw;kaligula_floor_light:lecfcrt_deck;",
+    "ShipId": 11
+  },
+  {
+    "Name": "design_ship_353_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_353_kobukson_gray",
+    "Texture": "ship_kbk_hull:Octo;ship_kbk_roof:Wood20;kaligula_floor:Wood21",
+    "ShipId": 40
+  },
+  {
+    "Name": "design_ship_354_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_354_la_couronne_contrast",
+    "Texture": "kaligula_floor:firestorm_hull_2;lacor_hull:ship_kech_hull;",
+    "ShipId": 49
+  },
+  {
+    "Name": "design_ship_355_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_355_la_couronne_burgundy",
+    "Texture": "lacor_hull:firestorm_hull_bw;Vants3:customization_dark_hull;",
+    "ShipId": 49
+  },
+  {
+    "Name": "design_ship_356_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_356_shen_red",
+    "Texture": "Wood7:d114_hmsvictory_hull;Shen:d114_hmsvictory_hull;",
+    "ShipId": 26
+  },
+  {
+    "Name": "design_ship_357_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_357_shunsen_black_and_white",
+    "Texture": "ship_redsail_hull:des_hull;kaligula_floor:gray_deck;VantsRedsail:Vants3_dark;",
+    "ShipId": 3
+  },
+  {
+    "Name": "design_ship_358_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_358_russia_amber",
+    "Texture": "ship_fr_hull:ship_kech_hull;Wood7:Wood22;Mast_1:Wood22;ship_fr_decor3:WhiteWood2;",
+    "ShipId": 10
+  },
+  {
+    "Name": "design_ship_359_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_359_le_requin_black_and_white",
+    "Texture": "ship_lacreole_hull:des_hull;Vants3:des_hull;",
+    "ShipId": 47
+  },
+  {
+    "Name": "design_ship_360_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_360_black_wind_oak",
+    "Texture": "ship_blackw_hull:ship_nep_hull;Wood8:Wood16;hmsvictory_deck:Wood12;",
+    "ShipId": 22
+  },
+  {
+    "Name": "design_ship_361_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_361_falmouth_dark",
+    "Texture": "ship_falmouthtrader_hull:des_ship_stel_hull;Wood13:Wood11;Mast_1:Wood11;ship_falmouth_decor2:dfish_hull;kaligula_floor:Wood20;",
+    "ShipId": 17
+  },
+  {
+    "Name": "design_private_guildsail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "desing_gsail40"
+  },
+  {
+    "Name": "design_ship_363_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_363_la_sirene_burgundy",
+    "Texture": "ship_sirena_hull:firestorm_hull_bw;Mast_1:Wood21;Wood17:Wood21;Wood7:Wood21;Vants3:Wood19",
+    "ShipId": 32
+  },
+  {
+    "Name": "design_private_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "event_wmfflag_23"
+  },
+  {
+    "Name": "design_365_name",
+    "InShop": "true Tier2",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": "design_b28"
+  },
+  {
+    "Name": "design_ship_366_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_366_la_creole_skyey",
+    "Texture": "ship_lacreole_hull:La_royale_HULL;brig_hull:Wood14;Vants3:Vants3_dark",
+    "ShipId": 24
+  },
+  {
+    "Name": "design_ship_367_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_367_la_creole_amber",
+    "Texture": "Vants3:Vants3_dark;BoatTexWhite:ship_santisima_hull2;ship_lacreole_hull:ship_santisima_hull2;kaligula_floor_light:kaligula_floor;brig_hull:Wood19;Vants2:Wood19",
+    "ShipId": 24
+  },
+  {
+    "Name": "design_ship_368_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_368_essex_skyey",
+    "Texture": "Wood7:WhiteWood2;Mast_1:Wood19;ship_essex_hull:La_royale_HULL",
+    "ShipId": 11
+  },
+  {
+    "Name": "design_ship_369_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_369_essex_amber",
+    "Texture": "kaligula_floor_light:Wood22;Wood7:Wood19;Mast_1:Wood19;ship_essex_hull:d114_hmsvictory_hull",
+    "ShipId": 11
+  },
+  {
+    "Name": "design_ship_370_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_370_essex_ghost",
+    "Texture": "kaligula_floor_light:Wood8;Wood7:Wood19;BoatTex:Wood10;Mast_1:Wood19;ship_essex_hull:Octo;Vants3:Vants3_dark",
+    "ShipId": 11
+  },
+  {
+    "Name": "design_ship_371_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_371_russia_wood",
+    "Texture": "ship_fr_hull:ship_nep_hull;Mast_1:ship_nep_hull;kaligula_floor:Wood22",
+    "ShipId": 10
+  },
+  {
+    "Name": "design_ship_372_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_372_russia_dark",
+    "Texture": "kaligula_floor:kaligula_floor_light;Vants3:Wood19;ship_fr_hull:customization_dark_hull;Wood7:Wood10;BoatTex:customization_dark_hull;ship_fr_decor3:Wood10;ship_fr_decor:Wood10;Mast_1:Wood19;sirena_bronze:Octo",
+    "ShipId": 10
+  },
+  {
+    "Name": "design_ship_373_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_373_black_wind_skyey",
+    "Texture": "ship_blackw_hull:La_royale_HULL;Mast_1:La_royale_HULL;BoatTex:La_royale_HULL;hmsvictory_deck:gray_deck",
+    "ShipId": 22
+  },
+  {
+    "Name": "design_ship_374_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_374_de_zeven_provincien_amber",
+    "Texture": "7prov:d114_hmsvictory_hull;Vants3:ship_const_hull2;BoatTex:d114_hmsvictory_hull;kaligula_floor:dfish_hull",
+    "ShipId": 61
+  },
+  {
+    "Name": "design_ship_375_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_375_de_zeven_provincien_cherry",
+    "Texture": "7prov:ship_qar_hull;Vants3:ship_qar_hull;BoatTex:ship_qar_hull;kaligula_floor:dfish_hull",
+    "ShipId": 61
+  },
+  {
+    "Name": "design_ship_376_name",
+    "InShop": "true Tier4",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_376_de_zeven_provincien_contrast",
+    "Texture": "7prov:ship_kech_hull;Vants3:ship_const_hull2;BoatTex:ship_const_hull2;kaligula_floor:dfish_hull",
+    "ShipId": 61
+  },
+  {
+    "Name": "design_ship_377_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_377_shen_light",
+    "Texture": "Shen:Octo;Wood7:des_ship_stel_hull",
+    "ShipId": 26
+  },
+  {
+    "Name": "design_ship_378_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_378_la_royale_royal",
+    "Texture": "La_royale_HULL:des_ship_santisima_hull2;Shen:Wood19;Wood8:Wood19;kaligula_floor:Wood16;Vants3:Vants3_dark;Wood7:Wood16",
+    "ShipId": 60
+  },
+  {
+    "Name": "design_ship_379_name",
+    "InShop": "true Tier4",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_379_sans_pareil_fire",
+    "Texture": "kaligula_floor:Wood19;ship_stel_hull:Wood12;hmsvictory_gunport:Wood19;ship_sanspariel_decor2:design_a9;brig_hull:design_a9;BoatTex:firestorm_hull_bw;Vants3:Vants3_dark;ship_kech_kab:design_a9",
+    "ShipId": 41
+  },
+  {
+    "Name": "design_ship_380_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_380_neptuno_burgundy",
+    "Texture": "Wood17:Wood18;Wood16:Wood18;Vants3:Vants3_dark;ship_black_gunport:Wood19;ship_nep_hull:firestorm_hull_bw",
+    "ShipId": 39
+  },
+  {
+    "Name": "design_ship_381_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_381_redoutable_light",
+    "Texture": "Wood17:Wood13;ship_nep_hull:Wood19;Wood16:Wood19;Vants3:Wood19;Wood6:Wood19;BoatTex:Wood19;Vants:Vants3_dark",
+    "ShipId": 52
+  },
+  {
+    "Name": "design_ship_382_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_382_redoutable_contrast",
+    "Texture": "Wood17:Wood19;ship_nep_hull:Wood19;Wood16:Wood14;Vants3:Wood19;Wood6:Wood19;BoatTex:Wood21;Vants:Vants3_dark",
+    "ShipId": 52
+  },
+  {
+    "Name": "design_ship_383_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_383_sovereign_fogy",
+    "Texture": "ship_sov_hull:Octo;Vants2:Wood10;Vants3:Vants3_dark",
+    "ShipId": 46
+  },
+  {
+    "Name": "design_ship_384_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_384_kobukson_contrast",
+    "Texture": "ship_kbk_hull:ship_kech_hull;kaligula_floor:Wood19",
+    "ShipId": 40
+  },
+  {
+    "Name": "design_ship_385_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_385_la_sirene_gold",
+    "Texture": "ship_sirena_hull:ship_nep_hull;sirena_decor:Wood19;Wood7:Wood19;Mast_1:Wood19;Wood17:gold_roof;lecfcrt_deck:Wood17;Vants3:Vants3_dark;BoatTex:d114_hmsvictory_hull;sirena_bronze:gold_roof",
+    "ShipId": 32
+  },
+  {
+    "Name": "design_ship_386_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_386_le_requin_ghost",
+    "Texture": "ship_lacreole_hull:Octo;Wood16:Wood11;lecfcrt_deck:floor_peers;Vants3:Vants3_dark",
+    "ShipId": 47
+  },
+  {
+    "Name": "design_ship_387_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_387_poltava_oak",
+    "Texture": "Poltava:d114_hmsvictory_hull;ship_kech_hull:Wood19;Vants3:Vants3_dark;ship_stel_hull:Wood19",
+    "ShipId": 57
+  },
+  {
+    "Name": "design_ship_388_name",
+    "InShop": "true Tier2",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_388_poltava_dark",
+    "Texture": "ship_kech_hull:Wood16;Poltava:d113_ship_santisima_hull2;Vants3:Vants3_dark;ship_stel_hull:Wood19;kaligula_floor_light:Wood7",
+    "ShipId": 57
+  },
+  {
+    "Name": "design_ship_389_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_389_san_martin_contrast",
+    "Texture": "ship_falmouthtrader_hull:La_royale_HULL;lecfcrt_deck:Wood11;Vants3:Vants3_dark;Wood11:Wood19;ship_stel_hull:Wood13;Wood7:Wood19;iron_cherepica:Octo;hmsvictory_gunport:Wood19",
+    "ShipId": 59
+  },
+  {
+    "Name": "design_ship_390_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_390_ingermanland_black",
+    "Texture": "Wood13:Wood16;Wood6:Wood19;Vants3:Vants3_dark;kaligula_floor:gray_deck",
+    "ShipId": 50
+  },
+  {
+    "Name": "design_ship_391_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_391_victory_white",
+    "Texture": "hms_victory_back:hms_victory_back_white;hmsvictory_deck:lecfcrt_deck;Vants2:Wood16;hmsvictory_hull:lecfcrt_hull",
+    "ShipId": 31
+  },
+  {
+    "Name": "design_ship_392_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_392_kwee_song_royal",
+    "Texture": "Vants3:Vants3_dark;Wood6:Wood22;Mast_1:Wood19;Wood20:Wood19;ship_kbk_roof2:Wood13;ship_redsail_hull:des_ship_redsail_hull_white;lecfcrt_deck:Wood17",
+    "ShipId": 23
+  },
+  {
+    "Name": "design_ship_393_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_393_devourer_dark",
+    "Texture": "ship_essex_hull:Wood19;Wood7:Wood14;Wood11:Wood19;Vants3:Vants3_dark;lecfcrt_deck:kaligula_floor;Wood8:Wood14;ship_devouer_hull:brig_hull",
+    "ShipId": 14
+  },
+  {
+    "Name": "design_ship_394_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_394_devourer_bloody",
+    "Texture": "ship_essex_hull:Wood19;Wood7:Wood19;Wood11:Wood19;Vants3:Vants3_dark;Wood8:Wood21;ship_devouer_hull:des_ship_devouer_hull_red",
+    "ShipId": 14
+  },
+  {
+    "Name": "design_ship_395_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_395_constitution_swift",
+    "Texture": "WhiteWood2:Wood17;ship_const_hull2:des_ship_const_hull2_striped;ship_const_hull:des_ship_const_hull_orange;Vants3:Vants3_dark;Metal1:Wood19;kaligula_floor_light:Wood18",
+    "ShipId": 25
+  },
+  {
+    "Name": "design_ship_396_name",
+    "InShop": "true",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_396_balloon_royal",
+    "Texture": "unique_sail_balloon:unique_sail_1;Vants3:Vants3_dark;",
+    "ShipId": 56
+  },
+  {
+    "Name": "design_ship_397_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_397_balloon_unique",
+    "Texture": "unique_sail_balloon:Balloon_1;Vants3:Vants3_dark;",
+    "ShipId": 56
+  },
+  {
+    "Name": "design_398_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2024_1"
+  },
+  {
+    "Name": "design_399_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2024_2"
+  },
+  {
+    "Name": "design_400_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2024_3"
+  },
+  {
+    "Name": "design_401_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2024_flag"
+  },
+  {
+    "Name": "desBowFigure19",
+    "InShop": "false",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 640 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_403_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2024_flag2"
+  },
+  {
+    "Name": "design_404_name",
+    "InShop": "false",
+    "Category": "Satellite",
+    "BonusEffectType": "PSpeed PHealth PCapacity",
+    "BonusEffectValue": "5 5 5",
+    "IconName": "Icons 515 0 64 64",
+    "Texture": ""
+  },
+  {
+    "Name": "design_405_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_100k_flag"
+  },
+  {
+    "Name": "design_406_name",
+    "InShop": "false",
+    "Category": "Decal1",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_100k_sail"
+  },
+  {
+    "Name": "design_ship_407_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_407_poltava_anniversary",
+    "Texture": "Poltava:Poltava2",
+    "ShipId": 57
+  },
+  {
+    "Name": "design_ship_408_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_408_mord_anniversary",
+    "Texture": "Wood12:Word1;Wood16:Wood21;Wood7:Wood21;Wood14:Wood21",
+    "ShipId": 53
+  },
+  {
+    "Name": "design_ship_409_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_409_sovereign_anniversary",
+    "Texture": "ship_sov_hull:Sov1",
+    "ShipId": 46
+  },
+  {
+    "Name": "design_ship_410_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_wosb24_flag"
+  },
+  {
+    "Name": "design_ship_411_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_wosb24_sail"
+  },
+  {
+    "Name": "design_ship_412_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_wosb_tourn24"
+  },
+  {
+    "Name": "design_ship_413_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag413"
+  },
+  {
+    "Name": "design_ship_414_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag414"
+  },
+  {
+    "Name": "design_ship_415_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag415"
+  },
+  {
+    "Name": "design_ship_416_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag416"
+  },
+  {
+    "Name": "design_ship_417_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag417"
+  },
+  {
+    "Name": "design_ship_418_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "orden_flag"
+  },
+  {
+    "Name": "design_ship_419_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "referal_bonus_flag"
+  },
+  {
+    "Name": "desBowFigure22",
+    "InShop": "true Tier3",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 0 261 128 128",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure23",
+    "InShop": "ByGold 20000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 129 261 128 128",
+    "Texture": ""
+  },
+  {
+    "Name": "desBowFigure24",
+    "InShop": "ByGold 50000",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 3,
+    "IconName": "Icons 258 261 128 128",
+    "Texture": ""
+  },
+  {
+    "Name": "design_423_name",
+    "InShop": "ByGold 200000",
+    "Category": "Satellite",
+    "BonusEffectType": "PCapacity",
+    "BonusEffectValue": "12",
+    "IconName": "Icons 387 261 128 128",
+    "Texture": ""
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "shareddes",
+    "Texture": ""
+  },
+  {
+    "Name": "design_ship_425_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_425_santisima",
+    "Texture": "Wood18:Wood19;Wood14:Wood19;Wood13:Wood19;ship_qar_decor:ship_qar_decor_2;Vants2:Vants2_dark;kaligula_floor:hmsvictory_deck;ship_santisima_hull2:ship_santisima_hull3;ship_santisima_back:ship_santisima_back2;ship_santisima_deck:ship_santisima_deck2;santisima_deck:santisima_deck2;Sail6_main:Santa_Unic2_main;Sail6_side:Santa_Unic2_side;Sail6_triangle:Santa_Unic2_triangle;Sail6_mini:Santa_Unic2_mini",
+    "ShipId": 36
+  },
+  {
+    "Name": "design_ship_426_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_426_sanmartin",
+    "Texture": "ship_falmouthtrader_hull:ship_falmouthtrader_hull2;San_martin_decor:San_martin_decor2;ship_stel_hull:ship_devouer_hull",
+    "ShipId": 57
+  },
+  {
+    "Name": "design_ship_427_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_427_poltava",
+    "Texture": "Poltava:Poltava3;kaligula_floor_light:lecfcrt_deck",
+    "ShipId": 59
+  },
+  {
+    "Name": "design_ship_428_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_428_lacouronne",
+    "Texture": "lacor_hull:lacor_hull2;kaligula_floor:hmsvictory_deck",
+    "ShipId": 49
+  },
+  {
+    "Name": "design_ship_429_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "vkplay_flag"
+  },
+  {
+    "Name": "design_430_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "halloween24_flag"
+  },
+  {
+    "Name": "design_431_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "halloween24_sail"
+  },
+  {
+    "Name": "design_ship_432_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_432_sans_halloween",
+    "Texture": "ship_const_hull2:ship_const_hull2_orange;ship_stel_hull:ship_stel_hull_helloween;brig_hull:brig_hull_helloween",
+    "ShipId": 41
+  },
+  {
+    "Name": "design_ship_433_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_432_sans_halloween",
+    "Texture": "ship_stel_hull:ship_stel_hull_Empire;ship_stpav_hull_decor:ship_stel_hull_decor_Empire;kaligula_floor:gray_deck",
+    "ShipId": 51
+  },
+  {
+    "Name": "design_434_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "amvay_flag"
+  },
+  {
+    "Name": "design_435_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "turnir_flag"
+  },
+  {
+    "Name": "design_436_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "amvay_sail"
+  },
+  {
+    "Name": "design_geraldics_espaniol_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Espaniol_Flag"
+  },
+  {
+    "Name": "design_geraldics_esapniol_sail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Espaniol_Sail"
+  },
+  {
+    "Name": "design_geraldics_kai_severia_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Severia_Flag"
+  },
+  {
+    "Name": "design_geraldics_kai_severia_sail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Severia_Sail"
+  },
+  {
+    "Name": "design_geraldics_antilia_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Antilia_Flag"
+  },
+  {
+    "Name": "design_geraldics_antilia_sail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Antilia_Sail"
+  },
+  {
+    "Name": "design_geraldics_trader_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Traders_Flag"
+  },
+  {
+    "Name": "design_geraldics_trader_sail",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Traders_Sail"
+  },
+  {
+    "Name": "design_geraldics_emperia_flag",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Empire_Flag"
+  },
+  {
+    "Name": "design_ship_446_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_446_adventure_red",
+    "Texture": "ship_sov_hull:ship_qar_hull;Vants3:ship_qar_hull;Wood18:Wood21;kaligula_floor:firestorm_hull_1;Vants2:Vants2_red;Vants4:Vants4_dark;adventure_decor:adventure_decor_red",
+    "ShipId": 54
+  },
+  {
+    "Name": "design_ship_447_name",
+    "InShop": "true Tier3",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_447_sparrow_red_skull",
+    "Texture": "Mast_1:Mast_1_red;ship_flute_deck:ship_flute_deck_red;ship_flute_hull_smug:ship_flute_hull_red;kaligula_floor:gray_deck",
+    "ShipId": 13
+  },
+  {
+    "Name": "design_ship_448_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_448_octopus",
+    "Texture": "Octo:Octo_dark;Octo_2:Octo_decor_brass;Decals_Ships:Decals_Ships_Dark",
+    "ShipId": 62
+  },
+  {
+    "Name": "design_ship_449_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_449_la_royale",
+    "Texture": "Wood8:Wood8_pink;Shen:Shen_white;La_royale_HULL:La_royale_HULL_pink;LaRoyal_decor:LaRoyal_dec_white;Wood7:WhiteWood333",
+    "ShipId": 60
+  },
+  {
+    "Name": "design_ship_450_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_450_shen",
+    "Texture": "Wood18:Wood8_green;Shen:Shen_green;figures2:Figures-2_desighn",
+    "ShipId": 26
+  },
+  {
+    "Name": "design_ship_451_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_451_octopus_bloody",
+    "Texture": "Octo:Octo_hull_blood;Octo_2:Octo_blood;Decals_Ships:Decals_Ships_red;Wood19:Wood21",
+    "ShipId": 62
+  },
+  {
+    "Name": "design_ship_452_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Flag_NY2025"
+  },
+  {
+    "Name": "design_ship_453_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_NY_2025"
+  },
+  {
+    "Name": "design_ship_454_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_454_sover",
+    "Texture": "ship_sov_hull_alpha:ship_sov_hull_alpha2;ship_sov_hull:ship_sov2;Vants2:Vants2_grey;lecfcrt_deck:hmsvictory_deck;Vants3:Vants3_dark",
+    "ShipId": 46
+  },
+  {
+    "Name": "design_ship_455_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_455_7_provin",
+    "Texture": "7prov:7prov2;7_prov_decor:7_prov_decor_silver;kaligula_floor:gray_deck",
+    "ShipId": 61
+  },
+  {
+    "Name": "design_456_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag_griffon"
+  },
+  {
+    "Name": "design_457_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag_reckhem"
+  },
+  {
+    "Name": "design_458_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "desing_flag_swed"
+  },
+  {
+    "Name": "design_459_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Maya_sail"
+  },
+  {
+    "Name": "design_460_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Stitches"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "orden_sail"
+  },
+  {
+    "Name": "design_462_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "rare_flag1"
+  },
+  {
+    "Name": "design_463_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "rare_flag2"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "fanatics_flag"
+  },
+  {
+    "Name": "removed",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "fanatics_sail"
+  },
+  {
+    "Name": "design_ship_466_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_466_vasa",
+    "Texture": "Wood7:Wood8;Vants3:Vants3_dark;Vasa_hull:Vasa_hull_hist;Vasa_decor:Vasa_decor_hist;lecfcrt_deck:hmsvictory_deck;Vasa_alpha:Vasa_alpha_hist;Mast_1:Wood8;windows:windows_dark",
+    "ShipId": 70
+  },
+  {
+    "Name": "design_ship_467_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_467_firestorm_white_icy",
+    "Texture": "firestorm_decor_1:firestorm_decor_3;firestorm_hull_bw:firestorm_hull_bw_Wice;firestorm_hull_2:firestorm_hull_2_Wice;firestorm_hull_1:firestorm_hull_1_Wice;Wood12:Wood24;Wood21:WhiteWood333;windows:windows_dark;BoatTex:BoatTex_gray",
+    "ShipId": 28
+  },
+  {
+    "Name": "design_ship_468_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_468_firestorm_blue_icy",
+    "Texture": "firestorm_decor_1:firestorm_decor_4;ship_kech_kab:ship_kech_kab_ice;firestorm_hull_bw:firestorm_hull_bw_Bice;firestorm_hull_2:firestorm_hull_2_Bice;firestorm_hull_1:firestorm_hull_1_Bice;Wood12:Wood24;Wood21:Wood24;windows:windows_dark;Vants3:Vants3_dark;BoatTex:BoatTex_gray",
+    "ShipId": 28
+  },
+  {
+    "Name": "design_ship_469_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_469_pavel_red",
+    "Texture": "ship_stel_hull:ship_stel_hull_Dragon;ship_stpav_hull_decor:ship_stpav_hull_decor_Dragon;kaligula_floor:lecfcrt_deck;Vants3:Vants3_dark",
+    "ShipId": 38
+  },
+  {
+    "Name": "design_ship_470_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_470_pavel_green",
+    "Texture": "ship_stel_hull:ship_stel_hull_Empire_Color;ship_stpav_hull_decor:ship_stpav_hull_decor_Color;kaligula_floor:lecfcrt_deck",
+    "ShipId": 38
+  },
+  {
+    "Name": "design_ship_471_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_471_pavel_blue",
+    "Texture": "ship_stel_hull:ship_stel_hull_Sev;ship_stpav_hull_decor:ship_stpav_hull_decor_Sev;kaligula_floor:hmsvictory_deck;Vants3:Vants3_dark;BoatTex:BoatTex_gray",
+    "ShipId": 38
+  },
+  {
+    "Name": "design_472_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "gorgone_flag3s"
+  },
+  {
+    "Name": "design_473_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "gorgone_sail"
+  },
+  {
+    "Name": "design_474_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "gorgone_sail_dark"
+  },
+  {
+    "Name": "design_475_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "gorgone_flag5"
+  },
+  {
+    "Name": "design_476_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Anchor"
+  },
+  {
+    "Name": "design_477_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "BrownSkull"
+  },
+  {
+    "Name": "design_478_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Clever"
+  },
+  {
+    "Name": "design_479_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "grecebw"
+  },
+  {
+    "Name": "design_480_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "maori"
+  },
+  {
+    "Name": "design_481_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Palm"
+  },
+  {
+    "Name": "design_482_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "RBW"
+  },
+  {
+    "Name": "design_483_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "RFishes"
+  },
+  {
+    "Name": "design_484_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "UDragon"
+  },
+  {
+    "Name": "design_485_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "UFish"
+  },
+  {
+    "Name": "design_486_name",
+    "InShop": "true Tier2",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "USkull"
+  },
+  {
+    "Name": "design_487_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "WB"
+  },
+  {
+    "Name": "design_488_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "YR"
+  },
+  {
+    "Name": "sailcloth_maori",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_maori_"
+  },
+  {
+    "Name": "sailcloth_clover",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_Clever_"
+  },
+  {
+    "Name": "sailcloth_brown_skull",
+    "InShop": "true Tier3",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_BrownSkull_"
+  },
+  {
+    "Name": "sailcloth_palm",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_Palm_"
+  },
+  {
+    "Name": "sailcloth_u_dragon",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_UDragon_"
+  },
+  {
+    "Name": "sailcloth_u_fish",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_UFish_"
+  },
+  {
+    "Name": "sailcloth_u_skull",
+    "InShop": "true Tier3",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_USkull_"
+  },
+  {
+    "Name": "sailcloth_yr",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_YR_"
+  },
+  {
+    "Name": "sailcloth_anchor",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_Anchor_"
+  },
+  {
+    "Name": "sailcloth_grecebw",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_grecebw_"
+  },
+  {
+    "Name": "sailcloth_r_fishes",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_RFishes_"
+  },
+  {
+    "Name": "sailcloth_rbw",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_RBW_"
+  },
+  {
+    "Name": "sailcloth_wb",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_WB_"
+  },
+  {
+    "Name": "design_ship_maori_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_502_azov_maori",
+    "Texture": "Azov_decor:Azov_decor_1;ship_stel_hull:ship_stel_hull_1;Wood23:Wood28;kaligula_floor:Empire_floor_2;Wood14:Wood22;Wood21:Wood22;",
+    "ShipId": 69
+  },
+  {
+    "Name": "design_ship_clover_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_503_azov_clover",
+    "Texture": "ship_stel_hull:ship_stel_hull_2;kaligula_floor:Empire_floor;Wood14:Wood20;Wood21:Wood20;",
+    "ShipId": 69
+  },
+  {
+    "Name": "design_ship_brown_skull_name",
+    "InShop": "true Tier4",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_504_azov_brown_skull",
+    "Texture": "ship_stel_hull:ship_stel_hull_3;Wood23:Wood27;kaligula_floor:lecfcrt_deck;Wood21:Wood7;Wood14:Wood7;",
+    "ShipId": 69
+  },
+  {
+    "Name": "design_ship_palm_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_505_azov_palm",
+    "Texture": "Wood19:Wood20;ship_stel_hull:ship_stel_hull_4;Wood23:kaligula_floor_light;kaligula_floor:kaligula_floor_light;Wood21:Wood13;Wood14:Wood13;Azov_decor:Azov_decor_silver;",
+    "ShipId": 69
+  },
+  {
+    "Name": "design_ship_huracan_gold_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_506_huracan_gold",
+    "Texture": "Empire_1_hull:Empire_2_hull;Empire_1_Decor:Empire_2_Decor;Empire_floor:lecfcrt_deck;Wood19:Wood6;",
+    "ShipId": 65
+  },
+  {
+    "Name": "design_ship_red_fish_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_507_huracan_red_fish",
+    "Texture": "Empire_1_hull:Empire_3_hull;Empire_1_Decor:Empire_3_Decor;Empire_floor:Empire_floor_2;Wood19:Wood21;",
+    "ShipId": 65
+  },
+  {
+    "Name": "design_ship_u_skull_name",
+    "InShop": "true Tier5",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_508_huracan_u_skull",
+    "Texture": "Empire_1_hull:Empire_4_hull;Empire_1_Decor:Empire_4_Decor;",
+    "ShipId": 65
+  },
+  {
+    "Name": "design_ship_yr_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_509_12_apostles_yr",
+    "Texture": "kaligula_floor:lecfcrt_deck;ship_stel_hull:ship_stel_hull_Dragon;hmsvictory_hull:hmsvictory_hull_12_decor1;12apostle_decor:12apostle_decor1;12_Korma_Decor:12_Korma_Decor1;Wood13:Wood25;Vants3:Vants3_dark;",
+    "ShipId": 55
+  },
+  {
+    "Name": "design_ship_anchor_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_510_12_apostles_anchor",
+    "Texture": "hmsvictory_hull:hmsvictory_hull_6;ship_stel_hull:ship_stel_hull_6;12apostle_decor:12apostle_decor_blue;kaligula_floor:hmsvictory_deck;Wood13:Wood20;Wood18:Wood19;Vants3:Vants3_dark;",
+    "ShipId": 55
+  },
+  {
+    "Name": "design_ship_greece_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_511_12_apostles_greece",
+    "Texture": "kaligula_floor:kaligula_floor_light;ship_stel_hull:ship_stel_hull_4;hmsvictory_hull:hmsvictory_hull_5;Wood18:Wood19;Wood13:WhiteWood2;12apostle_decor:12apostle_decor_blue;Vants3:Vants3_dark;",
+    "ShipId": 55
+  },
+  {
+    "Name": "design_ship_fishes_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_512_axel_thorsen_fishes",
+    "Texture": "Wood22:Wood22_turq;ship_kech_hull:ship_kech_hull_White;brig_hull:brig_hull_Blue;kaligula_floor:hmsvictory_deck;Wood6:Wood21;",
+    "ShipId": 71
+  },
+  {
+    "Name": "design_ship_rbw_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_513_axel_thorsen_rbw",
+    "Texture": "Wood22:Wood22_Blue;ship_kech_hull:ship_kech_hull_Brown;Wood6:Wood7;brig_hull:brig_hull_Brown;kaligula_floor:lecfcrt_deck;Vants3:Vants3_dark;",
+    "ShipId": 71
+  },
+  {
+    "Name": "design_ship_wb_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_514_axel_thorsen_wb",
+    "Texture": "ship_kech_hull:ship_kech_hull_Red;Wood22:Wood22_White;brig_hull:brig_hull_Red;Wood6:Wood14;",
+    "ShipId": 71
+  },
+  {
+    "Name": "design_ship_515_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "steam_flag_blue"
+  },
+  {
+    "Name": "design_ship_516_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "steam_flag_blue_2"
+  },
+  {
+    "Name": "design_ship_517_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "steam_flag_black"
+  },
+  {
+    "Name": "design_ship_518_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "steam_flag_black_2"
+  },
+  {
+    "Name": "design_519_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Flag_halloween_25"
+  },
+  {
+    "Name": "design_520_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Decal_halloween_25"
+  },
+  {
+    "Name": "design_521_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Decal_swords_skull"
+  },
+  {
+    "Name": "design_ship_522_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_522_adventure_halloween",
+    "Texture": "ship_sov_hull:ship_sov_hull_adventure_decor_1;Vants3:Vants3_dark;Wood18:Wood19;kaligula_floor:Empire_floor;windows:windows_dark;Wood21:Wood27;Vants2:Vants2_dark;adventure_decor:adventure_decor_silver;Vants4:Vants4_dark",
+    "ShipId": 54
+  },
+  {
+    "Name": "design_ship_523_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_523_victory_halloween",
+    "Texture": "hmsvictory_hull:hmsvictory_hull_darkblue;Vants3:Vants3_dark;Vants2:Vants2_dark;hmsvictory_deck:kaligula_floor_light;hms_victory_back:hms_victory_back_darkblue;Vants4:Vants4_dark;Wood7:Wood19;windows:windows_dark",
+    "ShipId": 31
+  },
+  {
+    "Name": "design_sail_ny_1_26_name",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2025_1"
+  },
+  {
+    "Name": "design_sail_ny_2_26_name",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "event_ny2025_2"
+  },
+  {
+    "Name": "design_decal_ny_26_name",
+    "InShop": "false",
+    "Category": "Decal2",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Decal_gerb_guns"
+  },
+  {
+    "Name": "design_flag_ny_1_26_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "NY_Flag2026_1"
+  },
+  {
+    "Name": "design_flag_ny_2_26_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "NY_Flag2026_2"
+  },
+  {
+    "Name": "design_flag_ny_26_guns_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Flag_gerb_gun"
+  },
+  {
+    "Name": "desBowFigure25",
+    "InShop": "false",
+    "Category": "BowFigure",
+    "BonusEffectType": "PReduceDamageToNose",
+    "BonusEffectValue": 5,
+    "IconName": "Icons 515 260 128 128",
+    "Texture": ""
+  },
+  {
+    "Name": "design_ship_ny_26_santisima_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_531_ny_26_santisima",
+    "Texture": "Wood14:Wood25;ship_santisima_back:ship_santisima_back5;ship_santisima_hull2:ship_santisima_hull5;ship_qar_decor:ship_qar_decor_4;kaligula_floor:hmsvictory_deck;Wood13:Wood25",
+    "ShipId": 36
+  },
+  {
+    "Name": "design_ship_ny_26_la_creole_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_532_ny_26_la_creole",
+    "Texture": "ship_lacreole_hull:ship_lacreole_hull_WGray;ship_kech_kab:ship_kech_kab_grey;kaligula_floor_light:hmsvictory_deck;brig_hull:brig_hull_Brown;Vants2:Vants2_grey;BoatTexWhite:BoatTex_gray;Vants3:Vants3_dark;Vants4:Vants4_dark;windows:windows_dark",
+    "ShipId": 24
+  },
+  {
+    "Name": "design_ship_ny_26_anson_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_533_ny_26_anson",
+    "Texture": "anson_detail_2:anson_detail_2_emp;anson_detail:anson_detail_emp;ship_stel_hull:ship_stel_hull_Empire;Mast_1:Mast_1_emp;WhiteWood2:Wood24;Wood11:Wood19;Wood7:Wood24;kaligula_floor:Empire_floor;Vants4:Vants4_dark;Vants3:Vants3_dark;BoatTex:BoatTex_gray;windows:windows_dark",
+    "ShipId": 19
+  },
+  {
+    "Name": "design_ship_ny_26_prince_willem_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_534_ny_26_prince_willem",
+    "Texture": "ship_pwilliam:ship_pwilliam_Yellow;ship_pwilliam_back:ship_pwilliam_back_Yellow;ship_flute_deck:ship_flute_deck_red;Vants3:Vants3_dark;Wood6:Wood8;Vants4:Vants4_dark;kaligula_floor:Empire_floor;Mast_1:Mast_1_emp",
+    "ShipId": 20
+  },
+  {
+    "Name": "design_ship_ny_26_san_martin_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_535_ny_26_san_martin",
+    "Texture": "ship_falmouthtrader_hull:ship_falmouthtrader_hull_3;lecfcrt_deck:kaligula_floor_light;Vants3:Vants3_dark;ship_stel_hull:ship_stel_hull_bone;San_martin_decor:San_martin_decor3;Wood7:Wood11",
+    "ShipId": 59
+  },
+  {
+    "Name": "design_ship_ny_26_octopus_bone_light_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_536_ny_26_octopus_bone_light",
+    "Texture": "Octo:Octo_bone;Octo_2:Octo_2_bone;Vants3_dark:Vants3;Wood19:Wood13;gray_deck:kaligula_floor",
+    "ShipId": 62
+  },
+  {
+    "Name": "design_ship_ny_26_octopus_iced_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_537_ny_26_octopus_iced",
+    "Texture": "Octo:Octo_blue;Octo_2:Octo_2_blue;Decals_Ships:Decals2_Ships;gray_deck:hmsvictory_deck;Wood19:WhiteWood333",
+    "ShipId": 62
+  },
+  {
+    "Name": "design_538_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Hierarhs"
+  },
+  {
+    "Name": "design_539_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sprut"
+  },
+  {
+    "Name": "design_540_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Seahorse"
+  },
+  {
+    "Name": "design_541_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Manta"
+  },
+  {
+    "Name": "design_542_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Lion"
+  },
+  {
+    "Name": "design_543_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Izumrud"
+  },
+  {
+    "Name": "design_544_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Horse"
+  },
+  {
+    "Name": "design_545_name",
+    "InShop": "false",
+    "Category": "Flag",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "swords"
+  },
+  {
+    "Name": "sailcloth_spb_1",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_spb_1_"
+  },
+  {
+    "Name": "sailcloth_sprut",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_sprut_"
+  },
+  {
+    "Name": "sailcloth_seahorse",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_seahorse_"
+  },
+  {
+    "Name": "sailcloth_manta",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_manta_"
+  },
+  {
+    "Name": "sailcloth_wlion",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_wlion_"
+  },
+  {
+    "Name": "sailcloth_izumrud",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_izumrud_"
+  },
+  {
+    "Name": "sailcloth_horse",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_Horse_"
+  },
+  {
+    "Name": "sailcloth_swords",
+    "InShop": "false",
+    "Category": "SailTexture",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "",
+    "Texture": "Sail_swords_"
+  },
+  {
+    "Name": "design_ship_554_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_554_deadfish_sprut",
+    "Texture": "dfish_hull:dfish_hull_sprut;dfish_mast:dfish_mast_sprut;dfish_decor:dfish_decor_sprut;hmsvictory_deck:gray_deck;Vants4:Vants4_dark;windows:windows_dark",
+    "ShipId": 35
+  },
+  {
+    "Name": "design_ship_555_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_555_essex_wlion",
+    "Texture": "ship_essex_hull:ship_essex_hull_lwood;kaligula_floor_light:kaligula_floor",
+    "ShipId": 11
+  },
+  {
+    "Name": "design_ship_556_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_523_victory_halloween",
+    "Texture": "hmsvictory_hull:hmsvictory_hull_darkblue;Vants3:Vants3_dark;Vants2:Vants2_dark;hmsvictory_deck:kaligula_floor_light;hms_victory_back:hms_victory_back_darkblue;Vants4:Vants4_dark;Wood7:Wood19;windows:windows_dark",
+    "ShipId": 31
+  },
+  {
+    "Name": "design_ship_557_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_557_sans_pareil_manta",
+    "Texture": "ship_stel_hull:ship_stel_hull_pariel;hmsvictory_gunport:hmsvictory_gunport_dark;ship_sanspariel_decor2:ship_sanspariel_decor3;ship_kech_kab:ship_kech_kab_grey;brig_hull:brig_hull_Iberia_2",
+    "ShipId": 41
+  },
+  {
+    "Name": "design_ship_558_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_558_southampton_izumrud",
+    "Texture": "Unite_hull:Unite_hull_izumrud;Wood25:Wood23;ship_stel_hull:Empire_1_hull;Decor_southamption:Decor_thouthamption_izumrud;kaligula_floor:Empire_floor;Wood6:Wood20",
+    "ShipId": 72
+  },
+  {
+    "Name": "design_ship_559_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_559_iberia_swords",
+    "Texture": "Wood29:Wood31;brig_hull:brig_hull_Iberia_2;Wood28:Wood27;kaligula_floor:Empire_floor_2;Vants2:Vants2_dark;Mast_1:Mast_1_red;Wood19:Wood18;Vants3:Vants3_dark",
+    "ShipId": 73
+  },
+  {
+    "Name": "design_ship_560_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_560_three_hierarchs_spb_1",
+    "Texture": "ship_stel_hull:ship_stel_hull_3hier_1;brig_hull:brig_hull_Iberia_2;kaligula_floor_light:lecfcrt_deck;WhiteWood2:Wood10;Vants3:Vants3_dark;3Hier_Decor:3Hier_Decor_silver",
+    "ShipId": 74
+  },
+  {
+    "Name": "design_ship_561_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_561_barco_montanes_wlion",
+    "Texture": "Wood30:Wood32;hmsvictory_hull:hmsvictory_hull_Barco;brig_hull:brig_hull_Iberia_2;kaligula_floor:lecfcrt_deck;windows:windows_dark;Wood6:Wood7;Wood7:Wood11",
+    "ShipId": 75
+  },
+  {
+    "Name": "design_ship_ny_26_le_requin_name",
+    "InShop": "false",
+    "Category": "ShipFullDesign",
+    "BonusEffectType": "",
+    "BonusEffectValue": "",
+    "IconName": "design_ship_562_ny_26_le_requin",
+    "Texture": "ship_lacreole_hull:ship_lacreole_hull_Yellow;requin:requin_Yellow;Wood16:Wood25;lecfcrt_deck:kaligula_floor",
+    "ShipId": 47
+  }
+]

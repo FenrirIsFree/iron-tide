@@ -1,0 +1,954 @@
+[
+  {
+    "index": 0,
+    "modelName": "Ship_2_enginev2",
+    "weight": 20,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_2_enginev2",
+      "CorpusHitboxCenter": "0.0 3.0 0.000",
+      "CorpusHitboxSize": "16.675 6.048 5.565",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 20
+    }
+  },
+  {
+    "index": 1,
+    "modelName": "Ship_1_Pikle",
+    "weight": 20,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_1_Pikle",
+      "CorpusHitboxCenter": "-0.639 0.540 0.0",
+      "CorpusHitboxSize": "23.897 7.000 5.565",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 20
+    }
+  },
+  {
+    "index": 2,
+    "modelName": "Ship_3_Shunsen",
+    "weight": 33,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_3_Shunsen",
+      "CorpusHitboxCenter": "0.345 2.569 0.000",
+      "CorpusHitboxSize": "28.333 6.876 6.447",
+      "WaterlineOffset": 0.25,
+      "PreinstalledBowFig": "",
+      "Weight": 33
+    }
+  },
+  {
+    "index": 3,
+    "modelName": "Ship_4_Ketch",
+    "weight": 30,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_4_Ketch",
+      "CorpusHitboxCenter": "0.284 1.214 0.000",
+      "CorpusHitboxSize": "26.674 8.176 6.224",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 30
+    }
+  },
+  {
+    "index": 4,
+    "modelName": "Ship_5_Mort_Ketch",
+    "weight": 35,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_5_Mort_Ketch",
+      "CorpusHitboxCenter": "0.284 1.214 0.000",
+      "CorpusHitboxSize": "26.674 8.176 6.224",
+      "WaterlineOffset": -0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 35
+    }
+  },
+  {
+    "index": 5,
+    "modelName": "Ship_6_brigantine",
+    "weight": 25,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_6_brigantine",
+      "CorpusHitboxCenter": "-0.625 0.999 0.000",
+      "CorpusHitboxSize": "29.930 9.676 8.487",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 25
+    }
+  },
+  {
+    "index": 6,
+    "modelName": "Ship_7_red_arrow",
+    "weight": 60,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_7_red_arrow",
+      "CorpusHitboxCenter": "-1.312 1.909 0.213",
+      "CorpusHitboxSize": "42.1 10.057 9.100",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "desBowFigure17",
+      "Weight": 60
+    }
+  },
+  {
+    "index": 7,
+    "modelName": "Ship_8_phoenix",
+    "weight": 32,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_8_phoenix",
+      "CorpusHitboxCenter": "-1.160 1.724 0.000",
+      "CorpusHitboxSize": "28.715 8.251 8.143",
+      "WaterlineOffset": -0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 32
+    }
+  },
+  {
+    "index": 8,
+    "modelName": "Ship_9_mercury",
+    "weight": 45,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_9_mercury",
+      "CorpusHitboxCenter": "-0.024 2.152 0.000",
+      "CorpusHitboxSize": "30.064 10.057 8.143",
+      "WaterlineOffset": 0.35,
+      "PreinstalledBowFig": "",
+      "Weight": 45
+    }
+  },
+  {
+    "index": 9,
+    "modelName": "Ship_10_FR_russia",
+    "weight": 46,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_10_FR_russia",
+      "CorpusHitboxCenter": "0.0 2.508 0.000",
+      "CorpusHitboxSize": "42.132 9.898 8.487",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 46
+    }
+  },
+  {
+    "index": 10,
+    "modelName": "Ship_11_essex",
+    "weight": 47,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_11_essex",
+      "CorpusHitboxCenter": "-2.326 1.494 0.000",
+      "CorpusHitboxSize": "41.117 10.287 9.500",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 47
+    }
+  },
+  {
+    "index": 11,
+    "modelName": "Ship_12_black_prince",
+    "weight": 40,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_12_black_prince",
+      "CorpusHitboxCenter": "-1.105 1.743 0.000",
+      "CorpusHitboxSize": "36.848 10.622 8.143",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 40
+    }
+  },
+  {
+    "index": 12,
+    "modelName": "Ship_13_tartana",
+    "weight": 30,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_13_tartana",
+      "CorpusHitboxCenter": "-1.105 1.351 0.000",
+      "CorpusHitboxSize": "29.237 7.273 5.473",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 30
+    }
+  },
+  {
+    "index": 13,
+    "modelName": "Ship_14_devourer",
+    "weight": 58,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_14_devourer",
+      "CorpusHitboxCenter": "-3.193 1.653 0.000",
+      "CorpusHitboxSize": "40.000 11.454 8.400",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 58
+    }
+  },
+  {
+    "index": 14,
+    "modelName": "Ship_15_flute",
+    "weight": 30,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_15_flute",
+      "CorpusHitboxCenter": "0.089 1.646 0.000",
+      "CorpusHitboxSize": "28.715 7.665 6.708",
+      "WaterlineOffset": -0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 30
+    }
+  },
+  {
+    "index": 15,
+    "modelName": "Ship_16_falmouth_trader",
+    "weight": 68,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_16_falmouth_trader",
+      "CorpusHitboxCenter": "-1.135 2.037 0.000",
+      "CorpusHitboxSize": "43.894 12.120 8.898",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 68
+    }
+  },
+  {
+    "index": 16,
+    "modelName": "Ship_17_mortair_flute",
+    "weight": 35,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_17_mortair_flute",
+      "CorpusHitboxCenter": "-1.159 2.359 0.000",
+      "CorpusHitboxSize": "26.674 8.231 7.231",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 35
+    }
+  },
+  {
+    "index": 17,
+    "modelName": "Ship_18_anson",
+    "weight": 70,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_18_anson",
+      "CorpusHitboxCenter": "-3.51 2.1867 0.000",
+      "CorpusHitboxSize": "41.9 11.9 10",
+      "WaterlineOffset": -0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 70
+    }
+  },
+  {
+    "index": 18,
+    "modelName": "Ship_19_prince_willem",
+    "weight": 70,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_19_prince_willem",
+      "CorpusHitboxCenter": "-0.070 2.267 0.000",
+      "CorpusHitboxSize": "40.327 12.100 7.886",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "desBowFigure2",
+      "Weight": 70
+    }
+  },
+  {
+    "index": 19,
+    "modelName": "",
+    "weight": 70,
+    "length": 0,
+    "_raw": {
+      "ModelName": "",
+      "CorpusHitboxCenter": "-1.135 2.037 0.000",
+      "CorpusHitboxSize": "43.894 15.120 8.898",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 70
+    }
+  },
+  {
+    "index": 20,
+    "modelName": "Ship_21_black_wind",
+    "weight": 50,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_21_black_wind",
+      "CorpusHitboxCenter": "-0.867 1.995 0.000",
+      "CorpusHitboxSize": "43.894 10.729 7.787",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 50
+    }
+  },
+  {
+    "index": 21,
+    "modelName": "Ship_22_kwee_song",
+    "weight": 40,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_22_kwee_song",
+      "CorpusHitboxCenter": "0.203 2.184 0.000",
+      "CorpusHitboxSize": "26.323 11.100 9.578",
+      "WaterlineOffset": 0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 40
+    }
+  },
+  {
+    "index": 22,
+    "modelName": "Ship_23_la_creole",
+    "weight": 36,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_23_la_creole",
+      "CorpusHitboxCenter": "-0.484 1.746 0.000",
+      "CorpusHitboxSize": "34.095 5.487 7.742",
+      "WaterlineOffset": 0.06,
+      "PreinstalledBowFig": "",
+      "Weight": 36
+    }
+  },
+  {
+    "index": 23,
+    "modelName": "Ship_24_constitution",
+    "weight": 57,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_24_constitution",
+      "CorpusHitboxCenter": "-2.049 1.445 0.000",
+      "CorpusHitboxSize": "47.762 8.164 8.164",
+      "WaterlineOffset": 0.3,
+      "PreinstalledBowFig": "",
+      "Weight": 57
+    }
+  },
+  {
+    "index": 24,
+    "modelName": "Ship_25_shen",
+    "weight": 65,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_25_shen",
+      "CorpusHitboxCenter": "2.776 2.473 0.0",
+      "CorpusHitboxSize": "51.507 9.022 11.168",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 65
+    }
+  },
+  {
+    "index": 25,
+    "modelName": "Ship_26_le_corf_corte",
+    "weight": 22,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_26_le_corf_corte",
+      "CorpusHitboxCenter": "-0.767 1.235 0.000",
+      "CorpusHitboxSize": "26.323 5.273 7.665",
+      "WaterlineOffset": 0.15,
+      "PreinstalledBowFig": "",
+      "Weight": 22
+    }
+  },
+  {
+    "index": 26,
+    "modelName": "Ship_27_firestorm",
+    "weight": 70,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_27_firestorm",
+      "CorpusHitboxCenter": "-1.428 1.393 0.000",
+      "CorpusHitboxSize": "46.117 13.565 9.454",
+      "WaterlineOffset": -0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 70
+    }
+  },
+  {
+    "index": 27,
+    "modelName": "",
+    "weight": 60,
+    "length": 0,
+    "_raw": {
+      "ModelName": "",
+      "CorpusHitboxCenter": "-1.262 5.254 0.000",
+      "CorpusHitboxSize": "78.336 11.120 17.231",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 60
+    }
+  },
+  {
+    "index": 28,
+    "modelName": "",
+    "weight": 60,
+    "length": 0,
+    "_raw": {
+      "ModelName": "",
+      "CorpusHitboxCenter": "-1.428 1.393 0.000",
+      "CorpusHitboxSize": "46.117 14.565 9.454",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 60
+    }
+  },
+  {
+    "index": 29,
+    "modelName": "Ship_30_victory",
+    "weight": 90,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_30_victory",
+      "CorpusHitboxCenter": "-5.376 2.836 0.000",
+      "CorpusHitboxSize": "50.560 13.675 10.120",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 90
+    }
+  },
+  {
+    "index": 30,
+    "modelName": "Ship_31_le_sirene",
+    "weight": 80,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_31_le_sirene",
+      "CorpusHitboxCenter": "-2.942 2.719 0.000",
+      "CorpusHitboxSize": "47.027 11.847 11.231",
+      "WaterlineOffset": 0.06,
+      "PreinstalledBowFig": "",
+      "Weight": 80
+    }
+  },
+  {
+    "index": 31,
+    "modelName": "",
+    "weight": 80,
+    "length": 0,
+    "_raw": {
+      "ModelName": "",
+      "CorpusHitboxCenter": "-1.034 0.563 0.000",
+      "CorpusHitboxSize": "42.228 9.565 7.787",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 80
+    }
+  },
+  {
+    "index": 32,
+    "modelName": "Ship_33_flying_cloud",
+    "weight": 75,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_33_flying_cloud",
+      "CorpusHitboxCenter": "-1.959 1.313 0.000",
+      "CorpusHitboxSize": "51.671 10.342 7.787",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 75
+    }
+  },
+  {
+    "index": 33,
+    "modelName": "Ship_34_dedfish",
+    "weight": 110,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_34_dedfish",
+      "CorpusHitboxCenter": "1.635 3.236 0.000",
+      "CorpusHitboxSize": "47.227 16.231 10.565",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 110
+    }
+  },
+  {
+    "index": 34,
+    "modelName": "Ship_35_santisima_trinidad",
+    "weight": 100,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_35_santisima_trinidad",
+      "CorpusHitboxCenter": "-0.415 2.463 0.000",
+      "CorpusHitboxSize": "50.005 11.675 11.120",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "desBowFigure9",
+      "Weight": 100
+    }
+  },
+  {
+    "index": 35,
+    "modelName": "Ship_36_enginev2_st_elena",
+    "weight": 90,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_36_enginev2_st_elena",
+      "CorpusHitboxCenter": "-2.46 2.4 0.000",
+      "CorpusHitboxSize": "46.6 12 8.79",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 90
+    }
+  },
+  {
+    "index": 36,
+    "modelName": "Ship_37_neptuno",
+    "weight": 90,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_37_neptuno",
+      "CorpusHitboxCenter": "-1.560 1.989 0.000",
+      "CorpusHitboxSize": "41.340 11.454 9.142",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "desBowFigure5",
+      "Weight": 90
+    }
+  },
+  {
+    "index": 37,
+    "modelName": "Ship_38_kobukson",
+    "weight": 50,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_38_kobukson",
+      "CorpusHitboxCenter": "2.471 1.833 0.000",
+      "CorpusHitboxSize": "41.673 8.898 8.898",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 50
+    }
+  },
+  {
+    "index": 38,
+    "modelName": "Ship_39_st_parel",
+    "weight": 74,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_39_st_parel",
+      "CorpusHitboxCenter": "-1.807 0.855 0.000",
+      "CorpusHitboxSize": "48.893 9.6 10.120",
+      "WaterlineOffset": 0.25,
+      "PreinstalledBowFig": "",
+      "Weight": 74
+    }
+  },
+  {
+    "index": 39,
+    "modelName": "Ship_40_sovereighn",
+    "weight": 95,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_40_sovereighn",
+      "CorpusHitboxCenter": "-4.231 4.572 0.000",
+      "CorpusHitboxSize": "44.02 11.557 10.500",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "desBowFigure4",
+      "Weight": 95
+    }
+  },
+  {
+    "index": 40,
+    "modelName": "Ship_41_le_requin",
+    "weight": 45,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_41_le_requin",
+      "CorpusHitboxCenter": "-0.373 1.361 0.000",
+      "CorpusHitboxSize": "35.562 5.009 6.676",
+      "WaterlineOffset": 0.35,
+      "PreinstalledBowFig": "",
+      "Weight": 45
+    }
+  },
+  {
+    "index": 41,
+    "modelName": "Ship_42_belonna",
+    "weight": 87,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_42_belonna",
+      "CorpusHitboxCenter": "-2.554 2.785 0.000",
+      "CorpusHitboxSize": "47.852 11.492 10.057",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 87
+    }
+  },
+  {
+    "index": 42,
+    "modelName": "Ship_43_golden_apostle",
+    "weight": 28,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_43_golden_apostle",
+      "CorpusHitboxCenter": "-1.571 0.991 0",
+      "CorpusHitboxSize": "28.237 6.708 7.665",
+      "WaterlineOffset": 0.2,
+      "PreinstalledBowFig": "",
+      "Weight": 28
+    }
+  },
+  {
+    "index": 43,
+    "modelName": "Ship_44_la_couronne",
+    "weight": 100,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_44_la_couronne",
+      "CorpusHitboxCenter": "-1.429 2.580 0",
+      "CorpusHitboxSize": "55.774 12.028 10.586",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 100
+    }
+  },
+  {
+    "index": 44,
+    "modelName": "Ship_45_ingermanland",
+    "weight": 68,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_45_ingermanland",
+      "CorpusHitboxCenter": "-4.102 3.024 0",
+      "CorpusHitboxSize": "46.159 9.144 9.624",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 68
+    }
+  },
+  {
+    "index": 45,
+    "modelName": "Ship_46_redoutable",
+    "weight": 80,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_46_redoutable",
+      "CorpusHitboxCenter": "-0.642 1.457 0",
+      "CorpusHitboxSize": "51.447 11.547 12.509",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 80
+    }
+  },
+  {
+    "index": 46,
+    "modelName": "Ship_47_Mordount",
+    "weight": 55,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_47_Mordount",
+      "CorpusHitboxCenter": "0.678 2.123 0",
+      "CorpusHitboxSize": "41.352 9.533 8.331",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 55
+    }
+  },
+  {
+    "index": 47,
+    "modelName": "Ship_48_Adventure",
+    "weight": 65,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_48_Adventure",
+      "CorpusHitboxCenter": "-1.119 2.149 0",
+      "CorpusHitboxSize": "50.486 7.702 9.144",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 65
+    }
+  },
+  {
+    "index": 48,
+    "modelName": "Ship_49_12apostle",
+    "weight": 100,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_49_12apostle",
+      "CorpusHitboxCenter": "-0.598 4.029 0",
+      "CorpusHitboxSize": "53.370 9.144 11.145",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 100
+    }
+  },
+  {
+    "index": 49,
+    "modelName": "Balloon",
+    "weight": 100,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Balloon",
+      "CorpusHitboxCenter": "0 13.649 0",
+      "CorpusHitboxSize": "12 7 12",
+      "WaterlineOffset": 22,
+      "PreinstalledBowFig": "",
+      "Weight": 100
+    }
+  },
+  {
+    "index": 50,
+    "modelName": "Ship_51_poltava",
+    "weight": 55,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_51_poltava",
+      "CorpusHitboxCenter": "-2.707 1.114 0",
+      "CorpusHitboxSize": "39.062 9.451 9.451",
+      "WaterlineOffset": -0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 55
+    }
+  },
+  {
+    "index": 51,
+    "modelName": "Ship_52_surprise",
+    "weight": 45,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_52_surprise",
+      "CorpusHitboxCenter": "0.585 0.841 0",
+      "CorpusHitboxSize": "42.495 7.735 7.735",
+      "WaterlineOffset": 0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 45
+    }
+  },
+  {
+    "index": 52,
+    "modelName": "Ship_53_SanMartin",
+    "weight": 55,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_53_SanMartin",
+      "CorpusHitboxCenter": "-1.196 3.907 0",
+      "CorpusHitboxSize": "41.637 10.309 10.309",
+      "WaterlineOffset": -0.25,
+      "PreinstalledBowFig": "",
+      "Weight": 55
+    }
+  },
+  {
+    "index": 53,
+    "modelName": "Ship_54_LaRoyale",
+    "weight": 86,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_54_LaRoyale",
+      "CorpusHitboxCenter": "-2.287 3.348 0",
+      "CorpusHitboxSize": "53.224 9.022 9.022",
+      "WaterlineOffset": -0.25,
+      "PreinstalledBowFig": "",
+      "Weight": 86
+    }
+  },
+  {
+    "index": 54,
+    "modelName": "Ship_55_7_provincien",
+    "weight": 92,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_55_7_provincien",
+      "CorpusHitboxCenter": "-1.398 1.759 0",
+      "CorpusHitboxSize": "46.357 11.168 10.309",
+      "WaterlineOffset": 0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 92
+    }
+  },
+  {
+    "index": 55,
+    "modelName": "Ship_56_Octo",
+    "weight": 75,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_56_Octo",
+      "CorpusHitboxCenter": "0 1.596 0",
+      "CorpusHitboxSize": "47.920 11.168 9.451",
+      "WaterlineOffset": 0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 75
+    }
+  },
+  {
+    "index": 56,
+    "modelName": "Ship_57_savannah",
+    "weight": 35,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_57_savannah",
+      "CorpusHitboxCenter": "0.530 0.125 0",
+      "CorpusHitboxSize": "31.337 6.018 7.305",
+      "WaterlineOffset": -0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 35
+    }
+  },
+  {
+    "index": 57,
+    "modelName": "Ship_58_Hurakan",
+    "weight": 125,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_58_Hurakan",
+      "CorpusHitboxCenter": "4.030 0.025 0",
+      "CorpusHitboxSize": "90.337 35.018 16.305",
+      "WaterlineOffset": -0.3,
+      "PreinstalledBowFig": "",
+      "Weight": 125
+    }
+  },
+  {
+    "index": 58,
+    "modelName": "Ship_59_Fridrih_Wilgelm",
+    "weight": 60,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_59_Fridrih_Wilgelm",
+      "CorpusHitboxCenter": "3 0 0",
+      "CorpusHitboxSize": "45 22 9",
+      "WaterlineOffset": -0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 60
+    }
+  },
+  {
+    "index": 59,
+    "modelName": "Ship_60_Le Saint_Louis",
+    "weight": 65,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_60_Le Saint_Louis",
+      "CorpusHitboxCenter": "0 0 0",
+      "CorpusHitboxSize": "52 25 12",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 65
+    }
+  },
+  {
+    "index": 60,
+    "modelName": "Ship_61_azov",
+    "weight": 70,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_61_azov",
+      "CorpusHitboxCenter": "1 0 0",
+      "CorpusHitboxSize": "53 20 12",
+      "WaterlineOffset": -0.2,
+      "PreinstalledBowFig": "",
+      "Weight": 70
+    }
+  },
+  {
+    "index": 61,
+    "modelName": "Ship_62_Vasa",
+    "weight": 85,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_62_Vasa",
+      "CorpusHitboxCenter": "-0.8 3 0",
+      "CorpusHitboxSize": "47 16 10",
+      "WaterlineOffset": -0.1,
+      "PreinstalledBowFig": "",
+      "Weight": 85
+    }
+  },
+  {
+    "index": 62,
+    "modelName": "Ship_63_Axel_Thorsen1",
+    "weight": 20,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_63_Axel_Thorsen1",
+      "CorpusHitboxCenter": "-0.4 0 0",
+      "CorpusHitboxSize": "17.8 5 4.7",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 20
+    }
+  },
+  {
+    "index": 63,
+    "modelName": "Ship_64_Southampton",
+    "weight": 44,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_64_Southampton",
+      "CorpusHitboxCenter": "-0.14 1.7 0",
+      "CorpusHitboxSize": "46 12 7.9",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 44
+    }
+  },
+  {
+    "index": 64,
+    "modelName": "Ship_65_Iberia",
+    "weight": 57,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_65_Iberia",
+      "CorpusHitboxCenter": "-0.64 1.8 0",
+      "CorpusHitboxSize": "54 13 8.5",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 57
+    }
+  },
+  {
+    "index": 65,
+    "modelName": "Ship_66_Three_Hierarchs",
+    "weight": 55,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_66_Three_Hierarchs",
+      "CorpusHitboxCenter": "-3.1 3 0",
+      "CorpusHitboxSize": "48 12.5 7.1",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 55
+    }
+  },
+  {
+    "index": 66,
+    "modelName": "Ship_67_Barco_Montanes",
+    "weight": 76,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_67_Barco_Montanes",
+      "CorpusHitboxCenter": "-1.7 2.7 0",
+      "CorpusHitboxSize": "59 15.7 9.6",
+      "WaterlineOffset": 0,
+      "PreinstalledBowFig": "",
+      "Weight": 76
+    }
+  },
+  {
+    "index": 67,
+    "modelName": "Ship_68_OldOctopus",
+    "weight": 75,
+    "length": 0,
+    "_raw": {
+      "ModelName": "Ship_68_OldOctopus",
+      "CorpusHitboxCenter": "0 1.596 0",
+      "CorpusHitboxSize": "47.920 11.168 9.451",
+      "WaterlineOffset": 0.05,
+      "PreinstalledBowFig": "",
+      "Weight": 75
+    }
+  }
+]

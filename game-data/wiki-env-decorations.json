@@ -1,0 +1,569 @@
+[
+  {
+    "id": "",
+    "name": "env_pirate_snowman_statue",
+    "category": "",
+    "icon": "env_pirate_snowman_statue",
+    "price": 0,
+    "_raw": {
+      "Name": "env_pirate_snowman_statue",
+      "InShop": "false",
+      "IconName": "env_pirate_snowman_statue"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_pumkin_statue",
+    "category": "",
+    "icon": "env_pumkin_statue",
+    "price": 0,
+    "_raw": {
+      "Name": "env_pumkin_statue",
+      "InShop": "false",
+      "IconName": "env_pumkin_statue"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_ny2025",
+    "category": "",
+    "icon": "env_ny2025",
+    "price": 0,
+    "_raw": {
+      "Name": "env_ny2025",
+      "InShop": "false",
+      "IconName": "env_ny2025"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_rock_skull",
+    "category": "",
+    "icon": "env_rock_skull",
+    "price": 0,
+    "_raw": {
+      "Name": "env_rock_skull",
+      "InShop": "ByGold 300000",
+      "IconName": "env_rock_skull"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_rock_horns",
+    "category": "",
+    "icon": "env_rock_horns",
+    "price": 0,
+    "_raw": {
+      "Name": "env_rock_horns",
+      "InShop": "ByGold 200000",
+      "IconName": "env_rock_horns"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_rock_1",
+    "category": "",
+    "icon": "env_rock_1",
+    "price": 0,
+    "_raw": {
+      "Name": "env_rock_1",
+      "InShop": "ByGold 150000",
+      "IconName": "env_rock_1"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_rock_2",
+    "category": "",
+    "icon": "env_rock_2",
+    "price": 0,
+    "_raw": {
+      "Name": "env_rock_2",
+      "InShop": "ByGold 100000",
+      "IconName": "env_rock_2"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_rock_3",
+    "category": "",
+    "icon": "env_rock_3",
+    "price": 0,
+    "_raw": {
+      "Name": "env_rock_3",
+      "InShop": "ByGold 50000",
+      "IconName": "env_rock_3"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_castle_big",
+    "category": "",
+    "icon": "env_castle_big",
+    "price": 0,
+    "_raw": {
+      "Name": "env_castle_big",
+      "InShop": "ByMonets 890",
+      "IconName": "env_castle_big",
+      "EnvDesingBonus": "CCurrentIsleWorkLimit +50"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_castle_mid",
+    "category": "",
+    "icon": "env_castle_mid",
+    "price": 0,
+    "_raw": {
+      "Name": "env_castle_mid",
+      "InShop": "ByGold 1000000",
+      "IconName": "env_castle_mid",
+      "EnvDesingBonus": "CCurrentIsleWorkLimit +25"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_observatory",
+    "category": "",
+    "icon": "env_observatory",
+    "price": 0,
+    "_raw": {
+      "Name": "env_observatory",
+      "InShop": "ByGold 500000",
+      "IconName": "env_observatory",
+      "EnvDesingBonus": "CCurrentIsleExpeditionDistance +1500"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_mill",
+    "category": "",
+    "icon": "env_mill",
+    "price": 0,
+    "_raw": {
+      "Name": "env_mill",
+      "InShop": "ByGold 2500000",
+      "IconName": "env_mill",
+      "EnvDesingBonus": "PFactorySpeed +10"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_rock_toilet",
+    "category": "",
+    "icon": "env_rock_toilet",
+    "price": 0,
+    "_raw": {
+      "Name": "env_rock_toilet",
+      "InShop": "ByGold 1000000",
+      "IconName": "env_rock_toilet",
+      "EnvDesingBonus": "PAllXp +3"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_hookah_place",
+    "category": "",
+    "icon": "env_hookah_place",
+    "price": 0,
+    "_raw": {
+      "Name": "env_hookah_place",
+      "InShop": "ByMonets 110",
+      "IconName": "env_hookah_place"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_asian_arbor",
+    "category": "",
+    "icon": "env_asian_arbor",
+    "price": 0,
+    "_raw": {
+      "Name": "env_asian_arbor",
+      "InShop": "ByGold 15000000",
+      "IconName": "env_asian_arbor",
+      "EnvDesingBonus": "CCurrentIsleBonusBuildingsLimit +5"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_whale_skeleton",
+    "category": "",
+    "icon": "env_whale_skeleton",
+    "price": 0,
+    "_raw": {
+      "Name": "env_whale_skeleton",
+      "InShop": "ByMonets 70",
+      "IconName": "env_whale_skeleton"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_istukan",
+    "category": "",
+    "icon": "env_istukan",
+    "price": 0,
+    "_raw": {
+      "Name": "env_istukan",
+      "InShop": "ByGold 4000000",
+      "IconName": "env_istukan",
+      "EnvDesingBonus": "PTravelCooldownBonus +10"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_supplies",
+    "category": "",
+    "icon": "env_supplies",
+    "price": 0,
+    "_raw": {
+      "Name": "env_supplies",
+      "InShop": "ByGold 900000",
+      "IconName": "env_supplies",
+      "EnvDesingBonus": "PCurrentIsleFactoryProductivity +20"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_little_church",
+    "category": "",
+    "icon": "env_little_church",
+    "price": 0,
+    "_raw": {
+      "Name": "env_little_church",
+      "InShop": "ByGold 2000000",
+      "IconName": "env_little_church",
+      "EnvDesingBonus": "CCurrentIsleCraftTimePerHour +1"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_ancient_statue",
+    "category": "",
+    "icon": "env_ancient_statue",
+    "price": 0,
+    "_raw": {
+      "Name": "env_ancient_statue",
+      "InShop": "ByMonets 790",
+      "IconName": "env_ancient_statue",
+      "EnvDesingBonus": "PGoldAndResRewards +1"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_ancient_pillar",
+    "category": "",
+    "icon": "env_ancient_pillar",
+    "price": 0,
+    "_raw": {
+      "Name": "env_ancient_pillar",
+      "InShop": "ByGold 1000000",
+      "IconName": "env_ancient_pillar",
+      "EnvDesingBonus": "PCurrentIsleCapitalRestoreDiscount +10"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_anchor",
+    "category": "",
+    "icon": "env_anchor",
+    "price": 0,
+    "_raw": {
+      "Name": "env_anchor",
+      "InShop": "ByMonets 10",
+      "IconName": "env_anchor"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_big_storage",
+    "category": "",
+    "icon": "env_big_storage",
+    "price": 0,
+    "_raw": {
+      "Name": "env_big_storage",
+      "InShop": "ByMonets 700",
+      "IconName": "env_big_storage",
+      "EnvDesingBonus": "\u0421CurrentIsleStorage +500000"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_crane",
+    "category": "",
+    "icon": "env_crane",
+    "price": 0,
+    "_raw": {
+      "Name": "env_crane",
+      "InShop": "ByGold 1000000",
+      "IconName": "env_crane",
+      "EnvDesingBonus": "BCurrentIsleAllowShopAmmo +1"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_vulkano_rock",
+    "category": "",
+    "icon": "env_vulkano_rock",
+    "price": 0,
+    "_raw": {
+      "Name": "env_vulkano_rock",
+      "InShop": "ByMonets 550",
+      "IconName": "env_vulkano_rock",
+      "EnvDesingBonus": "BCurrentIsleAddVulcanoOreFactory +1"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora1",
+    "category": "",
+    "icon": "env_flora1",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora1",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora1"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora2",
+    "category": "",
+    "icon": "env_flora2",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora2",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora2"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora3",
+    "category": "",
+    "icon": "env_flora3",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora3",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora3"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora4",
+    "category": "",
+    "icon": "env_flora4",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora4",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora4"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora5",
+    "category": "",
+    "icon": "env_flora5",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora5",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora5"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora6",
+    "category": "",
+    "icon": "env_flora6",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora6",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora6"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora7",
+    "category": "",
+    "icon": "env_flora7",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora7",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora7"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora8",
+    "category": "",
+    "icon": "env_flora8",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora8",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora8"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora9",
+    "category": "",
+    "icon": "env_flora9",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora9",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora9"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora10",
+    "category": "",
+    "icon": "env_flora10",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora10",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora10"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora11",
+    "category": "",
+    "icon": "env_flora11",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora11",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora11"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora12",
+    "category": "",
+    "icon": "env_flora12",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora12",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora12"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora13",
+    "category": "",
+    "icon": "env_flora13",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora13",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora13"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora14",
+    "category": "",
+    "icon": "env_flora14",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora14",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora14"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora15",
+    "category": "",
+    "icon": "env_flora15",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora15",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora15"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_flora16",
+    "category": "",
+    "icon": "env_flora16",
+    "price": 0,
+    "_raw": {
+      "Name": "env_flora16",
+      "InShop": "ByGold 1000",
+      "IconName": "env_flora16"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_whale_tap_1",
+    "category": "",
+    "icon": "env_whale_tap_1",
+    "price": 0,
+    "_raw": {
+      "Name": "env_whale_tap_1",
+      "InShop": "ByGold 400000",
+      "IconName": "env_whale_tap_1",
+      "EnvDesingBonus": "PFishingAndWhaleProfit +5"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_light_spain",
+    "category": "",
+    "icon": "env_light_spain",
+    "price": 0,
+    "_raw": {
+      "Name": "env_light_spain",
+      "InShop": "ByGold 10000",
+      "IconName": "env_light_spain"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_light_asia",
+    "category": "",
+    "icon": "env_light_asia",
+    "price": 0,
+    "_raw": {
+      "Name": "env_light_asia",
+      "InShop": "ByGold 10000",
+      "IconName": "env_light_asia"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_scull_h25",
+    "category": "",
+    "icon": "env_scull_h25",
+    "price": 0,
+    "_raw": {
+      "Name": "env_scull_h25",
+      "InShop": "false",
+      "IconName": "env_scull_h25"
+    }
+  },
+  {
+    "id": "",
+    "name": "env_ny2026",
+    "category": "",
+    "icon": "env_ny2026",
+    "price": 0,
+    "_raw": {
+      "Name": "env_ny2026",
+      "InShop": "false",
+      "IconName": "env_ny2026"
+    }
+  }
+]

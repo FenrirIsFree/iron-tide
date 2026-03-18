@@ -1,0 +1,458 @@
+[
+  {
+    "Name": "achiv_1",
+    "ID": "FirstPlayerKill",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 19,
+    "IsSingleGive": true,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_2",
+    "ID": "TheLastEffortPve",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 5,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_3",
+    "ID": "TheLastEffortPvp",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 10,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_5",
+    "ID": "FinishOffPowderKeg",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 6,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_6",
+    "ID": "Mortar2Ships",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 12,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_7",
+    "ID": "GetAwayFromChase",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 9,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_11",
+    "ID": "GladiatorRating",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_12",
+    "ID": "GladiatorMass",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_13",
+    "ID": "Veteran",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 4,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_14",
+    "ID": "ArenaTopDamage",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 10,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_15",
+    "ID": "ArenaFortBattleWinNoDeath",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_17",
+    "ID": "ArenaNoDamageReceiveWithoutDuel",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_18",
+    "ID": "Arkana",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 12,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_19",
+    "ID": "SingleKillLegend",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 20,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_20",
+    "ID": "AllSinglePassed",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 75,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_21",
+    "ID": "TrialKillNpcBetterStrength",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_22",
+    "ID": "NoCannonsPassing",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 17,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_23",
+    "ID": "Kill1Rang",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 22,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_24",
+    "ID": "WinBoardingLessCrew",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_25",
+    "ID": "Capture3Traders",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 8,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_27",
+    "ID": "DeathBeforeGunWithKill",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 15,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_28",
+    "ID": "RangFive",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 5,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_29",
+    "ID": "ContrabandaWithoutCannons",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 7,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_30",
+    "ID": "Board3Players",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 30,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_31",
+    "ID": "KillStrongerPlayer",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 12,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_26",
+    "ID": "KillNpcWithMoreHp",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 5,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_32",
+    "ID": "BoardLotOfCargo",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 17,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_33",
+    "ID": "Kill5PlayersOneCall",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 20,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_34",
+    "ID": "Build5Ships",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 50,
+    "IsSingleGive": true,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_35",
+    "ID": "Build10Ships",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 75,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_36",
+    "ID": "ArenaTournamentGold",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 200,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_37",
+    "ID": "What",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": -1,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_38",
+    "ID": "Deliver3Missions",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 10,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_39",
+    "ID": "KillLegendaryPlayer",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 12,
+    "IsSingleGive": false,
+    "UiCategory": "Battle"
+  },
+  {
+    "Name": "achiv_40",
+    "ID": "WorldChestResearcher",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 3,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_41",
+    "ID": "BeforeRang30",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 50,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_42",
+    "ID": "ArenaTournamentSilver",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 75,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_43",
+    "ID": "Have5kkGold",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 75,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_44",
+    "ID": "Have10kkGold",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 150,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_45",
+    "ID": "FullReputation",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 100,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_46",
+    "ID": "AuctionTrade1000k",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 50,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_47",
+    "ID": "AuctionTrade10000k",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 200,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_48",
+    "ID": "PbTopParticipant",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 75,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_49",
+    "ID": "Open20Workshos",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 50,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_50",
+    "ID": "ParticipateTender",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 30,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_51",
+    "ID": "PassingMapMaxDiff",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 25,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_52",
+    "ID": "CollectAllSailageLegends",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 100,
+    "IsSingleGive": true,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_53",
+    "ID": "LuckyOne",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 33,
+    "IsSingleGive": true,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_54",
+    "ID": "WorldResearched",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 50,
+    "IsSingleGive": true,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_55",
+    "ID": "ManyFriendsReferal",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 75,
+    "IsSingleGive": true,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_56",
+    "ID": "KillWhales",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 5,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_57",
+    "ID": "DestroyFort",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 7,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_58",
+    "ID": "ArenaTournamentBronze",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 50,
+    "IsSingleGive": false,
+    "UiCategory": "Top"
+  },
+  {
+    "Name": "achiv_59",
+    "ID": "ArmedBusinessman",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 33,
+    "IsSingleGive": false,
+    "UiCategory": "Other"
+  },
+  {
+    "Name": "achiv_60",
+    "ID": "ArenaRatingGold",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 1000,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_61",
+    "ID": "ArenaRatingSilver",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 700,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  },
+  {
+    "Name": "achiv_62",
+    "ID": "ArenaRatingBronze",
+    "ReferencesAsEnum": "",
+    "CommonRatingWeight": 300,
+    "IsSingleGive": false,
+    "UiCategory": "Arena"
+  }
+]

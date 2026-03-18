@@ -1,0 +1,602 @@
+[
+  {
+    "ID": "res_1",
+    "Status": "ok",
+    "MediumCost": 2,
+    "Mass": 2,
+    "IconName": "Res1",
+    "Effects": ""
+  },
+  {
+    "ID": "res_2",
+    "Status": "ok",
+    "MediumCost": 8,
+    "Mass": 6,
+    "IconName": "Res2",
+    "Effects": ""
+  },
+  {
+    "ID": "res_3",
+    "Status": "ok",
+    "MediumCost": 3,
+    "Mass": 1,
+    "IconName": "Res4",
+    "Effects": ""
+  },
+  {
+    "ID": "res_4",
+    "Status": "ok",
+    "MediumCost": 3,
+    "Mass": 4,
+    "IconName": "Res3",
+    "Effects": ""
+  },
+  {
+    "ID": "res_5",
+    "Status": "ok",
+    "MediumCost": 3,
+    "Mass": 2,
+    "IconName": "Res5",
+    "Effects": "Corruption 0.9"
+  },
+  {
+    "ID": "res_6",
+    "Status": "ok",
+    "MediumCost": 30,
+    "Mass": 20,
+    "IconName": "Res6",
+    "Effects": "TradingItem South ShouldBeInNps"
+  },
+  {
+    "ID": "res_7",
+    "Status": "ok",
+    "MediumCost": 5,
+    "Mass": 6,
+    "IconName": "Res7",
+    "Effects": "FoodValue 5 TradingItem North ShouldBeInNps"
+  },
+  {
+    "ID": "res_8",
+    "Status": "ok",
+    "MediumCost": 30,
+    "Mass": 60,
+    "IconName": "Res8",
+    "Effects": "CannotBeStoredInPort"
+  },
+  {
+    "ID": "res_9",
+    "Status": "ok",
+    "MediumCost": 15,
+    "Mass": 5,
+    "IconName": "Res9",
+    "Effects": "FoodValue 5"
+  },
+  {
+    "ID": "res_10",
+    "Status": "ok",
+    "MediumCost": 8,
+    "Mass": 20,
+    "IconName": "Res10",
+    "Effects": "Corruption 0.7"
+  },
+  {
+    "ID": "res_11",
+    "Status": "ok",
+    "MediumCost": 30,
+    "Mass": 10,
+    "IconName": "Res11",
+    "Effects": ""
+  },
+  {
+    "ID": "res_12",
+    "Status": "ok",
+    "MediumCost": 10,
+    "Mass": 5,
+    "IconName": "Res12",
+    "Effects": ""
+  },
+  {
+    "ID": "res_13",
+    "Status": "ok",
+    "MediumCost": 25,
+    "Mass": 2,
+    "IconName": "Res13",
+    "Effects": ""
+  },
+  {
+    "ID": "res_14",
+    "Status": "ok",
+    "MediumCost": 390,
+    "Mass": 90,
+    "IconName": "Res14",
+    "Effects": ""
+  },
+  {
+    "ID": "res_15",
+    "Status": "ok",
+    "MediumCost": 2000,
+    "Mass": 1,
+    "IconName": "Res15",
+    "Effects": ""
+  },
+  {
+    "ID": "res_16",
+    "Status": "ok",
+    "MediumCost": 380,
+    "Mass": 100,
+    "IconName": "Res16",
+    "Effects": ""
+  },
+  {
+    "ID": "res_17",
+    "Status": "ok",
+    "MediumCost": 70,
+    "Mass": 10,
+    "IconName": "Res17",
+    "Effects": ""
+  },
+  {
+    "ID": "res_18",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 20,
+    "Mass": 5,
+    "IconName": "Res18",
+    "Effects": ""
+  },
+  {
+    "ID": "res_19",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 2,
+    "Mass": 500,
+    "IconName": "Res19",
+    "Effects": ""
+  },
+  {
+    "ID": "res_20",
+    "Status": "ok",
+    "MediumCost": 5,
+    "Mass": 5,
+    "IconName": "Res20",
+    "Effects": ""
+  },
+  {
+    "ID": "res_21",
+    "Status": "ok",
+    "MediumCost": 4,
+    "Mass": 5,
+    "IconName": "Res21",
+    "Effects": "Corruption 1 FoodValue 4"
+  },
+  {
+    "ID": "res_22",
+    "Status": "ok",
+    "MediumCost": 12,
+    "Mass": 22,
+    "IconName": "Res22",
+    "Effects": "DestroyWhenDamage 0.3 FoodValue 20"
+  },
+  {
+    "ID": "res_23",
+    "Status": "ok",
+    "MediumCost": 30,
+    "Mass": 40,
+    "IconName": "Res23",
+    "Effects": ""
+  },
+  {
+    "ID": "res_24",
+    "Status": "ok",
+    "MediumCost": 500,
+    "Mass": 2,
+    "IconName": "Res24",
+    "Effects": ""
+  },
+  {
+    "ID": "res_25",
+    "Status": "ok",
+    "MediumCost": 100,
+    "Mass": 5,
+    "IconName": "Res25",
+    "Effects": "TradingItem Arab"
+  },
+  {
+    "ID": "res_26",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 800,
+    "Mass": 260,
+    "IconName": "Res26",
+    "Effects": ""
+  },
+  {
+    "ID": "res_27",
+    "Status": "ok",
+    "MediumCost": 240,
+    "Mass": 150,
+    "IconName": "Res27",
+    "Effects": ""
+  },
+  {
+    "ID": "removed",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 1,
+    "Mass": 1,
+    "IconName": "Res27",
+    "Effects": ""
+  },
+  {
+    "ID": "res_29",
+    "Status": "ok",
+    "MediumCost": 280,
+    "Mass": 210,
+    "IconName": "Res29",
+    "Effects": ""
+  },
+  {
+    "ID": "res_30",
+    "Status": "ok",
+    "MediumCost": 20,
+    "Mass": 4,
+    "IconName": "Res30",
+    "Effects": ""
+  },
+  {
+    "ID": "res_31",
+    "Status": "ok",
+    "MediumCost": 3,
+    "Mass": 6,
+    "IconName": "Res31",
+    "Effects": ""
+  },
+  {
+    "ID": "res_32",
+    "Status": "ok",
+    "MediumCost": 20,
+    "Mass": 25,
+    "IconName": "Res32",
+    "Effects": ""
+  },
+  {
+    "ID": "res_33",
+    "Status": "ok",
+    "MediumCost": 60000,
+    "Mass": 1,
+    "IconName": "Res33",
+    "Effects": "DisallowDrop"
+  },
+  {
+    "ID": "res_34",
+    "Status": "ok",
+    "MediumCost": 6,
+    "Mass": 3,
+    "IconName": "Res34",
+    "Effects": "Corruption 1.8 FoodValue 6 SpeedBonus"
+  },
+  {
+    "ID": "res_35",
+    "Status": "ok",
+    "MediumCost": 50,
+    "Mass": 1,
+    "IconName": "Res35",
+    "Effects": "Map"
+  },
+  {
+    "ID": "res_36",
+    "Status": "ok",
+    "MediumCost": 12,
+    "Mass": 5,
+    "IconName": "Res36",
+    "Effects": ""
+  },
+  {
+    "ID": "res_37",
+    "Status": "ok",
+    "MediumCost": 200,
+    "Mass": 1,
+    "IconName": "Res37",
+    "Effects": "DisallowDrop"
+  },
+  {
+    "ID": "res_38",
+    "Status": "ok",
+    "MediumCost": 4000,
+    "Mass": 7,
+    "IconName": "Res38",
+    "Effects": ""
+  },
+  {
+    "ID": "res_39",
+    "Status": "ok",
+    "MediumCost": 50,
+    "Mass": 40,
+    "IconName": "Res39",
+    "Effects": "FoodValue 50"
+  },
+  {
+    "ID": "res_40",
+    "Status": "ok",
+    "MediumCost": 400000,
+    "Mass": 1,
+    "IconName": "Res40",
+    "Effects": ""
+  },
+  {
+    "ID": "res_41",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 20000,
+    "Mass": 100,
+    "IconName": "Res41",
+    "Effects": ""
+  },
+  {
+    "ID": "res_42",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 10000,
+    "Mass": 1,
+    "IconName": "Res42",
+    "Effects": ""
+  },
+  {
+    "ID": "res_43",
+    "Status": "ok",
+    "MediumCost": 25000,
+    "Mass": 1,
+    "IconName": "Res43",
+    "Effects": ""
+  },
+  {
+    "ID": "removed",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 15000,
+    "Mass": 1,
+    "IconName": "Res44",
+    "Effects": ""
+  },
+  {
+    "ID": "removed",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 15000,
+    "Mass": 1,
+    "IconName": "Res44",
+    "Effects": ""
+  },
+  {
+    "ID": "removed",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 15000,
+    "Mass": 1,
+    "IconName": "Res44",
+    "Effects": ""
+  },
+  {
+    "ID": "removed",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 20000,
+    "Mass": 1,
+    "IconName": "Res44",
+    "Effects": ""
+  },
+  {
+    "ID": "removed",
+    "Status": "REMOVEfromAccounts",
+    "MediumCost": 25000,
+    "Mass": 1,
+    "IconName": "Res44",
+    "Effects": ""
+  },
+  {
+    "ID": "res_49",
+    "Status": "ok",
+    "MediumCost": 37,
+    "Mass": 15,
+    "IconName": "Res49",
+    "Effects": "TradingItem Arab"
+  },
+  {
+    "ID": "res_50",
+    "Status": "ok",
+    "MediumCost": 15,
+    "Mass": 9,
+    "IconName": "Res50",
+    "Effects": "TradingItem Arab"
+  },
+  {
+    "ID": "res_51",
+    "Status": "ok",
+    "MediumCost": 23,
+    "Mass": 7,
+    "IconName": "Res51",
+    "Effects": "TradingItem Arab ShouldBeOnIsle"
+  },
+  {
+    "ID": "res_52",
+    "Status": "ok",
+    "MediumCost": 18,
+    "Mass": 5,
+    "IconName": "Res52",
+    "Effects": "TradingItem North ShouldBeOnIsle"
+  },
+  {
+    "ID": "res_53",
+    "Status": "ok",
+    "MediumCost": 52,
+    "Mass": 20,
+    "IconName": "Res53",
+    "Effects": "TradingItem Arab ShouldBeInNps"
+  },
+  {
+    "ID": "res_54",
+    "Status": "ok",
+    "MediumCost": 24,
+    "Mass": 6,
+    "IconName": "Res54",
+    "Effects": "TradingItem Arab ShouldBeInNps"
+  },
+  {
+    "ID": "res_55",
+    "Status": "ok",
+    "MediumCost": 8,
+    "Mass": 6,
+    "IconName": "Res55",
+    "Effects": "TradingItem Arab Corruption 1 FoodValue 8"
+  },
+  {
+    "ID": "res_56",
+    "Status": "ok",
+    "MediumCost": 11,
+    "Mass": 4,
+    "IconName": "Res56",
+    "Effects": "TradingItem Arab ShouldBeOnIsle Corruption 1 FoodValue 11"
+  },
+  {
+    "ID": "res_57",
+    "Status": "ok",
+    "MediumCost": 32,
+    "Mass": 14,
+    "IconName": "Res57",
+    "Effects": "TradingItem South ShouldBeInNps"
+  },
+  {
+    "ID": "res_58",
+    "Status": "ok",
+    "MediumCost": 25,
+    "Mass": 12,
+    "IconName": "Res58",
+    "Effects": "TradingItem South ShouldBeInNps"
+  },
+  {
+    "ID": "res_59",
+    "Status": "ok",
+    "MediumCost": 20,
+    "Mass": 5,
+    "IconName": "Res59",
+    "Effects": "TradingItem South ShouldBeInNps"
+  },
+  {
+    "ID": "res_60",
+    "Status": "ok",
+    "MediumCost": 21,
+    "Mass": 6,
+    "IconName": "Res60",
+    "Effects": "TradingItem South ShouldBeOnIsle"
+  },
+  {
+    "ID": "res_61",
+    "Status": "ok",
+    "MediumCost": 22,
+    "Mass": 7,
+    "IconName": "Res61",
+    "Effects": "TradingItem South ShouldBeOnIsle"
+  },
+  {
+    "ID": "res_62",
+    "Status": "ok",
+    "MediumCost": 9,
+    "Mass": 5,
+    "IconName": "Res62",
+    "Effects": "TradingItem South FoodValue 9"
+  },
+  {
+    "ID": "res_63",
+    "Status": "ok",
+    "MediumCost": 9,
+    "Mass": 3,
+    "IconName": "Res63",
+    "Effects": "TradingItem North FoodValue 3"
+  },
+  {
+    "ID": "res_64",
+    "Status": "ok",
+    "MediumCost": 11,
+    "Mass": 4,
+    "IconName": "Res64",
+    "Effects": "TradingItem South ShouldBeOnIsle Corruption 1 FoodValue 11"
+  },
+  {
+    "ID": "res_65",
+    "Status": "ok",
+    "MediumCost": 13,
+    "Mass": 3,
+    "IconName": "Res65",
+    "Effects": "TradingItem South ShouldBeInNps"
+  },
+  {
+    "ID": "res_66",
+    "Status": "ok",
+    "MediumCost": 9,
+    "Mass": 5,
+    "IconName": "Res66",
+    "Effects": "TradingItem North Corruption 1 FoodValue 3 ShouldBeInNps"
+  },
+  {
+    "ID": "res_44",
+    "Status": "ok",
+    "MediumCost": 10000,
+    "Mass": 1,
+    "IconName": "Res44",
+    "Effects": ""
+  },
+  {
+    "ID": "res_45",
+    "Status": "ok",
+    "MediumCost": 1000000,
+    "Mass": 1,
+    "IconName": "Res45",
+    "Effects": "DisallowDropAndBoarding"
+  },
+  {
+    "ID": "res_69",
+    "Status": "ok",
+    "MediumCost": 1000,
+    "Mass": 1,
+    "IconName": "Res69",
+    "Effects": ""
+  },
+  {
+    "ID": "res_70",
+    "Status": "ok",
+    "MediumCost": 10,
+    "Mass": 15,
+    "IconName": "Res70",
+    "Effects": "Corruption 1"
+  },
+  {
+    "ID": "res_71",
+    "Status": "ok",
+    "MediumCost": 1,
+    "Mass": 1,
+    "IconName": "Res71",
+    "Effects": "Map"
+  },
+  {
+    "ID": "res_72",
+    "Status": "ok",
+    "MediumCost": 150,
+    "Mass": 1,
+    "IconName": "Res72",
+    "Effects": "Map"
+  },
+  {
+    "ID": "res_73",
+    "Status": "ok",
+    "MediumCost": 1,
+    "Mass": 1,
+    "IconName": "ResMerchantMap",
+    "Effects": "Map"
+  },
+  {
+    "ID": "res_74",
+    "Status": "ok",
+    "MediumCost": 1,
+    "Mass": 1,
+    "IconName": "ResPirateMap",
+    "Effects": "Map"
+  },
+  {
+    "ID": "res_75",
+    "Status": "ok",
+    "MediumCost": 1,
+    "Mass": 1,
+    "IconName": "ResCultMap",
+    "Effects": "Map"
+  }
+]

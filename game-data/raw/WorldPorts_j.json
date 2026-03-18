@@ -1,0 +1,373 @@
+[
+  {
+    "Type": "PirateBay",
+    "PortName": "nport_0",
+    "BuildShipRangs": 6,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "FixedLevel": 3
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_1",
+    "BuildShipRangs": 7,
+    "PbsTeamLimitation": "",
+    "Flags": "StartPort UnitsMusketeer",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_2",
+    "BuildShipRangs": 7,
+    "PbsTeamLimitation": "",
+    "Flags": "StartPort",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_3",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": 15,
+    "Flags": "UnitsSamurai",
+    "ProducedResourceId": "TWoodID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_4",
+    "BuildShipRangs": 6,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_5",
+    "BuildShipRangs": 6,
+    "PbsTeamLimitation": 15,
+    "Flags": "StartPort UnitsFisher",
+    "ProducedResourceId": "TCopper",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_6",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": 15,
+    "Flags": "",
+    "ProducedResourceId": "TRumID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_7",
+    "BuildShipRangs": 2,
+    "PbsTeamLimitation": 10,
+    "Flags": "UnitsFisher NearIce",
+    "ProducedResourceId": "TWater",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_8",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": 10,
+    "Flags": "UnitsFisher",
+    "ProducedResourceId": "TRumID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_9",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TResinLaquer",
+    "LegalFraction": "KaiAndSeveria",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_10",
+    "BuildShipRangs": 4,
+    "PbsTeamLimitation": "",
+    "Flags": "UnitsSamurai",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_11",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": 20,
+    "Flags": "UnitsFisher NearIce",
+    "ProducedResourceId": "TWater",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_12",
+    "BuildShipRangs": 4,
+    "PbsTeamLimitation": "15",
+    "Flags": "UnitsMusketeer",
+    "ProducedResourceId": "TWoodID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_13",
+    "BuildShipRangs": 2,
+    "PbsTeamLimitation": 15,
+    "Flags": "UnitsFisher",
+    "ProducedResourceId": "TCottonID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_14",
+    "BuildShipRangs": 4,
+    "PbsTeamLimitation": "",
+    "Flags": "NearIce",
+    "ProducedResourceId": "TWater",
+    "LegalFraction": "KaiAndSeveria",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_15",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "40",
+    "Flags": "CaptureWithoutWindow UnitsMusketeer",
+    "ProducedResourceId": "TCottonID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_16",
+    "BuildShipRangs": 4,
+    "PbsTeamLimitation": "",
+    "Flags": "UnitsMusketeer",
+    "ProducedResourceId": "TWoodID",
+    "LegalFraction": "Espaniol",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_17",
+    "BuildShipRangs": 1,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TCoal",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_18",
+    "BuildShipRangs": 1,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TCoal",
+    "LegalFraction": "Antilia",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_19",
+    "BuildShipRangs": 1,
+    "PbsTeamLimitation": "",
+    "Flags": "UnitsSamurai",
+    "ProducedResourceId": "TCoal",
+    "LegalFraction": "KaiAndSeveria",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_20",
+    "BuildShipRangs": 1,
+    "PbsTeamLimitation": "",
+    "Flags": "UnitsMusketeer",
+    "ProducedResourceId": "TCoal",
+    "LegalFraction": "Espaniol",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_21",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TCopper",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_22",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": 10,
+    "Flags": "UnitsSamurai",
+    "ProducedResourceId": "TCottonID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_23",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TWoodID",
+    "LegalFraction": "Espaniol",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "PirateBay",
+    "PortName": "nport_24",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "FixedLevel": 5
+  },
+  {
+    "Type": "PirateBay",
+    "PortName": "nport_25",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "FixedLevel": 7
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_26",
+    "BuildShipRangs": 2,
+    "PbsTeamLimitation": "",
+    "Flags": "UnitsMusketeer",
+    "ProducedResourceId": "TRumID",
+    "LegalFraction": "Antilia",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "PirateBay",
+    "PortName": "nport_27",
+    "BuildShipRangs": 1,
+    "PbsTeamLimitation": "",
+    "Flags": "OnlyPirateFlag",
+    "FixedLevel": 7
+  },
+  {
+    "Type": "PirateBay",
+    "PortName": "nport_28",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "Stronghold",
+    "FixedLevel": 6
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_29",
+    "BuildShipRangs": 7,
+    "PbsTeamLimitation": "",
+    "Flags": "StartPort UnitsMusketeer",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_30",
+    "BuildShipRangs": 2,
+    "PbsTeamLimitation": "",
+    "Flags": "Arab",
+    "FixedLevel": 7
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_31",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "Arab",
+    "FixedLevel": 6
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_32",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "Arab",
+    "FixedLevel": 5
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_33",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": 10,
+    "Flags": "",
+    "ProducedResourceId": "TResinLaquer",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_34",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TWoodID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_35",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": 15,
+    "Flags": "",
+    "ProducedResourceId": "TResinLaquer",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "City",
+    "PortName": "nport_36",
+    "BuildShipRangs": 2,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "ProducedResourceId": "TResinLaquer",
+    "LegalFraction": "Antilia",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_37",
+    "BuildShipRangs": 3,
+    "PbsTeamLimitation": "40",
+    "Flags": "CaptureWithoutWindow",
+    "ProducedResourceId": "TRumID",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_38",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": "",
+    "Flags": "NearIce",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "Bay",
+    "PortName": "nport_39",
+    "BuildShipRangs": 6,
+    "PbsTeamLimitation": "15",
+    "Flags": "StartPort",
+    "ProducedResourceId": "TCopper",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_40",
+    "BuildShipRangs": 4,
+    "PbsTeamLimitation": "",
+    "Flags": "NearIce",
+    "FixedLevel": 0
+  },
+  {
+    "Type": "NeutralBay",
+    "PortName": "nport_41",
+    "BuildShipRangs": 5,
+    "PbsTeamLimitation": "",
+    "Flags": "",
+    "FixedLevel": 0
+  }
+]

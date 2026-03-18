@@ -10,7 +10,10 @@
     "angle": 34,
     "scatter": 8.5,
     "extra": "SpeedFactor:1",
-    "price": 50
+    "price": 50,
+    "craftingType": "ByGold",
+    "icon": "light_rusty_cannon",
+    "model": "Cannon_rust_small"
   },
   {
     "id": "ncs_cannon_2",
@@ -23,7 +26,10 @@
     "angle": 17,
     "scatter": 5,
     "extra": "SpeedFactor:1.25",
-    "price": 150
+    "price": 150,
+    "craftingType": "ByGold",
+    "icon": "light_rusty_long_cannon",
+    "model": "Culverin_rust_small"
   },
   {
     "id": "ncs_cannon_3",
@@ -36,7 +42,10 @@
     "angle": 26,
     "scatter": 9.5,
     "extra": "SpeedFactor:0.8",
-    "price": 200
+    "price": 200,
+    "craftingType": "ByGold",
+    "icon": "light_rusty_carronade",
+    "model": "Carronade_rust_small"
   },
   {
     "id": "ncs_cannon_4",
@@ -49,7 +58,10 @@
     "angle": 25,
     "scatter": 4,
     "extra": "SpeedFactor:1.25",
-    "price": 3600
+    "price": 3600,
+    "craftingType": "NotAvailable",
+    "icon": "light_iron_bow_stern_1",
+    "model": "Nose_long_small"
   },
   {
     "id": "ncs_cannon_5",
@@ -62,7 +74,10 @@
     "angle": 30,
     "scatter": 11,
     "extra": "SpeedFactor:0.8",
-    "price": 4500
+    "price": 4500,
+    "craftingType": "NotAvailable",
+    "icon": "light_iron_bow_stern_2",
+    "model": "Nose_short_small"
   },
   {
     "id": "ncs_cannon_6",
@@ -75,7 +90,10 @@
     "angle": 31,
     "scatter": 9.5,
     "extra": "SpeedFactor:1",
-    "price": 800
+    "price": 800,
+    "craftingType": "ByCraft",
+    "icon": "light_bronze_cannon",
+    "model": "Cannon_bronze_small"
   },
   {
     "id": "ncs_cannon_7",
@@ -88,7 +106,10 @@
     "angle": 16,
     "scatter": 6,
     "extra": "SpeedFactor:1.25",
-    "price": 1200
+    "price": 1200,
+    "craftingType": "ByCraft",
+    "icon": "light_bronze_long_cannon",
+    "model": "Culverin_bronze_small"
   },
   {
     "id": "ncs_cannon_8",
@@ -101,7 +122,10 @@
     "angle": 23,
     "scatter": 11.5,
     "extra": "SpeedFactor:0.8",
-    "price": 1600
+    "price": 1600,
+    "craftingType": "ByCraft",
+    "icon": "light_bronze_carronade",
+    "model": "Carronade_bronze_small"
   },
   {
     "id": "ncs_cannon_9",
@@ -114,7 +138,10 @@
     "angle": 12,
     "scatter": 9,
     "extra": "SpeedFactor:1",
-    "price": 2400
+    "price": 2400,
+    "craftingType": "ByCraft",
+    "icon": "light_soldered_bow_stern",
+    "model": "Double_small"
   },
   {
     "id": "ncs_cannon_10",
@@ -127,7 +154,10 @@
     "angle": 29,
     "scatter": 10.5,
     "extra": "SpeedFactor:1",
-    "price": 200
+    "price": 200,
+    "craftingType": "ByGold",
+    "icon": "medium_castiron_cannon",
+    "model": "Cannon_castiron_medium"
   },
   {
     "id": "ncs_cannon_11",
@@ -140,7 +170,10 @@
     "angle": 14,
     "scatter": 6.5,
     "extra": "SpeedFactor:1.25",
-    "price": 300
+    "price": 300,
+    "craftingType": "ByGold",
+    "icon": "medium_castiron_long_cannon",
+    "model": "Culverin_castiron_medium"
   },
   {
     "id": "ncs_cannon_12",
@@ -153,7 +186,10 @@
     "angle": 21,
     "scatter": 12,
     "extra": "SpeedFactor:0.8",
-    "price": 400
+    "price": 400,
+    "craftingType": "ByGold",
+    "icon": "medium_castiron_carronade",
+    "model": "Carronade_castiron_medium"
   },
   {
     "id": "ncs_cannon_13",
@@ -166,7 +202,10 @@
     "angle": 21,
     "scatter": 5,
     "extra": "SpeedFactor:1.25",
-    "price": 7200
+    "price": 7200,
+    "craftingType": "NotAvailable",
+    "icon": "medium_iron_bow_stern_1",
+    "model": "Nose_long_medium"
   },
   {
     "id": "ncs_cannon_14",
@@ -179,7 +218,10 @@
     "angle": 25,
     "scatter": 13.5,
     "extra": "SpeedFactor:0.8",
-    "price": 9000
+    "price": 9000,
+    "craftingType": "NotAvailable",
+    "icon": "medium_iron_bow_stern_2",
+    "model": "Nose_short_medium"
   },
   {
     "id": "ncs_cannon_15",
@@ -192,7 +234,10 @@
     "angle": 21,
     "scatter": 11,
     "extra": "SpeedFactor:1",
-    "price": 2400
+    "price": 2400,
+    "craftingType": "NotAvailable",
+    "icon": "medium_iron_cannon",
+    "model": "Cannon_iron_medium"
   },
   {
     "id": "ncs_cannon_16",
@@ -205,7 +250,10 @@
     "angle": 9,
     "scatter": 9.5,
     "extra": "SpeedFactor:1.25",
-    "price": 3600
+    "price": 3600,
+    "craftingType": "NotAvailable",
+    "icon": "medium_iron_long_cannon",
+    "model": "Culverin_iron_medium"
   },
   {
     "id": "ncs_cannon_17",
@@ -218,7 +266,10 @@
     "angle": 16,
     "scatter": 13,
     "extra": "SpeedFactor:0.8",
-    "price": 4800
+    "price": 4800,
+    "craftingType": "NotAvailable",
+    "icon": "medium_iron_carronade",
+    "model": "Carronade_iron_medium"
   },
   {
     "id": "ncs_cannon_18",
@@ -231,7 +282,10 @@
     "angle": 26,
     "scatter": 12,
     "extra": "SpeedFactor:1",
-    "price": 2000
+    "price": 2000,
+    "craftingType": "ByCraft",
+    "icon": "medium_bronze_cannon",
+    "model": "Cannon_bronze_medium"
   },
   {
     "id": "ncs_cannon_19",
@@ -244,7 +298,10 @@
     "angle": 13,
     "scatter": 8,
     "extra": "SpeedFactor:1.25",
-    "price": 3000
+    "price": 3000,
+    "craftingType": "ByCraft",
+    "icon": "medium_bronze_long_cannon",
+    "model": "Culverin_bronze_medium"
   },
   {
     "id": "ncs_cannon_20",
@@ -257,7 +314,10 @@
     "angle": 20,
     "scatter": 14.5,
     "extra": "SpeedFactor:0.8",
-    "price": 4000
+    "price": 4000,
+    "craftingType": "ByCraft",
+    "icon": "medium_bronze_carronade",
+    "model": "Carronade_bronze_medium"
   },
   {
     "id": "ncs_cannon_21",
@@ -270,7 +330,10 @@
     "angle": 10,
     "scatter": 11,
     "extra": "SpeedFactor:1",
-    "price": 6000
+    "price": 6000,
+    "craftingType": "ByCraft",
+    "icon": "medium_soldered_bow_stern_1",
+    "model": "Double_medium"
   },
   {
     "id": "ncs_cannon_22",
@@ -283,7 +346,10 @@
     "angle": 8,
     "scatter": 13,
     "extra": "SpeedFactor:1",
-    "price": 7500
+    "price": 7500,
+    "craftingType": "ByCraft",
+    "icon": "medium_soldered_bow_stern_2",
+    "model": "Triple_medium"
   },
   {
     "id": "ncs_cannon_23",
@@ -296,7 +362,10 @@
     "angle": 6,
     "scatter": 12,
     "extra": "SpeedFactor:1.25",
-    "price": 40000
+    "price": 40000,
+    "craftingType": "ByCraft",
+    "icon": "medium_uniq_1",
+    "model": "Bombarda"
   },
   {
     "id": "ncs_cannon_24",
@@ -309,7 +378,10 @@
     "angle": 6,
     "scatter": 10,
     "extra": "UntilOverheat:6",
-    "price": 50000
+    "price": 50000,
+    "craftingType": "ByCraft",
+    "icon": "medium_uniq_2",
+    "model": "Firegun"
   },
   {
     "id": "ncs_cannon_25",
@@ -322,7 +394,10 @@
     "angle": 16,
     "scatter": 13.5,
     "extra": "SpeedFactor:1",
-    "price": 4800
+    "price": 4800,
+    "craftingType": "NotAvailable",
+    "icon": "heavy_iron_cannon",
+    "model": "Cannon_iron_big"
   },
   {
     "id": "ncs_cannon_26",
@@ -335,7 +410,10 @@
     "angle": 7,
     "scatter": 12,
     "extra": "SpeedFactor:1.25",
-    "price": 7200
+    "price": 7200,
+    "craftingType": "NotAvailable",
+    "icon": "heavy_iron_long_cannon",
+    "model": "Culverin_iron_big"
   },
   {
     "id": "ncs_cannon_27",
@@ -348,7 +426,10 @@
     "angle": 12,
     "scatter": 16,
     "extra": "SpeedFactor:0.8",
-    "price": 9600
+    "price": 9600,
+    "craftingType": "NotAvailable",
+    "icon": "heavy_iron_carronade",
+    "model": "Carronade_iron_big"
   },
   {
     "id": "ncs_cannon_28",
@@ -361,7 +442,10 @@
     "angle": 16,
     "scatter": 6,
     "extra": "SpeedFactor:1.25",
-    "price": 14400
+    "price": 14400,
+    "craftingType": "NotAvailable",
+    "icon": "heavy_iron_bow_stern_1",
+    "model": "Nose_long_big"
   },
   {
     "id": "ncs_cannon_29",
@@ -374,7 +458,10 @@
     "angle": 20,
     "scatter": 17,
     "extra": "SpeedFactor:0.8",
-    "price": 18000
+    "price": 18000,
+    "craftingType": "NotAvailable",
+    "icon": "heavy_iron_bow_stern_2",
+    "model": "Nose_short_big"
   },
   {
     "id": "ncs_cannon_30",
@@ -387,7 +474,10 @@
     "angle": 20,
     "scatter": 15,
     "extra": "SpeedFactor:1",
-    "price": 4000
+    "price": 4000,
+    "craftingType": "ByCraft",
+    "icon": "heavy_bronze_cannon",
+    "model": "Cannon_bronze_big"
   },
   {
     "id": "ncs_cannon_31",
@@ -400,7 +490,10 @@
     "angle": 10,
     "scatter": 10,
     "extra": "SpeedFactor:1.25",
-    "price": 6000
+    "price": 6000,
+    "craftingType": "ByCraft",
+    "icon": "heavy_bronze_long_cannon",
+    "model": "Culverin_bronze_big"
   },
   {
     "id": "ncs_cannon_32",
@@ -413,7 +506,10 @@
     "angle": 15,
     "scatter": 18,
     "extra": "SpeedFactor:0.8",
-    "price": 8000
+    "price": 8000,
+    "craftingType": "ByCraft",
+    "icon": "heavy_bronze_carronade",
+    "model": "Carronade_bronze_big"
   },
   {
     "id": "ncs_cannon_33",
@@ -426,7 +522,10 @@
     "angle": 8,
     "scatter": 14,
     "extra": "SpeedFactor:1",
-    "price": 12000
+    "price": 12000,
+    "craftingType": "ByCraft",
+    "icon": "heavy_soldered_bow_stern_1",
+    "model": "Double_big"
   },
   {
     "id": "ncs_cannon_34",
@@ -439,7 +538,10 @@
     "angle": 6,
     "scatter": 16,
     "extra": "SpeedFactor:1",
-    "price": 15000
+    "price": 15000,
+    "craftingType": "ByCraft",
+    "icon": "heavy_soldered_bow_stern_2",
+    "model": "Triple_big"
   },
   {
     "id": "ncs_cannon_35",
@@ -452,7 +554,10 @@
     "angle": 10,
     "scatter": 2,
     "extra": "SplashRadius:11;SpeedFactor:1;Preparation:0.14",
-    "price": 5000
+    "price": 5000,
+    "craftingType": "ByCraft",
+    "icon": "c_mort1",
+    "model": "mortar1"
   },
   {
     "id": "ncs_cannon_36",
@@ -465,7 +570,10 @@
     "angle": 10,
     "scatter": 3,
     "extra": "SplashRadius:11;SpeedFactor:1;Preparation:0.14",
-    "price": 12500
+    "price": 12500,
+    "craftingType": "ByCraft",
+    "icon": "c_mort2",
+    "model": "mortar2"
   },
   {
     "id": "ncs_cannon_37",
@@ -478,7 +586,10 @@
     "angle": 10,
     "scatter": 4,
     "extra": "SplashRadius:12;SpeedFactor:1.1;Preparation:0.14",
-    "price": 28125
+    "price": 28125,
+    "craftingType": "ByCraft",
+    "icon": "c_mort3",
+    "model": "mortar3"
   },
   {
     "id": "ncs_cannon_38",
@@ -491,7 +602,10 @@
     "angle": 10,
     "scatter": 4,
     "extra": "SplashRadius:13;SpeedFactor:1.15;Preparation:0.14",
-    "price": 56250
+    "price": 56250,
+    "craftingType": "ByCraft",
+    "icon": "c_mort4",
+    "model": "mortar4"
   },
   {
     "id": "ncs_cannon_39",
@@ -504,7 +618,10 @@
     "angle": 10,
     "scatter": 5,
     "extra": "SplashRadius:14;SpeedFactor:1.2;Preparation:0.14",
-    "price": 112500
+    "price": 112500,
+    "craftingType": "ByCraft",
+    "icon": "c_mort5",
+    "model": "mortar5"
   },
   {
     "id": "ncs_cannon_40",
@@ -517,7 +634,10 @@
     "angle": 10,
     "scatter": 5.5,
     "extra": "SplashRadius:15;SpeedFactor:1.25;Preparation:0.14",
-    "price": 168750
+    "price": 168750,
+    "craftingType": "ByCraft",
+    "icon": "c_mort5",
+    "model": "mortar5"
   },
   {
     "id": "ncs_cannon_41",
@@ -530,7 +650,10 @@
     "angle": 10,
     "scatter": 4,
     "extra": "SplashRadius:9;SpeedFactor:1.5;Preparation:0.14",
-    "price": 80000
+    "price": 80000,
+    "craftingType": "NotAvailable",
+    "icon": "c_mort6",
+    "model": "mortar6"
   },
   {
     "id": "ncs_cannon_42",
@@ -543,6 +666,9 @@
     "angle": 10,
     "scatter": 4,
     "extra": "SplashRadius:22;SpeedFactor:0.8;Preparation:0.14",
-    "price": 60000
+    "price": 60000,
+    "craftingType": "NotAvailable",
+    "icon": "c_mort7",
+    "model": "mortar7"
   }
 ]

@@ -1,0 +1,1212 @@
+[
+  {
+    "MapName": "map_passing1",
+    "IntroductionKey": "map_passing1_d",
+    "Flags": "OpenedInitially",
+    "MaxShipRank": "5-7",
+    "ArenaMapID": 1,
+    "VisualEffects": 0,
+    "ScrollsCost": 14,
+    "MarksBonus": 20,
+    "VSkullsBonus": 1,
+    "Mode": "HasAllies",
+    "PlayersCount": 1,
+    "AllyNpcSourceRegionID": 2,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 1,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 3,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 2,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 2,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 1,
+            "Count": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing2",
+    "IntroductionKey": "map_passing2_d",
+    "Flags": "OpenedInitially",
+    "MaxShipRank": "4-6",
+    "ArenaMapID": 3,
+    "VisualEffects": 0,
+    "ScrollsCost": 24,
+    "MarksBonus": 30,
+    "VSkullsBonus": 1,
+    "Mode": "HasAlliesShouldProtect",
+    "PlayersCount": 1,
+    "AllyNpcSourceRegionID": 4,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 1,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 3,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Green Eye",
+            "Count": 1
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 2,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 3,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 1
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 3,
+            "Count": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing3",
+    "IntroductionKey": "map_passing3_d",
+    "Flags": "",
+    "MaxShipRank": "3-5",
+    "ArenaMapID": 1,
+    "VisualEffects": 0,
+    "ScrollsCost": 29,
+    "MarksBonus": 40,
+    "VSkullsBonus": 1,
+    "Mode": "HasAllies",
+    "PlayersCount": 1,
+    "AllyNpcSourceRegionID": 5,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 5,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 1,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 5,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 1,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 1
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 5,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 5,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 3,
+            "Count": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing4",
+    "IntroductionKey": "map_passing4_d",
+    "Flags": "",
+    "MaxShipRank": "1-3",
+    "ArenaMapID": 2,
+    "VisualEffects": 0,
+    "ScrollsCost": 30,
+    "MarksBonus": 50,
+    "VSkullsBonus": 2,
+    "Mode": "HasAllies",
+    "PlayersCount": 1,
+    "AllyNpcSourceRegionID": 8,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 4,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 6,
+            "Count": 3
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 3
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 5,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Flying Ice",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing6",
+    "IntroductionKey": "map_passing6_d",
+    "Flags": "",
+    "MaxShipRank": "1-4",
+    "ArenaMapID": 5,
+    "VisualEffects": 1,
+    "ScrollsCost": 30,
+    "MarksBonus": 50,
+    "VSkullsBonus": 2,
+    "Mode": "Default",
+    "PlayersCount": 2,
+    "AllyNpcSourceRegionID": 8,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 6,
+            "Count": 2
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 8,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 1,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Green Eye",
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 4
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "POWDER GOD",
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Green Eye",
+            "Count": 2
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "JOHNY",
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 4
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 1,
+            "Count": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing5",
+    "IntroductionKey": "map_passing5_d",
+    "Flags": "",
+    "MaxShipRank": "2-4",
+    "ArenaMapID": 4,
+    "VisualEffects": 0,
+    "ScrollsCost": 30,
+    "MarksBonus": 60,
+    "VSkullsBonus": 5,
+    "Mode": "Default",
+    "PlayersCount": 2,
+    "AllyNpcSourceRegionID": 7,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 2,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 2,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 2,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 3,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 4,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 5,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Green Eye",
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Sand Storm",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "POWDER GOD",
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Green Eye",
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 5,
+            "Count": 1
+          },
+          {
+            "SourceType": "Reinforced",
+            "Source": 2,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Sand Storm",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "POWDER GOD",
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Flying Ice",
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Belian",
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "DRAGON",
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "POWDER GOD",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "removed",
+    "IntroductionKey": "",
+    "Flags": "",
+    "MaxShipRank": "1-5",
+    "ArenaMapID": 1,
+    "VisualEffects": 0,
+    "ScrollsCost": 21,
+    "MarksBonus": 0,
+    "VSkullsBonus": 0,
+    "Mode": "Default",
+    "PlayersCount": 1,
+    "AllyNpcSourceRegionID": 2,
+    "Waves": ""
+  },
+  {
+    "MapName": "removed",
+    "IntroductionKey": "",
+    "Flags": "",
+    "MaxShipRank": "1-5",
+    "ArenaMapID": 1,
+    "VisualEffects": 0,
+    "ScrollsCost": 21,
+    "MarksBonus": 0,
+    "VSkullsBonus": 0,
+    "Mode": "Default",
+    "PlayersCount": 1,
+    "AllyNpcSourceRegionID": 2,
+    "Waves": ""
+  },
+  {
+    "MapName": "map_passing9",
+    "IntroductionKey": "map_passing9_d",
+    "Flags": "OpenedInitially",
+    "MaxShipRank": "2-4",
+    "ArenaMapID": 3,
+    "VisualEffects": 0,
+    "ScrollsCost": 25,
+    "MarksBonus": 50,
+    "VSkullsBonus": 4,
+    "Mode": "Default",
+    "PlayersCount": 2,
+    "AllyNpcSourceRegionID": 6,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 5,
+            "Count": 3
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 3,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 3
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 4,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "POWDER GOD",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 3,
+            "Count": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing10",
+    "IntroductionKey": "map_passing10_d",
+    "Flags": "OpenedInitially",
+    "MaxShipRank": "3-5",
+    "ArenaMapID": 4,
+    "VisualEffects": 0,
+    "ScrollsCost": 25,
+    "MarksBonus": 60,
+    "VSkullsBonus": 4,
+    "Mode": "Default",
+    "PlayersCount": 3,
+    "AllyNpcSourceRegionID": 8,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 3
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 6,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 4,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 4,
+            "Count": 5
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 3
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "JOHNY",
+            "Count": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing11",
+    "IntroductionKey": "map_passing11_d",
+    "Flags": "OpenedInitially",
+    "MaxShipRank": "3-5",
+    "ArenaMapID": 1,
+    "VisualEffects": 2,
+    "ScrollsCost": 30,
+    "MarksBonus": 70,
+    "VSkullsBonus": 4,
+    "Mode": "Default",
+    "PlayersCount": 4,
+    "AllyNpcSourceRegionID": 6,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 1
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 3
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Sand Storm",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "DRAGON",
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "POWDER GOD",
+            "Count": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MapName": "map_passing12",
+    "IntroductionKey": "map_passing12_d",
+    "Flags": "",
+    "MaxShipRank": "1-4",
+    "ArenaMapID": 2,
+    "VisualEffects": 2,
+    "ScrollsCost": 30,
+    "MarksBonus": 70,
+    "VSkullsBonus": 4,
+    "Mode": "Default",
+    "PlayersCount": 4,
+    "AllyNpcSourceRegionID": 6,
+    "Waves": [
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 7,
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Flying Ice",
+            "Count": 1
+          },
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Reinforced",
+            "Source": 4,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 2
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Green Eye",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Trader",
+            "Source": 9,
+            "Count": 3
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Lighting",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "BossByName",
+            "Source": "Sand Storm",
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 6,
+            "Count": 1
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 8,
+            "Count": 2
+          },
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "NPCS": [
+          {
+            "SourceType": "Pirate",
+            "Source": 9,
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "DRAGON",
+            "Count": 1
+          },
+          {
+            "SourceType": "BossByName",
+            "Source": "Exole",
+            "Count": 1
+          }
+        ]
+      }
+    ]
+  }
+]

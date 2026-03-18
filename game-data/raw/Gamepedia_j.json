@@ -1,0 +1,275 @@
+[
+  {
+    "ID": "gamewiki_windandspeed",
+    "References": "",
+    "ConditionID": "",
+    "Reward": "",
+    "TexturePath": "0,1316,269,49",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_hold",
+    "References": "",
+    "ConditionID": "OpenHoldFromPort",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_trading",
+    "References": "",
+    "ConditionID": "OpenTrade",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_flags",
+    "References": "",
+    "ConditionID": "OpenFlagsChangeWindow",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_nps",
+    "References": "",
+    "ConditionID": "",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_ammonition",
+    "References": "",
+    "ConditionID": "",
+    "Reward": "",
+    "TexturePath": "0,1367,259,75",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_workshop",
+    "References": "",
+    "ConditionID": "OpenWorkshop",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_travallingandhazard",
+    "References": "",
+    "ConditionID": "NewPort",
+    "Reward": "",
+    "TexturePath": "270,1316,170,107",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_buildingships",
+    "References": "",
+    "ConditionID": "OpenVerfyAnyShip",
+    "Reward": "",
+    "TexturePath": "226,1190,215,51",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_crew",
+    "References": "",
+    "ConditionID": "OpenUnitsWindowWithoutUnits",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_weapons",
+    "References": "",
+    "ConditionID": "CraftCannon",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_powerupitems",
+    "References": "",
+    "ConditionID": "GivePowerupItems",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_tradersinsea",
+    "References": "",
+    "ConditionID": "OpenTraderInSea",
+    "Reward": "",
+    "TexturePath": "261,1425,218,65",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_storm",
+    "References": "",
+    "ConditionID": "GameTT_OpenStorm",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_factories",
+    "References": "",
+    "ConditionID": "OpenFactoryWindow",
+    "Reward": "",
+    "TexturePath": "299,1085,116,46",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_boarding",
+    "References": "",
+    "ConditionID": "GameTT_OpenBoarding",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_shipscapturing",
+    "References": "",
+    "ConditionID": "GameTT_OpenBoarding",
+    "Reward": "",
+    "TexturePath": "491,1273,150,49",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_socialmenu",
+    "References": "",
+    "ConditionID": "OpenSocialMenu",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_guildsfractions",
+    "References": "",
+    "ConditionID": "OpenGuildAndFractions",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": [
+      {
+        "ID": "gamewiki_guildsfractions_fraction_1",
+        "References": "",
+        "ConditionID": "",
+        "Reward": "",
+        "TexturePath": "0,1534,290,59",
+        "Subparagraphs": ""
+      },
+      {
+        "ID": "gamewiki_guildsfractions_fraction_2",
+        "References": "",
+        "ConditionID": "",
+        "Reward": "",
+        "TexturePath": "291,1534,290,59",
+        "Subparagraphs": ""
+      },
+      {
+        "ID": "gamewiki_guildsfractions_fraction_3",
+        "References": "",
+        "ConditionID": "",
+        "Reward": "",
+        "TexturePath": "0,1594,290,59",
+        "Subparagraphs": ""
+      },
+      {
+        "ID": "gamewiki_guildsfractions_fraction_4",
+        "References": "",
+        "ConditionID": "",
+        "Reward": "",
+        "TexturePath": "291,1594,290,59",
+        "Subparagraphs": ""
+      }
+    ]
+  },
+  {
+    "ID": "gamewiki_portscapturing",
+    "References": "",
+    "ConditionID": "BeInGuild",
+    "Reward": "",
+    "TexturePath": "669,1198,159,66",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_tensity",
+    "References": "",
+    "ConditionID": "BeInGuild",
+    "Reward": "",
+    "TexturePath": "669,1198,159,66",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_guildsgrow",
+    "References": "",
+    "ConditionID": "BeInGuild",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_portsrobbing",
+    "References": "",
+    "ConditionID": "BeInGuild",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_hqs",
+    "References": "",
+    "ConditionID": "BeInGuild",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_treasury",
+    "References": "",
+    "ConditionID": "BeInGuild",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_pvp",
+    "References": "",
+    "ConditionID": "MakePvp",
+    "Reward": "",
+    "TexturePath": "284,1132,59,55",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_cataclysm",
+    "References": "",
+    "ConditionID": "",
+    "Reward": "",
+    "TexturePath": "0,1244,310,71",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_ports",
+    "References": "",
+    "ConditionID": "",
+    "Reward": "",
+    "TexturePath": "",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_earning",
+    "References": "",
+    "ConditionID": "OpenTraderInSea",
+    "Reward": "",
+    "TexturePath": "678,1445,150,49",
+    "Subparagraphs": ""
+  },
+  {
+    "ID": "gamewiki_wanted_level",
+    "References": "",
+    "ConditionID": "GameTT_WantedLevelNps",
+    "Reward": "",
+    "TexturePath": "313,1242,94,48",
+    "Subparagraphs": ""
+  }
+]

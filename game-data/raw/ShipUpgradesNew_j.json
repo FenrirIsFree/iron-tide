@@ -1,0 +1,392 @@
+[
+  {
+    "Name": "upgrade_1_name",
+    "EffectsBoost": "MCapacity +1500,+1500,+1500,+2000,+2000,+3500,+3500;PSouredItemsReduce +100",
+    "IconName": "up_s1",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TWoodID",
+    "Category": "Support",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_2_name",
+    "EffectsBoost": "MHealth +80,+80,+80,+150,+150,+210,+210;PPlayerMendingKitEffectivity +20",
+    "IconName": "up_s2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Protection",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_3_name",
+    "EffectsBoost": "PHealth +10;PCapacity +12;PChangeShipSpeedBonus -15",
+    "IconName": "up_x4",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Support",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_4_name",
+    "EffectsBoost": "BMoreFireAreaAndBurning +1;PCannonBallsSpeed +10",
+    "IconName": "up_w1",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TResinLaquer",
+    "Category": "Combat",
+    "WearType": "ShotsCount"
+  },
+  {
+    "Name": "upgrade_5_name",
+    "EffectsBoost": "PReduceFireAreaDamage +25;PReducePowderKegDamage +30",
+    "IconName": "up_s5",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TCopper",
+    "Category": "Protection",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_6_name",
+    "EffectsBoost": "PAddCollisionDamage +20;PReduceDamageToNose +20;BDestroyFloodingShopByCollision +1",
+    "IconName": "up_s6",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TIronID",
+    "Category": "Protection",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_7_name",
+    "EffectsBoost": "PSailProtection +30;PReduceDamageToSailFromBurning +50",
+    "IconName": "up_s7",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CSailcloth",
+    "Category": "Protection",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_8_name",
+    "EffectsBoost": "PPowerupItemsReload +20;PChangeCBallsSpeed +50",
+    "IconName": "up_r1",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "RVuduSkull",
+    "Category": "Combat",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_9_name",
+    "EffectsBoost": "MArmor +2,+2,+2,+1.5,+1.5,+1,+1;MExtraPlaces +6,+6,+6,+10,+10,+14,+14;PMobilityBonus -6",
+    "IconName": "up_r2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TWoodID",
+    "Category": "Protection",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_10_name",
+    "EffectsBoost": "MSpeed +1.2,+1.2,+1.2,+1.0,+1.0,+0.8,+0.8; MPlayerJerkEffectPowerAdd +1.2,+1.2,+1.2,+1,+1,+0.8,+0.8",
+    "IconName": "up_r3",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Speed",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_11_name",
+    "EffectsBoost": "PVisibilityZone +50;PPlayerSightFocusSpeedAdd +60",
+    "IconName": "up_r4",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Support",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_12_name",
+    "EffectsBoost": "PCannonsReload +12",
+    "IconName": "up_n2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Combat",
+    "WearType": "ShotsCount"
+  },
+  {
+    "Name": "upgrade_13_name",
+    "EffectsBoost": "PPowderKegReloadBoost +35;PFalkonetReloadBoost +35",
+    "IconName": "up_w2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Combat",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_14_name",
+    "EffectsBoost": "PMortarDamageBonus +12;BMortarAngleBonus +1;PMortarAimSpeed -25",
+    "IconName": "up_w3",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Mortars",
+    "WearType": "MortarShotsCount"
+  },
+  {
+    "Name": "upgrade_15_name",
+    "EffectsBoost": "MExtraPlaces +10,+10,+10,+14,+14,+20,+20;MMakeInvisiblePlaces +1",
+    "IconName": "up_r6",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "RVuduSkull",
+    "Category": "Support",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_16_name",
+    "EffectsBoost": "PMobilityBonus +8;PDecreaseSpeedLossMarchingMode +15",
+    "IconName": "up_r5",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Speed",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "removed",
+    "EffectsBoost": "",
+    "IconName": "up_r6",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TCottonID",
+    "Category": "Combat",
+    "WearType": "None"
+  },
+  {
+    "Name": "upgrade_18_name",
+    "EffectsBoost": "PDamageCannonIfStrengthBelow30P +25",
+    "IconName": "up_n3",
+    "LowStrength": true,
+    "LowCost": false,
+    "MainCraftResource": "RMarks",
+    "Category": "Unique",
+    "WearType": "ShotsCount"
+  },
+  {
+    "Name": "upgrade_24_name",
+    "EffectsBoost": "PTiltReduce +50;PReduceCannonsScatter +40",
+    "IconName": "up_x7",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TIronID",
+    "Category": "Support",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_20_name",
+    "EffectsBoost": "PFrontAndBackCannonsAddDamage +100",
+    "IconName": "up_w6",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Combat",
+    "WearType": "ShotsCount"
+  },
+  {
+    "Name": "upgrade_21_name",
+    "EffectsBoost": "MCannonsDistance +10",
+    "IconName": "up_w7",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CBulkIron",
+    "Category": "Combat",
+    "WearType": "ShotsCount"
+  },
+  {
+    "Name": "upgrade_22_name",
+    "EffectsBoost": "PReduceFireAreaDamage +45;PArmor -10",
+    "IconName": "up_n1",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CBulkIron",
+    "Category": "Protection",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_23_name",
+    "EffectsBoost": "MExtraUpgradePlaces +2;PMobilityBonus -10",
+    "IconName": "up_mod",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "RMarks",
+    "Category": "Unique",
+    "WearType": "None"
+  },
+  {
+    "Name": "removed",
+    "EffectsBoost": "",
+    "IconName": "up_r4",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Combat",
+    "WearType": "None"
+  },
+  {
+    "Name": "upgrade_25_name",
+    "EffectsBoost": "MCannonsAngleBonus +10;PPlayerSightFocusSpeedAdd +30",
+    "IconName": "up_x2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Combat",
+    "WearType": "ShotsCount"
+  },
+  {
+    "Name": "upgrade_26_name",
+    "EffectsBoost": "PHealth +5;PReduceReceivesMortarDamage +30;PSpeed -5",
+    "IconName": "up_n9",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "TCopper",
+    "Category": "Unique",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_27_name",
+    "EffectsBoost": "PMobilityBonus +5;PSpeed +4;PArmor -15",
+    "IconName": "up_s3",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CBulkWood",
+    "Category": "Speed",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_28_name",
+    "EffectsBoost": "MCapacity +3000,+3000,+3000,+4500,+4500,+6500,+6500;PReduceLossesWhenKilled +40;PHealth -5",
+    "IconName": "up_x5",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CBulkWood",
+    "Category": "Support",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_29_name",
+    "EffectsBoost": "MMortarMaxDistance +10;PMobilityBonus -8",
+    "IconName": "up_w8",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CBronze",
+    "Category": "Mortars",
+    "WearType": "MortarShotsCount"
+  },
+  {
+    "Name": "upgrade_30_name",
+    "EffectsBoost": "PBoardingGold +5",
+    "IconName": "up_w9",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "RMarks",
+    "Category": "Unique",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_31_name",
+    "EffectsBoost": "PMarchingSpeed +35",
+    "IconName": "up_sail0",
+    "LowStrength": false,
+    "LowCost": true,
+    "MainCraftResource": "",
+    "Category": "Sailes",
+    "WearType": "None"
+  },
+  {
+    "Name": "upgrade_32_name",
+    "EffectsBoost": "PMarchingSpeed +45",
+    "IconName": "up_sail1",
+    "LowStrength": false,
+    "LowCost": true,
+    "MainCraftResource": "TCottonID",
+    "Category": "Sailes",
+    "WearType": "None"
+  },
+  {
+    "Name": "upgrade_33_name",
+    "EffectsBoost": "PMarchingSpeed +60",
+    "IconName": "up_sail2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CSailcloth",
+    "Category": "Sailes",
+    "WearType": "None"
+  },
+  {
+    "Name": "upgrade_34_name",
+    "EffectsBoost": "PMarchingSpeed +70;MMobilityBonus -1",
+    "IconName": "up_sail3",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "RVuduSkull",
+    "Category": "Sailes",
+    "WearType": "None"
+  },
+  {
+    "Name": "upgrade_35_name",
+    "EffectsBoost": "PDropLootingSpeed +250;PFishingSpeed +30;PBoardingDistance +15",
+    "IconName": "up_x8",
+    "LowStrength": false,
+    "LowCost": true,
+    "MainCraftResource": "",
+    "Category": "Support",
+    "WearType": "SailingDistance"
+  },
+  {
+    "Name": "upgrade_39_name",
+    "EffectsBoost": "PMortarAimSpeed +40;PMortarDecreaseDeadzone +30",
+    "IconName": "up_mort_e2",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "CBronze",
+    "Category": "Mortars",
+    "WearType": "MortarShotsCount"
+  },
+  {
+    "Name": "upgrade_37_name",
+    "EffectsBoost": "BAllowPowderKegAnySpeed +1;PPowderKegIncreaseTriggerRadius +30",
+    "IconName": "up_x10",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "RMarks",
+    "Category": "Unique",
+    "WearType": "ReceivedDamage"
+  },
+  {
+    "Name": "upgrade_38_name",
+    "EffectsBoost": "PMortarReload +40;PCapacity +25;PMortarDamageBonus -25",
+    "IconName": "up_mort_e1",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Mortars",
+    "WearType": "MortarShotsCount"
+  },
+  {
+    "Name": "upgrade_40_name",
+    "EffectsBoost": "BExtraMortars +1;PSpeed 0;MMobilityBonus 0;MPReduceCannonsQuantity 0;PCapacity 0;MHealth 0;MExtraPlaces 0;",
+    "IconName": "up_mort_modif",
+    "LowStrength": false,
+    "LowCost": false,
+    "MainCraftResource": "",
+    "Category": "Modification",
+    "WearType": "MortarShotsCount"
+  }
+]
