@@ -1,0 +1,21 @@
+{
+  "ships": [
+    {
+      "ship_id": 50,
+      "ship_name": "Ingermanland",
+      "hp": 2550.0,
+      "capacity": 17500.0,
+      "armor": 3.88,
+      "speed": 21.14,
+      "mobility": null,
+      "base_hp": 2340,
+      "base_armor": 3.2,
+      "base_speed": 9,
+      "base_mobility": 87,
+      "type": "Destroyer",
+      "rank": 1,
+      "nuid": 38,
+      "offset": 162
+    }
+  ]
+}
