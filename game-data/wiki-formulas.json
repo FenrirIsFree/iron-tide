@@ -76,6 +76,27 @@
       "ammoFactor": "Each ammo type has DamageFactor multiplier (round shot = 1.0)",
       "bonusEffects": "BallDamageBonusToAll, DamageUpIfStrengthBefore30pNow, FrontAndBackWeaponsDamageBonus, etc.",
       "tooltipSource": "Armor - the thickness of the side cloth, which reduces damage from cannonballs. If the penetration of a cannon is 10 and the armor is 2, then the ship will take 8 points of damage * ammo type damage and effects. At an angle, the thickness increases, which reduces damage. The bow is more sturdy and the stern is less armored"
+    },
+    "angleMultiplier": {
+      "source": "PVP packet analysis 2026-03-18",
+      "confirmed": true,
+      "finding": "Same cannon hitting same ship: 5.93 at extreme angle vs 18.83 broadside = 3.2x damage difference",
+      "coordinateSystem": {
+        "X": "port/starboard (negative = port, positive = starboard)",
+        "Y": "height (0 = waterline, 4-5 = deck/mast level)",
+        "Z": "fore/aft (positive Z = stern, all stern-flagged hits have Z > 4.0)"
+      },
+      "observations": [
+        "Broadside hits (flat angle) deal full damage",
+        "Angled shots deal ~30-45% of broadside damage (3.2x reduction at extreme angles)",
+        "Stern hits do NOT get bonus damage - stern flag only triggers flooding-kill mechanic",
+        "Mortars (Y > 4.0, hitting deck from above) deal consistent damage regardless of angle",
+        "The 12.0 damage mortar hits are angle-independent (plunging fire ignores armor angle)",
+        "Same cannon same target: extreme port X=-4.76 → 5.93 dmg, broadside X=-2.34 → 18.74 dmg"
+      ],
+      "estimatedMultiplierRange": "0.3x (extreme angle) to 1.0x (perfect broadside)",
+      "mortarsIgnoreAngle": true,
+      "sternFlagBehavior": "No damage bonus. Only triggers instant-sink if target is flooding."
     }
   },
   "speedCalculation": {
