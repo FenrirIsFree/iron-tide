@@ -3,6 +3,7 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'
 import { revalidatePath } from 'next/cache'
+import { uuidSchema, toggleVisibilitySchema } from '@/lib/validation'
 
 async function getCurrentUser() {
   const supabase = await createServerSupabaseClient()
@@ -79,26 +80,34 @@ export async function getCatalogs() {
 }
 
 export async function updateResource(resourceId: string, quantity: number) {
+  uuidSchema.parse(resourceId)
+  if (typeof quantity !== 'number' || quantity < 0 || quantity > 999999 || !Number.isFinite(quantity)) throw new Error('Invalid quantity')
+  const safeQuantity = Math.floor(quantity)
   const user = await getCurrentUser()
   await prisma.userResource.upsert({
     where: { userId_resourceId: { userId: user.id, resourceId } },
-    update: { quantity },
-    create: { userId: user.id, resourceId, quantity },
+    update: { quantity: safeQuantity },
+    create: { userId: user.id, resourceId, quantity: safeQuantity },
   })
   revalidatePath('/inventory')
 }
 
 export async function updateConsumable(consumableId: string, quantity: number) {
+  uuidSchema.parse(consumableId)
+  if (typeof quantity !== 'number' || quantity < 0 || quantity > 999999 || !Number.isFinite(quantity)) throw new Error('Invalid quantity')
+  const safeQuantity = Math.floor(quantity)
   const user = await getCurrentUser()
   await prisma.userConsumable.upsert({
     where: { userId_consumableId: { userId: user.id, consumableId } },
-    update: { quantity },
-    create: { userId: user.id, consumableId, quantity },
+    update: { quantity: safeQuantity },
+    create: { userId: user.id, consumableId, quantity: safeQuantity },
   })
   revalidatePath('/inventory')
 }
 
 export async function updateCurrency(currencyId: string, amount: number) {
+  uuidSchema.parse(currencyId)
+  if (typeof amount !== 'number' || amount < 0 || amount > 999999999 || !Number.isFinite(amount)) throw new Error('Invalid amount')
   const user = await getCurrentUser()
   await prisma.userCurrency.upsert({
     where: { userId_currencyId: { userId: user.id, currencyId } },
@@ -109,16 +118,21 @@ export async function updateCurrency(currencyId: string, amount: number) {
 }
 
 export async function updateAmmo(ammoTypeId: string, quantity: number) {
+  uuidSchema.parse(ammoTypeId)
+  if (typeof quantity !== 'number' || quantity < 0 || quantity > 999999 || !Number.isFinite(quantity)) throw new Error('Invalid quantity')
+  const safeQuantity = Math.floor(quantity)
   const user = await getCurrentUser()
   await prisma.userAmmo.upsert({
     where: { userId_ammoTypeId: { userId: user.id, ammoTypeId } },
-    update: { quantity },
-    create: { userId: user.id, ammoTypeId, quantity },
+    update: { quantity: safeQuantity },
+    create: { userId: user.id, ammoTypeId, quantity: safeQuantity },
   })
   revalidatePath('/inventory')
 }
 
 export async function toggleItemVisibility(type: 'resource' | 'consumable' | 'currency' | 'ammo', itemId: string) {
+  const parsed = toggleVisibilitySchema.safeParse({ type, itemId })
+  if (!parsed.success) throw new Error('Invalid input')
   const user = await getCurrentUser()
   if (type === 'resource') {
     const item = await prisma.userResource.findFirst({ where: { id: itemId, userId: user.id } })
