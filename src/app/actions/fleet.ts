@@ -3,6 +3,7 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'
 import { revalidatePath } from 'next/cache'
+import { uuidSchema, addShipSchema, renameLoadoutSchema, addWeaponSchema, updateCrewQuantitySchema } from '@/lib/validation'
 
 async function getCurrentUser() {
   const supabase = await createServerSupabaseClient()
@@ -61,12 +62,14 @@ export async function getCrewCatalog() {
 // ============================================================
 
 export async function addShip(shipId: string, nickname?: string) {
+  const parsed = addShipSchema.safeParse({ shipId, nickname })
+  if (!parsed.success) throw new Error('Invalid input')
   const user = await getCurrentUser()
   await prisma.userShip.create({
     data: {
       userId: user.id,
-      shipId,
-      nickname: nickname || null,
+      shipId: parsed.data.shipId,
+      nickname: parsed.data.nickname || null,
       loadouts: {
         create: { name: 'Loadout 1', isActive: true },
       },
@@ -76,21 +79,24 @@ export async function addShip(shipId: string, nickname?: string) {
 }
 
 export async function removeShip(userShipId: string) {
+  uuidSchema.parse(userShipId)
   const user = await getCurrentUser()
   await prisma.userShip.deleteMany({ where: { id: userShipId, userId: user.id } })
   revalidatePath('/fleet')
 }
 
 export async function updateShipNickname(userShipId: string, nickname: string) {
+  uuidSchema.parse(userShipId)
   const user = await getCurrentUser()
   await prisma.userShip.updateMany({
     where: { id: userShipId, userId: user.id },
-    data: { nickname: nickname || null },
+    data: { nickname: nickname?.slice(0, 50) || null },
   })
   revalidatePath('/fleet')
 }
 
 export async function toggleShipVisibility(userShipId: string) {
+  uuidSchema.parse(userShipId)
   const user = await getCurrentUser()
   const ship = await prisma.userShip.findFirst({ where: { id: userShipId, userId: user.id } })
   if (!ship) throw new Error('Ship not found')
@@ -106,6 +112,7 @@ export async function toggleShipVisibility(userShipId: string) {
 // ============================================================
 
 export async function addLoadout(userShipId: string, name?: string) {
+  uuidSchema.parse(userShipId)
   const user = await getCurrentUser()
   const ship = await prisma.userShip.findFirst({
     where: { id: userShipId, userId: user.id },
@@ -120,6 +127,7 @@ export async function addLoadout(userShipId: string, name?: string) {
 }
 
 export async function removeLoadout(loadoutId: string) {
+  uuidSchema.parse(loadoutId)
   const user = await getCurrentUser()
   const loadout = await prisma.loadout.findUnique({
     where: { id: loadoutId },
@@ -136,6 +144,7 @@ export async function removeLoadout(loadoutId: string) {
 }
 
 export async function setActiveLoadout(loadoutId: string) {
+  uuidSchema.parse(loadoutId)
   const user = await getCurrentUser()
   const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
@@ -148,12 +157,14 @@ export async function setActiveLoadout(loadoutId: string) {
 }
 
 export async function renameLoadout(loadoutId: string, name: string) {
+  const parsed = renameLoadoutSchema.safeParse({ loadoutId, name })
+  if (!parsed.success) throw new Error('Invalid input')
   const user = await getCurrentUser()
-  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  const loadout = await prisma.loadout.findUnique({ where: { id: parsed.data.loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
   const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
   if (!ship) throw new Error('Not authorized')
-  await prisma.loadout.update({ where: { id: loadoutId }, data: { name } })
+  await prisma.loadout.update({ where: { id: parsed.data.loadoutId }, data: { name: parsed.data.name } })
   revalidatePath('/fleet')
 }
 
@@ -162,17 +173,20 @@ export async function renameLoadout(loadoutId: string, name: string) {
 // ============================================================
 
 export async function addWeaponToLoadout(loadoutId: string, weaponId: string, position: string, quantity: number = 1) {
+  const parsed = addWeaponSchema.safeParse({ loadoutId, weaponId, position })
+  if (!parsed.success) throw new Error('Invalid input')
   const user = await getCurrentUser()
-  const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
+  const loadout = await prisma.loadout.findUnique({ where: { id: parsed.data.loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
   const ship = await prisma.userShip.findFirst({ where: { id: loadout.userShipId, userId: user.id } })
   if (!ship) throw new Error('Not authorized')
 
-  await prisma.loadoutWeapon.create({ data: { loadoutId, weaponId, position, quantity } })
+  await prisma.loadoutWeapon.create({ data: { loadoutId: parsed.data.loadoutId, weaponId: parsed.data.weaponId, position: parsed.data.position, quantity } })
   revalidatePath('/fleet')
 }
 
 export async function removeWeaponFromLoadout(loadoutWeaponId: string) {
+  uuidSchema.parse(loadoutWeaponId)
   await getCurrentUser()
   await prisma.loadoutWeapon.delete({ where: { id: loadoutWeaponId } })
   revalidatePath('/fleet')
@@ -183,6 +197,8 @@ export async function removeWeaponFromLoadout(loadoutWeaponId: string) {
 // ============================================================
 
 export async function addUpgradeToLoadout(loadoutId: string, upgradeId: string) {
+  uuidSchema.parse(loadoutId)
+  uuidSchema.parse(upgradeId)
   const user = await getCurrentUser()
   const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
@@ -193,6 +209,7 @@ export async function addUpgradeToLoadout(loadoutId: string, upgradeId: string) 
 }
 
 export async function removeUpgradeFromLoadout(loadoutUpgradeId: string) {
+  uuidSchema.parse(loadoutUpgradeId)
   await getCurrentUser()
   await prisma.loadoutUpgrade.delete({ where: { id: loadoutUpgradeId } })
   revalidatePath('/fleet')
@@ -203,6 +220,8 @@ export async function removeUpgradeFromLoadout(loadoutUpgradeId: string) {
 // ============================================================
 
 export async function addAmmoToLoadout(loadoutId: string, ammoTypeId: string, quantity: number) {
+  uuidSchema.parse(loadoutId)
+  uuidSchema.parse(ammoTypeId)
   const user = await getCurrentUser()
   const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
@@ -213,6 +232,7 @@ export async function addAmmoToLoadout(loadoutId: string, ammoTypeId: string, qu
 }
 
 export async function removeAmmoFromLoadout(loadoutAmmoId: string) {
+  uuidSchema.parse(loadoutAmmoId)
   await getCurrentUser()
   await prisma.loadoutAmmo.delete({ where: { id: loadoutAmmoId } })
   revalidatePath('/fleet')
@@ -223,6 +243,8 @@ export async function removeAmmoFromLoadout(loadoutAmmoId: string) {
 // ============================================================
 
 export async function addCrewToLoadout(loadoutId: string, crewTypeId: string, quantity: number) {
+  uuidSchema.parse(loadoutId)
+  uuidSchema.parse(crewTypeId)
   const user = await getCurrentUser()
   const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
@@ -233,14 +255,17 @@ export async function addCrewToLoadout(loadoutId: string, crewTypeId: string, qu
 }
 
 export async function removeCrewFromLoadout(loadoutCrewId: string) {
+  uuidSchema.parse(loadoutCrewId)
   await getCurrentUser()
   await prisma.loadoutCrew.delete({ where: { id: loadoutCrewId } })
   revalidatePath('/fleet')
 }
 
 export async function updateCrewQuantity(loadoutCrewId: string, quantity: number) {
+  const parsed = updateCrewQuantitySchema.safeParse({ loadoutCrewId, quantity })
+  if (!parsed.success) throw new Error('Invalid input')
   await getCurrentUser()
-  await prisma.loadoutCrew.update({ where: { id: loadoutCrewId }, data: { quantity } })
+  await prisma.loadoutCrew.update({ where: { id: parsed.data.loadoutCrewId }, data: { quantity: parsed.data.quantity } })
   revalidatePath('/fleet')
 }
 
@@ -253,6 +278,8 @@ export async function getConsumableCatalog() {
 }
 
 export async function addConsumableToLoadout(loadoutId: string, consumableId: string, quantity: number) {
+  uuidSchema.parse(loadoutId)
+  uuidSchema.parse(consumableId)
   const user = await getCurrentUser()
   const loadout = await prisma.loadout.findUnique({ where: { id: loadoutId }, include: { userShip: true } })
   if (!loadout) throw new Error('Loadout not found')
@@ -263,6 +290,7 @@ export async function addConsumableToLoadout(loadoutId: string, consumableId: st
 }
 
 export async function removeConsumableFromLoadout(loadoutConsumableId: string) {
+  uuidSchema.parse(loadoutConsumableId)
   await getCurrentUser()
   await prisma.loadoutConsumable.delete({ where: { id: loadoutConsumableId } })
   revalidatePath('/fleet')
