@@ -18,6 +18,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "The Iron Tide — World of Sea Battle Guild",
   description: "Rule the seas. The Iron Tide is a World of Sea Battle guild forged in iron, bound by brotherhood, and feared across every ocean.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "The Iron Tide — World of Sea Battle Guild",
+    description: "Born from cannon fire and forged in salt water. We don't ask for the seas — we take them.",
+    images: [{ url: "/og-image.png", width: 1024, height: 1024, alt: "The Iron Tide" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Iron Tide — World of Sea Battle Guild",
+    description: "Born from cannon fire and forged in salt water. We don't ask for the seas — we take them.",
+    images: ["/og-image.png"],
+  },
 };
 
 async function getUser() {
