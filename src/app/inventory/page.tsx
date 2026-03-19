@@ -1,3 +1,10 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Inventory — The Iron Tide",
+  description: "Track your resources, currencies, and supplies.",
+}
+
 import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { getUserInventory, getCatalogs } from '@/app/actions/inventory'

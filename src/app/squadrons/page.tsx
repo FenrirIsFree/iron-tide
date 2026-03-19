@@ -1,3 +1,10 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Squadrons — The Iron Tide",
+  description: "Organize fleet squadrons for battle.",
+}
+
 import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'

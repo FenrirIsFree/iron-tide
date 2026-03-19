@@ -1,3 +1,10 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Guild Roster — The Iron Tide",
+  description: "View all guild members and their ranks.",
+}
+
 import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'
