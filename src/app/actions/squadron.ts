@@ -3,6 +3,7 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'
 import { revalidatePath } from 'next/cache'
+import { uuidSchema, squadronNameSchema, squadronShipSchema, reorderSlotsSchema } from '@/lib/validation'
 
 async function getCurrentUser() {
   const supabase = await createServerSupabaseClient()
@@ -72,26 +73,30 @@ export async function getGuildFleet() {
 }
 
 export async function createSquadron(name: string) {
+  const safeName = squadronNameSchema.parse(name || 'New Squadron')
   const currentUser = await getCurrentUser()
   requireLeadership(currentUser.rank)
 
   await prisma.squadron.create({
-    data: { name: name || 'New Squadron', createdById: currentUser.id },
+    data: { name: safeName, createdById: currentUser.id },
   })
   revalidatePath('/squadrons')
 }
 
 export async function renameSquadron(squadronId: string, name: string) {
+  uuidSchema.parse(squadronId)
+  const safeName = squadronNameSchema.parse(name)
   const currentUser = await getCurrentUser()
   const squadron = await prisma.squadron.findUnique({ where: { id: squadronId } })
   if (!squadron) throw new Error('Squadron not found')
   if (squadron.createdById !== currentUser.id) throw new Error('Only the creator can rename')
 
-  await prisma.squadron.update({ where: { id: squadronId }, data: { name } })
+  await prisma.squadron.update({ where: { id: squadronId }, data: { name: safeName } })
   revalidatePath('/squadrons')
 }
 
 export async function deleteSquadron(squadronId: string) {
+  uuidSchema.parse(squadronId)
   const currentUser = await getCurrentUser()
   const squadron = await prisma.squadron.findUnique({ where: { id: squadronId } })
   if (!squadron) throw new Error('Squadron not found')
@@ -102,9 +107,11 @@ export async function deleteSquadron(squadronId: string) {
 }
 
 export async function addShipToSquadron(squadronId: string, userShipId: string) {
+  const parsed = squadronShipSchema.safeParse({ squadronId, userShipId })
+  if (!parsed.success) throw new Error('Invalid input')
   const currentUser = await getCurrentUser()
   requireLeadership(currentUser.rank)
-  const squadron = await prisma.squadron.findUnique({ where: { id: squadronId }, include: { slots: true } })
+  const squadron = await prisma.squadron.findUnique({ where: { id: parsed.data.squadronId }, include: { slots: true } })
   if (!squadron) throw new Error('Squadron not found')
   if (squadron.createdById !== currentUser.id) throw new Error('Only the creator can add ships')
 
@@ -116,9 +123,11 @@ export async function addShipToSquadron(squadronId: string, userShipId: string) 
 }
 
 export async function removeShipFromSquadron(squadronId: string, userShipId: string) {
+  const parsed = squadronShipSchema.safeParse({ squadronId, userShipId })
+  if (!parsed.success) throw new Error('Invalid input')
   const currentUser = await getCurrentUser()
   requireLeadership(currentUser.rank)
-  const squadron = await prisma.squadron.findUnique({ where: { id: squadronId } })
+  const squadron = await prisma.squadron.findUnique({ where: { id: parsed.data.squadronId } })
   if (!squadron) throw new Error('Squadron not found')
   if (squadron.createdById !== currentUser.id) throw new Error('Only the creator can remove ships')
 
@@ -129,8 +138,10 @@ export async function removeShipFromSquadron(squadronId: string, userShipId: str
 }
 
 export async function reorderSquadronSlots(squadronId: string, slotIds: string[]) {
+  const parsed = reorderSlotsSchema.safeParse({ squadronId, slotIds })
+  if (!parsed.success) throw new Error('Invalid input')
   const currentUser = await getCurrentUser()
-  const squadron = await prisma.squadron.findUnique({ where: { id: squadronId } })
+  const squadron = await prisma.squadron.findUnique({ where: { id: parsed.data.squadronId } })
   if (!squadron) throw new Error('Squadron not found')
   if (squadron.createdById !== currentUser.id) throw new Error('Only the creator can reorder')
 

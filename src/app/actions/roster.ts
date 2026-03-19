@@ -3,6 +3,7 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import prisma from '@/lib/prisma'
 import { revalidatePath } from 'next/cache'
+import { updateRankSchema, uuidSchema } from '@/lib/validation'
 
 const rankOrder: Record<string, number> = {
   FOUNDER: 0,
@@ -18,6 +19,8 @@ const RANKS = ['FOUNDER', 'ADMIRAL', 'COMMODORE', 'OFFICER', 'MIDSHIPMAN', 'SAIL
 type GuildRank = typeof RANKS[number]
 
 export async function updateMemberRank(targetUserId: string, newRank: string) {
+  const parsed = updateRankSchema.safeParse({ targetUserId, newRank })
+  if (!parsed.success) throw new Error('Invalid input')
   // Auth check
   const supabase = await createServerSupabaseClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -75,6 +78,7 @@ export async function getMembers() {
 }
 
 export async function getMemberFleet(userId: string) {
+  uuidSchema.parse(userId)
   return prisma.userShip.findMany({
     where: { userId, isPublic: true },
     include: {
