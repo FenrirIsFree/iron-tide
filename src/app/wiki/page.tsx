@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 const sections = [
   {
     title: '🚢 Ships',
-    desc: 'Browse all 69 ships — stats, classes, factions, and descriptions.',
+    desc: 'Browse all ships — stats, classes, factions, and descriptions.',
     href: '/wiki/ships',
     count: '62 ships',
   },
