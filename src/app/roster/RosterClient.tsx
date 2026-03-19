@@ -1,9 +1,9 @@
-import { serialize } from "@/lib/serialize"
 'use client'
 
 import { useState, useTransition } from 'react'
 import { getMemberFleet, updateMemberRank } from '@/app/actions/roster'
 import { computeModifiedStats, type ModifiedStats } from '@/lib/statEngine'
+import { serialize } from '@/lib/serialize'
 
 type Member = {
   id: string
