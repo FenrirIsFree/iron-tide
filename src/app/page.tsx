@@ -1,10 +1,18 @@
-"use client";
+import Link from "next/link"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import HeroButtons from "@/components/HeroButtons"
+import type { Metadata } from "next"
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { createBrowserClient } from "@/lib/supabase";
+export const metadata: Metadata = {
+  title: "The Iron Tide — World of Sea Battle Guild",
+  description: "Born from cannon fire and forged in salt water. The Iron Tide is a World of Sea Battle guild — fleet tracking, ship database, and guild management tools.",
+  openGraph: {
+    title: "The Iron Tide — World of Sea Battle Guild",
+    description: "Born from cannon fire and forged in salt water. We don't ask for the seas — we take them.",
+    type: "website",
+  },
+}
 
 const features = [
   {
@@ -27,18 +35,9 @@ const features = [
     title: "Ship Database",
     desc: "Complete WoSB ship and weapon reference guide.",
   },
-];
+]
 
 export default function Home() {
-  const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading');
-
-  useEffect(() => {
-    const supabase = createBrowserClient();
-    supabase.auth.getUser().then(({ data }) => {
-      setAuthState(data.user ? 'in' : 'out');
-    });
-  }, []);
-
   return (
     <>
       <Navbar />
@@ -56,29 +55,7 @@ export default function Home() {
             we take them. The Iron Tide rises, and everything in its wake bends or breaks.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 min-h-[48px]">
-            {authState === 'loading' ? null : authState === 'in' ? (
-              <Link
-                href="/dashboard"
-                className="px-8 py-3 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors"
-              >
-                Dashboard
-              </Link>
-            ) : (
-              <>
-                <Link
-                  href="/login"
-                  className="px-8 py-3 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary-hover transition-colors"
-                >
-                  Member Login
-                </Link>
-                <Link
-                  href="/signup"
-                  className="px-8 py-3 text-lg font-semibold text-accent border-2 border-accent rounded-lg hover:bg-accent hover:text-background transition-colors"
-                >
-                  Join The Crew
-                </Link>
-              </>
-            )}
+            <HeroButtons />
           </div>
         </section>
 
@@ -142,5 +119,5 @@ export default function Home() {
       </main>
       <Footer />
     </>
-  );
+  )
 }
