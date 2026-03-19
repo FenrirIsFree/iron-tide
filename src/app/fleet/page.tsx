@@ -1,3 +1,10 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Fleet — The Iron Tide",
+  description: "Manage your ships, loadouts, and weapons.",
+}
+
 import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { getUserFleet, getShipCatalog, getWeaponCatalog, getUpgradeCatalog, getAmmoCatalog, getCrewCatalog, getConsumableCatalog } from '@/app/actions/fleet'
