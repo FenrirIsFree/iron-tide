@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { createBrowserClient } from '@/lib/supabase'
+import { useState } from 'react'
+import { useUser } from '@/components/UserProvider'
 import { signOut } from '@/app/actions/auth'
 
 const navLinks = [
@@ -15,37 +15,10 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading')
-  const [username, setUsername] = useState<string>('')
+  const { isAuthenticated, username } = useUser()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const supabase = createBrowserClient()
-    supabase.auth.getUser().then(({ data }) => {
-      if (data.user) {
-        setAuthState('in')
-        fetch('/api/me').then(r => r.json()).then(d => {
-          if (d.user) setUsername(d.user.username)
-        })
-      } else {
-        setAuthState('out')
-      }
-    })
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        setAuthState('in')
-        fetch('/api/me').then(r => r.json()).then(d => {
-          if (d.user) setUsername(d.user.username)
-        })
-      } else {
-        setAuthState('out')
-        setUsername('')
-      }
-    })
-    return () => subscription.unsubscribe()
-  }, [])
-
-  const visibleLinks = navLinks.filter(l => !l.auth || authState === 'in')
+  const visibleLinks = navLinks.filter(l => !l.auth || isAuthenticated)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-surface-border">
@@ -56,7 +29,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-3">
-          {authState === 'loading' ? null : authState === 'in' ? (
+          {isAuthenticated ? (
             <>
               {visibleLinks.map(l => (
                 <Link key={l.href} href={l.href} className="text-foreground-secondary text-sm hover:text-foreground transition-colors">
@@ -107,7 +80,7 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden border-t border-surface-border bg-background/95 backdrop-blur-sm">
           <div className="px-4 py-4 space-y-3">
-            {authState === 'loading' ? null : authState === 'in' ? (
+            {isAuthenticated ? (
               <>
                 {visibleLinks.map(l => (
                   <Link

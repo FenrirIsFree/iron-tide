@@ -1,22 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { createBrowserClient } from '@/lib/supabase'
+import { useUser } from '@/components/UserProvider'
 
 export default function HeroButtons() {
-  const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading')
+  const { isAuthenticated } = useUser()
 
-  useEffect(() => {
-    const supabase = createBrowserClient()
-    supabase.auth.getUser().then(({ data }) => {
-      setAuthState(data.user ? 'in' : 'out')
-    })
-  }, [])
-
-  if (authState === 'loading') return null
-
-  if (authState === 'in') {
+  if (isAuthenticated) {
     return (
       <Link
         href="/dashboard"
