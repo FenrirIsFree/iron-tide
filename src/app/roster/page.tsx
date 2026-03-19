@@ -12,6 +12,7 @@ import { getMembers } from '@/app/actions/roster'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import RosterClient from './RosterClient'
+import { serialize } from '@/lib/serialize'
 
 export default async function RosterPage() {
   const supabase = await createServerSupabaseClient()
@@ -26,7 +27,7 @@ export default async function RosterPage() {
       <Navbar />
       <main className="flex-1 pt-24 pb-12 px-4 max-w-5xl mx-auto w-full">
         <RosterClient
-          members={JSON.parse(JSON.stringify(members))}
+          members={serialize(members)}
           currentUserId={dbUser?.id ?? ''}
           currentUserRank={dbUser?.rank ?? 'CABIN_BOY'}
         />

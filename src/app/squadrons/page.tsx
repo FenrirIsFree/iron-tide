@@ -12,6 +12,7 @@ import { getSquadrons } from '@/app/actions/squadron'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SquadronClient from './SquadronClient'
+import { serialize } from "@/lib/serialize"
 
 export default async function SquadronsPage() {
   const supabase = await createServerSupabaseClient()
@@ -38,8 +39,8 @@ export default async function SquadronsPage() {
       <Navbar />
       <main className="flex-1 pt-24 pb-12 px-4 max-w-6xl mx-auto w-full">
         <SquadronClient
-          squadrons={JSON.parse(JSON.stringify(squadrons))}
-          guildFleet={guildFleet ? JSON.parse(JSON.stringify(guildFleet)) : null}
+          squadrons={serialize(squadrons)}
+          guildFleet={guildFleet ? serialize(guildFleet) : null}
           currentUserId={dbUser?.id ?? ''}
           currentUserRank={dbUser?.rank ?? 'CABIN_BOY'}
         />

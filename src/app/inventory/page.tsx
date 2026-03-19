@@ -11,6 +11,7 @@ import { getUserInventory, getCatalogs } from '@/app/actions/inventory'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import InventoryClient from './InventoryClient'
+import { serialize } from '@/lib/serialize'
 
 export default async function InventoryPage() {
   const supabase = await createServerSupabaseClient()
@@ -24,8 +25,8 @@ export default async function InventoryPage() {
       <Navbar />
       <main className="flex-1 pt-24 pb-12 px-4 max-w-6xl mx-auto w-full">
         <InventoryClient
-          inventory={JSON.parse(JSON.stringify(inventory))}
-          catalogs={JSON.parse(JSON.stringify(catalogs))}
+          inventory={serialize(inventory)}
+          catalogs={serialize(catalogs)}
         />
       </main>
       <Footer />

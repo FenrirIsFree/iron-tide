@@ -1,3 +1,4 @@
+import { serialize } from "@/lib/serialize"
 'use client'
 
 import { useState, useTransition } from 'react'
@@ -88,7 +89,7 @@ export default function RosterClient({ members, currentUserId, currentUserRank }
     setSelectedId(userId)
     startTransition(async () => {
       const result = await getMemberFleet(userId)
-      setFleet(JSON.parse(JSON.stringify(result)))
+      setFleet(serialize(result))
     })
   }
 
