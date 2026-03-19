@@ -11,6 +11,7 @@ import { getUserFleet, getShipCatalog, getWeaponCatalog, getUpgradeCatalog, getA
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FleetClient from './FleetClient'
+import { serialize } from '@/lib/serialize'
 
 export default async function FleetPage() {
   const supabase = await createServerSupabaseClient()
@@ -32,13 +33,13 @@ export default async function FleetPage() {
       <Navbar />
       <main className="flex-1 pt-24 pb-12 px-4 max-w-7xl mx-auto w-full">
         <FleetClient
-          initialFleet={JSON.parse(JSON.stringify(fleet))}
-          shipCatalog={JSON.parse(JSON.stringify(ships))}
-          weaponCatalog={JSON.parse(JSON.stringify(weapons))}
-          upgradeCatalog={JSON.parse(JSON.stringify(upgrades))}
-          ammoCatalog={JSON.parse(JSON.stringify(ammo))}
-          crewCatalog={JSON.parse(JSON.stringify(crew))}
-          consumableCatalog={JSON.parse(JSON.stringify(consumables))}
+          initialFleet={serialize(fleet)}
+          shipCatalog={serialize(ships)}
+          weaponCatalog={serialize(weapons)}
+          upgradeCatalog={serialize(upgrades)}
+          ammoCatalog={serialize(ammo)}
+          crewCatalog={serialize(crew)}
+          consumableCatalog={serialize(consumables)}
         />
       </main>
       <Footer />
