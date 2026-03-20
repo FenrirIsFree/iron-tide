@@ -1,6 +1,11 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
+
+function toSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
 
 interface WeaponSlots {
   stern: number
@@ -265,7 +270,15 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                   onClick={() => setExpanded(expanded === ship.gameId ? null : ship.gameId)}
                   className="border-b border-surface-border hover:bg-surface-hover cursor-pointer transition-colors"
                 >
-                  <td className="px-3 py-2 font-medium text-foreground">{ship.name}</td>
+                  <td className="px-3 py-2 font-medium">
+                    <Link
+                      href={`/wiki/ships/${toSlug(ship.name)}`}
+                      className="text-foreground hover:text-accent transition-colors"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      {ship.name}
+                    </Link>
+                  </td>
                   <td className="px-3 py-2 text-accent font-medium">{shipRate(ship.rank)}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.health.toLocaleString()}</td>
                   <td className="px-3 py-2 text-foreground-secondary">{ship.speed}</td>

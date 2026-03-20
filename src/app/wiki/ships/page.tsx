@@ -6,7 +6,7 @@ import ShipTable from './ShipTable'
 
 export const metadata = {
   title: 'Ships — The Iron Tide Wiki',
-  description: 'All 69 ships in World of Sea Battle — stats, classes, and descriptions.',
+  description: 'All 62 ships in World of Sea Battle — stats, classes, factions, and descriptions.',
 }
 
 export default function ShipsPage() {

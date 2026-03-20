@@ -112,9 +112,22 @@ export interface MechanicCategory {
   [key: string]: unknown
 }
 
+// ── Slug Helper ──
+export function toSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
+
 // ── Loaders ──
 export function getShips(): Ship[] {
   return loadJson<Ship[]>('wiki-ships.json')
+}
+
+export function getAllShipSlugs(): string[] {
+  return getShips().map(s => toSlug(s.name))
+}
+
+export function getShipBySlug(slug: string): Ship | undefined {
+  return getShips().find(s => toSlug(s.name) === slug)
 }
 
 // ── Weapon crafting cost calculator (from decompiled Gameplay.CannonCraftCost) ──
