@@ -109,7 +109,7 @@ export default function GettingStartedPage() {
       <section id="first-ship" className="mb-10">
         <h2 className="text-2xl font-bold text-foreground mb-3">3. Your First Ship</h2>
         <p className="text-foreground-secondary mb-3">
-          Every new captain starts with a free <strong>Rate VII</strong> ship — the lowest tier, but a solid learning tool. Rate VII ships are fast, nimble, and cheap to repair, making mistakes much less painful.
+          Every new captain starts with two free <strong>Rate VII</strong> ships — the <WikiLink href="/wiki/ships/pickle">Pickle</WikiLink> (Fast class) and the <WikiLink href="/wiki/ships/friede">Friede</WikiLink> (Fast class). These are the lowest tier, but solid learning tools. Rate VII ships are fast, nimble, and cheap to repair, making mistakes much less painful.
         </p>
         <p className="text-foreground-secondary mb-3">
           Ships in WoSB are organized by <strong>Rate</strong> (VII being the weakest, I the strongest) and <strong>Class</strong>. There are five classes:
@@ -208,7 +208,7 @@ export default function GettingStartedPage() {
           {[
             { zone: 'Broadside', icon: '⚔️', effect: 'Full damage — the primary target zone', color: 'border-red-500/50' },
             { zone: 'Bow (front)', icon: '🛡️', effect: 'Reduced damage — angled hull is thicker', color: 'border-amber-500/50' },
-            { zone: 'Stern (back)', icon: '💀', effect: 'Lowest armor — and causes instant sink if flooding', color: 'border-red-500/50' },
+            { zone: 'Stern (back)', icon: '💀', effect: 'Lowest armor — vulnerable weak point', color: 'border-red-500/50' },
           ].map(z => (
             <div key={z.zone} className={`bg-surface border ${z.color} rounded-lg p-3`}>
               <div className="flex items-center gap-2 mb-1">
@@ -220,10 +220,10 @@ export default function GettingStartedPage() {
           ))}
         </div>
         <Warning>
-          If your ship is flooding, a hit to the stern, a mortar round, or a powder keg will cause instant destruction — no matter how much HP you have remaining. Get out of the broadside and repair immediately.
+          If your ship starts flooding, you&apos;re going down — there&apos;s no way to repair out of it. Avoid taking critical hits to the stern and watch your hull integrity.
         </Warning>
         <Tip>
-          For your first battles, fight NPC ships (neutral merchant convoys or patrol vessels) to earn XP and gold without risking PvP. They follow predictable patterns and won&apos;t punish positioning mistakes as harshly.
+          For your first battles, fight NPC ships (pirates or merchant convoys) to earn XP and gold without risking PvP. They follow predictable patterns and won&apos;t punish positioning mistakes as harshly.
         </Tip>
         <p className="text-foreground-secondary">
           Deep dive into combat mechanics in the <WikiLink href="/wiki/combat">Combat Guide</WikiLink> and <WikiLink href="/wiki/pvp">PvP Guide</WikiLink>.
@@ -234,7 +234,7 @@ export default function GettingStartedPage() {
       <section id="ship-tree" className="mb-10">
         <h2 className="text-2xl font-bold text-foreground mb-3">6. The Ship Class Tree</h2>
         <p className="text-foreground-secondary mb-3">
-          To unlock better ships, you research your class tree by earning <strong>Ship XP</strong> in battle. Play a Battleship to earn Battleship XP; play a Hardship to earn Hardship XP. Each class has a separate progression from Rate VII to Rate I.
+          To unlock better ships, you research your class tree by earning <strong>Ship XP</strong> by doing quests, fighting NPC and player ships, etc. Play a Combat ship to earn Combat class XP; play a Heavy ship to earn Heavy class XP. Each class has a separate progression from Rate VII to Rate I.
         </p>
         <div className="bg-surface border border-surface-border rounded-xl p-4 mb-4">
           <div className="flex flex-wrap gap-2 text-sm">
@@ -329,11 +329,8 @@ export default function GettingStartedPage() {
         </p>
         <ol className="space-y-3">
           {[
-            { step: 'Reach Rank 5', desc: 'Unlocks Captain Skills and lets you join most guilds. Focus on PvE battles for fast XP.', link: '/wiki/ranks', linkText: 'Ranks →' },
+            { step: 'Reach Rank 5', desc: 'Unlocks Captain Skills and lets you join most guilds. Focus on PvE battles and quests for fast XP.', link: '/wiki/ranks', linkText: 'Ranks →' },
             { step: 'Research Rate V in your class', desc: 'Rate V ships are where the game opens up. More upgrade slots, meaningful stats, and access to most PvP content.', link: '/wiki/ships/classes', linkText: 'Class Trees →' },
-            { step: 'Invest in Captain Skills', desc: 'The Battle, Craft, and Exploration trees each have massive impact. Plan your skill build before spending points.', link: '/wiki/skills', linkText: 'Captain Skills →' },
-            { step: 'Set up a Trade HQ', desc: 'Owning a Trade HQ in a friendly port gives crafting time reductions and auction lot bonuses. Pays for itself fast.', link: '/wiki/economy', linkText: 'Economy Guide →' },
-            { step: 'Join a fleet battle', desc: 'Port battles and open-world PvP are where the game shines. Find a guild and participate in faction warfare.', link: '/wiki/pvp', linkText: 'PvP Guide →' },
           ].map((s, i) => (
             <li key={i} className="flex gap-4 bg-surface border border-surface-border rounded-lg p-4">
               <div className="flex-shrink-0 w-7 h-7 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent font-bold text-sm">

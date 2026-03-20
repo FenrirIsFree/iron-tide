@@ -74,7 +74,7 @@ const FACTION_META: FactionMeta[] = [
     lore: 'Pirates operate outside any national allegiance, raiding merchant lanes and port-hopping across the Archipelago. They control exclusive Pirate Coves — strongholds that can only be owned by pirate guilds. They have access to the Pirate Trader, who offers rare goods for Escudo currency.',
     playstyle: 'Freedom and aggression. Pirates can attack anyone — but are also hostile to everyone. Pirate ports have unique bonuses including better powerup crafting and ship deconstruction returns. Recommended for experienced players only.',
     strengths: ['Access to Pirate Trader (Escudo for rare items)', 'Exclusive Pirate Coves (Tortuga, Pirate City, etc.)', 'Fleet flexibility — no faction restrictions on ship use', 'Pirate port bonuses: powerup discount, fast recovery'],
-    weaknesses: ['Hostile to ALL other factions', 'Cannot open Trade HQ in pirate ports', 'Limited safe harbors'],
+    weaknesses: ['Hostile to ALL other factions', 'Limited safe harbors', 'Double taxes in enemy faction ports'],
     taxNote: 'Pirate players face double taxes when trading in enemy faction ports.',
   },
 ]
