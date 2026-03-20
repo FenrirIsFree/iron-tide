@@ -191,6 +191,43 @@ const sections = [
       },
     ],
   },
+  {
+    heading: '📚 Guides',
+    items: [
+      {
+        category: 'Guides',
+        title: '🚀 Getting Started',
+        desc: 'Your first hour in WoSB — faction choice, first ship, combat basics, earning gold.',
+        href: '/wiki/getting-started',
+        count: '9 sections',
+        keywords: ['new player', 'beginner', 'starter', 'faction', 'tutorial', 'first ship'],
+      },
+      {
+        category: 'Guides',
+        title: '⚜️ Faction Guide',
+        desc: 'All factions — unique ships, crafting bonuses, lore, and play style summaries.',
+        href: '/wiki/factions',
+        count: '4 factions',
+        keywords: ['faction', 'antilia', 'espaniol', 'kai', 'severia', 'trade union'],
+      },
+      {
+        category: 'Guides',
+        title: '💰 Economy Guide',
+        desc: 'Making gold — trading routes, resource gathering, crafting for profit, port bonuses.',
+        href: '/wiki/economy',
+        count: '5 sections',
+        keywords: ['economy', 'gold', 'trading', 'profit', 'money', 'resource'],
+      },
+      {
+        category: 'Guides',
+        title: '⚔️ PvP Guide',
+        desc: 'Combat tactics, weapon selection, armor angles, boarding, Arena strategies.',
+        href: '/wiki/pvp',
+        count: '6 sections',
+        keywords: ['pvp', 'combat', 'tactics', 'arena', 'boarding', 'pirate'],
+      },
+    ],
+  },
 ]
 
 // Aggregate counts for stats bar
