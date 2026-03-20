@@ -440,8 +440,14 @@ export function getCosmetics(): Cosmetic[] {
   return loadJson<Cosmetic[]>('wiki-cosmetics.json')
 }
 
+export interface ArenaUpgrade {
+  Effects: string
+  MaxQuantity: number
+  Probability: number
+}
+
 export function getArena() {
-  const upgrades = loadJson<Record<string, unknown>[]>('wiki-arena-upgrades.json')
+  const upgrades = loadJson<ArenaUpgrade[]>('wiki-arena-upgrades.json')
   const rewards = loadJson<Record<string, unknown>>('wiki-arena-rating-rewards.json')
   const maps = loadJson<unknown[]>('wiki-arena-maps.json')
   return {
