@@ -156,9 +156,9 @@
   },
   "cannonCraftCostFormulas": {
     "description": "Cannon crafting cost distribution by category",
-    "light": { "Iron Ingots": "60%", "Rum": "40%" },
-    "medium": { "Iron Ingots": "45%", "Rum": "20%", "Copper Ingots": "35%" },
-    "heavy": { "Iron Ingots": "30%", "Volcanic Ore": "10%", "Marks": "15%", "Bronze Fittings": "45%" }
+    "light": { "Iron": "60%", "Rum": "40%" },
+    "medium": { "Iron": "45%", "Rum": "20%", "Copper": "35%" },
+    "heavy": { "Iron": "30%", "Volcanic Ore": "10%", "Marks": "15%", "Bronze": "45%" }
   },
   "empireShipCraftCosts": {
     "description": "Special resources needed for Empire-tier ships by rank",

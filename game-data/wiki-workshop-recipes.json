@@ -1,52 +1,347 @@
 {
   "_meta": {
     "extracted": "2026-03-07",
-    "sources": ["WosbCrafting.cs"],
+    "sources": [
+      "WosbCrafting.cs"
+    ],
     "resourceIds": {
-      "1": "Wood", "2": "Rum", "3": "Rope", "4": "Iron Ingots", "5": "Ice Blocks",
-      "6": "Sugar", "7": "Beer", "9": "Fruits", "10": "Corn", "11": "Copper Ingots",
-      "12": "Coal", "13": "Resin", "14": "Bronze Fittings", "16": "Stone Blocks",
-      "17": "Sailcloth", "20": "Charcoal", "21": "Meat", "22": "Livestock",
-      "23": "Volcanic Ore", "24": "Gems", "27": "Planks", "29": "Iron Bars",
-      "31": "Iron Ore", "32": "Copper Ore", "36": "Rope Ladders", "39": "Rations",
-      "67": "Imperial Legend Currency", "68": "Legend Tokens", "255": "Gold"
+      "1": "Wood",
+      "2": "Rum",
+      "3": "Fabric",
+      "4": "Iron",
+      "5": "Ice Blocks",
+      "6": "Sugar",
+      "7": "Beer",
+      "9": "Fruits",
+      "10": "Corn",
+      "11": "Copper",
+      "12": "Coal",
+      "13": "Resin",
+      "14": "Bronze",
+      "16": "Bulkhead",
+      "17": "Canvas",
+      "20": "Charcoal",
+      "21": "Meat",
+      "22": "Livestock",
+      "23": "Volcanic Ore",
+      "24": "Gems",
+      "27": "Beam",
+      "29": "Plate",
+      "31": "Iron Ore",
+      "32": "Copper Ore",
+      "36": "Tackles",
+      "39": "Rations",
+      "67": "Imperial Legend Currency",
+      "68": "Legend Tokens",
+      "255": "Gold"
     }
   },
   "furnaceRecipes": [
-    { "hours": 1, "input": { "ironOre": 270, "coal": 27 }, "output": { "ironIngots": 270 } },
-    { "hours": 1, "input": { "copperOre": 27, "coal": 27 }, "output": { "copperIngots": 27 } },
-    { "hours": 1, "input": { "volcanicOre": 20, "coal": 20 }, "output": { "ironIngots": 520 } }
+    {
+      "hours": 1,
+      "input": {
+        "ironOre": 270,
+        "coal": 27
+      },
+      "output": {
+        "ironIngots": 270
+      }
+    },
+    {
+      "hours": 1,
+      "input": {
+        "copperOre": 27,
+        "coal": 27
+      },
+      "output": {
+        "copperIngots": 27
+      }
+    },
+    {
+      "hours": 1,
+      "input": {
+        "volcanicOre": 20,
+        "coal": 20
+      },
+      "output": {
+        "ironIngots": 520
+      }
+    }
   ],
   "workshopRecipes": [
-    { "hours": 5, "category": "craftMaterials", "input": { "wood": 100, "ironIngots": 5 }, "output": { "planks": 1 }, "factory": "PortBulks" },
-    { "hours": 6, "category": "craftMaterials", "input": { "ironIngots": 20, "copperIngots": 10, "coal": 1 }, "output": { "bronzeFittings": 1 }, "factory": "PortBronze" },
-    { "hours": 6, "category": "craftMaterials", "input": { "coal": 15, "resin": 4, "ironIngots": 30 }, "output": { "stoneBlocks": 1 }, "factory": "PortBlocks" },
-    { "hours": 3, "category": "craftMaterials", "input": { "rope": 10, "resin": 1 }, "output": { "sailcloth": 1 }, "factory": "PortSailcloth" },
-    { "hours": 5, "category": "craftMaterials", "input": { "resin": 1, "ironIngots": 70 }, "output": { "ironBars": 1 }, "factory": "PortIronBulks" },
-    { "hours": 1, "category": "production", "input": { "ironOre": 10, "coal": 1 }, "output": { "ironIngots": 10 } },
-    { "hours": 2, "category": "production", "input": { "copperOre": 1, "coal": 1 }, "output": { "copperIngots": 1 } },
-    { "hours": 0.5, "category": "production", "input": { "charcoal": 2 }, "output": { "coal": 1 }, "note": "Coal from charcoal" },
-    { "hours": 1, "category": "production", "input": { "livestock": 1 }, "output": { "meat": 3 }, "note": "Slaughter livestock" },
-    { "hours": 20, "category": "production", "input": { "livestock": 10 }, "output": { "rope": 50 }, "extraOutput": { "leather": 1 }, "note": "Leather + rope from livestock" },
-    { "hours": 0.5, "category": "exchange", "input": { "gold": 500 }, "output": { "gems": 1 }, "hideInLowRank": true },
-    { "hours": 200, "category": "exchange", "input": { "gold": 100000, "imperialCurrency": 100 }, "output": { "legendTokens": 1 }, "hideInLowRank": true, "note": "Ragpicker" },
-    { "hours": 0, "category": "exchange", "input": { "legendTokens": 1 }, "output": { "imperialCurrency": 75 }, "hideInLowRank": true, "note": "Ragpicker reverse" },
-    { "hours": 0, "category": "exchange", "input": { "gems": 1 }, "output": { "gold": 490 }, "hideInLowRank": true },
-    { "hours": 2, "category": "exchange", "input": { "rum": 1, "fruits": 2, "meat": 3 }, "output": { "rations": 1 }, "hideInLowRank": true },
-    { "hours": 1, "category": "exchange", "input": { "wood": 5, "ironIngots": 1 }, "output": { "ropeLadders": 1 } },
-    { "hours": 1, "category": "exchange", "input": { "ironIngots": 8 }, "output": { "roundShot": 100 }, "outputType": "ammo", "hideInLowRank": true, "factory": "PortTopWeapons" },
-    { "hours": 1, "category": "exchange", "input": { "ironIngots": 5, "whaleOil": 2 }, "output": { "grapeshot": 100 }, "outputType": "ammo", "hideInLowRank": true, "factory": "PortTopWeapons" },
-    { "hours": 1, "category": "exchange", "input": { "copperIngots": 1, "ironIngots": 5 }, "output": { "heavyShot": 3 }, "outputType": "ammo", "hideInLowRank": true, "factory": "PortTopWeapons" },
-    { "hours": 1, "category": "exchange", "input": { "wood": 100, "whaleOil": 10 }, "output": { "smallPowderKeg": 10 }, "outputType": "powderKeg", "hideInLowRank": true },
-    { "hours": 1, "category": "exchange", "input": { "resin": 20, "ironIngots": 200 }, "output": { "largePowderKeg": 10 }, "outputType": "powderKeg", "hideInLowRank": true, "factory": "PortTopWeapons" }
+    {
+      "hours": 5,
+      "category": "craftMaterials",
+      "input": {
+        "wood": 100,
+        "ironIngots": 5
+      },
+      "output": {
+        "planks": 1
+      },
+      "factory": "PortBulks"
+    },
+    {
+      "hours": 6,
+      "category": "craftMaterials",
+      "input": {
+        "ironIngots": 20,
+        "copperIngots": 10,
+        "coal": 1
+      },
+      "output": {
+        "bronzeFittings": 1
+      },
+      "factory": "PortBronze"
+    },
+    {
+      "hours": 6,
+      "category": "craftMaterials",
+      "input": {
+        "coal": 15,
+        "resin": 4,
+        "ironIngots": 30
+      },
+      "output": {
+        "stoneBlocks": 1
+      },
+      "factory": "PortBlocks"
+    },
+    {
+      "hours": 3,
+      "category": "craftMaterials",
+      "input": {
+        "rope": 10,
+        "resin": 1
+      },
+      "output": {
+        "sailcloth": 1
+      },
+      "factory": "PortSailcloth"
+    },
+    {
+      "hours": 5,
+      "category": "craftMaterials",
+      "input": {
+        "resin": 1,
+        "ironIngots": 70
+      },
+      "output": {
+        "ironBars": 1
+      },
+      "factory": "PortIronBulks"
+    },
+    {
+      "hours": 1,
+      "category": "production",
+      "input": {
+        "ironOre": 10,
+        "coal": 1
+      },
+      "output": {
+        "ironIngots": 10
+      }
+    },
+    {
+      "hours": 2,
+      "category": "production",
+      "input": {
+        "copperOre": 1,
+        "coal": 1
+      },
+      "output": {
+        "copperIngots": 1
+      }
+    },
+    {
+      "hours": 0.5,
+      "category": "production",
+      "input": {
+        "charcoal": 2
+      },
+      "output": {
+        "coal": 1
+      },
+      "note": "Coal from charcoal"
+    },
+    {
+      "hours": 1,
+      "category": "production",
+      "input": {
+        "livestock": 1
+      },
+      "output": {
+        "meat": 3
+      },
+      "note": "Slaughter livestock"
+    },
+    {
+      "hours": 20,
+      "category": "production",
+      "input": {
+        "livestock": 10
+      },
+      "output": {
+        "rope": 50
+      },
+      "extraOutput": {
+        "leather": 1
+      },
+      "note": "Leather + rope from livestock"
+    },
+    {
+      "hours": 0.5,
+      "category": "exchange",
+      "input": {
+        "gold": 500
+      },
+      "output": {
+        "gems": 1
+      },
+      "hideInLowRank": true
+    },
+    {
+      "hours": 200,
+      "category": "exchange",
+      "input": {
+        "gold": 100000,
+        "imperialCurrency": 100
+      },
+      "output": {
+        "legendTokens": 1
+      },
+      "hideInLowRank": true,
+      "note": "Ragpicker"
+    },
+    {
+      "hours": 0,
+      "category": "exchange",
+      "input": {
+        "legendTokens": 1
+      },
+      "output": {
+        "imperialCurrency": 75
+      },
+      "hideInLowRank": true,
+      "note": "Ragpicker reverse"
+    },
+    {
+      "hours": 0,
+      "category": "exchange",
+      "input": {
+        "gems": 1
+      },
+      "output": {
+        "gold": 490
+      },
+      "hideInLowRank": true
+    },
+    {
+      "hours": 2,
+      "category": "exchange",
+      "input": {
+        "rum": 1,
+        "fruits": 2,
+        "meat": 3
+      },
+      "output": {
+        "rations": 1
+      },
+      "hideInLowRank": true
+    },
+    {
+      "hours": 1,
+      "category": "exchange",
+      "input": {
+        "wood": 5,
+        "ironIngots": 1
+      },
+      "output": {
+        "ropeLadders": 1
+      }
+    },
+    {
+      "hours": 1,
+      "category": "exchange",
+      "input": {
+        "ironIngots": 8
+      },
+      "output": {
+        "roundShot": 100
+      },
+      "outputType": "ammo",
+      "hideInLowRank": true,
+      "factory": "PortTopWeapons"
+    },
+    {
+      "hours": 1,
+      "category": "exchange",
+      "input": {
+        "ironIngots": 5,
+        "whaleOil": 2
+      },
+      "output": {
+        "grapeshot": 100
+      },
+      "outputType": "ammo",
+      "hideInLowRank": true,
+      "factory": "PortTopWeapons"
+    },
+    {
+      "hours": 1,
+      "category": "exchange",
+      "input": {
+        "copperIngots": 1,
+        "ironIngots": 5
+      },
+      "output": {
+        "heavyShot": 3
+      },
+      "outputType": "ammo",
+      "hideInLowRank": true,
+      "factory": "PortTopWeapons"
+    },
+    {
+      "hours": 1,
+      "category": "exchange",
+      "input": {
+        "wood": 100,
+        "whaleOil": 10
+      },
+      "output": {
+        "smallPowderKeg": 10
+      },
+      "outputType": "powderKeg",
+      "hideInLowRank": true
+    },
+    {
+      "hours": 1,
+      "category": "exchange",
+      "input": {
+        "resin": 20,
+        "ironIngots": 200
+      },
+      "output": {
+        "largePowderKeg": 10
+      },
+      "outputType": "powderKeg",
+      "hideInLowRank": true,
+      "factory": "PortTopWeapons"
+    }
   ],
   "personalIsleWorkshop": {
     "discount": 0.2,
     "note": "Personal Isle workshops have 20x faster crafting (craftHours/20) and include port factory recipes + a provision workshop",
     "provisionWorkshop": {
       "hours": 0.1,
-      "input": { "rum": 1, "fruits": 2, "meat": 3 },
-      "output": { "rations": 1 },
+      "input": {
+        "rum": 1,
+        "fruits": 2,
+        "meat": 3
+      },
+      "output": {
+        "rations": 1
+      },
       "factory": "PI_ProvisionWorkshop"
     }
   },

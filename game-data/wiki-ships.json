@@ -3049,8 +3049,8 @@
     },
     "craftingCost": {
       "Wood": 850,
-      "Tackles": 30,
-      "Iron": 165
+      "Iron": 165,
+      "Fabric": 30
     }
   },
   {
@@ -3096,8 +3096,8 @@
     },
     "craftingCost": {
       "Wood": 760,
-      "Tackles": 30,
-      "Iron": 245
+      "Iron": 245,
+      "Fabric": 30
     }
   },
   {
@@ -3143,8 +3143,8 @@
     },
     "craftingCost": {
       "Wood": 775,
-      "Tackles": 30,
-      "Iron": 145
+      "Iron": 145,
+      "Fabric": 30
     }
   }
 ]

@@ -101,13 +101,13 @@
   },
   "costs": {
     "towerBuildCost": {
-      "Stone Blocks": 4,
-      "Bronze Fittings": 4
+      "Bulkhead": 4,
+      "Bronze": 4
     },
     "changeAttackWindowPrice": 50,
     "changeAttackWindowCurrency": "Conqueror Badges",
     "mendingAmountPerHour": 0.02,
-    "mendingCostPer1000": { "resource": "Stone Blocks", "count": 1 },
+    "mendingCostPer1000": { "resource": "Bulkhead", "count": 1 },
     "quickTransferMoneyCC": 10,
     "quickTransferMoneyTimeoutHours": 3,
     "guildOpenHqLicensePrice": {

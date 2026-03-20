@@ -19,12 +19,12 @@
   },
   "piratePortBuyCraftItems": [
     { "resourceId": 5, "resource": "Ice Blocks" },
-    { "resourceId": 29, "resource": "Iron Bars" },
-    { "resourceId": 27, "resource": "Planks" },
-    { "resourceId": 14, "resource": "Bronze Fittings" },
+    { "resourceId": 29, "resource": "Plate" },
+    { "resourceId": 27, "resource": "Beam" },
+    { "resourceId": 14, "resource": "Bronze" },
     { "resourceId": 39, "resource": "Provisions/Rations" },
-    { "resourceId": 16, "resource": "Stone Blocks" },
-    { "resourceId": 17, "resource": "Sailcloth" }
+    { "resourceId": 16, "resource": "Bulkhead" },
+    { "resourceId": 17, "resource": "Canvas" }
   ],
   "resourcesForTransferring": [
     { "resourceId": 1, "resource": "Wood" },
@@ -181,23 +181,23 @@
     "description": "Base port resource stock levels by port type",
     "baseStock": {
       "Wood": 400000,
-      "Rope": 150000,
-      "Iron Ingots": 150000,
+      "Fabric": 150000,
+      "Iron": 150000,
       "Rum": 100000,
       "Coal": 60000,
       "Livestock": 50000,
       "Resin": 40000,
-      "Copper Ingots": 20000,
+      "Copper": 20000,
       "Corn": 20000,
       "Fish": 20000,
       "Meat/Provisions": 20000
     },
     "portTypeResources": {
       "allPorts": ["Wood", "Resin"],
-      "PirateBay": ["Iron Ingots", "Coal", "Rum", "Livestock"],
-      "City": ["Coal", "Rum", "Rope", "Copper Ingots"],
-      "Bay": ["Rope", "Corn", "Rum", "Meat/Provisions"],
-      "NeutralBay": ["Rope", "Corn", "Rum", "Meat/Provisions"]
+      "PirateBay": ["Iron", "Coal", "Rum", "Livestock"],
+      "City": ["Coal", "Rum", "Fabric", "Copper"],
+      "Bay": ["Fabric", "Corn", "Rum", "Meat/Provisions"],
+      "NeutralBay": ["Fabric", "Corn", "Rum", "Meat/Provisions"]
     }
   }
 }

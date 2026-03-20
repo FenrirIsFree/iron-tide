@@ -80,14 +80,14 @@
     ]
   },
   "resourceIdMap": {
-    "1": "Wood", "2": "Rum", "3": "Rope", "4": "Iron Ingots", "5": "Ice Blocks",
+    "1": "Wood", "2": "Rum", "3": "Fabric", "4": "Iron", "5": "Ice Blocks",
     "6": "Sugar", "7": "Beer", "8": "Grapeshot", "9": "Fruits", "10": "Corn",
-    "11": "Copper Ingots", "12": "Coal", "13": "Resin", "14": "Bronze Fittings",
-    "15": "Escudo", "16": "Stone Blocks", "17": "Sailcloth", "20": "Charcoal",
+    "11": "Copper", "12": "Coal", "13": "Resin", "14": "Bronze",
+    "15": "Escudo", "16": "Bulkhead", "17": "Canvas", "20": "Charcoal",
     "21": "Meat/Provisions", "22": "Livestock", "23": "Volcanic Ore", "24": "Gems",
-    "27": "Planks", "29": "Iron Bars", "30": "Lead", "31": "Iron Ore",
+    "27": "Beam", "29": "Plate", "30": "Lead", "31": "Iron Ore",
     "32": "Copper Ore", "33": "Pearl", "34": "Fish", "35": "Map Parts",
-    "36": "Rope Ladders", "37": "Marks", "38": "Voodoo Skulls", "39": "Provisions/Rations",
+    "36": "Tackles", "37": "Marks", "38": "Voodoo Skulls", "39": "Provisions/Rations",
     "40": "Ancient Artifact", "43": "Treasure Map", "59": "Leather",
     "67": "Imperial Legend currency", "68": "Legend Tokens", "69": "Gold Fish",
     "70": "Whale Oil", "72": "Pirate Tokens", "255": "Gold"

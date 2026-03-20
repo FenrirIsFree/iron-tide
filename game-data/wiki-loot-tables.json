@@ -111,7 +111,7 @@
     "debrisAmmo": "50-100 random ammo (Round/Grape/Beer/Heavy) scaled by factor"
   },
   "passingMapDrops": {
-    "bonusItems": ["Rope Ladders", "Marks", "Voodoo Skulls", "Rations", "Ancient Artifacts", "Phosphor Powder", "Sailcloth"],
+    "bonusItems": ["Tackles", "Marks", "Voodoo Skulls", "Rations", "Ancient Artifacts", "Phosphor Powder", "Canvas"],
     "itemChance": 30,
     "resourceChance": 50,
     "woodAndRopeChance": 20,

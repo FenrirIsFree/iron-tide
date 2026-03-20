@@ -215,7 +215,7 @@
         "step": 6,
         "name": "education_quest_6",
         "objectives": ["Craft cannon", "Get crew for new ship", "Install upgrade on non-starter ship"],
-        "reward": { "gold": 500, "crewToPort": { "Iron Ingots": 5 }, "designElement": 94, "randomSpecialUnit": true }
+        "reward": { "gold": 500, "crewToPort": { "Iron": 5 }, "designElement": 94, "randomSpecialUnit": true }
       },
       {
         "step": 7,
