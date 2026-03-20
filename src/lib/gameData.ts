@@ -309,3 +309,44 @@ export function getConsumables(): unknown[] {
 export function getCrewData(): unknown[] {
   return loadJson<unknown[]>('wiki-crew.json')
 }
+
+export interface Skill {
+  gameId: string
+  name: string
+  description: string
+  costPoints: number
+  costGold: string
+  effect: string
+  uiCategory: number
+  dependsTo: string
+  requiredAchievements: string
+  requiredShips: string
+  requiredRank: string
+  icon: string
+}
+
+export function getSkills(): Skill[] {
+  return loadJson<Skill[]>('wiki-skills.json')
+}
+
+export interface Ammo {
+  gameId: string
+  name: string
+  description: string
+  speed: number
+  penetration: number
+  damageFactor: number
+  damageToSails: number
+  crewDamage: number
+  effects: string
+  distanceFactor: number
+  reloadFactor: number
+  massKg: number
+  isRare: boolean
+  cost: number
+}
+
+export function getAmmo(): Ammo[] {
+  const all = loadJson<Ammo[]>('wiki-ammo.json')
+  return all.filter(a => a.name !== 'removed')
+}
