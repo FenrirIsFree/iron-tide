@@ -98,6 +98,18 @@ const NAV_SECTIONS: NavSection[] = [
       { label: 'Chests & Loot', href: '/wiki/chests' },
     ],
   },
+  {
+    id: 'tools',
+    icon: '🛠️',
+    title: 'Tools',
+    items: [
+      { label: 'Tools Hub', href: '/wiki/tools' },
+      { label: 'Damage Calculator', href: '/wiki/tools/damage-calculator' },
+      { label: 'Ship Comparison', href: '/wiki/tools/ship-compare' },
+      { label: 'Crafting Calculator', href: '/wiki/tools/crafting-calculator' },
+      { label: 'XP Calculator', href: '/wiki/tools/xp-calculator' },
+    ],
+  },
 ]
 
 const STORAGE_KEY = 'wiki-sidebar-expanded'
