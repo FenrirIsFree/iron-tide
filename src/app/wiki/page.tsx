@@ -112,6 +112,18 @@ const sections = [
         count: '57 achievements',
       },
       {
+        title: '🏟️ Arena',
+        desc: 'PvP arena mode — random upgrades, ranked seasons, and exclusive rewards.',
+        href: '/wiki/arena',
+        count: '16 maps',
+      },
+      {
+        title: '⚜️ Guilds',
+        desc: 'Guild system — creation, economy, alliances, faction competition, and titles.',
+        href: '/wiki/guilds',
+        count: '13 systems',
+      },
+      {
         title: '⚙️ Game Mechanics',
         desc: 'Speed, combat, boarding, crew, repairs, weather, and economy systems.',
         href: '/wiki/mechanics',
