@@ -136,8 +136,14 @@ const sections = [
         count: '13 systems',
       },
       {
-        title: '⚙️ Game Mechanics',
-        desc: 'Speed, combat, boarding, crew, repairs, weather, and economy systems.',
+        title: '⚔️ Combat Guide',
+        desc: 'Damage formulas, armor angles, cannons, mortars, boarding, ramming, weather — from decompiled code and real PvP data.',
+        href: '/wiki/combat',
+        count: '11 sections',
+      },
+      {
+        title: '⚙️ Raw Mechanics',
+        desc: 'Technical reference — all game systems data in browsable format.',
         href: '/wiki/mechanics',
         count: '18 systems',
       },
