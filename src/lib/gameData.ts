@@ -310,6 +310,33 @@ export function getCrewData(): unknown[] {
   return loadJson<unknown[]>('wiki-crew.json')
 }
 
+export interface UpgradeEffect {
+  stat: string
+  gameKey: string
+  rankedValues?: string[]
+  value: string
+}
+
+export interface Upgrade {
+  name: string
+  slotType: string
+  category: string
+  description: string
+  effects: UpgradeEffect[]
+  effectsRaw: string
+  wearType: string
+  cost: {
+    gold: number
+    materials: { item: string; quantity: number }[]
+  }
+  wear: string
+}
+
+export function getUpgrades(): Upgrade[] {
+  const data = loadJson<{ upgrades: Upgrade[] }>('upgrade-stats.json')
+  return data.upgrades
+}
+
 export interface Rank {
   rank: number
   xpRequired: number

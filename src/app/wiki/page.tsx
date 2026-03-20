@@ -30,6 +30,12 @@ const sections = [
         href: '/wiki/crew',
         count: '55 crew',
       },
+      {
+        title: '🛠️ Ship Upgrades',
+        desc: 'Combat, speed, protection, and utility upgrades — effects, costs, and ranked values.',
+        href: '/wiki/upgrades',
+        count: '40 upgrades',
+      },
     ],
   },
   {
