@@ -1,6 +1,8 @@
 import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import ConsumablesContent from './ConsumablesContent'
 import { getConsumablesFull } from '@/lib/gameData'
+import SeeAlso from '@/components/wiki/SeeAlso'
+import NavBox from '@/components/wiki/NavBox'
 
 export const metadata = {
   title: 'Consumables — The Iron Tide Wiki',
@@ -20,6 +22,24 @@ export default function ConsumablesPage() {
         </p>
       </div>
       <ConsumablesContent consumables={consumables} />
+      <SeeAlso items={[
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Equip consumables to your ship loadout' },
+        { title: '⚔️ Combat Guide', href: '/wiki/combat', description: 'How consumables interact with combat' },
+        { title: '🎁 Chests & Loot', href: '/wiki/chests', description: 'Obtain consumables from chests' },
+        { title: '🔨 Crafting', href: '/wiki/crafting', description: 'Craft consumables at the workshop' },
+        { title: '👥 Crew & Units', href: '/wiki/crew', description: 'Squadron consumables for crew' },
+      ]} />
+      <NavBox
+        category="Progression"
+        icon="🗺️"
+        items={[
+          { label: 'Ranks', href: '/wiki/ranks' },
+          { label: 'Captain Skills', href: '/wiki/skills' },
+          { label: 'Crafting', href: '/wiki/crafting' },
+          { label: 'Chests & Loot', href: '/wiki/chests' },
+          { label: 'Consumables', href: '/wiki/consumables' },
+        ]}
+      />
     </main>
   )
 }

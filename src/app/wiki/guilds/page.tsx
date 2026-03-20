@@ -2,6 +2,7 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import GuildsContent from './GuildsContent'
 import { getGuildData } from '@/lib/gameData'
 import NavBox from '@/components/wiki/NavBox'
+import SeeAlso from '@/components/wiki/SeeAlso'
 
 export const metadata = {
   title: 'Guilds — The Iron Tide Wiki',
@@ -21,6 +22,13 @@ export default function GuildsPage() {
         </p>
       </div>
       <GuildsContent data={guildData} />
+      <SeeAlso items={[
+        { title: '🏟️ Arena', href: '/wiki/arena', description: 'Compete as a guild in ranked arena seasons' },
+        { title: '⚓ Ports', href: '/wiki/ports', description: 'Conquer ports to expand guild territory' },
+        { title: '🏆 Achievements', href: '/wiki/achievements', description: 'Guild-based achievement challenges' },
+        { title: '💰 Trading', href: '/wiki/trading', description: 'Guild economy and shared trade resources' },
+        { title: '⭐ Ranks', href: '/wiki/ranks', description: 'Rank requirements for guild leadership' },
+      ]} />
       <NavBox
         category="Competitive"
         icon="🏟️"

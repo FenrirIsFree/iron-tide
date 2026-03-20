@@ -2,6 +2,8 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import MechanicsContent from './MechanicsContent'
 import fs from 'fs'
 import path from 'path'
+import SeeAlso from '@/components/wiki/SeeAlso'
+import NavBox from '@/components/wiki/NavBox'
 
 export const metadata = {
   title: 'Game Mechanics — The Iron Tide Wiki',
@@ -26,6 +28,26 @@ export default function MechanicsPage() {
         </p>
       </div>
       <MechanicsContent mechanics={mechanics} />
+      <SeeAlso items={[
+        { title: '⚔️ Combat Guide', href: '/wiki/combat', description: 'Applied combat mechanics and formulas' },
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Ship stats affected by game mechanics' },
+        { title: '🔫 Weapons', href: '/wiki/weapons', description: 'Weapon mechanics and damage calculations' },
+        { title: '⭐ Ranks', href: '/wiki/ranks', description: 'Rank progression mechanics' },
+        { title: '🧭 Captain Skills', href: '/wiki/skills', description: 'Skill system mechanics' },
+      ]} />
+      <NavBox
+        category="Game Systems"
+        icon="📖"
+        items={[
+          { label: 'NPCs & Bosses', href: '/wiki/npcs' },
+          { label: 'Achievements', href: '/wiki/achievements' },
+          { label: 'PvE Missions', href: '/wiki/missions' },
+          { label: 'Cosmetics', href: '/wiki/cosmetics' },
+          { label: 'Arena', href: '/wiki/arena' },
+          { label: 'Guilds', href: '/wiki/guilds' },
+          { label: 'Raw Mechanics', href: '/wiki/mechanics' },
+        ]}
+      />
     </main>
   )
 }

@@ -2,6 +2,7 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import RanksContent from './RanksContent'
 import { getRanks } from '@/lib/gameData'
 import NavBox from '@/components/wiki/NavBox'
+import SeeAlso from '@/components/wiki/SeeAlso'
 
 export const metadata = {
   title: 'Ranks — The Iron Tide Wiki',
@@ -21,6 +22,12 @@ export default function RanksPage() {
         </p>
       </div>
       <RanksContent ranks={ranks} />
+      <SeeAlso items={[
+        { title: '🧭 Captain Skills', href: '/wiki/skills', description: 'Skills unlocked as you gain ranks' },
+        { title: '👥 Crew & Units', href: '/wiki/crew', description: 'Crew units available at higher ranks' },
+        { title: '🔨 Crafting', href: '/wiki/crafting', description: 'Crafting recipes gated by rank' },
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Ships available at each rank tier' },
+      ]} />
       <NavBox
         category="Crew & Skills"
         icon="👥"

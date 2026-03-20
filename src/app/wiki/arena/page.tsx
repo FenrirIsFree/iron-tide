@@ -2,6 +2,7 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import ArenaContent from './ArenaContent'
 import { getArena } from '@/lib/gameData'
 import NavBox from '@/components/wiki/NavBox'
+import SeeAlso from '@/components/wiki/SeeAlso'
 
 export const metadata = {
   title: 'Arena — The Iron Tide Wiki',
@@ -21,6 +22,13 @@ export default function ArenaPage() {
         </p>
       </div>
       <ArenaContent arena={arena} />
+      <SeeAlso items={[
+        { title: '⚜️ Guilds', href: '/wiki/guilds', description: 'Compete with your guild in arena seasons' },
+        { title: '🏆 Achievements', href: '/wiki/achievements', description: 'Arena-specific achievement challenges' },
+        { title: '🎨 Cosmetics', href: '/wiki/cosmetics', description: 'Exclusive cosmetics from arena rewards' },
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Ships used in arena battles' },
+        { title: '⚙️ Raw Mechanics', href: '/wiki/mechanics', description: 'Arena upgrade and scoring mechanics' },
+      ]} />
       <NavBox
         category="Competitive"
         icon="🏟️"

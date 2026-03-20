@@ -2,6 +2,8 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import ChestsContent from './ChestsContent'
 import fs from 'fs'
 import path from 'path'
+import SeeAlso from '@/components/wiki/SeeAlso'
+import NavBox from '@/components/wiki/NavBox'
 
 export const metadata = {
   title: 'Chests — The Iron Tide Wiki',
@@ -31,6 +33,24 @@ export default function ChestsPage() {
         </p>
       </div>
       <ChestsContent data={data as any} />
+      <SeeAlso items={[
+        { title: '💎 Resources', href: '/wiki/resources', description: 'Materials and goods found inside chests' },
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Ships that can drop from chests' },
+        { title: '🔨 Crafting', href: '/wiki/crafting', description: 'Use chest materials in crafting recipes' },
+        { title: '🧪 Consumables', href: '/wiki/consumables', description: 'Consumables obtainable from chests' },
+        { title: '🏆 Achievements', href: '/wiki/achievements', description: 'Achievements for opening chests' },
+      ]} />
+      <NavBox
+        category="Progression"
+        icon="🗺️"
+        items={[
+          { label: 'Ranks', href: '/wiki/ranks' },
+          { label: 'Captain Skills', href: '/wiki/skills' },
+          { label: 'Crafting', href: '/wiki/crafting' },
+          { label: 'Chests & Loot', href: '/wiki/chests' },
+          { label: 'Consumables', href: '/wiki/consumables' },
+        ]}
+      />
     </main>
   )
 }

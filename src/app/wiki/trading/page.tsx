@@ -2,6 +2,7 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import TradingContent from './TradingContent'
 import { getTrading } from '@/lib/gameData'
 import NavBox from '@/components/wiki/NavBox'
+import SeeAlso from '@/components/wiki/SeeAlso'
 
 export const metadata = {
   title: 'Trading — The Iron Tide Wiki',
@@ -21,6 +22,13 @@ export default function TradingPage() {
         </p>
       </div>
       <TradingContent trading={trading} />
+      <SeeAlso items={[
+        { title: '⚓ Ports', href: '/wiki/ports', description: 'Ports where goods are bought and sold' },
+        { title: '💎 Resources', href: '/wiki/resources', description: 'Raw resources and trade goods' },
+        { title: '🔨 Crafting', href: '/wiki/crafting', description: 'Craft trade goods for higher margins' },
+        { title: '🧭 Captain Skills', href: '/wiki/skills', description: 'Exploration skills boost trade profits' },
+        { title: '⚜️ Guilds', href: '/wiki/guilds', description: 'Guild shared trading economy' },
+      ]} />
       <NavBox
         category="World"
         icon="🌍"

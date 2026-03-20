@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import MissionsContent from './MissionsContent'
+import SeeAlso from '@/components/wiki/SeeAlso'
+import NavBox from '@/components/wiki/NavBox'
 
 export const metadata = {
   title: 'PvE Missions — The Iron Tide Wiki',
@@ -58,6 +60,26 @@ export default function MissionsPage() {
         </p>
       </div>
       <MissionsContent missions={enriched} />
+      <SeeAlso items={[
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Ship rank requirements for each mission' },
+        { title: '💀 NPCs & Bosses', href: '/wiki/npcs', description: 'NPC types encountered in mission waves' },
+        { title: '🏆 Achievements', href: '/wiki/achievements', description: 'Achievements earned from missions' },
+        { title: '⚓ Ports', href: '/wiki/ports', description: 'Ports where missions are launched' },
+        { title: '🧭 Captain Skills', href: '/wiki/skills', description: 'Skills that boost mission rewards' },
+      ]} />
+      <NavBox
+        category="Game Systems"
+        icon="📖"
+        items={[
+          { label: 'NPCs & Bosses', href: '/wiki/npcs' },
+          { label: 'Achievements', href: '/wiki/achievements' },
+          { label: 'PvE Missions', href: '/wiki/missions' },
+          { label: 'Cosmetics', href: '/wiki/cosmetics' },
+          { label: 'Arena', href: '/wiki/arena' },
+          { label: 'Guilds', href: '/wiki/guilds' },
+          { label: 'Raw Mechanics', href: '/wiki/mechanics' },
+        ]}
+      />
     </main>
   )
 }

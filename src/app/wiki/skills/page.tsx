@@ -2,6 +2,7 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import SkillsContent from './SkillsContent'
 import { getSkills } from '@/lib/gameData'
 import NavBox from '@/components/wiki/NavBox'
+import SeeAlso from '@/components/wiki/SeeAlso'
 
 export const metadata = {
   title: 'Captain Skills — The Iron Tide Wiki',
@@ -21,6 +22,13 @@ export default function SkillsPage() {
         </p>
       </div>
       <SkillsContent skills={skills} />
+      <SeeAlso items={[
+        { title: '⭐ Ranks', href: '/wiki/ranks', description: 'Reach rank 30 to unlock Legend skills' },
+        { title: '👥 Crew & Units', href: '/wiki/crew', description: 'Skills that boost crew effectiveness' },
+        { title: '⚔️ Combat Guide', href: '/wiki/combat', description: 'Battle skills applied in combat' },
+        { title: '🔨 Crafting', href: '/wiki/crafting', description: 'Craft skills reduce material costs' },
+        { title: '💰 Trading', href: '/wiki/trading', description: 'Exploration skills improve trade profits' },
+      ]} />
       <NavBox
         category="Crew & Skills"
         icon="👥"

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import WikiHubClient from './WikiHubClient'
+import WikiLink from '@/components/wiki/WikiLink'
 
 const sections = [
   {
@@ -225,6 +226,29 @@ export default function WikiPage() {
         >
           Getting Started →
         </Link>
+      </div>
+
+      {/* Main article cross-references */}
+      <div className="mb-8 text-sm text-foreground-secondary space-y-2 border-l-2 border-surface-border pl-4">
+        <p>
+          For a complete catalog of all playable vessels, see{' '}
+          <WikiLink href="/wiki/ships">Ships</WikiLink>. Ship performance depends on your choice of{' '}
+          <WikiLink href="/wiki/weapons">Weapons</WikiLink>,{' '}
+          <WikiLink href="/wiki/upgrades">Upgrades</WikiLink>, and{' '}
+          <WikiLink href="/wiki/crew">Crew</WikiLink>.
+        </p>
+        <p>
+          Progression is tracked through <WikiLink href="/wiki/ranks">Ranks</WikiLink> (1–30) and{' '}
+          <WikiLink href="/wiki/skills">Captain Skills</WikiLink> across four trees.{' '}
+          <WikiLink href="/wiki/crafting">Crafting</WikiLink> uses{' '}
+          <WikiLink href="/wiki/resources">Resources</WikiLink> gathered from combat and{' '}
+          <WikiLink href="/wiki/trading">Trading</WikiLink>.
+        </p>
+        <p>
+          For technical system data extracted from game source code, see{' '}
+          <WikiLink href="/wiki/combat">Combat Guide</WikiLink> and{' '}
+          <WikiLink href="/wiki/mechanics">Raw Mechanics</WikiLink>.
+        </p>
       </div>
 
       <WikiHubClient sections={sections} totalPages={TOTAL_PAGES} totalItems={TOTAL_ITEMS} />

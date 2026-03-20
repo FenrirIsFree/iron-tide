@@ -2,6 +2,7 @@ import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import PortsContent from './PortsContent'
 import { getPorts } from '@/lib/gameData'
 import NavBox from '@/components/wiki/NavBox'
+import SeeAlso from '@/components/wiki/SeeAlso'
 
 export const metadata = {
   title: 'Ports — The Iron Tide Wiki',
@@ -21,6 +22,13 @@ export default function PortsPage() {
         </p>
       </div>
       <PortsContent ports={ports} />
+      <SeeAlso items={[
+        { title: '💰 Trading', href: '/wiki/trading', description: 'Trade goods between ports for profit' },
+        { title: '💎 Resources', href: '/wiki/resources', description: 'Resources produced and sold at ports' },
+        { title: '🚢 Ships', href: '/wiki/ships', description: 'Ships built at port shipyards' },
+        { title: '⚔️ PvE Missions', href: '/wiki/missions', description: 'Missions launched from port locations' },
+        { title: '⚜️ Guilds', href: '/wiki/guilds', description: 'Guild port conquest and control' },
+      ]} />
       <NavBox
         category="World"
         icon="🌍"

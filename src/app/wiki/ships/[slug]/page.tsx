@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import ShipDetail from './ShipDetail'
 import { getShips, getShipBySlug, getAllShipSlugs, toSlug } from '@/lib/gameData'
+import SeeAlso from '@/components/wiki/SeeAlso'
+import NavBox from '@/components/wiki/NavBox'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -43,6 +45,25 @@ export default async function ShipPage({ params }: PageProps) {
         ship={ship}
         prev={prev ? { name: prev.name, slug: toSlug(prev.name) } : null}
         next={next ? { name: next.name, slug: toSlug(next.name) } : null}
+      />
+      <SeeAlso items={[
+        { title: '🔫 Weapons', href: '/wiki/weapons', description: 'Weapons compatible with this ship class' },
+        { title: '🛠️ Ship Upgrades', href: '/wiki/upgrades', description: 'Upgrades to equip on this ship' },
+        { title: '👥 Crew & Units', href: '/wiki/crew', description: 'Crew units for boarding and combat' },
+        { title: '💣 Ammunition', href: '/wiki/ammo', description: 'Ammo types for your ship\'s cannons' },
+        { title: '🔨 Crafting', href: '/wiki/crafting', description: 'Crafting cost and blueprint requirements' },
+      ]} />
+      <NavBox
+        category="Ships & Combat"
+        icon="⚓"
+        items={[
+          { label: 'Ships', href: '/wiki/ships' },
+          { label: 'Weapons', href: '/wiki/weapons' },
+          { label: 'Ammo', href: '/wiki/ammo' },
+          { label: 'Crew', href: '/wiki/crew' },
+          { label: 'Upgrades', href: '/wiki/upgrades' },
+          { label: 'Combat Guide', href: '/wiki/combat' },
+        ]}
       />
     </main>
   )
