@@ -19,8 +19,8 @@ interface Upgrade {
   wearType: string
   cost: {
     gold: number
-    materials: { item: string; quantity: number }[]
-  }
+    materials?: { item: string; quantity: number }[]
+  } | null
   wear: string
 }
 
@@ -113,7 +113,7 @@ export default function UpgradesContent({ upgrades }: { upgrades: Upgrade[] }) {
                     </div>
                   </div>
                   <div className="text-right text-xs">
-                    <span className="text-accent font-mono">{u.cost.gold.toLocaleString()}</span>
+                    <span className="text-accent font-mono">{u.cost?.gold?.toLocaleString() ?? '—'}</span>
                     <span className="text-foreground-muted"> gold</span>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function UpgradesContent({ upgrades }: { upgrades: Upgrade[] }) {
                   )}
 
                   {/* Materials */}
-                  {u.cost.materials.length > 0 && (
+                  {u.cost?.materials && u.cost.materials.length > 0 && (
                     <div>
                       <h4 className="text-foreground-secondary text-xs font-semibold mb-1">Materials</h4>
                       <div className="flex flex-wrap gap-2">

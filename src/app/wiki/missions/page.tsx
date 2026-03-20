@@ -44,8 +44,8 @@ export default function MissionsPage() {
       mode: m._raw.Mode,
       players: m._raw.PlayersCount,
       flags: m._raw.Flags,
-      waves: m._raw.Waves.map(w => ({
-        enemies: w.NPCS.map(n => ({ type: n.SourceType, level: n.Source, count: n.Count }))
+      waves: (Array.isArray(m._raw.Waves) ? m._raw.Waves : []).map(w => ({
+        enemies: (w.NPCS || []).map(n => ({ type: n.SourceType, level: n.Source, count: n.Count }))
       })),
     }
   })

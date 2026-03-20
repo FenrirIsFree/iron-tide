@@ -34,7 +34,7 @@ interface Ship {
   hold: number
   displacement: string
   integrity: number
-  weaponSlots: WeaponSlots
+  weaponSlots: WeaponSlots | null
   swivelGuns: number
   mortarSlots: number
   specialWeaponSlots: number
@@ -101,7 +101,8 @@ export default function ShipDetail({ ship, prev, next }: ShipDetailProps) {
   const factionStyle = FACTION_STYLES[ship.faction] || FACTION_STYLES.Antilian
   const factionName = FACTION_NAMES[ship.faction] || ship.faction
   const rate = ROMAN[ship.inGameRate] ?? `${ship.inGameRate + 1}`
-  const totalWeaponSlots = ship.weaponSlots.broadside + ship.weaponSlots.stern + ship.weaponSlots.bow
+  const ws = ship.weaponSlots ?? { broadside: 0, stern: 0, bow: 0 }
+  const totalWeaponSlots = ws.broadside + ws.stern + ws.bow
   const maxSlots = Math.max(totalWeaponSlots, ship.swivelGuns, ship.mortarSlots, 1)
 
   return (
@@ -160,9 +161,9 @@ export default function ShipDetail({ ship, prev, next }: ShipDetailProps) {
           <span className="text-accent">🔫</span> Weapon Loadout
         </h2>
         <div className="bg-surface border border-surface-border rounded-xl p-5 space-y-3">
-          <SlotBar label="Broadside" count={ship.weaponSlots.broadside} max={maxSlots} color="bg-red-500" />
-          <SlotBar label="Bow" count={ship.weaponSlots.bow} max={maxSlots} color="bg-blue-500" />
-          <SlotBar label="Stern" count={ship.weaponSlots.stern} max={maxSlots} color="bg-amber-500" />
+          <SlotBar label="Broadside" count={ws.broadside} max={maxSlots} color="bg-red-500" />
+          <SlotBar label="Bow" count={ws.bow} max={maxSlots} color="bg-blue-500" />
+          <SlotBar label="Stern" count={ws.stern} max={maxSlots} color="bg-amber-500" />
           <div className="border-t border-surface-border my-2" />
           <SlotBar label="Swivel Guns" count={ship.swivelGuns} max={maxSlots} color="bg-green-500" />
           {ship.mortarSlots > 0 && (

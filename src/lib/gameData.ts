@@ -18,11 +18,14 @@ export interface Ship {
   speed: number
   mobility: number
   armor: number
+  broadsideArmor: number
   capacity: number
   crew: number
   rank: number
   gameType: string
   displayClass: string
+  inGameClass: string
+  inGameRate: number
   subtype: string
   coolness: string
   faction: string
@@ -32,6 +35,18 @@ export interface Ship {
   canBeNpc: boolean
   requiredRank: number
   canBeUsedForNpc: boolean
+  role: string
+  acquisition: { type: string; imperialChestOnly?: boolean }
+  displacement: string
+  hold: number
+  integrity: number
+  weaponSlots: { stern: number; broadside: number; bow: number } | null
+  specialWeaponSlots: number
+  mortarSlots: number
+  swivelGuns: number
+  bonuses: string[]
+  chestSources?: { chest: string; dropRate: number | null; category: string }[]
+  craftingCost?: Record<string, number>
 }
 
 // ── Weapon types ──
@@ -388,8 +403,8 @@ export interface Upgrade {
   wearType: string
   cost: {
     gold: number
-    materials: { item: string; quantity: number }[]
-  }
+    materials?: { item: string; quantity: number }[]
+  } | null
   wear: string
 }
 
@@ -499,12 +514,22 @@ export interface TradeGood {
   rank: number
 }
 
-export function getTrading(): { goods: TradeGood[]; constants: Record<string, unknown> } {
+interface TradingConstants {
+  tradeOrderLifetimeDays: number
+  p2pTradingTax: number
+  rareItemTradingTax: number
+  unavailableCannonTradingTax: number
+  guildMemberTaxDiscount: number
+  enemyFactionTaxPenalty: number
+  [key: string]: unknown
+}
+
+export function getTrading(): { goods: TradeGood[]; constants: TradingConstants } {
   const prices = loadJson<{ goods: TradeGood[] }>('trade-prices.json')
-  const wiki = loadJson<Record<string, unknown>>('wiki-trading.json')
+  const wiki = loadJson<{ constants: TradingConstants; [key: string]: unknown }>('wiki-trading.json')
   return {
     goods: prices.goods,
-    constants: (wiki.constants as Record<string, unknown>) || {},
+    constants: wiki.constants,
   }
 }
 

@@ -75,7 +75,7 @@ export default function SkillsContent({ skills }: { skills: Skill[] }) {
           📋 All ({activeSkills.length})
         </button>
         {Object.entries(CATEGORIES).map(([key, cat]) => {
-          const catNum = parseInt(key)
+          const catNum = parseInt(key) as 0 | 1 | 2 | 3
           const count = activeSkills.filter(s => s.uiCategory === catNum).length
           return (
             <button

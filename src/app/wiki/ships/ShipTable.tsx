@@ -53,7 +53,7 @@ interface Ship {
   hold: number
   displacement: string
   integrity: number
-  weaponSlots: WeaponSlots
+  weaponSlots: WeaponSlots | null
   swivelGuns: number
   mortarSlots: number
   specialWeaponSlots: number
