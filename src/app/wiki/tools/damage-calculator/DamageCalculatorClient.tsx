@@ -28,6 +28,7 @@ export default function DamageCalculatorClient({ weapons, ammoList, ships }: Pro
   const [manualArmor, setManualArmor] = useState(5)
   const [manualHp, setManualHp] = useState(1000)
   const [angle, setAngle] = useState(0)
+  const [cannonCount, setCannonCount] = useState(1)
 
   const weapon = useMemo(() => weapons.find(w => w.gameId === weaponId), [weapons, weaponId])
   const ammo = useMemo(() => ammoList.find(a => a.gameId === ammoId), [ammoList, ammoId])
@@ -58,9 +59,12 @@ export default function DamageCalculatorClient({ weapons, ammoList, ships }: Pro
 
     const shotsToKill = effectiveDamage > 0 ? Math.ceil(targetHp / effectiveDamage) : Infinity
     const dps = weapon.reload > 0 ? effectiveDamage / weapon.reload : 0
+    const damagePerVolley = effectiveDamage * cannonCount
+    const volleysToKill = damagePerVolley > 0 ? Math.ceil(targetHp / damagePerVolley) : Infinity
+    const volleyDps = weapon.reload > 0 ? damagePerVolley / weapon.reload : 0
 
-    return { rawDamage, effectiveDamage, dps, shotsToKill, angleMult, effectiveArmor }
-  }, [weapon, ammo, targetArmor, targetHp, angle, isMortar])
+    return { rawDamage, effectiveDamage, dps, shotsToKill, angleMult, effectiveArmor, damagePerVolley, volleysToKill, volleyDps }
+  }, [weapon, ammo, targetArmor, targetHp, angle, isMortar, cannonCount])
 
   // Group weapons by type
   const weaponGroups = useMemo(() => {
@@ -187,6 +191,21 @@ export default function DamageCalculatorClient({ weapons, ammoList, ships }: Pro
                 </div>
               </>
             )}
+          </div>
+          {/* Cannon count */}
+          <div>
+            <label className="block text-xs font-medium text-foreground-secondary mb-1">
+              Number of Cannons: <span className="text-accent">{cannonCount}</span>
+            </label>
+            <input
+              type="number"
+              min={1}
+              max={50}
+              value={cannonCount}
+              onChange={e => setCannonCount(Math.max(1, Math.min(50, Number(e.target.value) || 1)))}
+              className="w-full bg-background border border-surface-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-accent"
+            />
+            <p className="text-xs text-foreground-muted mt-1">How many cannons fire per volley (broadside count)</p>
           </div>
         </div>
 
@@ -332,6 +351,42 @@ export default function DamageCalculatorClient({ weapons, ammoList, ships }: Pro
               </div>
             ))}
           </div>
+
+          {/* Volley results */}
+          {cannonCount > 1 && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+              {[
+                {
+                  label: 'Damage per Volley',
+                  value: formatNum(results.damagePerVolley),
+                  sub: `${cannonCount} cannons × ${formatNum(results.effectiveDamage)}`,
+                  highlight: true,
+                },
+                {
+                  label: 'Volleys to Kill',
+                  value: results.volleysToKill === Infinity ? '∞' : results.volleysToKill.toLocaleString(),
+                  sub: `vs ${targetHp.toLocaleString()} HP`,
+                  highlight: true,
+                },
+                {
+                  label: 'Volley DPS',
+                  value: weapon && weapon.reload > 0 ? formatNum(results.volleyDps) : '—',
+                  sub: `${cannonCount} guns, ${weapon?.reload}s reload`,
+                },
+              ].map(r => (
+                <div
+                  key={r.label}
+                  className={`rounded-lg p-3 text-center ${r.highlight ? 'bg-accent/10 border border-accent/30' : 'bg-background'}`}
+                >
+                  <div className={`text-xl font-bold ${r.highlight ? 'text-accent' : 'text-foreground'}`}>
+                    {r.value}
+                  </div>
+                  <div className="text-xs font-medium text-foreground-secondary mt-0.5">{r.label}</div>
+                  {r.sub && <div className="text-xs text-foreground-muted mt-0.5">{r.sub}</div>}
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Formula explanation */}
           <div className="mt-4 text-xs text-foreground-muted bg-background rounded-lg p-3 space-y-1">

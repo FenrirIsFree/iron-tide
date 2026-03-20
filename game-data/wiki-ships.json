@@ -41,11 +41,11 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 90,
-      "Planks": 1130,
-      "Iron Bars": 1500,
-      "Battle Marks": 945,
-      "Ship Blueprint": 1
+      "Bulkhead": 90,
+      "Beam": 1130,
+      "Plate": 1500,
+      "Battle Mark": 945,
+      "Construction License": 1
     }
   },
   {
@@ -107,10 +107,10 @@
       }
     ],
     "craftingCost": {
-      "Stone Blocks": 80,
-      "Planks": 825,
-      "Iron Bars": 1300,
-      "Battle Marks": 810
+      "Bulkhead": 80,
+      "Beam": 825,
+      "Plate": 1300,
+      "Battle Mark": 810
     }
   },
   {
@@ -214,10 +214,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 55,
-      "Planks": 1160,
-      "Iron Bars": 785,
-      "Battle Marks": 595
+      "Bulkhead": 55,
+      "Beam": 1160,
+      "Plate": 785,
+      "Battle Mark": 595
     }
   },
   {
@@ -265,10 +265,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 80,
-      "Planks": 745,
-      "Iron Bars": 1000,
-      "Battle Marks": 825
+      "Bulkhead": 80,
+      "Beam": 745,
+      "Plate": 1000,
+      "Battle Mark": 825
     }
   },
   {
@@ -327,10 +327,10 @@
       }
     ],
     "craftingCost": {
-      "Stone Blocks": 105,
-      "Planks": 1130,
-      "Iron Bars": 1340,
-      "Battle Marks": 1060
+      "Bulkhead": 105,
+      "Beam": 1130,
+      "Plate": 1340,
+      "Battle Mark": 1060
     }
   },
   {
@@ -436,10 +436,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 90,
-      "Planks": 900,
-      "Iron Bars": 1200,
-      "Battle Marks": 915
+      "Bulkhead": 90,
+      "Beam": 900,
+      "Plate": 1200,
+      "Battle Mark": 915
     }
   },
   {
@@ -486,10 +486,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 34,
-      "Planks": 385,
-      "Iron Bars": 345,
-      "Battle Marks": 380
+      "Bulkhead": 34,
+      "Beam": 385,
+      "Plate": 345,
+      "Battle Mark": 380
     }
   },
   {
@@ -546,10 +546,10 @@
       }
     ],
     "craftingCost": {
-      "Stone Blocks": 65,
-      "Planks": 570,
-      "Iron Bars": 400,
-      "Battle Marks": 670
+      "Bulkhead": 65,
+      "Beam": 570,
+      "Plate": 400,
+      "Battle Mark": 670
     }
   },
   {
@@ -594,10 +594,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 37,
-      "Planks": 410,
-      "Iron Bars": 235,
-      "Battle Marks": 415
+      "Bulkhead": 37,
+      "Beam": 410,
+      "Plate": 235,
+      "Battle Mark": 415
     }
   },
   {
@@ -642,10 +642,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 31,
-      "Planks": 525,
-      "Iron Bars": 265,
-      "Battle Marks": 355
+      "Bulkhead": 31,
+      "Beam": 525,
+      "Plate": 265,
+      "Battle Mark": 355
     }
   },
   {
@@ -755,10 +755,10 @@
       }
     ],
     "craftingCost": {
-      "Stone Blocks": 45,
-      "Planks": 565,
-      "Iron Bars": 455,
-      "Battle Marks": 515
+      "Bulkhead": 45,
+      "Beam": 565,
+      "Plate": 455,
+      "Battle Mark": 515
     }
   },
   {
@@ -860,10 +860,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 37,
-      "Planks": 525,
-      "Iron Bars": 510,
-      "Battle Marks": 415
+      "Bulkhead": 37,
+      "Beam": 525,
+      "Plate": 510,
+      "Battle Mark": 415
     }
   },
   {
@@ -908,10 +908,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 38,
-      "Planks": 420,
-      "Iron Bars": 405,
-      "Battle Marks": 420
+      "Bulkhead": 38,
+      "Beam": 420,
+      "Plate": 405,
+      "Battle Mark": 420
     }
   },
   {
@@ -1046,10 +1046,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 19,
-      "Planks": 230,
-      "Iron Bars": 185,
-      "Battle Marks": 230
+      "Bulkhead": 19,
+      "Beam": 230,
+      "Plate": 185,
+      "Battle Mark": 230
     }
   },
   {
@@ -1139,10 +1139,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 18,
-      "Planks": 285,
-      "Iron Bars": 230,
-      "Battle Marks": 225
+      "Bulkhead": 18,
+      "Beam": 285,
+      "Plate": 230,
+      "Battle Mark": 225
     }
   },
   {
@@ -1288,10 +1288,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 22,
-      "Planks": 185,
-      "Iron Bars": 185,
-      "Battle Marks": 260
+      "Bulkhead": 22,
+      "Beam": 185,
+      "Plate": 185,
+      "Battle Mark": 260
     }
   },
   {
@@ -1383,10 +1383,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 16,
-      "Planks": 270,
-      "Iron Bars": 120,
-      "Battle Marks": 200
+      "Bulkhead": 16,
+      "Beam": 270,
+      "Plate": 120,
+      "Battle Mark": 200
     }
   },
   {
@@ -1431,10 +1431,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Stone Blocks": 17,
-      "Planks": 225,
-      "Iron Bars": 105,
-      "Battle Marks": 215
+      "Bulkhead": 17,
+      "Beam": 225,
+      "Plate": 105,
+      "Battle Mark": 215
     }
   },
   {
@@ -1493,10 +1493,10 @@
       }
     ],
     "craftingCost": {
-      "Stone Blocks": 17,
-      "Planks": 275,
-      "Iron Bars": 135,
-      "Battle Marks": 210
+      "Bulkhead": 17,
+      "Beam": 275,
+      "Plate": 135,
+      "Battle Mark": 210
     }
   },
   {
@@ -1597,9 +1597,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Planks": 175,
-      "Iron Bars": 125,
-      "Battle Marks": 85
+      "Beam": 175,
+      "Plate": 125,
+      "Battle Mark": 85
     }
   },
   {
@@ -1692,9 +1692,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Planks": 140,
-      "Iron Bars": 100,
-      "Battle Marks": 80
+      "Beam": 140,
+      "Plate": 100,
+      "Battle Mark": 80
     }
   },
   {
@@ -1739,9 +1739,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Planks": 165,
-      "Iron Bars": 65,
-      "Battle Marks": 75
+      "Beam": 165,
+      "Plate": 65,
+      "Battle Mark": 75
     }
   },
   {
@@ -1897,9 +1897,9 @@
       }
     ],
     "craftingCost": {
-      "Planks": 105,
-      "Iron Bars": 100,
-      "Battle Marks": 70
+      "Beam": 105,
+      "Plate": 100,
+      "Battle Mark": 70
     }
   },
   {
@@ -1958,9 +1958,9 @@
       }
     ],
     "craftingCost": {
-      "Planks": 60,
-      "Iron Bars": 45,
-      "Battle Marks": 65
+      "Beam": 60,
+      "Plate": 45,
+      "Battle Mark": 65
     }
   },
   {
@@ -2005,10 +2005,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Sailcloth": 38,
-      "Planks": 140,
-      "Iron Bars": 55,
-      "Battle Marks": 80
+      "Canvas": 38,
+      "Beam": 140,
+      "Plate": 55,
+      "Battle Mark": 80
     }
   },
   {
@@ -2202,9 +2202,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Planks": 70,
-      "Iron Bars": 39,
-      "Battle Marks": 11
+      "Beam": 70,
+      "Plate": 39,
+      "Battle Mark": 11
     }
   },
   {
@@ -2261,10 +2261,10 @@
       }
     ],
     "craftingCost": {
-      "Sailcloth": 3,
-      "Planks": 40,
-      "Iron Bars": 24,
-      "Battle Marks": 11
+      "Canvas": 3,
+      "Beam": 40,
+      "Plate": 24,
+      "Battle Mark": 11
     }
   },
   {
@@ -2365,10 +2365,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Sailcloth": 22,
-      "Planks": 70,
-      "Iron Bars": 21,
-      "Battle Marks": 11
+      "Canvas": 22,
+      "Beam": 70,
+      "Plate": 21,
+      "Battle Mark": 11
     }
   },
   {
@@ -2415,10 +2415,10 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Sailcloth": 4,
-      "Planks": 60,
-      "Iron Bars": 37,
-      "Battle Marks": 11
+      "Canvas": 4,
+      "Beam": 60,
+      "Plate": 37,
+      "Battle Mark": 11
     }
   },
   {
@@ -2463,9 +2463,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Planks": 80,
-      "Iron Bars": 24,
-      "Battle Marks": 11
+      "Beam": 80,
+      "Plate": 24,
+      "Battle Mark": 11
     }
   },
   {
@@ -2510,9 +2510,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Planks": 85,
-      "Iron Bars": 50,
-      "Battle Marks": 11
+      "Beam": 85,
+      "Plate": 50,
+      "Battle Mark": 11
     }
   },
   {
@@ -2705,8 +2705,8 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Iron Ingots": 885,
-      "Planks": 23
+      "Iron": 885,
+      "Beam": 23
     }
   },
   {
@@ -2751,9 +2751,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Iron Ingots": 530,
-      "Sailcloth": 14,
-      "Planks": 23
+      "Iron": 530,
+      "Canvas": 14,
+      "Beam": 23
     }
   },
   {
@@ -2798,8 +2798,8 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Iron Ingots": 615,
-      "Planks": 27
+      "Iron": 615,
+      "Beam": 27
     }
   },
   {
@@ -2844,8 +2844,8 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Iron Ingots": 1110,
-      "Planks": 29
+      "Iron": 1110,
+      "Beam": 29
     }
   },
   {
@@ -2892,8 +2892,8 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Iron Ingots": 715,
-      "Planks": 21
+      "Iron": 715,
+      "Beam": 21
     }
   },
   {
@@ -3049,8 +3049,8 @@
     },
     "craftingCost": {
       "Wood": 850,
-      "Rope": 30,
-      "Iron Ingots": 165
+      "Tackles": 30,
+      "Iron": 165
     }
   },
   {
@@ -3096,8 +3096,8 @@
     },
     "craftingCost": {
       "Wood": 760,
-      "Rope": 30,
-      "Iron Ingots": 245
+      "Tackles": 30,
+      "Iron": 245
     }
   },
   {
@@ -3143,8 +3143,8 @@
     },
     "craftingCost": {
       "Wood": 775,
-      "Rope": 30,
-      "Iron Ingots": 145
+      "Tackles": 30,
+      "Iron": 145
     }
   }
 ]
