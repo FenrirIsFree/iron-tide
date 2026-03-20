@@ -151,7 +151,7 @@ export default function ShipDetail({ ship, prev, next }: ShipDetailProps) {
           <StatCard icon="👥" label="Crew" value={ship.crew} />
           <StatCard icon="⚖️" label="Displacement" value={ship.displacement || '—'} />
           <StatCard icon="🔧" label="Integrity" value={ship.integrity} />
-          <StatCard icon="⭐" label="Required Rank" value={ship.requiredRank || '—'} />
+          <StatCard icon="⚓" label="Ship Rate" value={`Rate ${['I','II','III','IV','V','VI','VII'][ship.inGameRate - 1] ?? ship.inGameRate}`} />
         </div>
       </section>
 

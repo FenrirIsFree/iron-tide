@@ -43,9 +43,9 @@ const sections = [
     items: [
       {
         title: '⭐ Ranks',
-        desc: 'Rank progression from 29 to 1 — XP requirements and what unlocks at each level.',
+        desc: 'Rank progression from 1 to 30 — XP requirements and Legend skill unlock.',
         href: '/wiki/ranks',
-        count: '29 ranks',
+        count: '30 ranks',
       },
       {
         title: '🧭 Captain Skills',
@@ -107,7 +107,7 @@ const sections = [
       },
       {
         title: '🏆 Achievements',
-        desc: 'Battle, Arena, Top, and Other — earn marks and unlock ships.',
+        desc: 'Battle, Arena, Top, and Other — earn marks and prove your skill.',
         href: '/wiki/achievements',
         count: '57 achievements',
       },

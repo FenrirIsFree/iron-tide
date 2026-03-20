@@ -416,6 +416,7 @@ export function getUpgrades(): Upgrade[] {
 export interface Rank {
   rank: number
   xpRequired: number
+  legend?: boolean
 }
 
 export function getRanks(): Rank[] {
