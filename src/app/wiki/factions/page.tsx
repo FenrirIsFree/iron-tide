@@ -22,51 +22,60 @@ interface FactionMeta {
 
 const FACTION_META: FactionMeta[] = [
   {
-    displayName: 'Antilian Republic',
+    displayName: 'Dominion of Antilia',
     gameFaction: 'Antilia',
     icon: '🏴',
-    lore: 'The Antilian Republic is a loose confederation of port cities and merchant guilds that fought for independence from colonial powers. Pragmatic and adaptive, they field a diverse fleet drawing on ships from across the world\'s naval history. Their flagship warships — Victory and Sovereign — are some of the most battle-tested vessels in the Archipelago.',
+    lore: 'The British Dominion of Antilia was founded by descendants of English and German colonists. Current ruler: Lord Protector John Campbell. Under his command, you expand faction territory, develop cities, complete missions to earn influence, and contribute to seasonal victory. Allied cities offer combat and economic bonuses.',
     playstyle: 'Balanced and flexible. Antilian ships cover all roles well, making this the most beginner-friendly faction. Their Rate I ships are craftable, so you aren\'t locked behind premium purchases to reach the top tier.',
     strengths: ['Strong Rate I craftable ships (Victory)', 'Diverse fleet options', 'Good balance of speed and firepower', 'Recommended for new players'],
     weaknesses: ['No standout faction bonuses', 'Less extreme specialization than other factions'],
   },
   {
-    displayName: 'Spanish Empire',
+    displayName: 'Viceroyalty of Espaniol',
     gameFaction: 'Espaniol',
     icon: '⚜️',
-    lore: 'The Spanish Empire represents the old colonial powers — disciplined, heavily armed, and proud. Their ships of the line were the terror of the Atlantic, combining massive firepower with the prestige of the world\'s greatest naval tradition. The Santisima Trinidad, the largest warship of her era, sails under their colors.',
-    playstyle: 'Firepower-focused. Spanish ships have high broadside weapon counts and strong armor on their largest vessels. The Heavy class in particular excels here — if you want to park broadside and unleash devastation, this is your faction.',
-    strengths: ['Highest broadside cannon counts at top rates', 'Strong Heavy class ships', 'Santisima Trinidad bonus: +15% XP and loot', 'Redoutable and La Couronne are excellent craft ships'],
-    weaknesses: ['Rate I heavy ships are slower', 'Less speed-focused than Eastern or Antilian'],
+    lore: 'The Viceroyalty of Espaniol was founded by descendants of Spanish, French, and Dutch colonists. Its head of state is Viceroy Alfonso III de Castro. Under his command, you expand faction territory, develop cities, complete missions to earn influence, and contribute to seasonal victory. Allied cities grant various economic and combat bonuses.',
+    playstyle: 'Firepower-focused. Espaniol ships have high broadside weapon counts and strong armor on their largest vessels. If you want to park broadside and unleash devastation, this is your faction.',
+    strengths: ['Highest broadside cannon counts at top rates', 'Strong Heavy class ships', 'Santisima Trinidad: massive Rate I ship', 'Redoutable and La Couronne are excellent craft ships'],
+    weaknesses: ['Rate I heavy ships are slower', 'Less speed-focused than other factions'],
   },
   {
-    displayName: 'Eastern Alliance',
+    displayName: 'Kai & Severia',
     gameFaction: 'KaiAndSeveria',
     icon: '🌅',
-    lore: 'The Eastern Alliance is a coalition of Kai and Severian states that control the eastern reaches of the Archipelago. Their fleet combines Russian Imperial warships with unique Severian designs. The 12 Apostolov, a legendary ship of the Black Sea Fleet, exemplifies their design philosophy: sturdy, powerful, and built for endurance.',
-    playstyle: 'Economy and endurance. Eastern ships tend toward durability and cargo capacity. The faction suits players who want to build a trading empire alongside their combat career. Their crafting and resource production bonuses make them excellent long-term players.',
-    strengths: ['12 Apostolov: legendary Rate I Heavy ship', 'Good Transport class options (La Couronne-equivalent routes)', 'Strong crafting infrastructure', 'Ingermanland is one of the best Rate II Fast ships'],
+    lore: 'A dynastic union formed through the marriage of Princess Lau Mi of the Kingdom of Kai and Afanasy Galitsyn, governor of the Severian Republic. The union blends Eastern philosophy and Northern resilience. Under their banner, you expand territory, grow cities, complete missions, earn influence, and push for seasonal victory.',
+    playstyle: 'Economy and endurance. Kai & Severia ships tend toward durability and cargo capacity. The faction suits players who want to build a trading empire alongside their combat career. Their crafting and resource production bonuses make them excellent long-term players.',
+    strengths: ['12 Apostolov: legendary Rate I Heavy ship', 'Good Transport class options', 'Strong crafting infrastructure', 'Ingermanland is one of the best Rate II Fast ships'],
     weaknesses: ['Fewer premium/unique options at low rates', 'Top-tier ships require high rank'],
   },
   {
-    displayName: 'Imperial Faction',
+    displayName: 'The Empire',
     gameFaction: 'Empire',
     icon: '👑',
-    lore: 'The Imperial Faction represents the mysterious Inhagger Empire — a native civilization whose technological sophistication rivals the colonial powers. Their ships are alien to Archipelago standards: unique wind roses, invisibility systems, and the ability to pass through Imperial NPC patrols unchallenged. The Huracan is their crown jewel — an 8,000 HP behemoth with no equal in raw durability.',
-    playstyle: 'Unique mechanics and elite ships. Imperial ships are acquired through Legend Tokens and Escudo — not crafting. They offer abilities no other faction provides (invisibility, mobile outpost, NPC immunity). Best for experienced players who want something different.',
-    strengths: ['Huracan: highest HP in game (8,000)', 'Unique abilities: invisibility, mobile outpost', 'Imperial NPCs do not attack', 'Extra upgrade slots on flagship ships'],
+    lore: 'The Empire is a powerful NPC state seeking to reclaim the archipelago. Technologically advanced in shipbuilding, they periodically launch fleet assaults on faction-held ports. Imperial ships are acquired through Legend Tokens and Escudo, not crafting.',
+    playstyle: 'Unique mechanics and elite ships. Imperial ships offer abilities no other faction provides. Best for experienced players who want something different.',
+    strengths: ['Huracan: highest HP in game (8,000)', 'Unique ship abilities', 'Extra upgrade slots on flagship ships'],
     weaknesses: ['Ships cost Legend Tokens + Escudo (hard to acquire)', 'Not beginner-friendly', 'Limited fleet variety'],
     taxNote: 'Imperial ships require Legend Tokens earned through high-rank play.',
+  },
+  {
+    displayName: 'Trade Union',
+    gameFaction: 'TradeUnion',
+    icon: '💰',
+    lore: 'The Trade Union is a merchant faction focused on commerce rather than conquest. Trade Union guilds cannot capture military ports, but they contest Caliphate ports through a tender system. They are neutral toward all factions except Pirates.',
+    playstyle: 'Commerce-focused. The Trade Union is for players who want to focus on trading, crafting, and economy rather than PvP warfare. Neutral standing with military factions means safer trade routes.',
+    strengths: ['Neutral to all military factions — safer trading', 'Contest Caliphate ports via tender system', 'Focus on economic gameplay'],
+    weaknesses: ['Cannot capture regular ports', 'Hostile with Pirates', 'Limited PvP engagement'],
   },
   {
     displayName: 'Pirates',
     gameFaction: 'Pirate',
     icon: '☠️',
-    lore: 'Pirates operate outside any national allegiance, raiding merchant lanes and port-hopping across the Archipelago. They have access to Pirate Bays — neutral ports that any faction can use but that pirates control — and the exclusive Pirate Trader, who offers rare goods for Escudo currency.',
-    playstyle: 'Freedom and aggression. Pirates have no faction loyalty, meaning they can attack anyone — but also be attacked by anyone. Guild mechanics work differently; pirate ports have unique bonuses including better powerup crafting and ship deconstruction returns.',
-    strengths: ['Access to Pirate Trader (Escudo currency for rare items)', 'Pirate port bonuses: powerup craft discount, fast recovery', 'Fleet flexibility — no faction restrictions on ship use', 'Unique AllFractionShipsCraftNoPenalty at port level 4+'],
-    weaknesses: ['Hostile to all factions — no safe ports except Pirate Bays', 'Cannot open Trade HQ (Traders can\'t set up HQ in pirate ports)', 'Recommended for experienced players only'],
-    taxNote: 'Pirate players face double taxes when trading in enemy faction ports (2× penalty).',
+    lore: 'Pirates operate outside any national allegiance, raiding merchant lanes and port-hopping across the Archipelago. They control exclusive Pirate Coves — strongholds that can only be owned by pirate guilds. They have access to the Pirate Trader, who offers rare goods for Escudo currency.',
+    playstyle: 'Freedom and aggression. Pirates can attack anyone — but are also hostile to everyone. Pirate ports have unique bonuses including better powerup crafting and ship deconstruction returns. Recommended for experienced players only.',
+    strengths: ['Access to Pirate Trader (Escudo for rare items)', 'Exclusive Pirate Coves (Tortuga, Pirate City, etc.)', 'Fleet flexibility — no faction restrictions on ship use', 'Pirate port bonuses: powerup discount, fast recovery'],
+    weaknesses: ['Hostile to ALL other factions', 'Cannot open Trade HQ in pirate ports', 'Limited safe harbors'],
+    taxNote: 'Pirate players face double taxes when trading in enemy faction ports.',
   },
 ]
 
@@ -123,11 +132,11 @@ export default function FactionsPage() {
           </thead>
           <tbody className="text-foreground-secondary">
             {[
-              { faction: '🏴 Antilian', best: 'New players, all-rounders', top: 'Victory (Rate I Battle)', diff: '⭐ Easy' },
-              { faction: '⚜️ Spanish', best: 'Firepower, fleet battles', top: 'Santisima Trinidad (Rate I Heavy)', diff: '⭐⭐ Medium' },
-              { faction: '🌅 Eastern', best: 'Economy, endurance', top: '12 Apostolov (Rate I Heavy)', diff: '⭐⭐ Medium' },
-              { faction: '👑 Imperial', best: 'Unique mechanics, elite play', top: 'Huracan (8,000 HP Rate I)', diff: '⭐⭐⭐ Hard' },
-              { faction: '☠️ Pirate', best: 'Freedom, aggression', top: 'Any faction ship', diff: '⭐⭐⭐ Hard' },
+              { faction: '🏴 Antilia', best: 'New players, all-rounders', top: 'Victory (Rate I Battle)', diff: '⭐ Easy' },
+              { faction: '⚜️ Espaniol', best: 'Firepower, fleet battles', top: 'Santisima Trinidad (Rate I)', diff: '⭐⭐ Medium' },
+              { faction: '🌅 Kai & Severia', best: 'Economy, endurance', top: '12 Apostolov (Rate I)', diff: '⭐⭐ Medium' },
+              { faction: '💰 Trade Union', best: 'Trading, commerce', top: 'Any faction ship', diff: '⭐⭐ Medium' },
+              { faction: '☠️ Pirates', best: 'Freedom, aggression', top: 'Any faction ship', diff: '⭐⭐⭐ Hard' },
             ].map(r => (
               <tr key={r.faction} className="border-b border-surface-border/50">
                 <td className="py-2 pr-4">{r.faction}</td>
@@ -138,6 +147,62 @@ export default function FactionsPage() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Diplomatic Relations */}
+      <div className="mb-10">
+        <h2 id="diplomacy" className="text-xl font-bold text-foreground mb-3">🤝 Diplomatic Relations</h2>
+        <p className="text-foreground-secondary text-sm mb-4">
+          Each faction has default diplomatic relations. Additionally, every player has individual reputation with the three military factions.
+        </p>
+        <ul className="list-disc list-inside text-foreground-secondary text-sm space-y-2 mb-4">
+          <li>Players not in any faction are considered <span className="text-foreground font-medium">neutral</span></li>
+          <li>The three <span className="text-foreground font-medium">military factions</span> (Antilia, Espaniol, Kai & Severia) are <span className="text-red-400">at war</span> with each other</li>
+          <li>The <span className="text-foreground font-medium">Trade Union</span> is <span className="text-green-400">neutral</span> toward all factions except Pirates</li>
+          <li><span className="text-foreground font-medium">Pirates</span> are <span className="text-red-400">hostile</span> to all other factions</li>
+          <li>All faction members must maintain friendly reputation or be <span className="text-amber-400">expelled</span></li>
+        </ul>
+      </div>
+
+      {/* Port Types */}
+      <div className="mb-10">
+        <h2 id="ports" className="text-xl font-bold text-foreground mb-3">🏙️ Port Control</h2>
+        <p className="text-foreground-secondary text-sm mb-4">
+          Most ports can be captured by military or pirate factions. Some ports have special rules:
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-4">
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">🕌 Caliphate Ports</h3>
+            <p className="text-xs text-foreground-secondary mb-2">Contested by Trade Union guilds via tender system.</p>
+            <p className="text-xs text-foreground-muted">Assab · Al-Khalif · Sharhat</p>
+          </div>
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">🏳️ Neutral Settlements</h3>
+            <p className="text-xs text-foreground-secondary mb-2">Cannot be captured by any faction.</p>
+            <p className="text-xs text-foreground-muted">Aldansk · Brandport · El Tigre · Freedom Bay · Nordberg · Puerto Salada · Santa Marta · Surako</p>
+          </div>
+          <div className="bg-surface border border-surface-border rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">🏴‍☠️ Pirate Coves</h3>
+            <p className="text-xs text-foreground-secondary mb-2">Can only be owned by Pirate faction members.</p>
+            <p className="text-xs text-foreground-muted">Corsa-Nois Bay · Naabad Stronghold · Pirate City · Tortuga</p>
+          </div>
+        </div>
+      </div>
+
+      {/* The Empire */}
+      <div className="mb-10">
+        <h2 id="empire" className="text-xl font-bold text-foreground mb-3">👑 The Empire</h2>
+        <p className="text-foreground-secondary text-sm mb-3">
+          The Empire is a powerful NPC state seeking to reclaim the archipelago. It is technologically advanced, particularly in shipbuilding, comparable to Chinese maritime engineering. The exact location of the Empire&apos;s capital remains unknown, and its form of government is unclear — though it is believed to be a dynastic monarchy.
+        </p>
+        <p className="text-foreground-secondary text-sm mb-3">
+          The Empire periodically launches fleet assaults on faction-held ports. During these events, each guild must defend their port by destroying all Imperial ships around their fort. Ports not controlled by any faction are under Empire control by default.
+        </p>
+        <div className="border-l-4 border-amber-500 bg-amber-500/10 rounded-r-lg px-4 py-3">
+          <p className="text-sm text-amber-300">
+            Imperial ships (Huracan, etc.) are acquired through Legend Tokens and Escudo — see the ship database for details.
+          </p>
+        </div>
       </div>
 
       {/* Faction sections */}
