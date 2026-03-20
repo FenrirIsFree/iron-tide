@@ -446,13 +446,24 @@ export interface ArenaUpgrade {
   Probability: number
 }
 
+interface ArenaRewards {
+  gold: Record<string, unknown>
+  silver: Record<string, unknown>
+  bronze: Record<string, unknown>
+}
+
+interface ArenaRewardsFile {
+  rewards: ArenaRewards
+  [key: string]: unknown
+}
+
 export function getArena() {
   const upgrades = loadJson<ArenaUpgrade[]>('wiki-arena-upgrades.json')
-  const rewards = loadJson<Record<string, unknown>>('wiki-arena-rating-rewards.json')
+  const rewards = loadJson<ArenaRewardsFile>('wiki-arena-rating-rewards.json')
   const maps = loadJson<unknown[]>('wiki-arena-maps.json')
   return {
     upgrades,
-    rewards: rewards.rewards as Record<string, Record<string, unknown>>,
+    rewards: rewards.rewards,
     mapCount: maps.length,
   }
 }
