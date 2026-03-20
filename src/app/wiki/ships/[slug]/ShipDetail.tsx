@@ -206,15 +206,18 @@ export default function ShipDetail({ ship, prev, next }: ShipDetailProps) {
 
           {ship.craftingCost && Object.keys(ship.craftingCost).length > 0 && (
             <div>
-              <h3 className="text-foreground text-sm font-semibold mb-2">Crafting Cost</h3>
+              <h3 className="text-foreground text-sm font-semibold mb-2">Crafting Cost <span className="text-amber-400 font-normal">(approx.)</span></h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {Object.entries(ship.craftingCost).map(([resource, amount]) => (
                   <div key={resource} className="flex items-center justify-between bg-surface-hover rounded-lg px-3 py-2">
                     <span className="text-foreground-secondary text-sm">{resource}</span>
-                    <span className="text-accent font-mono text-sm font-semibold">{amount.toLocaleString()}</span>
+                    <span className="text-accent font-mono text-sm font-semibold">~{amount.toLocaleString()}</span>
                   </div>
                 ))}
               </div>
+              <p className="text-xs text-foreground-muted mt-2 italic">
+                ⚠️ Crafting costs are approximate — extracted from decompiled game code and may not reflect current in-game values. Actual costs vary by port discounts and faction bonuses.
+              </p>
             </div>
           )}
 

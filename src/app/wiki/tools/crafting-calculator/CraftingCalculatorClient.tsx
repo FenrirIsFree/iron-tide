@@ -151,7 +151,7 @@ export default function CraftingCalculatorClient({ ships, weapons, resources }: 
         <div className="bg-surface border border-surface-border rounded-xl overflow-hidden">
           <div className="px-5 py-3 border-b border-surface-border flex items-center justify-between">
             <h2 className="text-sm font-semibold text-foreground">
-              📋 {selectedName} — Crafting Cost
+              📋 {selectedName} — Crafting Cost <span className="text-amber-400 font-normal">(approx.)</span>
             </h2>
             <div className="flex items-center gap-3">
               <span className="text-xs text-foreground-muted">
@@ -246,9 +246,14 @@ export default function CraftingCalculatorClient({ ships, weapons, resources }: 
               )}
             </div>
             {itemType === 'ship' && (
-              <p className="text-xs text-foreground-muted mt-2">
-                💡 Gold values are estimates based on average market prices. Actual costs vary by port and supply.
-              </p>
+              <div className="mt-2 space-y-1">
+                <p className="text-xs text-amber-400/80 italic">
+                  ⚠️ Ship crafting costs are approximate — extracted from decompiled game code. Actual costs may differ. Canvas costs may be missing for some ships.
+                </p>
+                <p className="text-xs text-foreground-muted">
+                  💡 Gold values are estimates based on average market prices. Actual costs vary by port discounts and faction bonuses.
+                </p>
+              </div>
             )}
           </div>
         </div>

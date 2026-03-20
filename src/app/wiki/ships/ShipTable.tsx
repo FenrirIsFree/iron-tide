@@ -401,13 +401,14 @@ export default function ShipTable({ ships }: { ships: Ship[] }) {
                                 <span className="text-green-400 text-sm font-medium">🔨 Craftable</span>
                                 {ship.craftingCost && Object.keys(ship.craftingCost).length > 0 ? (
                                   <div className="mt-1">
-                                    <span className="text-foreground-muted text-xs">Base crafting cost:</span>
+                                    <span className="text-foreground-muted text-xs">Approx. crafting cost:</span>
                                     {Object.entries(ship.craftingCost).map(([resource, amount]) => (
                                       <div key={resource} className="flex justify-between text-sm mt-0.5">
                                         <span className="text-foreground-secondary">{resource}</span>
-                                        <span className="text-accent font-medium">{amount.toLocaleString()}</span>
+                                        <span className="text-accent font-medium">~{amount.toLocaleString()}</span>
                                       </div>
                                     ))}
+                                    <p className="text-foreground-muted text-xs mt-1 italic">⚠️ Approximate values</p>
                                   </div>
                                 ) : (
                                   <p className="text-foreground-muted text-xs mt-1">Built at the shipyard</p>

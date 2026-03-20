@@ -41,9 +41,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 90,
+      "Bulkhead": 1500,
       "Beam": 1130,
-      "Plate": 1500,
+      "Plate": 90,
       "Battle Mark": 945,
       "Construction License": 1
     }
@@ -107,9 +107,9 @@
       }
     ],
     "craftingCost": {
-      "Bulkhead": 80,
+      "Bulkhead": 1300,
       "Beam": 825,
-      "Plate": 1300,
+      "Plate": 80,
       "Battle Mark": 810
     }
   },
@@ -214,9 +214,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 55,
+      "Bulkhead": 785,
       "Beam": 1160,
-      "Plate": 785,
+      "Plate": 55,
       "Battle Mark": 595
     }
   },
@@ -265,9 +265,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 80,
+      "Bulkhead": 1000,
       "Beam": 745,
-      "Plate": 1000,
+      "Plate": 80,
       "Battle Mark": 825
     }
   },
@@ -327,9 +327,9 @@
       }
     ],
     "craftingCost": {
-      "Bulkhead": 105,
+      "Bulkhead": 1340,
       "Beam": 1130,
-      "Plate": 1340,
+      "Plate": 105,
       "Battle Mark": 1060
     }
   },
@@ -436,9 +436,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 90,
+      "Bulkhead": 1200,
       "Beam": 900,
-      "Plate": 1200,
+      "Plate": 90,
       "Battle Mark": 915
     }
   },
@@ -486,9 +486,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 34,
+      "Bulkhead": 345,
       "Beam": 385,
-      "Plate": 345,
+      "Plate": 34,
       "Battle Mark": 380
     }
   },
@@ -546,9 +546,9 @@
       }
     ],
     "craftingCost": {
-      "Bulkhead": 65,
+      "Bulkhead": 400,
       "Beam": 570,
-      "Plate": 400,
+      "Plate": 65,
       "Battle Mark": 670
     }
   },
@@ -594,9 +594,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 37,
+      "Bulkhead": 235,
       "Beam": 410,
-      "Plate": 235,
+      "Plate": 37,
       "Battle Mark": 415
     }
   },
@@ -642,9 +642,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 31,
+      "Bulkhead": 265,
       "Beam": 525,
-      "Plate": 265,
+      "Plate": 31,
       "Battle Mark": 355
     }
   },
@@ -755,9 +755,9 @@
       }
     ],
     "craftingCost": {
-      "Bulkhead": 45,
+      "Bulkhead": 455,
       "Beam": 565,
-      "Plate": 455,
+      "Plate": 45,
       "Battle Mark": 515
     }
   },
@@ -860,9 +860,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 37,
+      "Bulkhead": 510,
       "Beam": 525,
-      "Plate": 510,
+      "Plate": 37,
       "Battle Mark": 415
     }
   },
@@ -908,9 +908,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 38,
+      "Bulkhead": 405,
       "Beam": 420,
-      "Plate": 405,
+      "Plate": 38,
       "Battle Mark": 420
     }
   },
@@ -1046,9 +1046,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 19,
+      "Bulkhead": 185,
       "Beam": 230,
-      "Plate": 185,
+      "Plate": 19,
       "Battle Mark": 230
     }
   },
@@ -1139,9 +1139,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 18,
+      "Bulkhead": 230,
       "Beam": 285,
-      "Plate": 230,
+      "Plate": 18,
       "Battle Mark": 225
     }
   },
@@ -1288,9 +1288,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 22,
+      "Bulkhead": 185,
       "Beam": 185,
-      "Plate": 185,
+      "Plate": 22,
       "Battle Mark": 260
     }
   },
@@ -1383,9 +1383,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 16,
+      "Bulkhead": 120,
       "Beam": 270,
-      "Plate": 120,
+      "Plate": 16,
       "Battle Mark": 200
     }
   },
@@ -1431,9 +1431,9 @@
       "type": "craftable"
     },
     "craftingCost": {
-      "Bulkhead": 17,
+      "Bulkhead": 105,
       "Beam": 225,
-      "Plate": 105,
+      "Plate": 17,
       "Battle Mark": 215
     }
   },
@@ -1493,9 +1493,9 @@
       }
     ],
     "craftingCost": {
-      "Bulkhead": 17,
+      "Bulkhead": 135,
       "Beam": 275,
-      "Plate": 135,
+      "Plate": 17,
       "Battle Mark": 210
     }
   },
@@ -1598,8 +1598,8 @@
     },
     "craftingCost": {
       "Beam": 175,
-      "Plate": 125,
-      "Battle Mark": 85
+      "Battle Mark": 85,
+      "Bulkhead": 125
     }
   },
   {
@@ -1693,8 +1693,8 @@
     },
     "craftingCost": {
       "Beam": 140,
-      "Plate": 100,
-      "Battle Mark": 80
+      "Battle Mark": 80,
+      "Bulkhead": 100
     }
   },
   {
@@ -1740,8 +1740,8 @@
     },
     "craftingCost": {
       "Beam": 165,
-      "Plate": 65,
-      "Battle Mark": 75
+      "Battle Mark": 75,
+      "Bulkhead": 65
     }
   },
   {
@@ -1898,8 +1898,8 @@
     ],
     "craftingCost": {
       "Beam": 105,
-      "Plate": 100,
-      "Battle Mark": 70
+      "Battle Mark": 70,
+      "Bulkhead": 100
     }
   },
   {
@@ -1959,8 +1959,8 @@
     ],
     "craftingCost": {
       "Beam": 60,
-      "Plate": 45,
-      "Battle Mark": 65
+      "Battle Mark": 65,
+      "Bulkhead": 45
     }
   },
   {
@@ -2007,8 +2007,8 @@
     "craftingCost": {
       "Canvas": 38,
       "Beam": 140,
-      "Plate": 55,
-      "Battle Mark": 80
+      "Battle Mark": 80,
+      "Bulkhead": 55
     }
   },
   {
@@ -2203,8 +2203,8 @@
     },
     "craftingCost": {
       "Beam": 70,
-      "Plate": 39,
-      "Battle Mark": 11
+      "Battle Mark": 11,
+      "Bulkhead": 39
     }
   },
   {
@@ -2263,8 +2263,8 @@
     "craftingCost": {
       "Canvas": 3,
       "Beam": 40,
-      "Plate": 24,
-      "Battle Mark": 11
+      "Battle Mark": 11,
+      "Bulkhead": 24
     }
   },
   {
@@ -2367,8 +2367,8 @@
     "craftingCost": {
       "Canvas": 22,
       "Beam": 70,
-      "Plate": 21,
-      "Battle Mark": 11
+      "Battle Mark": 11,
+      "Bulkhead": 21
     }
   },
   {
@@ -2417,8 +2417,8 @@
     "craftingCost": {
       "Canvas": 4,
       "Beam": 60,
-      "Plate": 37,
-      "Battle Mark": 11
+      "Battle Mark": 11,
+      "Bulkhead": 37
     }
   },
   {
@@ -2464,8 +2464,8 @@
     },
     "craftingCost": {
       "Beam": 80,
-      "Plate": 24,
-      "Battle Mark": 11
+      "Battle Mark": 11,
+      "Bulkhead": 24
     }
   },
   {
@@ -2511,8 +2511,8 @@
     },
     "craftingCost": {
       "Beam": 85,
-      "Plate": 50,
-      "Battle Mark": 11
+      "Battle Mark": 11,
+      "Bulkhead": 50
     }
   },
   {
