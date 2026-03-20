@@ -112,6 +112,18 @@ const sections = [
         count: '57 achievements',
       },
       {
+        title: '⚔️ PvE Missions',
+        desc: 'Battle NPC waves — wave compositions, rewards, ship requirements.',
+        href: '/wiki/missions',
+        count: '12 missions',
+      },
+      {
+        title: '🎨 Cosmetics',
+        desc: 'Ship customization — flags, sails, figureheads, decals, and full ship designs.',
+        href: '/wiki/cosmetics',
+        count: '562 items',
+      },
+      {
         title: '🏟️ Arena',
         desc: 'PvP arena mode — random upgrades, ranked seasons, and exclusive rewards.',
         href: '/wiki/arena',

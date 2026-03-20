@@ -426,6 +426,20 @@ export function getSkills(): Skill[] {
   return loadJson<Skill[]>('wiki-skills.json')
 }
 
+export interface Cosmetic {
+  name: string
+  nameLocalized: string
+  category: string
+  price: number
+  priceReal: number
+  requiredRank: string
+  fraction: string
+}
+
+export function getCosmetics(): Cosmetic[] {
+  return loadJson<Cosmetic[]>('wiki-cosmetics.json')
+}
+
 export function getArena() {
   const upgrades = loadJson<Record<string, unknown>[]>('wiki-arena-upgrades.json')
   const rewards = loadJson<Record<string, unknown>>('wiki-arena-rating-rewards.json')
