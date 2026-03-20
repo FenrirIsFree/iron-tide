@@ -13,7 +13,18 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByGold",
     "price": 50,
-    "icon": "light_rusty_cannon"
+    "icon": "light_rusty_cannon",
+    "type": "Cannon",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 10.5,
+    "range": 125,
+    "rangeMin": null,
+    "maxAngle": 34,
+    "accuracySpread": 8.5,
+    "notes": "Stats not visible in screenshot \u2014 only inventory view captured"
   },
   {
     "gameId": "ncs_cannon_2",
@@ -29,7 +40,18 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "ByGold",
     "price": 150,
-    "icon": "light_rusty_long_cannon"
+    "icon": "light_rusty_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 15.5,
+    "range": 135,
+    "rangeMin": null,
+    "maxAngle": 17,
+    "accuracySpread": 5,
+    "notes": "Stats not visible in screenshot \u2014 only inventory view captured"
   },
   {
     "gameId": "ncs_cannon_3",
@@ -45,7 +67,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "ByGold",
     "price": 200,
-    "icon": "light_rusty_carronade"
+    "icon": "light_rusty_carronade",
+    "type": "Carronade",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 22,
+    "range": 105,
+    "rangeMin": null,
+    "maxAngle": 26,
+    "accuracySpread": 9.5
   },
   {
     "gameId": "ncs_cannon_4",
@@ -61,7 +93,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "NotAvailable",
     "price": 3600,
-    "icon": "light_iron_bow_stern_1"
+    "icon": "light_iron_bow_stern_1",
+    "type": "Bombard",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.25,
+    "loading": 18.5,
+    "range": 150,
+    "rangeMin": null,
+    "maxAngle": 25,
+    "accuracySpread": 4
   },
   {
     "gameId": "ncs_cannon_5",
@@ -77,7 +119,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "NotAvailable",
     "price": 4500,
-    "icon": "light_iron_bow_stern_2"
+    "icon": "light_iron_bow_stern_2",
+    "type": "Bombard",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 0.8,
+    "loading": 18,
+    "range": 80,
+    "rangeMin": null,
+    "maxAngle": 30,
+    "accuracySpread": 11
   },
   {
     "gameId": "ncs_cannon_6",
@@ -93,7 +145,18 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 800,
-    "icon": "light_bronze_cannon"
+    "icon": "light_bronze_cannon",
+    "type": "Cannon",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 9,
+    "range": 130,
+    "rangeMin": null,
+    "maxAngle": 31,
+    "accuracySpread": 9.5,
+    "notes": "Stats not visible in screenshot \u2014 only inventory view captured"
   },
   {
     "gameId": "ncs_cannon_7",
@@ -109,7 +172,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "ByCraft",
     "price": 1200,
-    "icon": "light_bronze_long_cannon"
+    "icon": "light_bronze_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 13,
+    "range": 140,
+    "rangeMin": null,
+    "maxAngle": 16,
+    "accuracySpread": 6
   },
   {
     "gameId": "ncs_cannon_8",
@@ -125,7 +198,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "ByCraft",
     "price": 1600,
-    "icon": "light_bronze_carronade"
+    "icon": "light_bronze_carronade",
+    "type": "Carronade",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 19.5,
+    "range": 110,
+    "rangeMin": null,
+    "maxAngle": 23,
+    "accuracySpread": 11.5
   },
   {
     "gameId": "ncs_cannon_9",
@@ -141,7 +224,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 2400,
-    "icon": "light_soldered_bow_stern"
+    "icon": "light_soldered_bow_stern",
+    "type": "Bombard",
+    "weightClass": "Light",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.0,
+    "loading": 20,
+    "range": 115,
+    "rangeMin": null,
+    "maxAngle": 12,
+    "accuracySpread": 9
   },
   {
     "gameId": "ncs_cannon_10",
@@ -157,7 +250,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByGold",
     "price": 200,
-    "icon": "medium_castiron_cannon"
+    "icon": "medium_castiron_cannon",
+    "type": "Cannon",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 12,
+    "range": 130,
+    "rangeMin": null,
+    "maxAngle": 29,
+    "accuracySpread": 10.5
   },
   {
     "gameId": "ncs_cannon_11",
@@ -173,7 +276,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "ByGold",
     "price": 300,
-    "icon": "medium_castiron_long_cannon"
+    "icon": "medium_castiron_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 17.5,
+    "range": 140,
+    "rangeMin": null,
+    "maxAngle": 14,
+    "accuracySpread": 6.5
   },
   {
     "gameId": "ncs_cannon_12",
@@ -189,7 +302,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "ByGold",
     "price": 400,
-    "icon": "medium_castiron_carronade"
+    "icon": "medium_castiron_carronade",
+    "type": "Carronade",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 25.5,
+    "range": 110,
+    "rangeMin": null,
+    "maxAngle": 21,
+    "accuracySpread": 12
   },
   {
     "gameId": "ncs_cannon_13",
@@ -205,7 +328,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "NotAvailable",
     "price": 7200,
-    "icon": "medium_iron_bow_stern_1"
+    "icon": "medium_iron_bow_stern_1",
+    "type": "Bombard",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.25,
+    "loading": 21.5,
+    "range": 155,
+    "rangeMin": null,
+    "maxAngle": 21,
+    "accuracySpread": 5
   },
   {
     "gameId": "ncs_cannon_14",
@@ -221,7 +354,18 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "NotAvailable",
     "price": 9000,
-    "icon": "medium_iron_bow_stern_2"
+    "icon": "medium_iron_bow_stern_2",
+    "type": "Bombard",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 0.8,
+    "loading": 20.5,
+    "range": 85,
+    "rangeMin": null,
+    "maxAngle": 25,
+    "accuracySpread": 13.5,
+    "notes": "Listed under Special category"
   },
   {
     "gameId": "ncs_cannon_15",
@@ -237,7 +381,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "NotAvailable",
     "price": 2400,
-    "icon": "medium_iron_cannon"
+    "icon": "medium_iron_cannon",
+    "type": "Cannon",
+    "weightClass": "Medium",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 13.5,
+    "range": 130,
+    "rangeMin": null,
+    "maxAngle": 21,
+    "accuracySpread": 11
   },
   {
     "gameId": "ncs_cannon_16",
@@ -253,7 +407,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "NotAvailable",
     "price": 3600,
-    "icon": "medium_iron_long_cannon"
+    "icon": "medium_iron_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Medium",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 26,
+    "range": 148,
+    "rangeMin": null,
+    "maxAngle": 9,
+    "accuracySpread": 9.5
   },
   {
     "gameId": "ncs_cannon_17",
@@ -269,7 +433,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "NotAvailable",
     "price": 4800,
-    "icon": "medium_iron_carronade"
+    "icon": "medium_iron_carronade",
+    "type": "Carronade",
+    "weightClass": "Medium",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 27.5,
+    "range": 105,
+    "rangeMin": null,
+    "maxAngle": 16,
+    "accuracySpread": 13
   },
   {
     "gameId": "ncs_cannon_18",
@@ -285,7 +459,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 2000,
-    "icon": "medium_bronze_cannon"
+    "icon": "medium_bronze_cannon",
+    "type": "Cannon",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 10.5,
+    "range": 135,
+    "rangeMin": null,
+    "maxAngle": 26,
+    "accuracySpread": 12
   },
   {
     "gameId": "ncs_cannon_19",
@@ -301,7 +485,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "ByCraft",
     "price": 3000,
-    "icon": "medium_bronze_long_cannon"
+    "icon": "medium_bronze_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 15,
+    "range": 145,
+    "rangeMin": null,
+    "maxAngle": 13,
+    "accuracySpread": 8
   },
   {
     "gameId": "ncs_cannon_20",
@@ -317,7 +511,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "ByCraft",
     "price": 4000,
-    "icon": "medium_bronze_carronade"
+    "icon": "medium_bronze_carronade",
+    "type": "Carronade",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 22.5,
+    "range": 115,
+    "rangeMin": null,
+    "maxAngle": 20,
+    "accuracySpread": 14.5
   },
   {
     "gameId": "ncs_cannon_21",
@@ -333,7 +537,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 6000,
-    "icon": "medium_soldered_bow_stern_1"
+    "icon": "medium_soldered_bow_stern_1",
+    "type": "Bombard",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.0,
+    "loading": 23.5,
+    "range": 120,
+    "rangeMin": null,
+    "maxAngle": 10,
+    "accuracySpread": 11
   },
   {
     "gameId": "ncs_cannon_22",
@@ -349,7 +563,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 7500,
-    "icon": "medium_soldered_bow_stern_2"
+    "icon": "medium_soldered_bow_stern_2",
+    "type": "Bombard",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.0,
+    "loading": 28.5,
+    "range": 135,
+    "rangeMin": null,
+    "maxAngle": 8,
+    "accuracySpread": 13
   },
   {
     "gameId": "ncs_cannon_23",
@@ -365,7 +589,18 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "ByCraft",
     "price": 40000,
-    "icon": "medium_uniq_1"
+    "icon": "medium_uniq_1",
+    "type": "Special",
+    "weightClass": "Medium",
+    "isPremium": true,
+    "placementRestriction": "For special ships",
+    "projectileSpeedFactor": 1.25,
+    "loading": 22,
+    "range": 135,
+    "rangeMin": null,
+    "maxAngle": 6,
+    "accuracySpread": 12,
+    "notes": "Special weapon \u2014 goes in dedicated special weapon slot"
   },
   {
     "gameId": "ncs_cannon_24",
@@ -381,7 +616,21 @@
     "extra": "UntilOverheat:6",
     "craftingType": "ByCraft",
     "price": 50000,
-    "icon": "medium_uniq_2"
+    "icon": "medium_uniq_2",
+    "type": "Special",
+    "weightClass": "Medium",
+    "isPremium": false,
+    "placementRestriction": "For special ships",
+    "projectileSpeedFactor": 1.0,
+    "loading": 25,
+    "range": 60,
+    "rangeMin": null,
+    "maxAngle": 6,
+    "accuracySpread": 10,
+    "damage": 80,
+    "damageUnit": "per sec",
+    "untilOverheat": 6.0,
+    "notes": "Special weapon \u2014 goes in dedicated special weapon slot"
   },
   {
     "gameId": "ncs_cannon_25",
@@ -397,7 +646,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "NotAvailable",
     "price": 4800,
-    "icon": "heavy_iron_cannon"
+    "icon": "heavy_iron_cannon",
+    "type": "Cannon",
+    "weightClass": "Heavy",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 16,
+    "range": 135,
+    "rangeMin": null,
+    "maxAngle": 16,
+    "accuracySpread": 13.5
   },
   {
     "gameId": "ncs_cannon_26",
@@ -413,7 +672,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "NotAvailable",
     "price": 7200,
-    "icon": "heavy_iron_long_cannon"
+    "icon": "heavy_iron_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Heavy",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 30.5,
+    "range": 153,
+    "rangeMin": null,
+    "maxAngle": 7,
+    "accuracySpread": 12
   },
   {
     "gameId": "ncs_cannon_27",
@@ -429,7 +698,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "NotAvailable",
     "price": 9600,
-    "icon": "heavy_iron_carronade"
+    "icon": "heavy_iron_carronade",
+    "type": "Carronade",
+    "weightClass": "Heavy",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 32,
+    "range": 110,
+    "rangeMin": null,
+    "maxAngle": 12,
+    "accuracySpread": 16
   },
   {
     "gameId": "ncs_cannon_28",
@@ -445,7 +724,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "NotAvailable",
     "price": 14400,
-    "icon": "heavy_iron_bow_stern_1"
+    "icon": "heavy_iron_bow_stern_1",
+    "type": "Bombard",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.25,
+    "loading": 25,
+    "range": 160,
+    "rangeMin": null,
+    "maxAngle": 16,
+    "accuracySpread": 6
   },
   {
     "gameId": "ncs_cannon_29",
@@ -461,7 +750,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "NotAvailable",
     "price": 18000,
-    "icon": "heavy_iron_bow_stern_2"
+    "icon": "heavy_iron_bow_stern_2",
+    "type": "Bombard",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 0.8,
+    "loading": 24,
+    "range": 90,
+    "rangeMin": null,
+    "maxAngle": 20,
+    "accuracySpread": 17
   },
   {
     "gameId": "ncs_cannon_30",
@@ -477,7 +776,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 4000,
-    "icon": "heavy_bronze_cannon"
+    "icon": "heavy_bronze_cannon",
+    "type": "Cannon",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 12,
+    "range": 140,
+    "rangeMin": null,
+    "maxAngle": 20,
+    "accuracySpread": 15
   },
   {
     "gameId": "ncs_cannon_31",
@@ -493,7 +802,17 @@
     "extra": "SpeedFactor:1.25",
     "craftingType": "ByCraft",
     "price": 6000,
-    "icon": "heavy_bronze_long_cannon"
+    "icon": "heavy_bronze_long_cannon",
+    "type": "Long Cannon",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 17.5,
+    "range": 150,
+    "rangeMin": null,
+    "maxAngle": 10,
+    "accuracySpread": 10
   },
   {
     "gameId": "ncs_cannon_32",
@@ -509,7 +828,17 @@
     "extra": "SpeedFactor:0.8",
     "craftingType": "ByCraft",
     "price": 8000,
-    "icon": "heavy_bronze_carronade"
+    "icon": "heavy_bronze_carronade",
+    "type": "Carronade",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 26,
+    "range": 120,
+    "rangeMin": null,
+    "maxAngle": 15,
+    "accuracySpread": 18
   },
   {
     "gameId": "ncs_cannon_33",
@@ -525,7 +854,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 12000,
-    "icon": "heavy_soldered_bow_stern_1"
+    "icon": "heavy_soldered_bow_stern_1",
+    "type": "Bombard",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.0,
+    "loading": 27,
+    "range": 125,
+    "rangeMin": null,
+    "maxAngle": 8,
+    "accuracySpread": 14
   },
   {
     "gameId": "ncs_cannon_34",
@@ -541,7 +880,17 @@
     "extra": "SpeedFactor:1",
     "craftingType": "ByCraft",
     "price": 15000,
-    "icon": "heavy_soldered_bow_stern_2"
+    "icon": "heavy_soldered_bow_stern_2",
+    "type": "Bombard",
+    "weightClass": "Heavy",
+    "isPremium": false,
+    "placementRestriction": "Only for the bow or stern",
+    "projectileSpeedFactor": 1.0,
+    "loading": 33,
+    "range": 140,
+    "rangeMin": null,
+    "maxAngle": 6,
+    "accuracySpread": 16
   },
   {
     "gameId": "ncs_cannon_35",
@@ -557,7 +906,22 @@
     "extra": "SplashRadius:11;SpeedFactor:1;Preparation:0.14",
     "craftingType": "ByCraft",
     "price": 5000,
-    "icon": "c_mort1"
+    "icon": "c_mort1",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 20,
+    "range": 135,
+    "rangeMin": 60,
+    "maxAngle": 10,
+    "accuracySpread": 2,
+    "damage": 100,
+    "splashRadius": 11.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": 6
   },
   {
     "gameId": "ncs_cannon_36",
@@ -573,7 +937,22 @@
     "extra": "SplashRadius:11;SpeedFactor:1;Preparation:0.14",
     "craftingType": "ByCraft",
     "price": 12500,
-    "icon": "c_mort2"
+    "icon": "c_mort2",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.0,
+    "loading": 24,
+    "range": 145,
+    "rangeMin": 75,
+    "maxAngle": 10,
+    "accuracySpread": 3,
+    "damage": 125,
+    "splashRadius": 11.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": 7
   },
   {
     "gameId": "ncs_cannon_37",
@@ -589,7 +968,22 @@
     "extra": "SplashRadius:12;SpeedFactor:1.1;Preparation:0.14",
     "craftingType": "ByCraft",
     "price": 28125,
-    "icon": "c_mort3"
+    "icon": "c_mort3",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.1,
+    "loading": 31,
+    "range": 155,
+    "rangeMin": 85,
+    "maxAngle": 10,
+    "accuracySpread": 4,
+    "damage": 150,
+    "splashRadius": 12.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": 8
   },
   {
     "gameId": "ncs_cannon_38",
@@ -605,7 +999,22 @@
     "extra": "SplashRadius:13;SpeedFactor:1.15;Preparation:0.14",
     "craftingType": "ByCraft",
     "price": 56250,
-    "icon": "c_mort4"
+    "icon": "c_mort4",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.15,
+    "loading": 35,
+    "range": 150,
+    "rangeMin": 75,
+    "maxAngle": 10,
+    "accuracySpread": 4,
+    "damage": 180,
+    "splashRadius": 13.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": 9
   },
   {
     "gameId": "ncs_cannon_39",
@@ -621,7 +1030,22 @@
     "extra": "SplashRadius:14;SpeedFactor:1.2;Preparation:0.14",
     "craftingType": "ByCraft",
     "price": 112500,
-    "icon": "c_mort5"
+    "icon": "c_mort5",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.2,
+    "loading": 38,
+    "range": 145,
+    "rangeMin": 65,
+    "maxAngle": 10,
+    "accuracySpread": 5,
+    "damage": 210,
+    "splashRadius": 14.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": 10
   },
   {
     "gameId": "ncs_cannon_40",
@@ -637,7 +1061,22 @@
     "extra": "SplashRadius:15;SpeedFactor:1.25;Preparation:0.14",
     "craftingType": "ByCraft",
     "price": 168750,
-    "icon": "c_mort5"
+    "icon": "c_mort5",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": false,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.25,
+    "loading": 42,
+    "range": 140,
+    "rangeMin": 60,
+    "maxAngle": 10,
+    "accuracySpread": 5.5,
+    "damage": 245,
+    "splashRadius": 15.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": 11
   },
   {
     "gameId": "ncs_cannon_41",
@@ -653,7 +1092,23 @@
     "extra": "SplashRadius:9;SpeedFactor:1.5;Preparation:0.14",
     "craftingType": "NotAvailable",
     "price": 80000,
-    "icon": "c_mort6"
+    "icon": "c_mort6",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 1.5,
+    "loading": 34,
+    "range": 155,
+    "rangeMin": 95,
+    "maxAngle": 10,
+    "accuracySpread": 4,
+    "damage": 155,
+    "splashRadius": 9.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": null,
+    "notes": "Premium mortar"
   },
   {
     "gameId": "ncs_cannon_42",
@@ -669,6 +1124,22 @@
     "extra": "SplashRadius:22;SpeedFactor:0.8;Preparation:0.14",
     "craftingType": "NotAvailable",
     "price": 60000,
-    "icon": "c_mort7"
+    "icon": "c_mort7",
+    "type": "Mortar",
+    "weightClass": "Mortar",
+    "isPremium": true,
+    "placementRestriction": null,
+    "projectileSpeedFactor": 0.8,
+    "loading": 25,
+    "range": 140,
+    "rangeMin": 80,
+    "maxAngle": 10,
+    "accuracySpread": 4,
+    "damage": 90,
+    "splashRadius": 22.0,
+    "mortarPreparation": 0.14,
+    "specialAbility": "Damage to structures x2",
+    "caliber": null,
+    "notes": "Premium mortar \u2014 largest splash radius of all mortars"
   }
 ]
