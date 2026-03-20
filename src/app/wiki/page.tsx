@@ -82,6 +82,18 @@ const sections = [
         href: '/wiki/ports',
         count: '42 ports',
       },
+      {
+        title: '💰 Trading',
+        desc: 'Trade goods, price ranges, margins, tax rates, and profit efficiency rankings.',
+        href: '/wiki/trading',
+        count: '20 goods',
+      },
+      {
+        title: '💎 Resources',
+        desc: 'All materials, trade goods, currencies, and special items — values and weights.',
+        href: '/wiki/resources',
+        count: '68 resources',
+      },
     ],
   },
   {

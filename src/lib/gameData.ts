@@ -426,6 +426,40 @@ export function getSkills(): Skill[] {
   return loadJson<Skill[]>('wiki-skills.json')
 }
 
+export interface Resource {
+  gameId: string
+  name: string
+  description: string
+  mediumCost: number
+  mass: number
+  effects: string
+  icon: string
+}
+
+export function getResources(): Resource[] {
+  const all = loadJson<Resource[]>('wiki-resources.json')
+  return all.filter(r => r.name !== 'removed')
+}
+
+export interface TradeGood {
+  name: string
+  weight: number
+  minPrice: number
+  maxPrice: number
+  margin: number
+  profitPerWeight: number
+  rank: number
+}
+
+export function getTrading(): { goods: TradeGood[]; constants: Record<string, unknown> } {
+  const prices = loadJson<{ goods: TradeGood[] }>('trade-prices.json')
+  const wiki = loadJson<Record<string, unknown>>('wiki-trading.json')
+  return {
+    goods: prices.goods,
+    constants: (wiki.constants as Record<string, unknown>) || {},
+  }
+}
+
 export interface Port {
   gameId: string
   name: string
