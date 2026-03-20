@@ -310,6 +310,15 @@ export function getCrewData(): unknown[] {
   return loadJson<unknown[]>('wiki-crew.json')
 }
 
+export interface Rank {
+  rank: number
+  xpRequired: number
+}
+
+export function getRanks(): Rank[] {
+  return loadJson<Rank[]>('wiki-ranks.json')
+}
+
 export interface Skill {
   gameId: string
   name: string
