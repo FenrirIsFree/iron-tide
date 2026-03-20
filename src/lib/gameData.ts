@@ -166,38 +166,34 @@ function computeWeaponCraftRecipe(totalGold: number, category: string): Record<s
   return recipe
 }
 
-function getWeaponCraftCategory(v: Record<string, unknown>, w: Record<string, unknown>): string {
-  const wtype = v.type as string || ''
-  const wclass = v.weightClass as string || ''
+function getWeaponCraftCategory(w: Record<string, unknown>): string {
+  const wtype = w.type as string || ''
   if (wtype === 'Mortar') {
-    const cal = v.caliber as number | null
+    const cal = w.caliber as number | null
     if (cal === 6 || cal === 7) return 'Light'
     if (cal === 8 || cal === 9) return 'Medium'
     if (cal === 10 || cal === 11) return 'Heavy'
-    return 'Medium' // fallback for special mortars
+    return 'Medium'
   }
-  return wclass
+  return (w.weightClass as string) || ''
 }
 
 export function getWeapons(): Weapon[] {
-  const wiki = loadJson<Record<string, unknown>[]>('wiki-weapons.json')
-  const v2 = loadJson<Record<string, unknown>[]>('weapon-stats-v2.json')
-  const v2ByName = new Map(v2.map(w => [w.name as string, w]))
+  // wiki-weapons.json is the single source of truth (merged with weapon-stats-v2 data)
+  const weapons = loadJson<Record<string, unknown>[]>('wiki-weapons.json')
 
-  return wiki.map(w => {
+  return weapons.map(w => {
     const name = w.name as string
-    const v = v2ByName.get(name) || {}
+    const weaponType = (w.type as string) || 'Unknown'
+    const weightClass = (w.weightClass as string) || 'Unknown'
+    const isPremium = (w.isPremium as boolean) || false
 
-    const weaponType = (v.type as string) || 'Unknown'
-    const weightClass = (v.weightClass as string) || 'Unknown'
-    const isPremium = (v.isPremium as boolean) || false
-
-    // Parse damage — v2 has "34 x8" strings for multi-shot, or numeric, or special "damage" field
+    // Parse damage from penetration field
     let damage = 0
     let damageDisplay = ''
     let shots = 1
-    const pen = v.penetration
-    if (pen !== undefined) {
+    const pen = w.penetration
+    if (pen !== undefined && pen !== null) {
       if (typeof pen === 'string' && pen.includes('x')) {
         const parts = pen.split('x').map((s: string) => s.trim())
         damage = parseFloat(parts[0])
@@ -207,43 +203,30 @@ export function getWeapons(): Weapon[] {
         damage = typeof pen === 'number' ? pen : parseFloat(pen as string)
         damageDisplay = String(damage)
       }
-    } else if (v.damage !== undefined) {
-      damage = v.damage as number
-      const unit = v.damageUnit as string
+    } else if (w.damage !== undefined) {
+      damage = w.damage as number
+      const unit = w.damageUnit as string
       damageDisplay = unit ? `${damage}/sec` : String(damage)
-    } else {
-      damage = w.penetration as number || 0
-      damageDisplay = String(damage)
     }
 
-    // Reload
-    const reload = (v.loading as number) ?? (w.cooldown as number) ?? 0
+    const reload = (w.loading as number) ?? (w.cooldown as number) ?? 0
+    const rangeMax = (w.range as number) ?? 0
+    const rangeMin = w.rangeMin as number | undefined
+    const angle = (w.maxAngle as number) ?? (w.angle as number) ?? 0
+    const scatter = (w.accuracySpread as number) ?? (w.scatter as number) ?? 0
 
-    // Range
-    const rangeMax = (v.rangeMax as number) ?? (v.range as number) ?? (parseInt(w.distance as string) || 0)
-    const rangeMin = v.rangeMin as number | undefined
-
-    // Angle, scatter
-    const angle = (v.maxAngle as number) ?? (w.angle as number) ?? 0
-    const scatter = (v.accuracySpread as number) ?? (w.scatter as number) ?? 0
-
-    // DPS calculation
     let dps = 0
     if (reload > 0) {
       dps = (damage * shots) / reload
     }
 
-    // Projectile speed
-    const projectileSpeed = (v.projectileSpeedFactor as number) ?? 1.0
+    const projectileSpeed = (w.projectileSpeedFactor as number) ?? 1.0
+    const splashRadius = w.splashRadius as number | undefined
+    const overheat = (w.untilOverheat as number) ?? undefined
+    const preparation = (w.mortarPreparation as number) ?? undefined
+    const structureDamage = (w.specialAbility as string)?.includes('x2') ? 'x2' : undefined
 
-    // Mortar/special fields
-    const splashRadius = v.splashRadius as number | undefined
-    const overheat = (v.untilOverheat as number) ?? undefined
-    const preparation = (v.mortarPreparation as number) ?? undefined
-    const structureDamage = (v.specialAbility as string)?.includes('x2') ? 'x2' : undefined
-
-    // Placement restriction — humanize
-    let placementRestriction = v.placementRestriction as string | undefined
+    let placementRestriction = w.placementRestriction as string | undefined
     if (placementRestriction === 'Only for the bow or stern') placementRestriction = 'Bow or Stern only'
     if (placementRestriction === 'For special ships') placementRestriction = 'Special weapon slot'
 
@@ -255,15 +238,14 @@ export function getWeapons(): Weapon[] {
       acquisition = 'Premium'
     } else if (craftingType === 'ByCraft') {
       acquisition = 'Craftable'
-      const cat = getWeaponCraftCategory(v, w)
-      craftingRecipe = computeWeaponCraftRecipe(w.price as number || 0, cat)
+      craftingRecipe = computeWeaponCraftRecipe(w.price as number || 0, getWeaponCraftCategory(w))
     } else if (craftingType === 'ByGold') {
       acquisition = 'Gold Purchase'
     }
 
     return {
       name,
-      gameId: (v.gameId as string) || (w.gameId as string) || '',
+      gameId: (w.gameId as string) || '',
       type: weaponType,
       weightClass,
       damage,
@@ -285,7 +267,7 @@ export function getWeapons(): Weapon[] {
       price: (w.price as number) || 0,
       isPremium,
       craftingRecipe,
-      description: (w.description as string) || (v.notes as string) || '',
+      description: (w.description as string) || (w.notes as string) || '',
       icon: (w.icon as string) || '',
     }
   })
