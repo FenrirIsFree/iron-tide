@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import ShipDetail from './ShipDetail'
 import { getShips, getShipBySlug, getAllShipSlugs, toSlug } from '@/lib/gameData'
@@ -39,17 +37,13 @@ export default async function ShipPage({ params }: PageProps) {
   const next = idx < allShips.length - 1 ? allShips[idx + 1] : null
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1 pt-24 pb-12 px-4 max-w-5xl mx-auto w-full">
-        <WikiBreadcrumb current={ship.name} parent={{ label: 'Ships', href: '/wiki/ships' }} />
-        <ShipDetail
-          ship={ship}
-          prev={prev ? { name: prev.name, slug: toSlug(prev.name) } : null}
-          next={next ? { name: next.name, slug: toSlug(next.name) } : null}
-        />
-      </main>
-      <Footer />
-    </div>
+    <main className="flex-1 pt-8 pb-12 px-4 max-w-5xl mx-auto w-full">
+      <WikiBreadcrumb current={ship.name} parent={{ label: 'Ships', href: '/wiki/ships' }} />
+      <ShipDetail
+        ship={ship}
+        prev={prev ? { name: prev.name, slug: toSlug(prev.name) } : null}
+        next={next ? { name: next.name, slug: toSlug(next.name) } : null}
+      />
+    </main>
   )
 }

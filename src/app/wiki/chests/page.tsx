@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import WikiBreadcrumb from '@/components/WikiBreadcrumb'
 import ChestsContent from './ChestsContent'
 import fs from 'fs'
@@ -24,19 +22,15 @@ export default function ChestsPage() {
   const data = loadChestData()
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1 pt-24 pb-12 px-4 max-w-7xl mx-auto w-full">
-        <WikiBreadcrumb current="Chests" />
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-foreground">🎁 Chests & Loot Tables</h1>
-          <p className="text-foreground-secondary mt-1">
-            Complete drop rates for every chest — datamined from game source code
-          </p>
-        </div>
-        <ChestsContent data={data as any} />
-      </main>
-      <Footer />
-    </div>
+    <main className="flex-1 pt-8 pb-12 px-4 max-w-7xl mx-auto w-full">
+      <WikiBreadcrumb current="Chests" />
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-foreground">🎁 Chests & Loot Tables</h1>
+        <p className="text-foreground-secondary mt-1">
+          Complete drop rates for every chest — datamined from game source code
+        </p>
+      </div>
+      <ChestsContent data={data as any} />
+    </main>
   )
 }
