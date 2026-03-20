@@ -114,7 +114,7 @@ export default function FactionsPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-foreground">🏴 Faction Guide</h1>
         <p className="text-foreground-secondary mt-1">
-          Choose your allegiance — ships, lore, and playstyle for each faction
+          Every port and player belongs to a faction — join a guild to take sides
         </p>
       </div>
 

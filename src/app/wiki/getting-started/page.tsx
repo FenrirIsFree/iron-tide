@@ -6,7 +6,7 @@ import WikiLink from '@/components/wiki/WikiLink'
 
 export const metadata = {
   title: 'Getting Started — The Iron Tide Wiki',
-  description: 'Your first hour in World of Sea Battle — choosing a faction, your first ship, basic combat, earning gold, and where to go next.',
+  description: 'Your first hour in World of Sea Battle — your first ship, basic combat, earning gold, joining a guild, and where to go next.',
 }
 
 function Tip({ children }: { children: React.ReactNode }) {
@@ -43,7 +43,7 @@ export default function GettingStartedPage() {
         <p className="text-sm font-semibold text-foreground mb-3">Contents</p>
         <ol className="space-y-1 text-sm text-accent">
           <li><a href="#what-is-wosb" className="hover:underline">1. What is World of Sea Battle?</a></li>
-          <li><a href="#choosing-faction" className="hover:underline">2. Choosing Your Faction</a></li>
+          <li><a href="#factions" className="hover:underline">2. Factions & Guilds</a></li>
           <li><a href="#first-ship" className="hover:underline">3. Your First Ship</a></li>
           <li><a href="#controls" className="hover:underline">4. Controls & Navigation</a></li>
           <li><a href="#first-battle" className="hover:underline">5. Your First Battle</a></li>
@@ -69,17 +69,21 @@ export default function GettingStartedPage() {
       </section>
 
       {/* Section 2 */}
-      <section id="choosing-faction" className="mb-10">
-        <h2 className="text-2xl font-bold text-foreground mb-3">2. Choosing Your Faction</h2>
+      <section id="factions" className="mb-10">
+        <h2 className="text-2xl font-bold text-foreground mb-3">2. Factions & Guilds</h2>
         <p className="text-foreground-secondary mb-3">
-          There are four main player factions, each with different ships, port territories, and playstyle feel. See the <WikiLink href="/wiki/factions">Faction Guide</WikiLink> for a full breakdown.
+          You <strong className="text-foreground">don&apos;t choose a faction</strong> when you start the game — every new player begins as <strong className="text-foreground">neutral</strong>. Your faction is determined by the guild you join. When you join a guild, you automatically take on that guild&apos;s faction. Leave the guild, and you go back to neutral.
+        </p>
+        <p className="text-foreground-secondary mb-4">
+          There are three military factions (<WikiLink href="/wiki/factions">Antilia, Espaniol, and Kai & Severia</WikiLink>), plus the <strong className="text-foreground">Trade Union</strong> (merchants) and <strong className="text-foreground">Pirates</strong>. See the <WikiLink href="/wiki/factions">Faction Guide</WikiLink> for full details on each.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
           {[
-            { name: 'Antilian Republic', icon: '🏴', desc: 'Balanced fleet with strong Rate I ships like Victory. Good all-rounder choice for new players.', tag: 'Recommended for beginners' },
-            { name: 'Spanish Empire', icon: '⚜️', desc: 'Heavy firepower and large ships. Excellent for combat-focused players who want to dominate with broadside power.', tag: 'Combat focus' },
-            { name: 'Eastern Alliance', icon: '🌅', desc: 'Unique ships like the 12 Apostolov. Strong crafting economy and good port presence.', tag: 'Economy & crafting' },
-            { name: 'Pirates', icon: '☠️', desc: 'Play outside faction rules. Access pirate ports and exclusive trader. Lone wolf or small group style.', tag: 'Advanced players' },
+            { name: 'Antilia', icon: '🏴', desc: 'Balanced fleet with strong Rate I ships like Victory. Good all-rounder — recommended for new players.', tag: 'Military faction' },
+            { name: 'Espaniol', icon: '⚜️', desc: 'Heavy firepower and large ships like the Santisima Trinidad. Great for combat-focused players.', tag: 'Military faction' },
+            { name: 'Kai & Severia', icon: '🌅', desc: 'Eastern/Northern union. Strong crafting economy with ships like the 12 Apostolov.', tag: 'Military faction' },
+            { name: 'Trade Union', icon: '💰', desc: 'Neutral to military factions. Focus on trading and economy. Contest Caliphate ports.', tag: 'Merchant faction' },
+            { name: 'Pirates', icon: '☠️', desc: 'Hostile to everyone. Exclusive pirate coves and special trader. For experienced players.', tag: 'Outlaw faction' },
           ].map(f => (
             <div key={f.name} className="bg-surface border border-surface-border rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
@@ -93,12 +97,12 @@ export default function GettingStartedPage() {
             </div>
           ))}
         </div>
-        <Warning>
-          Faction choice affects which ports you can safely dock at, which ships you can craft without penalty, and who attacks you on sight. Switching factions later is possible but costs significant resources.
-        </Warning>
         <Tip>
-          If you&apos;re playing with friends, pick the same faction — faction warfare is where guilds shine, and you want to fight together, not against each other.
+          As a new player, focus on learning the game first — you can play without a faction. When you&apos;re ready, find a guild that matches your play style. If you&apos;re playing with friends, join the same guild so you&apos;re on the same side.
         </Tip>
+        <Warning>
+          Your faction affects which ports are safe, who attacks you on sight, and crafting bonuses. The military factions are at war with each other, so choose your guild carefully.
+        </Warning>
       </section>
 
       {/* Section 3 */}
@@ -348,7 +352,7 @@ export default function GettingStartedPage() {
       </section>
 
       <SeeAlso items={[
-        { title: '🏴 Faction Guide', href: '/wiki/factions', description: 'Choose your faction — ships, lore, and playstyle' },
+        { title: '🏴 Faction Guide', href: '/wiki/factions', description: 'All factions — diplomacy, ports, ships, and lore' },
         { title: '🚢 Ship Database', href: '/wiki/ships', description: 'Browse all 62 ships with full stats' },
         { title: '🌳 Ship Class Trees', href: '/wiki/ships/classes', description: 'Visual progression from Rate VII to Rate I' },
         { title: '⚔️ Combat Guide', href: '/wiki/combat', description: 'Master damage formulas and armor angles' },

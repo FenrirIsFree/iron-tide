@@ -24,7 +24,7 @@ const NAV_SECTIONS: NavSection[] = [
     title: 'Getting Started',
     items: [
       { label: 'New Player Guide', href: '/wiki/getting-started' },
-      { label: 'Choosing a Faction', href: '/wiki/factions' },
+      { label: 'Factions & Guilds', href: '/wiki/factions' },
       { label: 'Economy Guide', href: '/wiki/economy' },
       { label: 'PvP Guide', href: '/wiki/pvp' },
     ],
