@@ -306,6 +306,67 @@ export function getConsumables(): unknown[] {
   return loadJson<unknown[]>('wiki-consumables.json')
 }
 
+export interface ConsumableFull {
+  name: string
+  category: string
+  description: string
+  cooldown: string
+  activeTime: string
+  restriction: string | null
+  effects: Record<string, unknown>
+  craft?: Record<string, number>
+}
+
+export function getConsumablesFull(): ConsumableFull[] {
+  // Merge wiki-consumables (raw game data) with consumable-stats (richer descriptions)
+  const wiki = loadJson<{ consumables: Record<string, unknown>[] }>('wiki-consumables.json')
+  const stats = loadJson<{ categories: Record<string, ConsumableFull[]> }>('consumable-stats.json')
+
+  // Build lookup from stats (has better descriptions)
+  const statsLookup = new Map<string, ConsumableFull>()
+  for (const items of Object.values(stats.categories)) {
+    for (const item of items) {
+      statsLookup.set(item.name, item)
+    }
+  }
+
+  // Get active consumables from wiki data
+  const active = wiki.consumables.filter(
+    (c: Record<string, unknown>) => c.status !== 'removed' && c.name !== 'Removed'
+  )
+
+  return active.map((c: Record<string, unknown>) => {
+    const name = c.name as string
+    const rich = statsLookup.get(name)
+
+    if (rich) {
+      return {
+        ...rich,
+        craft: c.craft as Record<string, number> | undefined,
+        category: (c.category as string) || rich.category.toLowerCase(),
+      }
+    }
+
+    // Fallback to wiki data
+    const bonuses = (c.bonuses as { effect: string; value: number }[]) || []
+    const effects: Record<string, unknown> = {}
+    for (const b of bonuses) {
+      effects[b.effect] = b.value
+    }
+
+    return {
+      name,
+      category: c.category as string,
+      description: '',
+      cooldown: c.cooldown ? `${c.cooldown} sec` : '',
+      activeTime: c.duration ? `${c.duration} sec` : '',
+      restriction: null,
+      effects,
+      craft: c.craft as Record<string, number> | undefined,
+    }
+  })
+}
+
 export function getCrewData(): unknown[] {
   return loadJson<unknown[]>('wiki-crew.json')
 }
@@ -363,6 +424,34 @@ export interface Skill {
 
 export function getSkills(): Skill[] {
   return loadJson<Skill[]>('wiki-skills.json')
+}
+
+export interface Port {
+  gameId: string
+  name: string
+  type: string
+  buildShipRanks: number
+  flags: string
+  fixedLevel: number
+  producedResource: string
+}
+
+export function getPorts(): Port[] {
+  return loadJson<Port[]>('wiki-ports.json')
+}
+
+export interface Achievement {
+  gameId: string
+  triggerId: string
+  name: string
+  description: string
+  ratingWeight: number
+  isSingleGive: boolean
+  category: string
+}
+
+export function getAchievements(): Achievement[] {
+  return loadJson<Achievement[]>('wiki-achievements.json')
 }
 
 export interface Ammo {

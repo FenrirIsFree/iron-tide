@@ -65,6 +65,23 @@ const sections = [
         href: '/wiki/chests',
         count: '4 chest types',
       },
+      {
+        title: '🧪 Consumables',
+        desc: 'Repair kits, speed boosts, combat buffs, and squadron support items.',
+        href: '/wiki/consumables',
+        count: '33 items',
+      },
+    ],
+  },
+  {
+    heading: '🌍 World & Economy',
+    items: [
+      {
+        title: '⚓ Ports',
+        desc: 'Cities, bays, and pirate havens — ship building, resources, and port features.',
+        href: '/wiki/ports',
+        count: '42 ports',
+      },
     ],
   },
   {
@@ -75,6 +92,12 @@ const sections = [
         desc: 'Enemy types, named bosses, loot tables, and capture mechanics.',
         href: '/wiki/npcs',
         count: '14 bosses',
+      },
+      {
+        title: '🏆 Achievements',
+        desc: 'Battle, Arena, Top, and Other — earn marks and unlock ships.',
+        href: '/wiki/achievements',
+        count: '57 achievements',
       },
       {
         title: '⚙️ Game Mechanics',
