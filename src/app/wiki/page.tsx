@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import WikiHubClient from './WikiHubClient'
 import WikiLink from '@/components/wiki/WikiLink'
+import JsonLd from '@/components/wiki/JsonLd'
 
 const sections = [
   {
@@ -242,6 +243,18 @@ export const metadata = {
 export default function WikiPage() {
   return (
     <div className="pt-8 pb-12 px-4 max-w-5xl mx-auto w-full">
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'The Iron Tide Wiki',
+        url: 'https://www.theirontide.org/wiki',
+        description: 'Comprehensive World of Sea Battle wiki — ships, weapons, combat mechanics, and interactive tools. Sourced from decompiled game data.',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://www.theirontide.org/wiki?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      }} />
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-foreground">📖 Game Wiki</h1>
         <p className="text-foreground-secondary mt-2 text-sm">

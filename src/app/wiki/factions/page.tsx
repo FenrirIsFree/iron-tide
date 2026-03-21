@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'Faction Guide — The Iron Tide Wiki',
-  description: 'All player factions in World of Sea Battle — available ships, lore overview, and playstyle for Antilian, Spanish, Eastern, Imperial, and Pirate factions.',
+  description: 'All factions in World of Sea Battle — Antilia, Espaniol, Kai & Severia, Trade Union, Pirates. Diplomacy, port control, ships, and lore.',
 }
 
 interface FactionMeta {
